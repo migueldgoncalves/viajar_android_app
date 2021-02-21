@@ -4,6 +4,7 @@
     <string name="cover_image_label">Cover image</string>
     <string name="version_text">Version %1$s.%2$s.%3$s</string>
     <string name="version_major" translatable="false">0</string>
-    <string name="version_minor" translatable="false">1</string>
+    <string name="version_minor" translatable="false">2</string>
     <string name="version_patch" translatable="false">0</string>
+    <string name="title_activity_travel">Travel</string>
 </resources>

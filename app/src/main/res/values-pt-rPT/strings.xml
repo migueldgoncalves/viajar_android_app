@@ -4,4 +4,5 @@
     <string name="start">Iniciar</string>
     <string name="cover_image_label">Imagem da capa</string>
     <string name="version_text">Versão %1$s.%2$s.%3$s</string>
+    <string name="title_activity_travel">Viagem</string>
 </resources>

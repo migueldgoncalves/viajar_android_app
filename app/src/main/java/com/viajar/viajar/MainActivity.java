@@ -2,7 +2,9 @@ package com.viajar.viajar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -17,5 +19,10 @@ public class MainActivity extends AppCompatActivity {
         String minor_version = getString(R.string.version_minor);
         String patch_version = getString(R.string.version_patch);
         version_text.setText(getString(R.string.version_text, major_version, minor_version, patch_version));
+    }
+
+    public void moveTravelActivity(View view){
+        Intent intent = new Intent(this, TravelActivity.class);
+        startActivity(intent);
     }
 }
