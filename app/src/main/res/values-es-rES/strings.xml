@@ -5,4 +5,15 @@
     <string name="cover_image_label">Imagen de la portada</string>
     <string name="version_text">Versión %1$s.%2$s.%3$s</string>
     <string name="title_activity_travel">Viaje</string>
+    <string name="concelho">Municipio</string>
+    <string name="municipio">Municipio</string>
+    <string name="province">Provincia</string>
+    <string name="intermunicipal_entity">Entidad Intermunicipal</string>
+    <string name="district">Distrito</string>
+    <string name="region">Región</string>
+    <string name="autonomous_community">Comunidad Autónoma</string>
+    <string name="parish">Parroquia</string>
+    <string name="comarca">Comarca</string>
+    <string name="means_transport">Medio de transporte</string>
+    <string name="cardinal_point">Punto cardinal</string>
 </resources>

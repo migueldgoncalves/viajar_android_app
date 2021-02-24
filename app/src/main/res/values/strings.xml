@@ -5,6 +5,17 @@
     <string name="version_text">Version %1$s.%2$s.%3$s</string>
     <string name="version_major" translatable="false">0</string>
     <string name="version_minor" translatable="false">2</string>
-    <string name="version_patch" translatable="false">0</string>
+    <string name="version_patch" translatable="false">1</string>
     <string name="title_activity_travel">Travel</string>
+    <string name="concelho">Municipality</string>
+    <string name="municipio">Municipality</string>
+    <string name="province">Province</string>
+    <string name="intermunicipal_entity">Intermunicipal Entity</string>
+    <string name="district">District</string>
+    <string name="region">Region</string>
+    <string name="autonomous_community">Autonomous Community</string>
+    <string name="parish">Parish</string>
+    <string name="comarca">Comarca</string>
+    <string name="means_transport">Means of transport</string>
+    <string name="cardinal_point">Cardinal point</string>
 </resources>

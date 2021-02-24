@@ -1,6 +1,7 @@
 package com.viajar.viajar;
 
 import androidx.fragment.app.FragmentActivity;
+import androidx.room.Room;
 
 import android.os.Bundle;
 
@@ -10,10 +11,15 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.viajar.viajar.database.Location;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class TravelActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
+    private SQLDatabase sqlDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +29,8 @@ public class TravelActivity extends FragmentActivity implements OnMapReadyCallba
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+        populateDatabase();
     }
 
     /**
@@ -39,8 +47,21 @@ public class TravelActivity extends FragmentActivity implements OnMapReadyCallba
         mMap = googleMap;
 
         // Add a marker in Guerreiros do Rio and move the camera
-        LatLng guerreiros = new LatLng(37.396353, -7.446837	);
+        LatLng guerreiros = new LatLng(37.396353, -7.446837);
         mMap.addMarker(new MarkerOptions().position(guerreiros).title("Marker in Guerreiros do Rio"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(guerreiros));
+    }
+
+    public void populateDatabase() {
+        getDatabase();
+        List<Location> locationArray = new ArrayList<>();
+        System.out.println(this.sqlDatabase.locationDAO().getLocationNumber());
+    }
+
+    public SQLDatabase getDatabase() {
+        if (sqlDatabase == null) {
+            this.sqlDatabase = Room.databaseBuilder(getApplicationContext(), SQLDatabase.class, getString(R.string.app_name)).build();
+        }
+        return this.sqlDatabase;
     }
 }

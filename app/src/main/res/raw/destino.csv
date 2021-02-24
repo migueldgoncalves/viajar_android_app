@@ -1,0 +1,2880 @@
+Local A,Local B,Meio de transporte,Origem,Destino
+A-376 - Centro Comercial,Cruzamento da A-376 com a SE-30,Carro,False,Universidade Pablo de Olavide
+A-376 - Centro Comercial,Cruzamento da A-376 com a SE-30,Carro,False,Utrera
+A-376 - Centro Comercial,Cruzamento da A-376 com a SE-30,Carro,True,Sevilha
+A-376 - Centro Comercial,A-376 - Universidade Pablo de Olavide,Carro,False,Sevilha
+A-376 - Centro Comercial,A-376 - Universidade Pablo de Olavide,Carro,True,Utrera
+A-376 - Condequinto,A-376 - Montequinto,Carro,False,Sevilha
+A-376 - Condequinto,A-376 - Montequinto,Carro,True,Ronda
+A-376 - Condequinto,A-376 - Montequinto,Carro,True,Utrera
+A-376 - Condequinto,A-376 - Universidade Pablo de Olavide,Carro,False,Ronda
+A-376 - Condequinto,A-376 - Universidade Pablo de Olavide,Carro,False,Utrera
+A-376 - Condequinto,A-376 - Universidade Pablo de Olavide,Carro,True,Sevilha
+A-376 - Fim da auto-estrada,A-376 - Saída 21,Carro,False,Ronda
+A-376 - Fim da auto-estrada,A-376 - Saída 21,Carro,False,Utrera
+A-376 - Fim da auto-estrada,A-376 - Saída 21,Carro,True,Sevilha
+A-376 - Montequinto,A-376 - Saída 4A,Carro,False,Sevilha
+A-376 - Montequinto,A-376 - Saída 4A,Carro,True,Utrera
+A-376 - Saída 4A,A-376 - Saída 4B,Carro,False,Sevilha
+A-376 - Saída 4A,A-376 - Saída 4B,Carro,True,Utrera
+A-376 - Saída 4B,Cruzamento da A-376 com a SE-40,Carro,False,Sevilha
+A-376 - Saída 4B,Cruzamento da A-376 com a SE-40,Carro,True,Ronda
+A-376 - Saída 4B,Cruzamento da A-376 com a SE-40,Carro,True,Utrera
+A-376 - Saída 8,A-376 - Saída 11/13,Carro,False,Sevilha
+A-376 - Saída 8,A-376 - Saída 11/13,Carro,True,Ronda
+A-376 - Saída 8,A-376 - Saída 11/13,Carro,True,Utrera
+A-376 - Saída 8,Cruzamento da A-376 com a SE-40,Carro,False,Utrera
+A-376 - Saída 8,Cruzamento da A-376 com a SE-40,Carro,True,SE-40 - Aeroporto de Sevilha - San Pablo
+A-376 - Saída 8,Cruzamento da A-376 com a SE-40,Carro,True,Sevilha
+A-376 - Saída 11/13,A-376 - Saída 16,Carro,False,Sevilha
+A-376 - Saída 11/13,A-376 - Saída 16,Carro,True,Ronda
+A-376 - Saída 11/13,A-376 - Saída 16,Carro,True,Utrera
+A-376 - Saída 16,A-376 - Saída 21,Carro,False,Sevilha
+A-376 - Saída 16,A-376 - Saída 21,Carro,True,Ronda
+A-376 - Saída 16,A-376 - Saída 21,Carro,True,Utrera
+A-381 - Saída 1,A-381 - Saída 4,Carro,False,Jerez de la Frontera
+A-381 - Saída 1,A-381 - Saída 4,Carro,True,A-7 - Algeciras
+A-381 - Saída 1,A-381 - Saída 4,Carro,True,Medina Sidonia
+A-381 - Saída 1,Cruzamento da A-381 com a AP-4,Carro,False,Algeciras
+A-381 - Saída 1,Cruzamento da A-381 com a AP-4,Carro,False,Medina Sidonia
+A-381 - Saída 1,Cruzamento da A-381 com a AP-4,Carro,True,Cádiz
+A-381 - Saída 1,Cruzamento da A-381 com a AP-4,Carro,True,Jerez de la Frontera
+A-381 - Saída 1,Cruzamento da A-381 com a AP-4,Carro,True,Sevilha
+A-381 - Saída 4,A-381 - Saída 10,Carro,False,Jerez de la Frontera
+A-381 - Saída 4,A-381 - Saída 10,Carro,True,A-7 - Algeciras
+A-381 - Saída 4,A-381 - Saída 10,Carro,True,Medina Sidonia
+A-381 - Saída 10,A-381 - Saída 17,Carro,False,Jerez de la Frontera
+A-381 - Saída 10,A-381 - Saída 17,Carro,True,Algeciras
+A-381 - Saída 10,A-381 - Saída 17,Carro,True,Medina Sidonia
+A-381 - Saída 17,A-381 - Saída 24,Carro,False,AP-4 - Sevilha
+A-381 - Saída 17,A-381 - Saída 24,Carro,False,Jerez de la Frontera
+A-381 - Saída 17,A-381 - Saída 24,Carro,True,Algeciras
+A-381 - Saída 17,A-381 - Saída 24,Carro,True,Medina Sidonia
+A-381 - Saída 24,A-381 - Saída 31,Carro,False,AP-4 - Sevilha
+A-381 - Saída 24,A-381 - Saída 31,Carro,False,Jerez de la Frontera
+A-381 - Saída 24,A-381 - Saída 31,Carro,True,A-7 - Algeciras
+A-381 - Saída 24,A-381 - Saída 31,Carro,True,Alcalá de los Gazules
+A-381 - Saída 31,A-381 - Saída 36,Carro,False,Jerez de la Frontera
+A-381 - Saída 31,A-381 - Saída 36,Carro,True,A-7 - Algeciras
+A-381 - Saída 31,A-381 - Saída 36,Carro,True,Alcalá de los Gazules
+A-381 - Saída 36,A-381 - Saída 40,Carro,False,Jerez de la Frontera
+A-381 - Saída 36,A-381 - Saída 40,Carro,True,Algeciras
+A-381 - Saída 40,A-381 - Saída 42,Carro,False,Jerez de la Frontera
+A-381 - Saída 40,A-381 - Saída 42,Carro,True,Algeciras
+A-381 - Saída 42,A-381 - Saída 45,Carro,False,Jerez de la Frontera
+A-381 - Saída 42,A-381 - Saída 45,Carro,True,Algeciras
+A-381 - Saída 45,A-381 - Saída 54,Carro,False,Alcalá de los Gazules
+A-381 - Saída 45,A-381 - Saída 54,Carro,False,Jerez de la Frontera
+A-381 - Saída 45,A-381 - Saída 54,Carro,True,Algeciras
+A-381 - Saída 54,A-381 - Saída 66,Carro,False,AP-4 - Sevilha
+A-381 - Saída 54,A-381 - Saída 66,Carro,False,Alcalá de los Gazules
+A-381 - Saída 54,A-381 - Saída 66,Carro,False,Jerez de la Frontera
+A-381 - Saída 54,A-381 - Saída 66,Carro,True,Algeciras
+A-381 - Saída 54,A-381 - Saída 66,Carro,True,Los Barrios
+A-381 - Saída 66,A-381 - Saída 70,Carro,False,Alcalá de los Gazules
+A-381 - Saída 66,A-381 - Saída 70,Carro,False,Jerez de la Frontera
+A-381 - Saída 66,A-381 - Saída 70,Carro,True,A-7 - Algeciras
+A-381 - Saída 66,A-381 - Saída 70,Carro,True,Los Barrios
+A-381 - Saída 70,A-381 - Saída 73,Carro,False,Alcalá de los Gazules
+A-381 - Saída 70,A-381 - Saída 73,Carro,False,Jerez de la Frontera
+A-381 - Saída 70,A-381 - Saída 73,Carro,True,Algeciras
+A-381 - Saída 70,A-381 - Saída 73,Carro,True,Los Barrios
+A-381 - Saída 73,A-381 - Saída 77,Carro,False,Alcalá de los Gazules
+A-381 - Saída 73,A-381 - Saída 77,Carro,False,Jerez de la Frontera
+A-381 - Saída 73,A-381 - Saída 77,Carro,True,Algeciras
+A-381 - Saída 73,A-381 - Saída 77,Carro,True,Los Barrios
+A-381 - Saída 77,A-381 - Saída 80,Carro,False,AP-4 - Sevilha
+A-381 - Saída 77,A-381 - Saída 80,Carro,False,Jerez de la Frontera
+A-381 - Saída 77,A-381 - Saída 80,Carro,True,Algeciras
+A-381 - Saída 77,A-381 - Saída 80,Carro,True,Los Barrios
+A-381 - Saída 80,A-381 - Saída 85,Carro,False,AP-4 - Sevilha
+A-381 - Saída 80,A-381 - Saída 85,Carro,False,Jerez de la Frontera
+A-381 - Saída 80,A-381 - Saída 85,Carro,True,Algeciras
+A-381 - Saída 85,A-381 - Saída 87,Carro,False,AP-4 - Sevilha
+A-381 - Saída 85,A-381 - Saída 87,Carro,False,Jerez de la Frontera
+A-381 - Saída 85,A-381 - Saída 87,Carro,False,Los Barrios
+A-381 - Saída 85,A-381 - Saída 87,Carro,True,Algeciras
+A-381 - Saída 87,Cruzamento da A-381 com a A-7,Carro,False,AP-4 - Sevilha
+A-381 - Saída 87,Cruzamento da A-381 com a A-7,Carro,False,Jerez de la Frontera
+A-381 - Saída 87,Cruzamento da A-381 com a A-7,Carro,False,Los Barrios
+A-381 - Saída 87,Cruzamento da A-381 com a A-7,Carro,True,Algeciras
+A-4 - Saída 335,A-4 - Saída 339,Carro,False,Madrid
+A-4 - Saída 335,A-4 - Saída 339,Carro,True,Córdoba
+A-4 - Saída 335,A-4 - Saída 339,Carro,True,Montoro
+A-4 - Saída 335,A-4 - Saída 339,Carro,True,Sevilha
+A-4 - Saída 339,A-4 - Saída 346,Carro,False,Andújar
+A-4 - Saída 339,A-4 - Saída 346,Carro,False,Madrid
+A-4 - Saída 339,A-4 - Saída 346,Carro,True,Córdoba
+A-4 - Saída 346,A-4 - Saída 348,Carro,False,Andújar
+A-4 - Saída 346,A-4 - Saída 348,Carro,False,Bailén
+A-4 - Saída 346,A-4 - Saída 348,Carro,False,Madrid
+A-4 - Saída 346,A-4 - Saída 348,Carro,True,Córdoba
+A-4 - Saída 346,A-4 - Saída 348,Carro,True,Montoro
+A-4 - Saída 346,A-4 - Saída 348,Carro,True,Sevilha
+A-4 - Saída 348,A-4 - Saída 350,Carro,False,Madrid
+A-4 - Saída 348,A-4 - Saída 350,Carro,True,Córdoba
+A-4 - Saída 348,A-4 - Saída 350,Carro,True,Montoro
+A-4 - Saída 348,A-4 - Saída 350,Carro,True,Sevilha
+A-4 - Saída 350,A-4 - Saída 356,Carro,False,Madrid
+A-4 - Saída 350,A-4 - Saída 356,Carro,True,Montoro
+A-4 - Saída 350,A-4 - Saída 356,Carro,True,Córdoba
+A-4 - Saída 356,A-4 - Saída 358,Carro,False,Bailén
+A-4 - Saída 356,A-4 - Saída 358,Carro,False,Madrid
+A-4 - Saída 356,A-4 - Saída 358,Carro,True,Córdoba
+A-4 - Saída 358,A-4 - Saída 359,Carro,False,Andújar
+A-4 - Saída 358,A-4 - Saída 359,Carro,False,Bailén
+A-4 - Saída 358,A-4 - Saída 359,Carro,False,Madrid
+A-4 - Saída 358,A-4 - Saída 359,Carro,True,Córdoba
+A-4 - Saída 358,A-4 - Saída 359,Carro,True,Málaga
+A-4 - Saída 358,A-4 - Saída 359,Carro,True,Sevilha
+A-4 - Saída 359,A-4 - Saída 361,Carro,False,Bailén
+A-4 - Saída 359,A-4 - Saída 361,Carro,False,Madrid
+A-4 - Saída 359,A-4 - Saída 361,Carro,True,Córdoba
+A-4 - Saída 361,A-4 - Saída 364,Carro,False,Bailén
+A-4 - Saída 361,A-4 - Saída 364,Carro,False,Madrid
+A-4 - Saída 361,A-4 - Saída 364,Carro,True,Córdoba
+A-4 - Saída 364,A-4 - Saída 367,Carro,False,Bailén
+A-4 - Saída 364,A-4 - Saída 367,Carro,False,Madrid
+A-4 - Saída 364,A-4 - Saída 367,Carro,True,Córdoba
+A-4 - Saída 367,A-4 - Saída 370,Carro,False,Madrid
+A-4 - Saída 367,A-4 - Saída 370,Carro,True,Córdoba
+A-4 - Saída 367,A-4 - Saída 370,Carro,True,Málaga
+A-4 - Saída 367,A-4 - Saída 370,Carro,True,Sevilha
+A-4 - Saída 370,A-4 - Saída 374,Carro,False,Bailén
+A-4 - Saída 370,A-4 - Saída 374,Carro,False,Madrid
+A-4 - Saída 370,A-4 - Saída 374,Carro,False,Montoro
+A-4 - Saída 370,A-4 - Saída 374,Carro,True,Córdoba
+A-4 - Saída 374,A-4 - Saída 377,Carro,False,Bailén
+A-4 - Saída 374,A-4 - Saída 377,Carro,False,Madrid
+A-4 - Saída 374,A-4 - Saída 377,Carro,True,Córdoba
+A-4 - Saída 374,A-4 - Saída 377,Carro,True,Málaga
+A-4 - Saída 374,A-4 - Saída 377,Carro,True,Sevilha
+A-4 - Saída 377,A-4 - Saída 383,Carro,False,Bailén
+A-4 - Saída 377,A-4 - Saída 383,Carro,False,Madrid
+A-4 - Saída 377,A-4 - Saída 383,Carro,True,Córdoba
+A-4 - Saída 383,A-4 - Saída 385,Carro,False,Bailén
+A-4 - Saída 383,A-4 - Saída 385,Carro,False,Madrid
+A-4 - Saída 383,A-4 - Saída 385,Carro,True,Córdoba
+A-4 - Saída 385,A-4 - Saída 391,Carro,False,Bailén
+A-4 - Saída 385,A-4 - Saída 391,Carro,False,Madrid
+A-4 - Saída 385,A-4 - Saída 391,Carro,True,Córdoba
+A-4 - Saída 391,A-4 - Saída 396,Carro,False,Bailén
+A-4 - Saída 391,A-4 - Saída 396,Carro,False,Madrid
+A-4 - Saída 391,A-4 - Saída 396,Carro,True,Córdoba
+A-4 - Saída 396,Cruzamento da A-4 com a CO-31,Carro,False,Bailén
+A-4 - Saída 396,Cruzamento da A-4 com a CO-31,Carro,False,Madrid
+A-4 - Saída 396,Cruzamento da A-4 com a CO-31,Carro,False,Montoro
+A-4 - Saída 396,Cruzamento da A-4 com a CO-31,Carro,True,Córdoba
+A-4 - Saída 400,A-4 - Saída 401,Carro,False,Badajoz
+A-4 - Saída 400,A-4 - Saída 401,Carro,False,Bailén
+A-4 - Saída 400,A-4 - Saída 401,Carro,False,Madrid
+A-4 - Saída 400,A-4 - Saída 401,Carro,True,Cádiz
+A-4 - Saída 400,A-4 - Saída 401,Carro,True,Granada
+A-4 - Saída 400,A-4 - Saída 401,Carro,True,Málaga
+A-4 - Saída 400,A-4 - Saída 401,Carro,True,Sevilha
+A-4 - Saída 400,Cruzamento da A-4 com a CO-31,Carro,False,Cádiz
+A-4 - Saída 400,Cruzamento da A-4 com a CO-31,Carro,False,Granada
+A-4 - Saída 400,Cruzamento da A-4 com a CO-31,Carro,False,Málaga
+A-4 - Saída 400,Cruzamento da A-4 com a CO-31,Carro,False,Sevilha
+A-4 - Saída 400,Cruzamento da A-4 com a CO-31,Carro,True,Badajoz
+A-4 - Saída 400,Cruzamento da A-4 com a CO-31,Carro,True,Bailén
+A-4 - Saída 400,Cruzamento da A-4 com a CO-31,Carro,True,Madrid
+A-4 - Saída 401,A-4 - Saída 403,Carro,False,Badajoz
+A-4 - Saída 401,A-4 - Saída 403,Carro,False,Madrid
+A-4 - Saída 401,A-4 - Saída 403,Carro,True,Cádiz
+A-4 - Saída 401,A-4 - Saída 403,Carro,True,Granada
+A-4 - Saída 401,A-4 - Saída 403,Carro,True,Málaga
+A-4 - Saída 401,A-4 - Saída 403,Carro,True,Sevilha
+A-4 - Saída 403,A-4 - Saída 404,Carro,False,Badajoz
+A-4 - Saída 403,A-4 - Saída 404,Carro,False,Córdoba - Sul
+A-4 - Saída 403,A-4 - Saída 404,Carro,False,Granada
+A-4 - Saída 403,A-4 - Saída 404,Carro,False,Madrid
+A-4 - Saída 403,A-4 - Saída 404,Carro,True,A-45 - Málaga
+A-4 - Saída 403,A-4 - Saída 404,Carro,True,Cádiz
+A-4 - Saída 403,A-4 - Saída 404,Carro,True,Sevilha
+A-4 - Saída 404,A-4 - Saída 406,Carro,False,Badajoz
+A-4 - Saída 404,A-4 - Saída 406,Carro,False,Madrid
+A-4 - Saída 404,A-4 - Saída 406,Carro,True,A-45 - Málaga
+A-4 - Saída 404,A-4 - Saída 406,Carro,True,Cádiz
+A-4 - Saída 404,A-4 - Saída 406,Carro,True,Sevilha
+A-4 - Saída 406,Cruzamento da A-4 com a A-45,Carro,False,Córdoba - Centro da cidade
+A-4 - Saída 406,Cruzamento da A-4 com a A-45,Carro,False,Madrid
+A-4 - Saída 406,Cruzamento da A-4 com a A-45,Carro,True,A-45 - Málaga
+A-4 - Saída 406,Cruzamento da A-4 com a A-45,Carro,True,Sevilha
+A-4 - Saída 411,A-4 - Saída 412,Carro,False,Córdoba
+A-4 - Saída 411,A-4 - Saída 412,Carro,False,Granada
+A-4 - Saída 411,A-4 - Saída 412,Carro,True,Cádiz
+A-4 - Saída 411,A-4 - Saída 412,Carro,True,Sevilha
+A-4 - Saída 411,Cruzamento da A-4 com a A-45,Carro,False,Cádiz
+A-4 - Saída 411,Cruzamento da A-4 com a A-45,Carro,False,Sevilha
+A-4 - Saída 411,Cruzamento da A-4 com a A-45,Carro,True,Córdoba
+A-4 - Saída 411,Cruzamento da A-4 com a A-45,Carro,True,Granada
+A-4 - Saída 412,A-4 - Saída 414,Carro,False,Córdoba
+A-4 - Saída 412,A-4 - Saída 414,Carro,False,Granada
+A-4 - Saída 412,A-4 - Saída 414,Carro,True,Cádiz
+A-4 - Saída 412,A-4 - Saída 414,Carro,True,Sevilha
+A-4 - Saída 414,A-4 - Saída 418,Carro,False,Córdoba
+A-4 - Saída 414,A-4 - Saída 418,Carro,False,Granada
+A-4 - Saída 414,A-4 - Saída 418,Carro,True,Cádiz
+A-4 - Saída 414,A-4 - Saída 418,Carro,True,Sevilha
+A-4 - Saída 418,A-4 - Saída 420,Carro,False,Córdoba
+A-4 - Saída 418,A-4 - Saída 420,Carro,True,Cádiz
+A-4 - Saída 418,A-4 - Saída 420,Carro,True,Sevilha
+A-4 - Saída 420,A-4 - Saída 424,Carro,False,Córdoba
+A-4 - Saída 420,A-4 - Saída 424,Carro,True,La Carlota
+A-4 - Saída 420,A-4 - Saída 424,Carro,True,Sevilha
+A-4 - Saída 424,A-4 - Saída 430,Carro,False,Córdoba
+A-4 - Saída 424,A-4 - Saída 430,Carro,True,La Carlota
+A-4 - Saída 424,A-4 - Saída 430,Carro,True,Sevilha
+A-4 - Saída 430,A-4 - Saída 432,Carro,False,Córdoba
+A-4 - Saída 430,A-4 - Saída 432,Carro,False,Málaga
+A-4 - Saída 430,A-4 - Saída 432,Carro,True,Sevilha
+A-4 - Saída 432,A-4 - Saída 434,Carro,False,Córdoba
+A-4 - Saída 432,A-4 - Saída 434,Carro,False,Málaga
+A-4 - Saída 432,A-4 - Saída 434,Carro,True,Écija
+A-4 - Saída 432,A-4 - Saída 434,Carro,True,Sevilha
+A-4 - Saída 434,A-4 - Saída 437,Carro,False,Córdoba
+A-4 - Saída 434,A-4 - Saída 437,Carro,False,La Carlota
+A-4 - Saída 434,A-4 - Saída 437,Carro,True,Cádiz
+A-4 - Saída 434,A-4 - Saída 437,Carro,True,Écija
+A-4 - Saída 434,A-4 - Saída 437,Carro,True,Sevilha
+A-4 - Saída 437,A-4 - Saída 441,Carro,False,Córdoba
+A-4 - Saída 437,A-4 - Saída 441,Carro,False,La Carlota
+A-4 - Saída 437,A-4 - Saída 441,Carro,True,Écija
+A-4 - Saída 437,A-4 - Saída 441,Carro,True,Sevilha
+A-4 - Saída 441,A-4 - Saída 444,Carro,False,Córdoba
+A-4 - Saída 441,A-4 - Saída 444,Carro,False,La Carlota
+A-4 - Saída 441,A-4 - Saída 444,Carro,True,Écija
+A-4 - Saída 441,A-4 - Saída 444,Carro,True,Sevilha
+A-4 - Saída 444,A-4 - Saída 445,Carro,False,Córdoba
+A-4 - Saída 444,A-4 - Saída 445,Carro,False,La Carlota
+A-4 - Saída 444,A-4 - Saída 445,Carro,True,Écija
+A-4 - Saída 444,A-4 - Saída 445,Carro,True,Sevilha
+A-4 - Saída 445,A-4 - Saída 450,Carro,False,Córdoba
+A-4 - Saída 445,A-4 - Saída 450,Carro,False,La Carlota
+A-4 - Saída 445,A-4 - Saída 450,Carro,True,Écija
+A-4 - Saída 445,A-4 - Saída 450,Carro,True,Sevilha
+A-4 - Saída 450,A-4 - Saída 455,Carro,False,Córdoba
+A-4 - Saída 450,A-4 - Saída 455,Carro,False,La Carlota
+A-4 - Saída 450,A-4 - Saída 455,Carro,True,Cádiz
+A-4 - Saída 450,A-4 - Saída 455,Carro,True,Carmona
+A-4 - Saída 450,A-4 - Saída 455,Carro,True,Sevilha
+A-4 - Saída 455,A-4 - Saída 457,Carro,False,Córdoba
+A-4 - Saída 455,A-4 - Saída 457,Carro,False,Écija
+A-4 - Saída 455,A-4 - Saída 457,Carro,True,Cádiz
+A-4 - Saída 455,A-4 - Saída 457,Carro,True,Carmona
+A-4 - Saída 455,A-4 - Saída 457,Carro,True,Sevilha
+A-4 - Saída 457,A-4 - Saída 459,Carro,False,Córdoba
+A-4 - Saída 457,A-4 - Saída 459,Carro,False,Écija
+A-4 - Saída 457,A-4 - Saída 459,Carro,True,Cádiz
+A-4 - Saída 457,A-4 - Saída 459,Carro,True,Carmona
+A-4 - Saída 457,A-4 - Saída 459,Carro,True,Sevilha
+A-4 - Saída 459,A-4 - Saída 461,Carro,False,Córdoba
+A-4 - Saída 459,A-4 - Saída 461,Carro,False,Écija
+A-4 - Saída 459,A-4 - Saída 461,Carro,True,Carmona
+A-4 - Saída 459,A-4 - Saída 461,Carro,True,Sevilha
+A-4 - Saída 461,A-4 - Saída 464,Carro,False,Córdoba
+A-4 - Saída 461,A-4 - Saída 464,Carro,False,Écija
+A-4 - Saída 461,A-4 - Saída 464,Carro,True,Cádiz
+A-4 - Saída 461,A-4 - Saída 464,Carro,True,Carmona
+A-4 - Saída 461,A-4 - Saída 464,Carro,True,Sevilha
+A-4 - Saída 464,A-4 - Saída 468,Carro,False,Córdoba
+A-4 - Saída 464,A-4 - Saída 468,Carro,False,Écija
+A-4 - Saída 464,A-4 - Saída 468,Carro,True,Carmona
+A-4 - Saída 464,A-4 - Saída 468,Carro,True,Sevilha
+A-4 - Saída 468,A-4 - Saída 471,Carro,False,Córdoba
+A-4 - Saída 468,A-4 - Saída 471,Carro,False,Écija
+A-4 - Saída 468,A-4 - Saída 471,Carro,True,Cádiz
+A-4 - Saída 468,A-4 - Saída 471,Carro,True,Carmona
+A-4 - Saída 468,A-4 - Saída 471,Carro,True,Sevilha
+A-4 - Saída 471,A-4 - Saída 475,Carro,False,Córdoba
+A-4 - Saída 471,A-4 - Saída 475,Carro,False,Écija
+A-4 - Saída 471,A-4 - Saída 475,Carro,True,Cádiz
+A-4 - Saída 471,A-4 - Saída 475,Carro,True,Carmona
+A-4 - Saída 471,A-4 - Saída 475,Carro,True,Sevilha
+A-4 - Saída 475,A-4 - Saída 480,Carro,False,Córdoba
+A-4 - Saída 475,A-4 - Saída 480,Carro,False,Écija
+A-4 - Saída 475,A-4 - Saída 480,Carro,True,Carmona
+A-4 - Saída 475,A-4 - Saída 480,Carro,True,Sevilha
+A-4 - Saída 480,A-4 - Saída 482,Carro,False,Córdoba
+A-4 - Saída 480,A-4 - Saída 482,Carro,False,Écija
+A-4 - Saída 480,A-4 - Saída 482,Carro,True,Carmona
+A-4 - Saída 480,A-4 - Saída 482,Carro,True,Sevilha
+A-4 - Saída 482,A-4 - Saída 484,Carro,False,Córdoba
+A-4 - Saída 482,A-4 - Saída 484,Carro,False,Écija
+A-4 - Saída 482,A-4 - Saída 484,Carro,True,Cádiz
+A-4 - Saída 482,A-4 - Saída 484,Carro,True,Carmona
+A-4 - Saída 482,A-4 - Saída 484,Carro,True,Sevilha
+A-4 - Saída 484,A-4 - Saída 487,Carro,False,Córdoba
+A-4 - Saída 484,A-4 - Saída 487,Carro,False,Écija
+A-4 - Saída 484,A-4 - Saída 487,Carro,True,Carmona
+A-4 - Saída 484,A-4 - Saída 487,Carro,True,Sevilha
+A-4 - Saída 487,A-4 - Saída 491,Carro,False,Córdoba
+A-4 - Saída 487,A-4 - Saída 491,Carro,False,Écija
+A-4 - Saída 487,A-4 - Saída 491,Carro,True,Carmona
+A-4 - Saída 487,A-4 - Saída 491,Carro,True,Sevilha
+A-4 - Saída 491,A-4 - Saída 494,Carro,False,Córdoba
+A-4 - Saída 491,A-4 - Saída 494,Carro,False,Écija
+A-4 - Saída 491,A-4 - Saída 494,Carro,True,Carmona
+A-4 - Saída 491,A-4 - Saída 494,Carro,True,Sevilha
+A-4 - Saída 494,A-4 - Saída 498,Carro,False,Córdoba
+A-4 - Saída 494,A-4 - Saída 498,Carro,False,Écija
+A-4 - Saída 494,A-4 - Saída 498,Carro,True,Carmona
+A-4 - Saída 494,A-4 - Saída 498,Carro,True,Sevilha
+A-4 - Saída 498,A-4 - Saída 500,Carro,False,Córdoba
+A-4 - Saída 498,A-4 - Saída 500,Carro,False,Écija
+A-4 - Saída 498,A-4 - Saída 500,Carro,True,Cádiz
+A-4 - Saída 498,A-4 - Saída 500,Carro,True,Carmona
+A-4 - Saída 498,A-4 - Saída 500,Carro,True,Sevilha
+A-4 - Saída 500,A-4 - Saída 504,Carro,False,Córdoba
+A-4 - Saída 500,A-4 - Saída 504,Carro,False,Écija
+A-4 - Saída 500,A-4 - Saída 504,Carro,True,Cádiz
+A-4 - Saída 500,A-4 - Saída 504,Carro,True,Carmona
+A-4 - Saída 500,A-4 - Saída 504,Carro,True,Sevilha
+A-4 - Saída 504,A-4 - Saída 506,Carro,False,Córdoba
+A-4 - Saída 504,A-4 - Saída 506,Carro,False,Écija
+A-4 - Saída 504,A-4 - Saída 506,Carro,True,Cádiz
+A-4 - Saída 504,A-4 - Saída 506,Carro,True,Sevilha
+A-4 - Saída 506,A-4 - Saída 508,Carro,False,Córdoba
+A-4 - Saída 506,A-4 - Saída 508,Carro,False,Écija
+A-4 - Saída 506,A-4 - Saída 508,Carro,True,Cádiz
+A-4 - Saída 506,A-4 - Saída 508,Carro,True,Sevilha
+A-4 - Saída 508,A-4 - Saída 511,Carro,False,Córdoba
+A-4 - Saída 508,A-4 - Saída 511,Carro,False,Écija
+A-4 - Saída 508,A-4 - Saída 511,Carro,True,Cádiz
+A-4 - Saída 508,A-4 - Saída 511,Carro,True,Sevilha
+A-4 - Saída 511,A-4 - Saída 514,Carro,False,Carmona
+A-4 - Saída 511,A-4 - Saída 514,Carro,False,Córdoba
+A-4 - Saída 511,A-4 - Saída 514,Carro,True,Aeroporto de Sevilha - San Pablo
+A-4 - Saída 511,A-4 - Saída 514,Carro,True,Cádiz
+A-4 - Saída 511,A-4 - Saída 514,Carro,True,Sevilha
+A-4 - Saída 514,A-4 - Saída 516,Carro,False,Carmona
+A-4 - Saída 514,A-4 - Saída 516,Carro,False,Córdoba
+A-4 - Saída 514,A-4 - Saída 516,Carro,True,Aeroporto de Sevilha - San Pablo
+A-4 - Saída 514,A-4 - Saída 516,Carro,True,Cádiz
+A-4 - Saída 514,A-4 - Saída 516,Carro,True,Sevilha
+A-4 - Saída 516,A-4 - Saída 519,Carro,False,Carmona
+A-4 - Saída 516,A-4 - Saída 519,Carro,False,Córdoba
+A-4 - Saída 516,A-4 - Saída 519,Carro,True,Sevilha
+A-4 - Saída 519,A-4 - Saída 521,Carro,False,Carmona
+A-4 - Saída 519,A-4 - Saída 521,Carro,False,Córdoba
+A-4 - Saída 519,A-4 - Saída 521,Carro,True,Sevilha
+A-4 - Saída 521,A-4 - Saída 523,Carro,False,Córdoba
+A-4 - Saída 521,A-4 - Saída 523,Carro,True,Aeroporto de Sevilha - San Pablo
+A-4 - Saída 521,A-4 - Saída 523,Carro,True,Cádiz
+A-4 - Saída 521,A-4 - Saída 523,Carro,True,Sevilha
+A-4 - Saída 523,A-4 - Saída 524,Carro,False,Carmona
+A-4 - Saída 523,A-4 - Saída 524,Carro,False,Córdoba
+A-4 - Saída 523,A-4 - Saída 524,Carro,True,Sevilha
+A-4 - Saída 524,Cruzamento da A-4 Norte com a SE-40,Carro,False,Carmona
+A-4 - Saída 524,Cruzamento da A-4 Norte com a SE-40,Carro,False,Córdoba
+A-4 - Saída 524,Cruzamento da A-4 Norte com a SE-40,Carro,True,Sevilha
+A-4 - Saída 528,A-4 - Saída 530,Carro,False,Carmona
+A-4 - Saída 528,A-4 - Saída 530,Carro,False,Córdoba
+A-4 - Saída 528,A-4 - Saída 530,Carro,True,Sevilha
+A-4 - Saída 528,Cruzamento da A-4 Norte com a SE-40,Carro,False,Aeroporto de Sevilha - San Pablo
+A-4 - Saída 528,Cruzamento da A-4 Norte com a SE-40,Carro,False,Sevilha
+A-4 - Saída 528,Cruzamento da A-4 Norte com a SE-40,Carro,True,Carmona
+A-4 - Saída 528,Cruzamento da A-4 Norte com a SE-40,Carro,True,Córdoba
+A-4 - Saída 530,A-4 - Saída 532,Carro,False,Carmona
+A-4 - Saída 530,A-4 - Saída 532,Carro,False,Córdoba
+A-4 - Saída 530,A-4 - Saída 532,Carro,True,Aeroporto de Sevilha - San Pablo
+A-4 - Saída 530,A-4 - Saída 532,Carro,True,Cádiz
+A-4 - Saída 530,A-4 - Saída 532,Carro,True,Sevilha
+A-4 - Saída 532,A-4 - Saída 533,Carro,False,Carmona
+A-4 - Saída 532,A-4 - Saída 533,Carro,False,Córdoba
+A-4 - Saída 532,A-4 - Saída 533,Carro,True,Cádiz
+A-4 - Saída 532,A-4 - Saída 533,Carro,True,Sevilha
+A-4 - Saída 533,Cruzamento da A-4 com a SE-20,Carro,False,Aeroporto de Sevilha - San Pablo
+A-4 - Saída 533,Cruzamento da A-4 com a SE-20,Carro,False,Carmona
+A-4 - Saída 533,Cruzamento da A-4 com a SE-20,Carro,False,Córdoba
+A-4 - Saída 533,Cruzamento da A-4 com a SE-20,Carro,True,Cádiz
+A-4 - Saída 533,Cruzamento da A-4 com a SE-20,Carro,True,Sevilha
+A-4 - Saída 536,Cruzamento da A-4 Norte com a SE-30,Carro,False,Aeroporto de Sevilha - San Pablo
+A-4 - Saída 536,Cruzamento da A-4 Norte com a SE-30,Carro,False,Carmona
+A-4 - Saída 536,Cruzamento da A-4 Norte com a SE-30,Carro,False,Córdoba
+A-4 - Saída 536,Cruzamento da A-4 Norte com a SE-30,Carro,True,Cádiz
+A-4 - Saída 536,Cruzamento da A-4 Norte com a SE-30,Carro,True,Sevilha
+A-4 - Saída 536,Cruzamento da A-4 com a SE-20,Carro,False,Cádiz
+A-4 - Saída 536,Cruzamento da A-4 com a SE-20,Carro,False,Sevilha
+A-4 - Saída 536,Cruzamento da A-4 com a SE-20,Carro,True,Aeroporto de Sevilha - San Pablo
+A-4 - Saída 536,Cruzamento da A-4 com a SE-20,Carro,True,Carmona
+A-4 - Saída 536,Cruzamento da A-4 com a SE-20,Carro,True,Córdoba
+A-4 - Saída 553,A-4 - Saída 558,Carro,False,Sevilha
+A-4 - Saída 553,A-4 - Saída 558,Carro,True,Cádiz
+A-4 - Saída 553,Cruzamento da A-4 Sul com a SE-40,Carro,False,Cádiz
+A-4 - Saída 553,Cruzamento da A-4 Sul com a SE-40,Carro,False,Dos Hermanas
+A-4 - Saída 553,Cruzamento da A-4 Sul com a SE-40,Carro,True,Aeroporto de Sevilha - San Pablo
+A-4 - Saída 553,Cruzamento da A-4 Sul com a SE-40,Carro,True,Sevilha
+A-4 - Saída 558,AP-4 - Início,Carro,False,Sevilha
+A-4 - Saída 558,AP-4 - Início,Carro,True,Cádiz
+A-4 - Saída 628,A-4 - Saída 631,Carro,False,Aeroporto de Jerez
+A-4 - Saída 628,A-4 - Saída 631,Carro,False,El Cuervo de Sevilla
+A-4 - Saída 628,A-4 - Saída 631,Carro,False,Sevilha
+A-4 - Saída 628,A-4 - Saída 631,Carro,True,Cádiz
+A-4 - Saída 628,A-4 - Saída 631,Carro,True,Jerez de la Frontera
+A-4 - Saída 628,Aeroporto de Jerez,Carro,False,A-4 - Todas as direcções
+A-4 - Saída 628,Aeroporto de Jerez,Carro,True,Aeroporto de Jerez
+A-4 - Saída 628,El Cuervo de Sevilla,Carro,False,Cádiz
+A-4 - Saída 628,El Cuervo de Sevilla,Carro,False,Jerez de la Frontera
+A-4 - Saída 628,El Cuervo de Sevilla,Carro,True,El Cuervo de Sevilla
+A-4 - Saída 628,El Cuervo de Sevilla,Carro,True,Sevilha
+A-45 - Saída 5,Cruzamento da A-4 com a A-45,Carro,False,Málaga
+A-45 - Saída 5,Cruzamento da A-4 com a A-45,Carro,True,Córdoba
+A-45 - Saída 92,Cruzamento da A-45 com a A-92,Carro,False,Benamejí
+A-45 - Saída 92,Cruzamento da A-45 com a A-92,Carro,False,Córdoba
+A-45 - Saída 92,Cruzamento da A-45 com a A-92,Carro,True,Antequera
+A-45 - Saída 92,Cruzamento da A-45 com a A-92,Carro,True,Málaga
+A-45 - Saída 102,Cruzamento da A-45 com a A-92,Carro,False,Casabermeja
+A-45 - Saída 102,Cruzamento da A-45 com a A-92,Carro,False,Málaga
+A-45 - Saída 102,Cruzamento da A-45 com a A-92,Carro,True,Córdoba
+A-45 - Saída 102,Cruzamento da A-45 com a A-92,Carro,True,Granada
+A-45 - Saída 102,Cruzamento da A-45 com a A-92,Carro,True,Sevilha
+A-483 - Saída 1,A-483 - Saída 3,Carro,False,A-49 - Huelva/Sevilha
+A-483 - Saída 1,A-483 - Saída 3,Carro,True,Almonte
+A-483 - Saída 1,A-483 - Saída 3,Carro,True,El Rocio
+A-483 - Saída 1,Cruzamento da A-49 com a A-483,Carro,False,Almonte
+A-483 - Saída 1,Cruzamento da A-49 com a A-483,Carro,False,Parque Nacional de Doñana
+A-483 - Saída 1,Cruzamento da A-49 com a A-483,Carro,True,A-49 - Huelva/Sevilha
+A-49 - Saída 1,A-49 - Saída 1B,Carro,False,A-4 - Cádiz/Córdoba/Porto de Sevilha/Aeroporto de Sevilha - San Pablo
+A-49 - Saída 1,A-49 - Saída 1B,Carro,False,A-66 - Mérida
+A-49 - Saída 1,A-49 - Saída 1B,Carro,False,A-92 - Granada
+A-49 - Saída 1,A-49 - Saída 1B,Carro,False,Camas
+A-49 - Saída 1,A-49 - Saída 1B,Carro,False,Sevilha - Centro da cidade
+A-49 - Saída 1,A-49 - Saída 1B,Carro,True,Huelva
+A-49 - Saída 1,Cruzamento da A-49 com a SE-30,Carro,False,Camas
+A-49 - Saída 1,Cruzamento da A-49 com a SE-30,Carro,False,Huelva
+A-49 - Saída 1,Cruzamento da A-49 com a SE-30,Carro,True,A-4 - Cádiz/Córdoba/Porto de Sevilha/Aeroporto de Sevilha - San Pablo
+A-49 - Saída 1,Cruzamento da A-49 com a SE-30,Carro,True,A-66 - Mérida
+A-49 - Saída 1,Cruzamento da A-49 com a SE-30,Carro,True,A-92 - Granada
+A-49 - Saída 1,Cruzamento da A-49 com a SE-30,Carro,True,Sevilha - Centro da cidade
+A-49 - Saída 1B,A-49 - Saída 2,Carro,False,Sevilha
+A-49 - Saída 1B,A-49 - Saída 2,Carro,True,Huelva
+A-49 - Saída 1B,A-49 - Saída 2,Carro,True,Portugal
+A-49 - Saída 2,A-49 - Saída 3,Carro,False,Sevilha
+A-49 - Saída 2,A-49 - Saída 3,Carro,True,Huelva
+A-49 - Saída 2,A-49 - Saída 3,Carro,True,Portugal
+A-49 - Saída 3,A-49 - Saída 5,Carro,False,Sevilha - Centro da cidade
+A-49 - Saída 3,A-49 - Saída 5,Carro,True,Huelva
+A-49 - Saída 5,Cruzamento da A-49 com a SE-40,Carro,False,Sevilha - Centro da cidade
+A-49 - Saída 5,Cruzamento da A-49 com a SE-40,Carro,True,Huelva
+A-49 - Saída 5,Cruzamento da A-49 com a SE-40,Carro,True,Portugal
+A-49 - Saída 11,A-49 - Saída 14,Carro,False,Sevilha
+A-49 - Saída 11,A-49 - Saída 14,Carro,True,Huelva
+A-49 - Saída 11,A-49 - Saída 14,Carro,True,Portugal
+A-49 - Saída 11,Cruzamento da A-49 com a SE-40,Carro,False,Huelva
+A-49 - Saída 11,Cruzamento da A-49 com a SE-40,Carro,False,Portugal
+A-49 - Saída 11,Cruzamento da A-49 com a SE-40,Carro,True,Sevilha
+A-49 - Saída 14,A-49 - Saída 16,Carro,False,Sevilha
+A-49 - Saída 14,A-49 - Saída 16,Carro,True,Huelva
+A-49 - Saída 14,A-49 - Saída 16,Carro,True,Portugal
+A-49 - Saída 16,A-49 - Saída 23,Carro,False,Sevilha
+A-49 - Saída 16,A-49 - Saída 23,Carro,True,Huelva
+A-49 - Saída 16,A-49 - Saída 23,Carro,True,Portugal
+A-49 - Saída 23,A-49 - Saída 28,Carro,False,Sevilha
+A-49 - Saída 23,A-49 - Saída 28,Carro,True,Huelva
+A-49 - Saída 23,A-49 - Saída 28,Carro,True,Portugal
+A-49 - Saída 28,A-49 - Saída 34,Carro,False,Sevilha
+A-49 - Saída 28,A-49 - Saída 34,Carro,True,Huelva
+A-49 - Saída 28,A-49 - Saída 34,Carro,True,Portugal
+A-49 - Saída 34,A-49 - Saída 48,Carro,False,Sevilha
+A-49 - Saída 34,A-49 - Saída 48,Carro,True,Huelva
+A-49 - Saída 34,A-49 - Saída 48,Carro,True,Portugal
+A-49 - Saída 48,Cruzamento da A-49 com a A-483,Carro,False,Sevilha
+A-49 - Saída 48,Cruzamento da A-49 com a A-483,Carro,True,Huelva
+A-49 - Saída 48,Cruzamento da A-49 com a A-483,Carro,True,Portugal
+A-49 - Saída 53,A-49 - Saída 60,Carro,False,Sevilha
+A-49 - Saída 53,A-49 - Saída 60,Carro,True,Huelva
+A-49 - Saída 53,A-49 - Saída 60,Carro,True,Portugal
+A-49 - Saída 53,Cruzamento da A-49 com a A-483,Carro,False,Huelva
+A-49 - Saída 53,Cruzamento da A-49 com a A-483,Carro,False,Portugal
+A-49 - Saída 53,Cruzamento da A-49 com a A-483,Carro,True,Sevilha
+A-49 - Saída 60,A-49 - Saída 75,Carro,False,Sevilha
+A-49 - Saída 60,A-49 - Saída 75,Carro,True,Huelva
+A-49 - Saída 60,A-49 - Saída 75,Carro,True,Portugal
+A-49 - Saída 75,Cruzamento da A-49 com a H-31,Carro,False,Sevilha
+A-49 - Saída 75,Cruzamento da A-49 com a H-31,Carro,True,Huelva
+A-49 - Saída 75,Cruzamento da A-49 com a H-31,Carro,True,Portugal
+A-49 - Saída 81,A-49 - Saída 87,Carro,False,Sevilha
+A-49 - Saída 81,A-49 - Saída 87,Carro,True,Gibraleón
+A-49 - Saída 81,A-49 - Saída 87,Carro,True,Portugal
+A-49 - Saída 81,Cruzamento da A-49 com a H-31,Carro,False,Portugal
+A-49 - Saída 81,Cruzamento da A-49 com a H-31,Carro,True,Sevilha
+A-49 - Saída 87,A-49 - Saída 94,Carro,False,Gibraleón
+A-49 - Saída 87,A-49 - Saída 94,Carro,False,Huelva
+A-49 - Saída 87,A-49 - Saída 94,Carro,True,Cartaya
+A-49 - Saída 87,A-49 - Saída 94,Carro,True,Portugal
+A-49 - Saída 94,A-49 - Saída 99,Carro,False,Huelva Norte
+A-49 - Saída 94,A-49 - Saída 99,Carro,False,Sevilha
+A-49 - Saída 94,A-49 - Saída 99,Carro,True,Cartaya
+A-49 - Saída 94,A-49 - Saída 99,Carro,True,Portugal
+A-49 - Saída 99,A-49 - Saída 105,Carro,False,Gibraleón
+A-49 - Saída 99,A-49 - Saída 105,Carro,False,Huelva
+A-49 - Saída 99,A-49 - Saída 105,Carro,True,Cartaya
+A-49 - Saída 99,A-49 - Saída 105,Carro,True,Portugal
+A-49 - Saída 105,A-49 - Saída 113,Carro,False,Cartaya
+A-49 - Saída 105,A-49 - Saída 113,Carro,False,Huelva
+A-49 - Saída 105,A-49 - Saída 113,Carro,True,Lepe
+A-49 - Saída 105,A-49 - Saída 113,Carro,True,Portugal
+A-49 - Saída 113,A-49 - Saída 117,Carro,False,Huelva
+A-49 - Saída 113,A-49 - Saída 117,Carro,False,Lepe
+A-49 - Saída 113,A-49 - Saída 117,Carro,True,Lepe
+A-49 - Saída 113,A-49 - Saída 117,Carro,True,Portugal
+A-49 - Saída 117,A-49 - Saída 122,Carro,False,Huelva
+A-49 - Saída 117,A-49 - Saída 122,Carro,False,Lepe
+A-49 - Saída 117,A-49 - Saída 122,Carro,True,Ayamonte
+A-49 - Saída 117,A-49 - Saída 122,Carro,True,Portugal
+A-49 - Saída 122,A-49 - Saída 125,Carro,False,Huelva
+A-49 - Saída 122,A-49 - Saída 125,Carro,False,Lepe
+A-49 - Saída 122,A-49 - Saída 125,Carro,True,Ayamonte
+A-49 - Saída 122,A-49 - Saída 125,Carro,True,Portugal
+A-49 - Saída 125,A-49 - Saída 129,Carro,False,Huelva
+A-49 - Saída 125,A-49 - Saída 129,Carro,False,Lepe
+A-49 - Saída 125,A-49 - Saída 129,Carro,True,Ayamonte
+A-49 - Saída 125,A-49 - Saída 129,Carro,True,Portugal
+A-49 - Saída 129,A-49 - Saída 131,Carro,False,Ayamonte
+A-49 - Saída 129,A-49 - Saída 131,Carro,False,Huelva
+A-49 - Saída 129,A-49 - Saída 131,Carro,True,Ayamonte
+A-49 - Saída 129,A-49 - Saída 131,Carro,True,Portugal
+A-49 - Saída 131,Ponte Internacional do Guadiana,Carro,False,Ayamonte
+A-49 - Saída 131,Ponte Internacional do Guadiana,Carro,False,Huelva
+A-49 - Saída 131,Ponte Internacional do Guadiana,Carro,True,Portugal
+A-5 - Saída 342,Cruzamento da A-5 com a A-66 Sul,Carro,False,A-66 - Cáceres
+A-5 - Saída 342,Cruzamento da A-5 com a A-66 Sul,Carro,False,Madrid
+A-5 - Saída 342,Cruzamento da A-5 com a A-66 Sul,Carro,True,Badajoz
+A-5 - Saída 346,A-5 - Saída 352,Carro,False,Madrid
+A-5 - Saída 346,A-5 - Saída 352,Carro,False,Mérida
+A-5 - Saída 346,A-5 - Saída 352,Carro,True,Badajoz
+A-5 - Saída 346,Cruzamento da A-5 com a A-66 Sul,Carro,False,Badajoz
+A-5 - Saída 346,Cruzamento da A-5 com a A-66 Sul,Carro,True,A-66 - Cáceres
+A-5 - Saída 346,Cruzamento da A-5 com a A-66 Sul,Carro,True,Madrid
+A-66 - Saída 626,A-66 - Saída 627,Carro,False,Mérida
+A-66 - Saída 626,A-66 - Saída 627,Carro,True,Sevilha
+A-66 - Saída 626,Cruzamento da A-5 com a A-66 Sul,Carro,False,Sevilha
+A-66 - Saída 626,Cruzamento da A-5 com a A-66 Sul,Carro,True,A-5 - Badajoz/Madrid
+A-66 - Saída 626,Cruzamento da A-5 com a A-66 Sul,Carro,True,Cáceres
+A-66 - Saída 627,A-66 - Saída 630,Carro,False,Mérida
+A-66 - Saída 627,A-66 - Saída 630,Carro,True,Sevilha
+A-66 - Saída 627,A-66 - Saída 630,Carro,True,Torremejía
+A-66 - Saída 630,A-66 - Saída 636,Carro,False,Mérida
+A-66 - Saída 630,A-66 - Saída 636,Carro,True,Sevilha
+A-66 - Saída 636,A-66 - Saída 641,Carro,False,Mérida
+A-66 - Saída 636,A-66 - Saída 641,Carro,True,Almendralejo
+A-66 - Saída 636,A-66 - Saída 641,Carro,True,Sevilha
+A-66 - Saída 641,A-66 - Saída 648,Carro,False,Mérida
+A-66 - Saída 641,A-66 - Saída 648,Carro,True,Almendralejo
+A-66 - Saída 641,A-66 - Saída 648,Carro,True,Sevilha
+A-66 - Saída 648,A-66 - Saída 650,Carro,False,Mérida
+A-66 - Saída 648,A-66 - Saída 650,Carro,False,Torremejía
+A-66 - Saída 648,A-66 - Saída 650,Carro,True,Sevilha
+A-66 - Saída 650,A-66 - Saída 652,Carro,False,Mérida
+A-66 - Saída 650,A-66 - Saída 652,Carro,True,Sevilha
+A-66 - Saída 652,A-66 - Saída 654,Carro,False,Mérida
+A-66 - Saída 652,A-66 - Saída 654,Carro,True,Sevilha
+A-66 - Saída 652,A-66 - Saída 654,Carro,True,Villafranca de los Barros
+A-66 - Saída 654,A-66 - Saída 657,Carro,False,Almendralejo
+A-66 - Saída 654,A-66 - Saída 657,Carro,False,Mérida
+A-66 - Saída 654,A-66 - Saída 657,Carro,True,Sevilha
+A-66 - Saída 657,A-66 - Saída 659,Carro,False,Mérida
+A-66 - Saída 657,A-66 - Saída 659,Carro,True,Sevilha
+A-66 - Saída 659,A-66 - Saída 662,Carro,False,Mérida
+A-66 - Saída 659,A-66 - Saída 662,Carro,True,Sevilha
+A-66 - Saída 662,A-66 - Saída 666,Carro,False,Mérida
+A-66 - Saída 662,A-66 - Saída 666,Carro,True,Sevilha
+A-66 - Saída 666,A-66 - Saída 670,Carro,False,Mérida
+A-66 - Saída 666,A-66 - Saída 670,Carro,True,Córdoba
+A-66 - Saída 666,A-66 - Saída 670,Carro,True,Sevilha
+A-66 - Saída 670,A-66 - Saída 675,Carro,False,Mérida
+A-66 - Saída 670,A-66 - Saída 675,Carro,True,Córdoba
+A-66 - Saída 670,A-66 - Saída 675,Carro,True,Sevilha
+A-66 - Saída 675,A-66 - Saída 677,Carro,False,Mérida
+A-66 - Saída 675,A-66 - Saída 677,Carro,True,Córdoba
+A-66 - Saída 675,A-66 - Saída 677,Carro,True,Sevilha
+A-66 - Saída 677,A-66 - Saída 682,Carro,False,Mérida
+A-66 - Saída 677,A-66 - Saída 682,Carro,True,Córdoba
+A-66 - Saída 677,A-66 - Saída 682,Carro,True,Sevilha
+A-66 - Saída 682,A-66 - Saída 684,Carro,False,Mérida
+A-66 - Saída 682,A-66 - Saída 684,Carro,True,Córdoba
+A-66 - Saída 682,A-66 - Saída 684,Carro,True,Sevilha
+A-66 - Saída 684,A-66 - Saída 687,Carro,False,Mérida
+A-66 - Saída 684,A-66 - Saída 687,Carro,True,Sevilha
+A-66 - Saída 687,A-66 - Saída 694,Carro,False,Mérida
+A-66 - Saída 687,A-66 - Saída 694,Carro,True,Sevilha
+A-66 - Saída 694,A-66 - Saída 700,Carro,False,Mérida
+A-66 - Saída 694,A-66 - Saída 700,Carro,True,Sevilha
+A-66 - Saída 700,A-66 - Saída 704,Carro,False,Mérida
+A-66 - Saída 700,A-66 - Saída 704,Carro,True,Sevilha
+A-66 - Saída 704,A-66 - Saída 715,Carro,False,Mérida
+A-66 - Saída 704,A-66 - Saída 715,Carro,True,Sevilha
+A-66 - Saída 715,A-66 - Saída 719,Carro,False,Mérida
+A-66 - Saída 715,A-66 - Saída 719,Carro,True,Sevilha
+A-66 - Saída 719,A-66 - Saída 722,Carro,False,Mérida
+A-66 - Saída 719,A-66 - Saída 722,Carro,True,Sevilha
+A-66 - Saída 722,A-66 - Saída 730,Carro,False,Mérida
+A-66 - Saída 722,A-66 - Saída 730,Carro,False,Monesterio
+A-66 - Saída 722,A-66 - Saída 730,Carro,True,Sevilha
+A-66 - Saída 730,A-66 - Saída 741,Carro,False,Mérida
+A-66 - Saída 730,A-66 - Saída 741,Carro,False,Monesterio
+A-66 - Saída 730,A-66 - Saída 741,Carro,True,Sevilha
+A-66 - Saída 741,A-66 - Saída 745,Carro,False,Mérida
+A-66 - Saída 741,A-66 - Saída 745,Carro,False,Monesterio
+A-66 - Saída 741,A-66 - Saída 745,Carro,True,Santa Olalla del Cala
+A-66 - Saída 741,A-66 - Saída 745,Carro,True,Sevilha
+A-66 - Saída 745,A-66 - Saída 747,Carro,False,Mérida
+A-66 - Saída 745,A-66 - Saída 747,Carro,False,Monesterio
+A-66 - Saída 745,A-66 - Saída 747,Carro,True,El Ronquillo
+A-66 - Saída 745,A-66 - Saída 747,Carro,True,Sevilha
+A-66 - Saída 747,A-66 - Saída 765,Carro,False,Mérida
+A-66 - Saída 747,A-66 - Saída 765,Carro,False,Santa Olalla del Cala
+A-66 - Saída 747,A-66 - Saída 765,Carro,True,El Ronquillo
+A-66 - Saída 747,A-66 - Saída 765,Carro,True,Sevilha
+A-66 - Saída 765,A-66 - Saída 768,Carro,False,Mérida
+A-66 - Saída 765,A-66 - Saída 768,Carro,False,Santa Olalla del Cala
+A-66 - Saída 765,A-66 - Saída 768,Carro,True,El Ronquillo
+A-66 - Saída 765,A-66 - Saída 768,Carro,True,Sevilha
+A-66 - Saída 768,A-66 - Saída 771,Carro,False,Mérida
+A-66 - Saída 768,A-66 - Saída 771,Carro,False,Santa Olalla del Cala
+A-66 - Saída 768,A-66 - Saída 771,Carro,True,Sevilha
+A-66 - Saída 771,A-66 - Saída 782,Carro,False,El Ronquillo
+A-66 - Saída 771,A-66 - Saída 782,Carro,False,Mérida
+A-66 - Saída 771,A-66 - Saída 782,Carro,True,Sevilha
+A-66 - Saída 782,A-66 - Saída 790,Carro,False,Mérida
+A-66 - Saída 782,A-66 - Saída 790,Carro,False,Portugal
+A-66 - Saída 782,A-66 - Saída 790,Carro,True,Sevilha
+A-66 - Saída 790,A-66 - Saída 795,Carro,False,Mérida
+A-66 - Saída 790,A-66 - Saída 795,Carro,True,Sevilha
+A-66 - Saída 795,A-66 - Saída 798,Carro,False,Mérida
+A-66 - Saída 795,A-66 - Saída 798,Carro,False,Portugal
+A-66 - Saída 795,A-66 - Saída 798,Carro,False,Venta del Alto
+A-66 - Saída 795,A-66 - Saída 798,Carro,True,Sevilha
+A-66 - Saída 798,A-66 - Saída 805,Carro,False,Mérida
+A-66 - Saída 798,A-66 - Saída 805,Carro,False,Portugal
+A-66 - Saída 798,A-66 - Saída 805,Carro,False,Venta del Alto
+A-66 - Saída 798,A-66 - Saída 805,Carro,True,Sevilha
+A-66 - Saída 805,A-66 - Saída 808,Carro,False,Mérida
+A-66 - Saída 805,A-66 - Saída 808,Carro,False,Portugal
+A-66 - Saída 805,A-66 - Saída 808,Carro,False,Venta del Alto
+A-66 - Saída 805,A-66 - Saída 808,Carro,True,Sevilha
+A-66 - Saída 808,Cruzamento da A-66 com a SE-30,Carro,False,Mérida
+A-66 - Saída 808,Cruzamento da A-66 com a SE-30,Carro,False,Venta del Alto
+A-66 - Saída 808,Cruzamento da A-66 com a SE-30,Carro,True,Sevilha
+A-7 - Saída 103,A-7 - Saída 104,Carro,False,Cádiz
+A-7 - Saída 103,A-7 - Saída 104,Carro,False,Tarifa
+A-7 - Saída 103,A-7 - Saída 104,Carro,True,Málaga
+A-7 - Saída 103,A-7 - Saída 104,Carro,True,San Roque
+A-7 - Saída 103,A-7 - Saída 104,Carro,True,Sevilha
+A-7 - Saída 104,A-7 - Saída 105,Carro,False,Cádiz
+A-7 - Saída 104,A-7 - Saída 105,Carro,False,Tarifa
+A-7 - Saída 104,A-7 - Saída 105,Carro,True,Málaga
+A-7 - Saída 104,A-7 - Saída 105,Carro,True,San Roque
+A-7 - Saída 104,A-7 - Saída 105,Carro,True,Sevilha
+A-7 - Saída 105,A-7 - Saída 106,Carro,False,Cádiz
+A-7 - Saída 105,A-7 - Saída 106,Carro,False,Tarifa
+A-7 - Saída 105,A-7 - Saída 106,Carro,True,Málaga
+A-7 - Saída 105,A-7 - Saída 106,Carro,True,San Roque
+A-7 - Saída 105,A-7 - Saída 106,Carro,True,Sevilha
+A-7 - Saída 106,A-7 - Saída 107A,Carro,False,Cádiz
+A-7 - Saída 106,A-7 - Saída 107A,Carro,False,Tarifa
+A-7 - Saída 106,A-7 - Saída 107A,Carro,True,Málaga
+A-7 - Saída 106,A-7 - Saída 107A,Carro,True,San Roque
+A-7 - Saída 106,A-7 - Saída 107A,Carro,True,Sevilha
+A-7 - Saída 107A,A-7 - Saída 107B,Carro,False,Cádiz
+A-7 - Saída 107A,A-7 - Saída 107B,Carro,False,Tarifa
+A-7 - Saída 107A,A-7 - Saída 107B,Carro,True,Málaga
+A-7 - Saída 107A,A-7 - Saída 107B,Carro,True,San Roque
+A-7 - Saída 107A,A-7 - Saída 107B,Carro,True,Sevilha
+A-7 - Saída 107B,A-7 - Saída 108A,Carro,False,Cádiz
+A-7 - Saída 107B,A-7 - Saída 108A,Carro,False,Tarifa
+A-7 - Saída 107B,A-7 - Saída 108A,Carro,True,Málaga
+A-7 - Saída 107B,A-7 - Saída 108A,Carro,True,San Roque
+A-7 - Saída 107B,A-7 - Saída 108A,Carro,True,Sevilha
+A-7 - Saída 108A,A-7 - Saída 108B,Carro,False,Cádiz
+A-7 - Saída 108A,A-7 - Saída 108B,Carro,False,Tarifa
+A-7 - Saída 108A,A-7 - Saída 108B,Carro,True,Málaga
+A-7 - Saída 108A,A-7 - Saída 108B,Carro,True,San Roque
+A-7 - Saída 108A,A-7 - Saída 108B,Carro,True,Sevilha
+A-7 - Saída 108B,A-7 - Saída 108C,Carro,False,Algeciras - Centro da cidade
+A-7 - Saída 108B,A-7 - Saída 108C,Carro,False,Cádiz
+A-7 - Saída 108B,A-7 - Saída 108C,Carro,False,Tarifa
+A-7 - Saída 108B,A-7 - Saída 108C,Carro,True,Málaga
+A-7 - Saída 108B,A-7 - Saída 108C,Carro,True,San Roque
+A-7 - Saída 108B,A-7 - Saída 108C,Carro,True,Sevilha
+A-7 - Saída 108C,A-7 - Saída 109,Carro,False,Algeciras
+A-7 - Saída 108C,A-7 - Saída 109,Carro,False,Cádiz
+A-7 - Saída 108C,A-7 - Saída 109,Carro,True,Málaga
+A-7 - Saída 108C,A-7 - Saída 109,Carro,True,San Roque
+A-7 - Saída 108C,A-7 - Saída 109,Carro,True,Sevilha
+A-7 - Saída 109,A-7 - Saída 110A,Carro,False,Algeciras
+A-7 - Saída 109,A-7 - Saída 110A,Carro,False,Cádiz
+A-7 - Saída 109,A-7 - Saída 110A,Carro,True,Málaga
+A-7 - Saída 109,A-7 - Saída 110A,Carro,True,San Roque
+A-7 - Saída 109,A-7 - Saída 110A,Carro,True,Sevilha
+A-7 - Saída 110A,Cruzamento da A-381 com a A-7,Carro,False,Algeciras
+A-7 - Saída 110A,Cruzamento da A-381 com a A-7,Carro,False,Cádiz
+A-7 - Saída 110A,Cruzamento da A-381 com a A-7,Carro,True,Estepona
+A-7 - Saída 110A,Cruzamento da A-381 com a A-7,Carro,True,Málaga
+A-7 - Saída 110A,Cruzamento da A-381 com a A-7,Carro,True,San Roque
+A-7 - Saída 111,A-7 - Saída 112,Carro,False,Algeciras
+A-7 - Saída 111,A-7 - Saída 112,Carro,False,Cádiz
+A-7 - Saída 111,A-7 - Saída 112,Carro,False,Sevilha
+A-7 - Saída 111,A-7 - Saída 112,Carro,True,Estepona
+A-7 - Saída 111,A-7 - Saída 112,Carro,True,Málaga
+A-7 - Saída 111,A-7 - Saída 112,Carro,True,San Roque
+A-7 - Saída 111,Cruzamento da A-381 com a A-7,Carro,False,Estepona
+A-7 - Saída 111,Cruzamento da A-381 com a A-7,Carro,False,Málaga
+A-7 - Saída 111,Cruzamento da A-381 com a A-7,Carro,False,San Roque
+A-7 - Saída 111,Cruzamento da A-381 com a A-7,Carro,True,Algeciras
+A-7 - Saída 111,Cruzamento da A-381 com a A-7,Carro,True,Cádiz
+A-7 - Saída 111,Cruzamento da A-381 com a A-7,Carro,True,Sevilha
+A-7 - Saída 112,A-7 - Saída 113A,Carro,False,Algeciras
+A-7 - Saída 112,A-7 - Saída 113A,Carro,False,Cádiz
+A-7 - Saída 112,A-7 - Saída 113A,Carro,False,Sevilha
+A-7 - Saída 112,A-7 - Saída 113A,Carro,True,Málaga
+A-7 - Saída 112,A-7 - Saída 113A,Carro,True,San Roque
+A-7 - Saída 113A,A-7 - Saída 113B,Carro,False,Algeciras
+A-7 - Saída 113A,A-7 - Saída 113B,Carro,False,Cádiz
+A-7 - Saída 113A,A-7 - Saída 113B,Carro,False,Sevilha
+A-7 - Saída 113A,A-7 - Saída 113B,Carro,True,Málaga
+A-7 - Saída 113A,A-7 - Saída 113B,Carro,True,San Roque
+A-7 - Saída 113B,A-7 - Saída 115,Carro,False,Algeciras
+A-7 - Saída 113B,A-7 - Saída 115,Carro,False,Cádiz
+A-7 - Saída 113B,A-7 - Saída 115,Carro,False,Sevilha
+A-7 - Saída 113B,A-7 - Saída 115,Carro,True,Málaga
+A-7 - Saída 113B,A-7 - Saída 115,Carro,True,San Roque
+A-7 - Saída 115,A-7 - Saída 116,Carro,False,Algeciras
+A-7 - Saída 115,A-7 - Saída 116,Carro,False,Cádiz
+A-7 - Saída 115,A-7 - Saída 116,Carro,False,Sevilha
+A-7 - Saída 115,A-7 - Saída 116,Carro,True,Málaga
+A-7 - Saída 115,A-7 - Saída 116,Carro,True,San Roque
+A-7 - Saída 116,A-7 - Saída 117,Carro,False,Algeciras
+A-7 - Saída 116,A-7 - Saída 117,Carro,False,Cádiz
+A-7 - Saída 116,A-7 - Saída 117,Carro,False,Sevilha
+A-7 - Saída 116,A-7 - Saída 117,Carro,True,Málaga
+A-7 - Saída 116,A-7 - Saída 117,Carro,True,San Roque
+A-7 - Saída 117,Cruzamento da A-7 com a CA-34,Carro,False,Algeciras
+A-7 - Saída 117,Cruzamento da A-7 com a CA-34,Carro,False,Cádiz
+A-7 - Saída 117,Cruzamento da A-7 com a CA-34,Carro,False,Sevilha
+A-7 - Saída 117,Cruzamento da A-7 com a CA-34,Carro,True,Málaga
+A-7 - Saída 117,Cruzamento da A-7 com a CA-34,Carro,True,San Roque
+A-7 - Saída 119,Cruzamento da A-383 com a A-7,Carro,False,Algeciras
+A-7 - Saída 119,Cruzamento da A-383 com a A-7,Carro,False,Cádiz
+A-7 - Saída 119,Cruzamento da A-383 com a A-7,Carro,True,Estepona
+A-7 - Saída 119,Cruzamento da A-383 com a A-7,Carro,True,Málaga
+A-7 - Saída 119,Cruzamento da A-7 com a CA-34,Carro,False,Estepona
+A-7 - Saída 119,Cruzamento da A-7 com a CA-34,Carro,False,Málaga
+A-7 - Saída 119,Cruzamento da A-7 com a CA-34,Carro,True,Algeciras
+A-7 - Saída 119,Cruzamento da A-7 com a CA-34,Carro,True,Cádiz
+A-7 - Saída 119,Cruzamento da A-7 com a CA-34,Carro,True,Sevilha
+A-7 - Saída 127,A-7 - Saída 130,Carro,False,Algeciras
+A-7 - Saída 127,A-7 - Saída 130,Carro,False,Cádiz
+A-7 - Saída 127,A-7 - Saída 130,Carro,True,Estepona
+A-7 - Saída 127,A-7 - Saída 130,Carro,True,Málaga
+A-7 - Saída 127,Cruzamento da A-383 com a A-7,Carro,False,Estepona
+A-7 - Saída 127,Cruzamento da A-383 com a A-7,Carro,False,Málaga
+A-7 - Saída 127,Cruzamento da A-383 com a A-7,Carro,True,Algeciras
+A-7 - Saída 127,Cruzamento da A-383 com a A-7,Carro,True,Cádiz
+A-7 - Saída 130,A-7 - Saída 132,Carro,False,Algeciras
+A-7 - Saída 130,A-7 - Saída 132,Carro,False,Cádiz
+A-7 - Saída 130,A-7 - Saída 132,Carro,False,Guadiaro
+A-7 - Saída 130,A-7 - Saída 132,Carro,True,Estepona
+A-7 - Saída 130,A-7 - Saída 132,Carro,True,Málaga
+A-7 - Saída 132,Cruzamento I da A-7 com a AP-7,Carro,False,Algeciras
+A-7 - Saída 132,Cruzamento I da A-7 com a AP-7,Carro,False,Cádiz
+A-7 - Saída 132,Cruzamento I da A-7 com a AP-7,Carro,False,Guadiaro
+A-7 - Saída 132,Cruzamento I da A-7 com a AP-7,Carro,True,Estepona
+A-7 - Saída 132,Cruzamento I da A-7 com a AP-7,Carro,True,Málaga
+A-7/AP-7 - Saída 155,Cruzamento II da A-7 com a AP-7,Carro,False,Málaga
+A-7/AP-7 - Saída 155,Cruzamento II da A-7 com a AP-7,Carro,False,San Pedro de Alcántara
+A-7/AP-7 - Saída 155,Cruzamento II da A-7 com a AP-7,Carro,True,Algeciras
+A-7/AP-7 - Saída 155,Cruzamento II da A-7 com a AP-7,Carro,True,Cádiz
+A-7/AP-7 - Saída 155,Cruzamento II da A-7 com a AP-7,Carro,True,Guadiaro
+A-7/AP-7 - Saída 155,Cruzamento III da A-7 com a AP-7,Carro,False,Algeciras
+A-7/AP-7 - Saída 155,Cruzamento III da A-7 com a AP-7,Carro,False,Cádiz
+A-7/AP-7 - Saída 155,Cruzamento III da A-7 com a AP-7,Carro,False,Guadiaro
+A-7/AP-7 - Saída 155,Cruzamento III da A-7 com a AP-7,Carro,True,Málaga
+A-7/AP-7 - Saída 155,Cruzamento III da A-7 com a AP-7,Carro,True,San Pedro de Alcántara
+A-7 - Saída 158,A-7 - Saída 160,Carro,False,Cádiz
+A-7 - Saída 158,A-7 - Saída 160,Carro,False,Estepona
+A-7 - Saída 158,A-7 - Saída 160,Carro,True,Málaga
+A-7 - Saída 158,A-7 - Saída 160,Carro,True,San Pedro de Alcántara
+A-7 - Saída 158,Cruzamento III da A-7 com a AP-7,Carro,False,Estepona
+A-7 - Saída 158,Cruzamento III da A-7 com a AP-7,Carro,False,Málaga
+A-7 - Saída 158,Cruzamento III da A-7 com a AP-7,Carro,False,San Pedro de Alcántara
+A-7 - Saída 158,Cruzamento III da A-7 com a AP-7,Carro,True,Algeciras
+A-7 - Saída 158,Cruzamento III da A-7 com a AP-7,Carro,True,Cádiz
+A-7 - Saída 158,Cruzamento III da A-7 com a AP-7,Carro,True,Guadiaro
+A-7 - Saída 160,A-7 - Saída 163,Carro,False,Algeciras
+A-7 - Saída 160,A-7 - Saída 163,Carro,False,Estepona
+A-7 - Saída 160,A-7 - Saída 163,Carro,True,Málaga
+A-7 - Saída 160,A-7 - Saída 163,Carro,True,Marbella
+A-7 - Saída 163,A-7 - Saída 165,Carro,False,Cádiz
+A-7 - Saída 163,A-7 - Saída 165,Carro,False,Estepona
+A-7 - Saída 163,A-7 - Saída 165,Carro,True,Málaga
+A-7 - Saída 163,A-7 - Saída 165,Carro,True,Marbella
+A-7 - Saída 165,A-7 - Saída 168,Carro,False,Cádiz
+A-7 - Saída 165,A-7 - Saída 168,Carro,False,Estepona
+A-7 - Saída 165,A-7 - Saída 168,Carro,True,Málaga
+A-7 - Saída 165,A-7 - Saída 168,Carro,True,Marbella
+A-7 - Saída 168,A-7 - Saída 170,Carro,False,Algeciras
+A-7 - Saída 168,A-7 - Saída 170,Carro,False,Estepona
+A-7 - Saída 168,A-7 - Saída 170,Carro,True,Málaga
+A-7 - Saída 168,A-7 - Saída 170,Carro,True,Marbella
+A-7 - Saída 170,A-7 - Saída 172,Carro,False,Algeciras
+A-7 - Saída 170,A-7 - Saída 172,Carro,False,Estepona
+A-7 - Saída 170,A-7 - Saída 172,Carro,True,Málaga
+A-7 - Saída 170,A-7 - Saída 172,Carro,True,Marbella
+A-7 - Saída 172,A-7 - Saída 174,Carro,False,Algeciras
+A-7 - Saída 172,A-7 - Saída 174,Carro,False,Estepona
+A-7 - Saída 172,A-7 - Saída 174,Carro,False,San Pedro de Alcántara
+A-7 - Saída 172,A-7 - Saída 174,Carro,True,Málaga
+A-7 - Saída 172,A-7 - Saída 174,Carro,True,Marbella
+A-7 - Saída 174,A-7 - Saída 175,Carro,False,Algeciras
+A-7 - Saída 174,A-7 - Saída 175,Carro,False,Cádiz
+A-7 - Saída 174,A-7 - Saída 175,Carro,False,San Pedro de Alcántara
+A-7 - Saída 174,A-7 - Saída 175,Carro,True,Málaga
+A-7 - Saída 174,A-7 - Saída 175,Carro,True,Marbella
+A-7 - Saída 175,A-7 - Saída 176,Carro,False,Algeciras
+A-7 - Saída 175,A-7 - Saída 176,Carro,False,Estepona
+A-7 - Saída 175,A-7 - Saída 176,Carro,True,Fuengirola
+A-7 - Saída 175,A-7 - Saída 176,Carro,True,Málaga
+A-7 - Saída 176,Cruzamento IV da A-7 com a AP-7,Carro,False,Algeciras
+A-7 - Saída 176,Cruzamento IV da A-7 com a AP-7,Carro,False,Estepona
+A-7 - Saída 176,Cruzamento IV da A-7 com a AP-7,Carro,True,Fuengirola
+A-7 - Saída 176,Cruzamento IV da A-7 com a AP-7,Carro,True,Málaga
+A-7/AP-7 - Saída 182,A-7/AP-7 - Saída 184,Carro,False,Algeciras
+A-7/AP-7 - Saída 182,A-7/AP-7 - Saída 184,Carro,False,San Pedro de Alcántara
+A-7/AP-7 - Saída 182,A-7/AP-7 - Saída 184,Carro,True,Fuengirola
+A-7/AP-7 - Saída 182,A-7/AP-7 - Saída 184,Carro,True,Málaga
+A-7/AP-7 - Saída 182,Cruzamento IV da A-7 com a AP-7,Carro,False,Málaga
+A-7/AP-7 - Saída 182,Cruzamento IV da A-7 com a AP-7,Carro,False,Marbella
+A-7/AP-7 - Saída 182,Cruzamento IV da A-7 com a AP-7,Carro,True,Algeciras
+A-7/AP-7 - Saída 182,Cruzamento IV da A-7 com a AP-7,Carro,True,San Pedro de Alcántara
+A-7/AP-7 - Saída 184,A-7/AP-7 - Saída 185,Carro,False,Algeciras
+A-7/AP-7 - Saída 184,A-7/AP-7 - Saída 185,Carro,False,Marbella
+A-7/AP-7 - Saída 184,A-7/AP-7 - Saída 185,Carro,True,Fuengirola
+A-7/AP-7 - Saída 184,A-7/AP-7 - Saída 185,Carro,True,Málaga
+A-7/AP-7 - Saída 185,Cruzamento V da A-7 com a AP-7,Carro,False,Algeciras
+A-7/AP-7 - Saída 185,Cruzamento V da A-7 com a AP-7,Carro,False,Marbella
+A-7/AP-7 - Saída 185,Cruzamento V da A-7 com a AP-7,Carro,True,Fuengirola
+A-7/AP-7 - Saída 185,Cruzamento V da A-7 com a AP-7,Carro,True,Málaga
+A-8009 - Saída 2,A-8009 - Saída 4,Carro,False,Sevilha
+A-8009 - Saída 2,A-8009 - Saída 4,Carro,True,Alcalá del Río
+A-8009 - Saída 2,A-8009 - Saída 4,Carro,True,La Rinconada
+A-8009 - Saída 2,Cruzamento da A-8009 com a SE-20,Carro,False,Alcalá del Río
+A-8009 - Saída 2,Cruzamento da A-8009 com a SE-20,Carro,False,La Rinconada
+A-8009 - Saída 2,Cruzamento da A-8009 com a SE-20,Carro,True,Sevilha
+A-8009 - Saída 4,A-8009 - Saída 5,Carro,False,Sevilha
+A-8009 - Saída 4,A-8009 - Saída 5,Carro,True,La Rinconada
+A-8009 - Saída 4,A-8009 - Saída 5,Carro,True,San José de la Rinconada
+A-8057 - Saída 0A,A-8058 - Saída 0,Carro,False,Mairena del Aljarafe
+A-8057 - Saída 0A,A-8058 - Saída 0,Carro,True,Sevilha
+A-8057 - Saída 0A,A-8057 - Saída 2,Carro,False,San Juan de Aznalfarache
+A-8057 - Saída 0A,A-8057 - Saída 2,Carro,False,SE-30 - Sevilha
+A-8057 - Saída 0A,A-8057 - Saída 2,Carro,True,Mairena del Aljarafe
+A-8057 - Saída 2,Mairena del Aljarafe,Carro,False,San Juan de Aznalfarache
+A-8057 - Saída 2,Mairena del Aljarafe,Carro,False,SE-30 - Sevilha
+A-8057 - Saída 2,Mairena del Aljarafe,Carro,True,Mairena del Aljarafe
+A-8058 - Saída 0,SE-30 - Saída 15,Carro,False,Coria del Río
+A-8058 - Saída 0,SE-30 - Saída 15,Carro,False,Mairena del Aljarafe
+A-8058 - Saída 0,SE-30 - Saída 15,Carro,False,San Juan de Aznalfarache
+A-8058 - Saída 0,SE-30 - Saída 15,Carro,True,Sevilha
+A-8058 - Saída 0,San Juan de Aznalfarache,Carro,False,A-8057 - Mairena del Aljarafe
+A-8058 - Saída 0,San Juan de Aznalfarache,Carro,False,SE-30 - Sevilha
+A-8058 - Saída 0,San Juan de Aznalfarache,Carro,True,Coria del Río
+A-92 - Andalucía Residencial,A-92 - Sevilha Este,Carro,False,SE-30 - Todas as direcções
+A-92 - Andalucía Residencial,A-92 - Sevilha Este,Carro,True,Alcalá de Guadaíra
+A-92 - Andalucía Residencial,A-92 - Sevilha Este,Carro,True,Granada
+A-92 - Andalucía Residencial,A-92 - Sevilha Este,Carro,True,Málaga
+A-92 - Andalucía Residencial,Cruzamento da A-92 com a SE-30,Carro,False,Alcalá de Guadaíra
+A-92 - Andalucía Residencial,Cruzamento da A-92 com a SE-30,Carro,False,Granada
+A-92 - Andalucía Residencial,Cruzamento da A-92 com a SE-30,Carro,False,Málaga
+A-92 - Andalucía Residencial,Cruzamento da A-92 com a SE-30,Carro,True,SE-30 - Todas as direcções
+A-92 - Saída 5,A-92 - Torreblanca,Carro,False,Málaga
+A-92 - Saída 5,A-92 - Torreblanca,Carro,True,Sevilha
+A-92 - Saída 5,Cruzamento da A-92 com a SE-40,Carro,False,Sevilha
+A-92 - Saída 5,Cruzamento da A-92 com a SE-40,Carro,True,Málaga
+A-92 - Saída 7,A-92 - Saída 9,Carro,False,Sevilha
+A-92 - Saída 7,A-92 - Saída 9,Carro,True,Granada
+A-92 - Saída 7,A-92 - Saída 9,Carro,True,Málaga
+A-92 - Saída 7,Cruzamento da A-92 com a SE-40,Carro,False,Granada
+A-92 - Saída 7,Cruzamento da A-92 com a SE-40,Carro,False,Málaga
+A-92 - Saída 7,Cruzamento da A-92 com a SE-40,Carro,True,Sevilha
+A-92 - Saída 9,A-92 - Saída 12,Carro,False,Cádiz
+A-92 - Saída 9,A-92 - Saída 12,Carro,False,Huelva
+A-92 - Saída 9,A-92 - Saída 12,Carro,False,Sevilha
+A-92 - Saída 9,A-92 - Saída 12,Carro,True,Antequera
+A-92 - Saída 12,A-92 - Saída 14,Carro,False,Cádiz
+A-92 - Saída 12,A-92 - Saída 14,Carro,False,Huelva
+A-92 - Saída 12,A-92 - Saída 14,Carro,False,Sevilha
+A-92 - Saída 12,A-92 - Saída 14,Carro,True,Almería
+A-92 - Saída 12,A-92 - Saída 14,Carro,True,Granada
+A-92 - Saída 12,A-92 - Saída 14,Carro,True,Jaén
+A-92 - Saída 12,A-92 - Saída 14,Carro,True,Málaga
+A-92 - Saída 14,A-92 - Saída 15,Carro,False,Cádiz
+A-92 - Saída 14,A-92 - Saída 15,Carro,False,Huelva
+A-92 - Saída 14,A-92 - Saída 15,Carro,False,Sevilha
+A-92 - Saída 14,A-92 - Saída 15,Carro,True,Almería
+A-92 - Saída 14,A-92 - Saída 15,Carro,True,Granada
+A-92 - Saída 14,A-92 - Saída 15,Carro,True,Jaén
+A-92 - Saída 14,A-92 - Saída 15,Carro,True,Málaga
+A-92 - Saída 15,A-92 - Saída 23,Carro,False,Cádiz
+A-92 - Saída 15,A-92 - Saída 23,Carro,False,Huelva
+A-92 - Saída 15,A-92 - Saída 23,Carro,False,Sevilha
+A-92 - Saída 15,A-92 - Saída 23,Carro,True,Almería
+A-92 - Saída 15,A-92 - Saída 23,Carro,True,Granada
+A-92 - Saída 15,A-92 - Saída 23,Carro,True,Jaén
+A-92 - Saída 15,A-92 - Saída 23,Carro,True,Málaga
+A-92 - Saída 23,A-92 - Saída 27,Carro,False,Cádiz
+A-92 - Saída 23,A-92 - Saída 27,Carro,False,Huelva
+A-92 - Saída 23,A-92 - Saída 27,Carro,False,Sevilha
+A-92 - Saída 23,A-92 - Saída 27,Carro,True,Almería
+A-92 - Saída 23,A-92 - Saída 27,Carro,True,Granada
+A-92 - Saída 23,A-92 - Saída 27,Carro,True,Jaén
+A-92 - Saída 23,A-92 - Saída 27,Carro,True,Málaga
+A-92 - Saída 27,A-92 - Saída 37,Carro,False,Cádiz
+A-92 - Saída 27,A-92 - Saída 37,Carro,False,Huelva
+A-92 - Saída 27,A-92 - Saída 37,Carro,False,Sevilha
+A-92 - Saída 27,A-92 - Saída 37,Carro,True,Almería
+A-92 - Saída 27,A-92 - Saída 37,Carro,True,Granada
+A-92 - Saída 27,A-92 - Saída 37,Carro,True,Jaén
+A-92 - Saída 27,A-92 - Saída 37,Carro,True,Málaga
+A-92 - Saída 37,A-92 - Saída 38,Carro,False,Cádiz
+A-92 - Saída 37,A-92 - Saída 38,Carro,False,Huelva
+A-92 - Saída 37,A-92 - Saída 38,Carro,False,Sevilha
+A-92 - Saída 37,A-92 - Saída 38,Carro,True,Almería
+A-92 - Saída 37,A-92 - Saída 38,Carro,True,Granada
+A-92 - Saída 37,A-92 - Saída 38,Carro,True,Jaén
+A-92 - Saída 37,A-92 - Saída 38,Carro,True,Málaga
+A-92 - Saída 38,A-92 - Saída 40,Carro,False,Cádiz
+A-92 - Saída 38,A-92 - Saída 40,Carro,False,Huelva
+A-92 - Saída 38,A-92 - Saída 40,Carro,False,Sevilha
+A-92 - Saída 38,A-92 - Saída 40,Carro,True,Almería
+A-92 - Saída 38,A-92 - Saída 40,Carro,True,Granada
+A-92 - Saída 38,A-92 - Saída 40,Carro,True,Jaén
+A-92 - Saída 38,A-92 - Saída 40,Carro,True,Málaga
+A-92 - Saída 40,A-92 - Saída 41,Carro,False,Cádiz
+A-92 - Saída 40,A-92 - Saída 41,Carro,False,Huelva
+A-92 - Saída 40,A-92 - Saída 41,Carro,False,Sevilha
+A-92 - Saída 40,A-92 - Saída 41,Carro,True,Almería
+A-92 - Saída 40,A-92 - Saída 41,Carro,True,Granada
+A-92 - Saída 40,A-92 - Saída 41,Carro,True,Jaén
+A-92 - Saída 40,A-92 - Saída 41,Carro,True,Málaga
+A-92 - Saída 41,A-92 - Saída 43,Carro,False,Cádiz
+A-92 - Saída 41,A-92 - Saída 43,Carro,False,Huelva
+A-92 - Saída 41,A-92 - Saída 43,Carro,False,Sevilha
+A-92 - Saída 41,A-92 - Saída 43,Carro,True,Almería
+A-92 - Saída 41,A-92 - Saída 43,Carro,True,Córdoba
+A-92 - Saída 41,A-92 - Saída 43,Carro,True,Granada
+A-92 - Saída 41,A-92 - Saída 43,Carro,True,Jaén
+A-92 - Saída 41,A-92 - Saída 43,Carro,True,Málaga
+A-92 - Saída 43,A-92 - Saída 46,Carro,False,Cádiz
+A-92 - Saída 43,A-92 - Saída 46,Carro,False,Huelva
+A-92 - Saída 43,A-92 - Saída 46,Carro,False,Sevilha
+A-92 - Saída 43,A-92 - Saída 46,Carro,True,Almería
+A-92 - Saída 43,A-92 - Saída 46,Carro,True,Córdoba
+A-92 - Saída 43,A-92 - Saída 46,Carro,True,Granada
+A-92 - Saída 43,A-92 - Saída 46,Carro,True,Jaén
+A-92 - Saída 43,A-92 - Saída 46,Carro,True,Málaga
+A-92 - Saída 46,A-92 - Saída 49,Carro,False,Cádiz
+A-92 - Saída 46,A-92 - Saída 49,Carro,False,Huelva
+A-92 - Saída 46,A-92 - Saída 49,Carro,False,Sevilha
+A-92 - Saída 46,A-92 - Saída 49,Carro,True,Almería
+A-92 - Saída 46,A-92 - Saída 49,Carro,True,Córdoba
+A-92 - Saída 46,A-92 - Saída 49,Carro,True,Granada
+A-92 - Saída 46,A-92 - Saída 49,Carro,True,Jaén
+A-92 - Saída 46,A-92 - Saída 49,Carro,True,Málaga
+A-92 - Saída 49,A-92 - Saída 63,Carro,False,Cádiz
+A-92 - Saída 49,A-92 - Saída 63,Carro,False,Huelva
+A-92 - Saída 49,A-92 - Saída 63,Carro,False,Sevilha
+A-92 - Saída 49,A-92 - Saída 63,Carro,True,Almería
+A-92 - Saída 49,A-92 - Saída 63,Carro,True,Granada
+A-92 - Saída 49,A-92 - Saída 63,Carro,True,Jaén
+A-92 - Saída 49,A-92 - Saída 63,Carro,True,Málaga
+A-92 - Saída 63,A-92 - Saída 65,Carro,False,Cádiz
+A-92 - Saída 63,A-92 - Saída 65,Carro,False,Huelva
+A-92 - Saída 63,A-92 - Saída 65,Carro,False,Sevilha
+A-92 - Saída 63,A-92 - Saída 65,Carro,True,Almería
+A-92 - Saída 63,A-92 - Saída 65,Carro,True,Córdoba
+A-92 - Saída 63,A-92 - Saída 65,Carro,True,Granada
+A-92 - Saída 63,A-92 - Saída 65,Carro,True,Jaén
+A-92 - Saída 63,A-92 - Saída 65,Carro,True,Málaga
+A-92 - Saída 65,A-92 - Saída 80,Carro,False,Cádiz
+A-92 - Saída 65,A-92 - Saída 80,Carro,False,Huelva
+A-92 - Saída 65,A-92 - Saída 80,Carro,False,Sevilha
+A-92 - Saída 65,A-92 - Saída 80,Carro,True,Almería
+A-92 - Saída 65,A-92 - Saída 80,Carro,True,Córdoba
+A-92 - Saída 65,A-92 - Saída 80,Carro,True,Granada
+A-92 - Saída 65,A-92 - Saída 80,Carro,True,Jaén
+A-92 - Saída 65,A-92 - Saída 80,Carro,True,Málaga
+A-92 - Saída 80,A-92 - Saída 82,Carro,False,Cádiz
+A-92 - Saída 80,A-92 - Saída 82,Carro,False,Huelva
+A-92 - Saída 80,A-92 - Saída 82,Carro,False,Sevilha
+A-92 - Saída 80,A-92 - Saída 82,Carro,True,Almería
+A-92 - Saída 80,A-92 - Saída 82,Carro,True,Córdoba
+A-92 - Saída 80,A-92 - Saída 82,Carro,True,Granada
+A-92 - Saída 80,A-92 - Saída 82,Carro,True,Jaén
+A-92 - Saída 80,A-92 - Saída 82,Carro,True,Málaga
+A-92 - Saída 82,A-92 - Saída 84,Carro,False,Cádiz
+A-92 - Saída 82,A-92 - Saída 84,Carro,False,Huelva
+A-92 - Saída 82,A-92 - Saída 84,Carro,False,Sevilha
+A-92 - Saída 82,A-92 - Saída 84,Carro,True,Almería
+A-92 - Saída 82,A-92 - Saída 84,Carro,True,Córdoba
+A-92 - Saída 82,A-92 - Saída 84,Carro,True,Granada
+A-92 - Saída 82,A-92 - Saída 84,Carro,True,Jaén
+A-92 - Saída 82,A-92 - Saída 84,Carro,True,Málaga
+A-92 - Saída 84,A-92 - Saída 84A,Carro,False,Cádiz
+A-92 - Saída 84,A-92 - Saída 84A,Carro,False,Huelva
+A-92 - Saída 84,A-92 - Saída 84A,Carro,False,Sevilha
+A-92 - Saída 84,A-92 - Saída 84A,Carro,True,Almería
+A-92 - Saída 84,A-92 - Saída 84A,Carro,True,Córdoba
+A-92 - Saída 84,A-92 - Saída 84A,Carro,True,Granada
+A-92 - Saída 84,A-92 - Saída 84A,Carro,True,Jaén
+A-92 - Saída 84,A-92 - Saída 84A,Carro,True,Málaga
+A-92 - Saída 84A,A-92 - Saída 85,Carro,False,Cádiz
+A-92 - Saída 84A,A-92 - Saída 85,Carro,False,Huelva
+A-92 - Saída 84A,A-92 - Saída 85,Carro,False,Sevilha
+A-92 - Saída 84A,A-92 - Saída 85,Carro,True,Almería
+A-92 - Saída 84A,A-92 - Saída 85,Carro,True,Córdoba
+A-92 - Saída 84A,A-92 - Saída 85,Carro,True,Granada
+A-92 - Saída 84A,A-92 - Saída 85,Carro,True,Jaén
+A-92 - Saída 84A,A-92 - Saída 85,Carro,True,Málaga
+A-92 - Saída 85,A-92 - Saída 92,Carro,False,Cádiz
+A-92 - Saída 85,A-92 - Saída 92,Carro,False,Huelva
+A-92 - Saída 85,A-92 - Saída 92,Carro,False,Sevilha
+A-92 - Saída 85,A-92 - Saída 92,Carro,True,Almería
+A-92 - Saída 85,A-92 - Saída 92,Carro,True,Córdoba
+A-92 - Saída 85,A-92 - Saída 92,Carro,True,Granada
+A-92 - Saída 85,A-92 - Saída 92,Carro,True,Jaén
+A-92 - Saída 85,A-92 - Saída 92,Carro,True,Málaga
+A-92 - Saída 92,A-92 - Saída 95,Carro,False,Sevilha
+A-92 - Saída 92,A-92 - Saída 95,Carro,True,Almería
+A-92 - Saída 92,A-92 - Saída 95,Carro,True,Córdoba
+A-92 - Saída 92,A-92 - Saída 95,Carro,True,Granada
+A-92 - Saída 92,A-92 - Saída 95,Carro,True,Jaén
+A-92 - Saída 92,A-92 - Saída 95,Carro,True,Málaga
+A-92 - Saída 95,A-92 - Saída 97,Carro,False,Cádiz
+A-92 - Saída 95,A-92 - Saída 97,Carro,False,Huelva
+A-92 - Saída 95,A-92 - Saída 97,Carro,False,Sevilha
+A-92 - Saída 95,A-92 - Saída 97,Carro,True,Granada
+A-92 - Saída 95,A-92 - Saída 97,Carro,True,Málaga
+A-92 - Saída 97,A-92 - Saída 103,Carro,False,Cádiz
+A-92 - Saída 97,A-92 - Saída 103,Carro,False,Huelva
+A-92 - Saída 97,A-92 - Saída 103,Carro,False,Sevilha
+A-92 - Saída 97,A-92 - Saída 103,Carro,True,Almería
+A-92 - Saída 97,A-92 - Saída 103,Carro,True,Córdoba
+A-92 - Saída 97,A-92 - Saída 103,Carro,True,Granada
+A-92 - Saída 97,A-92 - Saída 103,Carro,True,Jaén
+A-92 - Saída 97,A-92 - Saída 103,Carro,True,Málaga
+A-92 - Saída 103,A-92 - Saída 105,Carro,False,Osuna
+A-92 - Saída 103,A-92 - Saída 105,Carro,False,Sevilha
+A-92 - Saída 103,A-92 - Saída 105,Carro,True,Almería
+A-92 - Saída 103,A-92 - Saída 105,Carro,True,Córdoba
+A-92 - Saída 103,A-92 - Saída 105,Carro,True,Granada
+A-92 - Saída 103,A-92 - Saída 105,Carro,True,Jaén
+A-92 - Saída 103,A-92 - Saída 105,Carro,True,Málaga
+A-92 - Saída 105,A-92 - Saída 106,Carro,False,Cádiz
+A-92 - Saída 105,A-92 - Saída 106,Carro,False,Huelva
+A-92 - Saída 105,A-92 - Saída 106,Carro,False,Sevilha
+A-92 - Saída 105,A-92 - Saída 106,Carro,True,Antequera
+A-92 - Saída 105,A-92 - Saída 106,Carro,True,Granada
+A-92 - Saída 105,A-92 - Saída 106,Carro,True,Málaga
+A-92 - Saída 106,A-92 - Saída 109,Carro,False,Cádiz
+A-92 - Saída 106,A-92 - Saída 109,Carro,False,Huelva
+A-92 - Saída 106,A-92 - Saída 109,Carro,False,Sevilha
+A-92 - Saída 106,A-92 - Saída 109,Carro,True,Almería
+A-92 - Saída 106,A-92 - Saída 109,Carro,True,Granada
+A-92 - Saída 106,A-92 - Saída 109,Carro,True,Jaén
+A-92 - Saída 106,A-92 - Saída 109,Carro,True,Málaga
+A-92 - Saída 109,A-92 - Saída 112,Carro,False,Cádiz
+A-92 - Saída 109,A-92 - Saída 112,Carro,False,Huelva
+A-92 - Saída 109,A-92 - Saída 112,Carro,False,Sevilha
+A-92 - Saída 109,A-92 - Saída 112,Carro,True,Almería
+A-92 - Saída 109,A-92 - Saída 112,Carro,True,Córdoba
+A-92 - Saída 109,A-92 - Saída 112,Carro,True,Granada
+A-92 - Saída 109,A-92 - Saída 112,Carro,True,Jaén
+A-92 - Saída 109,A-92 - Saída 112,Carro,True,Málaga
+A-92 - Saída 112,A-92 - Saída 113,Carro,False,Cádiz
+A-92 - Saída 112,A-92 - Saída 113,Carro,False,Huelva
+A-92 - Saída 112,A-92 - Saída 113,Carro,False,Sevilha
+A-92 - Saída 112,A-92 - Saída 113,Carro,True,Almería
+A-92 - Saída 112,A-92 - Saída 113,Carro,True,Córdoba
+A-92 - Saída 112,A-92 - Saída 113,Carro,True,Granada
+A-92 - Saída 112,A-92 - Saída 113,Carro,True,Jaén
+A-92 - Saída 112,A-92 - Saída 113,Carro,True,Málaga
+A-92 - Saída 113,A-92 - Saída 120,Carro,False,Cádiz
+A-92 - Saída 113,A-92 - Saída 120,Carro,False,Huelva
+A-92 - Saída 113,A-92 - Saída 120,Carro,False,Sevilha
+A-92 - Saída 113,A-92 - Saída 120,Carro,True,Almería
+A-92 - Saída 113,A-92 - Saída 120,Carro,True,Córdoba
+A-92 - Saída 113,A-92 - Saída 120,Carro,True,Granada
+A-92 - Saída 113,A-92 - Saída 120,Carro,True,Jaén
+A-92 - Saída 113,A-92 - Saída 120,Carro,True,Málaga
+A-92 - Saída 120,A-92 - Saída 123,Carro,False,Cádiz
+A-92 - Saída 120,A-92 - Saída 123,Carro,False,Huelva
+A-92 - Saída 120,A-92 - Saída 123,Carro,False,Sevilha
+A-92 - Saída 120,A-92 - Saída 123,Carro,True,Almería
+A-92 - Saída 120,A-92 - Saída 123,Carro,True,Córdoba
+A-92 - Saída 120,A-92 - Saída 123,Carro,True,Granada
+A-92 - Saída 120,A-92 - Saída 123,Carro,True,Jaén
+A-92 - Saída 120,A-92 - Saída 123,Carro,True,Málaga
+A-92 - Saída 123,A-92 - Saída 125,Carro,False,Cádiz
+A-92 - Saída 123,A-92 - Saída 125,Carro,False,Huelva
+A-92 - Saída 123,A-92 - Saída 125,Carro,False,Sevilha
+A-92 - Saída 123,A-92 - Saída 125,Carro,True,Almería
+A-92 - Saída 123,A-92 - Saída 125,Carro,True,Córdoba
+A-92 - Saída 123,A-92 - Saída 125,Carro,True,Granada
+A-92 - Saída 123,A-92 - Saída 125,Carro,True,Jaén
+A-92 - Saída 123,A-92 - Saída 125,Carro,True,Málaga
+A-92 - Saída 125,A-92 - Saída 132,Carro,False,Cádiz
+A-92 - Saída 125,A-92 - Saída 132,Carro,False,Huelva
+A-92 - Saída 125,A-92 - Saída 132,Carro,False,Sevilha
+A-92 - Saída 125,A-92 - Saída 132,Carro,True,Antequera
+A-92 - Saída 125,A-92 - Saída 132,Carro,True,Granada
+A-92 - Saída 125,A-92 - Saída 132,Carro,True,Málaga
+A-92 - Saída 132,A-92 - Saída 138,Carro,False,Cádiz
+A-92 - Saída 132,A-92 - Saída 138,Carro,False,Huelva
+A-92 - Saída 132,A-92 - Saída 138,Carro,False,Sevilha
+A-92 - Saída 132,A-92 - Saída 138,Carro,True,Almería
+A-92 - Saída 132,A-92 - Saída 138,Carro,True,Córdoba
+A-92 - Saída 132,A-92 - Saída 138,Carro,True,Granada
+A-92 - Saída 132,A-92 - Saída 138,Carro,True,Jaén
+A-92 - Saída 132,A-92 - Saída 138,Carro,True,Málaga
+A-92 - Saída 138,A-92 - Saída 142,Carro,False,Cádiz
+A-92 - Saída 138,A-92 - Saída 142,Carro,False,Huelva
+A-92 - Saída 138,A-92 - Saída 142,Carro,False,Sevilha
+A-92 - Saída 138,A-92 - Saída 142,Carro,True,Almería
+A-92 - Saída 138,A-92 - Saída 142,Carro,True,Córdoba
+A-92 - Saída 138,A-92 - Saída 142,Carro,True,Granada
+A-92 - Saída 138,A-92 - Saída 142,Carro,True,Jaén
+A-92 - Saída 138,A-92 - Saída 142,Carro,True,Málaga
+A-92 - Saída 142,A-92 - Saída 146,Carro,False,Cádiz
+A-92 - Saída 142,A-92 - Saída 146,Carro,False,Huelva
+A-92 - Saída 142,A-92 - Saída 146,Carro,False,Sevilha
+A-92 - Saída 142,A-92 - Saída 146,Carro,True,Almería
+A-92 - Saída 142,A-92 - Saída 146,Carro,True,Córdoba
+A-92 - Saída 142,A-92 - Saída 146,Carro,True,Granada
+A-92 - Saída 142,A-92 - Saída 146,Carro,True,Jaén
+A-92 - Saída 142,A-92 - Saída 146,Carro,True,Málaga
+A-92 - Saída 146,A-92 - Saída 149,Carro,False,Cádiz
+A-92 - Saída 146,A-92 - Saída 149,Carro,False,Huelva
+A-92 - Saída 146,A-92 - Saída 149,Carro,False,Sevilha
+A-92 - Saída 146,A-92 - Saída 149,Carro,True,Almería
+A-92 - Saída 146,A-92 - Saída 149,Carro,True,Córdoba
+A-92 - Saída 146,A-92 - Saída 149,Carro,True,Granada
+A-92 - Saída 146,A-92 - Saída 149,Carro,True,Jaén
+A-92 - Saída 146,A-92 - Saída 149,Carro,True,Málaga
+A-92 - Saída 149,Cruzamento da A-45 com a A-92,Carro,False,Sevilha
+A-92 - Saída 149,Cruzamento da A-45 com a A-92,Carro,True,Almería
+A-92 - Saída 149,Cruzamento da A-45 com a A-92,Carro,True,Granada
+A-92 - Saída 149,Cruzamento da A-45 com a A-92,Carro,True,Jaén
+A-92 - Saída 149,Cruzamento da A-45 com a A-92,Carro,True,Málaga
+A-92 - Saída 160,A-92 - Saída 163,Carro,False,Cádiz
+A-92 - Saída 160,A-92 - Saída 163,Carro,False,Córdoba
+A-92 - Saída 160,A-92 - Saída 163,Carro,False,Huelva
+A-92 - Saída 160,A-92 - Saída 163,Carro,False,Sevilha
+A-92 - Saída 160,A-92 - Saída 163,Carro,True,Almería
+A-92 - Saída 160,A-92 - Saída 163,Carro,True,Granada
+A-92 - Saída 160,A-92 - Saída 163,Carro,True,Jaén
+A-92 - Saída 160,Cruzamento da A-45 com a A-92,Carro,False,Almería
+A-92 - Saída 160,Cruzamento da A-45 com a A-92,Carro,False,Granada
+A-92 - Saída 160,Cruzamento da A-45 com a A-92,Carro,False,Jaén
+A-92 - Saída 160,Cruzamento da A-45 com a A-92,Carro,True,Cádiz
+A-92 - Saída 160,Cruzamento da A-45 com a A-92,Carro,True,Córdoba
+A-92 - Saída 160,Cruzamento da A-45 com a A-92,Carro,True,Huelva
+A-92 - Saída 160,Cruzamento da A-45 com a A-92,Carro,True,Sevilha
+A-92 - Saída 163,A-92 - Saída 167,Carro,False,Cádiz
+A-92 - Saída 163,A-92 - Saída 167,Carro,False,Córdoba
+A-92 - Saída 163,A-92 - Saída 167,Carro,False,Huelva
+A-92 - Saída 163,A-92 - Saída 167,Carro,False,Sevilha
+A-92 - Saída 163,A-92 - Saída 167,Carro,True,Almería
+A-92 - Saída 163,A-92 - Saída 167,Carro,True,Granada
+A-92 - Saída 163,A-92 - Saída 167,Carro,True,Jaén
+A-92 - Saída 167,A-92 - Saída 175,Carro,False,Cádiz
+A-92 - Saída 167,A-92 - Saída 175,Carro,False,Córdoba
+A-92 - Saída 167,A-92 - Saída 175,Carro,False,Huelva
+A-92 - Saída 167,A-92 - Saída 175,Carro,False,Sevilha
+A-92 - Saída 167,A-92 - Saída 175,Carro,True,Almería
+A-92 - Saída 167,A-92 - Saída 175,Carro,True,Granada
+A-92 - Saída 167,A-92 - Saída 175,Carro,True,Jaén
+A-92 - Saída 175,Cruzamento da A-92 com a A-92M,Carro,False,Cádiz
+A-92 - Saída 175,Cruzamento da A-92 com a A-92M,Carro,False,Córdoba
+A-92 - Saída 175,Cruzamento da A-92 com a A-92M,Carro,False,Huelva
+A-92 - Saída 175,Cruzamento da A-92 com a A-92M,Carro,False,Sevilha
+A-92 - Saída 175,Cruzamento da A-92 com a A-92M,Carro,True,Almería
+A-92 - Saída 175,Cruzamento da A-92 com a A-92M,Carro,True,Granada
+A-92 - Saída 175,Cruzamento da A-92 com a A-92M,Carro,True,Jaén
+A-92 - Saída 178,Cruzamento da A-92 com a A-92M,Carro,False,Almería
+A-92 - Saída 178,Cruzamento da A-92 com a A-92M,Carro,False,Granada
+A-92 - Saída 178,Cruzamento da A-92 com a A-92M,Carro,False,Jaén
+A-92 - Saída 178,Cruzamento da A-92 com a A-92M,Carro,True,Cádiz
+A-92 - Saída 178,Cruzamento da A-92 com a A-92M,Carro,True,Córdoba
+A-92 - Saída 178,Cruzamento da A-92 com a A-92M,Carro,True,Huelva
+A-92 - Saída 178,Cruzamento da A-92 com a A-92M,Carro,True,Sevilha
+A-92 - Sevilha Este,A-92 - Torreblanca,Carro,False,SE-30 - Todas as direcções
+A-92 - Sevilha Este,A-92 - Torreblanca,Carro,True,Málaga
+A-92M - Saída 1,Cruzamento da A-92 com a A-92M,Carro,False,Málaga
+A-92M - Saída 1,Cruzamento da A-92 com a A-92M,Carro,True,Granada
+A-92M - Saída 1,Cruzamento da A-92 com a A-92M,Carro,True,Loja
+A13 - Saída 2,Cruzamento da A2 com a A6 e a A13,Carro,False,Norte
+A13 - Saída 2,Cruzamento da A2 com a A6 e a A13,Carro,False,Santarém
+A13 - Saída 2,Cruzamento da A2 com a A6 e a A13,Carro,True,A2 - Algarve
+A13 - Saída 2,Cruzamento da A2 com a A6 e a A13,Carro,True,A6 - Évora
+A2 - Saída 6,Águas de Moura,Carro,False,A2 - Algarve/Lisboa
+A2 - Saída 6,Águas de Moura,Carro,False,A6 - Espanha
+A2 - Saída 6,Águas de Moura,Carro,False,Pegões
+A2 - Saída 6,Águas de Moura,Carro,False,Vila Franca de Xira
+A2 - Saída 6,Águas de Moura,Carro,True,IC1 - Alcácer do Sal/Algarve
+A2 - Saída 6,Águas de Moura,Carro,True,Setúbal
+A2 - Saída 6,Cruzamento da A12 com a A2,Carro,False,A6 - Évora
+A2 - Saída 6,Cruzamento da A12 com a A2,Carro,False,Algarve
+A2 - Saída 6,Cruzamento da A12 com a A2,Carro,True,Lisboa
+A2 - Saída 6,Cruzamento da A12 com a A2,Carro,True,Setúbal
+A2 - Saída 6,Cruzamento da A2 com a A6 e a A13,Carro,False,Lisboa
+A2 - Saída 6,Cruzamento da A2 com a A6 e a A13,Carro,False,Setúbal
+A2 - Saída 6,Cruzamento da A2 com a A6 e a A13,Carro,True,A2 - Algarve
+A2 - Saída 6,Cruzamento da A2 com a A6 e a A13,Carro,True,A6 - Espanha
+A2 - Saída 6,Cruzamento da A2 com a A6 e a A13,Carro,True,A13 - Santarém
+A2 - Saída 8,A2 - Saída 9,Carro,False,Alcácer do Sal
+A2 - Saída 8,A2 - Saída 9,Carro,False,Lisboa
+A2 - Saída 8,A2 - Saída 9,Carro,False,Setúbal
+A2 - Saída 8,A2 - Saída 9,Carro,True,Algarve
+A2 - Saída 8,A2 - Saída 9,Carro,True,Grândola
+A2 - Saída 8,Águas de Moura,Carro,False,Alcácer do Sal
+A2 - Saída 8,Águas de Moura,Carro,False,Beja
+A2 - Saída 8,Águas de Moura,Carro,False,Sines
+A2 - Saída 8,Águas de Moura,Carro,True,Águas de Moura
+A2 - Saída 8,Águas de Moura,Carro,True,Setúbal
+A2 - Saída 8,Alcácer do Sal,Carro,False,A2 - Algarve
+A2 - Saída 8,Alcácer do Sal,Carro,False,Lisboa
+A2 - Saída 8,Alcácer do Sal,Carro,False,Setúbal
+A2 - Saída 8,Alcácer do Sal,Carro,True,Alcácer do Sal
+A2 - Saída 8,Alcácer do Sal,Carro,True,Grândola
+A2 - Saída 8,Alcácer do Sal,Carro,True,IP8 - Beja/Sines
+A2 - Saída 8,Área de Serviço de Alcácer do Sal,Carro,False,Alcácer do Sal
+A2 - Saída 8,Área de Serviço de Alcácer do Sal,Carro,False,Algarve
+A2 - Saída 8,Área de Serviço de Alcácer do Sal,Carro,True,A6 - Évora
+A2 - Saída 8,Área de Serviço de Alcácer do Sal,Carro,True,Lisboa
+A2 - Saída 8,Área de Serviço de Alcácer do Sal,Carro,True,Setúbal
+A2 - Saída 9,Área de Serviço de Grândola,Carro,False,Alcácer do Sal
+A2 - Saída 9,Área de Serviço de Grândola,Carro,False,Lisboa
+A2 - Saída 9,Área de Serviço de Grândola,Carro,True,A26 - Beja
+A2 - Saída 9,Área de Serviço de Grândola,Carro,True,Algarve
+A2 - Saída 9,Cruzamento do IC1 com o IP8,Carro,False,A2 - Algarve/Beja/Lisboa
+A2 - Saída 9,Cruzamento do IC1 com o IP8,Carro,True,IC1 - Grândola
+A2 - Saída 9,Cruzamento do IC1 com o IP8,Carro,True,Sines
+A2 - Saída 11,A2 - Saída 12,Carro,False,Aljustrel
+A2 - Saída 11,A2 - Saída 12,Carro,False,Lisboa
+A2 - Saída 11,A2 - Saída 12,Carro,True,Algarve
+A2 - Saída 11,A2 - Saída 12,Carro,True,Castro Verde
+A2 - Saída 11,A2 - Saída 12,Carro,True,Ourique
+A2 - Saída 11,Área de Serviço de Aljustrel,Carro,False,Algarve
+A2 - Saída 11,Área de Serviço de Aljustrel,Carro,False,Aljustrel
+A2 - Saída 11,Área de Serviço de Aljustrel,Carro,True,Grândola
+A2 - Saída 11,Área de Serviço de Aljustrel,Carro,True,Lisboa
+A2 - Saída 12,Área de Serviço de Almodôvar,Carro,False,IP2 - Beja/Castro Verde
+A2 - Saída 12,Área de Serviço de Almodôvar,Carro,False,Lisboa
+A2 - Saída 12,Área de Serviço de Almodôvar,Carro,True,Algarve
+A2 - Saída 12,Área de Serviço de Almodôvar,Carro,True,Almodôvar
+A2 - Saída 12,IP2 - Saída 50,Carro,False,A2
+A2 - Saída 12,IP2 - Saída 50,Carro,False,Ourique
+A2 - Saída 12,IP2 - Saída 50,Carro,True,Beja
+A2 - Saída 12,IP2 - Saída 50,Carro,True,Castro Verde
+A2 - Saída 12,Ourique,Carro,False,A2 - Algarve/Lisboa
+A2 - Saída 12,Ourique,Carro,False,IP2 - Beja/Castro Verde
+A2 - Saída 12,Ourique,Carro,True,Ourique
+A2 - Saída 13,A2 - Saída 14,Carro,False,Almodôvar
+A2 - Saída 13,A2 - Saída 14,Carro,False,Lisboa
+A2 - Saída 13,A2 - Saída 14,Carro,True,Algarve
+A2 - Saída 13,A2 - Saída 14,Carro,True,São Bartolomeu de Messines
+A2 - Saída 13,Área de Serviço de Almodôvar,Carro,False,Algarve
+A2 - Saída 13,Área de Serviço de Almodôvar,Carro,False,Almodôvar
+A2 - Saída 13,Área de Serviço de Almodôvar,Carro,True,IP2 - Beja/Castro Verde
+A2 - Saída 13,Área de Serviço de Almodôvar,Carro,True,Lisboa
+A2 - Saída 14,Cruzamento da A2 com a A22,Carro,False,Lisboa
+A2 - Saída 14,Cruzamento da A2 com a A22,Carro,False,São Bartolomeu de Messines
+A2 - Saída 14,Cruzamento da A2 com a A22,Carro,True,Faro
+A2 - Saída 14,Cruzamento da A2 com a A22,Carro,True,Portimão
+A2 - Saída 14,Cruzamento da N124 com a N270,Carro,False,A2 - Lisboa
+A2 - Saída 14,Cruzamento da N124 com a N270,Carro,False,São Bartolomeu de Messines
+A2 - Saída 14,Cruzamento da N124 com a N270,Carro,False,Silves
+A2 - Saída 14,Cruzamento da N124 com a N270,Carro,True,Paderne
+A2 - Saída 14,Cruzamento da N124 com a N270,Carro,True,Salir
+A2 - Saída 14,IC1 - Cruzamento com a N124,Carro,False,A2 - Faro/Lisboa/Portimão
+A2 - Saída 14,IC1 - Cruzamento com a N124,Carro,False,Salir
+A2 - Saída 14,IC1 - Cruzamento com a N124,Carro,True,IC1 - Albufeira/Lisboa
+A2 - Saída 14,IC1 - Cruzamento com a N124,Carro,True,Silves
+A22 - Início,A22 - Saída 1,Carro,False,Aljezur
+A22 - Início,A22 - Saída 1,Carro,False,Sines
+A22 - Início,A22 - Saída 1,Carro,True,A2 - Lisboa
+A22 - Início,A22 - Saída 1,Carro,True,Faro
+A22 - Início,A22 - Saída 1,Carro,True,Lagos
+A22 - Início,A22 - Saída 1,Carro,True,Sagres
+A22 - Início,Bensafrim,Carro,False,A22
+A22 - Início,Bensafrim,Carro,False,Aljezur
+A22 - Início,Bensafrim,Carro,True,Bensafrim
+A22 - Início,Cruzamento da N120 com a N268,Carro,False,A22 - Faro
+A22 - Início,Cruzamento da N120 com a N268,Carro,False,Lagos
+A22 - Início,Cruzamento da N120 com a N268,Carro,True,Aljezur
+A22 - Início,Cruzamento da N120 com a N268,Carro,True,Sines
+A22 - Saída 1,Área de Serviço de Lagos,Carro,False,Lagos
+A22 - Saída 1,Área de Serviço de Lagos,Carro,False,Sines
+A22 - Saída 1,Área de Serviço de Lagos,Carro,True,A2 - Lisboa
+A22 - Saída 1,Área de Serviço de Lagos,Carro,True,Faro
+A22 - Saída 2,A22 - Saída 3,Carro,False,Lagos
+A22 - Saída 2,A22 - Saída 3,Carro,False,Sines
+A22 - Saída 2,A22 - Saída 3,Carro,True,A2 - Lisboa
+A22 - Saída 2,A22 - Saída 3,Carro,True,Faro
+A22 - Saída 2,Área de Serviço de Lagos,Carro,False,A2 - Lisboa
+A22 - Saída 2,Área de Serviço de Lagos,Carro,False,Faro
+A22 - Saída 2,Área de Serviço de Lagos,Carro,True,Lagos
+A22 - Saída 2,Área de Serviço de Lagos,Carro,True,Sines
+A22 - Saída 3,A22 - Saída 4,Carro,False,Lagos
+A22 - Saída 3,A22 - Saída 4,Carro,False,Sines
+A22 - Saída 3,A22 - Saída 4,Carro,True,A2 - Lisboa
+A22 - Saída 3,A22 - Saída 4,Carro,True,Faro
+A22 - Saída 4,A22 - Saída 5,Carro,False,Lagos
+A22 - Saída 4,A22 - Saída 5,Carro,False,Sines
+A22 - Saída 4,A22 - Saída 5,Carro,True,A2 - Lisboa
+A22 - Saída 4,A22 - Saída 5,Carro,True,Faro
+A22 - Saída 5,A22 - Saída 6,Carro,False,Lagos
+A22 - Saída 5,A22 - Saída 6,Carro,False,Portimão
+A22 - Saída 5,A22 - Saída 6,Carro,True,A2 - Lisboa
+A22 - Saída 5,A22 - Saída 6,Carro,True,Faro
+A22 - Saída 5,Cruzamento da N124 com a N125,Carro,False,A22
+A22 - Saída 5,Cruzamento da N124 com a N125,Carro,False,Monchique
+A22 - Saída 5,Cruzamento da N124 com a N125,Carro,True,Portimão
+A22 - Saída 5,Cruzamento da N124 com a N266,Carro,False,Portimão
+A22 - Saída 5,Cruzamento da N124 com a N266,Carro,True,Monchique
+A22 - Saída 5,Cruzamento da N124 com a N266,Carro,True,Silves
+A22 - Saída 6,Área de Serviço de Silves,Carro,False,Lagos
+A22 - Saída 6,Área de Serviço de Silves,Carro,False,Portimão
+A22 - Saída 6,Área de Serviço de Silves,Carro,True,A2 - Lisboa
+A22 - Saída 6,Área de Serviço de Silves,Carro,True,Faro
+A22 - Saída 6,Cruzamento da N124-1 com a N125,Carro,False,A22 - Faro/Lagos/A2 - Lisboa
+A22 - Saída 6,Cruzamento da N124-1 com a N125,Carro,False,Silves
+A22 - Saída 6,Cruzamento da N124-1 com a N125,Carro,True,Carvoeiro
+A22 - Saída 6,Cruzamento da N124-1 com a N125,Carro,True,Estômbar
+A22 - Saída 6,Cruzamento da N124-1 com a N125,Carro,True,Lagoa
+A22 - Saída 6,Estação de Silves,Carro,False,A22
+A22 - Saída 6,Estação de Silves,Carro,False,Lagoa
+A22 - Saída 6,Estação de Silves,Carro,True,Silves
+A22 - Saída 7,A22 - Saída 8,Carro,False,Lagos
+A22 - Saída 7,A22 - Saída 8,Carro,False,Portimão
+A22 - Saída 7,A22 - Saída 8,Carro,True,Faro
+A22 - Saída 7,A22 - Saída 8,Carro,True,Lisboa
+A22 - Saída 7,Alcantarilha,Carro,False,A22 - Lagos
+A22 - Saída 7,Alcantarilha,Carro,False,Portimão
+A22 - Saída 7,Alcantarilha,Carro,True,Albufeira
+A22 - Saída 7,Alcantarilha,Carro,True,Faro
+A22 - Saída 7,Aqualand Algarve,Carro,False,Albufeira
+A22 - Saída 7,Aqualand Algarve,Carro,False,Faro
+A22 - Saída 7,Aqualand Algarve,Carro,True,Lagoa
+A22 - Saída 7,Aqualand Algarve,Carro,True,Portimão
+A22 - Saída 7,Área de Serviço de Silves,Carro,False,A2 - Lisboa
+A22 - Saída 7,Área de Serviço de Silves,Carro,False,Faro
+A22 - Saída 7,Área de Serviço de Silves,Carro,True,Lagos
+A22 - Saída 7,Área de Serviço de Silves,Carro,True,Portimão
+A22 - Saída 8,A22 - Saída 9,Carro,False,Lagos
+A22 - Saída 8,A22 - Saída 9,Carro,False,Portimão
+A22 - Saída 8,A22 - Saída 9,Carro,True,Faro
+A22 - Saída 8,A22 - Saída 9,Carro,True,Lisboa
+A22 - Saída 9,Cruzamento da A2 com a A22,Carro,False,Albufeira
+A22 - Saída 9,Cruzamento da A2 com a A22,Carro,False,IC1 - Lisboa
+A22 - Saída 9,Cruzamento da A2 com a A22,Carro,False,Portimão
+A22 - Saída 9,Cruzamento da A2 com a A22,Carro,True,A2 - Lisboa
+A22 - Saída 9,Cruzamento da A2 com a A22,Carro,True,Faro
+A22 - Saída 9,IC1 - Fim,Carro,False,A22 - Faro/Portimão/A2 - Lisboa
+A22 - Saída 9,IC1 - Fim,Carro,False,Ourique
+A22 - Saída 9,IC1 - Fim,Carro,True,Albufeira
+A22 - Saída 9,Tunes,Carro,False,Faro
+A22 - Saída 9,Tunes,Carro,False,Portimão
+A22 - Saída 9,Tunes,Carro,True,Lisboa
+A22 - Saída 9,Tunes,Carro,True,Ourique
+A22 - Saída 11,Cruzamento da A2 com a A22,Carro,False,Espanha
+A22 - Saída 11,Cruzamento da A2 com a A22,Carro,False,Faro
+A22 - Saída 11,Cruzamento da A2 com a A22,Carro,True,Lisboa
+A22 - Saída 11,Cruzamento da A2 com a A22,Carro,True,Portimão
+A22 - Saída 11,Área de Serviço de Loulé,Carro,False,Lisboa
+A22 - Saída 11,Área de Serviço de Loulé,Carro,False,Portimão
+A22 - Saída 11,Área de Serviço de Loulé,Carro,True,Espanha
+A22 - Saída 11,Área de Serviço de Loulé,Carro,True,Faro
+A22 - Saída 12,A22 - Saída 13,Carro,False,Lisboa
+A22 - Saída 12,A22 - Saída 13,Carro,False,Portimão
+A22 - Saída 12,A22 - Saída 13,Carro,True,Espanha
+A22 - Saída 12,A22 - Saída 13,Carro,True,Faro
+A22 - Saída 12,Área de Serviço de Loulé,Carro,False,Espanha
+A22 - Saída 12,Área de Serviço de Loulé,Carro,False,Faro
+A22 - Saída 12,Área de Serviço de Loulé,Carro,True,Lisboa
+A22 - Saída 12,Área de Serviço de Loulé,Carro,True,Portimão
+A22 - Saída 13,A22 - Saída 14,Carro,False,Lisboa
+A22 - Saída 13,A22 - Saída 14,Carro,False,Portimão
+A22 - Saída 13,A22 - Saída 14,Carro,True,Espanha
+A22 - Saída 13,A22 - Saída 14,Carro,True,Olhão
+A22 - Saída 13,Cruzamento do IC4 com a N125,Carro,False,A22 - Espanha/Portimão
+A22 - Saída 13,Cruzamento do IC4 com a N125,Carro,False,Loulé
+A22 - Saída 13,Cruzamento do IC4 com a N125,Carro,True,Aeroporto de Faro
+A22 - Saída 13,Cruzamento do IC4 com a N125,Carro,True,Faro
+A22 - Saída 13,Mar Shopping Algarve,Carro,False,A22 - Espanha/Portimão
+A22 - Saída 13,Mar Shopping Algarve,Carro,False,Aeroporto de Faro
+A22 - Saída 13,Mar Shopping Algarve,Carro,False,Estádio Algarve
+A22 - Saída 13,Mar Shopping Algarve,Carro,False,Faro
+A22 - Saída 13,Mar Shopping Algarve,Carro,True,Loulé
+A22 - Saída 14,A22 - Saída 15,Carro,False,Faro
+A22 - Saída 14,A22 - Saída 15,Carro,False,Lisboa
+A22 - Saída 14,A22 - Saída 15,Carro,True,Espanha
+A22 - Saída 14,A22 - Saída 15,Carro,True,Olhão
+A22 - Saída 14,"Conceição, Faro",Carro,False,A22 - Espanha/Loulé/A2 - Lisboa
+A22 - Saída 14,"Conceição, Faro",Carro,False,São Brás de Alportel
+A22 - Saída 14,"Conceição, Faro",Carro,True,Faro
+A22 - Saída 14,Ruínas Romanas de Milreu,Carro,False,Faro
+A22 - Saída 14,Ruínas Romanas de Milreu,Carro,True,Estoi
+A22 - Saída 14,Ruínas Romanas de Milreu,Carro,True,São Brás de Alportel
+A22 - Saída 15,Área de Serviço de Olhão,Carro,False,Faro
+A22 - Saída 15,Área de Serviço de Olhão,Carro,False,Lisboa
+A22 - Saída 15,Área de Serviço de Olhão,Carro,True,Espanha
+A22 - Saída 15,Área de Serviço de Olhão,Carro,True,Tavira
+A22 - Saída 16,A22 - Saída 17,Carro,False,Faro
+A22 - Saída 16,A22 - Saída 17,Carro,False,Lisboa
+A22 - Saída 16,A22 - Saída 17,Carro,True,Espanha
+A22 - Saída 16,A22 - Saída 17,Carro,True,Monte Gordo
+A22 - Saída 16,Área de Serviço de Olhão,Carro,False,Espanha
+A22 - Saída 16,Área de Serviço de Olhão,Carro,False,Tavira
+A22 - Saída 16,Área de Serviço de Olhão,Carro,True,Faro
+A22 - Saída 16,Área de Serviço de Olhão,Carro,True,Lisboa
+A22 - Saída 17,A22 - Saída 18,Carro,False,Faro
+A22 - Saída 17,A22 - Saída 18,Carro,False,Lisboa
+A22 - Saída 17,A22 - Saída 18,Carro,True,Espanha
+A22 - Saída 17,A22 - Saída 18,Carro,True,Vila Real de Santo António
+A22 - Saída 18,IC27 - Início,Carro,False,A22
+A22 - Saída 18,IC27 - Início,Carro,False,Castro Marim
+A22 - Saída 18,IC27 - Início,Carro,False,Vila Real de Santo António
+A22 - Saída 18,IC27 - Início,Carro,True,Alcoutim
+A22 - Saída 18,IC27 - Início,Carro,True,Beja
+A22 - Saída 18,IC27 - Início,Carro,True,Sapal de Castro Marim e Vila Real de Santo António
+A22 - Saída 18,Área de Repouso de Castro Marim,Carro,False,Faro
+A22 - Saída 18,Área de Repouso de Castro Marim,Carro,False,Lisboa
+A22 - Saída 18,Área de Repouso de Castro Marim,Carro,True,Espanha
+A22 - Saída 18,Castro Marim,Carro,False,A22 - Espanha/Faro
+A22 - Saída 18,Castro Marim,Carro,False,Alcoutim
+A22 - Saída 18,Castro Marim,Carro,False,Beja
+A22 - Saída 18,Castro Marim,Carro,True,Castro Marim
+A22 - Saída 18,Castro Marim,Carro,True,Vila Real de Santo António
+A26 - Fim,Cruzamento da A2 com a A26,Carro,False,Beja
+A26 - Fim,Cruzamento da A2 com a A26,Carro,False,Ferreira do Alentejo
+A26 - Fim,Cruzamento da A2 com a A26,Carro,True,A2 - Algarve/Lisboa
+A26 - Fim,Ferreira do Alentejo,Carro,False,IC1 - Lisboa
+A26 - Fim,Ferreira do Alentejo,Carro,True,Beja
+A26 - Fim,Ferreira do Alentejo,Carro,True,Ferreira do Alentejo
+A6 - Saída 2,Área de Serviço de Vendas Novas,Carro,False,Espanha
+A6 - Saída 2,Área de Serviço de Vendas Novas,Carro,False,Évora
+A6 - Saída 2,Área de Serviço de Vendas Novas,Carro,False,Vendas Novas
+A6 - Saída 2,Área de Serviço de Vendas Novas,Carro,True,Algarve
+A6 - Saída 2,Área de Serviço de Vendas Novas,Carro,True,Lisboa
+A6 - Saída 2,Área de Serviço de Vendas Novas,Carro,True,Setúbal
+Achada do Gamo,Mina de São Domingos,Comboio,False,Pomarão
+Achada do Gamo,Mina de São Domingos,Comboio,True,Mina de São Domingos
+Achada do Gamo,Santana de Cambas,Comboio,False,Mina de São Domingos
+Achada do Gamo,Santana de Cambas,Comboio,True,Pomarão
+Aeroporto de Córdoba,CO-32 - Fim,Carro,False,Aeroporto de Córdoba
+Aeroporto de Córdoba,CO-32 - Fim,Carro,True,Córdoba
+Aeroporto de Faro,Montenegro,Carro,False,Aeroporto de Faro
+Aeroporto de Faro,Montenegro,Carro,False,Praia de Faro
+Aeroporto de Faro,Montenegro,Carro,True,A22
+Aeroporto de Faro,Montenegro,Carro,True,Faro
+"Álamo, Mértola",Cruzamento da N122 com a N267,Carro,False,Alcoutim
+"Álamo, Mértola",Cruzamento da N122 com a N267,Carro,False,Vila Real de Santo António
+"Álamo, Mértola",Cruzamento da N122 com a N267,Carro,True,Mértola
+"Álamo, Mértola",Espírito Santo,Carro,False,Mértola
+"Álamo, Mértola",Espírito Santo,Carro,True,Alcoutim
+"Álamo, Mértola",Espírito Santo,Carro,True,Espírito Santo
+Alcácer do Sal,Cruzamento do IC1 com o IP8,Carro,False,Alcácer do Sal
+Alcácer do Sal,Cruzamento do IC1 com o IP8,Carro,False,Lisboa
+Alcácer do Sal,Cruzamento do IC1 com o IP8,Carro,True,Beja
+Alcácer do Sal,Cruzamento do IC1 com o IP8,Carro,True,Grândola
+Alcácer do Sal,Cruzamento do IC1 com o IP8,Carro,True,Sines
+Alcácer do Sal,Torrão,Carro,False,Alcácer do Sal
+Alcácer do Sal,Torrão,Carro,False,Setúbal
+Alcácer do Sal,Torrão,Carro,True,Torrão
+Alcantarilha,"Pêra, Silves",Carro,False,Portimão
+Alcantarilha,"Pêra, Silves",Carro,True,Albufeira
+Alcantarilha,"Pêra, Silves",Carro,True,Faro
+Alcoutim,Laranjeiras,Barco,False,Alcoutim
+Alcoutim,Laranjeiras,Barco,False,Mértola
+Alcoutim,Laranjeiras,Barco,False,Sanlúcar de Guadiana
+Alcoutim,Laranjeiras,Barco,True,Ayamonte
+Alcoutim,Laranjeiras,Barco,True,Vila Real de Santo António
+Alcoutim,Marmeleiro,Carro,False,Alcoutim
+Alcoutim,Marmeleiro,Carro,True,IC27 - Beja/Vila Real de Santo António
+Alcoutim,Marmeleiro,Carro,True,Martim Longo
+Alcoutim,Sanlúcar de Guadiana,Barco,False,Alcoutim
+Alcoutim,Sanlúcar de Guadiana,Barco,False,Ayamonte
+Alcoutim,Sanlúcar de Guadiana,Barco,False,Vila Real de Santo António
+Alcoutim,Sanlúcar de Guadiana,Barco,True,Mértola
+Alcoutim,Sanlúcar de Guadiana,Barco,True,Pomarão
+Alcoutim,Sanlúcar de Guadiana,Barco,True,Sanlúcar de Guadiana
+Algarve Shopping,Guia,Carro,False,A22
+Algarve Shopping,Guia,Carro,False,Faro
+Algarve Shopping,Guia,Carro,True,Guia
+Algarve Shopping,Guia,Carro,True,Portimão
+Algarve Shopping,IC1 - Fim,Carro,False,Guia
+Algarve Shopping,IC1 - Fim,Carro,False,Portimão
+Algarve Shopping,IC1 - Fim,Carro,True,A22
+Algarve Shopping,IC1 - Fim,Carro,True,Albufeira
+Algarve Shopping,IC1 - Fim,Carro,True,Faro
+Algoz,Estação de Alcantarilha,Comboio,False,Tunes
+Algoz,Estação de Alcantarilha,Comboio,False,Vila Real de Santo António
+Algoz,Estação de Alcantarilha,Comboio,True,Lagos
+Algoz,Tunes,Comboio,False,Lagos
+Algoz,Tunes,Comboio,True,Faro
+Algoz,Tunes,Comboio,True,Vila Real de Santo António
+Aljezur,Cruzamento da N120 com a N268,Carro,False,Aljezur
+Aljezur,Cruzamento da N120 com a N268,Carro,False,Sines
+Aljezur,Cruzamento da N120 com a N268,Carro,True,Faro
+Aljezur,Cruzamento da N120 com a N268,Carro,True,Lagos
+Aljezur,Rogil,Carro,False,Aljezur
+Aljezur,Rogil,Carro,False,Lagos
+Aljezur,Rogil,Carro,True,Odeceixe
+Aljezur,Rogil,Carro,True,Sines
+Aljustrel,Ervidel,Carro,False,Aljustrel
+Aljustrel,Ervidel,Carro,False,Castro Verde
+Aljustrel,Ervidel,Carro,False,Faro
+Aljustrel,Ervidel,Carro,True,Beja
+Aljustrel,Ervidel,Carro,True,Ferreira do Alentejo
+Aljustrel,IP2 - Saída 48,Carro,False,Aljustrel
+Aljustrel,IP2 - Saída 48,Carro,True,Almodôvar
+Aljustrel,IP2 - Saída 48,Carro,True,Castro Verde
+Aljustrel,IP2 - Saída 48,Carro,True,Faro
+Almada de Ouro,Azinhal,Carro,False,Alcoutim
+Almada de Ouro,Azinhal,Carro,True,Azinhal
+Almada de Ouro,Azinhal,Carro,True,Castro Marim
+Almada de Ouro,Costa Esuri,Barco,False,Alcoutim
+Almada de Ouro,Costa Esuri,Barco,False,Mértola
+Almada de Ouro,Costa Esuri,Barco,True,Ayamonte
+Almada de Ouro,Costa Esuri,Barco,True,Vila Real de Santo António
+Almada de Ouro,Cruzamento da N122 com a M1063,Carro,False,Azinhal
+Almada de Ouro,Cruzamento da N122 com a M1063,Carro,True,Alcoutim
+Almada de Ouro,Cruzamento da N122 com a M1063,Carro,True,IC27
+Almada de Ouro,Foz de Odeleite,Barco,False,Ayamonte
+Almada de Ouro,Foz de Odeleite,Barco,False,Vila Real de Santo António
+Almada de Ouro,Foz de Odeleite,Barco,True,Alcoutim
+Almada de Ouro,Foz de Odeleite,Barco,True,Mértola
+Almancil,Cruzamento do IC4 com a N125,Carro,False,Almancil
+Almancil,Cruzamento do IC4 com a N125,Carro,False,Quarteira
+Almancil,Cruzamento do IC4 com a N125,Carro,True,Aeroporto de Faro
+Almancil,Cruzamento do IC4 com a N125,Carro,True,Estádio Algarve
+Almancil,Cruzamento do IC4 com a N125,Carro,True,Faro
+Almancil,Cruzamento da N125 com a N396,Carro,False,Almancil
+Almancil,Cruzamento da N125 com a N396,Carro,False,Faro
+Almancil,Cruzamento da N125 com a N396,Carro,True,A22 - Espanha/Lisboa
+Almancil,Cruzamento da N125 com a N396,Carro,True,Albufeira
+Almancil,Cruzamento da N125 com a N396,Carro,True,Estação de Loulé
+Almancil,Cruzamento da N125 com a N396,Carro,True,Portimão
+Almodôvar,Ameixal,Carro,False,Almodôvar
+Almodôvar,Ameixal,Carro,False,Beja
+Almodôvar,Ameixal,Carro,True,Faro
+Almodôvar,Castro Verde,Carro,False,Almodôvar
+Almodôvar,Castro Verde,Carro,False,Faro
+Almodôvar,Castro Verde,Carro,True,Castro Verde
+Almodôvar,Castro Verde,Carro,True,IP2 - Beja
+Alte,Benafim,Carro,False,Alte
+Alte,Benafim,Carro,False,Lisboa
+Alte,Benafim,Carro,False,Silves
+Alte,Benafim,Carro,True,Benafim
+Alte,Benafim,Carro,True,Loulé
+Alte,Benafim,Carro,True,Salir
+Alte,Cruzamento da N124 com a N270,Carro,False,Alte
+Alte,Cruzamento da N124 com a N270,Carro,False,Salir
+Alte,Cruzamento da N124 com a N270,Carro,True,A2 - Lisboa
+Alte,Cruzamento da N124 com a N270,Carro,True,A22
+Alte,Cruzamento da N124 com a N270,Carro,True,São Bartolomeu de Messines
+Alte,Cruzamento da N124 com a N270,Carro,True,Silves
+Altura,Cruzamento da N125 com a N125-6,Carro,False,Faro
+Altura,Cruzamento da N125 com a N125-6,Carro,False,Tavira
+Altura,Cruzamento da N125 com a N125-6,Carro,True,Vila Real de Santo António
+Altura,Vila Nova de Cacela,Carro,False,Vila Real de Santo António
+Altura,Vila Nova de Cacela,Carro,True,Olhão
+Altura,Vila Nova de Cacela,Carro,True,Tavira
+Alvor,Marina de Lagos,Barco,False,Faro
+Alvor,Marina de Lagos,Barco,False,Portimão
+Alvor,Marina de Lagos,Barco,True,Setúbal
+Alvor,Marina de Lagos,Barco,True,Sines
+Alvor,Marina de Portimão,Barco,False,Lagos
+Alvor,Marina de Portimão,Barco,False,Sines
+Alvor,Marina de Portimão,Barco,True,Faro
+Alvor,Marina de Portimão,Barco,True,Vila Real de Santo António
+Ameixal,Miradouro do Caldeirão,Carro,False,Ameixal
+Ameixal,Miradouro do Caldeirão,Carro,False,Beja
+Ameixal,Miradouro do Caldeirão,Carro,False,Lisboa
+Ameixal,Miradouro do Caldeirão,Carro,True,Faro
+Ameixal,Miradouro do Caldeirão,Carro,True,Loulé
+Ameixal,Miradouro do Caldeirão,Carro,True,São Brás de Alportel
+Antiga Estação de Isla Cristina - Pozo del Camino,Ayamonte,Comboio,False,Gibraleón
+Antiga Estação de Isla Cristina - Pozo del Camino,Ayamonte,Comboio,False,Huelva
+Antiga Estação de Isla Cristina - Pozo del Camino,Ayamonte,Comboio,True,Ayamonte
+AP-4 - Início,AP-4A - Saída 13,Carro,False,Cádiz
+AP-4 - Início,AP-4A - Saída 13,Carro,False,Jerez de la Frontera
+AP-4 - Início,AP-4A - Saída 13,Carro,True,Dos Hermanas
+AP-4 - Início,Área de Serviço de Los Palacios,Carro,False,Sevilha
+AP-4 - Início,Área de Serviço de Los Palacios,Carro,True,Cádiz
+AP-4 - Saída 23-24,Área de Serviço de El Fantasma,Carro,False,Los Palacios y Villafranca
+AP-4 - Saída 23-24,Área de Serviço de El Fantasma,Carro,False,Sevilha
+AP-4 - Saída 23-24,Área de Serviço de El Fantasma,Carro,True,Cádiz
+AP-4 - Saída 23-24,Área de Serviço de El Fantasma,Carro,True,Jerez de la Frontera
+AP-4 - Saída 23-24,Área de Serviço de Los Palacios,Carro,False,Cádiz
+AP-4 - Saída 23-24,Área de Serviço de Los Palacios,Carro,False,Jerez de la Frontera
+AP-4 - Saída 23-24,Área de Serviço de Los Palacios,Carro,True,Sevilha
+AP-4 - Saída 44-45,Área de Serviço de El Fantasma,Carro,False,Cádiz
+AP-4 - Saída 44-45,Área de Serviço de El Fantasma,Carro,False,Jerez de la Frontera
+AP-4 - Saída 44-45,Área de Serviço de El Fantasma,Carro,True,Los Palacios y Villafranca
+AP-4 - Saída 44-45,Área de Serviço de El Fantasma,Carro,True,Sevilha
+AP-4 - Saída 44-45,AP-4 - Saída 53,Carro,False,Sevilha
+AP-4 - Saída 44-45,AP-4 - Saída 53,Carro,True,Cádiz
+AP-4 - Saída 53,Área de Serviço de El Cuadrejón,Carro,False,Sevilha
+AP-4 - Saída 53,Área de Serviço de El Cuadrejón,Carro,True,Cádiz
+AP-4 - Saída 53,El Cuervo de Sevilla,Carro,False,Los Palacios y Villafranca
+AP-4 - Saída 53,El Cuervo de Sevilla,Carro,False,Sevilha
+AP-4 - Saída 53,El Cuervo de Sevilla,Carro,True,Cádiz
+AP-4 - Saída 53,El Cuervo de Sevilla,Carro,True,Jerez de la Frontera
+AP-7 - Saída 142,Área de Serviço de Manilva,Carro,False,Estepona
+AP-7 - Saída 142,Área de Serviço de Manilva,Carro,False,Málaga
+AP-7 - Saída 142,Área de Serviço de Manilva,Carro,True,Algeciras
+AP-7 - Saída 142,Área de Serviço de Manilva,Carro,True,Cádiz
+AP-7 - Saída 142,Área de Serviço de Manilva,Carro,True,Guadiaro
+AP-7 - Saída 142,Cruzamento II da A-7 com a AP-7,Carro,False,Algeciras
+AP-7 - Saída 142,Cruzamento II da A-7 com a AP-7,Carro,False,Cádiz
+AP-7 - Saída 142,Cruzamento II da A-7 com a AP-7,Carro,False,Guadiaro
+AP-7 - Saída 142,Cruzamento II da A-7 com a AP-7,Carro,True,Estepona
+AP-7 - Saída 142,Cruzamento II da A-7 com a AP-7,Carro,True,Málaga
+AP-7 - Saída 172,Área de Serviço de Río Castor,Carro,False,Málaga
+AP-7 - Saída 172,Área de Serviço de Río Castor,Carro,False,Marbella
+AP-7 - Saída 172,Área de Serviço de Río Castor,Carro,True,Algeciras
+AP-7 - Saída 172,Área de Serviço de Río Castor,Carro,True,Estepona
+AP-7 - Saída 172,Cruzamento IV da A-7 com a AP-7,Carro,False,Algeciras
+AP-7 - Saída 172,Cruzamento IV da A-7 com a AP-7,Carro,False,Estepona
+AP-7 - Saída 172,Cruzamento IV da A-7 com a AP-7,Carro,True,Málaga
+AP-7 - Saída 172,Cruzamento IV da A-7 com a AP-7,Carro,True,Marbella
+Aqualand Algarve,Porches,Carro,False,Albufeira
+Aqualand Algarve,Porches,Carro,False,Faro
+Aqualand Algarve,Porches,Carro,True,Lagoa
+Aqualand Algarve,Porches,Carro,True,Portimão
+Arahal,Marchena,Comboio,False,Dos Hermanas
+Arahal,Marchena,Comboio,False,Sevilha - Santa Justa
+Arahal,Marchena,Comboio,True,Bobadilla
+Arahal,Marchena,Comboio,True,Málaga - María Zambrano
+Área de Repouso de Castro Marim,Ponte Internacional do Guadiana,Carro,False,Faro
+Área de Repouso de Castro Marim,Ponte Internacional do Guadiana,Carro,False,Lisboa
+Área de Repouso de Castro Marim,Ponte Internacional do Guadiana,Carro,True,Espanha
+Área de Serviço de Alcácer do Sal,Cruzamento da A2 com a A6 e a A13,Carro,False,Alcácer do Sal
+Área de Serviço de Alcácer do Sal,Cruzamento da A2 com a A6 e a A13,Carro,False,Algarve
+Área de Serviço de Alcácer do Sal,Cruzamento da A2 com a A6 e a A13,Carro,True,A6 - Évora
+Área de Serviço de Alcácer do Sal,Cruzamento da A2 com a A6 e a A13,Carro,True,Lisboa
+Área de Serviço de Alcácer do Sal,Cruzamento da A2 com a A6 e a A13,Carro,True,Setúbal
+Área de Serviço de Aljustrel,Cruzamento da A2 com a A26,Carro,False,Algarve
+Área de Serviço de Aljustrel,Cruzamento da A2 com a A26,Carro,False,Aljustrel
+Área de Serviço de Aljustrel,Cruzamento da A2 com a A26,Carro,True,Grândola
+Área de Serviço de Aljustrel,Cruzamento da A2 com a A26,Carro,True,Lisboa
+Área de Serviço de Altos de Marbella,Cruzamento V da A-7 com a AP-7,Carro,False,Fuengirola
+Área de Serviço de Altos de Marbella,Cruzamento V da A-7 com a AP-7,Carro,False,Málaga
+Área de Serviço de Altos de Marbella,Cruzamento V da A-7 com a AP-7,Carro,True,Algeciras
+Área de Serviço de Altos de Marbella,Cruzamento V da A-7 com a AP-7,Carro,True,Marbella
+Área de Serviço de El Cuadrejón,Cruzamento da A-382 com a AP-4,Carro,False,Sevilha
+Área de Serviço de El Cuadrejón,Cruzamento da A-382 com a AP-4,Carro,True,Cádiz
+Área de Serviço de Grândola,Cruzamento da A2 com a A26,Carro,False,Alcácer do Sal
+Área de Serviço de Grândola,Cruzamento da A2 com a A26,Carro,False,Lisboa
+Área de Serviço de Grândola,Cruzamento da A2 com a A26,Carro,True,A26 - Beja
+Área de Serviço de Grândola,Cruzamento da A2 com a A26,Carro,True,Algarve
+Área de Serviço de Manilva,Cruzamento I da A-7 com a AP-7,Carro,False,Estepona
+Área de Serviço de Manilva,Cruzamento I da A-7 com a AP-7,Carro,False,Málaga
+Área de Serviço de Manilva,Cruzamento I da A-7 com a AP-7,Carro,True,Algeciras
+Área de Serviço de Manilva,Cruzamento I da A-7 com a AP-7,Carro,True,Cádiz
+Área de Serviço de Manilva,Cruzamento I da A-7 com a AP-7,Carro,True,Guadiaro
+Área de Serviço de Río Castor,Cruzamento III da A-7 com a AP-7,Carro,False,Málaga
+Área de Serviço de Río Castor,Cruzamento III da A-7 com a AP-7,Carro,False,Marbella
+Área de Serviço de Río Castor,Cruzamento III da A-7 com a AP-7,Carro,True,Algeciras
+Área de Serviço de Río Castor,Cruzamento III da A-7 com a AP-7,Carro,True,Estepona
+Área de Serviço de Vendas Novas,Cruzamento da A2 com a A6 e a A13,Carro,False,Espanha
+Área de Serviço de Vendas Novas,Cruzamento da A2 com a A6 e a A13,Carro,False,Évora
+Área de Serviço de Vendas Novas,Cruzamento da A2 com a A6 e a A13,Carro,False,Vendas Novas
+Área de Serviço de Vendas Novas,Cruzamento da A2 com a A6 e a A13,Carro,True,Algarve
+Área de Serviço de Vendas Novas,Cruzamento da A2 com a A6 e a A13,Carro,True,Lisboa
+Área de Serviço de Vendas Novas,Cruzamento da A2 com a A6 e a A13,Carro,True,Setúbal
+Aroche,Rosal de la Frontera,Carro,False,Aroche
+Aroche,Rosal de la Frontera,Carro,False,Sevilha
+Aroche,Rosal de la Frontera,Carro,True,Portugal
+Aroche,Rosal de la Frontera,Carro,True,Rosal de la Frontera
+Ayamonte,Costa Esuri,Barco,False,Ayamonte
+Ayamonte,Costa Esuri,Barco,False,Vila Real de Santo António
+Ayamonte,Costa Esuri,Barco,True,Alcoutim
+Ayamonte,Costa Esuri,Barco,True,Mértola
+Ayamonte,Vila Real de Santo António,Barco,False,Alcoutim
+Ayamonte,Vila Real de Santo António,Barco,False,Ayamonte
+Ayamonte,Vila Real de Santo António,Barco,False,Mértola
+Ayamonte,Vila Real de Santo António,Barco,True,Vila Real de Santo António
+Azinhal,Cruzamento da N122 com a M512,Carro,False,Azinhal
+Azinhal,Cruzamento da N122 com a M512,Carro,True,Castro Marim
+Balurco de Baixo,Cruzamento da N122 com a M507-2,Carro,False,Alcoutim
+Balurco de Baixo,Cruzamento da N122 com a M507-2,Carro,False,Beja
+Balurco de Baixo,Cruzamento da N122 com a M507-2,Carro,True,Castro Marim
+Balurco de Baixo,Parque Empresarial de Alcoutim,Carro,False,Castro Marim
+Balurco de Baixo,Parque Empresarial de Alcoutim,Carro,False,Vila Real de Santo António
+Balurco de Baixo,Parque Empresarial de Alcoutim,Carro,True,Alcoutim
+Balurco de Baixo,Parque Empresarial de Alcoutim,Carro,True,Beja
+Bar do Rio,Foz de Odeleite,Barco,False,Alcoutim
+Bar do Rio,Foz de Odeleite,Barco,False,Mértola
+Bar do Rio,Foz de Odeleite,Barco,True,Ayamonte
+Bar do Rio,Foz de Odeleite,Barco,True,Vila Real de Santo António
+Bar do Rio,Laranjeiras,Barco,False,Ayamonte
+Bar do Rio,Laranjeiras,Barco,False,Vila Real de Santo António
+Bar do Rio,Laranjeiras,Barco,True,Alcoutim
+Bar do Rio,Laranjeiras,Barco,True,Mértola
+Barragem da Bravura,Odiáxere,Carro,False,Barragem da Bravura
+Barragem da Bravura,Odiáxere,Carro,True,Odiáxere
+Barragem do Alqueva,"Estrela, Moura",Barco,False,Beja
+Barragem do Alqueva,"Estrela, Moura",Barco,False,Moura
+Barragem do Alqueva,"Estrela, Moura",Barco,False,Portel
+Barragem do Alqueva,"Estrela, Moura",Barco,True,Badajoz
+Barragem do Alqueva,"Estrela, Moura",Barco,True,Elvas
+Barragem do Alqueva,"Estrela, Moura",Barco,True,Mourão
+Barranco do Velho,Cruzamento da N124 com a N396,Carro,False,Ameixal
+Barranco do Velho,Cruzamento da N124 com a N396,Carro,False,Barranco do Velho
+Barranco do Velho,Cruzamento da N124 com a N396,Carro,True,Loulé
+Barranco do Velho,Cruzamento da N124 com a N396,Carro,True,São Bartolomeu de Messines
+Barranco do Velho,Miradouro do Caldeirão,Carro,False,Faro
+Barranco do Velho,Miradouro do Caldeirão,Carro,False,Loulé
+Barranco do Velho,Miradouro do Caldeirão,Carro,False,São Brás de Alportel
+Barranco do Velho,Miradouro do Caldeirão,Carro,True,Ameixal
+Barranco do Velho,Miradouro do Caldeirão,Carro,True,Beja
+Barranco do Velho,Miradouro do Caldeirão,Carro,True,Lisboa
+Barranco do Velho,Parque Temático da Serra do Caldeirão,Carro,False,Barranco do Velho
+Barranco do Velho,Parque Temático da Serra do Caldeirão,Carro,False,Loulé
+Barranco do Velho,Parque Temático da Serra do Caldeirão,Carro,True,Alcoutim
+Barranco do Velho,Parque Temático da Serra do Caldeirão,Carro,True,Cachopo
+Barranco do Velho,Parque Temático da Serra do Caldeirão,Carro,True,Martim Longo
+Barranco do Velho,São Brás de Alportel,Carro,False,Almodôvar
+Barranco do Velho,São Brás de Alportel,Carro,True,Faro
+Barranco do Velho,São Brás de Alportel,Carro,True,São Brás de Alportel
+Beja,Cuba,Comboio,False,Beja
+Beja,Cuba,Comboio,True,Casa Branca
+Beja,Cuba,Comboio,True,Évora
+Beja,Cuba,Comboio,True,Lisboa - Oriente
+Beja,Ervidel,Carro,False,Beja
+Beja,Ervidel,Carro,True,Aljustrel
+Beja,Ferreira do Alentejo,Carro,False,Beja
+Beja,Ferreira do Alentejo,Carro,False,Vila Verde de Ficalho
+Beja,Ferreira do Alentejo,Carro,True,Ferreira do Alentejo
+Beja,Ferreira do Alentejo,Carro,True,Lisboa
+Beja,IP2 - Saída 42,Carro,False,Beja
+Beja,IP2 - Saída 42,Carro,True,Castro Verde
+Beja,IP2 - Saída 42,Carro,True,Mértola
+Beja,IP2 - Saída 42,Carro,True,Ourique
+Beja,São Matias,Carro,False,Beja
+Beja,São Matias,Carro,False,Castro Verde
+Beja,São Matias,Carro,False,Ourique
+Beja,São Matias,Carro,True,Évora
+Beja,São Matias,Carro,True,Vidigueira
+Beja,Serpa,Carro,False,Beja
+Beja,Serpa,Carro,False,Ferreira do Alentejo
+Beja,Serpa,Carro,False,Lisboa
+Beja,Serpa,Carro,True,Serpa
+Beja,Serpa,Carro,True,Vila Verde de Ficalho
+Benafim,Rocha da Pena,Carro,False,Alte
+Benafim,Rocha da Pena,Carro,False,Silves
+Benafim,Rocha da Pena,Carro,True,Barranco do Velho
+Benafim,Rocha da Pena,Carro,True,Rocha da Pena
+Benafim,Rocha da Pena,Carro,True,Salir
+Bensafrim,Cruzamento da N120 com a N125,Carro,False,Aljezur
+Bensafrim,Cruzamento da N120 com a N125,Carro,False,Bensafrim
+Bensafrim,Cruzamento da N120 com a N125,Carro,False,Lisboa
+Bensafrim,Cruzamento da N120 com a N125,Carro,False,Sines
+Bensafrim,Cruzamento da N120 com a N125,Carro,True,Lagos
+Boliqueime,Cruzamento da N125 com a M526,Carro,False,A22
+Boliqueime,Cruzamento da N125 com a M526,Carro,False,Portimão
+Boliqueime,Cruzamento da N125 com a M526,Carro,True,Faro
+Boliqueime,Cruzamento da N125 com a M526,Carro,True,Loulé
+Boliqueime,Cruzamento da N125 com a N269,Carro,False,Faro
+Boliqueime,Cruzamento da N125 com a N269,Carro,False,Loulé
+Boliqueime,Cruzamento da N125 com a N269,Carro,True,Albufeira
+Boliqueime,Cruzamento da N125 com a N269,Carro,True,Portimão
+Budens,Cruzamento da N125 com a M535,Carro,False,Sagres
+Budens,Cruzamento da N125 com a M535,Carro,False,Vila do Bispo
+Budens,Cruzamento da N125 com a M535,Carro,True,Lagos
+Budens,Cruzamento da N125 com a M535,Carro,True,Portimão
+Budens,Raposeira,Carro,False,Lagos
+Budens,Raposeira,Carro,False,Portimão
+Budens,Raposeira,Carro,True,Sagres
+Budens,Raposeira,Carro,True,Vila do Bispo
+Cabanas de Tavira,Praia de Cabanas de Tavira,Barco,False,Cabanas de Tavira
+Cabanas de Tavira,Praia de Cabanas de Tavira,Barco,False,Tavira
+Cabanas de Tavira,Praia de Cabanas de Tavira,Barco,True,Faro
+Cabanas de Tavira,Praia de Cabanas de Tavira,Barco,True,Vila Nova de Cacela
+Cabo de Santa Maria,Praia da Barreta,Barco,False,Cabo de Santa Maria
+Cabo de Santa Maria,Praia da Barreta,Barco,True,Faro
+Cabo de Santa Maria,Praia da Barreta,Barco,True,Vila Nova de Cacela
+Cachopo,Martim Longo,Carro,False,Cachopo
+Cachopo,Martim Longo,Carro,False,Faro
+Cachopo,Martim Longo,Carro,True,A2
+Cachopo,Martim Longo,Carro,True,Martim Longo
+Cachopo,Parque Temático da Serra do Caldeirão,Carro,False,Cachopo
+Cachopo,Parque Temático da Serra do Caldeirão,Carro,False,Mértola
+Cachopo,Parque Temático da Serra do Caldeirão,Carro,True,Barranco do Velho
+Cais da Mesquita,Penha da Águia,Barco,False,Pomarão
+Cais da Mesquita,Penha da Águia,Barco,False,Vila Real de Santo António
+Cais da Mesquita,Penha da Águia,Barco,True,Mértola
+Cais da Mesquita,Pomarão,Barco,False,Mértola
+Cais da Mesquita,Pomarão,Barco,True,Pomarão
+Cais da Mesquita,Pomarão,Barco,True,Sanlúcar de Guadiana
+Cais da Mesquita,Pomarão,Barco,True,Vila Real de Santo António
+Cais da Praia do Barril,Praia do Barril,Comboio,False,Tavira
+Cais da Praia do Barril,Praia do Barril,Comboio,True,Praia do Barril
+Cais da Praia do Barril,Santa Luzia,Barco,False,Praia do Barril
+Cais da Praia do Barril,Santa Luzia,Barco,True,Faro
+Cais da Praia do Barril,Santa Luzia,Barco,True,Tavira
+Cais da Praia do Barril,Santa Luzia,Barco,True,Vila Nova de Cacela
+Canal Caveira,Cruzamento da A2 com a A26,Carro,False,Grândola
+Canal Caveira,Cruzamento da A2 com a A26,Carro,False,Sines
+Canal Caveira,Cruzamento da A2 com a A26,Carro,True,Faro
+Canal Caveira,Cruzamento da A2 com a A26,Carro,True,Ourique
+Canal Caveira,Grândola,Carro,False,Faro
+Canal Caveira,Grândola,Carro,False,Ourique
+Canal Caveira,Grândola,Carro,True,Grândola
+Canal Caveira,Grândola,Carro,True,Lisboa
+Carvoeiro,Lagoa,Carro,False,Carvoeiro
+Carvoeiro,Lagoa,Carro,True,Lagoa
+Castro Marim,Sul do Sapal de Castro Marim e Vila Real de Santo António,Carro,False,A22
+Castro Marim,Sul do Sapal de Castro Marim e Vila Real de Santo António,Carro,False,Castro Marim
+Castro Marim,Sul do Sapal de Castro Marim e Vila Real de Santo António,Carro,True,Vila Real de Santo António
+Castro Marim,Vista Real,Carro,False,Castro Marim
+Castro Marim,Vista Real,Carro,False,Sapal de Castro Marim e Vila Real de Santo António
+Castro Marim,Vista Real,Carro,True,Altura
+Castro Verde,Cruzamento da N122 com a N123,Carro,False,Castro Verde
+Castro Verde,Cruzamento da N122 com a N123,Carro,True,Mértola
+Castro Verde,IP2 - Saída 48,Carro,False,Castro Verde
+Castro Verde,IP2 - Saída 48,Carro,True,Aljustrel
+Castro Verde,IP2 - Saída 49,Carro,False,Almodôvar
+Castro Verde,IP2 - Saída 49,Carro,False,Castro Verde
+Castro Verde,IP2 - Saída 49,Carro,True,IP2 - Beja/Ourique
+Cercal do Alentejo,São Luís,Carro,False,Cercal do Alentejo
+Cercal do Alentejo,São Luís,Carro,True,Odemira
+CO-32 - Fim,CO-32 - Saída 3,Carro,False,Aeroporto de Córdoba
+CO-32 - Fim,CO-32 - Saída 3,Carro,False,Córdoba - Oeste
+CO-32 - Fim,CO-32 - Saída 3,Carro,True,A-4 - Madrid/Sevilha
+CO-32 - Fim,CO-32 - Saída 3,Carro,True,A-45 - Málaga
+CO-32 - Saída 3,Cruzamento da A-4 com a A-45,Carro,False,Aeroporto de Córdoba
+CO-32 - Saída 3,Cruzamento da A-4 com a A-45,Carro,False,Córdoba - Oeste
+CO-32 - Saída 3,Cruzamento da A-4 com a A-45,Carro,True,A-4 - Madrid/Sevilha
+CO-32 - Saída 3,Cruzamento da A-4 com a A-45,Carro,True,A-45 - Málaga
+Colos,Cruzamento da N123-1 com a N263,Carro,False,Cercal do Alentejo
+Colos,Cruzamento da N123-1 com a N263,Carro,False,Colos
+Colos,Cruzamento da N123-1 com a N263,Carro,True,Odemira
+Colos,Cruzamento da N123-1 com a N263,Carro,True,São Martinho das Amoreiras
+"Conceição, Faro",Variante de Faro - Nó com a N2,Carro,False,A22 - Espanha/Loulé/A2 - Lisboa
+"Conceição, Faro",Variante de Faro - Nó com a N2,Carro,False,São Brás de Alportel
+"Conceição, Faro",Variante de Faro - Nó com a N2,Carro,True,Faro
+"Conceição, Tavira",Estação da Porta Nova,Comboio,False,Vila Real de Santo António
+"Conceição, Tavira",Estação da Porta Nova,Comboio,True,Faro
+"Conceição, Tavira",Estação da Porta Nova,Comboio,True,Lagos
+"Conceição, Tavira",Estação de Cacela,Comboio,False,Faro
+"Conceição, Tavira",Estação de Cacela,Comboio,False,Lagos
+"Conceição, Tavira",Estação de Cacela,Comboio,True,Vila Real de Santo António
+"Conceição, Tavira",Tavira - Norte,Carro,False,Vila Real de Santo António
+"Conceição, Tavira",Tavira - Norte,Carro,True,Faro
+"Conceição, Tavira",Tavira - Norte,Carro,True,Tavira
+"Conceição, Tavira",Vila Nova de Cacela,Carro,False,Faro
+"Conceição, Tavira",Vila Nova de Cacela,Carro,False,Tavira
+"Conceição, Tavira",Vila Nova de Cacela,Carro,True,Vila Real de Santo António
+Corte da Seda,Marmeleiro,Carro,False,Martim Longo
+Corte da Seda,Marmeleiro,Carro,True,Alcoutim
+Corte da Seda,Marmeleiro,Carro,True,Rio Guadiana
+Corte da Seda,Parque Empresarial de Alcoutim,Carro,False,Alcoutim
+Corte da Seda,Parque Empresarial de Alcoutim,Carro,False,Rio Guadiana
+Corte da Seda,Parque Empresarial de Alcoutim,Carro,True,Martim Longo
+Corte João Marques,Martim Longo,Carro,False,A2 - Almodôvar
+Corte João Marques,Martim Longo,Carro,False,Ameixal
+Corte João Marques,Martim Longo,Carro,True,Martim Longo
+Cruzamento da A-376 com a SE-30,SE-30 - Saída 5,Carro,False,A-376 - Utrera
+Cruzamento da A-376 com a SE-30,SE-30 - Saída 5,Carro,False,A-4 - Cádiz
+Cruzamento da A-376 com a SE-30,SE-30 - Saída 5,Carro,False,A-49 - Huelva
+Cruzamento da A-376 com a SE-30,SE-30 - Saída 5,Carro,False,Porto de Sevilha
+Cruzamento da A-376 com a SE-30,SE-30 - Saída 5,Carro,True,A-4 - Córdoba
+Cruzamento da A-376 com a SE-30,SE-30 - Saída 5,Carro,True,A-92 - Granada
+Cruzamento da A-376 com a SE-30,SE-30 - Saída 5,Carro,True,Aeroporto de Sevilha - San Pablo
+Cruzamento da A-376 com a SE-30,SE-30 - Saída 8,Carro,False,A-376 - Utrera
+Cruzamento da A-376 com a SE-30,SE-30 - Saída 8,Carro,False,A-4 - Córdoba
+Cruzamento da A-376 com a SE-30,SE-30 - Saída 8,Carro,False,A-92 - Granada
+Cruzamento da A-376 com a SE-30,SE-30 - Saída 8,Carro,False,Aeroporto de Sevilha - San Pablo
+Cruzamento da A-376 com a SE-30,SE-30 - Saída 8,Carro,True,A-4 - Cádiz
+Cruzamento da A-376 com a SE-30,SE-30 - Saída 8,Carro,True,A-49 - Huelva
+Cruzamento da A-376 com a SE-30,SE-30 - Saída 8,Carro,True,A-66 - Mérida
+Cruzamento da A-376 com a SE-30,SE-30 - Saída 8,Carro,True,Porto de Sevilha
+Cruzamento da A-376 com a SE-40,Cruzamento da A-92 com a SE-40,Carro,False,A-376 - Utrera
+Cruzamento da A-376 com a SE-40,Cruzamento da A-92 com a SE-40,Carro,False,A-4 - Cádiz
+Cruzamento da A-376 com a SE-40,Cruzamento da A-92 com a SE-40,Carro,False,Dos Hermanas
+Cruzamento da A-376 com a SE-40,Cruzamento da A-92 com a SE-40,Carro,True,A-92 - Granada
+Cruzamento da A-376 com a SE-40,Cruzamento da A-92 com a SE-40,Carro,True,Aeroporto de Sevilha - San Pablo
+Cruzamento da A-376 com a SE-40,Cruzamento da A-92 com a SE-40,Carro,True,Alcalá de Guadaíra
+Cruzamento da A-376 com a SE-40,SE-40 - Saída 19,Carro,False,A-376 - Utrera
+Cruzamento da A-376 com a SE-40,SE-40 - Saída 19,Carro,False,A-4 - Córdoba
+Cruzamento da A-376 com a SE-40,SE-40 - Saída 19,Carro,False,A-92 - Granada/Málaga
+Cruzamento da A-376 com a SE-40,SE-40 - Saída 19,Carro,False,Aeroporto de Sevilha - San Pablo
+Cruzamento da A-376 com a SE-40,SE-40 - Saída 19,Carro,True,A-4 - Cádiz/Sevilha
+Cruzamento da A-376 com a SE-40,SE-40 - Saída 19,Carro,True,Dos Hermanas
+Cruzamento da A-381 com a AP-4,Cruzamento da A-382 com a AP-4,Carro,False,Cádiz
+Cruzamento da A-381 com a AP-4,Cruzamento da A-382 com a AP-4,Carro,True,Sevilha
+Cruzamento da A-381 com a AP-4,Cruzamento da A-4 com a AP-4,Carro,False,Jerez de la Frontera
+Cruzamento da A-381 com a AP-4,Cruzamento da A-4 com a AP-4,Carro,False,Sevilha
+Cruzamento da A-381 com a AP-4,Cruzamento da A-4 com a AP-4,Carro,True,Cádiz
+Cruzamento da A-4 com a SE-20,SE-20 - Miraflores,Carro,False,A-4 - Córdoba
+Cruzamento da A-4 com a SE-20,SE-20 - Miraflores,Carro,False,Aeroporto de Sevilha - San Pablo
+Cruzamento da A-4 com a SE-20,SE-20 - Miraflores,Carro,True,A-49 - Huelva
+Cruzamento da A-4 com a SE-20,SE-20 - Miraflores,Carro,True,A-66 - Mérida
+Cruzamento da A-4 com a SE-20,SE-20 - Miraflores,Carro,True,Sevilha - Isla de la Cartuja
+Cruzamento da A-4 Norte com a SE-30,Ronda Urbana Norte de Sevilha - Poligono Calonge,Carro,False,A-4 - Cádiz
+Cruzamento da A-4 Norte com a SE-30,Ronda Urbana Norte de Sevilha - Poligono Calonge,Carro,False,A-49 - Huelva
+Cruzamento da A-4 Norte com a SE-30,Ronda Urbana Norte de Sevilha - Poligono Calonge,Carro,False,A-92 - Granada
+Cruzamento da A-4 Norte com a SE-30,Ronda Urbana Norte de Sevilha - Poligono Calonge,Carro,False,Porto de Sevilha
+Cruzamento da A-4 Norte com a SE-30,Ronda Urbana Norte de Sevilha - Poligono Calonge,Carro,True,A-66 - Mérida
+Cruzamento da A-4 Norte com a SE-30,Ronda Urbana Norte de Sevilha - Poligono Calonge,Carro,True,Ronda Urbana Norte de Sevilha
+Cruzamento da A-4 Norte com a SE-30,SE-30 - Saída 1,Carro,False,A-66 - Mérida
+Cruzamento da A-4 Norte com a SE-30,SE-30 - Saída 1,Carro,False,Ronda Urbana Norte de Sevilha
+Cruzamento da A-4 Norte com a SE-30,SE-30 - Saída 1,Carro,False,Sevilha - Centro da cidade
+Cruzamento da A-4 Norte com a SE-30,SE-30 - Saída 1,Carro,True,A-4 - Cádiz
+Cruzamento da A-4 Norte com a SE-30,SE-30 - Saída 1,Carro,True,A-49 - Huelva
+Cruzamento da A-4 Norte com a SE-30,SE-30 - Saída 1,Carro,True,A-92 - Granada
+Cruzamento da A-4 Norte com a SE-30,SE-30 - Saída 1,Carro,True,Porto de Sevilha
+Cruzamento da A-4 Norte com a SE-40,SE-40 - Saída 5,Carro,False,A-4 - Córdoba
+Cruzamento da A-4 Norte com a SE-40,SE-40 - Saída 5,Carro,True,A-4 - Cádiz
+Cruzamento da A-4 Norte com a SE-40,SE-40 - Saída 5,Carro,True,A-376 - Utrera
+Cruzamento da A-4 Norte com a SE-40,SE-40 - Saída 5,Carro,True,A-92 - Granada
+Cruzamento da A-4 Sul com a SE-30,Cruzamento da A-4 Sul com a SE-40,Carro,False,Aeroporto de Sevilha - San Pablo
+Cruzamento da A-4 Sul com a SE-30,Cruzamento da A-4 Sul com a SE-40,Carro,False,Sevilha
+Cruzamento da A-4 Sul com a SE-30,Cruzamento da A-4 Sul com a SE-40,Carro,True,Cádiz
+Cruzamento da A-4 Sul com a SE-30,Ponte do Centenário,Carro,False,A-4 - Cádiz/Córdoba/Aeroporto de Sevilha - San Pablo
+Cruzamento da A-4 Sul com a SE-30,Ponte do Centenário,Carro,False,A-92 - Granada/Málaga
+Cruzamento da A-4 Sul com a SE-30,Ponte do Centenário,Carro,False,Porto de Sevilha Este
+Cruzamento da A-4 Sul com a SE-30,Ponte do Centenário,Carro,True,A-49 - Huelva
+Cruzamento da A-4 Sul com a SE-30,Ponte do Centenário,Carro,True,A-66 - Mérida
+Cruzamento da A-4 Sul com a SE-30,Ponte do Centenário,Carro,True,Porto de Sevilha Oeste
+Cruzamento da A-4 Sul com a SE-30,SE-30 - Saída 8,Carro,False,A-4 - Cádiz
+Cruzamento da A-4 Sul com a SE-30,SE-30 - Saída 8,Carro,False,A-49 - Huelva
+Cruzamento da A-4 Sul com a SE-30,SE-30 - Saída 8,Carro,False,A-66 - Mérida
+Cruzamento da A-4 Sul com a SE-30,SE-30 - Saída 8,Carro,False,Porto de Sevilha
+Cruzamento da A-4 Sul com a SE-30,SE-30 - Saída 8,Carro,True,A-376 - Utrera
+Cruzamento da A-4 Sul com a SE-30,SE-30 - Saída 8,Carro,True,A-4 - Córdoba
+Cruzamento da A-4 Sul com a SE-30,SE-30 - Saída 8,Carro,True,A-92 - Granada
+Cruzamento da A-4 Sul com a SE-40,SE-40 - Saída 19,Carro,False,A-4 - Cádiz/Sevilha
+Cruzamento da A-4 Sul com a SE-40,SE-40 - Saída 19,Carro,True,A-376 - Sevilha/Utrera
+Cruzamento da A-4 Sul com a SE-40,SE-40 - Saída 19,Carro,True,A-4 - Carmona/Córdoba
+Cruzamento da A-4 Sul com a SE-40,SE-40 - Saída 19,Carro,True,A-92 - Granada/Málaga/Sevilha
+Cruzamento da A-4 Sul com a SE-40,SE-40 - Saída 19,Carro,True,Aeroporto de Sevilha - San Pablo
+Cruzamento da A-49 com a H-31,H-31 - Saída 80,Carro,False,Sevilha
+Cruzamento da A-49 com a H-31,H-31 - Saída 80,Carro,True,Huelva
+Cruzamento da A-49 com a SE-30,Cruzamento da A-66 com a SE-30,Carro,False,A-4 - Cádiz
+Cruzamento da A-49 com a SE-30,Cruzamento da A-66 com a SE-30,Carro,False,A-49 - Huelva
+Cruzamento da A-49 com a SE-30,Cruzamento da A-66 com a SE-30,Carro,False,A-92 - Granada/Málaga
+Cruzamento da A-49 com a SE-30,Cruzamento da A-66 com a SE-30,Carro,True,A-4 - Córdoba/Aeroporto de Sevilha - San Pablo
+Cruzamento da A-49 com a SE-30,Cruzamento da A-66 com a SE-30,Carro,True,A-66 - Mérida
+Cruzamento da A-49 com a SE-30,SE-30 - Saída 15,Carro,False,A-49 - Huelva
+Cruzamento da A-49 com a SE-30,SE-30 - Saída 15,Carro,False,A-66 - Mérida
+Cruzamento da A-49 com a SE-30,SE-30 - Saída 15,Carro,True,A-4 - Cádiz/Porto de Sevilha
+Cruzamento da A-49 com a SE-30,SE-30 - Saída 15,Carro,True,A-92 - Granada
+Cruzamento da A-49 com a SE-30,SE-30 - Saída 15,Carro,True,Coria del Río
+Cruzamento da A-49 com a SE-30,Sevilha - Avenida Expo 92,Carro,True,Sevilha - Centro da cidade
+Cruzamento da A-49 com a SE-30,Sevilha - Avenida Expo 92,Carro,True,Sevilha - Isla de la Cartuja
+Cruzamento da A-49 com a SE-30,Sevilha - Avenida Expo 92,Carro,True,Sevilha - Triana
+Cruzamento da A-49 com a SE-40,SE-40 - Saída 35,Carro,False,A-49 - Huelva/Sevilha
+Cruzamento da A-49 com a SE-40,SE-40 - Saída 35,Carro,True,Almensilla
+Cruzamento da A-49 com a SE-40,SE-40 - Saída 35,Carro,True,Palomares del Río
+Cruzamento da A-66 com a SE-30,Cruzamento da SE-20 com a SE-30,Carro,False,A-4 - Cádiz
+Cruzamento da A-66 com a SE-30,Cruzamento da SE-20 com a SE-30,Carro,False,A-49 - Huelva
+Cruzamento da A-66 com a SE-30,Cruzamento da SE-20 com a SE-30,Carro,False,A-66 - Mérida
+Cruzamento da A-66 com a SE-30,Cruzamento da SE-20 com a SE-30,Carro,True,A-4 - Córdoba
+Cruzamento da A-66 com a SE-30,Cruzamento da SE-20 com a SE-30,Carro,True,Aeroporto de Sevilha - San Pablo
+Cruzamento da A-66 com a SE-30,Cruzamento da SE-20 com a SE-30,Carro,True,Sevilha - Isla de la Cartuja
+Cruzamento da A-66 com a SE-30,Cruzamento da SE-20 com a SE-30,Carro,True,Sevilha Norte
+Cruzamento da A-8005 com a SE-20,Cruzamento da A-8009 com a SE-20,Carro,False,A-4 - Córdoba
+Cruzamento da A-8005 com a SE-20,Cruzamento da A-8009 com a SE-20,Carro,False,Aeroporto de Sevilha - San Pablo
+Cruzamento da A-8005 com a SE-20,Cruzamento da A-8009 com a SE-20,Carro,True,A-49 - Huelva
+Cruzamento da A-8005 com a SE-20,Cruzamento da A-8009 com a SE-20,Carro,True,A-66 - Mérida
+Cruzamento da A-8005 com a SE-20,Cruzamento da A-8009 com a SE-20,Carro,True,Sevilha - Isla de la Cartuja
+Cruzamento da A-8005 com a SE-20,SE-20 - Pino Montano,Carro,False,A-49 - Huelva
+Cruzamento da A-8005 com a SE-20,SE-20 - Pino Montano,Carro,False,A-66 - Mérida
+Cruzamento da A-8005 com a SE-20,SE-20 - Pino Montano,Carro,False,Sevilha - Isla de la Cartuja
+Cruzamento da A-8005 com a SE-20,SE-20 - Pino Montano,Carro,True,A-4 - Córdoba
+Cruzamento da A-8005 com a SE-20,SE-20 - Pino Montano,Carro,True,Aeroporto de Sevilha - San Pablo
+Cruzamento da A-8009 com a SE-20,SE-20 - San Jerónimo,Carro,False,A-4 - Córdoba
+Cruzamento da A-8009 com a SE-20,SE-20 - San Jerónimo,Carro,False,Aeroporto de Sevilha - San Pablo
+Cruzamento da A-8009 com a SE-20,SE-20 - San Jerónimo,Carro,True,A-49 - Huelva
+Cruzamento da A-8009 com a SE-20,SE-20 - San Jerónimo,Carro,True,A-66 - Mérida
+Cruzamento da A-8009 com a SE-20,SE-20 - San Jerónimo,Carro,True,Sevilha - Isla de la Cartuja
+Cruzamento da A-92 com a SE-30,SE-30 - Saída 1,Carro,False,A-4 - Cádiz
+Cruzamento da A-92 com a SE-30,SE-30 - Saída 1,Carro,False,A-49 - Huelva
+Cruzamento da A-92 com a SE-30,SE-30 - Saída 1,Carro,False,A-92 - Granada/Málaga
+Cruzamento da A-92 com a SE-30,SE-30 - Saída 1,Carro,False,Porto de Sevilha
+Cruzamento da A-92 com a SE-30,SE-30 - Saída 1,Carro,True,A-4 - Córdoba
+Cruzamento da A-92 com a SE-30,SE-30 - Saída 1,Carro,True,A-66 - Mérida
+Cruzamento da A-92 com a SE-30,SE-30 - Saída 1,Carro,True,Aeroporto de Sevilha - San Pablo
+Cruzamento da A-92 com a SE-30,SE-30 - Saída 1,Carro,True,Ronda Urbana Norte de Sevilha
+Cruzamento da A-92 com a SE-30,SE-30 - Saída 3,Carro,False,A-4 - Córdoba
+Cruzamento da A-92 com a SE-30,SE-30 - Saída 3,Carro,False,A-66 - Mérida
+Cruzamento da A-92 com a SE-30,SE-30 - Saída 3,Carro,False,Aeroporto de Sevilha - San Pablo
+Cruzamento da A-92 com a SE-30,SE-30 - Saída 3,Carro,False,Ronda Urbana Norte de Sevilha
+Cruzamento da A-92 com a SE-30,SE-30 - Saída 3,Carro,True,A-376 - Utrera
+Cruzamento da A-92 com a SE-30,SE-30 - Saída 3,Carro,True,A-4 - Cádiz
+Cruzamento da A-92 com a SE-30,SE-30 - Saída 3,Carro,True,A-49 - Huelva
+Cruzamento da A-92 com a SE-30,SE-30 - Saída 3,Carro,True,Porto de Sevilha
+Cruzamento da A-92 com a SE-40,SE-40 - Saída 5,Carro,False,A-4 - Cádiz
+Cruzamento da A-92 com a SE-40,SE-40 - Saída 5,Carro,False,A-376 - Utrera
+Cruzamento da A-92 com a SE-40,SE-40 - Saída 5,Carro,False,A-92 - Granada/Sevilha
+Cruzamento da A-92 com a SE-40,SE-40 - Saída 5,Carro,True,A-4 - Córdoba/Madrid
+Cruzamento da A-92 com a SE-40,SE-40 - Saída 5,Carro,True,Aeroporto de Sevilha - San Pablo
+Cruzamento da H-30 com a H-31,H-31 - Saída 80,Carro,False,Huelva
+Cruzamento da H-30 com a H-31,H-31 - Saída 80,Carro,True,Sevilha
+Cruzamento da A2 com a A26,Estação de Ermidas - Sado,Carro,False,Grândola
+Cruzamento da A2 com a A26,Estação de Ermidas - Sado,Carro,False,Lisboa
+Cruzamento da A2 com a A26,Estação de Ermidas - Sado,Carro,True,Algarve
+Cruzamento da A2 com a A26,Estação de Ermidas - Sado,Carro,True,Ourique
+Cruzamento da N120 com a N125,N125 - Acesso à Saída 1 da A22,Carro,False,Lagos - Centro da cidade
+Cruzamento da N120 com a N125,N125 - Acesso à Saída 1 da A22,Carro,False,Portimão
+Cruzamento da N120 com a N125,N125 - Acesso à Saída 1 da A22,Carro,True,A22
+Cruzamento da N120 com a N125,N125 - Acesso à Saída 1 da A22,Carro,True,Luz
+Cruzamento da N120 com a N125,N125 - Acesso à Saída 1 da A22,Carro,True,Sagres
+Cruzamento da N120 com a N125,N125 - Acesso à Saída 2 da A22,Carro,False,Lagos
+Cruzamento da N120 com a N125,N125 - Acesso à Saída 2 da A22,Carro,True,A22 - Faro/Lisboa
+Cruzamento da N120 com a N125,N125 - Acesso à Saída 2 da A22,Carro,True,Portimão
+Cruzamento da N122 com a M1059,Cruzamento da N122 com a M1060,Carro,False,Alcoutim
+Cruzamento da N122 com a M1059,Cruzamento da N122 com a M1060,Carro,False,Beja
+Cruzamento da N122 com a M1059,Cruzamento da N122 com a M1060,Carro,True,Castro Marim
+Cruzamento da N122 com a M1059,Cruzamento da N122 com a M507-2,Carro,False,Castro Marim
+Cruzamento da N122 com a M1059,Cruzamento da N122 com a M507-2,Carro,True,Alcoutim
+Cruzamento da N122 com a M1059,Cruzamento da N122 com a M507-2,Carro,True,Beja
+Cruzamento da N122 com a M1060,IC27 - Saída 5,Carro,False,Corte Velha
+Cruzamento da N122 com a M1060,IC27 - Saída 5,Carro,True,Castro Marim
+Cruzamento da N122 com a M1063,IC27 - Saída 3,Carro,False,Almada de Ouro
+Cruzamento da N122 com a M1063,IC27 - Saída 3,Carro,False,Foz de Odeleite
+Cruzamento da N122 com a M1063,IC27 - Saída 3,Carro,True,Castro Marim
+Cruzamento da N122 com a M1063,IC27 - Saída 3,Carro,True,IC27
+Cruzamento da N122 com a M1063,IC27 - Saída 3,Carro,True,Vila Real de Santo António
+Cruzamento da N122 com a M507,IC27 - Fim,Carro,False,Beja
+Cruzamento da N122 com a M507,IC27 - Fim,Carro,False,Mértola
+Cruzamento da N122 com a M507,IC27 - Fim,Carro,True,Castro Marim
+Cruzamento da N122 com a M507,Santa Marta,Carro,False,Alcoutim
+Cruzamento da N122 com a M507,Santa Marta,Carro,True,Beja
+Cruzamento da N122 com a M507,Santa Marta,Carro,True,Mértola
+Cruzamento da N122 com a M512,Montes Castelhanos,Carro,False,Alcoutim
+Cruzamento da N122 com a M512,Montes Castelhanos,Carro,False,Azinhal
+Cruzamento da N122 com a M512,Montes Castelhanos,Carro,True,Castro Marim
+Cruzamento da N122 com a N123,IP2 - Saída 44,Carro,False,Mértola
+Cruzamento da N122 com a N123,IP2 - Saída 44,Carro,False,Vila Real de Santo António
+Cruzamento da N122 com a N123,IP2 - Saída 44,Carro,True,Beja
+Cruzamento da N122 com a N123,Mértola,Carro,False,Beja
+Cruzamento da N122 com a N123,Mértola,Carro,False,Castro Verde
+Cruzamento da N122 com a N123,Mértola,Carro,False,Lisboa
+Cruzamento da N122 com a N123,Mértola,Carro,True,Mértola
+Cruzamento da N122 com a N123,Mértola,Carro,True,Vila Real de Santo António
+Cruzamento da N122 com a N267,Mértola,Carro,False,Almodôvar
+Cruzamento da N122 com a N267,Mértola,Carro,False,Vila Real de Santo António
+Cruzamento da N122 com a N267,Mértola,Carro,True,Beja
+Cruzamento da N122 com a N267,Mértola,Carro,True,Mértola
+Cruzamento da N123 com a N263,Luzianes,Carro,False,Odemira
+Cruzamento da N123 com a N263,Luzianes,Carro,True,Estação de Amoreiras - Odemira
+Cruzamento da N123 com a N263,Luzianes,Carro,True,Monchique
+Cruzamento da N123 com a N263,Odemira,Carro,False,Beja
+Cruzamento da N123 com a N263,Odemira,Carro,False,Ourique
+Cruzamento da N123 com a N263,Odemira,Carro,True,Odemira
+Cruzamento da N123-1 com a N263,Estação de Amoreiras - Odemira,Carro,False,Colos
+Cruzamento da N123-1 com a N263,Estação de Amoreiras - Odemira,Carro,False,Odemira
+Cruzamento da N123-1 com a N263,Estação de Amoreiras - Odemira,Carro,True,São Martinho das Amoreiras
+Cruzamento da N124 com a M507-1,Martim Longo,Carro,False,Alcoutim
+Cruzamento da N124 com a M507-1,Martim Longo,Carro,False,IC27
+Cruzamento da N124 com a M507-1,Martim Longo,Carro,True,Barranco do Velho
+Cruzamento da N124 com a M507-1,Martim Longo,Carro,True,Martim Longo
+Cruzamento da N124 com a M507-1,Pereiro,Carro,False,Martim Longo
+Cruzamento da N124 com a M507-1,Pereiro,Carro,True,Alcoutim
+Cruzamento da N124 com a N125,Cruzamento da N125 com a M531-1,Carro,False,Portimão
+Cruzamento da N124 com a N125,Cruzamento da N125 com a M531-1,Carro,True,Alvor
+Cruzamento da N124 com a N125,Cruzamento da N125 com a M531-1,Carro,True,Lagos
+Cruzamento da N124 com a N125,N125 - Acesso a Estômbar e Ferragudo,Carro,False,Lagos
+Cruzamento da N124 com a N125,N125 - Acesso a Estômbar e Ferragudo,Carro,False,Portimão
+Cruzamento da N124 com a N125,N125 - Acesso a Estômbar e Ferragudo,Carro,True,Lagoa
+Cruzamento da N124 com a N125,N125 - Acesso a Estômbar e Ferragudo,Carro,True,Porto de Pesca de Portimão
+Cruzamento da N124 com a N125,N125 - Acesso a Estômbar e Ferragudo,Carro,True,Silves
+Cruzamento da N124 com a N125,Portimão - Avenida São Lourenço da Barrosa,Carro,False,A22
+Cruzamento da N124 com a N125,Portimão - Avenida São Lourenço da Barrosa,Carro,True,Portimão
+Cruzamento da N124 com a N125,Portimão - Avenida São Lourenço da Barrosa,Carro,True,Praia da Rocha
+Cruzamento da N124 com a N266,Silves,Carro,False,Monchique
+Cruzamento da N124 com a N266,Silves,Carro,True,Silves
+Cruzamento da N124 com a N396,Salir,Carro,False,Ameixal
+Cruzamento da N124 com a N396,Salir,Carro,False,Barranco do Velho
+Cruzamento da N124 com a N396,Salir,Carro,False,Cachopo
+Cruzamento da N124 com a N396,Salir,Carro,True,Lagos
+Cruzamento da N124 com a N396,Salir,Carro,True,Salir
+Cruzamento da N124 com a N396,Salir,Carro,True,Silves
+Cruzamento da N124-1 com a N125,Lagoa,Carro,False,A22
+Cruzamento da N124-1 com a N125,Lagoa,Carro,False,Portimão
+Cruzamento da N124-1 com a N125,Lagoa,Carro,False,Silves
+Cruzamento da N124-1 com a N125,Lagoa,Carro,True,Lagoa
+Cruzamento da N124-1 com a N125,N125 - Acesso a Estômbar e Ferragudo,Carro,False,Lagoa
+Cruzamento da N124-1 com a N125,N125 - Acesso a Estômbar e Ferragudo,Carro,False,Silves
+Cruzamento da N124-1 com a N125,N125 - Acesso a Estômbar e Ferragudo,Carro,True,Estômbar
+Cruzamento da N124-1 com a N125,N125 - Acesso a Estômbar e Ferragudo,Carro,True,Portimão
+Cruzamento da N125 com a M1347,Luz de Tavira,Carro,False,Tavira
+Cruzamento da N125 com a M1347,Luz de Tavira,Carro,False,Vila Real de Santo António
+Cruzamento da N125 com a M1347,Luz de Tavira,Carro,True,Faro
+Cruzamento da N125 com a M1347,Luz de Tavira,Carro,True,Olhão
+Cruzamento da N125 com a M1347,Tavira - Sul,Carro,False,Olhão
+Cruzamento da N125 com a M1347,Tavira - Sul,Carro,True,Tavira
+Cruzamento da N125 com a M1347,Tavira - Sul,Carro,True,Vila Real de Santo António
+Cruzamento da N125 com a M516-2,Cruzamento da N125 com a N398,Carro,False,Tavira
+Cruzamento da N125 com a M516-2,Cruzamento da N125 com a N398,Carro,False,Vila Real de Santo António
+Cruzamento da N125 com a M516-2,Cruzamento da N125 com a N398,Carro,True,Faro
+Cruzamento da N125 com a M516-2,Cruzamento da N125 com a N398,Carro,True,Olhão
+Cruzamento da N125 com a M516-2,Estação de Fuseta-Moncarapacho,Carro,False,Faro
+Cruzamento da N125 com a M516-2,Estação de Fuseta-Moncarapacho,Carro,False,Tavira
+Cruzamento da N125 com a M516-2,Estação de Fuseta-Moncarapacho,Carro,True,Fuseta
+Cruzamento da N125 com a M516-2,Livramento,Carro,False,Faro
+Cruzamento da N125 com a M516-2,Livramento,Carro,False,Olhão
+Cruzamento da N125 com a M516-2,Livramento,Carro,True,Tavira
+Cruzamento da N125 com a M516-2,Livramento,Carro,True,Vila Real de Santo António
+Cruzamento da N125 com a M526,Cruzamento da N125 com a N396,Carro,False,Albufeira
+Cruzamento da N125 com a M526,Cruzamento da N125 com a N396,Carro,False,Portimão
+Cruzamento da N125 com a M526,Cruzamento da N125 com a N396,Carro,True,Faro
+Cruzamento da N125 com a M526,Cruzamento da N125 com a N396,Carro,True,Loulé
+Cruzamento da N125 com a M531-1,Mexilhoeira Grande,Carro,False,Portimão
+Cruzamento da N125 com a M531-1,Mexilhoeira Grande,Carro,True,Lagos
+Cruzamento da N125 com a M535,Cruzamento da N125 com a M537-2,Carro,False,Sagres
+Cruzamento da N125 com a M535,Cruzamento da N125 com a M537-2,Carro,False,Vila do Bispo
+Cruzamento da N125 com a M535,Cruzamento da N125 com a M537-2,Carro,True,Lagos
+Cruzamento da N125 com a M535,Cruzamento da N125 com a M537-2,Carro,True,Portimão
+Cruzamento da N125 com a M537-2,Espiche,Carro,False,Sagres
+Cruzamento da N125 com a M537-2,Espiche,Carro,False,Vila do Bispo
+Cruzamento da N125 com a M537-2,Espiche,Carro,True,Lagos
+Cruzamento da N125 com a M537-2,Espiche,Carro,True,Portimão
+Cruzamento da N125 com a N125-6,Estação de Castro Marim,Carro,False,Altura
+Cruzamento da N125 com a N125-6,Estação de Castro Marim,Carro,True,Castro Marim
+Cruzamento da N125 com a N125-6,Estação de Monte Gordo,Carro,False,A22 - Faro
+Cruzamento da N125 com a N125-6,Estação de Monte Gordo,Carro,False,Tavira
+Cruzamento da N125 com a N125-6,Estação de Monte Gordo,Carro,True,Espanha
+Cruzamento da N125 com a N125-6,Estação de Monte Gordo,Carro,True,Vila Real de Santo António
+Cruzamento da N125 com a N269,Cruzamento da N125 com a N395,Carro,False,Faro
+Cruzamento da N125 com a N269,Cruzamento da N125 com a N395,Carro,False,Loulé
+Cruzamento da N125 com a N269,Cruzamento da N125 com a N395,Carro,True,A22
+Cruzamento da N125 com a N269,Cruzamento da N125 com a N395,Carro,True,Portimão
+Cruzamento da N125 com a N395,IC1 - Fim,Carro,False,Faro
+Cruzamento da N125 com a N395,IC1 - Fim,Carro,False,Loulé
+Cruzamento da N125 com a N395,IC1 - Fim,Carro,True,A2 - Lisboa
+Cruzamento da N125 com a N395,IC1 - Fim,Carro,True,A22 - Faro/Portimão
+Cruzamento da N125 com a N395,IC1 - Fim,Carro,True,Portimão
+Cruzamento da N125 com a N398,Olhão,Carro,False,Tavira
+Cruzamento da N125 com a N398,Olhão,Carro,True,Faro
+Cruzamento da N125 com a N398,Olhão,Carro,True,Olhão
+Cruzamento da N125-4 com a M521,Loulé,Carro,False,A22 - Espanha/Lisboa
+Cruzamento da N125-4 com a M521,Loulé,Carro,False,Aeroporto de Faro
+Cruzamento da N125-4 com a M521,Loulé,Carro,False,Almancil
+Cruzamento da N125-4 com a M521,Loulé,Carro,False,Estádio Algarve
+Cruzamento da N125-4 com a M521,Loulé,Carro,False,Faro
+Cruzamento da N125-4 com a M521,Loulé,Carro,True,Loulé
+Cruzamento da N125-4 com a M521,Mar Shopping Algarve,Carro,False,Loulé
+Cruzamento da N125-4 com a M521,Mar Shopping Algarve,Carro,True,A22
+Cruzamento da N125-4 com a M521,Mar Shopping Algarve,Carro,True,Aeroporto de Faro
+Cruzamento da N125-4 com a M521,Mar Shopping Algarve,Carro,True,Faro
+Cruzamento da SE-20 com a SE-30,SE-20 - Estádio de La Cartuja,Carro,False,A-49 - Huelva
+Cruzamento da SE-20 com a SE-30,SE-20 - Estádio de La Cartuja,Carro,False,A-66 - Mérida
+Cruzamento da SE-20 com a SE-30,SE-20 - Estádio de La Cartuja,Carro,False,Isla Mágica
+Cruzamento da SE-20 com a SE-30,SE-20 - Estádio de La Cartuja,Carro,False,Sevilha - Isla de la Cartuja
+Cruzamento da SE-20 com a SE-30,SE-20 - Estádio de La Cartuja,Carro,True,A-4 - Córdoba
+Cruzamento da SE-20 com a SE-30,SE-20 - Estádio de La Cartuja,Carro,True,Aeroporto de Sevilha - San Pablo
+Cruzamento da SE-20 com a SE-30,SE-20 - Estádio de La Cartuja,Carro,True,Estádio de La Cartuja
+Cruzamento da SE-20 com a SE-30,SE-30 - Saída 21,Carro,False,A-49 - Huelva
+Cruzamento da SE-20 com a SE-30,SE-30 - Saída 21,Carro,False,A-66 - Mérida
+Cruzamento da SE-20 com a SE-30,SE-30 - Saída 21,Carro,True,Ronda Urbana Norte de Sevilha
+Cruzamento da SE-20 com a SE-30,SE-30 - Saída 21,Carro,True,Sevilha - Rua Torneo
+Cruzamento do IC1 com o IP8,Grândola,Carro,False,Alcácer do Sal
+Cruzamento do IC1 com o IP8,Grândola,Carro,False,Lisboa
+Cruzamento do IC1 com o IP8,Grândola,Carro,True,Grândola
+Cruzamento do IC4 com a M520,Cruzamento do IC4 com a N125,Carro,False,Aeroporto de Faro
+Cruzamento do IC4 com a M520,Cruzamento do IC4 com a N125,Carro,False,Faro
+Cruzamento do IC4 com a M520,Cruzamento do IC4 com a N125,Carro,True,A22 - Espanha/Portimão
+Cruzamento do IC4 com a M520,Cruzamento do IC4 com a N125,Carro,True,Loulé
+Cruzamento do IC4 com a M520,Variante de Faro - Nó com o IC4,Carro,False,A22 - Espanha/Portimão
+Cruzamento do IC4 com a M520,Variante de Faro - Nó com o IC4,Carro,False,Loulé
+Cruzamento do IC4 com a M520,Variante de Faro - Nó com o IC4,Carro,True,Aeroporto de Faro
+Cruzamento do IC4 com a M520,Variante de Faro - Nó com o IC4,Carro,True,Faro
+Cuba,Estação de Alvito,Comboio,False,Beja
+Cuba,Estação de Alvito,Comboio,True,Casa Branca
+Cuba,Estação de Alvito,Comboio,True,Évora
+Cuba,Estação de Alvito,Comboio,True,Lisboa - Oriente
+Culatra,Hangares,Barco,False,Olhão
+Culatra,Hangares,Barco,False,Vila Nova de Cacela
+Culatra,Hangares,Barco,True,Faro
+Culatra,Ilha da Armona,Barco,False,Faro
+Culatra,Ilha da Armona,Barco,True,Fuseta
+Culatra,Ilha da Armona,Barco,True,Vila Nova de Cacela
+Culatra,Olhão,Barco,False,Faro
+Culatra,Olhão,Barco,True,Olhão
+Entradas,IP2 - Saída 47,Carro,False,A2
+Entradas,IP2 - Saída 47,Carro,False,Castro Verde
+Entradas,IP2 - Saída 47,Carro,False,Entradas
+Entradas,IP2 - Saída 47,Carro,True,Albernoa
+Entradas,IP2 - Saída 47,Carro,True,Beja
+Entradas,IP2 - Saída 48,Carro,False,Beja
+Entradas,IP2 - Saída 48,Carro,False,Entradas
+Entradas,IP2 - Saída 48,Carro,True,A2
+Entradas,IP2 - Saída 48,Carro,True,Castro Verde
+Entradas,IP2 - Saída 48,Carro,True,Ourique
+Ervidel,Ferreira do Alentejo,Carro,False,Aljustrel
+Ervidel,Ferreira do Alentejo,Carro,False,Castro Verde
+Ervidel,Ferreira do Alentejo,Carro,False,Faro
+Ervidel,Ferreira do Alentejo,Carro,True,Ferreira do Alentejo
+Ervidel,Ferreira do Alentejo,Carro,True,Odivelas
+Espiche,N125 - Acesso à Saída 1 da A22,Carro,False,Luz
+Espiche,N125 - Acesso à Saída 1 da A22,Carro,False,Sagres
+Espiche,N125 - Acesso à Saída 1 da A22,Carro,False,Vila do Bispo
+Espiche,N125 - Acesso à Saída 1 da A22,Carro,True,Lagos
+Espiche,N125 - Acesso à Saída 1 da A22,Carro,True,Portimão
+Espírito Santo,Sedas,Carro,False,Beja
+Espírito Santo,Sedas,Carro,False,Mértola
+Espírito Santo,Sedas,Carro,True,Alcoutim
+Estação da Luz,Estação de Tavira,Comboio,False,Faro
+Estação da Luz,Estação de Tavira,Comboio,False,Lagos
+Estação da Luz,Estação de Tavira,Comboio,True,Vila Real de Santo António
+Estação da Luz,Livramento,Comboio,False,Vila Real de Santo António
+Estação da Luz,Livramento,Comboio,True,Faro
+Estação da Luz,Livramento,Comboio,True,Lagos
+Estação da Porta Nova,Estação de Tavira,Comboio,False,Vila Real de Santo António
+Estação da Porta Nova,Estação de Tavira,Comboio,True,Faro
+Estação da Porta Nova,Estação de Tavira,Comboio,True,Lagos
+Estação de Albufeira - Ferreiras,Estação de Boliqueime,Comboio,False,Lagos
+Estação de Albufeira - Ferreiras,Estação de Boliqueime,Comboio,False,Tunes
+Estação de Albufeira - Ferreiras,Estação de Boliqueime,Comboio,True,Faro
+Estação de Albufeira - Ferreiras,Estação de Boliqueime,Comboio,True,Vila Real de Santo António
+Estação de Albufeira - Ferreiras,Estação de Loulé,Comboio,False,Lisboa - Oriente
+Estação de Albufeira - Ferreiras,Estação de Loulé,Comboio,False,Tunes
+Estação de Albufeira - Ferreiras,Estação de Loulé,Comboio,True,Faro
+Estação de Albufeira - Ferreiras,Tunes,Comboio,False,Faro
+Estação de Albufeira - Ferreiras,Tunes,Comboio,False,Vila Real de Santo António
+Estação de Albufeira - Ferreiras,Tunes,Comboio,True,Lagos
+Estação de Albufeira - Ferreiras,Tunes,Comboio,True,Lisboa - Oriente
+Estação de Alcáçovas,Vila Nova da Baronia,Comboio,False,Casa Branca
+Estação de Alcáçovas,Vila Nova da Baronia,Comboio,False,Évora
+Estação de Alcáçovas,Vila Nova da Baronia,Comboio,False,Lisboa - Oriente
+Estação de Alcáçovas,Vila Nova da Baronia,Comboio,True,Beja
+Estação de Alcantarilha,Poço Barreto,Comboio,False,Tunes
+Estação de Alcantarilha,Poço Barreto,Comboio,False,Vila Real de Santo António
+Estação de Alcantarilha,Poço Barreto,Comboio,True,Lagos
+Estação de Almancil,Estação de Loulé,Comboio,False,Faro
+Estação de Almancil,Estação de Loulé,Comboio,False,Vila Real de Santo António
+Estação de Almancil,Estação de Loulé,Comboio,True,Lagos
+Estação de Almancil,Estação de Loulé,Comboio,True,Tunes
+Estação de Almancil,Estação de Parque das Cidades,Comboio,False,Lagos
+Estação de Almancil,Estação de Parque das Cidades,Comboio,False,Tunes
+Estação de Almancil,Estação de Parque das Cidades,Comboio,True,Faro
+Estação de Almancil,Estação de Parque das Cidades,Comboio,True,Vila Real de Santo António
+Estação de Alvito,Vila Nova da Baronia,Comboio,False,Beja
+Estação de Alvito,Vila Nova da Baronia,Comboio,True,Casa Branca
+Estação de Alvito,Vila Nova da Baronia,Comboio,True,Évora
+Estação de Alvito,Vila Nova da Baronia,Comboio,True,Lisboa - Oriente
+Estação de Amoreiras - Odemira,Estação de Funcheira,Comboio,False,Faro
+Estação de Amoreiras - Odemira,Estação de Funcheira,Comboio,False,Tunes
+Estação de Amoreiras - Odemira,Estação de Funcheira,Comboio,True,Lisboa - Oriente
+Estação de Amoreiras - Odemira,Estação de Funcheira,Comboio,True,Pinhal Novo
+Estação de Amoreiras - Odemira,Estação de Santa Clara - Sabóia,Comboio,False,Lisboa - Oriente
+Estação de Amoreiras - Odemira,Estação de Santa Clara - Sabóia,Comboio,False,Pinhal Novo
+Estação de Amoreiras - Odemira,Estação de Santa Clara - Sabóia,Comboio,True,Faro
+Estação de Amoreiras - Odemira,Estação de Santa Clara - Sabóia,Comboio,True,Tunes
+Estação de Amoreiras - Odemira,São Martinho das Amoreiras,Carro,False,Colos
+Estação de Amoreiras - Odemira,São Martinho das Amoreiras,Carro,False,Estação de Amoreiras - Odemira
+Estação de Amoreiras - Odemira,São Martinho das Amoreiras,Carro,False,Odemira
+Estação de Amoreiras - Odemira,São Martinho das Amoreiras,Carro,True,São Martinho das Amoreiras
+Estação de Boliqueime,Estação de Loulé,Comboio,False,Lagos
+Estação de Boliqueime,Estação de Loulé,Comboio,False,Tunes
+Estação de Boliqueime,Estação de Loulé,Comboio,True,Faro
+Estação de Boliqueime,Estação de Loulé,Comboio,True,Vila Real de Santo António
+Estação de Bom João,Estação de Faro,Comboio,False,Vila Real de Santo António
+Estação de Bom João,Estação de Faro,Comboio,True,Lagos
+Estação de Bom João,Estação de Faro,Comboio,True,Tunes
+Estação de Bom João,Olhão,Comboio,False,Faro
+Estação de Bom João,Olhão,Comboio,False,Lagos
+Estação de Bom João,Olhão,Comboio,True,Vila Real de Santo António
+Estação de Cacela,Estação de Castro Marim,Comboio,False,Faro
+Estação de Cacela,Estação de Castro Marim,Comboio,False,Lagos
+Estação de Cacela,Estação de Castro Marim,Comboio,True,Vila Real de Santo António
+Estação de Castro Marim,Estação de Monte Gordo,Comboio,False,Faro
+Estação de Castro Marim,Estação de Monte Gordo,Comboio,False,Lagos
+Estação de Castro Marim,Estação de Monte Gordo,Comboio,True,Vila Real de Santo António
+Estação de Castro Marim,Vista Real,Carro,False,Altura
+Estação de Castro Marim,Vista Real,Carro,True,Castro Marim
+Estação de Ermidas - Sado,Estação de Funcheira,Comboio,False,Lisboa - Oriente
+Estação de Ermidas - Sado,Estação de Funcheira,Comboio,False,Pinhal Novo
+Estação de Ermidas - Sado,Estação de Funcheira,Comboio,True,Faro
+Estação de Ermidas - Sado,Estação de Funcheira,Comboio,True,Tunes
+Estação de Ermidas - Sado,Ferreira do Alentejo,Carro,False,Santiago do Cacém
+Estação de Ermidas - Sado,Ferreira do Alentejo,Carro,False,Sines
+Estação de Ermidas - Sado,Ferreira do Alentejo,Carro,True,Beja
+Estação de Ermidas - Sado,Ferreira do Alentejo,Carro,True,Ferreira do Alentejo
+Estação de Ermidas - Sado,Grândola,Comboio,False,Faro
+Estação de Ermidas - Sado,Grândola,Comboio,False,Tunes
+Estação de Ermidas - Sado,Grândola,Comboio,True,Lisboa - Oriente
+Estação de Ermidas - Sado,Grândola,Comboio,True,Pinhal Novo
+Estação de Ermidas - Sado,Mimosa,Carro,False,Grândola
+Estação de Ermidas - Sado,Mimosa,Carro,False,Lisboa
+Estação de Ermidas - Sado,Mimosa,Carro,True,Faro
+Estação de Ermidas - Sado,Mimosa,Carro,True,Ourique
+Estação de Estômbar - Lagoa,Estação de Ferragudo,Comboio,False,Tunes
+Estação de Estômbar - Lagoa,Estação de Ferragudo,Comboio,False,Vila Real de Santo António
+Estação de Estômbar - Lagoa,Estação de Ferragudo,Comboio,True,Lagos
+Estação de Estômbar - Lagoa,Estação de Silves,Comboio,False,Lagos
+Estação de Estômbar - Lagoa,Estação de Silves,Comboio,True,Tunes
+Estação de Estômbar - Lagoa,Estação de Silves,Comboio,True,Vila Real de Santo António
+Estação de Faro,Estação de Loulé,Comboio,False,Faro
+Estação de Faro,Estação de Loulé,Comboio,True,Lisboa - Oriente
+Estação de Faro,Estação de Loulé,Comboio,True,Tunes
+Estação de Faro,Estação de Parque das Cidades,Comboio,False,Vila Real de Santo António
+Estação de Faro,Estação de Parque das Cidades,Comboio,True,Lagos
+Estação de Faro,Estação de Parque das Cidades,Comboio,True,Tunes
+Estação de Ferragudo,Estação de Portimão,Comboio,False,Tunes
+Estação de Ferragudo,Estação de Portimão,Comboio,False,Vila Real de Santo António
+Estação de Ferragudo,Estação de Portimão,Comboio,True,Lagos
+Estação de Funcheira,Estação de Santa Clara - Sabóia,Comboio,False,Lisboa - Oriente
+Estação de Funcheira,Estação de Santa Clara - Sabóia,Comboio,False,Pinhal Novo
+Estação de Funcheira,Estação de Santa Clara - Sabóia,Comboio,True,Faro
+Estação de Funcheira,Estação de Santa Clara - Sabóia,Comboio,True,Tunes
+Estação de Fuseta-A,Estação de Fuseta-Moncarapacho,Comboio,False,Faro
+Estação de Fuseta-A,Estação de Fuseta-Moncarapacho,Comboio,False,Lagos
+Estação de Fuseta-A,Estação de Fuseta-Moncarapacho,Comboio,True,Vila Real de Santo António
+Estação de Fuseta-A,Olhão,Comboio,False,Vila Real de Santo António
+Estação de Fuseta-A,Olhão,Comboio,True,Faro
+Estação de Fuseta-A,Olhão,Comboio,True,Lagos
+Estação de Fuseta-Moncarapacho,Fuseta,Carro,False,Faro
+Estação de Fuseta-Moncarapacho,Fuseta,Carro,False,Tavira
+Estação de Fuseta-Moncarapacho,Fuseta,Carro,True,Fuseta
+Estação de Fuseta-Moncarapacho,Livramento,Comboio,False,Faro
+Estação de Fuseta-Moncarapacho,Livramento,Comboio,False,Lagos
+Estação de Fuseta-Moncarapacho,Livramento,Comboio,True,Vila Real de Santo António
+Estação de Lagos,Meia Praia,Comboio,False,Lagos
+Estação de Lagos,Meia Praia,Comboio,True,Tunes
+Estação de Lagos,Meia Praia,Comboio,True,Vila Real de Santo António
+Estação de Messines - Alte,Estação de Santa Clara - Sabóia,Comboio,False,Faro
+Estação de Messines - Alte,Estação de Santa Clara - Sabóia,Comboio,False,Tunes
+Estação de Messines - Alte,Estação de Santa Clara - Sabóia,Comboio,True,Lisboa - Oriente
+Estação de Messines - Alte,Estação de Santa Clara - Sabóia,Comboio,True,Pinhal Novo
+Estação de Messines - Alte,Tunes,Comboio,False,Lisboa - Oriente
+Estação de Messines - Alte,Tunes,Comboio,False,Pinhal Novo
+Estação de Messines - Alte,Tunes,Comboio,True,Faro
+Estação de Monte Gordo,Hortas,Carro,False,Manta Rota
+Estação de Monte Gordo,Hortas,Carro,False,Vila Nova de Cacela
+Estação de Monte Gordo,Hortas,Carro,True,Espanha
+Estação de Monte Gordo,Hortas,Carro,True,Vila Real de Santo António
+Estação de Monte Gordo,Vila Real de Santo António,Comboio,False,Faro
+Estação de Monte Gordo,Vila Real de Santo António,Comboio,False,Lagos
+Estação de Monte Gordo,Vila Real de Santo António,Comboio,True,Vila Real de Santo António
+Estação de Portimão,Mexilhoeira Grande,Comboio,False,Tunes
+Estação de Portimão,Mexilhoeira Grande,Comboio,False,Vila Real de Santo António
+Estação de Portimão,Mexilhoeira Grande,Comboio,True,Lagos
+Estação de Santa Clara - Sabóia,Tunes,Comboio,False,Lisboa - Oriente
+Estação de Santa Clara - Sabóia,Tunes,Comboio,False,Pinhal Novo
+Estação de Santa Clara - Sabóia,Tunes,Comboio,True,Faro
+Estação de Silves,Poço Barreto,Comboio,False,Lagos
+Estação de Silves,Poço Barreto,Comboio,True,Tunes
+Estação de Silves,Poço Barreto,Comboio,True,Vila Real de Santo António
+Estação de Silves,Silves,Carro,False,Albufeira
+Estação de Silves,Silves,Carro,False,Armação de Pêra
+Estação de Silves,Silves,Carro,False,Lagoa
+Estação de Silves,Silves,Carro,False,Portimão
+Estação de Silves,Silves,Carro,True,Silves - Centro da cidade
+Estoi,Pechão,Carro,False,Estoi
+Estoi,Pechão,Carro,True,Olhão
+Estoi,Ruínas Romanas de Milreu,Carro,False,Estoi
+Estoi,Ruínas Romanas de Milreu,Carro,False,Olhão
+Estoi,Ruínas Romanas de Milreu,Carro,True,Faro
+Estoi,Ruínas Romanas de Milreu,Carro,True,Ruínas Romanas de Milreu
+Faro - Avenida Calouste Gulbenkian,Variante de Faro - Nó com a N2,Carro,False,Faro
+Faro - Avenida Calouste Gulbenkian,Variante de Faro - Nó com a N2,Carro,True,Estoi
+Faro - Avenida Calouste Gulbenkian,Variante de Faro - Nó com a N2,Carro,True,São Brás de Alportel
+Faro - São Pedro,Olhão,Barco,False,Lagos
+Faro - São Pedro,Olhão,Barco,False,Portimão
+Faro - São Pedro,Olhão,Barco,True,Huelva
+Faro - São Pedro,Olhão,Barco,True,Vila Real de Santo António
+Faro - São Pedro,Porto de Faro,Barco,False,Faro
+Faro - São Pedro,Porto de Faro,Barco,True,Olhão
+Faro - São Pedro,Porto de Faro,Barco,True,Vila Nova de Cacela
+Faro - São Pedro,Praia de Faro,Barco,False,Faro
+Faro - São Pedro,Praia de Faro,Barco,False,Vila Nova de Cacela
+Faro - São Pedro,Praia de Faro,Barco,True,Praia de Faro
+Faro - São Pedro,Quarteira,Barco,False,Huelva
+Faro - São Pedro,Quarteira,Barco,False,Vila Real de Santo António
+Faro - São Pedro,Quarteira,Barco,True,Lagos
+Faro - São Pedro,Quarteira,Barco,True,Portimão
+Ferragudo,Marina de Portimão,Barco,False,Portimão - Centro da cidade
+Ferragudo,Marina de Portimão,Barco,False,Silves
+Ferragudo,Marina de Portimão,Barco,True,Marina de Portimão
+Ferragudo,Porto Comercial de Portimão,Barco,False,Marina de Portimão
+Ferragudo,Porto Comercial de Portimão,Barco,True,Portimão - Centro da cidade
+Ferragudo,Porto Comercial de Portimão,Barco,True,Silves
+Ferreira do Alentejo,"Odivelas, Ferreira do Alentejo",Carro,False,Castro Verde
+Ferreira do Alentejo,"Odivelas, Ferreira do Alentejo",Carro,False,Ferreira do Alentejo
+Ferreira do Alentejo,"Odivelas, Ferreira do Alentejo",Carro,True,Odivelas
+Ferreira do Alentejo,"Odivelas, Ferreira do Alentejo",Carro,True,Torrão
+Forum Algarve,Variante de Faro - Nó com o IC4,Carro,False,Faro
+Forum Algarve,Variante de Faro - Nó com o IC4,Carro,True,Aeroporto de Faro
+Forum Algarve,Variante de Faro - Nó com o IC4,Carro,True,Estádio Algarve
+Forum Algarve,Variante de Faro - Nó com o IC4,Carro,True,Lisboa
+Fuseta,Ilha da Armona,Barco,False,Fuseta
+Fuseta,Ilha da Armona,Barco,False,Vila Nova de Cacela
+Fuseta,Ilha da Armona,Barco,True,Faro
+Fuseta,Ilha da Armona,Barco,True,Olhão
+Fuseta,Olhão,Barco,False,Huelva
+Fuseta,Olhão,Barco,False,Vila Real de Santo António
+Fuseta,Olhão,Barco,True,Faro
+Fuseta,Olhão,Barco,True,Portimão
+Fuseta,Praia da Fuseta,Barco,False,Faro
+Fuseta,Praia da Fuseta,Barco,False,Fuseta
+Fuseta,Praia da Fuseta,Barco,False,Vila Nova de Cacela
+Fuseta,Praia da Fuseta,Barco,True,Praia da Fuseta
+Fuseta,Praia do Barril,Barco,False,Faro
+Fuseta,Praia do Barril,Barco,False,Fuseta
+Fuseta,Praia do Barril,Barco,True,Tavira
+Fuseta,Praia do Barril,Barco,True,Vila Nova de Cacela
+Fuseta,Quatro Águas,Barco,False,Faro
+Fuseta,Quatro Águas,Barco,False,Portimão
+Fuseta,Quatro Águas,Barco,True,Huelva
+Fuseta,Quatro Águas,Barco,True,Vila Real de Santo António
+Grândola,Pinhal Novo,Comboio,False,Faro
+Grândola,Pinhal Novo,Comboio,False,Tunes
+Grândola,Pinhal Novo,Comboio,True,Lisboa - Oriente
+Grândola,Pinhal Novo,Comboio,True,Porto - Campanhã
+Guia,Zoomarine,Carro,False,Albufeira
+Guia,Zoomarine,Carro,False,Faro
+Guia,Zoomarine,Carro,True,Portimão
+Hangares,Ilha do Farol,Barco,False,Olhão
+Hangares,Ilha do Farol,Barco,False,Vila Nova de Cacela
+Hangares,Ilha do Farol,Barco,True,Faro
+Hortas,Vila Real de Santo António,Carro,False,Manta Rota
+Hortas,Vila Real de Santo António,Carro,False,Vila Nova de Cacela
+Hortas,Vila Real de Santo António,Carro,True,Espanha
+Hortas,Vila Real de Santo António,Carro,True,Vila Real de Santo António
+IC1 - Cruzamento com a N124,São Bartolomeu de Messines,Carro,False,A2
+IC1 - Cruzamento com a N124,São Bartolomeu de Messines,Carro,False,Alte
+IC1 - Cruzamento com a N124,São Bartolomeu de Messines,Carro,False,Salir
+IC1 - Cruzamento com a N124,São Bartolomeu de Messines,Carro,True,São Bartolomeu de Messines
+IC1 - Cruzamento com a N124,São Bartolomeu de Messines,Carro,True,Silves
+IC1 - Cruzamento com a N124,São Marcos da Serra,Carro,False,Faro
+IC1 - Cruzamento com a N124,São Marcos da Serra,Carro,False,Portimão
+IC1 - Cruzamento com a N124,São Marcos da Serra,Carro,True,Lisboa
+IC1 - Cruzamento com a N124,São Marcos da Serra,Carro,True,Ourique
+IC1 - Cruzamento com a N124,Tunes,Carro,False,Lisboa
+IC1 - Cruzamento com a N124,Tunes,Carro,False,Ourique
+IC1 - Cruzamento com a N124,Tunes,Carro,True,Faro
+IC1 - Cruzamento com a N124,Tunes,Carro,True,Portimão
+IC1 - Cruzamento com a N263,Mimosa,Carro,False,Faro
+IC1 - Cruzamento com a N263,Mimosa,Carro,False,Ourique
+IC1 - Cruzamento com a N263,Mimosa,Carro,True,Grândola
+IC1 - Cruzamento com a N263,Mimosa,Carro,True,Lisboa
+IC1 - Cruzamento com a N263,Ourique,Carro,False,Grândola
+IC1 - Cruzamento com a N263,Ourique,Carro,False,Lisboa
+IC1 - Cruzamento com a N263,Ourique,Carro,True,Faro
+IC1 - Cruzamento com a N263,Ourique,Carro,True,Ourique
+IC27 - Fim,IC27 - Saída 7,Carro,False,Beja
+IC27 - Fim,IC27 - Saída 7,Carro,False,Mértola
+IC27 - Fim,IC27 - Saída 7,Carro,True,Castro Marim
+IC27 - Fim,IC27 - Saída 7,Carro,True,Vila Real de Santo António
+IC27 - Fim,Parque Empresarial de Alcoutim,Carro,False,Beja
+IC27 - Fim,Parque Empresarial de Alcoutim,Carro,False,Mértola
+IC27 - Fim,Parque Empresarial de Alcoutim,Carro,True,Acesso local
+IC27 - Início,IC27 - Saída 1,Carro,False,Castro Marim
+IC27 - Início,IC27 - Saída 1,Carro,False,Vila Real de Santo António
+IC27 - Início,IC27 - Saída 1,Carro,True,Beja
+IC27 - Início,IC27 - Saída 1,Carro,True,Mértola
+IC27 - Saída 1,IC27 - Saída 2,Carro,False,Castro Marim
+IC27 - Saída 1,IC27 - Saída 2,Carro,False,Vila Real de Santo António
+IC27 - Saída 1,IC27 - Saída 2,Carro,True,Beja
+IC27 - Saída 1,IC27 - Saída 2,Carro,True,Mértola
+IC27 - Saída 1,Junqueira,Carro,False,Castro Marim
+IC27 - Saída 1,Junqueira,Carro,True,Junqueira
+IC27 - Saída 2,IC27 - Saída 3,Carro,False,Castro Marim
+IC27 - Saída 2,IC27 - Saída 3,Carro,False,Vila Real de Santo António
+IC27 - Saída 2,IC27 - Saída 3,Carro,True,Beja
+IC27 - Saída 2,IC27 - Saída 3,Carro,True,Mértola
+IC27 - Saída 3,IC27 - Saída 4,Carro,False,Castro Marim
+IC27 - Saída 3,IC27 - Saída 4,Carro,False,Vila Real de Santo António
+IC27 - Saída 3,IC27 - Saída 4,Carro,True,Beja
+IC27 - Saída 3,IC27 - Saída 4,Carro,True,Mértola
+IC27 - Saída 4,IC27 - Saída 5,Carro,False,Castro Marim
+IC27 - Saída 4,IC27 - Saída 5,Carro,False,Vila Real de Santo António
+IC27 - Saída 4,IC27 - Saída 5,Carro,True,Beja
+IC27 - Saída 4,IC27 - Saída 5,Carro,True,Mértola
+IC27 - Saída 5,IC27 - Saída 6,Carro,False,Castro Marim
+IC27 - Saída 5,IC27 - Saída 6,Carro,False,Vila Real de Santo António
+IC27 - Saída 5,IC27 - Saída 6,Carro,True,Beja
+IC27 - Saída 5,IC27 - Saída 6,Carro,True,Mértola
+IC27 - Saída 6,IC27 - Saída 7,Carro,False,Castro Marim
+IC27 - Saída 6,IC27 - Saída 7,Carro,False,Vila Real de Santo António
+IC27 - Saída 6,IC27 - Saída 7,Carro,True,Beja
+IC27 - Saída 6,IC27 - Saída 7,Carro,True,Mértola
+IC27 - Saída 7,Parque Empresarial de Alcoutim,Carro,False,IC27
+IC27 - Saída 7,Parque Empresarial de Alcoutim,Carro,False,Martim Longo
+IC27 - Saída 7,Parque Empresarial de Alcoutim,Carro,False,Pereiro
+IC27 - Saída 7,Parque Empresarial de Alcoutim,Carro,True,Alcoutim
+IC27 - Saída 7,Tacões,Carro,False,Alcoutim
+IC27 - Saída 7,Tacões,Carro,True,Martim Longo
+IC27 - Saída 7,Tacões,Carro,True,Pereiro
+Ilha da Armona,Olhão,Barco,False,Fuseta
+Ilha da Armona,Olhão,Barco,False,Vila Nova de Cacela
+Ilha da Armona,Olhão,Barco,True,Olhão
+Ilha do Farol,Porto de Faro,Barco,False,Olhão
+Ilha do Farol,Porto de Faro,Barco,False,Vila Nova de Cacela
+Ilha do Farol,Porto de Faro,Barco,True,Faro
+Ilha do Farol,Praia da Barreta,Barco,False,Faro
+Ilha do Farol,Praia da Barreta,Barco,False,Vila Nova de Cacela
+Ilha do Farol,Praia da Barreta,Barco,True,Cabo de Santa Maria
+IP2 - Saída 38,IP2 - Saída 39,Carro,False,Évora
+IP2 - Saída 38,IP2 - Saída 39,Carro,False,Portel
+IP2 - Saída 38,IP2 - Saída 39,Carro,True,Beja
+IP2 - Saída 38,IP2 - Saída 39,Carro,True,Vidigueira
+IP2 - Saída 39,IP2 - Saída 40,Carro,False,Évora
+IP2 - Saída 39,IP2 - Saída 40,Carro,False,Vidigueira - Norte
+IP2 - Saída 39,IP2 - Saída 40,Carro,True,Beja
+IP2 - Saída 39,IP2 - Saída 40,Carro,True,Vidigueira - Sul
+IP2 - Saída 40,IP2 - Saída 41,Carro,False,Évora
+IP2 - Saída 40,IP2 - Saída 41,Carro,False,Vidigueira - Sul
+IP2 - Saída 40,IP2 - Saída 41,Carro,True,Beja
+IP2 - Saída 40,IP2 - Saída 41,Carro,True,São Matias
+IP2 - Saída 41,São Matias,Carro,False,Évora
+IP2 - Saída 41,São Matias,Carro,False,Vidigueira
+IP2 - Saída 41,São Matias,Carro,True,Beja
+IP2 - Saída 41,São Matias,Carro,True,São Matias
+IP2 - Saída 42,IP2 - Saída 43,Carro,False,Beja
+IP2 - Saída 42,IP2 - Saída 43,Carro,False,Santa Clara de Louredo
+IP2 - Saída 42,IP2 - Saída 43,Carro,True,A2
+IP2 - Saída 42,IP2 - Saída 43,Carro,True,Castro Verde
+IP2 - Saída 42,IP2 - Saída 43,Carro,True,Mértola
+IP2 - Saída 43,IP2 - Saída 44,Carro,False,Beja
+IP2 - Saída 43,IP2 - Saída 44,Carro,False,Santa Clara de Louredo
+IP2 - Saída 43,IP2 - Saída 44,Carro,True,A2
+IP2 - Saída 43,IP2 - Saída 44,Carro,True,Castro Verde
+IP2 - Saída 43,IP2 - Saída 44,Carro,True,Mértola
+IP2 - Saída 43,IP2 - Saída 44,Carro,True,Vila Real de Santo António
+IP2 - Saída 44,IP2 - Saída 45,Carro,False,Beja
+IP2 - Saída 44,IP2 - Saída 45,Carro,False,Mértola
+IP2 - Saída 44,IP2 - Saída 45,Carro,False,Vila Real de Santo António
+IP2 - Saída 44,IP2 - Saída 45,Carro,True,A2
+IP2 - Saída 44,IP2 - Saída 45,Carro,True,Castro Verde
+IP2 - Saída 44,IP2 - Saída 45,Carro,True,Trindade
+IP2 - Saída 45,IP2 - Saída 46,Carro,False,Beja
+IP2 - Saída 45,IP2 - Saída 46,Carro,False,Trindade
+IP2 - Saída 45,IP2 - Saída 46,Carro,True,A2
+IP2 - Saída 45,IP2 - Saída 46,Carro,True,Albernoa
+IP2 - Saída 45,IP2 - Saída 46,Carro,True,Castro Verde
+IP2 - Saída 46,IP2 - Saída 47,Carro,False,Albernoa
+IP2 - Saída 46,IP2 - Saída 47,Carro,False,Beja
+IP2 - Saída 46,IP2 - Saída 47,Carro,True,A2
+IP2 - Saída 46,IP2 - Saída 47,Carro,True,Castro Verde
+IP2 - Saída 46,IP2 - Saída 47,Carro,True,Entradas
+IP2 - Saída 48,IP2 - Saída 49,Carro,False,Beja
+IP2 - Saída 48,IP2 - Saída 49,Carro,False,Castro Verde - Norte
+IP2 - Saída 48,IP2 - Saída 49,Carro,True,A2
+IP2 - Saída 48,IP2 - Saída 49,Carro,True,Castro Verde - Poente
+IP2 - Saída 49,IP2 - Saída 50,Carro,False,Beja
+IP2 - Saída 49,IP2 - Saída 50,Carro,False,Castro Verde
+IP2 - Saída 49,IP2 - Saída 50,Carro,False,Mértola
+IP2 - Saída 49,IP2 - Saída 50,Carro,True,A2
+Isla Cristina,Punta del Moral,Barco,False,Huelva
+Isla Cristina,Punta del Moral,Barco,False,Sevilha
+Isla Cristina,Punta del Moral,Barco,True,Ayamonte
+Isla Cristina,Punta del Moral,Barco,True,Portugal
+Junqueira,Montes Castelhanos,Carro,False,Castro Marim
+Junqueira,Montes Castelhanos,Carro,True,Alcoutim
+Junqueira,Montes Castelhanos,Carro,True,Azinhal
+Lagoa,Porches,Carro,False,Lagoa
+Lagoa,Porches,Carro,False,Portimão
+Lagoa,Porches,Carro,True,Albufeira
+Lagoa,Porches,Carro,True,Faro
+Livramento,Luz de Tavira,Carro,False,Faro
+Livramento,Luz de Tavira,Carro,False,Olhão
+Livramento,Luz de Tavira,Carro,True,Tavira
+Livramento,Luz de Tavira,Carro,True,Vila Real de Santo António
+Luzianes,São Martinho das Amoreiras,Carro,False,Monchique
+Luzianes,São Martinho das Amoreiras,Carro,True,Beja
+Luzianes,São Martinho das Amoreiras,Carro,True,Ourique
+Marchena,Osuna,Comboio,False,Dos Hermanas
+Marchena,Osuna,Comboio,False,Sevilha - Santa Justa
+Marchena,Osuna,Comboio,True,Bobadilla
+Marchena,Osuna,Comboio,True,Málaga - María Zambrano
+Marina de Albufeira,Marina de Portimão,Barco,False,Faro
+Marina de Albufeira,Marina de Portimão,Barco,False,Vila Real de Santo António
+Marina de Albufeira,Marina de Portimão,Barco,True,Lagos
+Marina de Albufeira,Marina de Portimão,Barco,True,Sines
+Marina de Albufeira,Vilamoura,Barco,False,Lagos
+Marina de Albufeira,Vilamoura,Barco,False,Portimão
+Marina de Albufeira,Vilamoura,Barco,True,Faro
+Marina de Albufeira,Vilamoura,Barco,True,Vila Real de Santo António
+Marina de Lagos,Sagres,Barco,False,Faro
+Marina de Lagos,Sagres,Barco,False,Portimão
+Marina de Lagos,Sagres,Barco,True,Setúbal
+Marina de Lagos,Sagres,Barco,True,Sines
+Meia Praia,Mexilhoeira Grande,Comboio,False,Lagos
+Meia Praia,Mexilhoeira Grande,Comboio,True,Tunes
+Meia Praia,Mexilhoeira Grande,Comboio,True,Vila Real de Santo António
+Mértola,Penha da Águia,Barco,False,Mértola
+Mértola,Penha da Águia,Barco,True,Pomarão
+Mértola,Penha da Águia,Barco,True,Vila Real de Santo António
+Mexilhoeira da Carregação,Portimão - Centro histórico,Barco,False,Silves
+Mexilhoeira da Carregação,Portimão - Centro histórico,Barco,True,Portimão
+Mexilhoeira da Carregação,Silves,Barco,False,Portimão
+Mexilhoeira da Carregação,Silves,Barco,True,Silves
+Mexilhoeira Grande,N125 - Acesso à Saída 3 da A22,Carro,False,Mexilhoeira Grande
+Mexilhoeira Grande,N125 - Acesso à Saída 3 da A22,Carro,False,Portimão
+Mexilhoeira Grande,N125 - Acesso à Saída 3 da A22,Carro,True,Lagos
+Mexilhoeira Grande,N125 - Acesso à Saída 3 da A22,Carro,True,Odiáxere
+Montenegro,Variante de Faro - Nó com o IC4,Carro,False,Aeroporto de Faro
+Montenegro,Variante de Faro - Nó com o IC4,Carro,False,Praia de Faro
+Montenegro,Variante de Faro - Nó com o IC4,Carro,True,A22 - Portimão
+Montenegro,Variante de Faro - Nó com o IC4,Carro,True,Faro
+N125 - Acesso à Saída 2 da A22,Odiáxere,Carro,False,Lagos
+N125 - Acesso à Saída 2 da A22,Odiáxere,Carro,True,Odiáxere
+N125 - Acesso à Saída 2 da A22,Odiáxere,Carro,True,Portimão
+N125 - Acesso à Saída 3 da A22,Odiáxere,Carro,False,A22
+N125 - Acesso à Saída 3 da A22,Odiáxere,Carro,False,Portimão
+N125 - Acesso à Saída 3 da A22,Odiáxere,Carro,True,Lagos
+N125 - Acesso à Saída 3 da A22,Odiáxere,Carro,True,Odiáxere
+Odeceixe,Rogil,Carro,False,Odeceixe
+Odeceixe,Rogil,Carro,False,Sines
+Odeceixe,Rogil,Carro,True,Aljezur
+Odeceixe,Rogil,Carro,True,Lagos
+Odeceixe,São Teotónio,Carro,False,Aljezur
+Odeceixe,São Teotónio,Carro,False,Lagos
+Odeceixe,São Teotónio,Carro,True,Sines
+Odemira,São Luís,Carro,False,Odemira
+Odemira,São Luís,Carro,True,São Luís
+Odemira,São Luís,Carro,True,Sines
+Odemira,São Teotónio,Carro,False,Cercal do Alentejo
+Odemira,São Teotónio,Carro,False,Odemira
+Odemira,São Teotónio,Carro,True,Aljezur
+Odemira,São Teotónio,Carro,True,Lagos
+Odemira,Vila Nova de Milfontes,Barco,False,Odemira
+Odemira,Vila Nova de Milfontes,Barco,True,Vila Nova de Milfontes
+"Odivelas, Ferreira do Alentejo",Torrão,Carro,False,Beja
+"Odivelas, Ferreira do Alentejo",Torrão,Carro,False,Ferreira do Alentejo
+"Odivelas, Ferreira do Alentejo",Torrão,Carro,True,Montemor-o-Novo
+"Odivelas, Ferreira do Alentejo",Torrão,Carro,True,Torrão
+Olhão,Pechão,Carro,False,Olhão
+Olhão,Pechão,Carro,True,A22
+Olhão,Variante de Faro - Nó com a M518,Carro,False,Olhão
+Olhão,Variante de Faro - Nó com a M518,Carro,False,Vila Real de Santo António
+Olhão,Variante de Faro - Nó com a M518,Carro,True,Faro
+Osuna,Pedrera,Comboio,False,Dos Hermanas
+Osuna,Pedrera,Comboio,False,Sevilha - Santa Justa
+Osuna,Pedrera,Comboio,True,Bobadilla
+Osuna,Pedrera,Comboio,True,Málaga - María Zambrano
+Ourique,Santana da Serra,Carro,False,Lisboa
+Ourique,Santana da Serra,Carro,False,Ourique
+Ourique,Santana da Serra,Carro,True,Faro
+Ourique,Santana da Serra,Carro,True,Portimão
+Ourique,São Martinho das Amoreiras,Carro,False,Ourique
+Ourique,São Martinho das Amoreiras,Carro,True,Cercal do Alentejo
+Ourique,São Martinho das Amoreiras,Carro,True,Odemira
+"Pêra, Silves",Zoomarine,Carro,False,Portimão
+"Pêra, Silves",Zoomarine,Carro,True,Albufeira
+"Pêra, Silves",Zoomarine,Carro,True,Faro
+Pereiro,Tacões,Carro,False,Martim Longo
+Pereiro,Tacões,Carro,False,Pereiro
+Pereiro,Tacões,Carro,True,Alcoutim
+Pomarão,Puerto de la Laja,Barco,False,Mértola
+Pomarão,Puerto de la Laja,Barco,False,Pomarão
+Pomarão,Puerto de la Laja,Barco,True,Sanlúcar de Guadiana
+Pomarão,Puerto de la Laja,Barco,True,Vila Real de Santo António
+Pomarão,Salgueiros,Comboio,False,Pomarão
+Pomarão,Salgueiros,Comboio,True,Mina de São Domingos
+Ponte de Alamillo,Ronda Urbana Norte de Sevilha - Glorieta Olímpica,Carro,False,A-66 - Mérida
+Ponte de Alamillo,Ronda Urbana Norte de Sevilha - Glorieta Olímpica,Carro,False,Isla Mágica
+Ponte de Alamillo,Ronda Urbana Norte de Sevilha - Glorieta Olímpica,Carro,True,A-4 - Córdoba
+Ponte de Alamillo,Ronda Urbana Norte de Sevilha - Glorieta Olímpica,Carro,True,A-92 - Antequera
+Ponte de Alamillo,SE-30 - Saída 21,Carro,False,A-4 - Córdoba
+Ponte de Alamillo,SE-30 - Saída 21,Carro,False,A-92 - Antequera
+Ponte de Alamillo,SE-30 - Saída 21,Carro,True,A-66 - Mérida
+Ponte de Alamillo,SE-30 - Saída 21,Carro,True,Isla Mágica
+Ponte do Centenário,SE-30 - Saída 12,Carro,False,A-4 - Cádiz/Córdoba/Aeroporto de Sevilha - San Pablo
+Ponte do Centenário,SE-30 - Saída 12,Carro,False,A-92 - Granada/Málaga
+Ponte do Centenário,SE-30 - Saída 12,Carro,False,Porto de Sevilha Este
+Ponte do Centenário,SE-30 - Saída 12,Carro,True,A-49 - Huelva
+Ponte do Centenário,SE-30 - Saída 12,Carro,True,A-66 - Mérida
+Ponte do Centenário,SE-30 - Saída 12,Carro,True,Porto de Sevilha Oeste
+Portimão - Centro histórico,Portimão - Zona ribeirinha,Barco,False,Silves
+Portimão - Centro histórico,Portimão - Zona ribeirinha,Barco,True,Marina de Portimão
+Portimão - Zona ribeirinha,Porto de Pesca de Portimão,Barco,False,Portimão - Centro da cidade
+Portimão - Zona ribeirinha,Porto de Pesca de Portimão,Barco,False,Silves
+Portimão - Zona ribeirinha,Porto de Pesca de Portimão,Barco,True,Marina de Portimão
+Porto Comercial de Portimão,Porto de Pesca de Portimão,Barco,False,Marina de Portimão
+Porto Comercial de Portimão,Porto de Pesca de Portimão,Barco,True,Portimão - Centro da cidade
+Porto Comercial de Portimão,Porto de Pesca de Portimão,Barco,True,Silves
+Praia da Cacela Velha,Praia de Cabanas de Tavira,Barco,False,Vila Nova de Cacela
+Praia da Cacela Velha,Praia de Cabanas de Tavira,Barco,True,Faro
+Praia da Cacela Velha,Praia de Cabanas de Tavira,Barco,True,Tavira
+Praia da Cacela Velha,Sítio da Fábrica,Barco,False,Faro
+Praia da Cacela Velha,Sítio da Fábrica,Barco,False,Tavira
+Praia da Cacela Velha,Sítio da Fábrica,Barco,True,Vila Nova de Cacela
+Praia da Ilha de Tavira,Praia de Cabanas de Tavira,Barco,False,Faro
+Praia da Ilha de Tavira,Praia de Cabanas de Tavira,Barco,False,Tavira
+Praia da Ilha de Tavira,Praia de Cabanas de Tavira,Barco,True,Vila Nova de Cacela
+Praia da Ilha de Tavira,Praia do Barril,Barco,False,Tavira
+Praia da Ilha de Tavira,Praia do Barril,Barco,False,Vila Nova de Cacela
+Praia da Ilha de Tavira,Praia do Barril,Barco,True,Faro
+Praia da Ilha de Tavira,Praia do Barril,Barco,True,Fuseta
+Praia da Ilha de Tavira,Quatro Águas,Barco,False,Faro
+Praia da Ilha de Tavira,Quatro Águas,Barco,False,Vila Nova de Cacela
+Praia da Ilha de Tavira,Quatro Águas,Barco,True,Tavira
+Puerto de la Laja,Sanlúcar de Guadiana,Barco,False,Mértola
+Puerto de la Laja,Sanlúcar de Guadiana,Barco,False,Pomarão
+Puerto de la Laja,Sanlúcar de Guadiana,Barco,True,Alcoutim
+Puerto de la Laja,Sanlúcar de Guadiana,Barco,True,Sanlúcar de Guadiana
+Puerto de la Laja,Sanlúcar de Guadiana,Barco,True,Vila Real de Santo António
+Punta del Moral,Vila Real de Santo António,Barco,False,Huelva
+Punta del Moral,Vila Real de Santo António,Barco,False,Sevilha
+Punta del Moral,Vila Real de Santo António,Barco,True,Faro
+Punta del Moral,Vila Real de Santo António,Barco,True,Portimão
+Quarteira,Vilamoura,Barco,False,Faro
+Quarteira,Vilamoura,Barco,False,Vila Real de Santo António
+Quarteira,Vilamoura,Barco,True,Lagos
+Quarteira,Vilamoura,Barco,True,Portimão
+Quatro Águas,Santa Luzia,Barco,False,Faro
+Quatro Águas,Santa Luzia,Barco,False,Tavira
+Quatro Águas,Santa Luzia,Barco,False,Vila Nova de Cacela
+Quatro Águas,Santa Luzia,Barco,True,Praia do Barril
+Quatro Águas,Tavira - Norte,Barco,False,Faro
+Quatro Águas,Tavira - Norte,Barco,False,Vila Nova de Cacela
+Quatro Águas,Tavira - Norte,Barco,True,Tavira
+Quatro Águas,Vila Real de Santo António,Barco,False,Faro
+Quatro Águas,Vila Real de Santo António,Barco,False,Portimão
+Quatro Águas,Vila Real de Santo António,Barco,True,Huelva
+Quatro Águas,Vila Real de Santo António,Barco,True,Sevilha
+Raposeira,Vila do Bispo,Carro,False,Lagos
+Raposeira,Vila do Bispo,Carro,False,Portimão
+Raposeira,Vila do Bispo,Carro,True,Sagres
+Raposeira,Vila do Bispo,Carro,True,Vila do Bispo
+Ribeira do Vascão,Santa Marta,Carro,False,Beja
+Ribeira do Vascão,Santa Marta,Carro,False,Mértola
+Ribeira do Vascão,Santa Marta,Carro,True,Alcoutim
+Ribeira do Vascão,Sedas,Carro,False,Alcoutim
+Ribeira do Vascão,Sedas,Carro,True,Beja
+Ribeira do Vascão,Sedas,Carro,True,Mértola
+Rocha da Pena,Salir,Carro,False,Alte
+Rocha da Pena,Salir,Carro,False,Rocha da Pena
+Rocha da Pena,Salir,Carro,False,Silves
+Rocha da Pena,Salir,Carro,True,Aeroporto de Faro
+Rocha da Pena,Salir,Carro,True,Faro
+Rocha da Pena,Salir,Carro,True,Fonte da Benémola
+Rocha da Pena,Salir,Carro,True,Loulé
+Ronda Urbana Norte de Sevilha - Centro Deportivo Los Mares,Ronda Urbana Norte de Sevilha - Glorieta Berrocal,Carro,False,A-4 - Córdoba
+Ronda Urbana Norte de Sevilha - Centro Deportivo Los Mares,Ronda Urbana Norte de Sevilha - Glorieta Berrocal,Carro,True,Estação de Sevilha - Santa Justa
+Ronda Urbana Norte de Sevilha - Centro Deportivo Los Mares,Ronda Urbana Norte de Sevilha - Glorieta Berrocal,Carro,True,Isla Mágica
+Ronda Urbana Norte de Sevilha - Centro Deportivo Los Mares,Ronda Urbana Norte de Sevilha - Glorieta Berrocal,Carro,True,Sevilha - Palacio de los Deportes
+Ronda Urbana Norte de Sevilha - Centro Deportivo Los Mares,Ronda Urbana Norte de Sevilha - Pino Montano,Carro,False,Estação de Sevilha - Santa Justa
+Ronda Urbana Norte de Sevilha - Centro Deportivo Los Mares,Ronda Urbana Norte de Sevilha - Pino Montano,Carro,False,Isla Mágica
+Ronda Urbana Norte de Sevilha - Centro Deportivo Los Mares,Ronda Urbana Norte de Sevilha - Pino Montano,Carro,False,Sevilha - Palacio de los Deportes
+Ronda Urbana Norte de Sevilha - Centro Deportivo Los Mares,Ronda Urbana Norte de Sevilha - Pino Montano,Carro,True,A-4 - Córdoba
+Ronda Urbana Norte de Sevilha - Glorieta Berrocal,Ronda Urbana Norte de Sevilha - Glorieta de San Lázaro,Carro,False,A-4 - Córdoba
+Ronda Urbana Norte de Sevilha - Glorieta Berrocal,Ronda Urbana Norte de Sevilha - Glorieta de San Lázaro,Carro,False,A-92 - Málaga
+Ronda Urbana Norte de Sevilha - Glorieta Berrocal,Ronda Urbana Norte de Sevilha - Glorieta de San Lázaro,Carro,True,A-66 - Mérida
+Ronda Urbana Norte de Sevilha - Glorieta Olímpica,Ronda Urbana Norte de Sevilha - Glorieta de San Lázaro,Carro,False,A-49 - Huelva
+Ronda Urbana Norte de Sevilha - Glorieta Olímpica,Ronda Urbana Norte de Sevilha - Glorieta de San Lázaro,Carro,False,Mérida
+Ronda Urbana Norte de Sevilha - Glorieta Olímpica,Ronda Urbana Norte de Sevilha - Glorieta de San Lázaro,Carro,False,Sevilha - Centro da cidade
+Ronda Urbana Norte de Sevilha - Glorieta Olímpica,Ronda Urbana Norte de Sevilha - Glorieta de San Lázaro,Carro,True,A-4 - Córdoba
+Ronda Urbana Norte de Sevilha - Glorieta Olímpica,Ronda Urbana Norte de Sevilha - Glorieta de San Lázaro,Carro,True,A-92 - Málaga
+Ronda Urbana Norte de Sevilha - Pino Montano,Ronda Urbana Norte de Sevilha - Poligono Store,Carro,False,A-66 - Mérida
+Ronda Urbana Norte de Sevilha - Pino Montano,Ronda Urbana Norte de Sevilha - Poligono Store,Carro,False,Sevilha - Centro da cidade
+Ronda Urbana Norte de Sevilha - Pino Montano,Ronda Urbana Norte de Sevilha - Poligono Store,Carro,True,A-92 - Málaga
+Ronda Urbana Norte de Sevilha - Poligono Calonge,Ronda Urbana Norte de Sevilha - Poligono Store,Carro,False,A-4 - Cádiz
+Ronda Urbana Norte de Sevilha - Poligono Calonge,Ronda Urbana Norte de Sevilha - Poligono Store,Carro,False,A-49 - Huelva
+Ronda Urbana Norte de Sevilha - Poligono Calonge,Ronda Urbana Norte de Sevilha - Poligono Store,Carro,False,A-92 - Granada
+Ronda Urbana Norte de Sevilha - Poligono Calonge,Ronda Urbana Norte de Sevilha - Poligono Store,Carro,False,Porto de Sevilha
+Ronda Urbana Norte de Sevilha - Poligono Calonge,Ronda Urbana Norte de Sevilha - Poligono Store,Carro,True,A-66 - Mérida
+Ronda Urbana Norte de Sevilha - Poligono Calonge,Ronda Urbana Norte de Sevilha - Poligono Store,Carro,True,Sevilha - Centro da cidade
+Rosal de la Frontera,Vila Verde de Ficalho,Carro,False,Espanha
+Rosal de la Frontera,Vila Verde de Ficalho,Carro,True,Portugal
+Ruínas Romanas de Milreu,São Brás de Alportel,Carro,False,A22 - Espanha/Lisboa
+Ruínas Romanas de Milreu,São Brás de Alportel,Carro,False,Estoi
+Ruínas Romanas de Milreu,São Brás de Alportel,Carro,False,Faro
+Ruínas Romanas de Milreu,São Brás de Alportel,Carro,True,São Brás de Alportel
+Sagres,Vila Nova de Milfontes,Barco,False,Lagos
+Sagres,Vila Nova de Milfontes,Barco,False,Portimão
+Sagres,Vila Nova de Milfontes,Barco,True,Setúbal
+Sagres,Vila Nova de Milfontes,Barco,True,Sines
+Salgueiros,Santana de Cambas,Comboio,False,Pomarão
+Salgueiros,Santana de Cambas,Comboio,True,Mina de São Domingos
+Santana da Serra,São Marcos da Serra,Carro,False,Lisboa
+Santana da Serra,São Marcos da Serra,Carro,False,Ourique
+Santana da Serra,São Marcos da Serra,Carro,True,Faro
+Santana da Serra,São Marcos da Serra,Carro,True,Portimão
+São Bartolomeu de Messines,Silves,Carro,True,Silves
+São Bartolomeu de Messines,Silves,Carro,False,Lisboa
+São Bartolomeu de Messines,Silves,Carro,False,São Bartolomeu de Messines
+SE-20 - Estádio de La Cartuja,SE-20 - Parque de Alamillo,Carro,False,A-49 - Huelva
+SE-20 - Estádio de La Cartuja,SE-20 - Parque de Alamillo,Carro,False,A-66 - Mérida
+SE-20 - Estádio de La Cartuja,SE-20 - Parque de Alamillo,Carro,False,Estádio de La Cartuja
+SE-20 - Estádio de La Cartuja,SE-20 - Parque de Alamillo,Carro,False,Isla Mágica
+SE-20 - Estádio de La Cartuja,SE-20 - Parque de Alamillo,Carro,False,Sevilha - Isla de la Cartuja
+SE-20 - Estádio de La Cartuja,SE-20 - Parque de Alamillo,Carro,True,A-4 - Córdoba
+SE-20 - Estádio de La Cartuja,SE-20 - Parque de Alamillo,Carro,True,Aeroporto de Sevilha - San Pablo
+SE-20 - Estádio de La Cartuja,SE-20 - Parque de Alamillo,Carro,True,Sevilha - Estacionamento do Estádio de La Cartuja
+SE-20 - Miraflores,SE-20 - Pino Montano,Carro,False,A-4 - Córdoba
+SE-20 - Miraflores,SE-20 - Pino Montano,Carro,False,Aeroporto de Sevilha - San Pablo
+SE-20 - Miraflores,SE-20 - Pino Montano,Carro,True,A-49 - Huelva
+SE-20 - Miraflores,SE-20 - Pino Montano,Carro,True,A-66 - Mérida
+SE-20 - Miraflores,SE-20 - Pino Montano,Carro,True,Sevilha - Isla de la Cartuja
+SE-20 - Parque de Alamillo,SE-20 - San Jerónimo,Carro,False,A-49 - Huelva
+SE-20 - Parque de Alamillo,SE-20 - San Jerónimo,Carro,False,A-66 - Mérida
+SE-20 - Parque de Alamillo,SE-20 - San Jerónimo,Carro,False,Sevilha - Isla de la Cartuja
+SE-20 - Parque de Alamillo,SE-20 - San Jerónimo,Carro,True,A-4 - Córdoba
+SE-20 - Parque de Alamillo,SE-20 - San Jerónimo,Carro,True,Aeroporto de Sevilha - San Pablo
+SE-30 - Saída 12,SE-30 - Saída 14,Carro,False,A-4 - Cádiz/Córdoba/Porto de Sevilha/Aeroporto de Sevilha - San Pablo
+SE-30 - Saída 12,SE-30 - Saída 14,Carro,False,A-92 - Granada/Málaga
+SE-30 - Saída 12,SE-30 - Saída 14,Carro,True,A-49 - Huelva
+SE-30 - Saída 12,SE-30 - Saída 14,Carro,True,A-66 - Mérida
+SE-30 - Saída 12,SE-30 - Saída 14,Carro,True,Coria del Río
+SE-30 - Saída 14,SE-30 - Saída 15,Carro,False,A-4 - Cádiz
+SE-30 - Saída 14,SE-30 - Saída 15,Carro,False,A-92 - Granada
+SE-30 - Saída 14,SE-30 - Saída 15,Carro,False,Aeroporto de Sevilha - San Pablo
+SE-30 - Saída 14,SE-30 - Saída 15,Carro,False,Porto de Sevilha
+SE-30 - Saída 14,SE-30 - Saída 15,Carro,True,A-49 - Huelva
+SE-30 - Saída 14,SE-30 - Saída 15,Carro,True,A-66 - Mérida
+SE-30 - Saída 14,SE-30 - Saída 15,Carro,True,Coria del Río
+SE-30 - Saída 3,SE-30 - Saída 4,Carro,False,A-4 - Córdoba
+SE-30 - Saída 3,SE-30 - Saída 4,Carro,False,A-66 - Mérida
+SE-30 - Saída 3,SE-30 - Saída 4,Carro,False,A-92 - Granada/Málaga
+SE-30 - Saída 3,SE-30 - Saída 4,Carro,False,Aeroporto de Sevilha - San Pablo
+SE-30 - Saída 3,SE-30 - Saída 4,Carro,True,A-376 - Utrera
+SE-30 - Saída 3,SE-30 - Saída 4,Carro,True,A-4 - Cádiz
+SE-30 - Saída 3,SE-30 - Saída 4,Carro,True,A-49 - Huelva
+SE-30 - Saída 3,SE-30 - Saída 4,Carro,True,Porto de Sevilha
+SE-30 - Saída 4,SE-30 - Saída 5,Carro,False,A-4 - Córdoba
+SE-30 - Saída 4,SE-30 - Saída 5,Carro,False,A-66 - Mérida
+SE-30 - Saída 4,SE-30 - Saída 5,Carro,False,A-92 - Granada/Málaga
+SE-30 - Saída 4,SE-30 - Saída 5,Carro,False,Aeroporto de Sevilha - San Pablo
+SE-30 - Saída 4,SE-30 - Saída 5,Carro,True,A-376 - Utrera
+SE-30 - Saída 4,SE-30 - Saída 5,Carro,True,A-4 - Cádiz
+SE-30 - Saída 4,SE-30 - Saída 5,Carro,True,A-49 - Huelva
+SE-30 - Saída 4,SE-30 - Saída 5,Carro,True,Porto de Sevilha
+SE-40 - Reinício,SE-40 - Saída 35,Carro,False,A-8058 - Coria del Río/Sevilha
+SE-40 - Reinício,SE-40 - Saída 35,Carro,True,A-49 - Huelva/Sevilha
+SE-40 - Reinício,SE-40 - Saída 35,Carro,True,Almensilla
+Serpa,Vila Nova de São Bento,Carro,False,Beja
+Serpa,Vila Nova de São Bento,Carro,False,Lisboa
+Serpa,Vila Nova de São Bento,Carro,True,Vila Nova de São Bento
+Serpa,Vila Nova de São Bento,Carro,True,Vila Verde de Ficalho
+Sul do Sapal de Castro Marim e Vila Real de Santo António,Vila Real de Santo António,Carro,False,A22
+Sul do Sapal de Castro Marim e Vila Real de Santo António,Vila Real de Santo António,Carro,False,Castro Marim
+Sul do Sapal de Castro Marim e Vila Real de Santo António,Vila Real de Santo António,Carro,True,Vila Real de Santo António
+Tavira - Norte,Tavira - Sul,Carro,False,Vila Real de Santo António
+Tavira - Norte,Tavira - Sul,Carro,True,Faro
+Tavira - Norte,Tavira - Sul,Carro,True,Olhão
+Variante de Faro - Nó com a M518,Variante de Faro - Nó com a N2,Carro,False,Olhão
+Variante de Faro - Nó com a M518,Variante de Faro - Nó com a N2,Carro,False,Vila Real de Santo António
+Variante de Faro - Nó com a M518,Variante de Faro - Nó com a N2,Carro,True,Aeroporto de Faro
+Variante de Faro - Nó com a M518,Variante de Faro - Nó com a N2,Carro,True,Portimão
+Variante de Faro - Nó com a N2,Variante de Faro - Nó com o IC4,Carro,False,A22 - Espanha/Portimão
+Variante de Faro - Nó com a N2,Variante de Faro - Nó com o IC4,Carro,False,Olhão
+Variante de Faro - Nó com a N2,Variante de Faro - Nó com o IC4,Carro,False,São Brás de Alportel
+Variante de Faro - Nó com a N2,Variante de Faro - Nó com o IC4,Carro,True,Aeroporto de Faro
+Variante de Faro - Nó com a N2,Variante de Faro - Nó com o IC4,Carro,True,Portimão
+Vila Nova de São Bento,Vila Verde de Ficalho,Carro,False,Serpa
+Vila Nova de São Bento,Vila Verde de Ficalho,Carro,True,Espanha
+Vila Nova de São Bento,Vila Verde de Ficalho,Carro,True,Vila Verde de Ficalho
