@@ -3,6 +3,8 @@ package com.viajar.viajar;
 import androidx.fragment.app.FragmentActivity;
 import androidx.room.Room;
 
+import android.content.Context;
+import android.os.AsyncTask;
 import android.os.Bundle;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -15,11 +17,12 @@ import com.viajar.viajar.database.Location;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
 
 public class TravelActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
-    private SQLDatabase sqlDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,15 +56,17 @@ public class TravelActivity extends FragmentActivity implements OnMapReadyCallba
     }
 
     public void populateDatabase() {
-        getDatabase();
-        List<Location> locationArray = new ArrayList<>();
-        System.out.println(this.sqlDatabase.locationDAO().getLocationNumber());
+        AsyncDatabaseTaskRunner taskRunner = new AsyncDatabaseTaskRunner();
+        taskRunner.execute(getApplicationContext());
     }
+}
 
-    public SQLDatabase getDatabase() {
-        if (sqlDatabase == null) {
-            this.sqlDatabase = Room.databaseBuilder(getApplicationContext(), SQLDatabase.class, getString(R.string.app_name)).build();
-        }
-        return this.sqlDatabase;
+class AsyncDatabaseTaskRunner extends AsyncTask<Context, String, String> {
+    @Override
+    protected String doInBackground(Context... contexts) {
+        Context context = contexts[0];
+        DBInterface dbInterface = DBInterface.getDBInterface(context);
+        dbInterface.populateDatabase(context);
+        return null;
     }
 }

@@ -15,14 +15,14 @@ public class CsvParser {
     public CsvParser() {
     }
 
-    static List<String> csvParser(Context context, int csvId) {
+    static List<List<String>> csvParser(Context context, int csvId) {
         InputStream csvStream = context.getResources().openRawResource(csvId);
         BufferedReader reader = new BufferedReader(new InputStreamReader(csvStream));
-        List<String> lineArray = new ArrayList<>();
+        List<List<String>> lineArray = new ArrayList<>();
         try {
             String csvLine = reader.readLine();
             while (csvLine != null) {
-                lineArray.add(csvLine);
+                lineArray.add(lineParser(csvLine));
                 csvLine = reader.readLine();
             }
             csvStream.close();
@@ -30,7 +30,7 @@ public class CsvParser {
         catch (IOException e) {
             Log.e("error", "Error while parsing CSV file: " + e);
         }
-        return lineArray;
+        return lineArray.subList(1, lineArray.size()); // Removes header line
     }
 
     static List<String> lineParser(String csvLine) {

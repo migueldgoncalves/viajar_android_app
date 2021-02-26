@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "6320424887c90be5a308646c6a1a1c21",
+    "identityHash": "17abfd19759bdeace154f39853f418b4",
     "entities": [
       {
         "tableName": "Location",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`name` TEXT NOT NULL, `latitude` REAL NOT NULL, `longitude` REAL NOT NULL, `altitude` REAL NOT NULL, `extra_info` TEXT NOT NULL, PRIMARY KEY(`name`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`name` TEXT NOT NULL, `latitude` REAL NOT NULL, `longitude` REAL NOT NULL, `altitude` REAL NOT NULL, `extra_info` TEXT, PRIMARY KEY(`name`))",
         "fields": [
           {
             "fieldPath": "name",
@@ -36,7 +36,7 @@
             "fieldPath": "extraInfo",
             "columnName": "extra_info",
             "affinity": "TEXT",
-            "notNull": true
+            "notNull": false
           }
         ],
         "primaryKey": {
@@ -47,12 +47,99 @@
         },
         "indices": [],
         "foreignKeys": []
+      },
+      {
+        "tableName": "Connection",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`location_a` TEXT NOT NULL, `location_b` TEXT NOT NULL, `means_transport` TEXT NOT NULL, `distance` REAL NOT NULL, `extra_info` TEXT, `cardinal_point` TEXT NOT NULL, `order_a` INTEGER NOT NULL, `order_b` INTEGER NOT NULL, PRIMARY KEY(`location_a`, `location_b`, `means_transport`), FOREIGN KEY(`location_a`) REFERENCES `Location`(`name`) ON UPDATE NO ACTION ON DELETE NO ACTION , FOREIGN KEY(`location_b`) REFERENCES `Location`(`name`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "fields": [
+          {
+            "fieldPath": "locationA",
+            "columnName": "location_a",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "locationB",
+            "columnName": "location_b",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "meansTransport",
+            "columnName": "means_transport",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "distance",
+            "columnName": "distance",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "extraInfo",
+            "columnName": "extra_info",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "cardinalPoint",
+            "columnName": "cardinal_point",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "orderA",
+            "columnName": "order_a",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "orderB",
+            "columnName": "order_b",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "location_a",
+            "location_b",
+            "means_transport"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": [
+          {
+            "table": "Location",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "location_a"
+            ],
+            "referencedColumns": [
+              "name"
+            ]
+          },
+          {
+            "table": "Location",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "location_b"
+            ],
+            "referencedColumns": [
+              "name"
+            ]
+          }
+        ]
       }
     ],
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '6320424887c90be5a308646c6a1a1c21')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '17abfd19759bdeace154f39853f418b4')"
     ]
   }
 }

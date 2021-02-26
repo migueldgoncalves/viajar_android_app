@@ -16,6 +16,5 @@ public class Location {
     public double altitude;
 
     @ColumnInfo(name = "extra_info")
-    @NonNull
-    public String extraInfo = "";
+    public String extraInfo;
 }
