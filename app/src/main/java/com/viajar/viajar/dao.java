@@ -1,7 +1,6 @@
 package com.viajar.viajar;
 
 import androidx.room.Dao;
-import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
 
@@ -27,4 +26,12 @@ public interface dao {
 
     @Query("SELECT COUNT(name) FROM location")
     int getLocationNumber();
+
+    // Required queries to collect all info about a location
+
+    @Query("SELECT * FROM connection WHERE location_a = :locationName OR location_b = :locationName")
+    Connection[] getLocationConnections(String locationName);
+
+    @Query("SELECT * FROM location WHERE name = :name")
+    Location getLocationByName(String name);
 }

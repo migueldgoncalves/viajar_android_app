@@ -29,6 +29,30 @@ public class DBInterface {
         return DBInterface.dbInterface;
     }
 
+    public LocationInfo generateLocationObject(Context context, String locationName) {
+        // Determine surrounding locations
+        Connection[] locationConnections = getDatabase(context).dao().getLocationConnections(locationName);
+        List<String> surroundingLocations = new ArrayList<>();
+        for (Connection connection : locationConnections) {
+            if (connection.locationA.equals(locationName)) { // Surrounding location is the location B
+                surroundingLocations.add(connection.locationB);
+            } else {
+                surroundingLocations.add(connection.locationA);
+            }
+        }
+
+        // Determine the remaining general parameters
+        Location locationDBObject = getDatabase(context).dao().getLocationByName(locationName);
+        double latitude = locationDBObject.latitude;
+        double longitude = locationDBObject.longitude;
+        int altitude = locationDBObject.altitude;
+
+        // Create the location object
+        LocationInfo locationObject = new LocationInfo(locationName, surroundingLocations, latitude, longitude, altitude);
+
+        return locationObject;
+    }
+
     public void populateDatabase(Context context) {
         Log.d("debug", "Starting population of database...");
 
@@ -48,7 +72,7 @@ public class DBInterface {
             newLocation.name = csvLine.get(0);
             newLocation.latitude = Double.parseDouble(csvLine.get(1));
             newLocation.longitude = Double.parseDouble(csvLine.get(2));
-            newLocation.altitude = Double.parseDouble(csvLine.get(3));
+            newLocation.altitude = Integer.parseInt(csvLine.get(3));
             if (csvLine.size() == 5) { // Has extra info
                 newLocation.extraInfo = csvLine.get(4);
             }

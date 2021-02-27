@@ -13,7 +13,7 @@ public class Location {
 
     public double latitude;
     public double longitude;
-    public double altitude;
+    public int altitude;
 
     @ColumnInfo(name = "extra_info")
     public String extraInfo;
