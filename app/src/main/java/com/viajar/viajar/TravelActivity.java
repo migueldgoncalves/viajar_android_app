@@ -60,10 +60,6 @@ public class TravelActivity extends FragmentActivity implements OnMapReadyCallba
     }
 
     public void populateDatabase() {
-        /**AsyncDatabasePopulateTaskRunner taskRunner = new AsyncDatabasePopulateTaskRunner();
-        taskRunner.execute(getApplicationContext());
-        taskRunner.onPostExecute(getApplicationContext(), currentLocationName, mMap);**/
-
         new Thread(() -> {
             DBInterface dbInterface = DBInterface.getDBInterface(getApplicationContext());
             dbInterface.populateDatabase(getApplicationContext());
@@ -99,51 +95,4 @@ public class TravelActivity extends FragmentActivity implements OnMapReadyCallba
             runOnUiThread(this::updateUI);
         }).start();
     }
-
-    /**public void getCurrentLocation() {
-        AsyncDatabaseUIUpdaterTaskRunner taskRunner = new AsyncDatabaseUIUpdaterTaskRunner();
-        taskRunner.onPreExecute(currentLocationName);
-        taskRunner.execute(getApplicationContext());
-        currentLocation = taskRunner.onPostExecute(getApplicationContext(), mMap);
-    }**/
 }
-
-// Populates database on activity start, then sets UI with initial location info
-/**class AsyncDatabasePopulateTaskRunner extends AsyncTask<Context, String, String> {
-    protected String doInBackground(Context... contexts) {
-        Context context = contexts[0];
-        DBInterface dbInterface = DBInterface.getDBInterface(context);
-        dbInterface.populateDatabase(context);
-        return null;
-    }
-
-    protected void onPostExecute(Context context, String currentLocationName, GoogleMap mMap) {
-        AsyncDatabaseUIUpdaterTaskRunner uiUpdater = new AsyncDatabaseUIUpdaterTaskRunner();
-        uiUpdater.onPreExecute(currentLocationName);
-        uiUpdater.execute(context); // Sets UI with initial location info
-        uiUpdater.onPostExecute(context, mMap);
-    }
-}
-
-// Sets UI with current location info
-class AsyncDatabaseUIUpdaterTaskRunner extends AsyncTask<Context, String, String> {
-    private LocationInfo location;
-    private String locationName;
-
-    protected void onPreExecute(String locationName) {
-        this.locationName = locationName;
-    }
-
-    protected String doInBackground(Context... contexts) {
-        Context context = contexts[0];
-        location = DBInterface.getDBInterface(context).generateLocationObject(context, locationName);
-        return null;
-    }
-
-    protected void onPostExecute(Context context, GoogleMap mMap) {
-        // Add a marker in Guerreiros do Rio and move the camera
-        LatLng guerreiros = new LatLng(location.getLatitude(), location.getLongitude());
-        mMap.addMarker(new MarkerOptions().position(guerreiros).title("Marker in " + location.getName()));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(guerreiros));
-    }
-}**/
