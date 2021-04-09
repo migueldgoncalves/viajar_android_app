@@ -8,12 +8,17 @@ import android.widget.TextView;
 
 import androidx.fragment.app.FragmentActivity;
 
+import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.MarkerOptions;
+
+import java.util.ArrayList;
 
 public class TravelActivity extends FragmentActivity implements OnMapReadyCallback {
 
@@ -21,6 +26,7 @@ public class TravelActivity extends FragmentActivity implements OnMapReadyCallba
 
     private GoogleMap mMap;
     private LocationInfo currentLocation;
+    private ArrayList<LocationInfo> surroudingLocations;
     private String currentLocationName;
 
     @Override
@@ -51,20 +57,31 @@ public class TravelActivity extends FragmentActivity implements OnMapReadyCallba
         mMap = googleMap;
     }
 
-    public void createMapMarker() {
+    public void createMapMarkers() {
         mMap.clear();
+        LatLngBounds.Builder b = new LatLngBounds.Builder();
         LatLng location = new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude());
+        b.include(location);
         mMap.addMarker(new MarkerOptions().position(location).title(currentLocationName));
+        //mMap.animateCamera(CameraUpdateFactory.newLatLng(location));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(location));
         mMap.setMinZoomPreference(ZOOM_LEVEL);
+
+        for(LocationInfo surroundingLocation:surroudingLocations) {
+            LatLng surroundingLocationCoordinates = new LatLng(surroundingLocation.getLatitude(), surroundingLocation.getLongitude());
+            mMap.addMarker(new MarkerOptions().position(surroundingLocationCoordinates).title(surroundingLocation.getName()).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
+            b.include(surroundingLocationCoordinates);
+        }
+        LatLngBounds bounds = b.build();
+        CameraUpdate c = CameraUpdateFactory.newLatLngBounds(bounds,150);
+        //mMap.animateCamera(c);
+        //mMap.moveCamera(c);
     }
 
     public void populateDatabase() {
         new Thread(() -> {
-            DBInterface dbInterface = DBInterface.getDBInterface(getApplicationContext());
-            dbInterface.populateDatabase(getApplicationContext());
-            currentLocation = dbInterface.generateLocationObject(getApplicationContext(), currentLocationName);
-            runOnUiThread(this::createMapMarker);
+            populateCurrentAndSurroundingLocations(true);
+            runOnUiThread(this::createMapMarkers);
             runOnUiThread(this::updateUI);
         }).start();
     }
@@ -89,10 +106,21 @@ public class TravelActivity extends FragmentActivity implements OnMapReadyCallba
         currentLocationName = (String) ((Button) view).getText();
 
         new Thread(() -> {
-            DBInterface dbInterface = DBInterface.getDBInterface(getApplicationContext());
-            currentLocation = dbInterface.generateLocationObject(getApplicationContext(), currentLocationName);
-            runOnUiThread(this::createMapMarker);
+            populateCurrentAndSurroundingLocations(false);
+            runOnUiThread(this::createMapMarkers);
             runOnUiThread(this::updateUI);
         }).start();
+    }
+
+    public void populateCurrentAndSurroundingLocations(boolean populateDatabase) {
+        DBInterface dbInterface = DBInterface.getDBInterface(getApplicationContext());
+        if (populateDatabase) {
+            dbInterface.populateDatabase(getApplicationContext());
+        }
+        currentLocation = dbInterface.generateLocationObject(getApplicationContext(), currentLocationName);
+        surroudingLocations = new ArrayList<>();
+        for(String surroundingLocationName:currentLocation.getSurroundingLocations()) {
+            surroudingLocations.add(DBInterface.getDBInterface(getApplicationContext()).generateLocationObject(getApplicationContext(), surroundingLocationName));
+        }
     }
 }

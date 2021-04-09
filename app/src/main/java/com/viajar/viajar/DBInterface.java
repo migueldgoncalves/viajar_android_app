@@ -33,13 +33,16 @@ public class DBInterface {
         // Determine surrounding locations
         Connection[] locationConnections = getDatabase(context).dao().getLocationConnections(locationName);
         List<String> surroundingLocations = new ArrayList<>();
-        for (Connection connection : locationConnections) {
-            if (connection.locationA.equals(locationName)) { // Surrounding location is the location B
-                surroundingLocations.add(connection.locationB);
-            } else {
-                surroundingLocations.add(connection.locationA);
+        for (int i=1; i<=locationConnections.length; i++)
+            for (Connection connection : locationConnections) {
+                if (connection.locationA.equals(locationName)) { // Surrounding location is the location B
+                    if (connection.orderA == i)
+                        surroundingLocations.add(connection.locationB);
+                } else {
+                    if (connection.orderB == i)
+                        surroundingLocations.add(connection.locationA);
+                }
             }
-        }
 
         // Determine the remaining general parameters
         Location locationDBObject = getDatabase(context).dao().getLocationByName(locationName);
