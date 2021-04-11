@@ -16,4 +16,11 @@
     <string name="comarca">Comarca</string>
     <string name="means_transport">Meio de transporte</string>
     <string name="cardinal_point">Ponto cardeal</string>
+    <string name="title_activity_main_menu">Menu Principal</string>
+    <string name="main_menu_travel">Viagem</string>
+    <string name="main_menu_car">Carro</string>
+    <string name="accelerate">Acelerar</string>
+    <string name="brake">Travar</string>
+    <string name="neutral">Ponto Morto</string>
+    <string name="reverse">Marcha-atrás</string>
 </resources>

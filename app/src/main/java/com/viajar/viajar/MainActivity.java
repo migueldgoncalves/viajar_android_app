@@ -1,11 +1,11 @@
 package com.viajar.viajar;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,8 +21,8 @@ public class MainActivity extends AppCompatActivity {
         version_text.setText(getString(R.string.version_text, major_version, minor_version, patch_version));
     }
 
-    public void moveTravelActivity(View view){
-        Intent intent = new Intent(this, TravelActivity.class);
+    public void moveMainMenuActivity(View view){
+        Intent intent = new Intent(this, MainMenuActivity.class);
         startActivity(intent);
     }
 }

@@ -4,7 +4,7 @@
     <string name="cover_image_label">Cover image</string>
     <string name="version_text">Version %1$s.%2$s.%3$s</string>
     <string name="version_major" translatable="false">1</string>
-    <string name="version_minor" translatable="false">1</string>
+    <string name="version_minor" translatable="false">2</string>
     <string name="version_patch" translatable="false">0</string>
     <string name="title_activity_travel">Travel</string>
     <string name="concelho">Municipality</string>
@@ -19,4 +19,14 @@
     <string name="means_transport">Means of transport</string>
     <string name="cardinal_point">Cardinal point</string>
     <string name="default_initial_location" translatable="false">Guerreiros do Rio</string>
+    <string name="title_activity_main_menu">Main Menu</string>
+    <string name="main_menu_travel">Travel</string>
+    <string name="main_menu_car">Car</string>
+    <string name="accelerate">Accelerate</string>
+    <string name="brake">Brake</string>
+    <string name="gear_up" translatable="false">+</string>
+    <string name="gear_down" translatable="false">-</string>
+    <string name="default_initial_int" translatable="false">0</string>
+    <string name="neutral">Neutral</string>
+    <string name="reverse">Reverse</string>
 </resources>
