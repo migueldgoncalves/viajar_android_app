@@ -98,6 +98,155 @@ A-381 - Saída 87,Cruzamento da A-381 com a A-7,Carro,False,AP-4 - Sevilha
 A-381 - Saída 87,Cruzamento da A-381 com a A-7,Carro,False,Jerez de la Frontera
 A-381 - Saída 87,Cruzamento da A-381 com a A-7,Carro,False,Los Barrios
 A-381 - Saída 87,Cruzamento da A-381 com a A-7,Carro,True,Algeciras
+A-4 - Saída 243,A-4 - Saída 250-252,Carro,False,Madrid
+A-4 - Saída 243,A-4 - Saída 250-252,Carro,False,Valdepeñas
+A-4 - Saída 243,A-4 - Saída 250-252,Carro,True,Bailén
+A-4 - Saída 243,A-4 - Saída 250-252,Carro,True,Córdoba
+A-4 - Saída 250-252,A-4 - Saída 257,Carro,False,Madrid
+A-4 - Saída 250-252,A-4 - Saída 257,Carro,False,Valdepeñas
+A-4 - Saída 250-252,A-4 - Saída 257,Carro,True,Bailén
+A-4 - Saída 250-252,A-4 - Saída 257,Carro,True,Córdoba
+A-4 - Saída 250-252,A-4 - Saída 257,Carro,True,La Carolina
+A-4 - Saída 257,A-4 - Saída 258,Carro,False,Madrid
+A-4 - Saída 257,A-4 - Saída 258,Carro,False,Valdepeñas
+A-4 - Saída 257,A-4 - Saída 258,Carro,True,Córdoba
+A-4 - Saída 258,A-4 - Saída 259,Carro,False,Madrid
+A-4 - Saída 258,A-4 - Saída 259,Carro,False,Valdepeñas
+A-4 - Saída 258,A-4 - Saída 259,Carro,True,Bailén
+A-4 - Saída 258,A-4 - Saída 259,Carro,True,Córdoba
+A-4 - Saída 258,A-4 - Saída 259,Carro,True,La Carolina
+A-4 - Saída 259,A-4 - Saída 262,Carro,False,Madrid
+A-4 - Saída 259,A-4 - Saída 262,Carro,False,Valdepeñas
+A-4 - Saída 259,A-4 - Saída 262,Carro,True,Bailén
+A-4 - Saída 259,A-4 - Saída 262,Carro,True,Córdoba
+A-4 - Saída 259,A-4 - Saída 262,Carro,True,La Carolina
+A-4 - Saída 262,A-4 - Saída 264,Carro,False,Madrid
+A-4 - Saída 262,A-4 - Saída 264,Carro,False,Valdepeñas
+A-4 - Saída 262,A-4 - Saída 264,Carro,True,Córdoba
+A-4 - Saída 262,A-4 - Saída 264,Carro,True,La Carolina
+A-4 - Saída 264,A-4 - Saída 265,Carro,False,Madrid
+A-4 - Saída 264,A-4 - Saída 265,Carro,False,Valdepeñas
+A-4 - Saída 264,A-4 - Saída 265,Carro,True,Córdoba
+A-4 - Saída 264,A-4 - Saída 265,Carro,True,La Carolina
+A-4 - Saída 265,A-4 - Saída 266,Carro,False,Madrid
+A-4 - Saída 265,A-4 - Saída 266,Carro,False,Valdepeñas
+A-4 - Saída 265,A-4 - Saída 266,Carro,True,Córdoba
+A-4 - Saída 265,A-4 - Saída 266,Carro,True,La Carolina
+A-4 - Saída 266,A-4 - Saída 268,Carro,False,Madrid
+A-4 - Saída 266,A-4 - Saída 268,Carro,False,Valdepeñas
+A-4 - Saída 266,A-4 - Saída 268,Carro,True,Bailén
+A-4 - Saída 266,A-4 - Saída 268,Carro,True,Córdoba
+A-4 - Saída 266,A-4 - Saída 268,Carro,True,La Carolina
+A-4 - Saída 268,A-4 - Saída 269,Carro,False,Madrid
+A-4 - Saída 268,A-4 - Saída 269,Carro,False,Valdepeñas
+A-4 - Saída 268,A-4 - Saída 269,Carro,True,Bailén
+A-4 - Saída 268,A-4 - Saída 269,Carro,True,Córdoba
+A-4 - Saída 269,A-4 - Saída 270,Carro,False,Madrid
+A-4 - Saída 269,A-4 - Saída 270,Carro,False,Valdepeñas
+A-4 - Saída 269,A-4 - Saída 270,Carro,True,Bailén
+A-4 - Saída 269,A-4 - Saída 270,Carro,True,Córdoba
+A-4 - Saída 270,A-4 - Saída 274,Carro,False,La Carolina
+A-4 - Saída 270,A-4 - Saída 274,Carro,False,Madrid
+A-4 - Saída 270,A-4 - Saída 274,Carro,True,Bailén
+A-4 - Saída 270,A-4 - Saída 274,Carro,True,Córdoba
+A-4 - Saída 274,A-4 - Saída 275,Carro,False,La Carolina
+A-4 - Saída 274,A-4 - Saída 275,Carro,False,Madrid
+A-4 - Saída 274,A-4 - Saída 275,Carro,True,Bailén
+A-4 - Saída 274,A-4 - Saída 275,Carro,True,Córdoba
+A-4 - Saída 275,A-4 - Saída 280,Carro,False,La Carolina
+A-4 - Saída 275,A-4 - Saída 280,Carro,False,Madrid
+A-4 - Saída 275,A-4 - Saída 280,Carro,True,Bailén
+A-4 - Saída 275,A-4 - Saída 280,Carro,True,Córdoba
+A-4 - Saída 280,A-4 - Saída 283,Carro,False,La Carolina
+A-4 - Saída 280,A-4 - Saída 283,Carro,False,Madrid
+A-4 - Saída 280,A-4 - Saída 283,Carro,True,Bailén
+A-4 - Saída 280,A-4 - Saída 283,Carro,True,Córdoba
+A-4 - Saída 283,A-4 - Saída 285,Carro,False,La Carolina
+A-4 - Saída 283,A-4 - Saída 285,Carro,False,Madrid
+A-4 - Saída 283,A-4 - Saída 285,Carro,True,Córdoba
+A-4 - Saída 285,A-4 - Saída 286,Carro,False,La Carolina
+A-4 - Saída 285,A-4 - Saída 286,Carro,False,Madrid
+A-4 - Saída 285,A-4 - Saída 286,Carro,True,Córdoba
+A-4 - Saída 286,A-4 - Saída 288,Carro,False,La Carolina
+A-4 - Saída 286,A-4 - Saída 288,Carro,False,Madrid
+A-4 - Saída 286,A-4 - Saída 288,Carro,True,Bailén
+A-4 - Saída 286,A-4 - Saída 288,Carro,True,Córdoba
+A-4 - Saída 288,Cruzamento da A-4 com a A-44,Carro,False,Madrid
+A-4 - Saída 288,Cruzamento da A-4 com a A-44,Carro,True,Bailén
+A-4 - Saída 288,Cruzamento da A-4 com a A-44,Carro,True,Córdoba
+A-4 - Saída 299,A-4 - Saída 301,Carro,False,Bailén
+A-4 - Saída 299,A-4 - Saída 301,Carro,False,Madrid
+A-4 - Saída 299,A-4 - Saída 301,Carro,True,Andújar
+A-4 - Saída 299,A-4 - Saída 301,Carro,True,Córdoba
+A-4 - Saída 299,A-4 - Saída 301,Carro,True,Sevilha
+A-4 - Saída 299,Cruzamento da A-4 com a A-44,Carro,False,Córdoba
+A-4 - Saída 299,Cruzamento da A-4 com a A-44,Carro,False,Sevilha
+A-4 - Saída 299,Cruzamento da A-4 com a A-44,Carro,True,La Carolina
+A-4 - Saída 299,Cruzamento da A-4 com a A-44,Carro,True,Madrid
+A-4 - Saída 301,A-4 - Saída 303,Carro,False,Bailén
+A-4 - Saída 301,A-4 - Saída 303,Carro,False,Madrid
+A-4 - Saída 301,A-4 - Saída 303,Carro,True,Andújar
+A-4 - Saída 301,A-4 - Saída 303,Carro,True,Córdoba
+A-4 - Saída 303,A-4 - Saída 310,Carro,False,Bailén
+A-4 - Saída 303,A-4 - Saída 310,Carro,False,Madrid
+A-4 - Saída 303,A-4 - Saída 310,Carro,True,Andújar
+A-4 - Saída 303,A-4 - Saída 310,Carro,True,Córdoba
+A-4 - Saída 303,A-4 - Saída 310,Carro,True,Sevilha
+A-4 - Saída 310,A-4 - Saída 312,Carro,False,Bailén
+A-4 - Saída 310,A-4 - Saída 312,Carro,False,Madrid
+A-4 - Saída 310,A-4 - Saída 312,Carro,True,Andújar
+A-4 - Saída 310,A-4 - Saída 312,Carro,True,Córdoba
+A-4 - Saída 310,A-4 - Saída 312,Carro,True,Sevilha
+A-4 - Saída 312,A-4 - Saída 316,Carro,False,Bailén
+A-4 - Saída 312,A-4 - Saída 316,Carro,False,Madrid
+A-4 - Saída 312,A-4 - Saída 316,Carro,True,Andújar
+A-4 - Saída 312,A-4 - Saída 316,Carro,True,Córdoba
+A-4 - Saída 312,A-4 - Saída 316,Carro,True,Sevilha
+A-4 - Saída 316,A-4 - Saída 317,Carro,False,Bailén
+A-4 - Saída 316,A-4 - Saída 317,Carro,False,Madrid
+A-4 - Saída 316,A-4 - Saída 317,Carro,True,Andújar
+A-4 - Saída 316,A-4 - Saída 317,Carro,True,Córdoba
+A-4 - Saída 316,A-4 - Saída 317,Carro,True,Sevilha
+A-4 - Saída 317,A-4 - Saída 318,Carro,False,Madrid
+A-4 - Saída 317,A-4 - Saída 318,Carro,True,Andújar
+A-4 - Saída 317,A-4 - Saída 318,Carro,True,Córdoba
+A-4 - Saída 317,A-4 - Saída 318,Carro,True,Sevilha
+A-4 - Saída 318,A-4 - Saída 319,Carro,False,Madrid
+A-4 - Saída 318,A-4 - Saída 319,Carro,True,Andújar
+A-4 - Saída 318,A-4 - Saída 319,Carro,True,Córdoba
+A-4 - Saída 318,A-4 - Saída 319,Carro,True,Sevilha
+A-4 - Saída 319,A-4 - Saída 321,Carro,False,Bailén
+A-4 - Saída 319,A-4 - Saída 321,Carro,False,Madrid
+A-4 - Saída 319,A-4 - Saída 321,Carro,True,Córdoba
+A-4 - Saída 321,A-4 - Saída 323,Carro,False,Bailén
+A-4 - Saída 321,A-4 - Saída 323,Carro,False,Madrid
+A-4 - Saída 321,A-4 - Saída 323,Carro,True,Córdoba
+A-4 - Saída 321,A-4 - Saída 323,Carro,True,Montoro
+A-4 - Saída 321,A-4 - Saída 323,Carro,True,Sevilha
+A-4 - Saída 323,A-4 - Saída 324,Carro,False,Bailén
+A-4 - Saída 323,A-4 - Saída 324,Carro,False,Madrid
+A-4 - Saída 323,A-4 - Saída 324,Carro,True,Córdoba
+A-4 - Saída 323,A-4 - Saída 324,Carro,True,Montoro
+A-4 - Saída 323,A-4 - Saída 324,Carro,True,Sevilha
+A-4 - Saída 324,A-4 - Saída 325,Carro,False,Bailén
+A-4 - Saída 324,A-4 - Saída 325,Carro,False,Madrid
+A-4 - Saída 324,A-4 - Saída 325,Carro,True,Córdoba
+A-4 - Saída 324,A-4 - Saída 325,Carro,True,Montoro
+A-4 - Saída 325,A-4 - Saída 326,Carro,False,Bailén
+A-4 - Saída 325,A-4 - Saída 326,Carro,False,Madrid
+A-4 - Saída 325,A-4 - Saída 326,Carro,True,Córdoba
+A-4 - Saída 325,A-4 - Saída 326,Carro,True,Montoro
+A-4 - Saída 326,A-4 - Saída 329,Carro,False,Andújar
+A-4 - Saída 326,A-4 - Saída 329,Carro,False,Bailén
+A-4 - Saída 326,A-4 - Saída 329,Carro,False,Madrid
+A-4 - Saída 326,A-4 - Saída 329,Carro,True,Córdoba
+A-4 - Saída 326,A-4 - Saída 329,Carro,True,Sevilha
+A-4 - Saída 329,A-4 - Saída 335,Carro,False,Andújar
+A-4 - Saída 329,A-4 - Saída 335,Carro,False,Bailén
+A-4 - Saída 329,A-4 - Saída 335,Carro,False,Madrid
+A-4 - Saída 329,A-4 - Saída 335,Carro,True,Córdoba
+A-4 - Saída 329,A-4 - Saída 335,Carro,True,Montoro
+A-4 - Saída 329,A-4 - Saída 335,Carro,True,Sevilha
 A-4 - Saída 335,A-4 - Saída 339,Carro,False,Madrid
 A-4 - Saída 335,A-4 - Saída 339,Carro,True,Córdoba
 A-4 - Saída 335,A-4 - Saída 339,Carro,True,Montoro
@@ -548,6 +697,30 @@ A-5 - Saída 346,A-5 - Saída 352,Carro,True,Badajoz
 A-5 - Saída 346,Cruzamento da A-5 com a A-66 Sul,Carro,False,Badajoz
 A-5 - Saída 346,Cruzamento da A-5 com a A-66 Sul,Carro,True,A-66 - Cáceres
 A-5 - Saída 346,Cruzamento da A-5 com a A-66 Sul,Carro,True,Madrid
+A-5 - Saída 380,A-5 - Saída 382,Carro,False,Madrid
+A-5 - Saída 380,A-5 - Saída 382,Carro,False,Mérida
+A-5 - Saída 380,A-5 - Saída 382,Carro,True,Badajoz
+A-5 - Saída 382,A-5 - Saída 395,Carro,False,Madrid
+A-5 - Saída 382,A-5 - Saída 395,Carro,False,Mérida
+A-5 - Saída 382,A-5 - Saída 395,Carro,True,Badajoz
+A-5 - Saída 395,A-5 - Saída 400,Carro,False,Córdoba
+A-5 - Saída 395,A-5 - Saída 400,Carro,False,Madrid
+A-5 - Saída 395,A-5 - Saída 400,Carro,False,Mérida
+A-5 - Saída 395,A-5 - Saída 400,Carro,True,Cáceres
+A-5 - Saída 395,A-5 - Saída 400,Carro,True,Lisboa
+A-5 - Saída 400,A-5 - Saída 403,Carro,False,Cáceres
+A-5 - Saída 400,A-5 - Saída 403,Carro,False,Córdoba
+A-5 - Saída 400,A-5 - Saída 403,Carro,False,Madrid
+A-5 - Saída 400,A-5 - Saída 403,Carro,True,Elvas
+A-5 - Saída 400,A-5 - Saída 403,Carro,True,Lisboa
+A-5 - Saída 403,A-5 - Saída 407,Carro,False,Cáceres
+A-5 - Saída 403,A-5 - Saída 407,Carro,False,Córdoba
+A-5 - Saída 403,A-5 - Saída 407,Carro,False,Madrid
+A-5 - Saída 403,A-5 - Saída 407,Carro,True,Elvas
+A-5 - Saída 403,A-5 - Saída 407,Carro,True,Lisboa
+A-5 - Saída 407,A6 - Saída 13,Carro,False,Espanha
+A-5 - Saída 407,A6 - Saída 13,Carro,True,Elvas
+A-5 - Saída 407,A6 - Saída 13,Carro,True,Lisboa
 A-66 - Saída 626,A-66 - Saída 627,Carro,False,Mérida
 A-66 - Saída 626,A-66 - Saída 627,Carro,True,Sevilha
 A-66 - Saída 626,Cruzamento da A-5 com a A-66 Sul,Carro,False,Sevilha
@@ -1498,12 +1671,76 @@ A26 - Fim,Cruzamento da A2 com a A26,Carro,True,A2 - Algarve/Lisboa
 A26 - Fim,Ferreira do Alentejo,Carro,False,IC1 - Lisboa
 A26 - Fim,Ferreira do Alentejo,Carro,True,Beja
 A26 - Fim,Ferreira do Alentejo,Carro,True,Ferreira do Alentejo
+A6 - Saída 2,A6 - Saída 3,Carro,False,Algarve
+A6 - Saída 2,A6 - Saída 3,Carro,False,Lisboa
+A6 - Saída 2,A6 - Saída 3,Carro,False,Vendas Novas
+A6 - Saída 2,A6 - Saída 3,Carro,True,Espanha
+A6 - Saída 2,A6 - Saída 3,Carro,True,Évora
+A6 - Saída 2,A6 - Saída 3,Carro,True,Montemor-o-Novo
 A6 - Saída 2,Área de Serviço de Vendas Novas,Carro,False,Espanha
 A6 - Saída 2,Área de Serviço de Vendas Novas,Carro,False,Évora
 A6 - Saída 2,Área de Serviço de Vendas Novas,Carro,False,Vendas Novas
 A6 - Saída 2,Área de Serviço de Vendas Novas,Carro,True,Algarve
 A6 - Saída 2,Área de Serviço de Vendas Novas,Carro,True,Lisboa
 A6 - Saída 2,Área de Serviço de Vendas Novas,Carro,True,Setúbal
+A6 - Saída 3,A6 - Saída 4,Carro,False,Algarve
+A6 - Saída 3,A6 - Saída 4,Carro,False,Lisboa
+A6 - Saída 3,A6 - Saída 4,Carro,False,Vendas Novas
+A6 - Saída 3,A6 - Saída 4,Carro,True,Espanha
+A6 - Saída 3,A6 - Saída 4,Carro,True,Évora
+A6 - Saída 4,Área de Serviço de Montemor-o-Novo,Carro,False,Lisboa
+A6 - Saída 4,Área de Serviço de Montemor-o-Novo,Carro,False,Montemor-o-Novo
+A6 - Saída 4,Área de Serviço de Montemor-o-Novo,Carro,True,Espanha
+A6 - Saída 4,Área de Serviço de Montemor-o-Novo,Carro,True,Évora
+A6 - Saída 5,A6 - Saída 6,Carro,False,Lisboa
+A6 - Saída 5,A6 - Saída 6,Carro,False,Montemor-o-Novo
+A6 - Saída 5,A6 - Saída 6,Carro,True,Elvas
+A6 - Saída 5,A6 - Saída 6,Carro,True,Espanha
+A6 - Saída 5,A6 - Saída 6,Carro,True,Estremoz
+A6 - Saída 5,Área de Serviço de Montemor-o-Novo,Carro,False,Espanha
+A6 - Saída 5,Área de Serviço de Montemor-o-Novo,Carro,False,Évora
+A6 - Saída 5,Área de Serviço de Montemor-o-Novo,Carro,True,Lisboa
+A6 - Saída 5,Área de Serviço de Montemor-o-Novo,Carro,True,Montemor-o-Novo
+A6 - Saída 6,Área de Serviço de Estremoz,Carro,False,Évora
+A6 - Saída 6,Área de Serviço de Estremoz,Carro,False,Lisboa
+A6 - Saída 6,Área de Serviço de Estremoz,Carro,True,Elvas
+A6 - Saída 6,Área de Serviço de Estremoz,Carro,True,Espanha
+A6 - Saída 6,Área de Serviço de Estremoz,Carro,True,Estremoz
+A6 - Saída 7,A6 - Saída 8,Carro,False,Estremoz
+A6 - Saída 7,A6 - Saída 8,Carro,False,Évora
+A6 - Saída 7,A6 - Saída 8,Carro,False,Lisboa
+A6 - Saída 7,A6 - Saída 8,Carro,True,Borba
+A6 - Saída 7,A6 - Saída 8,Carro,True,Elvas
+A6 - Saída 7,A6 - Saída 8,Carro,True,Espanha
+A6 - Saída 7,Área de Serviço de Estremoz,Carro,False,Elvas
+A6 - Saída 7,Área de Serviço de Estremoz,Carro,False,Espanha
+A6 - Saída 7,Área de Serviço de Estremoz,Carro,False,Estremoz
+A6 - Saída 7,Área de Serviço de Estremoz,Carro,True,Évora
+A6 - Saída 7,Área de Serviço de Estremoz,Carro,True,Lisboa
+A6 - Saída 8,A6 - Saída 9,Carro,False,Borba
+A6 - Saída 8,A6 - Saída 9,Carro,False,Évora
+A6 - Saída 8,A6 - Saída 9,Carro,False,Lisboa
+A6 - Saída 8,A6 - Saída 9,Carro,True,Elvas
+A6 - Saída 8,A6 - Saída 9,Carro,True,Espanha
+A6 - Saída 9,A6 - Saída 10,Carro,False,Elvas - Oeste
+A6 - Saída 9,A6 - Saída 10,Carro,False,Évora
+A6 - Saída 9,A6 - Saída 10,Carro,False,Lisboa
+A6 - Saída 9,A6 - Saída 10,Carro,True,Elvas - Centro da cidade
+A6 - Saída 9,A6 - Saída 10,Carro,True,Espanha
+A6 - Saída 10,A6 - Saída 11,Carro,False,Elvas - Centro da cidade
+A6 - Saída 10,A6 - Saída 11,Carro,False,Évora
+A6 - Saída 10,A6 - Saída 11,Carro,False,Lisboa
+A6 - Saída 10,A6 - Saída 11,Carro,True,Elvas - Zona industrial
+A6 - Saída 10,A6 - Saída 11,Carro,True,Espanha
+A6 - Saída 11,A6 - Saída 12,Carro,False,Elvas - Zona industrial
+A6 - Saída 11,A6 - Saída 12,Carro,False,Évora
+A6 - Saída 11,A6 - Saída 12,Carro,False,Lisboa
+A6 - Saída 11,A6 - Saída 12,Carro,True,Elvas - Este
+A6 - Saída 11,A6 - Saída 12,Carro,True,Espanha
+A6 - Saída 12,A6 - Saída 13,Carro,False,A2 - Lisboa
+A6 - Saída 12,A6 - Saída 13,Carro,False,Elvas
+A6 - Saída 12,A6 - Saída 13,Carro,False,Évora
+A6 - Saída 12,A6 - Saída 13,Carro,True,Espanha
 Achada do Gamo,Mina de São Domingos,Comboio,False,Pomarão
 Achada do Gamo,Mina de São Domingos,Comboio,True,Mina de São Domingos
 Achada do Gamo,Santana de Cambas,Comboio,False,Mina de São Domingos
