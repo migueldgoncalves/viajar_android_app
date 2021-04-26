@@ -2,20 +2,23 @@ package com.viajar.viajar;
 
 // A data object with all information concerning a location
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 
 public class LocationInfo {
 
     private String name;
-    private List<String> surroundingLocations;
+    private HashMap<List<String>, List<String>> surroundingLocations;
+    private HashMap<List<String>, List<String>> destinations; // Possible destinations along a certain way
+    private HashMap<List<String>, String> routeNames; // Ex: road, railway, and river names
     private Double[] coordinates = new Double[]{0.0, 0.0};
     private int altitude;
+    private String country;
+    private String protectedArea;
 
-    public LocationInfo(String name, List<String> surroundingLocations, double latitude, double longitude, int altitude) {
-        setName(name);
-        setSurroundingLocations(surroundingLocations);
-        setCoordinates(latitude, longitude);
-        setAltitude(altitude);
+    public LocationInfo() {
     }
 
     public String getName() {
@@ -26,12 +29,96 @@ public class LocationInfo {
         this.name = name;
     }
 
-    public List<String> getSurroundingLocations() {
+    public HashMap<List<String>, List<String>> getSurroundingLocations() {
         return surroundingLocations;
     }
 
-    public void setSurroundingLocations(List<String> surroundingLocations) {
+    public void setSurroundingLocations(HashMap<List<String>, List<String>> surroundingLocations) {
         this.surroundingLocations = surroundingLocations;
+    }
+
+    public List<String> getSurroundingLocationInfo(String locationName, String meansTransport) {
+        return this.surroundingLocations.get(Arrays.asList(locationName, meansTransport));
+    }
+
+    public String getSurroundingLocationCardinalPoint(String locationName, String meansTransport) {
+        return surroundingLocations.get(Arrays.asList(locationName, meansTransport)).get(0);
+    }
+
+    public Double getSurroundingLocationDistance(String locationName, String meansTransport) {
+        return Double.valueOf(surroundingLocations.get(Arrays.asList(locationName, meansTransport)).get(1));
+    }
+
+    public int getSurroundingLocationOrder(String locationName, String meansTransport) {
+        return Integer.parseInt(surroundingLocations.get(Arrays.asList(locationName, meansTransport)).get(2));
+    }
+
+    public void setSurroundingLocationInfo(String locationName, String meansTransport, List<String> surroundingLocationInfo) {
+        this.surroundingLocations.put(Arrays.asList(locationName, meansTransport), surroundingLocationInfo);
+    }
+
+    public void setSurroundingLocationCardinalPoint(String locationName, String meansTransport, String cardinalPoint) {
+        if (getSurroundingLocationInfo(locationName, meansTransport) == null)
+            setSurroundingLocationInfo(locationName, meansTransport, new ArrayList<>());
+        surroundingLocations.get(Arrays.asList(locationName, meansTransport)).set(0, cardinalPoint);
+    }
+
+    public void setSurroundingLocationDistance(String locationName, String meansTransport, Double distance) {
+        if (getSurroundingLocationInfo(locationName, meansTransport) == null)
+            setSurroundingLocationInfo(locationName, meansTransport, new ArrayList<>());
+        if (getSurroundingLocationInfo(locationName, meansTransport).size() == 0)
+            setSurroundingLocationCardinalPoint(locationName, meansTransport, "");
+        surroundingLocations.get(Arrays.asList(locationName, meansTransport)).set(1, String.valueOf(distance));
+    }
+
+    public void setSurroundingLocationOrder(String locationName, String meansTransport, int order) {
+        if (getSurroundingLocationInfo(locationName, meansTransport) == null)
+            setSurroundingLocationInfo(locationName, meansTransport, new ArrayList<>());
+        if (getSurroundingLocationInfo(locationName, meansTransport).size() == 0)
+            setSurroundingLocationCardinalPoint(locationName, meansTransport, "");
+        if (getSurroundingLocationInfo(locationName, meansTransport).size() == 1)
+            setSurroundingLocationDistance(locationName, meansTransport, 0.0);
+        surroundingLocations.get(Arrays.asList(locationName, meansTransport)).set(2, String.valueOf(order));
+    }
+
+    public HashMap<List<String>, List<String>> getAllDestinations() {
+        return destinations;
+    }
+
+    public void setAllDestinations(HashMap<List<String>, List<String>> destinations) {
+        this.destinations = destinations;
+    }
+
+    public List<String> getDestinationsFromSurroundingLocation(String locationName, String meansTransport) {
+        return this.destinations.get(Arrays.asList(locationName, meansTransport));
+    }
+
+    public boolean hasDestinationsFromSurroundingLocation(String locationName, String meansTransport) {
+        return this.destinations.containsKey(Arrays.asList(locationName, meansTransport));
+    }
+
+    public void setDestinationsFromSurroundingLocation(String locationName, String meansTransport, List<String> destinations) {
+        this.destinations.put(Arrays.asList(locationName, meansTransport), destinations);
+    }
+
+    public HashMap<List<String>, String> getRouteNames() {
+        return routeNames;
+    }
+
+    public void setRouteNames(HashMap<List<String>, String> routeNames) {
+        this.routeNames = routeNames;
+    }
+
+    public String getRouteName(String locationName, String meansTransport) {
+        return this.routeNames.get(Arrays.asList(locationName, meansTransport));
+    }
+
+    public boolean hasRouteName(String locationName, String meansTransport) {
+        return this.routeNames.containsKey(Arrays.asList(locationName, meansTransport));
+    }
+
+    public void setRouteName(String locationName, String meansTransport, String routeName) {
+        this.routeNames.put(Arrays.asList(locationName, meansTransport), routeName);
     }
 
     public double getLatitude() {
@@ -65,5 +152,25 @@ public class LocationInfo {
 
     public void setAltitude(int altitude) {
         this.altitude = altitude;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public String getProtectedArea() {
+        return protectedArea;
+    }
+
+    public boolean hasProtectedArea() {
+        return protectedArea != null;
+    }
+
+    public void setProtectedArea(String protectedArea) {
+        this.protectedArea = protectedArea;
     }
 }

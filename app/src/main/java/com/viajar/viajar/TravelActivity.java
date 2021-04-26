@@ -19,10 +19,20 @@ import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class TravelActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private static final int ZOOM_LEVEL = 10;
+
+    public static final String EAST = "E";
+    public static final String NORTH = "N";
+    public static final String NORTHEAST = "NE";
+    public static final String NORTHWEST = "NO"; // PT - Noroeste
+    public static final String SOUTH = "S";
+    public static final String SOUTHEAST = "SE";
+    public static final String SOUTHWEST = "SO"; // PT - Sudoeste
+    public static final String WEST = "O"; // PT - Oeste
 
     private GoogleMap mMap;
     private LocationInfo currentLocation;
@@ -94,12 +104,19 @@ public class TravelActivity extends FragmentActivity implements OnMapReadyCallba
         buttonLayout.removeAllViewsInLayout();
         buttonLayout.setOrientation(LinearLayout.VERTICAL);
 
-        for(String surroundingLocation:currentLocation.getSurroundingLocations()) {
-            Button locationButton = new Button(getApplicationContext());
-            locationButton.setText(surroundingLocation);
-            locationButton.setOnClickListener(TravelActivity.this::onClick);
-            buttonLayout.addView(locationButton);
-        }
+        int order = 1;
+        for(int i=0; i<currentLocation.getSurroundingLocations().keySet().size(); i++)
+            for(List<String> connectionID:currentLocation.getSurroundingLocations().keySet()) {
+                String surroundingLocation = connectionID.get(0);
+                String meansTransport = connectionID.get(1);
+                if (order == currentLocation.getSurroundingLocationOrder(surroundingLocation, meansTransport)) {
+                    Button locationButton = new Button(getApplicationContext());
+                    locationButton.setText(surroundingLocation);
+                    locationButton.setOnClickListener(TravelActivity.this::onClick);
+                    buttonLayout.addView(locationButton);
+                    order += 1;
+                }
+            }
     }
 
     public void onClick(View view) {
@@ -119,7 +136,8 @@ public class TravelActivity extends FragmentActivity implements OnMapReadyCallba
         }
         currentLocation = dbInterface.generateLocationObject(getApplicationContext(), currentLocationName);
         surroudingLocations = new ArrayList<>();
-        for(String surroundingLocationName:currentLocation.getSurroundingLocations()) {
+        for(List<String> connectionInfo:currentLocation.getSurroundingLocations().keySet()) {
+            String surroundingLocationName = connectionInfo.get(0);
             surroudingLocations.add(DBInterface.getDBInterface(getApplicationContext()).generateLocationObject(getApplicationContext(), surroundingLocationName));
         }
     }
