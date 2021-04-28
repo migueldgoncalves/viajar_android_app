@@ -17,6 +17,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,21 +35,57 @@ public class TravelActivity extends FragmentActivity implements OnMapReadyCallba
     public static final String SOUTHWEST = "SO"; // PT - Sudoeste
     public static final String WEST = "O"; // PT - Oeste
 
+    public static final String CAR = "Carro";
+    public static final String BOAT = "Barco";
+    public static final String TRAIN = "Comboio";
+    public static final String PLANE = "Avião";
+
     private GoogleMap mMap;
     private LocationInfo currentLocation;
     private ArrayList<LocationInfo> surroudingLocations;
     private String currentLocationName;
+    private String currentTransportMeans;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_travel);
         currentLocationName = getString(R.string.default_initial_location);
+        currentTransportMeans = TravelActivity.CAR;
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+        BottomNavigationView locationButtons = findViewById(R.id.bottomNavigationView);
+        locationButtons.setOnNavigationItemSelectedListener(item -> {
+            if (item.getItemId() == R.id.car) {
+                currentTransportMeans = CAR;
+                runOnUiThread(this::createMapMarkers);
+                runOnUiThread(this::updateUI);
+                return true;
+            }
+            else if (item.getItemId() == R.id.boat) {
+                currentTransportMeans = BOAT;
+                runOnUiThread(this::createMapMarkers);
+                runOnUiThread(this::updateUI);
+                return true;
+            }
+            else if (item.getItemId() == R.id.train) {
+                currentTransportMeans = TRAIN;
+                runOnUiThread(this::createMapMarkers);
+                runOnUiThread(this::updateUI);
+                return true;
+            }
+            else if (item.getItemId() == R.id.plane) {
+                currentTransportMeans = PLANE;
+                runOnUiThread(this::createMapMarkers);
+                runOnUiThread(this::updateUI);
+                return true;
+            }
+            return false;
+        });
 
         populateDatabase(); // Sets UI with initial location info
     }
@@ -79,7 +116,12 @@ public class TravelActivity extends FragmentActivity implements OnMapReadyCallba
 
         for(LocationInfo surroundingLocation:surroudingLocations) {
             LatLng surroundingLocationCoordinates = new LatLng(surroundingLocation.getLatitude(), surroundingLocation.getLongitude());
-            mMap.addMarker(new MarkerOptions().position(surroundingLocationCoordinates).title(surroundingLocation.getName()).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
+            float markerColor;
+            if (currentLocation.getSurroundingLocationsByTransportMeans(currentTransportMeans).contains(surroundingLocation.getName()))
+                markerColor = BitmapDescriptorFactory.HUE_BLUE;
+            else
+                markerColor = BitmapDescriptorFactory.HUE_CYAN;
+            mMap.addMarker(new MarkerOptions().position(surroundingLocationCoordinates).title(surroundingLocation.getName()).icon(BitmapDescriptorFactory.defaultMarker(markerColor)));
             b.include(surroundingLocationCoordinates);
         }
         LatLngBounds bounds = b.build();
@@ -110,10 +152,12 @@ public class TravelActivity extends FragmentActivity implements OnMapReadyCallba
                 String surroundingLocation = connectionID.get(0);
                 String meansTransport = connectionID.get(1);
                 if (order == currentLocation.getSurroundingLocationOrder(surroundingLocation, meansTransport)) {
-                    Button locationButton = new Button(getApplicationContext());
-                    locationButton.setText(surroundingLocation);
-                    locationButton.setOnClickListener(TravelActivity.this::onClick);
-                    buttonLayout.addView(locationButton);
+                    if (currentTransportMeans.equals(meansTransport)) {
+                        Button locationButton = new Button(getApplicationContext());
+                        locationButton.setText(surroundingLocation);
+                        locationButton.setOnClickListener(TravelActivity.this::onClick);
+                        buttonLayout.addView(locationButton);
+                    }
                     order += 1;
                 }
             }

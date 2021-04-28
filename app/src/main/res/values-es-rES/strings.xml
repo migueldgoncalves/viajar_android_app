@@ -23,4 +23,8 @@
     <string name="brake">Frenar</string>
     <string name="neutral">Punto Muerto</string>
     <string name="reverse">Marcha atrás</string>
+    <string name="car">Coche</string>
+    <string name="train">Tren</string>
+    <string name="boat">Barco</string>
+    <string name="plane">Avión</string>
 </resources>

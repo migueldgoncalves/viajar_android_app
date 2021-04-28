@@ -53,6 +53,17 @@ public class LocationInfo {
         return Integer.parseInt(surroundingLocations.get(Arrays.asList(locationName, meansTransport)).get(2));
     }
 
+    public List<String> getSurroundingLocationsByTransportMeans(String meansTransport) {
+        List<String> surroundingLocations = new ArrayList<>();
+        for (List<String> connectionInfo : this.surroundingLocations.keySet()) {
+            String surroundingLocation = connectionInfo.get(0);
+            String surroundingLocationTransportMeans = connectionInfo.get(1);
+            if (surroundingLocationTransportMeans.equals(meansTransport))
+                surroundingLocations.add(surroundingLocation);
+        }
+        return surroundingLocations;
+    }
+
     public void setSurroundingLocationInfo(String locationName, String meansTransport, List<String> surroundingLocationInfo) {
         this.surroundingLocations.put(Arrays.asList(locationName, meansTransport), surroundingLocationInfo);
     }

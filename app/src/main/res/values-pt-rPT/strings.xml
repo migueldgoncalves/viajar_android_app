@@ -23,4 +23,8 @@
     <string name="brake">Travar</string>
     <string name="neutral">Ponto Morto</string>
     <string name="reverse">Marcha-atrás</string>
+    <string name="car">Carro</string>
+    <string name="train">Comboio</string>
+    <string name="boat">Barco</string>
+    <string name="plane">Avião</string>
 </resources>
