@@ -27,4 +27,9 @@
     <string name="train">Comboio</string>
     <string name="boat">Barco</string>
     <string name="plane">Avião</string>
+    <string name="vehicle_bus">Autocarro</string>
+    <string name="vehicle_van">Carrinha</string>
+    <string name="vehicle_car">Carro</string>
+    <string name="title_activity_car">Conduzir</string>
+    <string name="title_activity_car_menu">Selecção de Veículo</string>
 </resources>
