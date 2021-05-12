@@ -26,7 +26,7 @@ public class CarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_car);
 
-        car = new Car();
+        car = new Car(getIntent().getStringExtra("vehicle"));
         accelerating = new AtomicBoolean(false);
         braking = new AtomicBoolean(false);
         mHandler = new Handler();
@@ -36,8 +36,11 @@ public class CarActivity extends AppCompatActivity {
         findViewById(R.id.gearUpButton).setOnClickListener(onClickListener);
         findViewById(R.id.gearDownButton).setOnClickListener(onClickListener);
 
-        ((ProgressBar) findViewById(R.id.speedometer)).setMax(Car.SPEED_REDLINE_6TH_GEAR);
-        ((ProgressBar) findViewById(R.id.rpmMeter)).setMax(Car.MAX_ROTATIONS);
+        if (car.getVehiclePosition() != 2)
+            ((ProgressBar) findViewById(R.id.speedometer)).setMax(Car.SPEED_REDLINE_5TH_GEAR[car.getVehiclePosition()]);
+        else
+            ((ProgressBar) findViewById(R.id.speedometer)).setMax(Car.SPEED_REDLINE_6TH_GEAR[car.getVehiclePosition()]);
+        ((ProgressBar) findViewById(R.id.rpmMeter)).setMax(Car.MAX_ROTATIONS[car.getVehiclePosition()]);
 
         carController.run();
     }
@@ -95,9 +98,9 @@ public class CarActivity extends AppCompatActivity {
         ((ProgressBar) findViewById(R.id.speedometer)).setProgress(car.getSpeed());
         ProgressBar rpmMeter = findViewById(R.id.rpmMeter);
         rpmMeter.setProgress(car.getRpm());
-        if (car.getRpm() < (Car.REDLINE - Car.SUGGESTION_CHANGE_GEAR)) {
+        if (car.getRpm() < (Car.REDLINE[car.getVehiclePosition()] - Car.SUGGESTION_CHANGE_GEAR[car.getVehiclePosition()])) {
             rpmMeter.getProgressDrawable().mutate().setColorFilter(new PorterDuffColorFilter(Color.BLUE, PorterDuff.Mode.SRC_IN));
-        } else if (car.getRpm() < Car.REDLINE) {
+        } else if (car.getRpm() < Car.REDLINE[car.getVehiclePosition()]) {
             rpmMeter.getProgressDrawable().mutate().setColorFilter(new PorterDuffColorFilter(Color.YELLOW, PorterDuff.Mode.SRC_IN));
         } else {
             rpmMeter.getProgressDrawable().mutate().setColorFilter(new PorterDuffColorFilter(Color.RED, PorterDuff.Mode.SRC_IN));
@@ -107,9 +110,9 @@ public class CarActivity extends AppCompatActivity {
     Runnable carController = new Runnable() {
         @Override
         public void run() {
-            if (((!accelerating.get()) && (!braking.get())) || (car.getRpm() >= Car.MAX_ROTATIONS)) {
+            if (((!accelerating.get()) && (!braking.get())) || (car.getRpm() >= Car.MAX_ROTATIONS[car.getVehiclePosition()])) {
                 car.decelerateByFriction();
-            } if ((accelerating.get()) && (car.getRpm() < Car.MAX_ROTATIONS)) { // Both buttons can be pressed at the same time
+            } if ((accelerating.get()) && (car.getRpm() < Car.MAX_ROTATIONS[car.getVehiclePosition()])) { // Both buttons can be pressed at the same time
                 car.onClickAccelerateButton();
             } if (braking.get()) {
                 car.onClickBrakeButton();

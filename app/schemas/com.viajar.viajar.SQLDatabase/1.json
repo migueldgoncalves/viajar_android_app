@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "be19aa5bf319116b8668f00ea78a0cfe",
+    "identityHash": "774999b6b07d55619e5ee1a8f5b18521",
     "entities": [
       {
         "tableName": "Location",
@@ -134,12 +134,345 @@
             ]
           }
         ]
+      },
+      {
+        "tableName": "Destination",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`location_a` TEXT NOT NULL, `location_b` TEXT NOT NULL, `means_transport` TEXT NOT NULL, `starting_point` INTEGER NOT NULL, `destination` TEXT NOT NULL, PRIMARY KEY(`location_a`, `location_b`, `means_transport`, `starting_point`, `destination`), FOREIGN KEY(`location_a`, `location_b`, `means_transport`) REFERENCES `Connection`(`location_a`, `location_b`, `means_transport`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "fields": [
+          {
+            "fieldPath": "locationA",
+            "columnName": "location_a",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "locationB",
+            "columnName": "location_b",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "meansTransport",
+            "columnName": "means_transport",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "startingPoint",
+            "columnName": "starting_point",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "destination",
+            "columnName": "destination",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "location_a",
+            "location_b",
+            "means_transport",
+            "starting_point",
+            "destination"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": [
+          {
+            "table": "Connection",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "location_a",
+              "location_b",
+              "means_transport"
+            ],
+            "referencedColumns": [
+              "location_a",
+              "location_b",
+              "means_transport"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "LocationPortugal",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`name` TEXT NOT NULL, `parish` TEXT NOT NULL, `concelho` TEXT NOT NULL, PRIMARY KEY(`name`), FOREIGN KEY(`name`) REFERENCES `Location`(`name`) ON UPDATE NO ACTION ON DELETE NO ACTION , FOREIGN KEY(`concelho`) REFERENCES `Concelho`(`concelho`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "fields": [
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "parish",
+            "columnName": "parish",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "concelho",
+            "columnName": "concelho",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "name"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": [
+          {
+            "table": "Location",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "name"
+            ],
+            "referencedColumns": [
+              "name"
+            ]
+          },
+          {
+            "table": "Concelho",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "concelho"
+            ],
+            "referencedColumns": [
+              "concelho"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "LocationSpain",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`name` TEXT NOT NULL, `municipio` TEXT NOT NULL, `province` TEXT NOT NULL, `district` TEXT, PRIMARY KEY(`name`), FOREIGN KEY(`name`) REFERENCES `Location`(`name`) ON UPDATE NO ACTION ON DELETE NO ACTION , FOREIGN KEY(`municipio`, `province`) REFERENCES `Municipio`(`municipio`, `province`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "fields": [
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "municipio",
+            "columnName": "municipio",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "province",
+            "columnName": "province",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "district",
+            "columnName": "district",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "name"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": [
+          {
+            "table": "Location",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "name"
+            ],
+            "referencedColumns": [
+              "name"
+            ]
+          },
+          {
+            "table": "Municipio",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "municipio",
+              "province"
+            ],
+            "referencedColumns": [
+              "municipio",
+              "province"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "Concelho",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`concelho` TEXT NOT NULL, `intermunicipal_entity` TEXT NOT NULL, `district` TEXT NOT NULL, `region` TEXT NOT NULL, PRIMARY KEY(`concelho`))",
+        "fields": [
+          {
+            "fieldPath": "concelho",
+            "columnName": "concelho",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "intermunicipalEntity",
+            "columnName": "intermunicipal_entity",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "district",
+            "columnName": "district",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "region",
+            "columnName": "region",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "concelho"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "Municipio",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`municipio` TEXT NOT NULL, `province` TEXT NOT NULL, PRIMARY KEY(`municipio`, `province`), FOREIGN KEY(`province`) REFERENCES `Province`(`province`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "fields": [
+          {
+            "fieldPath": "municipio",
+            "columnName": "municipio",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "province",
+            "columnName": "province",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "municipio",
+            "province"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": [
+          {
+            "table": "Province",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "province"
+            ],
+            "referencedColumns": [
+              "province"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "Comarca",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`municipio` TEXT NOT NULL, `comarca` TEXT NOT NULL, `province` TEXT NOT NULL, PRIMARY KEY(`comarca`, `municipio`, `province`), FOREIGN KEY(`municipio`, `province`) REFERENCES `Municipio`(`municipio`, `province`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "fields": [
+          {
+            "fieldPath": "municipio",
+            "columnName": "municipio",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "comarca",
+            "columnName": "comarca",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "province",
+            "columnName": "province",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "comarca",
+            "municipio",
+            "province"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": [
+          {
+            "table": "Municipio",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "municipio",
+              "province"
+            ],
+            "referencedColumns": [
+              "municipio",
+              "province"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "Province",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`province` TEXT NOT NULL, `autonomous_community` TEXT NOT NULL, PRIMARY KEY(`province`))",
+        "fields": [
+          {
+            "fieldPath": "province",
+            "columnName": "province",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "autonomousCommunity",
+            "columnName": "autonomous_community",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "province"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
       }
     ],
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'be19aa5bf319116b8668f00ea78a0cfe')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '774999b6b07d55619e5ee1a8f5b18521')"
     ]
   }
 }
