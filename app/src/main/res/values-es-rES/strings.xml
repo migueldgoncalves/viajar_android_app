@@ -28,7 +28,7 @@
     <string name="boat">Barco</string>
     <string name="plane">Avión</string>
     <string name="vehicle_bus">Autobús</string>
-    <string name="vehicle_van">Camioneta</string>
+    <string name="vehicle_van">Furgoneta</string>
     <string name="vehicle_car">Coche</string>
     <string name="title_activity_car">Conducir</string>
     <string name="title_activity_car_menu">Selección de Vehículo</string>

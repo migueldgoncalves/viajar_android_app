@@ -11,10 +11,12 @@
         android:theme="@style/Theme.Viajar">
         <activity
             android:name=".CarActivity"
-            android:label="@string/title_activity_car" />
+            android:label="@string/title_activity_car"
+            android:parentActivityName=".CarMenuActivity"/>
         <activity
             android:name=".CarMenuActivity"
-            android:label="@string/title_activity_car_menu" />
+            android:label="@string/title_activity_car_menu"
+            android:parentActivityName=".MainMenuActivity"/>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -32,10 +34,12 @@
         </activity>
         <activity
             android:name=".TravelActivity"
-            android:label="@string/title_activity_travel" />
+            android:label="@string/title_activity_travel"
+            android:parentActivityName=".MainMenuActivity"/>
         <activity
             android:name=".MainMenuActivity"
-            android:label="@string/title_activity_main_menu" />
+            android:label="@string/title_activity_main_menu"
+            android:parentActivityName=".MainActivity"/>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
