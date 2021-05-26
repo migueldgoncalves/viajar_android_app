@@ -1,5 +1,6 @@
 package com.viajar.viajar;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
@@ -35,8 +37,6 @@ import java.util.Objects;
 
 public class TravelActivity extends AppCompatActivity {
 
-    private static final int ZOOM_LEVEL = 10;
-
     public static final String EAST = "E";
     public static final String NORTH = "N";
     public static final String NORTHEAST = "NE";
@@ -51,7 +51,11 @@ public class TravelActivity extends AppCompatActivity {
     public static final String TRAIN = "Comboio";
     public static final String PLANE = "Avião";
 
-    public static final int TAB_NUMBER = 2;
+    public static final int TAB_NUMBER = 3;
+
+    // Position of the tabs
+    public static final int GPS_TAB = 0;
+    public static final int DESTINATIONS_TAB = 2;
 
     private LocationInfo currentLocation;
     private ArrayList<LocationInfo> surroundingLocations;
@@ -59,7 +63,7 @@ public class TravelActivity extends AppCompatActivity {
     private String currentTransportMeans;
 
     private ViewPager2 viewPager2;
-    private FragmentStateAdapter pagerAdapter;
+    private TabLayout tabLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,10 +71,10 @@ public class TravelActivity extends AppCompatActivity {
         setContentView(R.layout.activity_travel);
 
         viewPager2 = findViewById(R.id.travelPager);
-        pagerAdapter = new TravelPagerAdapter(getSupportFragmentManager(), getLifecycle());
+        FragmentStateAdapter pagerAdapter = new TravelPagerAdapter(getSupportFragmentManager(), getLifecycle());
         viewPager2.setAdapter(pagerAdapter);
 
-        TabLayout tabLayout = findViewById(R.id.travelTabLayout);
+        tabLayout = findViewById(R.id.travelTabLayout);
         viewPager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -154,7 +158,7 @@ public class TravelActivity extends AppCompatActivity {
         }
     }
 
-    private class TravelPagerAdapter extends FragmentStateAdapter {
+    private static class TravelPagerAdapter extends FragmentStateAdapter {
         public TravelPagerAdapter(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle) {
             super(fragmentManager, lifecycle);
         }
@@ -167,6 +171,8 @@ public class TravelActivity extends AppCompatActivity {
                     return new GPSPageFragment();
                 case (1):
                     return new InfoPageFragment();
+                case (2):
+                    return new DestinationPageFragment();
                 default:
                     return null;
             }
@@ -187,12 +193,27 @@ public class TravelActivity extends AppCompatActivity {
     }
 
     public void updateUI() {
-        TextView locationTextView = (TextView) findViewById(R.id.locationTextViewGPS);
-        locationTextView.setText(currentLocationName);
+        if (currentLocation == null) {
+            return;
+        }
 
-        LinearLayout buttonLayout = (LinearLayout) findViewById(R.id.locationButtonLayout);
-        buttonLayout.removeAllViewsInLayout();
-        buttonLayout.setOrientation(LinearLayout.VERTICAL);
+        TextView locationTextViewGPS = findViewById(R.id.locationTextViewGPS);
+        TextView locationTextViewDestinations = findViewById(R.id.locationTextViewDestination);
+        if (locationTextViewGPS != null)
+            locationTextViewGPS.setText(currentLocationName);
+        if (locationTextViewDestinations != null)
+            locationTextViewDestinations.setText(currentLocationName);
+
+        LinearLayout buttonLayoutGPS = findViewById(R.id.locationButtonLayoutGPS);
+        LinearLayout buttonLayoutDestinations = findViewById(R.id.locationButtonLayoutDestinations);
+        if (buttonLayoutGPS != null) {
+            buttonLayoutGPS.removeAllViewsInLayout();
+            buttonLayoutGPS.setOrientation(LinearLayout.VERTICAL);
+        }
+        if (buttonLayoutDestinations != null) {
+            buttonLayoutDestinations.removeAllViewsInLayout();
+            buttonLayoutDestinations.setOrientation(LinearLayout.VERTICAL);
+        }
 
         int order = 1;
         for (int i = 0; i < currentLocation.getSurroundingLocations().keySet().size(); i++)
@@ -203,15 +224,21 @@ public class TravelActivity extends AppCompatActivity {
                     if (currentTransportMeans.equals(meansTransport)) {
                         Button locationButton = new Button(getApplicationContext());
                         locationButton.setText(surroundingLocation);
-                        locationButton.setOnClickListener(TravelActivity.this::onClick);
-                        buttonLayout.addView(locationButton);
+                        if (buttonLayoutGPS != null) {
+                            locationButton.setOnClickListener(TravelActivity.this::onClickGPS);
+                            buttonLayoutGPS.addView(locationButton);
+                        }
+                        if (buttonLayoutDestinations != null) {
+                            locationButton.setOnClickListener(TravelActivity.this::onClickDestinations);
+                            buttonLayoutDestinations.addView(locationButton);
+                        }
                     }
                     order += 1;
                 }
             }
     }
 
-    public void onClick(View view) {
+    public void onClickGPS(View view) {
         currentLocationName = (String) ((Button) view).getText();
 
         if (currentLocation != null) {
@@ -220,6 +247,12 @@ public class TravelActivity extends AppCompatActivity {
                 runOnUiThread(() -> ((GPSPageFragment) getSupportFragmentManager().getFragments().get(0)).createMapMarkers());
                 runOnUiThread(this::updateUI);
             }).start();
+        }
+    }
+
+    public void onClickDestinations(View view) {
+        if (currentLocation != null) {
+            new Thread(() -> runOnUiThread(() -> ((DestinationPageFragment) getSupportFragmentManager().getFragments().get(2)).onClick(view))).start();
         }
     }
 
@@ -274,6 +307,7 @@ public class TravelActivity extends AppCompatActivity {
         public void onResume() {
             super.onResume();
             mMapView.onResume();
+            requireActivity().runOnUiThread(() -> ((TravelActivity) requireActivity()).updateUI());
         }
 
 
@@ -296,10 +330,10 @@ public class TravelActivity extends AppCompatActivity {
         }
 
         public void createMapMarkers() {
-            LocationInfo currentLocation = ((TravelActivity) getActivity()).currentLocation;
-            ArrayList<LocationInfo> surroundingLocations = ((TravelActivity) getActivity()).surroundingLocations;
-            String currentLocationName = ((TravelActivity) getActivity()).currentLocationName;
-            String currentTransportMeans = ((TravelActivity) getActivity()).currentTransportMeans;
+            LocationInfo currentLocation = ((TravelActivity) requireActivity()).currentLocation;
+            ArrayList<LocationInfo> surroundingLocations = ((TravelActivity) requireActivity()).surroundingLocations;
+            String currentLocationName = ((TravelActivity) requireActivity()).currentLocationName;
+            String currentTransportMeans = ((TravelActivity) requireActivity()).currentTransportMeans;
 
             mMap.clear();
             LatLngBounds.Builder b = new LatLngBounds.Builder();
@@ -331,19 +365,18 @@ public class TravelActivity extends AppCompatActivity {
 
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-            ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment_travel_info, container, false);
-            return rootView;
+            return inflater.inflate(R.layout.fragment_travel_info, container, false);
         }
 
         @Override
         public void onResume() {
-            LocationInfo currentLocation = ((TravelActivity) getActivity()).currentLocation;
-            String currentLocationName = ((TravelActivity) getActivity()).currentLocationName;
+            LocationInfo currentLocation = ((TravelActivity) requireActivity()).currentLocation;
+            String currentLocationName = ((TravelActivity) requireActivity()).currentLocationName;
 
             super.onResume();
-            TextView textView = ((TravelActivity) getActivity()).findViewById(R.id.locationTextViewInfo);
+            TextView textView = requireActivity().findViewById(R.id.locationTextViewInfo);
             textView.setText(currentLocationName);
-            EditText editText = ((TravelActivity) getActivity()).findViewById(R.id.travelInfoText);
+            EditText editText = requireActivity().findViewById(R.id.travelInfoText);
             editText.setText("");
             if (currentLocation != null) {
                 editText.append(currentLocation.getLatitude() + ", " + currentLocation.getLongitude() + "\n");
@@ -383,6 +416,115 @@ public class TravelActivity extends AppCompatActivity {
                 }
             }
         }
+    }
+
+    public static class DestinationPageFragment extends Fragment {
+
+        ViewGroup rootView;
+        View destinationsView;
+
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+            rootView = (ViewGroup) inflater.inflate(R.layout.fragment_travel_destination, container, false);
+            return rootView;
+        }
+
+        @Override
+        public void onResume() {
+            requireActivity().runOnUiThread(() -> ((TravelActivity) requireActivity()).updateUI());
+
+            String currentLocationName = ((TravelActivity) requireActivity()).currentLocationName;
+
+            super.onResume();
+            TextView textView = requireActivity().findViewById(R.id.locationTextViewDestination);
+            textView.setText(currentLocationName);
+            ((TextView) requireActivity().findViewById(R.id.wayName)).setText("");
+            ((LinearLayout) requireActivity().findViewById(R.id.destinations)).removeAllViews();
+            ((ConstraintLayout) requireActivity().findViewById(R.id.view_destinations)).setBackgroundColor(Color.WHITE);
+        }
+
+        private void onClick(View view) {
+            String selectedSurroundingLocation = (String) ((Button) view).getText();
+            LocationInfo currentLocation = ((TravelActivity) requireActivity()).currentLocation;
+            String currentTransportMeans = ((TravelActivity) requireActivity()).currentTransportMeans;
+
+            String routeName = currentLocation.getRouteName(selectedSurroundingLocation, currentTransportMeans);
+            View destinationsLayout = ((ConstraintLayout) requireActivity().findViewById(R.id.view_destinations));
+            TextView routeTextView = ((TextView) requireActivity().findViewById(R.id.wayName));
+            LinearLayout destinations = requireActivity().findViewById(R.id.destinations);
+            ((LinearLayout) requireActivity().findViewById(R.id.destinations)).removeAllViews();
+            if (routeName == null) {
+                routeTextView.setText(R.string.no_destination);
+                routeTextView.setTextColor(Color.BLACK);
+                routeTextView.setBackgroundColor(Color.WHITE);
+                destinationsLayout.setBackgroundColor(Color.WHITE);
+            } else {
+                routeTextView.setText(routeName);
+                for (String destinationText : currentLocation.getDestinationsFromSurroundingLocation(selectedSurroundingLocation, currentTransportMeans)) {
+                    TextView destination = new TextView(getContext());
+                    destination.setText(destinationText);
+                    destinations.addView(destination);
+                    if (isAutoEstrada(routeName) || isItinerarioPrincipal(routeName) || isViaMaritima(currentTransportMeans) || isViaFerroviaria(currentTransportMeans)) {
+                        destination.setTextColor(Color.WHITE);
+                        routeTextView.setTextColor(Color.WHITE);
+                    } else if (currentLocation.getCountry().equals("Spain") && isCarreteraDelEstado(routeName)) {
+                        routeTextView.setTextColor(Color.WHITE);
+                        destination.setTextColor(Color.BLACK);
+                    } else {
+                        destination.setTextColor(Color.BLACK);
+                        routeTextView.setTextColor(Color.BLACK);
+                    }
+                }
+                if (isAutoEstrada(routeName)) {
+                    destinationsLayout.setBackgroundColor(Color.BLUE);
+                    routeTextView.setBackgroundColor(Color.BLUE);
+                } else if (isItinerarioPrincipal(routeName)) {
+                    destinationsLayout.setBackgroundColor(Color.parseColor("#008000")); // Dark green
+                    routeTextView.setBackgroundColor(Color.parseColor("#008000"));
+                } else if (isViaMaritima(currentTransportMeans)) {
+                    destinationsLayout.setBackgroundColor(Color.CYAN);
+                    routeTextView.setBackgroundColor(Color.CYAN);
+                } else if (isViaFerroviaria(currentTransportMeans)) {
+                    destinationsLayout.setBackgroundColor(Color.parseColor("#800000")); // Dark brown
+                    routeTextView.setBackgroundColor(Color.parseColor("#800000"));
+                } else {
+                    routeTextView.setBackgroundColor(Color.WHITE);
+                    destinationsLayout.setBackgroundColor(Color.WHITE);
+                }
+
+                if (isCarreteraDelEstado(routeName) || isItinerarioPrincipal(routeName))
+                    routeTextView.setBackgroundColor(Color.RED);
+            }
+        }
+
+        private boolean isAutoEstrada(String routeName) {
+            return (routeName.startsWith("A-") ||
+                    (routeName.charAt(0) == 'A' && ((routeName.length() == 2) || (routeName.length() == 3))) || // Ex: A2, A22
+                    routeName.startsWith("AP-") ||
+                    routeName.startsWith("SE-") || // Seville
+                    routeName.startsWith("H-") || // Huelva
+                    routeName.startsWith("CA-") || // Cádiz
+                    routeName.startsWith("EX-A") || // Extremadura
+                    routeName.startsWith("CO-")) ||
+                    routeName.equals("A9 CREL");
+        }
+
+        private boolean isItinerarioPrincipal(String routeName) {
+            return (routeName.startsWith("IP"));
+        }
+
+        private boolean isViaMaritima(String meansTransport) {
+            return (meansTransport.equals(BOAT));
+        }
+
+        private boolean isViaFerroviaria(String meansTransport) {
+            return (meansTransport.equals(TRAIN));
+        }
+
+        private boolean isCarreteraDelEstado(String routeName) {
+            return (routeName.startsWith("N-"));
+        }
+
     }
 
 }
