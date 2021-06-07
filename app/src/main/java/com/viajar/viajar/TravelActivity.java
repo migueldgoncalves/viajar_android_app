@@ -411,7 +411,8 @@ public class TravelActivity extends AppCompatActivity {
                         else
                             editText.append("Comarca: Nenhuma\n");
                     }
-                    editText.append("Província: " + ((LocationInfoSpain) currentLocation).getProvince() + "\n");
+                    if (!((LocationInfoSpain) currentLocation).getAutonomousCommunity().equals("Comunidade de Madrid"))
+                        editText.append("Província: " + ((LocationInfoSpain) currentLocation).getProvince() + "\n");
                     editText.append("Comunidade Autónoma: " + ((LocationInfoSpain) currentLocation).getAutonomousCommunity());
                 }
             }
@@ -505,8 +506,9 @@ public class TravelActivity extends AppCompatActivity {
                     routeName.startsWith("H-") || // Huelva
                     routeName.startsWith("CA-") || // Cádiz
                     routeName.startsWith("EX-A") || // Extremadura
-                    routeName.startsWith("CO-")) ||
-                    routeName.equals("A9 CREL");
+                    routeName.startsWith("CO-") || // Córdoba
+                    routeName.startsWith("CM-") || // Castilla-La Mancha
+                    routeName.equals("A9 CREL"));
         }
 
         private boolean isItinerarioPrincipal(String routeName) {

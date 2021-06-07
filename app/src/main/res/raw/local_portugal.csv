@@ -1,5 +1,6 @@
 Nome,Freguesia,Concelho
 A13 - Saída 2,Santo Isidro de Pegões,Montijo
+A16 - Saída 2,Alcabideche,Cascais
 A2 - Saída 1,Pragal,Almada
 A2 - Saída 2,Arrentela,Seixal
 A2 - Saída 3,Quinta do Anjo,Palmela
@@ -53,6 +54,7 @@ A6 - Saída 10,São Vicente e Ventosa,Elvas
 A6 - Saída 11,Caia e São Pedro,Elvas
 A6 - Saída 12,Caia e São Pedro,Elvas
 A6 - Saída 13,Caia e São Pedro,Elvas
+A9 CREL - Saída 2,Barcarena,Oeiras
 Achada do Gamo,Santana de Cambas,Mértola
 Aeródromo de Portimão,Alvor,Portimão
 Aeroporto de Beja,São Brissos,Beja
@@ -178,12 +180,14 @@ Corte Velha,Odeleite,Castro Marim
 Cortes Pereiras,Alcoutim,Alcoutim
 Cruzamento da A12 com a A2,Palmela,Palmela
 Cruzamento da A16 com a A5,Alcabideche,Cascais
+Cruzamento da A16 com a A9 CREL,Belas,Sintra
 Cruzamento da A2 com a A6 e a A13,Landeira,Vendas Novas
 Cruzamento da A2 com a A22,Paderne,Albufeira
 Cruzamento da A2 com a A26,Azinheira dos Barros e São Mamede do Sádão,Grândola
 Cruzamento da A5 com a A9 CREL,Queijas,Oeiras
 Cruzamento da M509 com a M512,Azinhal,Castro Marim
 Cruzamento da M524 com a M525,Tôr,Loulé
+Cruzamento da N120 com a N120-1,Cercal do Alentejo,Santiago do Cacém
 Cruzamento da N120 com a N125,São Sebastião,Lagos
 Cruzamento da N120 com a N268,Aljezur,Aljezur
 Cruzamento da N122 com a M1059,Alcoutim,Alcoutim
@@ -311,6 +315,7 @@ IP2 - Saída 47,Albernoa,Beja
 IP2 - Saída 48,Castro Verde,Castro Verde
 IP2 - Saída 49,Castro Verde,Castro Verde
 IP2 - Saída 50,Castro Verde,Castro Verde
+IP8 - Início,Sines,Sines
 Junqueira,Castro Marim,Castro Marim
 Lagoa,Lagoa,Lagoa
 Lagos,Santa Maria,Lagos
@@ -403,6 +408,7 @@ Portimão - Avenida São Lourenço da Barrosa,Portimão,Portimão
 Portimão - Centro histórico,Portimão,Portimão
 Portimão - Zona ribeirinha,Portimão,Portimão
 Porto Comercial de Portimão,Portimão,Portimão
+Porto Covo,Porto Covo,Sines
 Porto de Faro,Sé,Faro
 Porto de Pesca de Portimão,Parchal,Lagoa
 Póvoa de São Miguel,Póvoa de São Miguel,Moura
@@ -428,6 +434,7 @@ Praia de Faro,Montenegro,Faro
 Praia de Monte Clérigo,Aljezur,Aljezur
 Praia de Odeceixe,Odeceixe,Aljezur
 Praia de Santa Eulália,Olhos de Água,Albufeira
+Praia de São Torpes,Sines,Sines
 Praia do Amado,Bordeira,Aljezur
 Praia do Barril,Santa Luzia,Tavira
 Praia do Carvalho,Carvoeiro,Lagoa
