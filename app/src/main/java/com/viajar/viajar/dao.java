@@ -9,6 +9,7 @@ import com.viajar.viajar.database.Concelho;
 import com.viajar.viajar.database.Connection;
 import com.viajar.viajar.database.Destination;
 import com.viajar.viajar.database.Location;
+import com.viajar.viajar.database.LocationGibraltar;
 import com.viajar.viajar.database.LocationPortugal;
 import com.viajar.viajar.database.LocationSpain;
 import com.viajar.viajar.database.Municipio;
@@ -49,6 +50,17 @@ public interface dao {
 
     @Query("SELECT COUNT(location_a) FROM destination")
     int getDestinationNumber();
+
+    // Gibraltar location table
+
+    @Insert
+    void insertGibraltarLocations(LocationGibraltar... gibraltarLocations);
+
+    @Query("DELETE FROM locationGibraltar")
+    void deleteGibraltarLocations();
+
+    @Query("SELECT COUNT(name) FROM locationGibraltar")
+    int getGibraltarLocationNumber();
 
     // Portuguese location table
 
@@ -124,6 +136,9 @@ public interface dao {
     @Query("SELECT * FROM location WHERE name = :name")
     Location getLocationByName(String name);
 
+    @Query("SELECT COUNT(name) FROM locationGibraltar WHERE name = :locationName")
+    int isLocationInGibraltar(String locationName);
+
     @Query("SELECT COUNT(name) FROM locationPortugal WHERE name = :locationName")
     int isLocationInPortugal(String locationName);
 
@@ -132,6 +147,9 @@ public interface dao {
 
     @Query("SELECT * FROM destination WHERE (location_a = :locationName AND starting_point = 1) OR (location_b = :locationName AND starting_point = 0)")
     Destination[] getLocationDestinations(String locationName);
+
+    @Query("SELECT major_residential_area FROM locationgibraltar WHERE name = :name")
+    String[] getMajorResidentialAreas(String name);
 
     @Query("SELECT parish FROM locationportugal, concelho WHERE locationportugal.concelho = concelho.concelho AND locationportugal.name = :locationName")
     String getParish(String locationName);

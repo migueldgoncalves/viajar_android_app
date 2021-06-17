@@ -297,8 +297,8 @@ A-5 - Saída 310,A-5 - Saída 316,Carro,5.5,A-5,SO,1,2
 A-5 - Saída 316,A-5 - Saída 318,Carro,2.0,A-5,O,1,2
 A-5 - Saída 318,A-5 - Saída 325,Carro,7.7,A-5,SO,1,2
 A-5 - Saída 325,A-5 - Saída 331,Carro,5.4,A-5,O,1,2
-A-5 - Saída 331,A-5 - Saída 333-334,Carro,3.3,A-5,SO,1,2
-A-5 - Saída 333-334,Cruzamento da A-5 com a A-66 Norte,Carro,5.4,A-5,O,1,2
+A-5 - Saída 331,A-5 - Saída 333,Carro,3.3,A-5,SO,1,2
+A-5 - Saída 333,Cruzamento da A-5 com a A-66 Norte,Carro,5.4,A-5,O,1,2
 A-5 - Saída 341,A-5 - Saída 342,Carro,1.9,A-5,SO,1,2
 A-5 - Saída 341,Cruzamento da A-5 com a A-66 Norte,Carro,2.1,A-5,NE,2,1
 A-5 - Saída 342,Cruzamento da A-5 com a A-66 Sul,Carro,1.4,A-5,SO,1,2
@@ -636,6 +636,7 @@ Aeroporto de Beja,Aeroporto de Jerez,Avião,222.3,,SE,7,5
 Aeroporto de Beja,Aeroporto de Sevilha,Avião,193.4,,SE,4,3
 Aeroporto de Beja,Beja,Carro,9.6,,SE,1,3
 Aeroporto de Beja,Cuba,Carro,14.5,,NE,2,5
+Aeroporto de Córdoba,Aeroporto de Gibraltar,Avião,193.1,,S,6,4
 Aeroporto de Córdoba,Aeroporto de Jerez,Avião,162.6,,SO,4,3
 Aeroporto de Córdoba,Aeroporto de Sevilha,Avião,104.0,,SO,3,5
 Aeroporto de Córdoba,CO-32 - Fim,Carro,4.1,N-437,NE,1,2
@@ -643,6 +644,9 @@ Aeroporto de Faro,Aeroporto de Jerez,Avião,173.2,,SE,6,4
 Aeroporto de Faro,Montenegro,Carro,2.6,N125-10,N,1,1
 Aeroporto de Faro,Praia de Faro,Carro,4.8,,SO,2,1
 Aeroporto de Faro,Aeroporto de Sevilha,Avião,188.9,,NE,4,4
+Aeroporto de Gibraltar,Aeroporto de Jerez,Avião,91.7,,NO,2,6
+Aeroporto de Gibraltar,Aeroporto de Sevilha,Avião,148.7,,NO,3,8
+Aeroporto de Gibraltar,Fronteira Espanha-Gibraltar - Lado de Gibraltar,Carro,0.1,,NO,1,2
 Aeroporto de Jerez,Aeroporto de Sevilha,Avião,76.1,,N,2,6
 Afonso Vicente,Menires do Lavajo,Carro,1.3,,NE,1,2
 Afonso Vicente,Cortes Pereiras,Carro,2.9,,E,2,1
@@ -750,6 +754,9 @@ AP-4 - Saída 44-45,AP-4 - Saída 53,Carro,8.3,AP-4,S,2,1
 AP-4 - Saída 44-45,Área de Serviço de El Fantasma,Carro,2.9,AP-4,NE,1,2
 AP-4 - Saída 53,Área de Serviço de El Cuadrejón,Carro,16.2,AP-4,SO,2,1
 AP-4 - Saída 53,El Cuervo de Sevilla,Carro,8.9,N-4,SO,3,1
+AP-41 - Saída 2,AP-41 - Saída 8,Carro,5.8,AP-41,S,2,1
+AP-41 - Saída 2,Cruzamento da AP-41 com a R-5,Carro,1.8,AP-41,N,1,3
+AP-41 - Saída 8,AP-41 - Saída 16,Carro,8.3,AP-41,S,2,1
 AP-7 - Saída 142,Área de Serviço de Manilva,Carro,5.2,AP-7,S,1,2
 AP-7 - Saída 142,Cruzamento II da A-7 com a AP-7,Carro,11.3,AP-7,NE,2,1
 AP-7 - Saída 172,Área de Serviço de Río Castor,Carro,11.5,AP-7,SO,1,2
@@ -775,6 +782,8 @@ Arahal,Paradas,Carro,6.2,,NE,3,1
 Área de Serviço de Oeiras,Cruzamento da A5 com a A9 CREL,Carro,2.0,A5,E,1,2
 Área de Serviço de Grândola,Cruzamento da A2 com a A26,Carro,8.4,A2,SE,2,1
 Área de Serviço de Manilva,Cruzamento I da A-7 com a AP-7,Carro,4.5,AP-7,SO,1,2
+Área de Serviço de Polvoranca,Cruzamento da M-45 com a R-5,Carro,4.4,R-5,NE,2,1
+Área de Serviço de Polvoranca,R-5 - Saída 9,Carro,1.5,R-5,SO,1,2
 Área de Serviço de Río Castor,Cruzamento III da A-7 com a AP-7,Carro,3.7,AP-7,SO,1,2
 Área de Serviço de Vendas Novas,Cruzamento da A2 com a A6 e a A13,Carro,6.2,A6,SO,1,3
 Armação de Pêra,"Pêra, Silves",Carro,3.5,,NE,1,4
@@ -783,6 +792,10 @@ Armação de Pêra,Praia da Cova Redonda,Carro,3.5,,SO,3,1
 Aroche,Barrancos,Carro,32.8,,N,2,1
 Aroche,Rosal de la Frontera,Carro,26.9,N-433,O,1,3
 Autódromo Internacional do Algarve,Marmelete,Carro,12.5,,NO,2,2
+"Avenida de España, La Línea de la Concepción","Calle Cartagena, La Línea de la Concepción",Carro,2.5,,NE,2,3
+"Avenida de España, La Línea de la Concepción","Campamento, San Roque",Carro,1.7,N-351,NO,1,5
+"Avenida de España, La Línea de la Concepción",Fronteira Espanha-Gibraltar - Lado espanhol,Carro,1.9,N-351,SE,4,1
+"Avenida de España, La Línea de la Concepción",La Línea de la Concepción - Centro da cidade,Carro,1.7,,E,3,3
 Ayamonte,Polígono Industrial de Ayamonte,Carro,3.7,,NE,1,1
 Ayamonte,Barriada de Canela,Carro,2.2,,S,3,1
 Ayamonte,Costa Esuri,Barco,7.6,Rio Guadiana,N,4,3
@@ -855,6 +868,11 @@ Budens,Salema,Carro,3.1,,S,3,2
 Burgau,Cruzamento da N125 com a M537-2,Carro,2.4,,NO,2,1
 Burgau,"Luz, Lagos",Carro,5.1,,NE,1,3
 Burgau,Praia da Boca do Rio,Carro,5.4,,SO,3,1
+CA-34 - Acesso à Refinaria,CA-34 - Puente Mayorga,Carro,1.2,CA-34,SE,2,1
+CA-34 - Acesso à Refinaria,Cruzamento da A-7 com a CA-34,Carro,1.8,CA-34,N,1,3
+CA-34 - Acesso à Refinaria,Refinaria de Gibraltar-San Roque,Carro,1.5,,SO,3,1
+CA-34 - Puente Mayorga,"Campamento, San Roque",Carro,1.1,N-351,SE,2,1
+CA-34 - Puente Mayorga,"Puente Mayorga, San Roque",Carro,0.4,,SO,3,1
 Cabanas de Tavira,"Conceição, Tavira",Carro,1.5,,N,1,3
 Cabanas de Tavira,Praia de Cabanas de Tavira,Barco,0.8,Ria Formosa,E,2,3
 Cabeço da Junqueira,Casinhas,Carro,1.7,,NE,1,3
@@ -876,6 +894,11 @@ Cais da Praia do Barril,Praia do Barril,Comboio,1.1,Comboio da Praia do Barril,S
 Cais da Praia do Barril,Santa Luzia,Barco,1.8,Ria Formosa,NE,3,4
 Caldas de Monchique,Cruzamento da N124 com a N266,Carro,11.1,,S,2,3
 Caldas de Monchique,Cruzamento da N266 com a N267 Oeste,Carro,3.4,,NO,1,3
+"Calle Cartagena, La Línea de la Concepción","Campamento, San Roque",Carro,2.7,,O,1,4
+"Calle Cartagena, La Línea de la Concepción",La Línea de la Concepción - Centro da cidade,Carro,1.0,,S,2,2
+"Calle Cartagena, La Línea de la Concepción","Paseo del Mediterráneo, La Línea de la Concepción",Carro,2.2,,SE,4,3
+"Campamento, San Roque",La Línea de la Concepción - Centro da cidade,Carro,3.7,,SE,3,1
+"Campamento, San Roque","Puente Mayorga, San Roque",Carro,1.3,,NO,2,2
 Canal Caveira,Cruzamento da A2 com a A26,Carro,9.0,IC1,E,1,5
 Canal Caveira,Grândola,Carro,8.7,IC1,NO,2,3
 Carmona,Marchena,Carro,26.8,,SE,6,2
@@ -957,6 +980,7 @@ Cruzamento da A-4 Sul com a SE-30,Ponte do Centenário,Carro,1.4,SE-30,NO,1,2
 Cruzamento da A-4 Sul com a SE-30,SE-30 - Saída 8,Carro,0.9,SE-30,E,2,1
 Cruzamento da A-4 Sul com a SE-30,Cruzamento da A-4 Sul com a SE-40,Carro,5.1,A-4,S,3,1
 Cruzamento da A-4 Sul com a SE-40,SE-40 - Saída 19,Carro,3.3,SE-40,E,3,1
+Cruzamento da A-42 com a M-40,Cruzamento da M-40 com a R-5,Carro,2.1,M-40,SO,1,2
 Cruzamento da A-49 com a H-31,H-31 - Saída 80,Carro,1.5,H-31,SO,3,1
 Cruzamento da A-49 com a SE-30,Cruzamento da A-66 com a SE-30,Carro,2.7,SE-30,N,1,2
 Cruzamento da A-49 com a SE-30,SE-30 - Saída 15,Carro,1.9,SE-30,S,2,1
@@ -972,9 +996,14 @@ Cruzamento da A-8009 com a SE-20,SE-20 - San Jerónimo,Carro,1.5,SE-20,SO,1,2
 Cruzamento da A-92 com a SE-30,SE-30 - Saída 3,Carro,0.6,SE-30,S,1,2
 Cruzamento da A-92 com a SE-30,SE-30 - Saída 1,Carro,1.5,SE-30,NO,2,1
 Cruzamento da A-92 com a SE-40,SE-40 - Saída 5,Carro,3.4,SE-40,NE,2,1
+Cruzamento da A2 com a A26,Estação de Ermidas - Sado,Carro,16.0,IC1,S,4,5
+Cruzamento da AP-41 com a R-5,R-5 - Saída 11,Carro,5.6,R-5,NE,2,1
 Cruzamento da AP-41 com a R-5,R-5 - Saída 20,Carro,2.8,R-5,SO,1,2
 Cruzamento da H-30 com a H-31,H-31 - Saída 80,Carro,4.4,H-31,NE,1,2
-Cruzamento da A2 com a A26,Estação de Ermidas - Sado,Carro,16.0,IC1,S,4,5
+Cruzamento da M-40 com a M-45,Cruzamento da M-45 com a R-5,Carro,1.0,M-45,SE,2,3
+Cruzamento da M-40 com a M-45,M-40 - Saída 28A,Carro,0.8,M-40,E,1,1
+Cruzamento da M-40 com a R-5,Cruzamento da M-45 com a R-5,Carro,1.3,R-5,SO,3,2
+Cruzamento da M-40 com a R-5,M-40 - Saída 28A,Carro,0.9,M-40,SO,1,2
 Cruzamento da M524 com a M525,Loulé,Carro,6.8,,S,1,7
 Cruzamento da M524 com a M525,Fonte Benémola,Carro,3.4,,NE,2,2
 Cruzamento da M524 com a M525,Salir,Carro,7.3,,N,3,3
@@ -1070,6 +1099,9 @@ Culatra,Ilha da Armona,Barco,6.2,Ria Formosa,NE,1,2
 Culatra,Hangares,Barco,1.6,Ria Formosa,SO,2,1
 Culatra,Olhão,Barco,5.1,Ria Formosa,N,3,8
 Deserto,Montinho,Carro,0.6,,SE,5,1
+Don Benito,EX-A2 - Fim,Carro,4.8,,NE,2,2
+Don Benito,EX-A2 - Saída 20,Carro,5.6,,N,1,3
+Don Benito,Villanueva de la Serena,Comboio,6.1,Linha Ciudad Real-Badajoz - Media Distancia/Regional Exprés,NE,3,3
 Dunas de Vila Real de Santo António,Monte Gordo,Carro,1.7,,O,1,2
 Dunas de Vila Real de Santo António,Vila Real de Santo António,Carro,2.0,,NE,2,4
 Écija,Estepa,Carro,37.9,,SE,4,2
@@ -1170,6 +1202,13 @@ Estoi,Pechão,Carro,4.8,N2-6,SE,2,3
 Estoi,Ruínas Romanas de Milreu,Carro,0.9,N2-6,O,4,1
 Estômbar,Parque Municipal do Sítio das Fontes,Carro,2.1,,N,2,1
 "Estrela, Moura",Póvoa de São Miguel,Carro,9.0,,SE,1,3
+EX-A2 - Fim,EX-A2 - Saída 23,Carro,1.6,EX-A2,NO,1,2
+EX-A2 - Fim,Villanueva de la Serena,Carro,2.1,,NE,3,2
+EX-A2 - Saída 6,EX-A2 - Saída 8,Carro,2.2,EX-A2,S,2,1
+EX-A2 - Saída 8,EX-A2 - Saída 15,Carro,6.8,EX-A2,SE,2,1
+EX-A2 - Saída 15,EX-A2 - Saída 20,Carro,4.6,EX-A2,S,2,1
+EX-A2 - Saída 20,EX-A2 - Saída 23,Carro,3.1,EX-A2,SE,2,1
+EX-A2 - Saída 23,Villanueva de la Serena,Carro,5.0,,SE,3,1
 Faro - Avenida Calouste Gulbenkian,Forum Algarve,Carro,1.7,,NO,1,1
 Faro - Avenida Calouste Gulbenkian,Variante de Faro - Nó com a N2,Carro,2.7,N2,N,2,3
 Faro - Avenida Calouste Gulbenkian,Universidade do Algarve - Campus da Penha,Carro,1.8,,E,3,1
@@ -1194,6 +1233,11 @@ Fonte Zambujo,Fonte Zambujo de Baixo,Carro,1.2,,SO,2,1
 Fonte Zambujo de Cima,Pereiro,Carro,3.4,,NO,1,3
 Formoa,Pomarão,Carro,2.0,,NE,1,3
 Forum Algarve,Variante de Faro - Nó com o IC4,Carro,1.9,IC4,N,2,3
+Fronteira Espanha-Gibraltar - Lado de Gibraltar,Fronteira Espanha-Gibraltar - Lado espanhol,Carro,0.1,,N,1,4
+Fronteira Espanha-Gibraltar - Lado de Gibraltar,Pista do Aeroporto de Gibraltar,Carro,0.4,,S,4,1
+Fronteira Espanha-Gibraltar - Lado de Gibraltar,Western Beach,Carro,0.5,,SO,3,1
+Fronteira Espanha-Gibraltar - Lado espanhol,La Línea de la Concepción - Centro da cidade,Carro,3.0,,N,2,4
+Fronteira Espanha-Gibraltar - Lado espanhol,"Paseo del Mediterráneo, La Línea de la Concepción",Carro,3.1,,NE,3,1
 Furnazinhas,Vaqueiros,Carro,17.6,,NO,2,1
 Fuseta,Praia do Barril,Barco,8.6,Ria Formosa,NE,3,2
 Fuseta,Ilha da Armona,Barco,10.9,Ria Formosa,SO,4,1
@@ -1264,6 +1308,7 @@ IP2 - Saída 49,IP2 - Saída 50,Carro,3.9,IP2,SO,2,1
 IP8 - Início,Praia de São Torpes,Carro,3.2,N120-1,SE,1,3
 Isla Cristina,Punta del Moral,Barco,1.6,Marismas de Isla Cristina,SO,2,4
 Junqueira,Montes Castelhanos,Carro,0.6,N122,N,1,3
+La Línea de la Concepción - Centro da cidade,"Paseo del Mediterráneo, La Línea de la Concepción",Carro,1.5,,E,5,2
 Lagoa,Porches,Carro,5.2,N125,SE,2,6
 Lagoa,Slide & Splash,Carro,2.3,,NO,5,1
 Lagos,N125 - Acesso à Saída 1 da A22,Carro,4.1,,NO,4,1
@@ -1427,6 +1472,7 @@ Quatro Águas,Vila Real de Santo António,Barco,26.9,Costa de Portugal Continent
 Quebradas,Sentinela,Carro,2.5,,SE,2,2
 Querença,São Brás de Alportel,Carro,16.3,,SE,2,5
 Quinta do Lago,Vale do Lobo,Carro,5.8,,O,2,2
+R-5 - Saída 9,R-5 - Saída 11,Carro,3.5,R-5,SO,1,2
 R-5 - Saída 20,R-5 - Saída 28,Carro,8.5,R-5,O,1,2
 Raposeira,Vila do Bispo,Carro,1.9,N125,O,2,2
 Ribeira do Vascão,Santa Marta,Carro,3.6,N122,S,1,2

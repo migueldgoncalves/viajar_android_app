@@ -392,7 +392,7 @@ public class TravelActivity extends AppCompatActivity {
                     editText.append("Concelho: " + ((LocationInfoPortugal) currentLocation).getMunicipality() + "\n");
                     editText.append("Distrito: " + ((LocationInfoPortugal) currentLocation).getDistrict() + "\n");
                     editText.append("Entidade Intermunicipal: " + ((LocationInfoPortugal) currentLocation).getIntermunicipalEntity() + "\n");
-                    editText.append("Região: " + ((LocationInfoPortugal) currentLocation).getRegion());
+                    editText.append("Região: " + ((LocationInfoPortugal) currentLocation).getRegion() + "\n");
                 } else if (currentLocation.getCountry().equals("Spain")) {
                     if (((LocationInfoSpain) currentLocation).getDistrict() != null)
                         editText.append("Distrito: " + ((LocationInfoSpain) currentLocation).getDistrict() + "\n");
@@ -413,8 +413,20 @@ public class TravelActivity extends AppCompatActivity {
                     }
                     if (!((LocationInfoSpain) currentLocation).getAutonomousCommunity().equals("Comunidade de Madrid"))
                         editText.append("Província: " + ((LocationInfoSpain) currentLocation).getProvince() + "\n");
-                    editText.append("Comunidade Autónoma: " + ((LocationInfoSpain) currentLocation).getAutonomousCommunity());
+                    editText.append("Comunidade Autónoma: " + ((LocationInfoSpain) currentLocation).getAutonomousCommunity() + "\n");
+                } else if (currentLocation.getCountry().equals("Gibraltar")) {
+                    if (((LocationInfoGibraltar) currentLocation).getMajorResidentialAreas().size() == 2)
+                        editText.append("Major Residential Areas: " + ((LocationInfoGibraltar) currentLocation).getMajorResidentialAreas().get(0) +
+                                ", " + ((LocationInfoGibraltar) currentLocation).getMajorResidentialAreas().get(1) + "\n");
+                    else if (((LocationInfoGibraltar) currentLocation).getMajorResidentialAreas().size() == 1)
+                        editText.append("Major Residential Area: " + ((LocationInfoGibraltar) currentLocation).getMajorResidentialAreas().get(0) + "\n");
                 }
+                if (currentLocation.getCountry().equals("Spain"))
+                    editText.append("País: Espanha");
+                else if (currentLocation.getCountry().equals("Gibraltar"))
+                    editText.append("País: Reino Unido - Gibraltar");
+                else if (currentLocation.getCountry().equals("Portugal"))
+                    editText.append("País: Portugal");
             }
         }
     }
@@ -499,15 +511,19 @@ public class TravelActivity extends AppCompatActivity {
         }
 
         private boolean isAutoEstrada(String routeName) {
-            return (routeName.startsWith("A-") ||
+            return (routeName.startsWith("A-") || // Autovía
                     (routeName.charAt(0) == 'A' && ((routeName.length() == 2) || (routeName.length() == 3))) || // Ex: A2, A22
-                    routeName.startsWith("AP-") ||
+                    routeName.startsWith("AP-") || // Autopista
                     routeName.startsWith("SE-") || // Seville
                     routeName.startsWith("H-") || // Huelva
                     routeName.startsWith("CA-") || // Cádiz
                     routeName.startsWith("EX-A") || // Extremadura
                     routeName.startsWith("CO-") || // Córdoba
                     routeName.startsWith("CM-") || // Castilla-La Mancha
+                    routeName.startsWith("M-") || // Madrid
+                    routeName.startsWith("MA-") || // Málaga
+                    routeName.startsWith("TO-") || // Toledo
+                    routeName.startsWith("R-") || // Radial
                     routeName.equals("A9 CREL"));
         }
 

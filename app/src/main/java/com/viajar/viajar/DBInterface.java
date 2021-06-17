@@ -10,6 +10,7 @@ import com.viajar.viajar.database.Concelho;
 import com.viajar.viajar.database.Connection;
 import com.viajar.viajar.database.Destination;
 import com.viajar.viajar.database.Location;
+import com.viajar.viajar.database.LocationGibraltar;
 import com.viajar.viajar.database.LocationPortugal;
 import com.viajar.viajar.database.LocationSpain;
 import com.viajar.viajar.database.Municipio;
@@ -45,6 +46,8 @@ public class DBInterface {
             country = "Portugal";
         } else if (getDatabase(context).dao().isLocationInSpain(locationName) == 1) {
             country = "Spain";
+        } else if (getDatabase(context).dao().isLocationInGibraltar(locationName) == 1) {
+            country = "Gibraltar";
         } else {
             return null; // Invalid location
         }
@@ -114,6 +117,9 @@ public class DBInterface {
             ((LocationInfoSpain) locationObject).setProvince(province);
             ((LocationInfoSpain) locationObject).setAutonomousCommunity(getDatabase(context).dao().getAutonomousCommunity(locationName));
             ((LocationInfoSpain) locationObject).setComarcas(Arrays.asList(getDatabase(context).dao().getComarcas(municipio, province)));
+        } else if (country.equals("Gibraltar")) {
+            locationObject = new LocationInfoGibraltar();
+            ((LocationInfoGibraltar) locationObject).setMajorResidentialAreas(Arrays.asList(getDatabase(context).dao().getMajorResidentialAreas(locationName)));
         } else {
             return null; // Add more countries as required
         }
@@ -166,6 +172,7 @@ public class DBInterface {
         populateLocationTable(context);
         populateConnectionTable(context);
         populateDestinationTable(context);
+        populateLocationGibraltarTable(context);
         populateLocationPortugalTable(context);
         populateLocationSpainTable(context);
 
@@ -230,6 +237,20 @@ public class DBInterface {
             getDatabase(context).dao().insertDestinations(newDestination);
         }
         Log.i("debug", "Destination table populated with " + getDatabase(context).dao().getDestinationNumber() + " destinations");
+    }
+
+    private void populateLocationGibraltarTable(Context context) {
+        List<List<String>> csvContent = CsvParser.csvParser(context, R.raw.local_gibraltar);
+        for (int i=0; i<csvContent.size(); i++) {
+            LocationGibraltar newGibraltarLocation = new LocationGibraltar();
+            List<String> csvLine = csvContent.get(i);
+
+            newGibraltarLocation.name = csvLine.get(0);
+            newGibraltarLocation.majorResidentialArea = csvLine.get(1);
+
+            getDatabase(context).dao().insertGibraltarLocations(newGibraltarLocation);
+        }
+        Log.i("debug", "LocationGibraltar table populated with " + getDatabase(context).dao().getGibraltarLocationNumber() + " locations");
     }
 
     private void populateLocationPortugalTable(Context context) {
@@ -327,6 +348,7 @@ public class DBInterface {
     public void clearDatabase(Context context) {
         getDatabase(context).dao().deletePortugueseLocations();
         getDatabase(context).dao().deleteSpanishLocations();
+        getDatabase(context).dao().deleteGibraltarLocations();
         getDatabase(context).dao().deleteDestinations();
         getDatabase(context).dao().deleteConnections();
         getDatabase(context).dao().deleteLocations();
