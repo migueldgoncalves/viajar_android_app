@@ -49,6 +49,7 @@ public class TravelActivity extends AppCompatActivity {
     public static final String CAR = "Carro";
     public static final String BOAT = "Barco";
     public static final String TRAIN = "Comboio";
+    public static final String HIGH_SPEED_TRAIN = "Comboio de Alta Velocidade";
     public static final String PLANE = "Avião";
 
     public static final int TAB_NUMBER = 3;
@@ -136,6 +137,12 @@ public class TravelActivity extends AppCompatActivity {
             }
             else if (item.getItemId() == R.id.plane) {
                 currentTransportMeans = PLANE;
+                runOnUiThread(() -> ((GPSPageFragment) getSupportFragmentManager().getFragments().get(0)).createMapMarkers());
+                runOnUiThread(this::updateUI);
+                return true;
+            }
+            else if (item.getItemId() == R.id.highSpeedTrain) {
+                currentTransportMeans = HIGH_SPEED_TRAIN;
                 runOnUiThread(() -> ((GPSPageFragment) getSupportFragmentManager().getFragments().get(0)).createMapMarkers());
                 runOnUiThread(this::updateUI);
                 return true;
@@ -536,7 +543,7 @@ public class TravelActivity extends AppCompatActivity {
         }
 
         private boolean isViaFerroviaria(String meansTransport) {
-            return (meansTransport.equals(TRAIN));
+            return (meansTransport.equals(TRAIN) || meansTransport.equals(HIGH_SPEED_TRAIN));
         }
 
         private boolean isCarreteraDelEstado(String routeName) {

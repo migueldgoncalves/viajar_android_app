@@ -16,4 +16,8 @@
         android:id="@+id/plane"
         android:title="@string/plane"
         android:icon="@mipmap/plane_icon"/>
+    <item
+        android:id="@+id/highSpeedTrain"
+        android:title="@string/high_speed_train"
+        android:icon="@mipmap/high_speed_train_icon"/>
 </menu>
