@@ -1,4 +1,5 @@
 Nome,Município,Província,Distrito
+A-32 - Saída 1,Bailén,Jaén,
 A-376 - Centro Comercial,Sevilha,Sevilha,Sur
 A-376 - Condequinto,Dos Hermanas,Sevilha,
 A-376 - Fim da auto-estrada,Utrera,Sevilha,
@@ -136,12 +137,30 @@ A-4 - Saída 558,Dos Hermanas,Sevilha,
 A-4 - Saída 628,Jerez de la Frontera,Cádiz,Rural
 A-4 - Saída 631,Jerez de la Frontera,Cádiz,Rural
 A-40 - Saída 94,Santo Domingo-Caudilla,Toledo,
+A-44 - Saída 12,Jabalquinto,Jaén,
 A-45 - Saída 5,Córdoba,Córdoba,
+A-45 - Saída 16,Fernán Núñez,Córdoba,
+A-45 - Saída 27,Montilla,Córdoba,
+A-45 - Saída 36,Montilla,Córdoba,
+A-45 - Saída 40,Aguilar de la Frontera,Córdoba,
+A-45 - Saída 49,Monturque,Córdoba,
+A-45 - Saída 51,Lucena,Córdoba,
+A-45 - Saída 62,Lucena,Córdoba,
+A-45 - Saída 72,Encinas Reales,Córdoba,
+A-45 - Saída 76,Benamejí,Córdoba,
+A-45 - Saída 79,Benamejí,Córdoba,
+A-45 - Saída 82,Benamejí,Córdoba,
+A-45 - Saída 86,Antequera,Málaga,
 A-45 - Saída 92,Antequera,Málaga,
 A-45 - Saída 102,Antequera,Málaga,
 A-45 - Saída 107,Antequera,Málaga,
 A-45 - Saída 115,Antequera,Málaga,
 A-45 - Saída 123,Casabermeja,Málaga,
+A-45 - Saída 124,Casabermeja,Málaga,
+A-45 - Saída 127,Casabermeja,Málaga,
+A-45 - Saída 134,Málaga,Málaga,Palma-Palmilla
+A-45 - Saída 136,Málaga,Málaga,Ciudad Jardín
+A-45 - Saída 140,Málaga,Málaga,Ciudad Jardín
 A-483 - Saída 1,Bollullos Par del Condado,Huelva,
 A-483 - Saída 3,Bollullos Par del Condado,Huelva,
 A-49 - Saída 1,Camas,Sevilha,
@@ -345,6 +364,12 @@ A-7/AP-7 - Saída 222,Benalmádena,Málaga,
 A-7 - Saída 226,Málaga,Málaga,Churriana
 A-7 - Saída 230,Alhaurín de la Torre,Málaga,
 A-7 - Saída 235-237,Málaga,Málaga,Puerto de la Torre
+A-7 - Saída 242,Málaga,Málaga,Ciudad Jardín
+A-7 - Saída 243,Málaga,Málaga,Este
+A-7 - Saída 244,Málaga,Málaga,Este
+A-7 - Saída 245,Málaga,Málaga,Este
+A-7 - Saída 246,Málaga,Málaga,Este
+A-7 - Saída 254,Rincón de la Victoria,Málaga,
 A-8009 - Saída 2,La Rinconada,Sevilha,
 A-8009 - Saída 4,La Rinconada,Sevilha,
 A-8009 - Saída 5,La Rinconada,Sevilha,
@@ -397,14 +422,41 @@ A-92 - Saída 167,Archidona,Málaga,
 A-92 - Saída 175,Archidona,Málaga,
 A-92 - Saída 178,Loja,Granada,
 A-92 - Saída 180,Loja,Granada,
+A-92 - Saída 183,Loja,Granada,
+A-92 - Saída 185,Loja,Granada,
+A-92 - Saída 187,Loja,Granada,
+A-92 - Saída 188,Loja,Granada,
+A-92 - Saída 193,Loja,Granada,
+A-92 - Saída 197,Salar,Granada,
+A-92 - Saída 200,Huétor Tájar,Granada,
+A-92 - Saída 203,Huétor Tájar,Granada,
+A-92 - Saída 206,Moraleda de Zafayona,Granada,
+A-92 - Saída 211,Moraleda de Zafayona,Granada,
+A-92 - Saída 213,Moraleda de Zafayona,Granada,
+A-92 - Saída 215,Moraleda de Zafayona,Granada,
+A-92 - Saída 218,Pinos Puente,Granada,
+A-92 - Saída 220,Láchar,Granada,
+A-92 - Saída 221,Láchar,Granada,
+A-92 - Saída 225,Cijuela,Granada,
+A-92 - Saída 227,Chauchina,Granada,
+A-92 - Saída 229,Santa Fe,Granada,
+A-92 - Saída 236,Atarfe,Granada,
+A-92 - Saída 237,Atarfe,Granada,
+A-92 - Saída 239,Albolote,Granada,
+A-92 - Saída 245,Pulianas,Granada,
 A-92 - Sevilha Este,Sevilha,Sevilha,Este-Alcosa-Torreblanca
 A-92 - Torreblanca,Sevilha,Sevilha,Este-Alcosa-Torreblanca
 A-92M - Saída 1,Archidona,Málaga,
+A-92M - Saída 7,Villanueva del Trabuco,Málaga,
+A-92M - Saída 11,Villanueva del Trabuco,Málaga,
+A-92M - Saída 16,Villanueva del Rosario,Málaga,
+A-92M - Saída 20,Antequera,Málaga,
 Aeroporto de Badajoz,Badajoz,Badajoz,
 Aeroporto de Córdoba,Córdoba,Córdoba,
 Aeroporto de Jerez,Jerez de la Frontera,Cádiz,Rural
 Aeroporto de Málaga - Costa del Sol,Málaga,Málaga,Churriana
 Aeroporto de Sevilha,Sevilha,Sevilha,Este-Alcosa-Torreblanca
+Aeroporto Federico García Lorca Granada-Jaén,Chauchina,Granada,
 Antiga Estação de Isla Cristina - Pozo del Camino,Ayamonte,Huelva,
 AP-4 - Início,Dos Hermanas,Sevilha,
 AP-4 - Saída 23-24,Los Palacios y Villafranca,Sevilha,
@@ -431,6 +483,7 @@ Arahal,Arahal,Sevilha,
 Área de Serviço de Río Castor,Estepona,Málaga,
 Aroche,Aroche,Huelva,
 "Avenida de España, La Línea de la Concepción",La Línea de la Concepción,Cádiz,
+"Avenida de Jacinto Benavente, Málaga",Málaga,Málaga,Ciudad Jardín
 Ayamonte,Ayamonte,Huelva,
 Barriada de Canela,Ayamonte,Huelva,
 Bollullos Par del Condado,Bollullos Par del Condado,Huelva,
@@ -453,6 +506,8 @@ Cruzamento IV da A-7 com a AP-7,Marbella,Málaga,Marbella Oeste
 Cruzamento V da A-7 com a AP-7,Marbella,Málaga,Marbella Este
 Cruzamento VI da A-7 com a AP-7,Mijas,Málaga,
 Cruzamento VII da A-7 com a AP-7,Torremolinos,Málaga,
+Cruzamento da A-318 com a A-45,Lucena,Córdoba,
+Cruzamento da A-32 com a A-44,Bailén,Jaén,
 Cruzamento da A-357 com a A-7,Málaga,Málaga,Campanillas
 Cruzamento da A-376 com a SE-30,Sevilha,Sevilha,Sur
 Cruzamento da A-376 com a SE-40,Alcalá de Guadaíra,Sevilha,
@@ -471,6 +526,8 @@ Cruzamento da A-4 Sul com a SE-30,Sevilha,Sevilha,Bellavista-La Palmera
 Cruzamento da A-4 Sul com a SE-40,Dos Hermanas,Sevilha,
 Cruzamento da A-40 com a A-5,Maqueda,Toledo,
 Cruzamento da A-42 com a M-40,Madrid,Comunidade de Madrid,Villaverde
+Cruzamento da A-44 com a A-92,Albolote,Granada,
+Cruzamento da A-45 com a A-7,Málaga,Málaga,Ciudad Jardín
 Cruzamento da A-45 com a A-92,Antequera,Málaga,
 Cruzamento da A-45 com a A-92M,Antequera,Málaga,
 Cruzamento da A-45 com a AP-46,Antequera,Málaga,
@@ -491,7 +548,9 @@ Cruzamento da A-7 com a CA-34,San Roque,Cádiz,
 Cruzamento da A-7 com a MA-20,Málaga,Málaga,Palma-Palmilla
 Cruzamento da A-8005 com a SE-20,Sevilha,Sevilha,Norte
 Cruzamento da A-8009 com a SE-20,Sevilha,Sevilha,Norte
+Cruzamento da A-92 com a A-92G,Santa Fe,Granada,
 Cruzamento da A-92 com a A-92M,Loja,Granada,
+Cruzamento da A-92 com a GR-30,Albolote,Granada,
 Cruzamento da A-92 com a SE-30,Sevilha,Sevilha,Cerro-Amate
 Cruzamento da A-92 com a SE-40,Alcalá de Guadaíra,Sevilha,
 Cruzamento da AP-41 com a R-5,Moraleja de Enmedio,Comunidade de Madrid,
@@ -502,6 +561,8 @@ Cruzamento da M-45 com a R-5,Leganés,Comunidade de Madrid,
 Cruzamento da MA-20 com a MA-23,Málaga,Málaga,Churriana
 Cruzamento da N-431 com a N-444,Lepe,Huelva,
 Cruzamento da SE-20 com a SE-30,Sevilha,Sevilha,Triana
+Cruzamento Este da A-7 com a MA-24,Rincón de la Victoria,Málaga,
+Cruzamento Oeste da A-7 com a MA-24,Málaga,Málaga,Este
 Cruzamento Sul da MA-20 com a MA-21,Torremolinos,Málaga,
 Don Benito,Don Benito,Badajoz,
 Écija,Écija,Sevilha,
