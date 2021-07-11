@@ -102,6 +102,213 @@ A-381 - Saída 87,Cruzamento da A-381 com a A-7,Carro,False,AP-4 - Sevilha
 A-381 - Saída 87,Cruzamento da A-381 com a A-7,Carro,False,Jerez de la Frontera
 A-381 - Saída 87,Cruzamento da A-381 com a A-7,Carro,False,Los Barrios
 A-381 - Saída 87,Cruzamento da A-381 com a A-7,Carro,True,Algeciras
+A-4 - Saída 69,A-4 - Saída 70,Carro,False,Madrid
+A-4 - Saída 69,A-4 - Saída 70,Carro,False,Ocaña
+A-4 - Saída 69,A-4 - Saída 70,Carro,True,Bailén
+A-4 - Saída 69,A-4 - Saída 70,Carro,True,Córdoba
+A-4 - Saída 69,A-4 - Saída 70,Carro,True,Puerto Bailén
+A-4 - Saída 69,Cruzamento da A-4 com a AP-36 e a R-4,Carro,False,Bailén
+A-4 - Saída 69,Cruzamento da A-4 com a AP-36 e a R-4,Carro,False,Córdoba
+A-4 - Saída 69,Cruzamento da A-4 com a AP-36 e a R-4,Carro,False,Puerto Lápice
+A-4 - Saída 69,Cruzamento da A-4 com a AP-36 e a R-4,Carro,True,Madrid
+A-4 - Saída 69,Cruzamento da A-4 com a AP-36 e a R-4,Carro,True,Ocaña
+A-4 - Saída 70,A-4 - Saída 72,Carro,False,Madrid
+A-4 - Saída 70,A-4 - Saída 72,Carro,True,Córdoba
+A-4 - Saída 70,A-4 - Saída 72,Carro,True,Puerto Lápice
+A-4 - Saída 72,A-4 - Saída 79,Carro,False,Madrid
+A-4 - Saída 72,A-4 - Saída 79,Carro,False,Ocaña
+A-4 - Saída 72,A-4 - Saída 79,Carro,True,Córdoba
+A-4 - Saída 79,A-4 - Saída 81,Carro,False,Madrid
+A-4 - Saída 79,A-4 - Saída 81,Carro,False,Ocaña
+A-4 - Saída 79,A-4 - Saída 81,Carro,True,Córdoba
+A-4 - Saída 79,A-4 - Saída 81,Carro,True,Puerto Lápice
+A-4 - Saída 81,A-4 - Saída 83,Carro,False,Madrid
+A-4 - Saída 81,A-4 - Saída 83,Carro,True,Córdoba
+A-4 - Saída 81,A-4 - Saída 83,Carro,True,Puerto Lápice
+A-4 - Saída 83,A-4 - Saída 85,Carro,False,Madrid
+A-4 - Saída 83,A-4 - Saída 85,Carro,True,Bailén
+A-4 - Saída 83,A-4 - Saída 85,Carro,True,Córdoba
+A-4 - Saída 83,A-4 - Saída 85,Carro,True,Puerto Lápice
+A-4 - Saída 85,A-4 - Saída 92,Carro,False,Madrid
+A-4 - Saída 85,A-4 - Saída 92,Carro,True,Bailén
+A-4 - Saída 85,A-4 - Saída 92,Carro,True,Córdoba
+A-4 - Saída 85,A-4 - Saída 92,Carro,True,Puerto Lápice
+A-4 - Saída 92,A-4 - Saída 93,Carro,False,Madrid
+A-4 - Saída 92,A-4 - Saída 93,Carro,True,Bailén
+A-4 - Saída 92,A-4 - Saída 93,Carro,True,Córdoba
+A-4 - Saída 92,A-4 - Saída 93,Carro,True,Puerto Lápice
+A-4 - Saída 93,A-4 - Saída 94,Carro,False,Madrid
+A-4 - Saída 93,A-4 - Saída 94,Carro,False,Ocaña
+A-4 - Saída 93,A-4 - Saída 94,Carro,True,Bailén
+A-4 - Saída 93,A-4 - Saída 94,Carro,True,Córdoba
+A-4 - Saída 93,A-4 - Saída 94,Carro,True,Puerto Lápice
+A-4 - Saída 94,A-4 - Saída 98,Carro,False,Madrid
+A-4 - Saída 94,A-4 - Saída 98,Carro,True,Córdoba
+A-4 - Saída 98,A-4 - Saída 106,Carro,False,Madrid
+A-4 - Saída 98,A-4 - Saída 106,Carro,False,Ocaña
+A-4 - Saída 98,A-4 - Saída 106,Carro,True,Bailén
+A-4 - Saída 98,A-4 - Saída 106,Carro,True,Córdoba
+A-4 - Saída 98,A-4 - Saída 106,Carro,True,Puerto Lápice
+A-4 - Saída 106,A-4 - Saída 112,Carro,False,Madrid
+A-4 - Saída 106,A-4 - Saída 112,Carro,False,Ocaña
+A-4 - Saída 106,A-4 - Saída 112,Carro,True,Córdoba
+A-4 - Saída 106,A-4 - Saída 112,Carro,True,Puerto Lápice
+A-4 - Saída 112,A-4 - Saída 115,Carro,False,Madrid
+A-4 - Saída 112,A-4 - Saída 115,Carro,False,Ocaña
+A-4 - Saída 112,A-4 - Saída 115,Carro,True,Córdoba
+A-4 - Saída 112,A-4 - Saída 115,Carro,True,Puerto Lápice
+A-4 - Saída 115,A-4 - Saída 118,Carro,False,Madrid
+A-4 - Saída 115,A-4 - Saída 118,Carro,False,Ocaña
+A-4 - Saída 115,A-4 - Saída 118,Carro,True,Bailén
+A-4 - Saída 115,A-4 - Saída 118,Carro,True,Córdoba
+A-4 - Saída 115,A-4 - Saída 118,Carro,True,Puerto Lápice
+A-4 - Saída 118,A-4 - Saída 119,Carro,False,Madrid
+A-4 - Saída 118,A-4 - Saída 119,Carro,False,Ocaña
+A-4 - Saída 118,A-4 - Saída 119,Carro,True,Bailén
+A-4 - Saída 118,A-4 - Saída 119,Carro,True,Córdoba
+A-4 - Saída 118,A-4 - Saída 119,Carro,True,Puerto Lápice
+A-4 - Saída 119,Cruzamento da A-4 com a CM-42,Carro,False,Madrid
+A-4 - Saída 119,Cruzamento da A-4 com a CM-42,Carro,True,Bailén
+A-4 - Saída 119,Cruzamento da A-4 com a CM-42,Carro,True,Córdoba
+A-4 - Saída 119,Cruzamento da A-4 com a CM-42,Carro,True,Puerto Lápice
+A-4 - Saída 134,A-4 - Saída 135,Carro,False,Madrid
+A-4 - Saída 134,A-4 - Saída 135,Carro,False,Ocaña
+A-4 - Saída 134,A-4 - Saída 135,Carro,True,Bailén
+A-4 - Saída 134,A-4 - Saída 135,Carro,True,Córdoba
+A-4 - Saída 134,A-4 - Saída 135,Carro,True,Ciudad Real
+A-4 - Saída 134,Cruzamento da A-4 com a CM-42,Carro,False,Córdoba
+A-4 - Saída 134,Cruzamento da A-4 com a CM-42,Carro,True,Madrid
+A-4 - Saída 134,Cruzamento da A-4 com a CM-42,Carro,True,Ocaña
+A-4 - Saída 135,A-4 - Saída 136,Carro,False,Cuenca
+A-4 - Saída 135,A-4 - Saída 136,Carro,False,Madrid
+A-4 - Saída 135,A-4 - Saída 136,Carro,False,Ocaña
+A-4 - Saída 135,A-4 - Saída 136,Carro,True,Córdoba
+A-4 - Saída 135,A-4 - Saída 136,Carro,True,Ciudad Real
+A-4 - Saída 135,A-4 - Saída 136,Carro,True,Manzanares
+A-4 - Saída 136,A-4 - Saída 137,Carro,False,Madrid
+A-4 - Saída 136,A-4 - Saída 137,Carro,True,Bailén
+A-4 - Saída 136,A-4 - Saída 137,Carro,True,Córdoba
+A-4 - Saída 136,A-4 - Saída 137,Carro,True,Manzanares
+A-4 - Saída 137,A-4 - Saída 140,Carro,False,Madrid
+A-4 - Saída 137,A-4 - Saída 140,Carro,False,Puerto Lápice
+A-4 - Saída 137,A-4 - Saída 140,Carro,True,Bailén
+A-4 - Saída 137,A-4 - Saída 140,Carro,True,Córdoba
+A-4 - Saída 140,A-4 - Saída 142,Carro,False,Madrid
+A-4 - Saída 140,A-4 - Saída 142,Carro,False,Puerto Lápice
+A-4 - Saída 140,A-4 - Saída 142,Carro,True,Bailén
+A-4 - Saída 140,A-4 - Saída 142,Carro,True,Córdoba
+A-4 - Saída 142,A-4 - Saída 144,Carro,False,Madrid
+A-4 - Saída 142,A-4 - Saída 144,Carro,False,Puerto Lápice
+A-4 - Saída 142,A-4 - Saída 144,Carro,True,Bailén
+A-4 - Saída 142,A-4 - Saída 144,Carro,True,Córdoba
+A-4 - Saída 144,A-4 - Saída 147,Carro,False,Madrid
+A-4 - Saída 144,A-4 - Saída 147,Carro,False,Puerto Lápice
+A-4 - Saída 144,A-4 - Saída 147,Carro,True,Córdoba
+A-4 - Saída 144,A-4 - Saída 147,Carro,True,Manzanares
+A-4 - Saída 147,A-4 - Saída 149,Carro,False,Madrid
+A-4 - Saída 147,A-4 - Saída 149,Carro,False,Puerto Lápice
+A-4 - Saída 147,A-4 - Saída 149,Carro,True,Bailén
+A-4 - Saída 147,A-4 - Saída 149,Carro,True,Córdoba
+A-4 - Saída 147,A-4 - Saída 149,Carro,True,Manzanares
+A-4 - Saída 149,A-4 - Saída 153,Carro,False,Madrid
+A-4 - Saída 149,A-4 - Saída 153,Carro,True,Córdoba
+A-4 - Saída 153,A-4 - Saída 155,Carro,False,Madrid
+A-4 - Saída 153,A-4 - Saída 155,Carro,True,Córdoba
+A-4 - Saída 155,A-4 - Saída 159,Carro,False,Madrid
+A-4 - Saída 155,A-4 - Saída 159,Carro,True,Córdoba
+A-4 - Saída 159,A-4 - Saída 160,Carro,False,Madrid
+A-4 - Saída 159,A-4 - Saída 160,Carro,True,Córdoba
+A-4 - Saída 160,A-4 - Saída 161,Carro,False,Madrid
+A-4 - Saída 160,A-4 - Saída 161,Carro,False,Puerto Lápice
+A-4 - Saída 160,A-4 - Saída 161,Carro,True,Córdoba
+A-4 - Saída 161,A-4 - Saída 167,Carro,False,Madrid
+A-4 - Saída 161,A-4 - Saída 167,Carro,True,Córdoba
+A-4 - Saída 167,Cruzamento da A-4 com a A-43,Carro,False,Madrid
+A-4 - Saída 167,Cruzamento da A-4 com a A-43,Carro,False,Puerto Lápice
+A-4 - Saída 167,Cruzamento da A-4 com a A-43,Carro,True,Córdoba
+A-4 - Saída 172,A-4 - Saída 174,Carro,False,Madrid
+A-4 - Saída 172,A-4 - Saída 174,Carro,False,Puerto Lápice
+A-4 - Saída 172,A-4 - Saída 174,Carro,True,Bailén
+A-4 - Saída 172,A-4 - Saída 174,Carro,True,Córdoba
+A-4 - Saída 172,A-4 - Saída 174,Carro,True,Valdepeñas
+A-4 - Saída 172,Cruzamento da A-4 com a A-43,Carro,False,Bailén
+A-4 - Saída 172,Cruzamento da A-4 com a A-43,Carro,False,Córdoba
+A-4 - Saída 172,Cruzamento da A-4 com a A-43,Carro,False,Manzanares
+A-4 - Saída 172,Cruzamento da A-4 com a A-43,Carro,True,Madrid
+A-4 - Saída 174,A-4 - Saída 175,Carro,False,Madrid
+A-4 - Saída 174,A-4 - Saída 175,Carro,False,Puerto Lápice
+A-4 - Saída 174,A-4 - Saída 175,Carro,True,Córdoba
+A-4 - Saída 174,A-4 - Saída 175,Carro,True,Valdepeñas
+A-4 - Saída 175,A-4 - Saída 178,Carro,False,Madrid
+A-4 - Saída 175,A-4 - Saída 178,Carro,True,Córdoba
+A-4 - Saída 175,A-4 - Saída 178,Carro,True,Valdepeñas
+A-4 - Saída 178,A-4 - Saída 179,Carro,False,Madrid
+A-4 - Saída 178,A-4 - Saída 179,Carro,True,Córdoba
+A-4 - Saída 179,A-4 - Saída 180,Carro,False,Madrid
+A-4 - Saída 179,A-4 - Saída 180,Carro,False,Manzanares
+A-4 - Saída 179,A-4 - Saída 180,Carro,True,Córdoba
+A-4 - Saída 180,A-4 - Saída 184,Carro,False,Madrid
+A-4 - Saída 180,A-4 - Saída 184,Carro,True,Córdoba
+A-4 - Saída 180,A-4 - Saída 184,Carro,True,Valdepeñas
+A-4 - Saída 184,A-4 - Saída 186,Carro,False,Madrid
+A-4 - Saída 184,A-4 - Saída 186,Carro,True,Córdoba
+A-4 - Saída 186,A-4 - Saída 191,Carro,False,Madrid
+A-4 - Saída 186,A-4 - Saída 191,Carro,True,Córdoba
+A-4 - Saída 191,A-4 - Saída 193,Carro,False,Madrid
+A-4 - Saída 191,A-4 - Saída 193,Carro,True,Córdoba
+A-4 - Saída 193,A-4 - Saída 197,Carro,False,Madrid
+A-4 - Saída 193,A-4 - Saída 197,Carro,False,Manzanares
+A-4 - Saída 193,A-4 - Saída 197,Carro,True,Andaluzia
+A-4 - Saída 197,A-4 - Saída 199,Carro,False,Madrid
+A-4 - Saída 197,A-4 - Saída 199,Carro,False,Valdepeñas
+A-4 - Saída 197,A-4 - Saída 199,Carro,True,Bailén
+A-4 - Saída 197,A-4 - Saída 199,Carro,True,Córdoba
+A-4 - Saída 197,A-4 - Saída 199,Carro,True,Valdepeñas
+A-4 - Saída 199,A-4 - Saída 200,Carro,False,Madrid
+A-4 - Saída 199,A-4 - Saída 200,Carro,True,Bailén
+A-4 - Saída 199,A-4 - Saída 200,Carro,True,Córdoba
+A-4 - Saída 199,A-4 - Saída 200,Carro,True,Valdepeñas
+A-4 - Saída 200,A-4 - Saída 201,Carro,False,Madrid
+A-4 - Saída 200,A-4 - Saída 201,Carro,True,Bailén
+A-4 - Saída 200,A-4 - Saída 201,Carro,True,Córdoba
+A-4 - Saída 200,A-4 - Saída 201,Carro,True,La Carolina
+A-4 - Saída 201,A-4 - Saída 202,Carro,False,Madrid
+A-4 - Saída 201,A-4 - Saída 202,Carro,True,Bailén
+A-4 - Saída 201,A-4 - Saída 202,Carro,True,Córdoba
+A-4 - Saída 201,A-4 - Saída 202,Carro,True,La Carolina
+A-4 - Saída 202,A-4 - Saída 205,Carro,False,Madrid
+A-4 - Saída 202,A-4 - Saída 205,Carro,True,Córdoba
+A-4 - Saída 205,A-4 - Saída 208,Carro,False,Madrid
+A-4 - Saída 205,A-4 - Saída 208,Carro,False,Valdepeñas
+A-4 - Saída 205,A-4 - Saída 208,Carro,True,Córdoba
+A-4 - Saída 208,A-4 - Saída 210,Carro,False,Madrid
+A-4 - Saída 208,A-4 - Saída 210,Carro,True,Bailén
+A-4 - Saída 208,A-4 - Saída 210,Carro,True,Córdoba
+A-4 - Saída 208,A-4 - Saída 210,Carro,True,La Carolina
+A-4 - Saída 210,A-4 - Saída 213,Carro,False,Madrid
+A-4 - Saída 210,A-4 - Saída 213,Carro,True,Córdoba
+A-4 - Saída 213,A-4 - Saída 216,Carro,False,Madrid
+A-4 - Saída 213,A-4 - Saída 216,Carro,True,Córdoba
+A-4 - Saída 216,A-4 - Saída 217,Carro,False,Madrid
+A-4 - Saída 216,A-4 - Saída 217,Carro,True,Córdoba
+A-4 - Saída 217,A-4 - Saída 220,Carro,False,Madrid
+A-4 - Saída 217,A-4 - Saída 220,Carro,True,Córdoba
+A-4 - Saída 220,A-4 - Saída 223,Carro,False,Madrid
+A-4 - Saída 220,A-4 - Saída 223,Carro,True,Córdoba
+A-4 - Saída 223,A-4 - Saída 227,Carro,False,Madrid
+A-4 - Saída 223,A-4 - Saída 227,Carro,True,Córdoba
+A-4 - Saída 227,A-4 - Saída 230,Carro,False,Madrid
+A-4 - Saída 227,A-4 - Saída 230,Carro,True,Córdoba
+A-4 - Saída 230,A-4 - Saída 231,Carro,False,Madrid
+A-4 - Saída 230,A-4 - Saída 231,Carro,True,Córdoba
+A-4 - Saída 231,A-4 - Saída 232,Carro,False,Madrid
+A-4 - Saída 231,A-4 - Saída 232,Carro,True,Córdoba
+A-4 - Saída 232,A-4 - Saída 234,Carro,False,Madrid
+A-4 - Saída 232,A-4 - Saída 234,Carro,True,Córdoba
+A-4 - Saída 234,A-4 - Saída 238,Carro,False,Madrid
+A-4 - Saída 234,A-4 - Saída 238,Carro,True,Córdoba
+A-4 - Saída 238,A-4 - Saída 241,Carro,False,Madrid
+A-4 - Saída 238,A-4 - Saída 241,Carro,True,Córdoba
 A-4 - Saída 241,A-4 - Saída 243,Carro,False,Madrid
 A-4 - Saída 241,A-4 - Saída 243,Carro,False,Valdepeñas
 A-4 - Saída 241,A-4 - Saída 243,Carro,True,Córdoba
@@ -780,6 +987,63 @@ A-49 - Saída 129,A-49 - Saída 131,Carro,True,Portugal
 A-49 - Saída 131,Ponte Internacional do Guadiana,Carro,False,Ayamonte
 A-49 - Saída 131,Ponte Internacional do Guadiana,Carro,False,Huelva
 A-49 - Saída 131,Ponte Internacional do Guadiana,Carro,True,Portugal
+A-5 - Saída 18,A-5 - Saída 19,Carro,False,Alcorcón
+A-5 - Saída 18,A-5 - Saída 19,Carro,False,Madrid
+A-5 - Saída 18,A-5 - Saída 19,Carro,True,Badajoz
+A-5 - Saída 18,A-5 - Saída 19,Carro,True,Navalcarnero
+A-5 - Saída 19,A-5 - Saída 21,Carro,False,Madrid
+A-5 - Saída 19,A-5 - Saída 21,Carro,False,Móstoles
+A-5 - Saída 19,A-5 - Saída 21,Carro,True,Badajoz
+A-5 - Saída 19,A-5 - Saída 21,Carro,True,Navalcarnero
+A-5 - Saída 21,A-5 - Saída 22,Carro,False,Madrid
+A-5 - Saída 21,A-5 - Saída 22,Carro,False,Móstoles
+A-5 - Saída 21,A-5 - Saída 22,Carro,True,Badajoz
+A-5 - Saída 21,A-5 - Saída 22,Carro,True,Navalcarnero
+A-5 - Saída 22,A-5 - Saída 23,Carro,False,Madrid
+A-5 - Saída 22,A-5 - Saída 23,Carro,False,Móstoles
+A-5 - Saída 22,A-5 - Saída 23,Carro,True,Badajoz
+A-5 - Saída 22,A-5 - Saída 23,Carro,True,Navalcarnero
+A-5 - Saída 22,A-5 - Saída 23,Carro,True,Talavera de la Reina
+A-5 - Saída 23,A-5 - Saída 24,Carro,False,Alcorcón
+A-5 - Saída 23,A-5 - Saída 24,Carro,False,Madrid
+A-5 - Saída 23,A-5 - Saída 24,Carro,False,Móstoles
+A-5 - Saída 23,A-5 - Saída 24,Carro,True,Badajoz
+A-5 - Saída 24,A-5 - Saída 25,Carro,False,Alcorcón
+A-5 - Saída 24,A-5 - Saída 25,Carro,False,Madrid
+A-5 - Saída 24,A-5 - Saída 25,Carro,False,Móstoles
+A-5 - Saída 24,A-5 - Saída 25,Carro,True,Badajoz
+A-5 - Saída 24,A-5 - Saída 25,Carro,True,Portugal
+A-5 - Saída 25,A-5 - Quinta Asturias,Carro,False,Madrid
+A-5 - Saída 25,A-5 - Quinta Asturias,Carro,False,Móstoles
+A-5 - Saída 25,A-5 - Quinta Asturias,Carro,True,Badajoz
+A-5 - Saída 25,A-5 - Quinta Asturias,Carro,True,Portugal
+A-5 - Saída 27,A-5 - Saída 28,Carro,False,Madrid
+A-5 - Saída 27,A-5 - Saída 28,Carro,False,Móstoles
+A-5 - Saída 27,A-5 - Saída 28,Carro,True,Badajoz
+A-5 - Saída 27,A-5 - Saída 28,Carro,True,Portugal
+A-5 - Saída 27,A-5 - Quinta Asturias,Carro,False,Badajoz
+A-5 - Saída 27,A-5 - Quinta Asturias,Carro,False,Portugal
+A-5 - Saída 27,A-5 - Quinta Asturias,Carro,True,Madrid
+A-5 - Saída 27,A-5 - Quinta Asturias,Carro,True,Móstoles
+A-5 - Saída 28,A-5 - Saída 28B,Carro,False,Madrid
+A-5 - Saída 28,A-5 - Saída 28B,Carro,True,Badajoz
+A-5 - Saída 28,A-5 - Saída 28B,Carro,True,Navalcarnero
+A-5 - Saída 28,A-5 - Saída 28B,Carro,True,Portugal
+A-5 - Saída 28,A-5 - Saída 28B,Carro,True,Talavera de la Reina
+A-5 - Saída 28B,A-5 - Saída 29A,Carro,False,Madrid
+A-5 - Saída 28B,A-5 - Saída 29A,Carro,True,Badajoz
+A-5 - Saída 28B,A-5 - Saída 29A,Carro,True,Navalcarnero
+A-5 - Saída 28B,A-5 - Saída 29A,Carro,True,Portugal
+A-5 - Saída 28B,A-5 - Saída 29A,Carro,True,Talavera de la Reina
+A-5 - Saída 29A,A-5 - Saída 29B,Carro,False,Madrid
+A-5 - Saída 29A,A-5 - Saída 29B,Carro,True,Badajoz
+A-5 - Saída 29A,A-5 - Saída 29B,Carro,True,Maqueda
+A-5 - Saída 29A,A-5 - Saída 29B,Carro,True,Talavera de la Reina
+A-5 - Saída 29B,A-5 - Saída 31,Carro,False,Madrid
+A-5 - Saída 29B,A-5 - Saída 31,Carro,False,Móstoles
+A-5 - Saída 29B,A-5 - Saída 31,Carro,True,Badajoz
+A-5 - Saída 29B,A-5 - Saída 31,Carro,True,Maqueda
+A-5 - Saída 29B,A-5 - Saída 31,Carro,True,Talavera de la Reina
 A-5 - Saída 31,A-5 - Saída 32,Carro,False,Madrid
 A-5 - Saída 31,A-5 - Saída 32,Carro,False,Móstoles
 A-5 - Saída 31,A-5 - Saída 32,Carro,True,Badajoz
@@ -2162,6 +2426,10 @@ A13 - Saída 2,Cruzamento da A2 com a A6 e a A13,Carro,False,Norte
 A13 - Saída 2,Cruzamento da A2 com a A6 e a A13,Carro,False,Santarém
 A13 - Saída 2,Cruzamento da A2 com a A6 e a A13,Carro,True,A2 - Algarve
 A13 - Saída 2,Cruzamento da A2 com a A6 e a A13,Carro,True,A6 - Évora
+A16 - Saída 2,A16 - Saída 3,Carro,False,A5 - Cascais/Lisboa
+A16 - Saída 2,A16 - Saída 3,Carro,True,A9 - Norte
+A16 - Saída 2,A16 - Saída 3,Carro,True,IC19 - Lisboa
+A16 - Saída 2,A16 - Saída 3,Carro,True,Sintra
 A16 - Saída 2,Cruzamento da A16 com a A5,Carro,False,A9 - Norte
 A16 - Saída 2,Cruzamento da A16 com a A5,Carro,False,Lisboa
 A16 - Saída 2,Cruzamento da A16 com a A5,Carro,False,Sintra
@@ -2450,6 +2718,17 @@ A5 - Saída 1,A5 - Saída 2,Carro,False,A2 - Sul
 A5 - Saída 1,A5 - Saída 2,Carro,False,Lisboa
 A5 - Saída 1,A5 - Saída 2,Carro,True,Cascais
 A5 - Saída 1,A5 - Saída 2,Carro,True,Sintra
+A5 - Saída 1,Eixo Norte-Sul - Alcântara,Carro,False,A1 - Norte
+A5 - Saída 1,Eixo Norte-Sul - Alcântara,Carro,False,A5 - Cascais
+A5 - Saída 1,Eixo Norte-Sul - Alcântara,Carro,False,IC19 - Sintra
+A5 - Saída 1,Eixo Norte-Sul - Alcântara,Carro,False,Lisboa - Marquês de Pombal
+A5 - Saída 1,Eixo Norte-Sul - Alcântara,Carro,True,A2 - Sul
+A5 - Saída 1,Eixo Norte-Sul - Alcântara,Carro,True,IC20 - Almada/Costa da Caparica
+A5 - Saída 1,Eixo Norte-Sul - Campolide,Carro,False,A2 - Sul
+A5 - Saída 1,Eixo Norte-Sul - Campolide,Carro,False,IC20 - Almada/Costa da Caparica
+A5 - Saída 1,Eixo Norte-Sul - Campolide,Carro,True,A1 - Norte
+A5 - Saída 1,Eixo Norte-Sul - Campolide,Carro,True,Lisboa - Praça de Espanha
+A5 - Saída 1,Eixo Norte-Sul - Campolide,Carro,True,Lisboa - Sete Rios
 A5 - Saída 2,A5 - Saída 3,Carro,False,A2 - Sul
 A5 - Saída 2,A5 - Saída 3,Carro,False,Lisboa
 A5 - Saída 2,A5 - Saída 3,Carro,True,Amadora
@@ -2494,12 +2773,6 @@ A5 - Saída 11,Cruzamento da A16 com a A5,Carro,False,Alvide
 A5 - Saída 11,Cruzamento da A16 com a A5,Carro,False,Cascais
 A5 - Saída 11,Cruzamento da A16 com a A5,Carro,True,Carcavelos
 A5 - Saída 11,Cruzamento da A16 com a A5,Carro,True,Lisboa
-A5 - Saída 1,Eixo Norte-Sul - Alcântara,Carro,False,A1 - Norte
-A5 - Saída 1,Eixo Norte-Sul - Alcântara,Carro,False,A5 - Cascais
-A5 - Saída 1,Eixo Norte-Sul - Alcântara,Carro,False,IC19 - Sintra
-A5 - Saída 1,Eixo Norte-Sul - Alcântara,Carro,False,Lisboa - Marquês de Pombal
-A5 - Saída 1,Eixo Norte-Sul - Alcântara,Carro,True,A2 - Sul
-A5 - Saída 1,Eixo Norte-Sul - Alcântara,Carro,True,IC20 - Almada/Costa da Caparica
 A6 - Saída 2,A6 - Saída 3,Carro,False,Algarve
 A6 - Saída 2,A6 - Saída 3,Carro,False,Lisboa
 A6 - Saída 2,A6 - Saída 3,Carro,False,Vendas Novas
@@ -2580,10 +2853,25 @@ A9 CREL - Saída 2,Cruzamento da A16 com a A9 CREL,Carro,True,IC16
 A9 CREL - Saída 2,Cruzamento da A16 com a A9 CREL,Carro,True,IC17 CRIL
 A9 CREL - Saída 2,Cruzamento da A16 com a A9 CREL,Carro,True,Loures
 A9 CREL - Saída 2,Cruzamento da A5 com a A9 CREL,Carro,False,A1
-A9 CREL - Saída 2,Cruzamento da A5 com a A9 CREL,Carro,False,A8
 A9 CREL - Saída 2,Cruzamento da A5 com a A9 CREL,Carro,False,A10
+A9 CREL - Saída 2,Cruzamento da A5 com a A9 CREL,Carro,False,A8
 A9 CREL - Saída 2,Cruzamento da A5 com a A9 CREL,Carro,False,Loures
 A9 CREL - Saída 2,Cruzamento da A5 com a A9 CREL,Carro,True,A5 - Cascais
+A9 CREL - Saída 3,A9 CREL - Saída 4,Carro,False,A16 - Sintra
+A9 CREL - Saída 3,A9 CREL - Saída 4,Carro,False,Oeiras
+A9 CREL - Saída 3,A9 CREL - Saída 4,Carro,True,A1
+A9 CREL - Saída 3,A9 CREL - Saída 4,Carro,True,A10
+A9 CREL - Saída 3,A9 CREL - Saída 4,Carro,True,A8
+A9 CREL - Saída 3,A9 CREL - Saída 4,Carro,True,Loures
+A9 CREL - Saída 3,Cruzamento da A16 com a A9 CREL,Carro,False,A1
+A9 CREL - Saída 3,Cruzamento da A16 com a A9 CREL,Carro,False,A10
+A9 CREL - Saída 3,Cruzamento da A16 com a A9 CREL,Carro,False,A8
+A9 CREL - Saída 3,Cruzamento da A16 com a A9 CREL,Carro,False,IC16
+A9 CREL - Saída 3,Cruzamento da A16 com a A9 CREL,Carro,False,IC17 CRIL
+A9 CREL - Saída 3,Cruzamento da A16 com a A9 CREL,Carro,False,IC22
+A9 CREL - Saída 3,Cruzamento da A16 com a A9 CREL,Carro,False,Loures
+A9 CREL - Saída 3,Cruzamento da A16 com a A9 CREL,Carro,True,A16 - Sintra
+A9 CREL - Saída 3,Cruzamento da A16 com a A9 CREL,Carro,True,Oeiras
 Achada do Gamo,Mina de São Domingos,Comboio,False,Pomarão
 Achada do Gamo,Mina de São Domingos,Comboio,True,Mina de São Domingos
 Achada do Gamo,Santana de Cambas,Comboio,False,Mina de São Domingos
@@ -2726,6 +3014,9 @@ Ameixal,Miradouro do Caldeirão,Carro,True,São Brás de Alportel
 Antiga Estação de Isla Cristina - Pozo del Camino,Ayamonte,Comboio,False,Gibraleón
 Antiga Estação de Isla Cristina - Pozo del Camino,Ayamonte,Comboio,False,Huelva
 Antiga Estação de Isla Cristina - Pozo del Camino,Ayamonte,Comboio,True,Ayamonte
+AP-36 - Saída 3,Cruzamento da A-4 com a AP-36 e a R-4,Carro,False,A-31 - Albacete
+AP-36 - Saída 3,Cruzamento da A-4 com a AP-36 e a R-4,Carro,True,Madrid
+AP-36 - Saída 3,Cruzamento da A-4 com a AP-36 e a R-4,Carro,True,Ocaña
 AP-4 - Início,AP-4A - Saída 13,Carro,False,Cádiz
 AP-4 - Início,AP-4A - Saída 13,Carro,False,Jerez de la Frontera
 AP-4 - Início,AP-4A - Saída 13,Carro,True,Dos Hermanas
@@ -2866,6 +3157,14 @@ Arahal,Marchena,Comboio,True,Málaga - María Zambrano
 Área de Serviço de Río Castor,Cruzamento III da A-7 com a AP-7,Carro,False,Marbella
 Área de Serviço de Río Castor,Cruzamento III da A-7 com a AP-7,Carro,True,Algeciras
 Área de Serviço de Río Castor,Cruzamento III da A-7 com a AP-7,Carro,True,Estepona
+Área de Serviço de Seseña,R-4 - Saída 12,Carro,False,Aranjuez
+Área de Serviço de Seseña,R-4 - Saída 12,Carro,False,Córdoba
+Área de Serviço de Seseña,R-4 - Saída 12,Carro,False,Ocaña
+Área de Serviço de Seseña,R-4 - Saída 12,Carro,True,Madrid
+Área de Serviço de Seseña,R-4 - Saída 22,Carro,False,Madrid
+Área de Serviço de Seseña,R-4 - Saída 22,Carro,True,Aranjuez
+Área de Serviço de Seseña,R-4 - Saída 22,Carro,True,Córdoba
+Área de Serviço de Seseña,R-4 - Saída 22,Carro,True,Ocaña
 Área de Serviço de Vendas Novas,Cruzamento da A2 com a A6 e a A13,Carro,False,Espanha
 Área de Serviço de Vendas Novas,Cruzamento da A2 com a A6 e a A13,Carro,False,Évora
 Área de Serviço de Vendas Novas,Cruzamento da A2 com a A6 e a A13,Carro,False,Vendas Novas
@@ -3137,6 +3436,31 @@ Cruzamento da A-381 com a AP-4,Cruzamento da A-382 com a AP-4,Carro,True,Sevilha
 Cruzamento da A-381 com a AP-4,Cruzamento da A-4 com a AP-4,Carro,False,Jerez de la Frontera
 Cruzamento da A-381 com a AP-4,Cruzamento da A-4 com a AP-4,Carro,False,Sevilha
 Cruzamento da A-381 com a AP-4,Cruzamento da A-4 com a AP-4,Carro,True,Cádiz
+Cruzamento da A-4 com a A-40,Cruzamento da A-4 com a AP-36 e a R-4,Carro,False,Aranjuez
+Cruzamento da A-4 com a A-40,Cruzamento da A-4 com a AP-36 e a R-4,Carro,False,Madrid
+Cruzamento da A-4 com a A-40,Cruzamento da A-4 com a AP-36 e a R-4,Carro,False,Ocaña
+Cruzamento da A-4 com a A-40,Cruzamento da A-4 com a AP-36 e a R-4,Carro,True,AP-36 - Albacete
+Cruzamento da A-4 com a A-40,Cruzamento da A-4 com a AP-36 e a R-4,Carro,True,Córdoba
+Cruzamento da A-4 com a AP-36 e a R-4,Cruzamento da A-40 com a R-4,Carro,False,AP-36 - Albacete
+Cruzamento da A-4 com a AP-36 e a R-4,Cruzamento da A-40 com a R-4,Carro,False,Córdoba
+Cruzamento da A-4 com a AP-36 e a R-4,Cruzamento da A-40 com a R-4,Carro,False,Puerto Lápice
+Cruzamento da A-4 com a AP-36 e a R-4,Cruzamento da A-40 com a R-4,Carro,True,Aranjuez
+Cruzamento da A-4 com a AP-36 e a R-4,Cruzamento da A-40 com a R-4,Carro,True,Madrid
+Cruzamento da A-4 com a AP-4,Cruzamento da AP-4 com a CA-32,Carro,False,A-48 - Algeciras
+Cruzamento da A-4 com a AP-4,Cruzamento da AP-4 com a CA-32,Carro,False,Jerez de la Frontera
+Cruzamento da A-4 com a AP-4,Cruzamento da AP-4 com a CA-32,Carro,False,Sevilha
+Cruzamento da A-4 com a AP-4,Cruzamento da AP-4 com a CA-32,Carro,True,Cádiz
+Cruzamento da A-4 com a M-50,Cruzamento da M-50 com a R-4,Carro,False,A-2
+Cruzamento da A-4 com a M-50,Cruzamento da M-50 com a R-4,Carro,False,A-3
+Cruzamento da A-4 com a M-50,Cruzamento da M-50 com a R-4,Carro,False,A-4 - Córdoba
+Cruzamento da A-4 com a M-50,Cruzamento da M-50 com a R-4,Carro,False,Aeroporto de Madrid-Barajas
+Cruzamento da A-4 com a M-50,Cruzamento da M-50 com a R-4,Carro,False,R-2
+Cruzamento da A-4 com a M-50,Cruzamento da M-50 com a R-4,Carro,False,R-3
+Cruzamento da A-4 com a M-50,Cruzamento da M-50 com a R-4,Carro,True,A-42
+Cruzamento da A-4 com a M-50,Cruzamento da M-50 com a R-4,Carro,True,A-5
+Cruzamento da A-4 com a M-50,Cruzamento da M-50 com a R-4,Carro,True,A-6
+Cruzamento da A-4 com a M-50,Cruzamento da M-50 com a R-4,Carro,True,R-4 - Córdoba
+Cruzamento da A-4 com a M-50,Cruzamento da M-50 com a R-4,Carro,True,R-5
 Cruzamento da A-4 com a SE-20,SE-20 - Miraflores,Carro,False,A-4 - Córdoba
 Cruzamento da A-4 com a SE-20,SE-20 - Miraflores,Carro,False,Aeroporto de Sevilha
 Cruzamento da A-4 com a SE-20,SE-20 - Miraflores,Carro,True,A-49 - Huelva
@@ -3180,6 +3504,9 @@ Cruzamento da A-4 Sul com a SE-40,SE-40 - Saída 19,Carro,True,A-376 - Sevilha/U
 Cruzamento da A-4 Sul com a SE-40,SE-40 - Saída 19,Carro,True,A-4 - Carmona/Córdoba
 Cruzamento da A-4 Sul com a SE-40,SE-40 - Saída 19,Carro,True,A-92 - Granada/Málaga/Sevilha
 Cruzamento da A-4 Sul com a SE-40,SE-40 - Saída 19,Carro,True,Aeroporto de Sevilha
+Cruzamento da A-40 com a R-4,R-4 - Saída 38,Carro,False,Córdoba
+Cruzamento da A-40 com a R-4,R-4 - Saída 38,Carro,False,Ocaña
+Cruzamento da A-40 com a R-4,R-4 - Saída 38,Carro,True,Madrid
 Cruzamento da A-42 com a M-40,Cruzamento da M-40 com a R-5,Carro,False,A-3
 Cruzamento da A-42 com a M-40,Cruzamento da M-40 com a R-5,Carro,False,A-4
 Cruzamento da A-42 com a M-40,Cruzamento da M-40 com a R-5,Carro,False,A-42 - Toledo
@@ -3191,6 +3518,17 @@ Cruzamento da A-42 com a M-40,Cruzamento da M-40 com a R-5,Carro,True,A-6
 Cruzamento da A-42 com a M-40,Cruzamento da M-40 com a R-5,Carro,True,M-607
 Cruzamento da A-42 com a M-40,Cruzamento da M-40 com a R-5,Carro,True,R-2
 Cruzamento da A-42 com a M-40,Cruzamento da M-40 com a R-5,Carro,True,R-5 - Badajoz/Toledo
+Cruzamento da A-42 com a M-50,Cruzamento da M-50 com a R-4,Carro,False,A-42 - Toledo
+Cruzamento da A-42 com a M-50,Cruzamento da M-50 com a R-4,Carro,False,A-5
+Cruzamento da A-42 com a M-50,Cruzamento da M-50 com a R-4,Carro,False,A-6
+Cruzamento da A-42 com a M-50,Cruzamento da M-50 com a R-4,Carro,False,R-5 - Badajoz/Toledo
+Cruzamento da A-42 com a M-50,Cruzamento da M-50 com a R-4,Carro,True,A-2
+Cruzamento da A-42 com a M-50,Cruzamento da M-50 com a R-4,Carro,True,A-3
+Cruzamento da A-42 com a M-50,Cruzamento da M-50 com a R-4,Carro,True,A-4 - Córdoba
+Cruzamento da A-42 com a M-50,Cruzamento da M-50 com a R-4,Carro,True,Aeroporto de Madrid-Barajas
+Cruzamento da A-42 com a M-50,Cruzamento da M-50 com a R-4,Carro,True,R-2
+Cruzamento da A-42 com a M-50,Cruzamento da M-50 com a R-4,Carro,True,R-3
+Cruzamento da A-42 com a M-50,Cruzamento da M-50 com a R-4,Carro,True,R-4 - Córdoba
 Cruzamento da A-44 com a A-92,Cruzamento da A-92 com a GR-30,Carro,False,Cádiz
 Cruzamento da A-44 com a A-92,Cruzamento da A-92 com a GR-30,Carro,False,Córdoba
 Cruzamento da A-44 com a A-92,Cruzamento da A-92 com a GR-30,Carro,False,Huelva
@@ -3231,6 +3569,13 @@ Cruzamento da A-5 com a R-5,R-5 - Saída 28,Carro,False,Maqueda
 Cruzamento da A-5 com a R-5,R-5 - Saída 28,Carro,False,Talavera de la Reina
 Cruzamento da A-5 com a R-5,R-5 - Saída 28,Carro,True,Madrid
 Cruzamento da A-5 com a R-5,R-5 - Saída 28,Carro,True,Móstoles
+Cruzamento da A-6 com a M-50,M-50 - Saída 83,Carro,False,A-6 - A Coruña
+Cruzamento da A-6 com a M-50,M-50 - Saída 83,Carro,True,A-3
+Cruzamento da A-6 com a M-50,M-50 - Saída 83,Carro,True,A-4
+Cruzamento da A-6 com a M-50,M-50 - Saída 83,Carro,True,A-42
+Cruzamento da A-6 com a M-50,M-50 - Saída 83,Carro,True,A-5
+Cruzamento da A-6 com a M-50,M-50 - Saída 83,Carro,True,Las Rozas de Madrid
+Cruzamento da A-6 com a M-50,M-50 - Saída 83,Carro,True,Majadahonda
 Cruzamento da A-66 com a SE-30,Cruzamento da SE-20 com a SE-30,Carro,False,A-4 - Cádiz
 Cruzamento da A-66 com a SE-30,Cruzamento da SE-20 com a SE-30,Carro,False,A-49 - Huelva
 Cruzamento da A-66 com a SE-30,Cruzamento da SE-20 com a SE-30,Carro,False,A-66 - Mérida
@@ -3283,6 +3628,9 @@ Cruzamento da A2 com a A26,Estação de Ermidas - Sado,Carro,False,Grândola
 Cruzamento da A2 com a A26,Estação de Ermidas - Sado,Carro,False,Lisboa
 Cruzamento da A2 com a A26,Estação de Ermidas - Sado,Carro,True,Algarve
 Cruzamento da A2 com a A26,Estação de Ermidas - Sado,Carro,True,Ourique
+Cruzamento da AP-4 com a CA-32,Cruzamento da CA-35 com a CA-36,Carro,False,Puerto Real
+Cruzamento da AP-4 com a CA-32,Cruzamento da CA-35 com a CA-36,Carro,False,Sevilha
+Cruzamento da AP-4 com a CA-32,Cruzamento da CA-35 com a CA-36,Carro,True,CA-35/CA-36 - Cádiz
 Cruzamento da AP-41 com a R-5,R-5 - Saída 11,Carro,False,Badajoz
 Cruzamento da AP-41 com a R-5,R-5 - Saída 11,Carro,False,Navalcarnero
 Cruzamento da AP-41 com a R-5,R-5 - Saída 11,Carro,False,Toledo
@@ -3295,6 +3643,17 @@ Cruzamento da AP-41 com a R-5,R-5 - Saída 20,Carro,True,Navalcarnero
 Cruzamento da AP-41 com a R-5,R-5 - Saída 20,Carro,True,Talavera de la Reina
 Cruzamento da H-30 com a H-31,H-31 - Saída 80,Carro,False,Huelva
 Cruzamento da H-30 com a H-31,H-31 - Saída 80,Carro,True,Sevilha
+Cruzamento da M-40 com a M-45,M-40 - Saída 30,Carro,False,A-3
+Cruzamento da M-40 com a M-45,M-40 - Saída 30,Carro,False,A-4
+Cruzamento da M-40 com a M-45,M-40 - Saída 30,Carro,False,A-42
+Cruzamento da M-40 com a M-45,M-40 - Saída 30,Carro,False,R-4
+Cruzamento da M-40 com a M-45,M-40 - Saída 30,Carro,False,R-5 - Badajoz/Toledo
+Cruzamento da M-40 com a M-45,M-40 - Saída 30,Carro,True,A-1
+Cruzamento da M-40 com a M-45,M-40 - Saída 30,Carro,True,A-5 - Badajoz
+Cruzamento da M-40 com a M-45,M-40 - Saída 30,Carro,True,A-6
+Cruzamento da M-40 com a M-45,M-40 - Saída 30,Carro,True,Feria de Madrid
+Cruzamento da M-40 com a M-45,M-40 - Saída 30,Carro,True,M-607
+Cruzamento da M-40 com a M-45,M-40 - Saída 30,Carro,True,R-2
 Cruzamento da M-40 com a M-45,Cruzamento da M-45 com a R-5,Carro,False,A-1
 Cruzamento da M-40 com a M-45,Cruzamento da M-45 com a R-5,Carro,False,A-5 - Badajoz
 Cruzamento da M-40 com a M-45,Cruzamento da M-45 com a R-5,Carro,False,A-6
@@ -3332,6 +3691,23 @@ Cruzamento da M-40 com a R-5,M-40 - Saída 28A,Carro,True,A-6
 Cruzamento da M-40 com a R-5,M-40 - Saída 28A,Carro,True,Feria de Madrid
 Cruzamento da M-40 com a R-5,M-40 - Saída 28A,Carro,True,M-607
 Cruzamento da M-40 com a R-5,M-40 - Saída 28A,Carro,True,R-2
+Cruzamento da M-50 com a M-503,M-50 - Saída 72,Carro,False,A-6 - A Coruña
+Cruzamento da M-50 com a M-503,M-50 - Saída 72,Carro,True,A-3
+Cruzamento da M-50 com a M-503,M-50 - Saída 72,Carro,True,A-4
+Cruzamento da M-50 com a M-503,M-50 - Saída 72,Carro,True,A-42
+Cruzamento da M-50 com a M-503,M-50 - Saída 72,Carro,True,A-5 - Badajoz
+Cruzamento da M-50 com a M-503,M-50 - Saída 72,Carro,True,R-3
+Cruzamento da M-50 com a M-503,M-50 - Saída 72,Carro,True,R-4
+Cruzamento da M-50 com a M-503,M-50 - Saída 72,Carro,True,R-5
+Cruzamento da M-50 com a M-503,M-50 - Saída 79,Carro,False,A-4
+Cruzamento da M-50 com a M-503,M-50 - Saída 79,Carro,False,A-42
+Cruzamento da M-50 com a M-503,M-50 - Saída 79,Carro,False,A-5 - Badajoz
+Cruzamento da M-50 com a M-503,M-50 - Saída 79,Carro,False,R-5
+Cruzamento da M-50 com a M-503,M-50 - Saída 79,Carro,True,A-6 - A Coruña
+Cruzamento da M-50 com a R-4,R-4 - Saída 1,Carro,False,M-50 - Madrid
+Cruzamento da M-50 com a R-4,R-4 - Saída 1,Carro,True,Aranjuez
+Cruzamento da M-50 com a R-4,R-4 - Saída 1,Carro,True,Córdoba
+Cruzamento da M-50 com a R-4,R-4 - Saída 1,Carro,True,Ocaña
 Cruzamento da MA-20 com a MA-23,MA-20 - Saída 1,Carro,False,Granada
 Cruzamento da MA-20 com a MA-23,MA-20 - Saída 1,Carro,False,Málaga
 Cruzamento da MA-20 com a MA-23,MA-20 - Saída 1,Carro,False,Sevilha
@@ -3962,6 +4338,149 @@ Livramento,Luz de Tavira,Carro,True,Vila Real de Santo António
 Luzianes,São Martinho das Amoreiras,Carro,False,Monchique
 Luzianes,São Martinho das Amoreiras,Carro,True,Beja
 Luzianes,São Martinho das Amoreiras,Carro,True,Ourique
+M-50 - Saída 53,M-50 - Saída 55,Carro,False,A-1
+M-50 - Saída 53,M-50 - Saída 55,Carro,False,A-2
+M-50 - Saída 53,M-50 - Saída 55,Carro,False,A-3
+M-50 - Saída 53,M-50 - Saída 55,Carro,False,A-4
+M-50 - Saída 53,M-50 - Saída 55,Carro,False,A-42 - Toledo
+M-50 - Saída 53,M-50 - Saída 55,Carro,False,Aeroporto de Madrid-Barajas
+M-50 - Saída 53,M-50 - Saída 55,Carro,False,R-2
+M-50 - Saída 53,M-50 - Saída 55,Carro,False,R-3
+M-50 - Saída 53,M-50 - Saída 55,Carro,False,R-4
+M-50 - Saída 53,M-50 - Saída 55,Carro,True,A-5 - Badajoz
+M-50 - Saída 53,M-50 - Saída 55,Carro,True,A-6
+M-50 - Saída 53,M-50 - Saída 55,Carro,True,R-5 - Badajoz/Toledo
+M-50 - Saída 53,Cruzamento da A-42 com a M-50,Carro,False,A-5 - Badajoz
+M-50 - Saída 53,Cruzamento da A-42 com a M-50,Carro,False,A-6
+M-50 - Saída 53,Cruzamento da A-42 com a M-50,Carro,False,R-5 - Badajoz/Toledo
+M-50 - Saída 53,Cruzamento da A-42 com a M-50,Carro,True,A-3
+M-50 - Saída 53,Cruzamento da A-42 com a M-50,Carro,True,A-4
+M-50 - Saída 53,Cruzamento da A-42 com a M-50,Carro,True,A-42 - Toledo
+M-50 - Saída 53,Cruzamento da A-42 com a M-50,Carro,True,R-3
+M-50 - Saída 53,Cruzamento da A-42 com a M-50,Carro,True,R-4
+M-50 - Saída 55,M-50 - Saída 56,Carro,False,A-1
+M-50 - Saída 55,M-50 - Saída 56,Carro,False,A-2
+M-50 - Saída 55,M-50 - Saída 56,Carro,False,A-3
+M-50 - Saída 55,M-50 - Saída 56,Carro,False,A-4
+M-50 - Saída 55,M-50 - Saída 56,Carro,False,A-42 - Toledo
+M-50 - Saída 55,M-50 - Saída 56,Carro,False,Aeroporto de Madrid-Barajas
+M-50 - Saída 55,M-50 - Saída 56,Carro,False,R-2
+M-50 - Saída 55,M-50 - Saída 56,Carro,False,R-3
+M-50 - Saída 55,M-50 - Saída 56,Carro,False,R-4
+M-50 - Saída 55,M-50 - Saída 56,Carro,True,A-5 - Badajoz
+M-50 - Saída 55,M-50 - Saída 56,Carro,True,A-6
+M-50 - Saída 55,M-50 - Saída 56,Carro,True,R-5 - Badajoz/Toledo
+M-50 - Saída 56,M-50 - Saída 58,Carro,False,A-1
+M-50 - Saída 56,M-50 - Saída 58,Carro,False,A-2
+M-50 - Saída 56,M-50 - Saída 58,Carro,False,A-3
+M-50 - Saída 56,M-50 - Saída 58,Carro,False,A-4
+M-50 - Saída 56,M-50 - Saída 58,Carro,False,A-42 - Toledo
+M-50 - Saída 56,M-50 - Saída 58,Carro,False,Aeroporto de Madrid-Barajas
+M-50 - Saída 56,M-50 - Saída 58,Carro,False,R-2
+M-50 - Saída 56,M-50 - Saída 58,Carro,False,R-3
+M-50 - Saída 56,M-50 - Saída 58,Carro,False,R-4
+M-50 - Saída 56,M-50 - Saída 58,Carro,True,A-5 - Badajoz
+M-50 - Saída 56,M-50 - Saída 58,Carro,True,A-6
+M-50 - Saída 56,M-50 - Saída 58,Carro,True,R-5 - Badajoz/Toledo
+M-50 - Saída 58,M-50 - Saída 59,Carro,False,A-1
+M-50 - Saída 58,M-50 - Saída 59,Carro,False,A-2
+M-50 - Saída 58,M-50 - Saída 59,Carro,False,A-3
+M-50 - Saída 58,M-50 - Saída 59,Carro,False,A-4
+M-50 - Saída 58,M-50 - Saída 59,Carro,False,A-42 - Toledo
+M-50 - Saída 58,M-50 - Saída 59,Carro,False,Aeroporto de Madrid-Barajas
+M-50 - Saída 58,M-50 - Saída 59,Carro,False,R-2
+M-50 - Saída 58,M-50 - Saída 59,Carro,False,R-3
+M-50 - Saída 58,M-50 - Saída 59,Carro,False,R-4
+M-50 - Saída 58,M-50 - Saída 59,Carro,True,A-5 - Badajoz
+M-50 - Saída 58,M-50 - Saída 59,Carro,True,A-6
+M-50 - Saída 59,M-50 - Saída 60,Carro,False,A-1
+M-50 - Saída 59,M-50 - Saída 60,Carro,False,A-2
+M-50 - Saída 59,M-50 - Saída 60,Carro,False,A-3
+M-50 - Saída 59,M-50 - Saída 60,Carro,False,A-4
+M-50 - Saída 59,M-50 - Saída 60,Carro,False,A-42 - Toledo
+M-50 - Saída 59,M-50 - Saída 60,Carro,False,Aeroporto de Madrid-Barajas
+M-50 - Saída 59,M-50 - Saída 60,Carro,False,R-2
+M-50 - Saída 59,M-50 - Saída 60,Carro,False,R-3
+M-50 - Saída 59,M-50 - Saída 60,Carro,False,R-4
+M-50 - Saída 59,M-50 - Saída 60,Carro,True,A-5 - Badajoz
+M-50 - Saída 59,M-50 - Saída 60,Carro,True,A-6
+M-50 - Saída 60,M-50 - Saída 62,Carro,False,A-2
+M-50 - Saída 60,M-50 - Saída 62,Carro,False,A-3
+M-50 - Saída 60,M-50 - Saída 62,Carro,False,A-4
+M-50 - Saída 60,M-50 - Saída 62,Carro,False,A-42
+M-50 - Saída 60,M-50 - Saída 62,Carro,False,Aeroporto de Madrid-Barajas
+M-50 - Saída 60,M-50 - Saída 62,Carro,False,R-3
+M-50 - Saída 60,M-50 - Saída 62,Carro,False,R-4
+M-50 - Saída 60,M-50 - Saída 62,Carro,False,R-5 - Badajoz/Toledo
+M-50 - Saída 60,M-50 - Saída 62,Carro,True,A-5 - Badajoz
+M-50 - Saída 60,M-50 - Saída 62,Carro,True,A-6
+M-50 - Saída 62,M-50 - Saída 63,Carro,False,A-2
+M-50 - Saída 62,M-50 - Saída 63,Carro,False,A-3
+M-50 - Saída 62,M-50 - Saída 63,Carro,False,A-4
+M-50 - Saída 62,M-50 - Saída 63,Carro,False,A-42
+M-50 - Saída 62,M-50 - Saída 63,Carro,False,Aeroporto de Madrid-Barajas
+M-50 - Saída 62,M-50 - Saída 63,Carro,False,R-3
+M-50 - Saída 62,M-50 - Saída 63,Carro,False,R-4
+M-50 - Saída 62,M-50 - Saída 63,Carro,False,R-5 - Badajoz/Toledo
+M-50 - Saída 62,M-50 - Saída 63,Carro,True,A-6 - A Coruña
+M-50 - Saída 63,M-50 - Saída 64,Carro,False,A-4
+M-50 - Saída 63,M-50 - Saída 64,Carro,False,A-42
+M-50 - Saída 63,M-50 - Saída 64,Carro,False,R-4
+M-50 - Saída 63,M-50 - Saída 64,Carro,False,R-5 - Badajoz
+M-50 - Saída 63,M-50 - Saída 64,Carro,True,A-6 - A Coruña
+M-50 - Saída 64,M-50 - Saída 65,Carro,False,A-2
+M-50 - Saída 64,M-50 - Saída 65,Carro,False,A-3
+M-50 - Saída 64,M-50 - Saída 65,Carro,False,A-4
+M-50 - Saída 64,M-50 - Saída 65,Carro,False,A-42
+M-50 - Saída 64,M-50 - Saída 65,Carro,False,Aeroporto de Madrid-Barajas
+M-50 - Saída 64,M-50 - Saída 65,Carro,False,R-3
+M-50 - Saída 64,M-50 - Saída 65,Carro,False,R-4
+M-50 - Saída 64,M-50 - Saída 65,Carro,False,R-5 - Badajoz
+M-50 - Saída 64,M-50 - Saída 65,Carro,True,A-6 - A Coruña
+M-50 - Saída 65,M-50 - Saída 69,Carro,False,A-2
+M-50 - Saída 65,M-50 - Saída 69,Carro,False,A-3
+M-50 - Saída 65,M-50 - Saída 69,Carro,False,A-4
+M-50 - Saída 65,M-50 - Saída 69,Carro,False,A-42
+M-50 - Saída 65,M-50 - Saída 69,Carro,False,A-5 - Badajoz
+M-50 - Saída 65,M-50 - Saída 69,Carro,False,Aeroporto de Madrid-Barajas
+M-50 - Saída 65,M-50 - Saída 69,Carro,False,R-3
+M-50 - Saída 65,M-50 - Saída 69,Carro,False,R-4
+M-50 - Saída 65,M-50 - Saída 69,Carro,False,R-5
+M-50 - Saída 65,M-50 - Saída 69,Carro,True,A-6 - A Coruña
+M-50 - Saída 69,M-50 - Saída 72,Carro,False,A-2
+M-50 - Saída 69,M-50 - Saída 72,Carro,False,A-3
+M-50 - Saída 69,M-50 - Saída 72,Carro,False,A-4
+M-50 - Saída 69,M-50 - Saída 72,Carro,False,A-42
+M-50 - Saída 69,M-50 - Saída 72,Carro,False,A-5 - Badajoz
+M-50 - Saída 69,M-50 - Saída 72,Carro,False,Aeroporto de Madrid-Barajas
+M-50 - Saída 69,M-50 - Saída 72,Carro,False,R-3
+M-50 - Saída 69,M-50 - Saída 72,Carro,False,R-4
+M-50 - Saída 69,M-50 - Saída 72,Carro,False,R-5
+M-50 - Saída 69,M-50 - Saída 72,Carro,True,A-6 - A Coruña
+M-50 - Saída 79,M-50 - Saída 80,Carro,False,A-3
+M-50 - Saída 79,M-50 - Saída 80,Carro,False,A-4
+M-50 - Saída 79,M-50 - Saída 80,Carro,False,A-42
+M-50 - Saída 79,M-50 - Saída 80,Carro,False,A-5 - Badajoz
+M-50 - Saída 79,M-50 - Saída 80,Carro,False,R-3
+M-50 - Saída 79,M-50 - Saída 80,Carro,False,R-4
+M-50 - Saída 79,M-50 - Saída 80,Carro,False,R-5
+M-50 - Saída 79,M-50 - Saída 80,Carro,True,A-6 - A Coruña
+M-50 - Saída 80,M-50 - Saída 82,Carro,False,A-3
+M-50 - Saída 80,M-50 - Saída 82,Carro,False,A-4
+M-50 - Saída 80,M-50 - Saída 82,Carro,False,A-42
+M-50 - Saída 80,M-50 - Saída 82,Carro,False,A-5 - Badajoz
+M-50 - Saída 80,M-50 - Saída 82,Carro,False,R-3
+M-50 - Saída 80,M-50 - Saída 82,Carro,False,R-4
+M-50 - Saída 80,M-50 - Saída 82,Carro,False,R-5
+M-50 - Saída 80,M-50 - Saída 82,Carro,True,A-6 - A Coruña
+M-50 - Saída 82,M-50 - Saída 83,Carro,False,A-3
+M-50 - Saída 82,M-50 - Saída 83,Carro,False,A-4
+M-50 - Saída 82,M-50 - Saída 83,Carro,False,A-42
+M-50 - Saída 82,M-50 - Saída 83,Carro,False,A-5 - Badajoz
+M-50 - Saída 82,M-50 - Saída 83,Carro,False,R-3
+M-50 - Saída 82,M-50 - Saída 83,Carro,False,R-4
+M-50 - Saída 82,M-50 - Saída 83,Carro,False,R-5
+M-50 - Saída 82,M-50 - Saída 83,Carro,True,A-6 - A Coruña
 Marchena,Osuna,Comboio,False,Dos Hermanas
 Marchena,Osuna,Comboio,False,Sevilha - Santa Justa
 Marchena,Osuna,Comboio,True,Bobadilla
@@ -4117,6 +4636,26 @@ Quatro Águas,Vila Real de Santo António,Barco,False,Faro
 Quatro Águas,Vila Real de Santo António,Barco,False,Portimão
 Quatro Águas,Vila Real de Santo António,Barco,True,Huelva
 Quatro Águas,Vila Real de Santo António,Barco,True,Sevilha
+R-4 - Saída 1,R-4 - Saída 4,Carro,False,M-50 - Madrid
+R-4 - Saída 1,R-4 - Saída 4,Carro,True,Aranjuez
+R-4 - Saída 1,R-4 - Saída 4,Carro,True,Córdoba
+R-4 - Saída 1,R-4 - Saída 4,Carro,True,Ocaña
+R-4 - Saída 4,R-4 - Saída 12,Carro,False,M-50 - Madrid
+R-4 - Saída 4,R-4 - Saída 12,Carro,True,Aranjuez
+R-4 - Saída 4,R-4 - Saída 12,Carro,True,Córdoba
+R-4 - Saída 4,R-4 - Saída 12,Carro,True,Ocaña
+R-4 - Saída 22,R-4 - Saída 29,Carro,False,Madrid
+R-4 - Saída 22,R-4 - Saída 29,Carro,True,Aranjuez
+R-4 - Saída 22,R-4 - Saída 29,Carro,True,Córdoba
+R-4 - Saída 22,R-4 - Saída 29,Carro,True,Ocaña
+R-4 - Saída 29,R-4 - Saída 32,Carro,False,Madrid
+R-4 - Saída 29,R-4 - Saída 32,Carro,True,Aranjuez
+R-4 - Saída 29,R-4 - Saída 32,Carro,True,Córdoba
+R-4 - Saída 29,R-4 - Saída 32,Carro,True,Ocaña
+R-4 - Saída 32,R-4 - Saída 38,Carro,False,Aranjuez
+R-4 - Saída 32,R-4 - Saída 38,Carro,False,Madrid
+R-4 - Saída 32,R-4 - Saída 38,Carro,True,Córdoba
+R-4 - Saída 32,R-4 - Saída 38,Carro,True,Ocaña
 R-5 - Saída 9,R-5 - Saída 11,Carro,False,Leganés
 R-5 - Saída 9,R-5 - Saída 11,Carro,False,Madrid
 R-5 - Saída 9,R-5 - Saída 11,Carro,True,Badajoz
