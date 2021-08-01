@@ -11,9 +11,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
@@ -32,9 +32,10 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
-public class TravelActivity extends AppCompatActivity {
+public class TravelActivity extends FragmentActivity {
 
     public static final String EAST = "E";
     public static final String NORTH = "N";
@@ -52,10 +53,6 @@ public class TravelActivity extends AppCompatActivity {
     public static final String PLANE = "Avião";
 
     public static final int TAB_NUMBER = 3;
-
-    // Position of the tabs
-    public static final int GPS_TAB = 0;
-    public static final int DESTINATIONS_TAB = 2;
 
     private LocationInfo currentLocation;
     private ArrayList<LocationInfo> surroundingLocations;
@@ -204,9 +201,20 @@ public class TravelActivity extends AppCompatActivity {
         }
 
         TextView locationTextViewGPS = findViewById(R.id.locationTextViewGPS);
+        TextView briefInfoTextView = findViewById(R.id.briefInfoTextView);
         TextView locationTextViewDestinations = findViewById(R.id.locationTextViewDestination);
         if (locationTextViewGPS != null)
             locationTextViewGPS.setText(currentLocationName);
+        if ((briefInfoTextView != null) && (currentLocation != null))
+            if (currentLocation.getCountry().equals("Portugal"))
+                briefInfoTextView.setText(getString(R.string.brief_info_pt, ((LocationInfoPortugal) currentLocation).getMunicipality(), ((LocationInfoPortugal) currentLocation).getDistrict()));
+            else if (currentLocation.getCountry().equals("Spain"))
+                if (isComunidadeUniprovincial(((LocationInfoSpain) currentLocation).getAutonomousCommunity()))
+                    briefInfoTextView.setText(getString(R.string.brief_info_es_uniprovince, ((LocationInfoSpain) currentLocation).getMunicipality(), ((LocationInfoSpain) currentLocation).getProvince()));
+                else
+                    briefInfoTextView.setText(getString(R.string.brief_info_es_multiprovince, ((LocationInfoSpain) currentLocation).getMunicipality(), ((LocationInfoSpain) currentLocation).getProvince(), ((LocationInfoSpain) currentLocation).getAutonomousCommunity()));
+            else if (currentLocation.getCountry().equals("Gibraltar"))
+                briefInfoTextView.setText(getString(R.string.brief_info_gi));
         if (locationTextViewDestinations != null)
             locationTextViewDestinations.setText(currentLocationName);
 
@@ -273,6 +281,11 @@ public class TravelActivity extends AppCompatActivity {
             String surroundingLocationName = connectionInfo.get(0);
             surroundingLocations.add(DBInterface.getDBInterface(getApplicationContext()).generateLocationObject(getApplicationContext(), surroundingLocationName));
         }
+    }
+
+    private boolean isComunidadeUniprovincial(String autonomousCommunity) {
+        String[] comunidadesUniprovinciales = new String[]{"Comunidade de Madrid"};
+        return new ArrayList<>(Arrays.asList(comunidadesUniprovinciales)).contains(autonomousCommunity);
     }
 
     // Fragment classes

@@ -4,7 +4,7 @@
     <string name="cover_image_label">Cover image</string>
     <string name="version_text">Version %1$s.%2$s.%3$s</string>
     <string name="version_major" translatable="false">1</string>
-    <string name="version_minor" translatable="false">7</string>
+    <string name="version_minor" translatable="false">8</string>
     <string name="version_patch" translatable="false">0</string>
     <string name="title_activity_travel">Travel</string>
     <string name="concelho">Municipality</string>
@@ -40,4 +40,9 @@
     <string name="title_activity_car_menu">Vehicle Selection</string>
     <string name="no_destination">No Available Destinations</string>
     <string name="high_speed_train">High-Speed Train</string>
+    <string name="brief_info_pt">%1$s, %2$s District, Portugal</string>
+    <string name="brief_info_es_multiprovince">%1$s, %2$s Province, %3$s, Spain</string>
+    <string name="brief_info_es_uniprovince">%1$s, %2$s, Spain</string>
+    <string name="brief_info_gi">Gibraltar</string>
+    <string name="brief_info_separator" translatable="false">----------------------------------------</string>
 </resources>

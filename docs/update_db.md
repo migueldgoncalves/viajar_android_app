@@ -16,16 +16,15 @@ Não é necessário ter um dispositivo rooted.
 ### Passos
 
 1. No Android Studio, em `DBInterface.java`, alterar a variável `developerMode` para `true`;
-2. Copiar os ficheiros `.csv` para a pasta `app\src\main\res\raw` do projecto Android (em Windows, disponível por omissão em `C:\Users\<nome_de_utilizador>\AndroidStudioProjects\Viajar`). Se já lá estiverem ficheiros `.csv`, substituir pelos actuais;
+2. Copiar os ficheiros `.csv` para a pasta `app\src\main\res\raw` do projecto Android (em Windows, disponível por omissão em `C:\Users\<nome_de_utilizador>\AndroidStudioProjects\Viajar`). Os ficheiros `.csv` que já lá estiverem devem ser substituídos pelos actuais;
 3. Arrancar a aplicação no AVD;
 4. Carregar em `Iniciar`, depois em `Viagem`. Isto irá iniciar o popular da base de dados;
 5. O progresso do popular da base de dados pode ser acompanhado no separador `Run`, num total de cerca de 20 segundos. A aplicação não irá entrar na Travel Activity;
 6. Com o AVD ligado, aceder ao Device File Explorer do Android Studio e seleccionar o AVD;
 7. Ir a `data/data/com.viajar.viajar/databases` e copiar os ficheiros `Travel`, `Travel-shm` e `Travel-wal` para uma localização à escolha, como o Ambiente de Trabalho;
 8. Com o DB Browser for SQLite, abrir o ficheiro `Travel`, e fechar de seguida. Os ficheiros `Travel-shm` e `Travel-wal` irão desaparecer;
-9. Copiar ou mover o ficheiro `Travel` para a pasta `app\src\main\assets` do projecto Android, e substituir pelo ficheiro que lá estiver;
+9. Copiar ou mover o ficheiro `Travel` para a pasta `app\src\main\assets` do projecto Android. O ficheiro que já lá estiver deve ser substituído pelo actual;
 10. Em `DBInterface.java`, alterar a flag `developerMode` para `false`;
-11. (Opcional) Apagar os ficheiros `.csv` do projecto Android;
-12. (Opcional) Alterar a versão da aplicação no Translations Editor e no ficheiro `build.gradle` associado ao módulo `Viajar.app`.
+11. (Opcional) Alterar a versão da aplicação no Translations Editor e no ficheiro `build.gradle` associado ao módulo `Viajar.app`.
 
 A aplicação está pronta para ser executada normalmente.

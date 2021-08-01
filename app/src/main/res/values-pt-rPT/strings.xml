@@ -34,4 +34,8 @@
     <string name="title_activity_car_menu">Selecção de Veículo</string>
     <string name="no_destination">Sem Destinos Disponíveis</string>
     <string name="high_speed_train">TGV</string>
+    <string name="brief_info_pt">%1$s, Distrito de %2$s, Portugal</string>
+    <string name="brief_info_es_multiprovince">%1$s, Província de %2$s, %3$s, Espanha</string>
+    <string name="brief_info_es_uniprovince">%1$s, %2$s, Espanha</string>
+    <string name="brief_info_gi">Gibraltar</string>
 </resources>
