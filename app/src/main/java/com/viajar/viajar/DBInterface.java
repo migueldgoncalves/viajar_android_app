@@ -27,6 +27,11 @@ public class DBInterface {
 
     private SQLDatabase sqlDatabase;
 
+    private static final String dbName = "Travel";
+
+    // SET DEVELOPER MODE HERE
+    private static final boolean developerMode = false; // If false, fetches DB from assets. If true, creates DB from .csv files
+
     private DBInterface() {
 
     }
@@ -180,189 +185,222 @@ public class DBInterface {
     }
 
     private void populateLocationTable(Context context) {
-        List<List<String>> csvContent = CsvParser.csvParser(context, R.raw.local);
-        for (int i=0; i<csvContent.size(); i++) {
-            Location newLocation = new Location();
-            List<String> csvLine = csvContent.get(i);
+        if (developerMode) {
+            List<List<String>> csvContent = CsvParser.csvParser(context, R.raw.local);
+            for (int i = 0; i < csvContent.size(); i++) {
+                Location newLocation = new Location();
+                List<String> csvLine = csvContent.get(i);
 
-            newLocation.name = csvLine.get(0);
-            newLocation.latitude = Double.parseDouble(csvLine.get(1));
-            newLocation.longitude = Double.parseDouble(csvLine.get(2));
-            newLocation.altitude = Integer.parseInt(csvLine.get(3));
-            if (csvLine.size() == 5) { // Has extra info
-                newLocation.extraInfo = csvLine.get(4);
+                newLocation.name = csvLine.get(0);
+                newLocation.latitude = Double.parseDouble(csvLine.get(1));
+                newLocation.longitude = Double.parseDouble(csvLine.get(2));
+                newLocation.altitude = Integer.parseInt(csvLine.get(3));
+                if (csvLine.size() == 5) { // Has extra info
+                    newLocation.extraInfo = csvLine.get(4);
+                }
+                getDatabase(context).dao().insertLocations(newLocation);
             }
-            getDatabase(context).dao().insertLocations(newLocation);
         }
         Log.i("debug", "Location table populated with " + getDatabase(context).dao().getLocationNumber() + " locations");
     }
 
     private void populateConnectionTable(Context context) {
-        List<List<String>> csvContent = CsvParser.csvParser(context, R.raw.ligacao);
-        for (int i=0; i<csvContent.size(); i++) {
-            Connection newConnection = new Connection();
-            List<String> csvLine = csvContent.get(i);
+        if (developerMode) {
+            List<List<String>> csvContent = CsvParser.csvParser(context, R.raw.ligacao);
+            for (int i = 0; i < csvContent.size(); i++) {
+                Connection newConnection = new Connection();
+                List<String> csvLine = csvContent.get(i);
 
-            newConnection.locationA = csvLine.get(0);
-            newConnection.locationB = csvLine.get(1);
-            newConnection.meansTransport = csvLine.get(2);
-            newConnection.distance = Double.parseDouble(csvLine.get(3));
-            if (csvLine.size() == 8) { // Has extra info
-                newConnection.extraInfo = csvLine.get(4);
-                newConnection.cardinalPoint = csvLine.get(5);
-                newConnection.orderA = Integer.parseInt(csvLine.get(6));
-                newConnection.orderB = Integer.parseInt(csvLine.get(7));
-            } else {
-                newConnection.cardinalPoint = csvLine.get(4);
-                newConnection.orderA = Integer.parseInt(csvLine.get(5));
-                newConnection.orderB = Integer.parseInt(csvLine.get(6));
+                newConnection.locationA = csvLine.get(0);
+                newConnection.locationB = csvLine.get(1);
+                newConnection.meansTransport = csvLine.get(2);
+                newConnection.distance = Double.parseDouble(csvLine.get(3));
+                if (csvLine.size() == 8) { // Has extra info
+                    newConnection.extraInfo = csvLine.get(4);
+                    newConnection.cardinalPoint = csvLine.get(5);
+                    newConnection.orderA = Integer.parseInt(csvLine.get(6));
+                    newConnection.orderB = Integer.parseInt(csvLine.get(7));
+                } else {
+                    newConnection.cardinalPoint = csvLine.get(4);
+                    newConnection.orderA = Integer.parseInt(csvLine.get(5));
+                    newConnection.orderB = Integer.parseInt(csvLine.get(6));
+                }
+
+                getDatabase(context).dao().insertConnections(newConnection);
             }
-
-            getDatabase(context).dao().insertConnections(newConnection);
         }
         Log.i("debug", "Connection table populated with " + getDatabase(context).dao().getConnectionNumber() + " connections");
     }
 
     private void populateDestinationTable(Context context) {
-        List<List<String>> csvContent = CsvParser.csvParser(context, R.raw.destino);
-        for (int i=0; i<csvContent.size(); i++) {
-            Destination newDestination = new Destination();
-            List<String> csvLine = csvContent.get(i);
+        if (developerMode) {
+            List<List<String>> csvContent = CsvParser.csvParser(context, R.raw.destino);
+            for (int i = 0; i < csvContent.size(); i++) {
+                Destination newDestination = new Destination();
+                List<String> csvLine = csvContent.get(i);
 
-            newDestination.locationA = csvLine.get(0);
-            newDestination.locationB = csvLine.get(1);
-            newDestination.meansTransport = csvLine.get(2);
-            newDestination.startingPoint = csvLine.get(3).equals("True"); // CSV files created using Python
-            newDestination.destination = csvLine.get(4);
-            getDatabase(context).dao().insertDestinations(newDestination);
+                newDestination.locationA = csvLine.get(0);
+                newDestination.locationB = csvLine.get(1);
+                newDestination.meansTransport = csvLine.get(2);
+                newDestination.startingPoint = csvLine.get(3).equals("True"); // CSV files created using Python
+                newDestination.destination = csvLine.get(4);
+                getDatabase(context).dao().insertDestinations(newDestination);
+            }
         }
         Log.i("debug", "Destination table populated with " + getDatabase(context).dao().getDestinationNumber() + " destinations");
     }
 
     private void populateLocationGibraltarTable(Context context) {
-        List<List<String>> csvContent = CsvParser.csvParser(context, R.raw.local_gibraltar);
-        for (int i=0; i<csvContent.size(); i++) {
-            LocationGibraltar newGibraltarLocation = new LocationGibraltar();
-            List<String> csvLine = csvContent.get(i);
+        if (developerMode) {
+            List<List<String>> csvContent = CsvParser.csvParser(context, R.raw.local_gibraltar);
+            for (int i = 0; i < csvContent.size(); i++) {
+                LocationGibraltar newGibraltarLocation = new LocationGibraltar();
+                List<String> csvLine = csvContent.get(i);
 
-            newGibraltarLocation.name = csvLine.get(0);
-            newGibraltarLocation.majorResidentialArea = csvLine.get(1);
+                newGibraltarLocation.name = csvLine.get(0);
+                newGibraltarLocation.majorResidentialArea = csvLine.get(1);
 
-            getDatabase(context).dao().insertGibraltarLocations(newGibraltarLocation);
+                getDatabase(context).dao().insertGibraltarLocations(newGibraltarLocation);
+            }
         }
         Log.i("debug", "LocationGibraltar table populated with " + getDatabase(context).dao().getGibraltarLocationNumber() + " locations");
     }
 
     private void populateLocationPortugalTable(Context context) {
-        List<List<String>> csvContent = CsvParser.csvParser(context, R.raw.local_portugal);
-        for (int i=0; i<csvContent.size(); i++) {
-            LocationPortugal newPortugueseLocation = new LocationPortugal();
-            List<String> csvLine = csvContent.get(i);
+        if (developerMode) {
+            List<List<String>> csvContent = CsvParser.csvParser(context, R.raw.local_portugal);
+            for (int i = 0; i < csvContent.size(); i++) {
+                LocationPortugal newPortugueseLocation = new LocationPortugal();
+                List<String> csvLine = csvContent.get(i);
 
-            newPortugueseLocation.name = csvLine.get(0);
-            newPortugueseLocation.parish = csvLine.get(1);
-            newPortugueseLocation.concelho = csvLine.get(2);
+                newPortugueseLocation.name = csvLine.get(0);
+                newPortugueseLocation.parish = csvLine.get(1);
+                newPortugueseLocation.concelho = csvLine.get(2);
 
-            getDatabase(context).dao().insertPortugueseLocations(newPortugueseLocation);
+                getDatabase(context).dao().insertPortugueseLocations(newPortugueseLocation);
+            }
         }
         Log.i("debug", "LocationPortugal table populated with " + getDatabase(context).dao().getPortugueseLocationNumber() + " locations");
     }
 
     private void populateLocationSpainTable(Context context) {
-        List<List<String>> csvContent = CsvParser.csvParser(context, R.raw.local_espanha);
-        for (int i=0; i<csvContent.size(); i++) {
-            LocationSpain newSpanishLocation = new LocationSpain();
-            List<String> csvLine = csvContent.get(i);
+        if (developerMode) {
+            List<List<String>> csvContent = CsvParser.csvParser(context, R.raw.local_espanha);
+            for (int i = 0; i < csvContent.size(); i++) {
+                LocationSpain newSpanishLocation = new LocationSpain();
+                List<String> csvLine = csvContent.get(i);
 
-            newSpanishLocation.name = csvLine.get(0);
-            newSpanishLocation.municipio = csvLine.get(1);
-            newSpanishLocation.province = csvLine.get(2);
-            if (csvLine.size() == 4) { // Has district
-                newSpanishLocation.district = csvLine.get(3);
+                newSpanishLocation.name = csvLine.get(0);
+                newSpanishLocation.municipio = csvLine.get(1);
+                newSpanishLocation.province = csvLine.get(2);
+                if (csvLine.size() == 4) { // Has district
+                    newSpanishLocation.district = csvLine.get(3);
+                }
+
+                getDatabase(context).dao().insertSpanishLocations(newSpanishLocation);
             }
-
-            getDatabase(context).dao().insertSpanishLocations(newSpanishLocation);
         }
         Log.i("debug", "LocationSpain table populated with " + getDatabase(context).dao().getSpanishLocationNumber() + " locations");
     }
 
     private void populateConcelhoTable(Context context) {
-        List<List<String>> csvContent = CsvParser.csvParser(context, R.raw.concelho);
-        for (int i=0; i<csvContent.size(); i++) {
-            Concelho newConcelho = new Concelho();
-            List<String> csvLine = csvContent.get(i);
+        if (developerMode) {
+            List<List<String>> csvContent = CsvParser.csvParser(context, R.raw.concelho);
+            for (int i = 0; i < csvContent.size(); i++) {
+                Concelho newConcelho = new Concelho();
+                List<String> csvLine = csvContent.get(i);
 
-            newConcelho.concelho = csvLine.get(0);
-            newConcelho.intermunicipalEntity = csvLine.get(1);
-            newConcelho.district = csvLine.get(2);
-            newConcelho.region = csvLine.get(3);
+                newConcelho.concelho = csvLine.get(0);
+                newConcelho.intermunicipalEntity = csvLine.get(1);
+                newConcelho.district = csvLine.get(2);
+                newConcelho.region = csvLine.get(3);
 
-            getDatabase(context).dao().insertConcelhos(newConcelho);
+                getDatabase(context).dao().insertConcelhos(newConcelho);
+            }
         }
         Log.i("debug", "Concelho table populated with " + getDatabase(context).dao().getConcelhoNumber() + " concelhos");
     }
 
     private void populateMunicipioTable(Context context) {
-        List<List<String>> csvContent = CsvParser.csvParser(context, R.raw.municipio);
-        for (int i=0; i<csvContent.size(); i++) {
-            Municipio newMunicipio = new Municipio();
-            List<String> csvLine = csvContent.get(i);
+        if (developerMode) {
+            List<List<String>> csvContent = CsvParser.csvParser(context, R.raw.municipio);
+            for (int i = 0; i < csvContent.size(); i++) {
+                Municipio newMunicipio = new Municipio();
+                List<String> csvLine = csvContent.get(i);
 
-            newMunicipio.municipio = csvLine.get(0);
-            newMunicipio.province = csvLine.get(1);
+                newMunicipio.municipio = csvLine.get(0);
+                newMunicipio.province = csvLine.get(1);
 
-            getDatabase(context).dao().insertMunicipios(newMunicipio);
+                getDatabase(context).dao().insertMunicipios(newMunicipio);
+            }
         }
         Log.i("debug", "Município table populated with " + getDatabase(context).dao().getMunicipioNumber() + " municípios");
     }
 
     private void populateComarcaTable(Context context) {
-        List<List<String>> csvContent = CsvParser.csvParser(context, R.raw.comarca);
-        for (int i=0; i<csvContent.size(); i++) {
-            Comarca newComarca = new Comarca();
-            List<String> csvLine = csvContent.get(i);
+        if (developerMode) {
+            List<List<String>> csvContent = CsvParser.csvParser(context, R.raw.comarca);
+            for (int i = 0; i < csvContent.size(); i++) {
+                Comarca newComarca = new Comarca();
+                List<String> csvLine = csvContent.get(i);
 
-            newComarca.municipio = csvLine.get(0);
-            newComarca.comarca = csvLine.get(1);
-            newComarca.province = csvLine.get(2);
+                newComarca.municipio = csvLine.get(0);
+                newComarca.comarca = csvLine.get(1);
+                newComarca.province = csvLine.get(2);
 
-            getDatabase(context).dao().insertComarcas(newComarca);
+                getDatabase(context).dao().insertComarcas(newComarca);
+            }
         }
         Log.i("debug", "Comarca table populated with " + getDatabase(context).dao().getComarcaNumber() + " comarcas");
     }
 
     private void populateProvinceTable(Context context) {
-        List<List<String>> csvContent = CsvParser.csvParser(context, R.raw.provincia);
-        for (int i=0; i<csvContent.size(); i++) {
-            Province newProvince = new Province();
-            List<String> csvLine = csvContent.get(i);
+        if (developerMode) {
+            List<List<String>> csvContent = CsvParser.csvParser(context, R.raw.provincia);
+            for (int i = 0; i < csvContent.size(); i++) {
+                Province newProvince = new Province();
+                List<String> csvLine = csvContent.get(i);
 
-            newProvince.province = csvLine.get(0);
-            newProvince.autonomousCommunity = csvLine.get(1);
+                newProvince.province = csvLine.get(0);
+                newProvince.autonomousCommunity = csvLine.get(1);
 
-            getDatabase(context).dao().insertProvincias(newProvince);
+                getDatabase(context).dao().insertProvincias(newProvince);
+            }
         }
         Log.i("debug", "Province table populated with " + getDatabase(context).dao().getProvinceNumber() + " provinces");
     }
 
     public void clearDatabase(Context context) {
-        getDatabase(context).dao().deletePortugueseLocations();
-        getDatabase(context).dao().deleteSpanishLocations();
-        getDatabase(context).dao().deleteGibraltarLocations();
-        getDatabase(context).dao().deleteDestinations();
-        getDatabase(context).dao().deleteConnections();
-        getDatabase(context).dao().deleteLocations();
-        getDatabase(context).dao().deleteConcelhos();
-        getDatabase(context).dao().deleteComarcas();
-        getDatabase(context).dao().deleteMunicipios();
-        getDatabase(context).dao().deleteProvinces();
+        if (developerMode) {
+            getDatabase(context).dao().deletePortugueseLocations();
+            getDatabase(context).dao().deleteSpanishLocations();
+            getDatabase(context).dao().deleteGibraltarLocations();
+            getDatabase(context).dao().deleteDestinations();
+            getDatabase(context).dao().deleteConnections();
+            getDatabase(context).dao().deleteLocations();
+            getDatabase(context).dao().deleteConcelhos();
+            getDatabase(context).dao().deleteComarcas();
+            getDatabase(context).dao().deleteMunicipios();
+            getDatabase(context).dao().deleteProvinces();
+        }
     }
 
     public SQLDatabase getDatabase(Context context) {
         if (sqlDatabase == null) {
-            this.sqlDatabase = Room.databaseBuilder(context, SQLDatabase.class, context.getString(R.string.app_name)).build();
+            if (DBInterface.developerMode) // DB will be created from .csv files, then manually copied to assets folder
+                this.sqlDatabase = Room.databaseBuilder(context, SQLDatabase.class, DBInterface.dbName).build();
+            else // DB will be fetched from assets folder
+                this.sqlDatabase = Room.databaseBuilder(context, SQLDatabase.class, DBInterface.dbName).createFromAsset(dbName).build();
         }
         return this.sqlDatabase;
+    }
+
+    public static void deleteDatabase(Context context) {
+        context.deleteDatabase(DBInterface.dbName);
+    }
+
+    public static boolean getDeveloperMode() {
+        return developerMode;
     }
 
 }

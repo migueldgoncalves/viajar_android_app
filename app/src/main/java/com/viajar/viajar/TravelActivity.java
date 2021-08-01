@@ -33,7 +33,6 @@ import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class TravelActivity extends AppCompatActivity {
 
@@ -149,7 +148,7 @@ public class TravelActivity extends AppCompatActivity {
             }
             return false;
         });
-
+        DBInterface.deleteDatabase(getApplicationContext());
         populateDatabase(); // Sets UI with initial location info
     }
 
@@ -194,7 +193,7 @@ public class TravelActivity extends AppCompatActivity {
     public void populateDatabase() {
         new Thread(() -> {
             populateCurrentAndSurroundingLocations(true);
-            runOnUiThread(() -> ((GPSPageFragment) Objects.requireNonNull(getSupportFragmentManager().getFragments().get(0))).createMapMarkers());
+            //runOnUiThread(() -> ((GPSPageFragment) Objects.requireNonNull(getSupportFragmentManager().getFragments().get(0))).createMapMarkers());
             runOnUiThread(this::updateUI);
         }).start();
     }
@@ -308,6 +307,8 @@ public class TravelActivity extends AppCompatActivity {
         public void onMapReady(@NonNull GoogleMap googleMap) {
             mMap = googleMap;
             mMap.getUiSettings().setScrollGesturesEnabled(false);
+            if (!DBInterface.getDeveloperMode())
+                createMapMarkers();
         }
 
         @Override
