@@ -198,6 +198,26 @@ A-4 - Saída 628,Jerez de la Frontera,Cádiz,Rural
 A-4 - Saída 631,Jerez de la Frontera,Cádiz,Rural
 A-40 - Saída 94,Santo Domingo-Caudilla,Toledo,
 A-44 - Saída 12,Jabalquinto,Jaén,
+A-44 - Saída 17,Jabalquinto,Jaén,
+A-44 - Saída 18,Mengíbar,Jaén,
+A-44 - Saída 26,Jaén,Jaén,
+A-44 - Saída 40-42,Jaén,Jaén,
+A-44 - Saída 46,La Guardia de Jaén,Jaén,
+A-44 - Saída 50,Pegalajar,Jaén,
+A-44 - Saída 59,Cárcheles,Jaén,
+A-44 - Saída 64,Cambil,Jaén,
+A-44 - Saída 67,Campillo de Arenas,Jaén,
+A-44 - Saída 74,Campillo de Arenas,Jaén,
+A-44 - Saída 77,Noalejo,Jaén,
+A-44 - Saída 79,Iznalloz,Granada,
+A-44 - Saída 84,Campotéjar,Granada,
+A-44 - Saída 89,Dehesas Viejas,Granada,
+A-44 - Saída 97,Iznalloz,Granada,
+A-44 - Saída 103,Deifontes,Granada,
+A-44 - Saída 108,Albolote,Granada,
+A-44 - Saída 111,Albolote,Granada,
+A-44 - Saída 116,Albolote,Granada,
+A-44 - Saída 119,Albolote,Granada,
 A-45 - Saída 5,Córdoba,Córdoba,
 A-45 - Saída 16,Fernán Núñez,Córdoba,
 A-45 - Saída 27,Montilla,Córdoba,
@@ -249,6 +269,14 @@ A-49 - Saída 81,Huelva,Huelva,
 A-49 - Saída 87,Gibraleón,Huelva,
 A-49 - Saída 94,Gibraleón,Huelva,
 A-49 - Saída 99,Gibraleón,Huelva,
+A-5 - Saída 3,Madrid,Comunidade de Madrid,Moncloa-Aravaca
+A-5 - Saída 5A,Madrid,Comunidade de Madrid,Latina
+A-5 - Saída 11,Alcorcón,Comunidade de Madrid,Norte
+A-5 - Saída 12,Alcorcón,Comunidade de Madrid,Norte
+A-5 - Saída 12A,Alcorcón,Comunidade de Madrid,Norte
+A-5 - Saída 12B,Alcorcón,Comunidade de Madrid,Norte
+A-5 - Saída 13,Alcorcón,Comunidade de Madrid,Norte
+A-5 - Saída 14,Alcorcón,Comunidade de Madrid,Norte
 A-5 - Saída 18,Móstoles,Comunidade de Madrid,Norte-Universidad
 A-5 - Saída 19,Móstoles,Comunidade de Madrid,Oeste
 A-5 - Saída 21,Móstoles,Comunidade de Madrid,Oeste
@@ -356,7 +384,15 @@ A-5 - Saída 395,Badajoz,Badajoz,
 A-5 - Saída 400,Badajoz,Badajoz,
 A-5 - Saída 403,Badajoz,Badajoz,
 A-5 - Saída 407,Badajoz,Badajoz,
+A-5 - Aluche,Madrid,Comunidade de Madrid,Latina
+A-5 - Avenida de los Poblados,Madrid,Comunidade de Madrid,Latina
+A-5 - Calle de Allande,Madrid,Comunidade de Madrid,Latina
+A-5 - Carretera de Boadilla del Monte,Madrid,Comunidade de Madrid,Latina
+A-5 - Cuatro Vientos,Madrid,Comunidade de Madrid,Latina
+A-5 - El Batán,Madrid,Comunidade de Madrid,Latina
+A-5 - Museo del Aire,Madrid,Comunidade de Madrid,Latina
 A-5 - Quinta Asturias,Navalcarnero,Comunidade de Madrid,
+A-5R - Alcorcón Norte,Alcorcón,Comunidade de Madrid,Norte
 A-66 - Saída 613,Mérida,Badajoz,
 A-66 - Saída 626,Mérida,Badajoz,
 A-66 - Saída 627,Mérida,Badajoz,
@@ -559,6 +595,7 @@ Arahal,Arahal,Sevilha,
 Aroche,Aroche,Huelva,
 "Avenida de España, La Línea de la Concepción",La Línea de la Concepción,Cádiz,
 "Avenida de Jacinto Benavente, Málaga",Málaga,Málaga,Ciudad Jardín
+"Avenida de Kansas City, Sevilha",Sevilha,Sevilha,San Pablo-Santa Justa
 Ayamonte,Ayamonte,Huelva,
 Barriada de Canela,Ayamonte,Huelva,
 Bollullos Par del Condado,Bollullos Par del Condado,Huelva,
@@ -581,6 +618,8 @@ Cruzamento IV da A-7 com a AP-7,Marbella,Málaga,Marbella Oeste
 Cruzamento V da A-7 com a AP-7,Marbella,Málaga,Marbella Este
 Cruzamento VI da A-7 com a AP-7,Mijas,Málaga,
 Cruzamento VII da A-7 com a AP-7,Torremolinos,Málaga,
+Cruzamento da A-3 com a M-30,Madrid,Comunidade de Madrid,Moratalaz
+Cruzamento da A-316 com a A-44,Jaén,Jaén,
 Cruzamento da A-318 com a A-45,Lucena,Córdoba,
 Cruzamento da A-32 com a A-44,Bailén,Jaén,
 Cruzamento da A-357 com a A-7,Málaga,Málaga,Campanillas
@@ -598,6 +637,7 @@ Cruzamento da A-4 com a AP-36 e a R-4,Ocaña,Toledo,
 Cruzamento da A-4 com a AP-4,Puerto Real,Cádiz,
 Cruzamento da A-4 com a CM-42,Madridejos,Toledo,
 Cruzamento da A-4 com a CO-31,Córdoba,Córdoba,
+Cruzamento da A-4 com a M-30,Madrid,Comunidade de Madrid,Arganzuela
 Cruzamento da A-4 com a M-50,Getafe,Comunidade de Madrid,
 Cruzamento da A-4 com a SE-20,Sevilha,Sevilha,Norte
 Cruzamento da A-4 Norte com a SE-30,Sevilha,Sevilha,Este-Alcosa-Torreblanca
@@ -606,6 +646,7 @@ Cruzamento da A-4 Sul com a SE-30,Sevilha,Sevilha,Bellavista-La Palmera
 Cruzamento da A-4 Sul com a SE-40,Dos Hermanas,Sevilha,
 Cruzamento da A-40 com a A-5,Maqueda,Toledo,
 Cruzamento da A-40 com a R-4,Ocaña,Toledo,
+Cruzamento da A-42 com a M-30,Madrid,Comunidade de Madrid,Carabanchel
 Cruzamento da A-42 com a M-40,Madrid,Comunidade de Madrid,Villaverde
 Cruzamento da A-42 com a M-50,Getafe,Comunidade de Madrid,
 Cruzamento da A-44 com a A-92,Albolote,Granada,
@@ -623,6 +664,8 @@ Cruzamento da A-5 com a A-66 Sul,Mérida,Badajoz,
 Cruzamento da A-5 com a CM-41,Valmojado,Toledo,
 Cruzamento da A-5 com a EX-A1,Millanes,Cáceres,
 Cruzamento da A-5 com a EX-A2,Miajadas,Cáceres,
+Cruzamento da A-5 com a M-30,Madrid,Comunidade de Madrid,Latina
+Cruzamento da A-5 com a M-40,Madrid,Comunidade de Madrid,Latina
 Cruzamento da A-5 com a R-5,Navalcarnero,Comunidade de Madrid,
 Cruzamento da A-6 com a M-50,Las Rozas de Madrid,Comunidade de Madrid,Norte
 Cruzamento da A-66 com a SE-30,Camas,Sevilha,
@@ -634,6 +677,7 @@ Cruzamento da A-8009 com a SE-20,Sevilha,Sevilha,Norte
 Cruzamento da A-92 com a A-92G,Santa Fe,Granada,
 Cruzamento da A-92 com a A-92M,Loja,Granada,
 Cruzamento da A-92 com a GR-30,Albolote,Granada,
+Cruzamento da A-92 com a GR-43,Pinos Puente,Granada,
 Cruzamento da A-92 com a SE-30,Sevilha,Sevilha,Cerro-Amate
 Cruzamento da A-92 com a SE-40,Alcalá de Guadaíra,Sevilha,
 Cruzamento da AP-4 com a CA-32,Puerto Real,Cádiz,
@@ -641,6 +685,7 @@ Cruzamento da AP-41 com a R-5,Moraleja de Enmedio,Comunidade de Madrid,
 Cruzamento da CA-35 com a CA-36,Puerto Real,Cádiz,
 Cruzamento da H-30 com a H-31,Huelva,Huelva,
 Cruzamento da M-40 com a M-45,Madrid,Comunidade de Madrid,Carabanchel
+Cruzamento da M-40 com a M-501,Pozuelo de Alarcón,Comunidade de Madrid,Distrito II
 Cruzamento da M-40 com a R-5,Madrid,Comunidade de Madrid,Carabanchel
 Cruzamento da M-45 com a R-5,Leganés,Comunidade de Madrid,
 Cruzamento da M-50 com a M-503,Majadahonda,Comunidade de Madrid,
@@ -649,13 +694,20 @@ Cruzamento da MA-20 com a MA-23,Málaga,Málaga,Churriana
 Cruzamento da N-431 com a N-444,Lepe,Huelva,
 Cruzamento da SE-20 com a SE-30,Sevilha,Sevilha,Triana
 Cruzamento Este da A-7 com a MA-24,Rincón de la Victoria,Málaga,
+Cruzamento Norte da A-44 com a GR-30,Albolote,Granada,
 Cruzamento Oeste da A-7 com a MA-24,Málaga,Málaga,Este
 Cruzamento Sul da MA-20 com a MA-21,Torremolinos,Málaga,
+"Cuesta de San Vicente, Madrid",Madrid,Comunidade de Madrid,Moncloa-Aravaca
 Don Benito,Don Benito,Badajoz,
 Écija,Écija,Sevilha,
 El Cuervo de Sevilla,El Cuervo de Sevilla,Sevilha,
 El Granado,El Granado,Huelva,
 Encinasola,Encinasola,Huelva,
+Estação de Ciudad Real,Ciudad Real,Ciudad Real,
+Estação de Córdoba,Córdoba,Córdoba,Noroeste
+Estação de Madrid-Puerta de Atocha,Madrid,Comunidade de Madrid,Arganzuela
+Estação de Sevilha-Santa Justa,Sevilha,Sevilha,San Pablo-Santa Justa
+Estação de Villanueva de Córdoba-Los Pedroches,Villanueva de Córdoba,Córdoba,
 Estepa,Estepa,Sevilha,
 EX-A2 - Fim,Don Benito,Badajoz,
 EX-A2 - Saída 6,Miajadas,Cáceres,
@@ -673,8 +725,16 @@ La Carlota,La Carlota,Córdoba,
 La Línea de la Concepción - Centro da cidade,La Línea de la Concepción,Cádiz,
 La Puebla de Cazalla,La Puebla de Cazalla,Sevilha,
 Lepe,Lepe,Huelva,
+M-30 - Calle de San Pol de Mar,Madrid,Comunidade de Madrid,Moncloa-Aravaca
+M-30 - Saída 10,Madrid,Comunidade de Madrid,Puente de Vallecas
+M-30 - Saída 11,Madrid,Comunidade de Madrid,Arganzuela
+M-30 - Saída 13,Madrid,Comunidade de Madrid,Usera
+M-30 - Saída 15,Madrid,Comunidade de Madrid,Arganzuela
+M-30 - Saída 16,Madrid,Comunidade de Madrid,Carabanchel
+M-30 - Saída 17,Madrid,Comunidade de Madrid,Arganzuela
 M-40 - Saída 28A,Madrid,Comunidade de Madrid,Carabanchel
 M-40 - Saída 30,Madrid,Comunidade de Madrid,Latina
+M-40 - Saída 31,Madrid,Comunidade de Madrid,Latina
 M-50 - Saída 53,Leganés,Comunidade de Madrid,
 M-50 - Saída 55,Leganés,Comunidade de Madrid,
 M-50 - Saída 56,Leganés,Comunidade de Madrid,
@@ -698,6 +758,7 @@ Marismas de Isla Cristina,Ayamonte,Huelva,
 Oliva de la Frontera,Oliva de la Frontera,Badajoz,
 Osuna,Osuna,Sevilha,
 Paradas,Paradas,Sevilha,
+"Paseo de Santa María de la Cabeza, Madrid",Madrid,Comunidade de Madrid,Arganzuela
 "Paseo del Mediterráneo, La Línea de la Concepción",La Línea de la Concepción,Cádiz,
 Paymogo,Paymogo,Huelva,
 Pedrera,Pedrera,Sevilha,
@@ -711,6 +772,7 @@ Praia de Isla Canela,Ayamonte,Huelva,
 Puebla de Guzmán,Puebla de Guzmán,Huelva,
 "Puente Mayorga, San Roque",San Roque,Cádiz,
 Puerto de la Laja,El Granado,Huelva,
+Puertollano,Puertollano,Ciudad Real,
 Punta del Moral,Ayamonte,Huelva,
 R-4 - Saída 1,Pinto,Comunidade de Madrid,
 R-4 - Saída 4,Pinto,Comunidade de Madrid,

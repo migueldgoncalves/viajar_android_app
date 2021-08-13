@@ -38,8 +38,12 @@ Calera y Chozas,La Campana de Oropesa,Toledo
 Calzadilla de los Barros,Zafra-Río Bodión,Badajoz
 Camas,Aljarafe,Sevilha
 Camas,Comarca Metropolitana de Sevilha,Sevilha
+Cambil,Sierra Mágina,Jaén
+Campillo de Arenas,Sierra Mágina,Jaén
+Campotéjar,Los Montes,Granada
 Casabermeja,Comarca de Antequera,Málaga
 Carboneros,Sierra Morena,Jaén
+Cárcheles,Sierra Mágina,Jaén
 Carmona,Campiña de Carmona,Sevilha
 Carmona,Los Alcores,Sevilha
 Carranque,La Sagra,Toledo
@@ -52,9 +56,12 @@ Cazalegas,Sierra de San Vicente,Toledo
 Chauchina,Vega de Granada,Granada
 Chucena,El Condado,Huelva
 Cijuela,Vega de Granada,Granada
+Ciudad Real,Campo de Calatrava,Ciudad Real
 Córdoba,Comarca de Córdoba,Córdoba
 Coria del Río,Aljarafe,Sevilha
 Coria del Río,Comarca Metropolitana de Sevilha,Sevilha
+Dehesas Viejas,Los Montes,Granada
+Deifontes,Los Montes,Granada
 Deleitosa,Villuercas-Ibores-Jara,Cáceres
 Don Benito,La Serena-Vegas Altas,Badajoz
 Dos Hermanas,Comarca Metropolitana de Sevilha,Sevilha
@@ -91,7 +98,9 @@ Huelva,Comarca Metropolitana de Huelva,Huelva
 Huétor Tájar,Comarca de Loja,Granada
 Huévar del Aljarafe,Aljarafe,Sevilha
 Isla Cristina,Costa Occidental de Huelva,Huelva
+Iznalloz,Los Montes,Granada
 Jabalquinto,Sierra Morena,Jaén
+Jaén,Comarca Metropolitana de Jaén,Jaén
 Jaraicejo,Comarca de Trujillo,Cáceres
 Jerez de la Frontera,Campiña de Jerez,Cádiz
 La Calzada de Oropesa,La Campana de Oropesa,Toledo
@@ -99,6 +108,7 @@ La Campana,Campiña de Carmona,Sevilha
 La Carolina,Sierra Morena,Jaén
 La Carlota,Valle Medio del Guadalquivir,Córdoba
 La Guardia,Mesa de Ocaña,Toledo
+La Guardia de Jaén,Comarca Metropolitana de Jaén,Jaén
 La Línea de la Concepción,Campo de Gibraltar,Cádiz
 La Luisiana,Comarca de Écija,Sevilha
 La Puebla de Cazalla,Campiña de Morón y Marchena,Sevilha
@@ -137,6 +147,7 @@ Marchena,Campiña de Morón y Marchena,Sevilha
 Marmolejo,Campiña de Jaén,Jaén
 Medina Sidonia,La Janda,Cádiz
 Membrilla,La Mancha,Ciudad Real
+Mengíbar,Comarca Metropolitana de Jaén,Jaén
 Miajadas,Comarca de Trujillo,Cáceres
 Mijas,Costa del Sol Occidental,Málaga
 Millanes,Campo Arañuelo,Cáceres
@@ -149,6 +160,7 @@ Moraleda de Zafayona,Comarca de Loja,Granada
 Moraleja de Enmedio,Comarca Sur,Comunidade de Madrid
 Móstoles,Área Metropolitana y Corredor del Henares,Comunidade de Madrid
 Navalcarnero,Comarca Sur,Comunidade de Madrid
+Noalejo,Sierra Mágina,Jaén
 Ocaña,Mesa de Ocaña,Toledo
 Oliva de la Frontera,Sierra Suroeste,Badajoz
 Ontígola,Mesa de Ocaña,Toledo
@@ -161,15 +173,18 @@ Paradas,Campiña de Morón y Marchena,Sevilha
 Paymogo,El Andévalo,Huelva
 Pedrera,Sierra Sur de Sevilha,Sevilha
 Pedro Abad,Alto Guadalquivir,Córdoba
+Pegalajar,Sierra Mágina,Jaén
 Pepino,Sierra de San Vicente,Toledo
 Peraleda de la Mata,Campo Arañuelo,Cáceres
 Pinos Puente,Vega de Granada,Granada
 Pinto,Área Metropolitana y Corredor del Henares,Comunidade de Madrid
+Pozuelo de Alarcón,Área Metropolitana y Corredor del Henares,Comunidade de Madrid
 Puebla de Guzmán,El Andévalo,Huelva
 Puebla de Sancho Pérez,Zafra-Río Bodión,Badajoz
 Puerto de Santa Cruz,Comarca de Trujillo,Cáceres
 Puerto Lápice,La Mancha,Ciudad Real
 Puerto Real,Bahía de Cádiz,Cádiz
+Puertollano,Campo de Calatrava,Ciudad Real
 Pulianas,Vega de Granada,Granada
 Quismondo,Torrijos,Toledo
 Rincón de la Victoria,La Axarquía,Málaga
@@ -222,6 +237,7 @@ Villablanca,Costa Occidental de Huelva,Huelva
 Villafranca de Córdoba,Alto Guadalquivir,Córdoba
 Villafranca de los Barros,Tierra de Barros-Río Matachel,Badajoz
 Villamesías,Comarca de Trujillo,Cáceres
+Villanueva de Córdoba,Los Pedroches,Córdoba
 Villanueva de la Reina,Campiña de Jaén,Jaén
 Villanueva de la Serena,La Serena-Vegas Altas,Badajoz
 Villanueva de los Castillejos,El Andévalo,Huelva
