@@ -104,8 +104,18 @@ public class LocationInfo {
         return this.destinations.get(Arrays.asList(locationName, meansTransport));
     }
 
+    public boolean hasDestinationsInMeansTransport(String meansTransport) {
+        for (List<String> key : this.getAllDestinations().keySet()) {
+            String locationName = key.get(0);
+            String keyMeansTransport = key.get(1);
+            if (hasDestinationsFromSurroundingLocation(locationName, keyMeansTransport) && keyMeansTransport.equals(meansTransport))
+                return true;
+        }
+        return false;
+    }
+
     public boolean hasDestinationsFromSurroundingLocation(String locationName, String meansTransport) {
-        return this.destinations.containsKey(Arrays.asList(locationName, meansTransport));
+        return this.getDestinationsFromSurroundingLocation(locationName, meansTransport).size() > 0;
     }
 
     public void setDestinationsFromSurroundingLocation(String locationName, String meansTransport, List<String> destinations) {

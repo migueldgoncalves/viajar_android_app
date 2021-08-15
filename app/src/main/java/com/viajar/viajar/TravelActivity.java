@@ -1,7 +1,12 @@
 package com.viajar.viajar;
 
+import android.content.Context;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
+import android.util.AttributeSet;
+import android.util.TypedValue;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,7 +16,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
@@ -52,7 +56,7 @@ public class TravelActivity extends FragmentActivity {
     public static final String HIGH_SPEED_TRAIN = "Comboio de Alta Velocidade";
     public static final String PLANE = "Avião";
 
-    public static final int TAB_NUMBER = 3;
+    public static final int TAB_NUMBER = 2;
 
     private LocationInfo currentLocation;
     private ArrayList<LocationInfo> surroundingLocations;
@@ -174,8 +178,6 @@ public class TravelActivity extends FragmentActivity {
                     return new GPSPageFragment();
                 case (1):
                     return new InfoPageFragment();
-                case (2):
-                    return new DestinationPageFragment();
                 default:
                     return null;
             }
@@ -190,7 +192,6 @@ public class TravelActivity extends FragmentActivity {
     public void populateDatabase() {
         new Thread(() -> {
             populateCurrentAndSurroundingLocations(true);
-            //runOnUiThread(() -> ((GPSPageFragment) Objects.requireNonNull(getSupportFragmentManager().getFragments().get(0))).createMapMarkers());
             runOnUiThread(this::updateUI);
         }).start();
     }
@@ -202,7 +203,6 @@ public class TravelActivity extends FragmentActivity {
 
         TextView locationTextViewGPS = findViewById(R.id.locationTextViewGPS);
         TextView briefInfoTextView = findViewById(R.id.briefInfoTextView);
-        TextView locationTextViewDestinations = findViewById(R.id.locationTextViewDestination);
         if (locationTextViewGPS != null)
             locationTextViewGPS.setText(currentLocationName);
         if ((briefInfoTextView != null) && (currentLocation != null))
@@ -215,22 +215,18 @@ public class TravelActivity extends FragmentActivity {
                     briefInfoTextView.setText(getString(R.string.brief_info_es_multiprovince, ((LocationInfoSpain) currentLocation).getMunicipality(), ((LocationInfoSpain) currentLocation).getProvince(), ((LocationInfoSpain) currentLocation).getAutonomousCommunity()));
             else if (currentLocation.getCountry().equals("Gibraltar"))
                 briefInfoTextView.setText(getString(R.string.brief_info_gi));
-        if (locationTextViewDestinations != null)
-            locationTextViewDestinations.setText(currentLocationName);
 
         LinearLayout buttonLayoutGPS = findViewById(R.id.locationButtonLayoutGPS);
-        LinearLayout buttonLayoutDestinations = findViewById(R.id.locationButtonLayoutDestinations);
+        LinearLayout destinationLayoutGPS = findViewById(R.id.destinationLayoutGPS);
         if (buttonLayoutGPS != null) {
             buttonLayoutGPS.removeAllViewsInLayout();
+            destinationLayoutGPS.removeAllViewsInLayout();
             buttonLayoutGPS.setOrientation(LinearLayout.VERTICAL);
-        }
-        if (buttonLayoutDestinations != null) {
-            buttonLayoutDestinations.removeAllViewsInLayout();
-            buttonLayoutDestinations.setOrientation(LinearLayout.VERTICAL);
+            destinationLayoutGPS.setOrientation(LinearLayout.VERTICAL);
         }
 
         int order = 1;
-        for (int i = 0; i < currentLocation.getSurroundingLocations().keySet().size(); i++)
+        for (int i = 0; i < currentLocation.getSurroundingLocations().keySet().size(); i++) {
             for (List<String> connectionID : currentLocation.getSurroundingLocations().keySet()) {
                 String surroundingLocation = connectionID.get(0);
                 String meansTransport = connectionID.get(1);
@@ -242,14 +238,17 @@ public class TravelActivity extends FragmentActivity {
                             locationButton.setOnClickListener(TravelActivity.this::onClickGPS);
                             buttonLayoutGPS.addView(locationButton);
                         }
-                        if (buttonLayoutDestinations != null) {
-                            locationButton.setOnClickListener(TravelActivity.this::onClickDestinations);
-                            buttonLayoutDestinations.addView(locationButton);
-                        }
                     }
                     order += 1;
                 }
             }
+        }
+
+        if (currentLocation.hasDestinationsInMeansTransport(currentTransportMeans)) {
+            DestinationsCustomView algo = new DestinationsCustomView(getApplicationContext(), null);
+            algo.setView(currentLocation, currentTransportMeans);
+            destinationLayoutGPS.addView(algo);
+        }
     }
 
     public void onClickGPS(View view) {
@@ -261,12 +260,6 @@ public class TravelActivity extends FragmentActivity {
                 runOnUiThread(() -> ((GPSPageFragment) getSupportFragmentManager().getFragments().get(0)).createMapMarkers());
                 runOnUiThread(this::updateUI);
             }).start();
-        }
-    }
-
-    public void onClickDestinations(View view) {
-        if (currentLocation != null) {
-            new Thread(() -> runOnUiThread(() -> ((DestinationPageFragment) getSupportFragmentManager().getFragments().get(2)).onClick(view))).start();
         }
     }
 
@@ -451,119 +444,170 @@ public class TravelActivity extends FragmentActivity {
             }
         }
     }
+}
 
-    public static class DestinationPageFragment extends Fragment {
+class DestinationsCustomView extends LinearLayout {
+    private final int textSizeUnit = TypedValue.COMPLEX_UNIT_SP;
+    private final int routeNameTextSize = 20;
 
-        ViewGroup rootView;
-        View destinationsView;
+    private final int autoEstradaColor = Color.BLUE;
+    private final int itinerarioPrincipalColor = Color.parseColor("#008000"); // Dark green
+    private final int viaMaritimaColor = Color.CYAN;
+    private final int viaFerroviariaColor = Color.parseColor("#800000"); // Dark brown
+    private final int viaAltaVelocidadeFerroviariaColor = Color.parseColor("#660066"); // Purple
+    private final int defaultBackgroundColor = Color.parseColor("#F0F0F0"); // Ex: itinerários complementares
+    private final int redRouteHighlight = Color.RED; // Ex: itinerários principais
 
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-            rootView = (ViewGroup) inflater.inflate(R.layout.fragment_travel_destination, container, false);
-            return rootView;
+    public DestinationsCustomView(Context context, AttributeSet attrs) {
+        super(context, attrs);
+        this.setOrientation(VERTICAL);
+    }
+
+    public void setView(LocationInfo currentLocation, String currentTransportMeans) {
+        int order = 1;
+        boolean first = true;
+        for (int i = 0; i < currentLocation.getSurroundingLocations().keySet().size(); i++) {
+            for (List<String> connectionID : currentLocation.getSurroundingLocations().keySet()) {
+                String surroundingLocation = connectionID.get(0);
+                String meansTransport = connectionID.get(1);
+                if ((order == currentLocation.getSurroundingLocationOrder(surroundingLocation, meansTransport)) && (
+                        currentTransportMeans.equals(meansTransport)) && (
+                        currentLocation.hasDestinationsFromSurroundingLocation(surroundingLocation, currentTransportMeans))) {
+                    addDestinationsInfo(currentLocation, currentTransportMeans, surroundingLocation, first);
+                    first = false;
+                }
+            }
+            order += 1;
+        }
+    }
+
+    private void addDestinationsInfo(LocationInfo currentLocation, String currentTransportMeans, String surroundingLocation, boolean first) {
+        String routeName = currentLocation.getRouteName(surroundingLocation, currentTransportMeans);
+
+        // Separator
+
+        if (!first) {
+            this.addView(new TextView(getContext()));
         }
 
-        @Override
-        public void onResume() {
-            requireActivity().runOnUiThread(() -> ((TravelActivity) requireActivity()).updateUI());
+        // Surrounding location
 
-            String currentLocationName = ((TravelActivity) requireActivity()).currentLocationName;
+        TextView surroundingLocationTextView = new TextView(getContext());
+        this.addView(surroundingLocationTextView);
+        surroundingLocationTextView.setText(surroundingLocation);
 
-            super.onResume();
-            TextView textView = requireActivity().findViewById(R.id.locationTextViewDestination);
-            textView.setText(currentLocationName);
-            ((TextView) requireActivity().findViewById(R.id.wayName)).setText("");
-            ((LinearLayout) requireActivity().findViewById(R.id.destinations)).removeAllViews();
-            ((ConstraintLayout) requireActivity().findViewById(R.id.view_destinations)).setBackgroundColor(Color.WHITE);
-        }
+        // Route name
 
-        private void onClick(View view) {
-            String selectedSurroundingLocation = (String) ((Button) view).getText();
-            LocationInfo currentLocation = ((TravelActivity) requireActivity()).currentLocation;
-            String currentTransportMeans = ((TravelActivity) requireActivity()).currentTransportMeans;
+        LinearLayout routeNameLinearLayout = new LinearLayout(getContext()); // Will allow to set different color just under route name and not entire screen width
+        this.addView(routeNameLinearLayout);
+        routeNameLinearLayout.setGravity(Gravity.CENTER);
 
-            String routeName = currentLocation.getRouteName(selectedSurroundingLocation, currentTransportMeans);
-            View destinationsLayout = ((ConstraintLayout) requireActivity().findViewById(R.id.view_destinations));
-            TextView routeTextView = ((TextView) requireActivity().findViewById(R.id.wayName));
-            LinearLayout destinations = requireActivity().findViewById(R.id.destinations);
-            ((LinearLayout) requireActivity().findViewById(R.id.destinations)).removeAllViews();
-            if (routeName == null) {
-                routeTextView.setText(R.string.no_destination);
-                routeTextView.setTextColor(Color.BLACK);
-                routeTextView.setBackgroundColor(Color.WHITE);
-                destinationsLayout.setBackgroundColor(Color.WHITE);
+        TextView routeTextView = new TextView(getContext());
+        routeNameLinearLayout.addView(routeTextView);
+        routeTextView.setText(routeName);
+        routeTextView.setTextSize(textSizeUnit, routeNameTextSize);
+        routeTextView.setTypeface(routeTextView.getTypeface(), Typeface.BOLD);
+        routeTextView.setGravity(Gravity.CENTER_HORIZONTAL);
+
+        // Destinations and text color
+
+        LinearLayout destinationsLinearLayout = new LinearLayout(getContext());
+        this.addView(destinationsLinearLayout);
+        destinationsLinearLayout.setOrientation(VERTICAL);
+
+        for (String destinationText : currentLocation.getDestinationsFromSurroundingLocation(surroundingLocation, currentTransportMeans)) {
+            TextView destinationTextView = new TextView(getContext());
+            destinationTextView.setText(destinationText);
+            destinationsLinearLayout.addView(destinationTextView);
+            if (isAutoEstrada(routeName) || isItinerarioPrincipal(routeName) ||
+                    isViaMaritima(currentTransportMeans) ||
+                    isViaFerroviaria(currentTransportMeans) || isViaAltaVelocidadeFerroviaria(currentTransportMeans)) {
+                destinationTextView.setTextColor(Color.WHITE);
+                routeTextView.setTextColor(Color.WHITE);
+            } else if (currentLocation.getCountry().equals("Spain") && isCarreteraDelEstado(routeName)) {
+                routeTextView.setTextColor(Color.WHITE);
+                destinationTextView.setTextColor(Color.BLACK);
             } else {
-                routeTextView.setText(routeName);
-                for (String destinationText : currentLocation.getDestinationsFromSurroundingLocation(selectedSurroundingLocation, currentTransportMeans)) {
-                    TextView destination = new TextView(getContext());
-                    destination.setText(destinationText);
-                    destinations.addView(destination);
-                    if (isAutoEstrada(routeName) || isItinerarioPrincipal(routeName) || isViaMaritima(currentTransportMeans) || isViaFerroviaria(currentTransportMeans)) {
-                        destination.setTextColor(Color.WHITE);
-                        routeTextView.setTextColor(Color.WHITE);
-                    } else if (currentLocation.getCountry().equals("Spain") && isCarreteraDelEstado(routeName)) {
-                        routeTextView.setTextColor(Color.WHITE);
-                        destination.setTextColor(Color.BLACK);
-                    } else {
-                        destination.setTextColor(Color.BLACK);
-                        routeTextView.setTextColor(Color.BLACK);
-                    }
-                }
-                if (isAutoEstrada(routeName)) {
-                    destinationsLayout.setBackgroundColor(Color.BLUE);
-                    routeTextView.setBackgroundColor(Color.BLUE);
-                } else if (isItinerarioPrincipal(routeName)) {
-                    destinationsLayout.setBackgroundColor(Color.parseColor("#008000")); // Dark green
-                    routeTextView.setBackgroundColor(Color.parseColor("#008000"));
-                } else if (isViaMaritima(currentTransportMeans)) {
-                    destinationsLayout.setBackgroundColor(Color.CYAN);
-                    routeTextView.setBackgroundColor(Color.CYAN);
-                } else if (isViaFerroviaria(currentTransportMeans)) {
-                    destinationsLayout.setBackgroundColor(Color.parseColor("#800000")); // Dark brown
-                    routeTextView.setBackgroundColor(Color.parseColor("#800000"));
-                } else {
-                    routeTextView.setBackgroundColor(Color.WHITE);
-                    destinationsLayout.setBackgroundColor(Color.WHITE);
-                }
-
-                if (isCarreteraDelEstado(routeName) || isItinerarioPrincipal(routeName))
-                    routeTextView.setBackgroundColor(Color.RED);
+                destinationTextView.setTextColor(Color.BLACK);
+                routeTextView.setTextColor(Color.BLACK);
             }
         }
 
-        private boolean isAutoEstrada(String routeName) {
-            return (routeName.startsWith("A-") || // Autovía
-                    (routeName.charAt(0) == 'A' && ((routeName.length() == 2) || (routeName.length() == 3))) || // Ex: A2, A22
-                    routeName.startsWith("AP-") || // Autopista
-                    routeName.startsWith("SE-") || // Seville
-                    routeName.startsWith("H-") || // Huelva
-                    routeName.startsWith("CA-") || // Cádiz
-                    routeName.startsWith("EX-A") || // Extremadura
-                    routeName.startsWith("CO-") || // Córdoba
-                    routeName.startsWith("CM-") || // Castilla-La Mancha
-                    routeName.startsWith("M-") || // Madrid
-                    routeName.startsWith("MA-") || // Málaga
-                    routeName.startsWith("TO-") || // Toledo
-                    routeName.startsWith("R-") || // Radial
-                    routeName.equals("A9 CREL"));
+        // Background color
+
+        if (isAutoEstrada(routeName)) {
+            routeNameLinearLayout.setBackgroundColor(autoEstradaColor);
+            destinationsLinearLayout.setBackgroundColor(autoEstradaColor);
+        } else if (isItinerarioPrincipal(routeName)) {
+            routeNameLinearLayout.setBackgroundColor(itinerarioPrincipalColor);
+            destinationsLinearLayout.setBackgroundColor(itinerarioPrincipalColor);
+        } else if (isViaMaritima(currentTransportMeans)) {
+            routeNameLinearLayout.setBackgroundColor(viaMaritimaColor);
+            destinationsLinearLayout.setBackgroundColor(viaMaritimaColor);
+        } else if (isViaFerroviaria(currentTransportMeans)) {
+            routeNameLinearLayout.setBackgroundColor(viaFerroviariaColor);
+            destinationsLinearLayout.setBackgroundColor(viaFerroviariaColor);
+        } else if (isViaAltaVelocidadeFerroviaria(currentTransportMeans)) {
+            routeNameLinearLayout.setBackgroundColor(viaAltaVelocidadeFerroviariaColor);
+            destinationsLinearLayout.setBackgroundColor(viaAltaVelocidadeFerroviariaColor);
+        } else {
+            routeNameLinearLayout.setBackgroundColor(defaultBackgroundColor);
+            destinationsLinearLayout.setBackgroundColor(defaultBackgroundColor);
         }
 
-        private boolean isItinerarioPrincipal(String routeName) {
-            return (routeName.startsWith("IP"));
-        }
+        // When route name background color does not match general background color
+        if (isCarreteraDelEstado(routeName) || isItinerarioPrincipal(routeName))
+            routeTextView.setBackgroundColor(redRouteHighlight);
 
-        private boolean isViaMaritima(String meansTransport) {
-            return (meansTransport.equals(BOAT));
-        }
+        // Required - https://developer.android.com/training/custom-views/create-view#addprop
 
-        private boolean isViaFerroviaria(String meansTransport) {
-            return (meansTransport.equals(TRAIN) || meansTransport.equals(HIGH_SPEED_TRAIN));
-        }
+        invalidate();
+        requestLayout();
+    }
 
-        private boolean isCarreteraDelEstado(String routeName) {
-            return (routeName.startsWith("N-"));
-        }
+    private boolean isAutoEstrada(String routeName) {
+        return (
+                // General auto-estradas
+                routeName.startsWith("A-") || // Autovía (also Andaluzia)
+                routeName.startsWith("AP-") || // Autopista
+                routeName.startsWith("R-") || // Radial
+                (routeName.charAt(0) == 'A' && ((routeName.length() == 2) || (routeName.length() == 3))) || // Ex: A2, A22
+                routeName.equals("A9 CREL") ||
 
+                // Spanish autonomous community auto-estradas
+                routeName.startsWith("CM-") || // Castilla-La Mancha
+                routeName.startsWith("EX-A") || // Extremadura
+                routeName.startsWith("M-") || // Comunidad de Madrid
+
+                // Spanish provincial auto-estradas
+                routeName.startsWith("CA-") || // Cádiz
+                routeName.startsWith("CO-") || // Córdoba
+                routeName.startsWith("GR-") || // Granada
+                routeName.startsWith("H-") || // Huelva
+                routeName.startsWith("MA-") || // Málaga
+                routeName.startsWith("SE-") || // Seville
+                routeName.startsWith("TO-") // Toledo
+        );
+    }
+
+    private boolean isItinerarioPrincipal(String routeName) {
+        return (routeName.startsWith("IP"));
+    }
+
+    private boolean isViaMaritima(String meansTransport) {
+        return (meansTransport.equals(TravelActivity.BOAT));
+    }
+
+    private boolean isViaFerroviaria(String meansTransport) {
+        return meansTransport.equals(TravelActivity.TRAIN);
+    }
+
+    private boolean isViaAltaVelocidadeFerroviaria(String meansTransport) {
+        return meansTransport.equals(TravelActivity.HIGH_SPEED_TRAIN);
+    }
+
+    private boolean isCarreteraDelEstado(String routeName) {
+        return (routeName.startsWith("N-"));
     }
 
 }
