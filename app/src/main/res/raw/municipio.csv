@@ -5,11 +5,14 @@ Albolote,Granada
 Alcalá de Guadaíra,Sevilha
 Alcalá de los Gazules,Cádiz
 Alcorcón,Comunidade de Madrid
+Algarrobo,Málaga
 Algeciras,Cádiz
 Alhaurín de la Torre,Málaga
+Alhendín,Granada
 Almaraz,Cáceres
 Almendralejo,Badajoz
 Almensilla,Sevilha
+Almuñécar,Granada
 Almuradiel,Ciudad Real
 Andújar,Jaén
 Antequera,Málaga
@@ -65,6 +68,7 @@ El Carpio,Córdoba
 El Cuervo de Sevilla,Sevilha
 El Garrobo,Sevilha
 El Granado,Huelva
+El Pinar,Granada
 El Ronquillo,Sevilha
 Encinas Reales,Córdoba
 Encinasola,Huelva
@@ -73,6 +77,7 @@ Espartinas,Sevilha
 Estepa,Sevilha
 Estepona,Málaga
 Fernán Núñez,Córdoba
+Frigiliana,Málaga
 Fuengirola,Málaga
 Fuenlabrada,Comunidade de Madrid
 Fuente de Cantos,Badajoz
@@ -81,6 +86,7 @@ Fuentes de Andalucía,Sevilha
 Gelves,Sevilha
 Getafe,Comunidade de Madrid
 Gibraleón,Huelva
+Granada,Granada
 Guareña,Badajoz
 Guarromán,Jaén
 Guillena,Sevilha
@@ -97,21 +103,22 @@ Jaraicejo,Cáceres
 Jerez de la Frontera,Cádiz
 La Calzada de Oropesa,Toledo
 La Campana,Sevilha
-La Carolina,Jaén
 La Carlota,Córdoba
-La Guardia,Toledo
+La Carolina,Jaén
 La Guardia de Jaén,Jaén
+La Guardia,Toledo
 La Línea de la Concepción,Cádiz
 La Luisiana,Sevilha
 La Puebla de Cazalla,Sevilha
 La Rinconada,Sevilha
 La Roda de Andalucía,Sevilha
-Las Rozas de Madrid,Comunidade de Madrid
 Láchar,Granada
 Lagartera,Toledo
 Las Cabezas de San Juan,Sevilha
+Las Rozas de Madrid,Comunidade de Madrid
 Las Ventas de Retamosa,Toledo
 Lebrija,Sevilha
+Lecrín,Granada
 Leganés,Comunidade de Madrid
 Lepe,Huelva
 Llanos del Caudillo,Ciudad Real
@@ -151,21 +158,27 @@ Monturque,Córdoba
 Moraleda de Zafayona,Granada
 Moraleja de Enmedio,Comunidade de Madrid
 Móstoles,Comunidade de Madrid
+Motril,Granada
 Navalcarnero,Comunidade de Madrid
 Navalmoral de la Mata,Cáceres
+Nerja,Málaga
+Nigüelas,Granada
 Noalejo,Jaén
 Ocaña,Toledo
+Ogíjares,Granada
 Oliva de la Frontera,Badajoz
 Ontígola,Toledo
 Oropesa,Toledo
 Osuna,Sevilha
 Otero,Toledo
+Padul,Granada
 Palomares del Río,Sevilha
 Paradas,Sevilha
 Paymogo,Huelva
 Pedrera,Sevilha
 Pedro Abad,Córdoba
 Pegalajar,Jaén
+Peligros,Granada
 Pepino,Toledo
 Peraleda de la Mata,Cáceres
 Pinos Puente,Granada
@@ -183,6 +196,7 @@ Rincón de la Victoria,Málaga
 Romangordo,Cáceres
 Rosal de la Frontera,Huelva
 Salar,Granada
+Salobreña,Granada
 Salteras,Sevilha
 San Bartolomé de la Torre,Huelva
 San Juan de Aznalfarache,Sevilha
@@ -198,8 +212,8 @@ Santa Cruz de Mudela,Ciudad Real
 Santa Cruz del Retamar,Toledo
 Santa Elena,Jaén
 Santa Fe,Granada
-Santa Olalla,Toledo
 Santa Olalla del Cala,Huelva
+Santa Olalla,Toledo
 Santiponce,Sevilha
 Santo Domingo-Caudilla,Toledo
 Saucedilla,Cáceres
@@ -214,6 +228,7 @@ Torrecillas de la Tiesa,Cáceres
 Torrejón de Velasco,Comunidade de Madrid
 Torremejía,Badajoz
 Torremolinos,Málaga
+Torrox,Málaga
 Trujillanos,Badajoz
 Trujillo,Cáceres
 Umbrete,Sevilha
@@ -221,10 +236,14 @@ Utrera,Sevilha
 Valdepeñas,Ciudad Real
 Valencia del Mombuey,Badajoz
 Valmojado,Toledo
+Vélez de Benaudalla,Granada
+Vélez-Málaga,Málaga
+Villa de Otura,Granada
 Villa del Río,Córdoba
 Villablanca,Huelva
 Villafranca de Córdoba,Córdoba
 Villafranca de los Barros,Badajoz
+Villamena,Granada
 Villamesías,Cáceres
 Villanueva de Córdoba,Córdoba
 Villanueva de la Reina,Jaén

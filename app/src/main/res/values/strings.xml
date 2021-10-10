@@ -5,7 +5,7 @@
     <string name="version_text">Version %1$s.%2$s.%3$s</string>
     <string name="version_major" translatable="false">1</string>
     <string name="version_minor" translatable="false">9</string>
-    <string name="version_patch" translatable="false">0</string>
+    <string name="version_patch" translatable="false">1</string>
     <string name="title_activity_travel">Travel</string>
     <string name="concelho">Municipality</string>
     <string name="municipio">Municipality</string>
