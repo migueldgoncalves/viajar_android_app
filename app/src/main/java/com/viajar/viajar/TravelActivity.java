@@ -249,6 +249,28 @@ public class TravelActivity extends FragmentActivity {
             algo.setView(currentLocation, currentTransportMeans);
             destinationLayoutGPS.addView(algo);
         }
+
+        // Hides all transport means buttons, then shows only buttons of transport means accessible from current location
+        // ADD NEW TRANSPORT MEANS HERE
+
+        BottomNavigationView locationButtons = findViewById(R.id.bottomNavigationView);
+
+        locationButtons.getMenu().findItem(R.id.car).setVisible(false);
+        locationButtons.getMenu().findItem(R.id.train).setVisible(false);
+        locationButtons.getMenu().findItem(R.id.boat).setVisible(false);
+        locationButtons.getMenu().findItem(R.id.plane).setVisible(false);
+        locationButtons.getMenu().findItem(R.id.highSpeedTrain).setVisible(false);
+
+        if (currentLocation.getSurroundingLocationsByTransportMeans(CAR).size() > 0)
+            locationButtons.getMenu().findItem(R.id.car).setVisible(true);
+        if (currentLocation.getSurroundingLocationsByTransportMeans(TRAIN).size() > 0)
+            locationButtons.getMenu().findItem(R.id.train).setVisible(true);
+        if (currentLocation.getSurroundingLocationsByTransportMeans(BOAT).size() > 0)
+            locationButtons.getMenu().findItem(R.id.boat).setVisible(true);
+        if (currentLocation.getSurroundingLocationsByTransportMeans(PLANE).size() > 0)
+            locationButtons.getMenu().findItem(R.id.plane).setVisible(true);
+        if (currentLocation.getSurroundingLocationsByTransportMeans(HIGH_SPEED_TRAIN).size() > 0)
+            locationButtons.getMenu().findItem(R.id.highSpeedTrain).setVisible(true);
     }
 
     public void onClickGPS(View view) {
@@ -361,12 +383,13 @@ public class TravelActivity extends FragmentActivity {
             for(LocationInfo surroundingLocation: surroundingLocations) {
                 LatLng surroundingLocationCoordinates = new LatLng(surroundingLocation.getLatitude(), surroundingLocation.getLongitude());
                 float markerColor;
-                if (currentLocation.getSurroundingLocationsByTransportMeans(currentTransportMeans).contains(surroundingLocation.getName()))
+                if (currentLocation.getSurroundingLocationsByTransportMeans(currentTransportMeans).contains(surroundingLocation.getName())) {
                     markerColor = BitmapDescriptorFactory.HUE_BLUE;
+                    b.include(surroundingLocationCoordinates);
+                }
                 else
                     markerColor = BitmapDescriptorFactory.HUE_CYAN;
                 mMap.addMarker(new MarkerOptions().position(surroundingLocationCoordinates).title(surroundingLocation.getName()).icon(BitmapDescriptorFactory.defaultMarker(markerColor)));
-                b.include(surroundingLocationCoordinates);
             }
             LatLngBounds bounds = b.build();
             CameraUpdate c = CameraUpdateFactory.newLatLngBounds(bounds,150);
