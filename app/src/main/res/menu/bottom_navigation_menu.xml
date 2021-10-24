@@ -3,15 +3,15 @@
     <item
         android:id="@+id/car"
         android:title="@string/car"
-        android:icon="@mipmap/car_icon"/>
+        android:icon="@drawable/car_icon"/>
     <item
         android:id="@+id/train"
         android:title="@string/train"
-        android:icon="@mipmap/train_icon"/>
+        android:icon="@drawable/train_icon"/>
     <item
         android:id="@+id/boat"
         android:title="@string/boat"
-        android:icon="@mipmap/boat_icon"/>
+        android:icon="@drawable/boat_icon"/>
     <item
         android:id="@+id/plane"
         android:title="@string/plane"

@@ -1,6 +1,8 @@
 package com.viajar.viajar;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -56,12 +58,13 @@ public class TravelActivity extends FragmentActivity {
     public static final String HIGH_SPEED_TRAIN = "Comboio de Alta Velocidade";
     public static final String PLANE = "Avião";
 
-    public static final int TAB_NUMBER = 2;
+    public static final int TAB_NUMBER = 3;
 
     private LocationInfo currentLocation;
     private ArrayList<LocationInfo> surroundingLocations;
     private String currentLocationName;
     private String currentTransportMeans;
+    private ArrayList<String[]> allCoordinatesAndNames;
 
     private ViewPager2 viewPager2;
     private TabLayout tabLayout;
@@ -178,6 +181,8 @@ public class TravelActivity extends FragmentActivity {
                     return new GPSPageFragment();
                 case (1):
                     return new InfoPageFragment();
+                case (2):
+                    return new MapPageFragment();
                 default:
                     return null;
             }
@@ -247,7 +252,8 @@ public class TravelActivity extends FragmentActivity {
         if (currentLocation.hasDestinationsInMeansTransport(currentTransportMeans)) {
             DestinationsCustomView algo = new DestinationsCustomView(getApplicationContext(), null);
             algo.setView(currentLocation, currentTransportMeans);
-            destinationLayoutGPS.addView(algo);
+            if (destinationLayoutGPS != null)
+                destinationLayoutGPS.addView(algo);
         }
 
         // Hides all transport means buttons, then shows only buttons of transport means accessible from current location
@@ -289,6 +295,7 @@ public class TravelActivity extends FragmentActivity {
         DBInterface dbInterface = DBInterface.getDBInterface(getApplicationContext());
         if (populateDatabase) {
             dbInterface.populateDatabase(getApplicationContext());
+            allCoordinatesAndNames = dbInterface.getAllCoordinatesAndNames(getApplicationContext());
         }
         currentLocation = dbInterface.generateLocationObject(getApplicationContext(), currentLocationName);
         surroundingLocations = new ArrayList<>();
@@ -467,6 +474,108 @@ public class TravelActivity extends FragmentActivity {
             }
         }
     }
+
+    public static class MapPageFragment extends Fragment implements OnMapReadyCallback {
+
+        private final int largeIconSize = 350;
+
+        MapView mMapView;
+        private GoogleMap mMap;
+
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+            View rootView = inflater.inflate(R.layout.fragment_travel_map, container, false);
+
+            mMapView = rootView.findViewById(R.id.map);
+            mMapView.onCreate(savedInstanceState);
+            mMapView.onResume();
+            mMapView.getMapAsync(this);
+
+            return rootView;
+        }
+
+        /**
+         * Manipulates the map once available.
+         * This callback is triggered when the map is ready to be used.
+         * This is where we can add markers or lines, add listeners or move the camera. In this case,
+         * we just add a marker near Sydney, Australia.
+         * If Google Play services is not installed on the device, the user will be prompted to install
+         * it inside the SupportMapFragment. This method will only be triggered once the user has
+         * installed Google Play services and returned to the app.
+         */
+        @Override
+        public void onMapReady(@NonNull GoogleMap googleMap) {
+            mMap = googleMap;
+            mMap.getUiSettings().setScrollGesturesEnabled(false);
+            if (!DBInterface.getDeveloperMode())
+                createMapMarkers();
+        }
+
+        @Override
+        public void onResume() {
+            super.onResume();
+            mMapView.onResume();
+
+            LocationInfo currentLocation = ((TravelActivity) requireActivity()).currentLocation;
+            TextView textView = requireActivity().findViewById(R.id.locationTextViewMap);
+            textView.setText(currentLocation.getName());
+
+            requireActivity().runOnUiThread(this::createMapMarkers);
+        }
+
+
+        @Override
+        public void onPause() {
+            super.onPause();
+            mMapView.onPause();
+        }
+
+        @Override
+        public void onDestroy() {
+            super.onDestroy();
+            mMapView.onDestroy();
+        }
+
+        @Override
+        public void onLowMemory() {
+            super.onLowMemory();
+            mMapView.onLowMemory();
+        }
+
+        public void createMapMarkers() {
+            LocationInfo currentLocation = ((TravelActivity) requireActivity()).currentLocation;
+            ArrayList<String[]> allCoordinatesAndNames = ((TravelActivity) requireActivity()).allCoordinatesAndNames;
+
+            mMap.clear();
+            LatLngBounds.Builder b = new LatLngBounds.Builder();
+            LatLng location = new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude());
+            b.include(location);
+            Bitmap bm = BitmapFactory.decodeResource(getResources(), R.mipmap.marker_icon);
+            Bitmap largeMarker = Bitmap.createScaledBitmap(bm, largeIconSize, largeIconSize, false);
+            mMap.addMarker(new MarkerOptions().position(location).title(currentLocation.getName()).icon(BitmapDescriptorFactory.fromBitmap(largeMarker)));
+            mMap.animateCamera(CameraUpdateFactory.newLatLng(location));
+            //mMap.moveCamera(CameraUpdateFactory.newLatLng(location));
+            //mMap.setMinZoomPreference(ZOOM_LEVEL);
+
+            for(String[] coordinatesAndName: allCoordinatesAndNames) {
+                Double latitude = Double.valueOf(coordinatesAndName[0]);
+                Double longitude = Double.valueOf(coordinatesAndName[1]);
+                String name = coordinatesAndName[2];
+
+                if (name.equals(currentLocation.getName()))
+                    continue; // Marker already added
+
+                LatLng surroundingLocationCoordinates = new LatLng(latitude, longitude);
+                float markerColor = BitmapDescriptorFactory.HUE_BLUE;
+                mMap.addMarker(new MarkerOptions().position(surroundingLocationCoordinates).title(name).icon(BitmapDescriptorFactory.defaultMarker(markerColor)));
+                b.include(surroundingLocationCoordinates);
+            }
+            LatLngBounds bounds = b.build();
+            CameraUpdate c = CameraUpdateFactory.newLatLngBounds(bounds,150);
+            mMap.animateCamera(c);
+            //mMap.moveCamera(c);
+        }
+    }
 }
 
 class DestinationsCustomView extends LinearLayout {
@@ -596,6 +705,8 @@ class DestinationsCustomView extends LinearLayout {
                 routeName.startsWith("R-") || // Radial
                 (routeName.charAt(0) == 'A' && ((routeName.length() == 2) || (routeName.length() == 3))) || // Ex: A2, A22
                 routeName.equals("A9 CREL") ||
+                routeName.equals("A13-1") ||
+                routeName.equals("A26-1") ||
 
                 // Spanish autonomous community auto-estradas
                 routeName.startsWith("CM-") || // Castilla-La Mancha

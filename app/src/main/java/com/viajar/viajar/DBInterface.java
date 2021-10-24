@@ -143,6 +143,19 @@ public class DBInterface {
         return getDatabase(context).dao().getLocationNumber();
     }
 
+    public ArrayList<String[]> getAllCoordinatesAndNames(Context context) {
+        ArrayList<String[]> allCoordinatesAndNames = new ArrayList<>();
+        Location[] locations = getDatabase(context).dao().getAllLocations();
+        for (Location location : locations) {
+            String[] coordinatesAndName = new String[3];
+            coordinatesAndName[0] = Double.toString(location.latitude);
+            coordinatesAndName[1] = Double.toString(location.longitude);
+            coordinatesAndName[2] = location.name;
+            allCoordinatesAndNames.add(coordinatesAndName);
+        }
+        return allCoordinatesAndNames;
+    }
+
     private String getOppositeCardinalPoint(String cardinalPoint) {
         switch (cardinalPoint) {
             case TravelActivity.NORTH:

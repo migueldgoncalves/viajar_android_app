@@ -29,6 +29,9 @@ public interface dao {
     @Query("SELECT COUNT(name) FROM location")
     int getLocationNumber();
 
+    @Query("SELECT * FROM location")
+    Location[] getAllLocations();
+
     // Connection table
 
     @Insert
