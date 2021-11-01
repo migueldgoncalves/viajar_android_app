@@ -34,6 +34,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.PolylineOptions;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.tabs.TabLayout;
 
@@ -64,7 +65,9 @@ public class TravelActivity extends FragmentActivity {
     private ArrayList<LocationInfo> surroundingLocations;
     private String currentLocationName;
     private String currentTransportMeans;
+    private String currentMapArea;
     private ArrayList<String[]> allCoordinatesAndNames;
+    private ArrayList<String[]> allConnectionsCoordinates;
 
     private ViewPager2 viewPager2;
     private TabLayout tabLayout;
@@ -116,7 +119,7 @@ public class TravelActivity extends FragmentActivity {
         currentLocationName = getString(R.string.default_initial_location);
         currentTransportMeans = TravelActivity.CAR;
 
-        BottomNavigationView locationButtons = findViewById(R.id.bottomNavigationView);
+        BottomNavigationView locationButtons = findViewById(R.id.bottomNavigationViewGPS);
         locationButtons.setOnNavigationItemSelectedListener(item -> {
             if (currentLocation == null)
                 return false;
@@ -259,7 +262,7 @@ public class TravelActivity extends FragmentActivity {
         // Hides all transport means buttons, then shows only buttons of transport means accessible from current location
         // ADD NEW TRANSPORT MEANS HERE
 
-        BottomNavigationView locationButtons = findViewById(R.id.bottomNavigationView);
+        BottomNavigationView locationButtons = findViewById(R.id.bottomNavigationViewGPS);
 
         locationButtons.getMenu().findItem(R.id.car).setVisible(false);
         locationButtons.getMenu().findItem(R.id.train).setVisible(false);
@@ -296,6 +299,7 @@ public class TravelActivity extends FragmentActivity {
         if (populateDatabase) {
             dbInterface.populateDatabase(getApplicationContext());
             allCoordinatesAndNames = dbInterface.getAllCoordinatesAndNames(getApplicationContext());
+            allConnectionsCoordinates = dbInterface.getAllConnectionCoordinates(getApplicationContext());
         }
         currentLocation = dbInterface.generateLocationObject(getApplicationContext(), currentLocationName);
         surroundingLocations = new ArrayList<>();
@@ -350,6 +354,13 @@ public class TravelActivity extends FragmentActivity {
         public void onResume() {
             super.onResume();
             mMapView.onResume();
+
+            // Makes only the GPS bottom navigation bar visible
+            View bottomNavigationViewGPS = requireActivity().findViewById(R.id.bottomNavigationViewGPS);
+            requireActivity().runOnUiThread(() -> bottomNavigationViewGPS.setVisibility(View.VISIBLE));
+            View bottomNavigationViewMap = requireActivity().findViewById(R.id.bottomNavigationViewMap);
+            requireActivity().runOnUiThread(() -> bottomNavigationViewMap.setVisibility(View.INVISIBLE));
+
             requireActivity().runOnUiThread(() -> ((TravelActivity) requireActivity()).updateUI());
         }
 
@@ -418,6 +429,13 @@ public class TravelActivity extends FragmentActivity {
             String currentLocationName = ((TravelActivity) requireActivity()).currentLocationName;
 
             super.onResume();
+
+            // Hides both bottom navigation bars
+            View bottomNavigationViewGPS = requireActivity().findViewById(R.id.bottomNavigationViewGPS);
+            requireActivity().runOnUiThread(() -> bottomNavigationViewGPS.setVisibility(View.INVISIBLE));
+            View bottomNavigationViewMap = requireActivity().findViewById(R.id.bottomNavigationViewMap);
+            requireActivity().runOnUiThread(() -> bottomNavigationViewMap.setVisibility(View.INVISIBLE));
+
             TextView textView = requireActivity().findViewById(R.id.locationTextViewInfo);
             textView.setText(currentLocationName);
             EditText editText = requireActivity().findViewById(R.id.travelInfoText);
@@ -477,7 +495,12 @@ public class TravelActivity extends FragmentActivity {
 
     public static class MapPageFragment extends Fragment implements OnMapReadyCallback {
 
-        private final int largeIconSize = 350;
+        private static final int largeIconSize = 350;
+        private static final int lineWidth = 5;
+        private static final int defaultLineColor = Color.BLACK;
+        private static final int mapPadding = 50;
+        private static final double aroundMapSize = 0.15 / 2; // Degrees - In Iberian Peninsula 1 degree = ~100 km
+        private static final int defaultMapAreaID = R.id.around;
 
         MapView mMapView;
         private GoogleMap mMap;
@@ -490,6 +513,29 @@ public class TravelActivity extends FragmentActivity {
             mMapView.onCreate(savedInstanceState);
             mMapView.onResume();
             mMapView.getMapAsync(this);
+
+            LocationInfo currentLocation = ((TravelActivity) requireActivity()).currentLocation;
+            BottomNavigationView mapAreaButtons = requireActivity().findViewById(R.id.bottomNavigationViewMap);
+            mapAreaButtons.setOnNavigationItemSelectedListener(item -> {
+                if (currentLocation == null)
+                    return false;
+                if (item.getItemId() == R.id.iberianPeninsula) {
+                    ((TravelActivity) requireActivity()).currentMapArea = getString(R.string.iberian_peninsula);
+                    requireActivity().runOnUiThread(this::enquadrarMapa);
+                    return true;
+                }
+                else if (item.getItemId() == R.id.region) {
+                    ((TravelActivity) requireActivity()).currentMapArea = getString(R.string.region);
+                    requireActivity().runOnUiThread(this::enquadrarMapa);
+                    return true;
+                }
+                else if (item.getItemId() == R.id.around) {
+                    ((TravelActivity) requireActivity()).currentMapArea = getString(R.string.around);
+                    requireActivity().runOnUiThread(this::enquadrarMapa);
+                    return true;
+                }
+                return false;
+            });
 
             return rootView;
         }
@@ -508,7 +554,7 @@ public class TravelActivity extends FragmentActivity {
             mMap = googleMap;
             mMap.getUiSettings().setScrollGesturesEnabled(false);
             if (!DBInterface.getDeveloperMode())
-                createMapMarkers();
+                desenharMapa();
         }
 
         @Override
@@ -516,11 +562,19 @@ public class TravelActivity extends FragmentActivity {
             super.onResume();
             mMapView.onResume();
 
+            // Makes only the map bottom navigation bar visible
+            BottomNavigationView bottomNavigationViewGPS = requireActivity().findViewById(R.id.bottomNavigationViewGPS);
+            requireActivity().runOnUiThread(() -> bottomNavigationViewGPS.setVisibility(View.INVISIBLE));
+            BottomNavigationView bottomNavigationViewMap = requireActivity().findViewById(R.id.bottomNavigationViewMap);
+            requireActivity().runOnUiThread(() -> bottomNavigationViewMap.setVisibility(View.VISIBLE));
+
+            bottomNavigationViewMap.setSelectedItemId(defaultMapAreaID);
+
             LocationInfo currentLocation = ((TravelActivity) requireActivity()).currentLocation;
             TextView textView = requireActivity().findViewById(R.id.locationTextViewMap);
             textView.setText(currentLocation.getName());
 
-            requireActivity().runOnUiThread(this::createMapMarkers);
+            requireActivity().runOnUiThread(this::desenharMapa);
         }
 
 
@@ -542,17 +596,22 @@ public class TravelActivity extends FragmentActivity {
             mMapView.onLowMemory();
         }
 
-        public void createMapMarkers() {
+        public void desenharMapa() {
             LocationInfo currentLocation = ((TravelActivity) requireActivity()).currentLocation;
             ArrayList<String[]> allCoordinatesAndNames = ((TravelActivity) requireActivity()).allCoordinatesAndNames;
+            ArrayList<String[]> allConnectionsCoordinates = ((TravelActivity) requireActivity()).allConnectionsCoordinates;
+
+            if (mMap == null)
+                return;
 
             mMap.clear();
-            LatLngBounds.Builder b = new LatLngBounds.Builder();
+            //LatLngBounds.Builder b = new LatLngBounds.Builder();
             LatLng location = new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude());
-            b.include(location);
+            //b.include(location);
             Bitmap bm = BitmapFactory.decodeResource(getResources(), R.mipmap.marker_icon);
-            Bitmap largeMarker = Bitmap.createScaledBitmap(bm, largeIconSize, largeIconSize, false);
-            mMap.addMarker(new MarkerOptions().position(location).title(currentLocation.getName()).icon(BitmapDescriptorFactory.fromBitmap(largeMarker)));
+            //Bitmap largeMarker = Bitmap.createScaledBitmap(bm, largeIconSize, largeIconSize, false);
+            //mMap.addMarker(new MarkerOptions().position(location).title(currentLocation.getName()).icon(BitmapDescriptorFactory.fromBitmap(largeMarker)));
+            mMap.addMarker(new MarkerOptions().position(location).title(currentLocation.getName()).icon(BitmapDescriptorFactory.defaultMarker()));
             mMap.animateCamera(CameraUpdateFactory.newLatLng(location));
             //mMap.moveCamera(CameraUpdateFactory.newLatLng(location));
             //mMap.setMinZoomPreference(ZOOM_LEVEL);
@@ -567,11 +626,126 @@ public class TravelActivity extends FragmentActivity {
 
                 LatLng surroundingLocationCoordinates = new LatLng(latitude, longitude);
                 float markerColor = BitmapDescriptorFactory.HUE_BLUE;
-                mMap.addMarker(new MarkerOptions().position(surroundingLocationCoordinates).title(name).icon(BitmapDescriptorFactory.defaultMarker(markerColor)));
-                b.include(surroundingLocationCoordinates);
+                //mMap.addMarker(new MarkerOptions().position(surroundingLocationCoordinates).title(name).icon(BitmapDescriptorFactory.defaultMarker(markerColor)));
+                //b.include(surroundingLocationCoordinates);
             }
+            //LatLngBounds bounds = b.build();
+            enquadrarMapa(); // Enquadra o mapa de acordo com a região escolhida
+
+            for(String[] connectionCoordinates: allConnectionsCoordinates) {
+                Double latitude1 = Double.valueOf(connectionCoordinates[0]);
+                Double longitude1 = Double.valueOf(connectionCoordinates[1]);
+                Double latitude2 = Double.valueOf(connectionCoordinates[2]);
+                Double longitude2 = Double.valueOf(connectionCoordinates[3]);
+                String routeName = connectionCoordinates[4];
+                String meansTransport = connectionCoordinates[5];
+
+                if (meansTransport.equals(PLANE))
+                    continue;
+
+                int lineColor = DestinationsCustomView.getColorByRouteName(routeName, meansTransport);
+                if (lineColor == 0)
+                    lineColor = defaultLineColor;
+                mMap.addPolyline(new PolylineOptions().add(
+                        new LatLng(latitude1, longitude1),
+                        new LatLng(latitude2, longitude2))
+                        .width(lineWidth).color(lineColor));
+            }
+        }
+
+        public void enquadrarMapa() {
+            String currentMapArea = ((TravelActivity) requireActivity()).currentMapArea;
+            LocationInfo currentLocation = ((TravelActivity) requireActivity()).currentLocation;
+
+            LatLngBounds.Builder b = new LatLngBounds.Builder();
+            if (currentMapArea == null)
+                return;
+            else if (currentMapArea.equals(getString(R.string.iberian_peninsula))) {
+                b.include(new LatLng(43.791278, -7.689167)); // North
+                b.include(new LatLng(38.780907, -9.500550)); // West
+                b.include(new LatLng(36.000141, -5.610575)); // South
+                b.include(new LatLng(42.319428, 3.322223)); // East
+            } else if (currentMapArea.equals(getString(R.string.region))) { // PT - Approximately matches NUTS II, ES - Autonomous Communities or parts of them, GI - Gibraltar
+                switch (currentLocation.getCountry()) {
+                    case "Portugal":
+                        String district = ((LocationInfoPortugal) currentLocation).getDistrict();
+                        String intermunicipalEntity = ((LocationInfoPortugal) currentLocation).getIntermunicipalEntity();
+
+                        if (district.equals("Faro")) { // Algarve
+                            b.include(new LatLng(37.528930, -7.574430)); // North
+                            b.include(new LatLng(37.023060, -8.996989)); // West
+                            b.include(new LatLng(36.960175, -7.888063)); // South
+                            b.include(new LatLng(37.163375, -7.399764)); // East
+                        } else if (Arrays.asList("Faro", "Beja", "Évora", "Portalegre").contains(district) || // Alentejo
+                                intermunicipalEntity.equals("Alentejo Litoral")) {
+                            b.include(new LatLng(39.664015, -7.539616)); // North
+                            b.include(new LatLng(38.490404, -8.912161)); // West
+                            b.include(new LatLng(37.318961, -8.065657)); // South
+                            b.include(new LatLng(38.207785, -6.932024)); // East
+                        } else if (Arrays.asList("Área Metropolitana de Lisboa", "Lezíria do Tejo", "Médio Tejo", "Oeste").contains(
+                                intermunicipalEntity)) { // Lisboa e Vale do Tejo
+                            b.include(new LatLng(39.838531, -8.477847)); // North
+                            b.include(new LatLng(38.780907, -9.500550)); // West
+                            b.include(new LatLng(38.409289, -9.198756)); // South
+                            b.include(new LatLng(39.565853, -7.811094)); // East
+                        } else { // Error
+                            return;
+                        }
+                        break;
+                    case "Spain":
+                        String autonomousCommunity = ((LocationInfoSpain) currentLocation).getAutonomousCommunity();
+                        String province = ((LocationInfoSpain) currentLocation).getProvince();
+
+                        if (Arrays.asList("Huelva", "Sevilha", "Córdoba", "Cádiz").contains(province)) { // Western Andalucía
+                            b.include(new LatLng(38.729087, -5.046943)); // North
+                            b.include(new LatLng(37.555508, -7.522651)); // West
+                            b.include(new LatLng(36.000141, -5.610575)); // South
+                            b.include(new LatLng(37.401959, -4.001265)); // East
+                        } else if (Arrays.asList("Málaga", "Jaén", "Granada", "Almería").contains(province)) { // Eastern Andalucía
+                            b.include(new LatLng(38.533100, -2.767157)); // North
+                            b.include(new LatLng(36.539470, -5.609127)); // West
+                            b.include(new LatLng(36.310385, -5.249473)); // South
+                            b.include(new LatLng(37.375263, -1.630213)); // East
+                        } else if (autonomousCommunity.equals("Extremadura")) { // Extremadura
+                            b.include(new LatLng(40.486650, -6.234850)); // North
+                            b.include(new LatLng(39.663752, -7.539327)); // West
+                            b.include(new LatLng(37.941153, -6.180359)); // South
+                            b.include(new LatLng(39.168453, -4.647907)); // East
+                        } else if (Arrays.asList("Ciudad Real", "Toledo").contains(province)) { // Western Castilla-La Mancha
+                            b.include(new LatLng(40.318335, -4.380068)); // North
+                            b.include(new LatLng(39.877307, -5.406371)); // West
+                            b.include(new LatLng(38.342696, -4.287579)); // South
+                            b.include(new LatLng(38.734878, -2.638243)); // East
+                        } else if (autonomousCommunity.equals("Comunidade de Madrid")) { // Madrid
+                            b.include(new LatLng(41.165731, -3.543958)); // North
+                            b.include(new LatLng(40.217163, -4.579124)); // West
+                            b.include(new LatLng(39.884752, -3.804706)); // South
+                            b.include(new LatLng(40.099441, -3.053298)); // East
+                        } else { // Error
+                            return;
+                        }
+                        break;
+                    case "Gibraltar":
+                        b.include(new LatLng(36.155101, -5.345433)); // North
+                        b.include(new LatLng(36.142543, -5.367428)); // West
+                        b.include(new LatLng(36.108838, -5.346123)); // South
+                        b.include(new LatLng(36.145086, -5.337617)); // East
+                        break;
+                    default: // Error
+                        return;
+                }
+
+            } else if (currentMapArea.equals(getString(R.string.around))) {
+                b.include(new LatLng(currentLocation.getLatitude() + aroundMapSize, currentLocation.getLongitude())); // North
+                b.include(new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude() - aroundMapSize)); // West
+                b.include(new LatLng(currentLocation.getLatitude() - aroundMapSize, currentLocation.getLongitude())); // South
+                b.include(new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude() + aroundMapSize)); // East
+            } else { // Invalid string
+                return;
+            }
+
             LatLngBounds bounds = b.build();
-            CameraUpdate c = CameraUpdateFactory.newLatLngBounds(bounds,150);
+            CameraUpdate c = CameraUpdateFactory.newLatLngBounds(bounds, mapPadding);
             mMap.animateCamera(c);
             //mMap.moveCamera(c);
         }
@@ -582,13 +756,14 @@ class DestinationsCustomView extends LinearLayout {
     private final int textSizeUnit = TypedValue.COMPLEX_UNIT_SP;
     private final int routeNameTextSize = 20;
 
-    private final int autoEstradaColor = Color.BLUE;
-    private final int itinerarioPrincipalColor = Color.parseColor("#008000"); // Dark green
-    private final int viaMaritimaColor = Color.CYAN;
-    private final int viaFerroviariaColor = Color.parseColor("#800000"); // Dark brown
-    private final int viaAltaVelocidadeFerroviariaColor = Color.parseColor("#660066"); // Purple
-    private final int defaultBackgroundColor = Color.parseColor("#F0F0F0"); // Ex: itinerários complementares
-    private final int redRouteHighlight = Color.RED; // Ex: itinerários principais
+    private static final int autoEstradaColor = Color.BLUE;
+    private static final int itinerarioPrincipalColor = Color.parseColor("#008000"); // Dark green
+    private static final int itinerarioComplementarColor = Color.parseColor("#808080"); // Grey
+    private static final int viaMaritimaColor = Color.CYAN;
+    private static final int viaFerroviariaColor = Color.parseColor("#800000"); // Dark brown
+    private static final int viaAltaVelocidadeFerroviariaColor = Color.parseColor("#660066"); // Purple
+    private static final int defaultBackgroundColor = Color.parseColor("#F0F0F0"); // Light gray - Ex: itinerários complementares
+    private static final int redRouteHighlight = Color.RED; // Ex: itinerários principais
 
     public DestinationsCustomView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -666,26 +841,11 @@ class DestinationsCustomView extends LinearLayout {
         }
 
         // Background color
-
-        if (isAutoEstrada(routeName)) {
-            routeNameLinearLayout.setBackgroundColor(autoEstradaColor);
-            destinationsLinearLayout.setBackgroundColor(autoEstradaColor);
-        } else if (isItinerarioPrincipal(routeName)) {
-            routeNameLinearLayout.setBackgroundColor(itinerarioPrincipalColor);
-            destinationsLinearLayout.setBackgroundColor(itinerarioPrincipalColor);
-        } else if (isViaMaritima(currentTransportMeans)) {
-            routeNameLinearLayout.setBackgroundColor(viaMaritimaColor);
-            destinationsLinearLayout.setBackgroundColor(viaMaritimaColor);
-        } else if (isViaFerroviaria(currentTransportMeans)) {
-            routeNameLinearLayout.setBackgroundColor(viaFerroviariaColor);
-            destinationsLinearLayout.setBackgroundColor(viaFerroviariaColor);
-        } else if (isViaAltaVelocidadeFerroviaria(currentTransportMeans)) {
-            routeNameLinearLayout.setBackgroundColor(viaAltaVelocidadeFerroviariaColor);
-            destinationsLinearLayout.setBackgroundColor(viaAltaVelocidadeFerroviariaColor);
-        } else {
-            routeNameLinearLayout.setBackgroundColor(defaultBackgroundColor);
-            destinationsLinearLayout.setBackgroundColor(defaultBackgroundColor);
-        }
+        int backgroundColor = getColorByRouteName(routeName, currentTransportMeans);
+        if (backgroundColor == 0)
+            backgroundColor = defaultBackgroundColor;
+        routeNameLinearLayout.setBackgroundColor(backgroundColor);
+        destinationsLinearLayout.setBackgroundColor(backgroundColor);
 
         // When route name background color does not match general background color
         if (isCarreteraDelEstado(routeName) || isItinerarioPrincipal(routeName))
@@ -697,7 +857,28 @@ class DestinationsCustomView extends LinearLayout {
         requestLayout();
     }
 
-    private boolean isAutoEstrada(String routeName) {
+    static int getColorByRouteName(String routeName, String currentTransportMeans) {
+        if (isAutoEstrada(routeName)) {
+            return autoEstradaColor;
+        } else if (isItinerarioPrincipal(routeName)) {
+            return itinerarioPrincipalColor;
+        } else if (isItinerarioComplementar(routeName)) {
+            return itinerarioComplementarColor;
+        } else if (isViaMaritima(currentTransportMeans)) {
+            return viaMaritimaColor;
+        } else if (isViaFerroviaria(currentTransportMeans)) {
+            return viaFerroviariaColor;
+        } else if (isViaAltaVelocidadeFerroviaria(currentTransportMeans)) {
+            return viaAltaVelocidadeFerroviariaColor;
+        } else { // Ex: Itinerários Complementares, Portuguese Estradas Nacionais
+            return 0;
+        }
+    }
+
+    private static boolean isAutoEstrada(String routeName) {
+        if ((routeName == null) || (routeName.length() == 0))
+            return false;
+
         return (
                 // General auto-estradas
                 routeName.startsWith("A-") || // Autovía (also Andaluzia)
@@ -724,23 +905,31 @@ class DestinationsCustomView extends LinearLayout {
         );
     }
 
-    private boolean isItinerarioPrincipal(String routeName) {
+    private static boolean isItinerarioPrincipal(String routeName) {
+        if ((routeName == null) || (routeName.length() == 0))
+            return false;
         return (routeName.startsWith("IP"));
     }
 
-    private boolean isViaMaritima(String meansTransport) {
+    private static boolean isItinerarioComplementar(String routeName) {
+        if ((routeName == null) || (routeName.length() == 0))
+            return false;
+        return (routeName.startsWith("IC"));
+    }
+
+    private static boolean isViaMaritima(String meansTransport) {
         return (meansTransport.equals(TravelActivity.BOAT));
     }
 
-    private boolean isViaFerroviaria(String meansTransport) {
+    private static boolean isViaFerroviaria(String meansTransport) {
         return meansTransport.equals(TravelActivity.TRAIN);
     }
 
-    private boolean isViaAltaVelocidadeFerroviaria(String meansTransport) {
+    private static boolean isViaAltaVelocidadeFerroviaria(String meansTransport) {
         return meansTransport.equals(TravelActivity.HIGH_SPEED_TRAIN);
     }
 
-    private boolean isCarreteraDelEstado(String routeName) {
+    private static boolean isCarreteraDelEstado(String routeName) {
         return (routeName.startsWith("N-"));
     }
 

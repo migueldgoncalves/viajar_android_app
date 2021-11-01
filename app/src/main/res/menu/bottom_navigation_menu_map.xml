@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/around"
+        android:title="@string/around"/>
+    <item
+        android:id="@+id/region"
+        android:title="@string/region"/>
+    <item
+        android:id="@+id/iberianPeninsula"
+        android:title="@string/iberian_peninsula"/>
+</menu>

@@ -26,6 +26,7 @@
         android:name="com.google.android.gms.maps.MapView"
         android:layout_width="match_parent"
         android:paddingTop="60dp"
+        android:paddingBottom="?android:attr/actionBarSize"
         android:layout_height="wrap_content" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

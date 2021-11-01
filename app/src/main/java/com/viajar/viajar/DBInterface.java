@@ -156,6 +156,22 @@ public class DBInterface {
         return allCoordinatesAndNames;
     }
 
+    public ArrayList<String[]> getAllConnectionCoordinates(Context context) {
+        ArrayList<String[]> allConnectionsCoordinates = new ArrayList<>();
+        dao.ConnectionCoordinates[] connectionsCoordinates = getDatabase(context).dao().getConnectionsCoordinates();
+        for (dao.ConnectionCoordinates connectionCoordinates : connectionsCoordinates) {
+            String[] coordinatesAndExtraInfo = new String[6];
+            coordinatesAndExtraInfo[0] = Double.toString(connectionCoordinates.latitude1);
+            coordinatesAndExtraInfo[1] = Double.toString(connectionCoordinates.longitude1);
+            coordinatesAndExtraInfo[2] = Double.toString(connectionCoordinates.latitude2);
+            coordinatesAndExtraInfo[3] = Double.toString(connectionCoordinates.longitude2);
+            coordinatesAndExtraInfo[4] = connectionCoordinates.extraInfo;
+            coordinatesAndExtraInfo[5] = connectionCoordinates.meansTransport;
+            allConnectionsCoordinates.add(coordinatesAndExtraInfo);
+        }
+        return allConnectionsCoordinates;
+    }
+
     private String getOppositeCardinalPoint(String cardinalPoint) {
         switch (cardinalPoint) {
             case TravelActivity.NORTH:

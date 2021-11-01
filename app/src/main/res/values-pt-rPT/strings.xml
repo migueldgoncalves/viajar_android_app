@@ -38,4 +38,7 @@
     <string name="brief_info_es_multiprovince">%1$s, Província de %2$s, %3$s, Espanha</string>
     <string name="brief_info_es_uniprovince">%1$s, %2$s, Espanha</string>
     <string name="brief_info_gi">Gibraltar</string>
+    <string name="iberian_peninsula">Península Ibérica</string>
+    <string name="gibraltar">Gibraltar</string>
+    <string name="around">À Volta</string>
 </resources>

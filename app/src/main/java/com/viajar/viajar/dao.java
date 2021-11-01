@@ -183,4 +183,22 @@ public interface dao {
 
     @Query("SELECT comarca FROM comarca WHERE municipio = :municipio AND province = :province")
     String[] getComarcas(String municipio, String province);
+
+    // Required queries for the global map tab
+
+    @Query("SELECT location1.latitude AS latitude1, location1.longitude AS longitude1, " +
+            "location2.latitude AS latitude2, location2.longitude AS longitude2, " +
+            "connection.extra_info AS extraInfo, connection.means_transport AS meansTransport " +
+            "FROM location AS location1, location AS location2, connection " +
+            "WHERE location1.name = connection.location_a AND location2.name = connection.location_b;")
+    ConnectionCoordinates[] getConnectionsCoordinates();
+
+    class ConnectionCoordinates {
+        public double latitude1;
+        public double longitude1;
+        public double latitude2;
+        public double longitude2;
+        public String extraInfo;
+        public String meansTransport;
+    }
 }
