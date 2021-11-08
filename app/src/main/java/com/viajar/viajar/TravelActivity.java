@@ -665,7 +665,7 @@ public class TravelActivity extends FragmentActivity {
                 b.include(new LatLng(38.780907, -9.500550)); // West
                 b.include(new LatLng(36.000141, -5.610575)); // South
                 b.include(new LatLng(42.319428, 3.322223)); // East
-            } else if (currentMapArea.equals(getString(R.string.region))) { // PT - Approximately matches NUTS II, ES - Autonomous Communities or parts of them, GI - Gibraltar
+            } else if (currentMapArea.equals(getString(R.string.region))) { // PT - Groups of districts, ES - Autonomous Communities or parts of them, GI - Gibraltar
                 switch (currentLocation.getCountry()) {
                     case "Portugal":
                         String district = ((LocationInfoPortugal) currentLocation).getDistrict();
@@ -676,18 +676,38 @@ public class TravelActivity extends FragmentActivity {
                             b.include(new LatLng(37.023060, -8.996989)); // West
                             b.include(new LatLng(36.960175, -7.888063)); // South
                             b.include(new LatLng(37.163375, -7.399764)); // East
-                        } else if (Arrays.asList("Faro", "Beja", "Évora", "Portalegre").contains(district) || // Alentejo
+                        } else if (Arrays.asList("Beja", "Évora", "Portalegre").contains(district) || // Alentejo
                                 intermunicipalEntity.equals("Alentejo Litoral")) {
                             b.include(new LatLng(39.664015, -7.539616)); // North
                             b.include(new LatLng(38.490404, -8.912161)); // West
                             b.include(new LatLng(37.318961, -8.065657)); // South
                             b.include(new LatLng(38.207785, -6.932024)); // East
-                        } else if (Arrays.asList("Área Metropolitana de Lisboa", "Lezíria do Tejo", "Médio Tejo", "Oeste").contains(
-                                intermunicipalEntity)) { // Lisboa e Vale do Tejo
-                            b.include(new LatLng(39.838531, -8.477847)); // North
+                        } else if (Arrays.asList("Lisboa", "Santarém", "Leiria").contains(district) ||
+                                intermunicipalEntity.equals("Área Metropolitana de Lisboa")) { // Approx. Lisboa e Vale do Tejo
+                            b.include(new LatLng(40.089725, -8.179092)); // North
                             b.include(new LatLng(38.780907, -9.500550)); // West
                             b.include(new LatLng(38.409289, -9.198756)); // South
                             b.include(new LatLng(39.565853, -7.811094)); // East
+                        } else if (Arrays.asList("Coimbra", "Aveiro", "Viseu").contains(district)) { // Approx. Beira Litoral
+                            b.include(new LatLng(41.214620, -7.446979)); // North
+                            b.include(new LatLng(40.185707, -8.909283)); // West
+                            b.include(new LatLng(39.923950, -8.385879)); // South
+                            b.include(new LatLng(41.139525, -7.304582)); // East
+                        } else if (Arrays.asList("Castelo Branco", "Guarda").contains(district)) { // Approx. Beira Interior
+                            b.include(new LatLng(41.179259, -7.117821)); // North
+                            b.include(new LatLng(39.807285, -8.293063)); // West
+                            b.include(new LatLng(39.537382, -7.825112)); // South
+                            b.include(new LatLng(40.364382, -6.781246)); // East
+                        } else if (Arrays.asList("Porto", "Braga", "Viana do Castelo").contains(district)) { // Douro Litoral + Minho
+                            b.include(new LatLng(42.154314, -8.198761)); // North
+                            b.include(new LatLng(41.752644, -8.881126)); // West
+                            b.include(new LatLng(41.001411, -8.389246)); // South
+                            b.include(new LatLng(41.573672, -7.810744)); // East
+                        } else if (Arrays.asList("Vila Real", "Bragança").contains(district)) { // Trás-os-Montes
+                            b.include(new LatLng(41.992518, -6.811355)); // North
+                            b.include(new LatLng(41.689246, -8.119490)); // West
+                            b.include(new LatLng(41.024693, -6.989702)); // South
+                            b.include(new LatLng(41.574843, -6.189228)); // East
                         } else { // Error
                             return;
                         }
@@ -888,6 +908,7 @@ class DestinationsCustomView extends LinearLayout {
                 routeName.equals("A9 CREL") ||
                 routeName.equals("A13-1") ||
                 routeName.equals("A26-1") ||
+                routeName.contains("IC23 VCI") || // Ex: A20/IC23 VCI/Ponte do Freixo
 
                 // Spanish autonomous community auto-estradas
                 routeName.startsWith("CM-") || // Castilla-La Mancha
