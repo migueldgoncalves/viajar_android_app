@@ -1,8 +1,8 @@
 package com.viajar.viajar;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -14,10 +14,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.view.menu.MenuBuilder;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
@@ -35,7 +38,9 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PolylineOptions;
+import com.google.android.material.bottomnavigation.BottomNavigationMenuView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarMenuView;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
@@ -58,6 +63,8 @@ public class TravelActivity extends FragmentActivity {
     public static final String TRAIN = "Comboio";
     public static final String HIGH_SPEED_TRAIN = "Comboio de Alta Velocidade";
     public static final String PLANE = "Avião";
+    public static final String TRANSFER = "Transbordo";
+    public static final String SUBWAY = "Metro";
 
     public static final int TAB_NUMBER = 3;
 
@@ -125,35 +132,31 @@ public class TravelActivity extends FragmentActivity {
                 return false;
             if (item.getItemId() == R.id.car) {
                 currentTransportMeans = CAR;
-                runOnUiThread(() -> ((GPSPageFragment) getSupportFragmentManager().getFragments().get(0)).createMapMarkers());
-                runOnUiThread(this::updateUI);
-                return true;
             }
             else if (item.getItemId() == R.id.boat) {
                 currentTransportMeans = BOAT;
-                runOnUiThread(() -> ((GPSPageFragment) getSupportFragmentManager().getFragments().get(0)).createMapMarkers());
-                runOnUiThread(this::updateUI);
-                return true;
             }
             else if (item.getItemId() == R.id.train) {
                 currentTransportMeans = TRAIN;
-                runOnUiThread(() -> ((GPSPageFragment) getSupportFragmentManager().getFragments().get(0)).createMapMarkers());
-                runOnUiThread(this::updateUI);
-                return true;
             }
             else if (item.getItemId() == R.id.plane) {
                 currentTransportMeans = PLANE;
-                runOnUiThread(() -> ((GPSPageFragment) getSupportFragmentManager().getFragments().get(0)).createMapMarkers());
-                runOnUiThread(this::updateUI);
-                return true;
             }
             else if (item.getItemId() == R.id.highSpeedTrain) {
                 currentTransportMeans = HIGH_SPEED_TRAIN;
-                runOnUiThread(() -> ((GPSPageFragment) getSupportFragmentManager().getFragments().get(0)).createMapMarkers());
-                runOnUiThread(this::updateUI);
-                return true;
             }
-            return false;
+            else if (item.getItemId() == R.id.transfer) {
+                currentTransportMeans = TRANSFER;
+            }
+            else if (item.getItemId() == R.id.subway) {
+                currentTransportMeans = SUBWAY;
+            }
+            else {
+                return false;
+            }
+            runOnUiThread(() -> ((GPSPageFragment) getSupportFragmentManager().getFragments().get(0)).createMapMarkers());
+            runOnUiThread(this::updateUI);
+            return true;
         });
         DBInterface.deleteDatabase(getApplicationContext());
         populateDatabase(); // Sets UI with initial location info
@@ -269,6 +272,8 @@ public class TravelActivity extends FragmentActivity {
         locationButtons.getMenu().findItem(R.id.boat).setVisible(false);
         locationButtons.getMenu().findItem(R.id.plane).setVisible(false);
         locationButtons.getMenu().findItem(R.id.highSpeedTrain).setVisible(false);
+        locationButtons.getMenu().findItem(R.id.transfer).setVisible(false);
+        locationButtons.getMenu().findItem(R.id.subway).setVisible(false);
 
         if (currentLocation.getSurroundingLocationsByTransportMeans(CAR).size() > 0)
             locationButtons.getMenu().findItem(R.id.car).setVisible(true);
@@ -280,6 +285,10 @@ public class TravelActivity extends FragmentActivity {
             locationButtons.getMenu().findItem(R.id.plane).setVisible(true);
         if (currentLocation.getSurroundingLocationsByTransportMeans(HIGH_SPEED_TRAIN).size() > 0)
             locationButtons.getMenu().findItem(R.id.highSpeedTrain).setVisible(true);
+        if (currentLocation.getSurroundingLocationsByTransportMeans(TRANSFER).size() > 0)
+            locationButtons.getMenu().findItem(R.id.transfer).setVisible(true);
+        if (currentLocation.getSurroundingLocationsByTransportMeans(SUBWAY).size() > 0)
+            locationButtons.getMenu().findItem(R.id.subway).setVisible(true);
     }
 
     public void onClickGPS(View view) {
@@ -605,31 +614,12 @@ public class TravelActivity extends FragmentActivity {
                 return;
 
             mMap.clear();
-            //LatLngBounds.Builder b = new LatLngBounds.Builder();
             LatLng location = new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude());
-            //b.include(location);
-            Bitmap bm = BitmapFactory.decodeResource(getResources(), R.mipmap.marker_icon);
-            //Bitmap largeMarker = Bitmap.createScaledBitmap(bm, largeIconSize, largeIconSize, false);
-            //mMap.addMarker(new MarkerOptions().position(location).title(currentLocation.getName()).icon(BitmapDescriptorFactory.fromBitmap(largeMarker)));
             mMap.addMarker(new MarkerOptions().position(location).title(currentLocation.getName()).icon(BitmapDescriptorFactory.defaultMarker()));
             mMap.animateCamera(CameraUpdateFactory.newLatLng(location));
             //mMap.moveCamera(CameraUpdateFactory.newLatLng(location));
             //mMap.setMinZoomPreference(ZOOM_LEVEL);
 
-            for(String[] coordinatesAndName: allCoordinatesAndNames) {
-                Double latitude = Double.valueOf(coordinatesAndName[0]);
-                Double longitude = Double.valueOf(coordinatesAndName[1]);
-                String name = coordinatesAndName[2];
-
-                if (name.equals(currentLocation.getName()))
-                    continue; // Marker already added
-
-                LatLng surroundingLocationCoordinates = new LatLng(latitude, longitude);
-                float markerColor = BitmapDescriptorFactory.HUE_BLUE;
-                //mMap.addMarker(new MarkerOptions().position(surroundingLocationCoordinates).title(name).icon(BitmapDescriptorFactory.defaultMarker(markerColor)));
-                //b.include(surroundingLocationCoordinates);
-            }
-            //LatLngBounds bounds = b.build();
             enquadrarMapa(); // Enquadra o mapa de acordo com a região escolhida
 
             for(String[] connectionCoordinates: allConnectionsCoordinates) {
@@ -640,6 +630,7 @@ public class TravelActivity extends FragmentActivity {
                 String routeName = connectionCoordinates[4];
                 String meansTransport = connectionCoordinates[5];
 
+                // Transport means not to draw on the global map
                 if (meansTransport.equals(PLANE))
                     continue;
 
@@ -887,12 +878,40 @@ class DestinationsCustomView extends LinearLayout {
         } else if (isViaMaritima(currentTransportMeans)) {
             return viaMaritimaColor;
         } else if (isViaFerroviaria(currentTransportMeans)) {
-            return viaFerroviariaColor;
+            return getColorByRailway(routeName);
         } else if (isViaAltaVelocidadeFerroviaria(currentTransportMeans)) {
             return viaAltaVelocidadeFerroviariaColor;
         } else { // Ex: Itinerários Complementares, Portuguese Estradas Nacionais
             return 0;
         }
+    }
+
+    static int getColorByRailway(String railway) {
+        // Given the name of a railway (ex: Linha do Sul - Intercidades, Linha do Sado - CP Lisboa), returns
+        //  the color to use to represent the line. Ex: Sado Line is blue, while Cascais Line is yellow
+
+        // TRAIN - Add new train lines HERE
+
+        // Lisbon
+        if (railway.contains("Linha do Sado"))
+            return Color.BLUE;
+        else if (railway.contains("Linha do Sul - Fertagus"))
+            return Color.parseColor("#6fa8dc"); // Light blue
+        // Madrid
+        else if (railway.contains("C-1"))
+            return Color.parseColor("#66aede"); // Blue
+        else if (railway.contains("C-3"))
+            return Color.parseColor("#6a329f"); // Purple
+
+        // SUBWAY - Add new subway lines HERE
+
+        // Lisbon
+        else if (railway.contains("Linha Vermelha - Metro de Lisboa"))
+            return Color.RED;
+
+        // Default - Likely intercity railways without assigned colors
+        else
+            return viaFerroviariaColor;
     }
 
     private static boolean isAutoEstrada(String routeName) {
@@ -942,8 +961,10 @@ class DestinationsCustomView extends LinearLayout {
         return (meansTransport.equals(TravelActivity.BOAT));
     }
 
-    private static boolean isViaFerroviaria(String meansTransport) {
-        return meansTransport.equals(TravelActivity.TRAIN);
+    static boolean isViaFerroviaria(String meansTransport) {
+        // Excludes high speed railways
+        return meansTransport.equals(TravelActivity.TRAIN) ||
+                meansTransport.equals(TravelActivity.SUBWAY);
     }
 
     private static boolean isViaAltaVelocidadeFerroviaria(String meansTransport) {
@@ -954,4 +975,168 @@ class DestinationsCustomView extends LinearLayout {
         return (routeName.startsWith("N-"));
     }
 
+}
+
+// This code allows to show a custom amount of icons in the Bottom Navigation View of the GPS tab (5 by default)
+// This is obtained by overriding methods and classes from Android
+// Most code was kept intact
+
+class LargeBottomNavigationView extends BottomNavigationView {
+    // Allows to override max item count (default is 5)
+    static int MAX_ITEM_COUNT = 100;
+
+    public LargeBottomNavigationView(@NonNull Context context) {
+        super(context);
+    }
+
+    public LargeBottomNavigationView(@NonNull Context context, @Nullable AttributeSet attrs) {
+        super(context, attrs);
+    }
+
+    public LargeBottomNavigationView(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
+    }
+
+    public int getMaxItemCount() {
+        return MAX_ITEM_COUNT;
+    }
+
+    static int getStaticMaxItemCount() {
+        return MAX_ITEM_COUNT;
+    }
+
+    @SuppressLint("RestrictedApi")
+    public void setItemHorizontalTranslationEnabled(boolean itemHorizontalTranslationEnabled) {
+        LargeBottomNavigationMenuView menuView = (LargeBottomNavigationMenuView) getMenuView();
+        if (menuView.isItemHorizontalTranslationEnabled() != itemHorizontalTranslationEnabled) {
+            menuView.setItemHorizontalTranslationEnabled(itemHorizontalTranslationEnabled);
+            getPresenter().updateMenuView(false);
+        }
+    }
+
+    @NonNull
+    @SuppressLint("RestrictedApi")
+    protected NavigationBarMenuView createNavigationBarMenuView(@NonNull Context context) {
+        return new LargeBottomNavigationMenuView(context);
+    }
+
+    @SuppressLint("RestrictedApi")
+    public boolean isItemHorizontalTranslationEnabled() {
+        return ((LargeBottomNavigationMenuView) getMenuView()).isItemHorizontalTranslationEnabled();
+    }
+}
+
+@SuppressLint("RestrictedApi")
+class LargeBottomNavigationMenuView extends BottomNavigationMenuView {
+    private final int inactiveItemMaxWidth;
+    private final int inactiveItemMinWidth;
+    private final int activeItemMaxWidth;
+    private final int activeItemMinWidth;
+    private final int itemHeight;
+
+    private boolean itemHorizontalTranslationEnabled;
+    private int[] tempChildWidths;
+
+    public LargeBottomNavigationMenuView(@NonNull Context context) {
+        super(context);
+
+        FrameLayout.LayoutParams params =
+                new FrameLayout.LayoutParams(
+                        ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        params.gravity = Gravity.CENTER;
+        setLayoutParams(params);
+
+        final Resources res = getResources();
+        inactiveItemMaxWidth =
+                res.getDimensionPixelSize(R.dimen.design_bottom_navigation_item_max_width);
+        inactiveItemMinWidth =
+                res.getDimensionPixelSize(R.dimen.design_bottom_navigation_item_min_width);
+        activeItemMaxWidth =
+                res.getDimensionPixelSize(R.dimen.design_bottom_navigation_active_item_max_width);
+        activeItemMinWidth =
+                res.getDimensionPixelSize(R.dimen.design_bottom_navigation_active_item_min_width);
+        itemHeight = res.getDimensionPixelSize(R.dimen.design_bottom_navigation_height);
+
+        tempChildWidths = new int[LargeBottomNavigationView.getStaticMaxItemCount()];
+    }
+
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        final MenuBuilder menu = getMenu();
+        final int width = MeasureSpec.getSize(widthMeasureSpec);
+        // Use visible item count to calculate widths
+        final int visibleCount = menu.getVisibleItems().size();
+        // Use total item counts to measure children
+        final int totalCount = getChildCount();
+
+        final int heightSpec = MeasureSpec.makeMeasureSpec(itemHeight, MeasureSpec.EXACTLY);
+
+        if (isShifting(getLabelVisibilityMode(), visibleCount)
+                && isItemHorizontalTranslationEnabled()) {
+            final View activeChild = getChildAt(getSelectedItemPosition());
+            int activeItemWidth = activeItemMinWidth;
+            if (activeChild.getVisibility() != View.GONE) {
+                // Do an AT_MOST measure pass on the active child to get its desired width, and resize the
+                // active child view based on that width
+                activeChild.measure(
+                        MeasureSpec.makeMeasureSpec(activeItemMaxWidth, MeasureSpec.AT_MOST), heightSpec);
+                activeItemWidth = Math.max(activeItemWidth, activeChild.getMeasuredWidth());
+            }
+            final int inactiveCount = visibleCount - (activeChild.getVisibility() != View.GONE ? 1 : 0);
+            final int activeMaxAvailable = width - inactiveCount * inactiveItemMinWidth;
+            final int activeWidth =
+                    Math.min(activeMaxAvailable, Math.min(activeItemWidth, activeItemMaxWidth));
+            final int inactiveMaxAvailable =
+                    (width - activeWidth) / (inactiveCount == 0 ? 1 : inactiveCount);
+            final int inactiveWidth = Math.min(inactiveMaxAvailable, inactiveItemMaxWidth);
+            int extra = width - activeWidth - inactiveWidth * inactiveCount;
+
+            for (int i = 0; i < totalCount; i++) {
+                if (getChildAt(i).getVisibility() != View.GONE) {
+                    tempChildWidths[i] = (i == getSelectedItemPosition()) ? activeWidth : inactiveWidth;
+                    // Account for integer division which sometimes leaves some extra pixel spaces.
+                    // e.g. If the nav was 10px wide, and 3 children were measured to be 3px-3px-3px, there
+                    // would be a 1px gap somewhere, which this fills in.
+                    if (extra > 0) {
+                        tempChildWidths[i]++;
+                        extra--;
+                    }
+                } else {
+                    tempChildWidths[i] = 0;
+                }
+            }
+        } else {
+            final int maxAvailable = width / (visibleCount == 0 ? 1 : visibleCount);
+            final int childWidth = Math.min(maxAvailable, activeItemMaxWidth);
+            int extra = width - childWidth * visibleCount;
+            for (int i = 0; i < totalCount; i++) {
+                if (getChildAt(i).getVisibility() != View.GONE) {
+                    tempChildWidths[i] = childWidth;
+                    if (extra > 0) {
+                        tempChildWidths[i]++;
+                        extra--;
+                    }
+                } else {
+                    tempChildWidths[i] = 0;
+                }
+            }
+        }
+
+        int totalWidth = 0;
+        for (int i = 0; i < totalCount; i++) {
+            final View child = getChildAt(i);
+            if (child.getVisibility() == GONE) {
+                continue;
+            }
+            child.measure(
+                    MeasureSpec.makeMeasureSpec(tempChildWidths[i], MeasureSpec.EXACTLY), heightSpec);
+            ViewGroup.LayoutParams params = child.getLayoutParams();
+            params.width = child.getMeasuredWidth();
+            totalWidth += child.getMeasuredWidth();
+        }
+        setMeasuredDimension(
+                View.resolveSizeAndState(
+                        totalWidth, MeasureSpec.makeMeasureSpec(totalWidth, MeasureSpec.EXACTLY), 0),
+                View.resolveSizeAndState(itemHeight, heightSpec, 0));
+    }
 }

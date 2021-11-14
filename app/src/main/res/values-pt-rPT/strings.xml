@@ -41,4 +41,6 @@
     <string name="iberian_peninsula">Península Ibérica</string>
     <string name="gibraltar">Gibraltar</string>
     <string name="around">À Volta</string>
+    <string name="transfer">Transbordo</string>
+    <string name="subway">Metro</string>
 </resources>
