@@ -652,10 +652,12 @@ public class TravelActivity extends FragmentActivity {
             if (currentMapArea == null)
                 return;
             else if (currentMapArea.equals(getString(R.string.iberian_peninsula))) {
-                b.include(new LatLng(43.791278, -7.689167)); // North
+                //b.include(new LatLng(43.791278, -7.689167)); // North
+                b.include(new LatLng(41.174506, -8.613425)); // North
                 b.include(new LatLng(38.780907, -9.500550)); // West
                 b.include(new LatLng(36.000141, -5.610575)); // South
-                b.include(new LatLng(42.319428, 3.322223)); // East
+                //b.include(new LatLng(42.319428, 3.322223)); // East
+                b.include(new LatLng(39.030347, -3.374038)); // East
             } else if (currentMapArea.equals(getString(R.string.region))) { // PT - Groups of districts, ES - Autonomous Communities or parts of them, GI - Gibraltar
                 switch (currentLocation.getCountry()) {
                     case "Portugal":
@@ -895,8 +897,14 @@ class DestinationsCustomView extends LinearLayout {
         // Lisbon
         if (railway.contains("Linha do Sado"))
             return Color.BLUE;
-        else if (railway.contains("Linha do Sul - Fertagus"))
+        else if (railway.contains("Linha do Sul") && railway.contains("Fertagus"))
             return Color.parseColor("#6fa8dc"); // Light blue
+        else if (railway.contains("Linha de Sintra") && railway.contains("CP Lisboa"))
+            return Color.parseColor("#008000"); // Green
+        else if (railway.contains("Linha da Azambuja"))
+            return Color.parseColor("#be2c2c"); // Reddish-brown
+        else if (railway.contains("Linha de Cascais"))
+            return Color.parseColor("#ffab2e"); // Yellow
         // Madrid
         else if (railway.contains("C-1"))
             return Color.parseColor("#66aede"); // Blue
