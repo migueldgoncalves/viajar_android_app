@@ -43,4 +43,5 @@
     <string name="around">Alrededor</string>
     <string name="transfer">Transbordo</string>
     <string name="subway">Metro</string>
+    <string name="infinite">Infinito</string>
 </resources>
