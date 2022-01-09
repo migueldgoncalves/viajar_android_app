@@ -68,12 +68,17 @@ public class TravelActivity extends FragmentActivity {
 
     public static final int TAB_NUMBER = 3;
 
+    // HISTORY MODE SETTINGS - Change here
+    private static final boolean historyMode = false; // Set to true to show location subset in map tab
+    private static final int desiredBatch = 1800; // Locations to show in history mode, 100 = First 100 locations to be added
+    private static final boolean useMarkers = false; // True - Markers are placed on the map; False - Connections are drawn instead
+
     private LocationInfo currentLocation;
     private ArrayList<LocationInfo> surroundingLocations;
     private String currentLocationName;
     private String currentTransportMeans;
     private String currentMapArea;
-    private ArrayList<String[]> allCoordinatesAndNames;
+    private ArrayList<String[]> allCoordinatesNamesBatches;
     private ArrayList<String[]> allConnectionsCoordinates;
 
     private ViewPager2 viewPager2;
@@ -307,7 +312,7 @@ public class TravelActivity extends FragmentActivity {
         DBInterface dbInterface = DBInterface.getDBInterface(getApplicationContext());
         if (populateDatabase) {
             dbInterface.populateDatabase(getApplicationContext());
-            allCoordinatesAndNames = dbInterface.getAllCoordinatesAndNames(getApplicationContext());
+            allCoordinatesNamesBatches = dbInterface.getAllCoordinatesNamesBatches(getApplicationContext());
             allConnectionsCoordinates = dbInterface.getAllConnectionCoordinates(getApplicationContext());
         }
         currentLocation = dbInterface.generateLocationObject(getApplicationContext(), currentLocationName);
@@ -507,7 +512,7 @@ public class TravelActivity extends FragmentActivity {
         private static final int largeIconSize = 350;
         private static final int lineWidth = 5;
         private static final int defaultLineColor = Color.BLACK;
-        private static final int mapPadding = 50;
+        private static int mapPadding = 50;
         private static final double aroundMapSize = 0.15 / 2; // Degrees - In Iberian Peninsula 1 degree = ~100 km
         private static final int defaultMapAreaID = R.id.around;
 
@@ -607,7 +612,7 @@ public class TravelActivity extends FragmentActivity {
 
         public void desenharMapa() {
             LocationInfo currentLocation = ((TravelActivity) requireActivity()).currentLocation;
-            ArrayList<String[]> allCoordinatesAndNames = ((TravelActivity) requireActivity()).allCoordinatesAndNames;
+            ArrayList<String[]> allCoordinatesNamesBatches = ((TravelActivity) requireActivity()).allCoordinatesNamesBatches;
             ArrayList<String[]> allConnectionsCoordinates = ((TravelActivity) requireActivity()).allConnectionsCoordinates;
 
             if (mMap == null)
@@ -622,25 +627,76 @@ public class TravelActivity extends FragmentActivity {
 
             enquadrarMapa(); // Enquadra o mapa de acordo com a região escolhida
 
-            for(String[] connectionCoordinates: allConnectionsCoordinates) {
-                Double latitude1 = Double.valueOf(connectionCoordinates[0]);
-                Double longitude1 = Double.valueOf(connectionCoordinates[1]);
-                Double latitude2 = Double.valueOf(connectionCoordinates[2]);
-                Double longitude2 = Double.valueOf(connectionCoordinates[3]);
-                String routeName = connectionCoordinates[4];
-                String meansTransport = connectionCoordinates[5];
+            if (TravelActivity.historyMode) { // Show some connections or locations, and only if inside desired batch
+                if (TravelActivity.useMarkers) { // Draws markers
+                    mapPadding = 150;
+                    for (String[] coordinateNameBatch : allCoordinatesNamesBatches) {
+                        double latitude = Double.parseDouble(coordinateNameBatch[0]);
+                        double longitude = Double.parseDouble(coordinateNameBatch[1]);
+                        String name = coordinateNameBatch[2];
+                        int batch = Integer.parseInt(coordinateNameBatch[3]);
+                        if ((batch > 0) && (batch <= TravelActivity.desiredBatch))
+                            mMap.addMarker(new MarkerOptions().position(new LatLng(latitude, longitude)).title(name));
+                    }
+                } else { // Draws connections - Note: Some connections may not appear for smaller batches
+                    mapPadding = 50;
+                    for (String[] connectionCoordinates : allConnectionsCoordinates) {
+                        Double latitude1 = Double.valueOf(connectionCoordinates[0]);
+                        Double longitude1 = Double.valueOf(connectionCoordinates[1]);
+                        Double latitude2 = Double.valueOf(connectionCoordinates[2]);
+                        Double longitude2 = Double.valueOf(connectionCoordinates[3]);
+                        String routeName = connectionCoordinates[4];
+                        String meansTransport = connectionCoordinates[5];
 
-                // Transport means not to draw on the global map
-                if (meansTransport.equals(PLANE))
-                    continue;
+                        // Transport means not to draw on the global map
+                        if (meansTransport.equals(PLANE))
+                            continue;
 
-                int lineColor = DestinationsCustomView.getColorByRouteName(routeName, meansTransport);
-                if (lineColor == 0)
-                    lineColor = defaultLineColor;
-                mMap.addPolyline(new PolylineOptions().add(
-                        new LatLng(latitude1, longitude1),
-                        new LatLng(latitude2, longitude2))
-                        .width(lineWidth).color(lineColor));
+                        int lineColor = DestinationsCustomView.getColorByRouteName(routeName, meansTransport);
+                        if (lineColor == 0)
+                            lineColor = defaultLineColor;
+                        boolean locationOneInBatch = false;
+                        boolean locationTwoInBatch = false;
+                        for (String[] coordinateNameBatch : allCoordinatesNamesBatches) {
+                            double latitude = Double.parseDouble(coordinateNameBatch[0]);
+                            double longitude = Double.parseDouble(coordinateNameBatch[1]);
+                            int batch = Integer.parseInt(coordinateNameBatch[3]);
+                            if ((batch > 0) && (batch <= TravelActivity.desiredBatch)) {
+                                if ((latitude == latitude1) && (longitude == longitude1))
+                                    locationOneInBatch = true;
+                                else if ((latitude == latitude2) && (longitude == longitude2))
+                                    locationTwoInBatch = true;
+                            }
+                        }
+                        if (locationOneInBatch && locationTwoInBatch) {
+                            mMap.addPolyline(new PolylineOptions().add(
+                                    new LatLng(latitude1, longitude1),
+                                    new LatLng(latitude2, longitude2))
+                                    .width(lineWidth).color(lineColor));
+                        }
+                    }
+                }
+            } else { // Shows all current connections (except plane connections)
+                for (String[] connectionCoordinates : allConnectionsCoordinates) {
+                    Double latitude1 = Double.valueOf(connectionCoordinates[0]);
+                    Double longitude1 = Double.valueOf(connectionCoordinates[1]);
+                    Double latitude2 = Double.valueOf(connectionCoordinates[2]);
+                    Double longitude2 = Double.valueOf(connectionCoordinates[3]);
+                    String routeName = connectionCoordinates[4];
+                    String meansTransport = connectionCoordinates[5];
+
+                    // Transport means not to draw on the global map
+                    if (meansTransport.equals(PLANE))
+                        continue;
+
+                    int lineColor = DestinationsCustomView.getColorByRouteName(routeName, meansTransport);
+                    if (lineColor == 0)
+                        lineColor = defaultLineColor;
+                    mMap.addPolyline(new PolylineOptions().add(
+                            new LatLng(latitude1, longitude1),
+                            new LatLng(latitude2, longitude2))
+                            .width(lineWidth).color(lineColor));
+                }
             }
         }
 
@@ -652,12 +708,23 @@ public class TravelActivity extends FragmentActivity {
             if (currentMapArea == null)
                 return;
             else if (currentMapArea.equals(getString(R.string.iberian_peninsula))) {
-                //b.include(new LatLng(43.791278, -7.689167)); // North
-                b.include(new LatLng(41.174506, -8.613425)); // North
-                b.include(new LatLng(38.780907, -9.500550)); // West
-                b.include(new LatLng(36.000141, -5.610575)); // South
-                //b.include(new LatLng(42.319428, 3.322223)); // East
-                b.include(new LatLng(39.030347, -3.374038)); // East
+                if (TravelActivity.historyMode) { // Include only locations inside desired batch
+                    ArrayList<String[]> allCoordinatesNamesBatches = ((TravelActivity) requireActivity()).allCoordinatesNamesBatches;
+                    for (String[] coordinateNameBatch: allCoordinatesNamesBatches) {
+                        double latitude = Double.parseDouble(coordinateNameBatch[0]);
+                        double longitude = Double.parseDouble(coordinateNameBatch[1]);
+                        int batch = Integer.parseInt(coordinateNameBatch[3]);
+                        if ((batch > 0) && (batch <= TravelActivity.desiredBatch))
+                            b.include(new LatLng(latitude, longitude));
+                    }
+                } else { // Include all locations
+                    //b.include(new LatLng(43.791278, -7.689167)); // North
+                    b.include(new LatLng(41.174506, -8.613425)); // North
+                    b.include(new LatLng(38.780907, -9.500550)); // West
+                    b.include(new LatLng(36.000141, -5.610575)); // South
+                    //b.include(new LatLng(42.319428, 3.322223)); // East
+                    b.include(new LatLng(37.262205, -3.085156)); // East
+                }
             } else if (currentMapArea.equals(getString(R.string.region))) { // PT - Groups of districts, ES - Autonomous Communities or parts of them, GI - Gibraltar
                 switch (currentLocation.getCountry()) {
                     case "Portugal":

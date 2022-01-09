@@ -184,6 +184,9 @@ public interface dao {
     @Query("SELECT comarca FROM comarca WHERE municipio = :municipio AND province = :province")
     String[] getComarcas(String municipio, String province);
 
+    @Query("SELECT * FROM location WHERE batch > 0 AND batch <= :batch")
+    Location[] getBatchLocations(int batch);
+
     // Required queries for the global map tab
 
     @Query("SELECT location1.latitude AS latitude1, location1.longitude AS longitude1, " +

@@ -103,6 +103,7 @@ public class DBInterface {
         double longitude = locationDBObject.longitude;
         int altitude = locationDBObject.altitude;
         String protectedArea = locationDBObject.extraInfo;
+        int batch = locationDBObject.batch;
 
         // Determine the country-specific parameters and create the location
         LocationInfo locationObject;
@@ -135,6 +136,7 @@ public class DBInterface {
         locationObject.setCoordinates(latitude, longitude);
         locationObject.setAltitude(altitude);
         locationObject.setProtectedArea(protectedArea);
+        locationObject.setBatch(batch);
 
         return locationObject;
     }
@@ -143,17 +145,18 @@ public class DBInterface {
         return getDatabase(context).dao().getLocationNumber();
     }
 
-    public ArrayList<String[]> getAllCoordinatesAndNames(Context context) {
-        ArrayList<String[]> allCoordinatesAndNames = new ArrayList<>();
+    public ArrayList<String[]> getAllCoordinatesNamesBatches(Context context) {
+        ArrayList<String[]> allCoordinatesNamesBatches = new ArrayList<>();
         Location[] locations = getDatabase(context).dao().getAllLocations();
         for (Location location : locations) {
-            String[] coordinatesAndName = new String[3];
-            coordinatesAndName[0] = Double.toString(location.latitude);
-            coordinatesAndName[1] = Double.toString(location.longitude);
-            coordinatesAndName[2] = location.name;
-            allCoordinatesAndNames.add(coordinatesAndName);
+            String[] locationData = new String[4];
+            locationData[0] = Double.toString(location.latitude);
+            locationData[1] = Double.toString(location.longitude);
+            locationData[2] = location.name;
+            locationData[3] = String.valueOf(location.batch);
+            allCoordinatesNamesBatches.add(locationData);
         }
-        return allCoordinatesAndNames;
+        return allCoordinatesNamesBatches;
     }
 
     public ArrayList<String[]> getAllConnectionCoordinates(Context context) {
@@ -224,9 +227,8 @@ public class DBInterface {
                 newLocation.latitude = Double.parseDouble(csvLine.get(1));
                 newLocation.longitude = Double.parseDouble(csvLine.get(2));
                 newLocation.altitude = Integer.parseInt(csvLine.get(3));
-                if (csvLine.size() == 5) { // Has extra info
-                    newLocation.extraInfo = csvLine.get(4);
-                }
+                newLocation.extraInfo = csvLine.get(4);
+                newLocation.batch = Integer.parseInt(csvLine.get(5));
                 getDatabase(context).dao().insertLocations(newLocation);
             }
         }

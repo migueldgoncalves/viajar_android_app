@@ -14,6 +14,7 @@ public class Location {
     public double latitude;
     public double longitude;
     public int altitude;
+    public int batch;
 
     @ColumnInfo(name = "extra_info")
     public String extraInfo;

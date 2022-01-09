@@ -17,6 +17,7 @@ public class LocationInfo {
     private int altitude;
     private String country;
     private String protectedArea;
+    private int batch;
 
     public LocationInfo() {
     }
@@ -193,5 +194,13 @@ public class LocationInfo {
 
     public void setProtectedArea(String protectedArea) {
         this.protectedArea = protectedArea;
+    }
+
+    public int getBatch() {
+        return batch;
+    }
+
+    public void setBatch(int batch) {
+        this.batch = batch;
     }
 }
