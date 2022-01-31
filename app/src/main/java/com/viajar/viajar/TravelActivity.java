@@ -70,7 +70,7 @@ public class TravelActivity extends FragmentActivity {
 
     // HISTORY MODE SETTINGS - Change here
     private static final boolean historyMode = false; // Set to true to show location subset in map tab
-    private static final int desiredBatch = 1800; // Locations to show in history mode, 100 = First 100 locations to be added
+    private static final int desiredBatch = 1900; // Locations to show in history mode, 100 = First 100 locations to be added
     private static final boolean useMarkers = false; // True - Markers are placed on the map; False - Connections are drawn instead
 
     private LocationInfo currentLocation;
@@ -460,7 +460,7 @@ public class TravelActivity extends FragmentActivity {
                     editText.append(currentLocation.getAltitude() + " metro\n");
                 else
                     editText.append(currentLocation.getAltitude() + " metros\n");
-                if (currentLocation.getProtectedArea() != null)
+                if (currentLocation.getProtectedArea() != null && !currentLocation.getProtectedArea().equals(""))
                     editText.append(currentLocation.getProtectedArea() + "\n");
                 editText.append("\n");
                 if (currentLocation.getCountry().equals("Portugal")) {
@@ -470,7 +470,7 @@ public class TravelActivity extends FragmentActivity {
                     editText.append("Entidade Intermunicipal: " + ((LocationInfoPortugal) currentLocation).getIntermunicipalEntity() + "\n");
                     editText.append("Região: " + ((LocationInfoPortugal) currentLocation).getRegion() + "\n");
                 } else if (currentLocation.getCountry().equals("Spain")) {
-                    if (((LocationInfoSpain) currentLocation).getDistrict() != null)
+                    if (((LocationInfoSpain) currentLocation).getDistrict() != null && !((LocationInfoSpain) currentLocation).getDistrict().equals(""))
                         editText.append("Distrito: " + ((LocationInfoSpain) currentLocation).getDistrict() + "\n");
                     editText.append("Município: " + ((LocationInfoSpain) currentLocation).getMunicipality() + "\n");
                     if (((LocationInfoSpain) currentLocation).getAutonomousCommunity().equals("Extremadura")) {
@@ -710,7 +710,7 @@ public class TravelActivity extends FragmentActivity {
             else if (currentMapArea.equals(getString(R.string.iberian_peninsula))) {
                 if (TravelActivity.historyMode) { // Include only locations inside desired batch
                     ArrayList<String[]> allCoordinatesNamesBatches = ((TravelActivity) requireActivity()).allCoordinatesNamesBatches;
-                    for (String[] coordinateNameBatch: allCoordinatesNamesBatches) {
+                    for (String[] coordinateNameBatch : allCoordinatesNamesBatches) {
                         double latitude = Double.parseDouble(coordinateNameBatch[0]);
                         double longitude = Double.parseDouble(coordinateNameBatch[1]);
                         int batch = Integer.parseInt(coordinateNameBatch[3]);
@@ -796,6 +796,11 @@ public class TravelActivity extends FragmentActivity {
                             b.include(new LatLng(39.877307, -5.406371)); // West
                             b.include(new LatLng(38.342696, -4.287579)); // South
                             b.include(new LatLng(38.734878, -2.638243)); // East
+                        } else if (Arrays.asList("León", "Zamora", "Salamanca").contains(province)) { // Western Castilla y León
+                            b.include(new LatLng(43.23820, -4.89551)); // North
+                            b.include(new LatLng(42.50801, -7.07708)); // West
+                            b.include(new LatLng(40.2390, -6.7557)); // South
+                            b.include(new LatLng(43.0471, -4.7323)); // East
                         } else if (autonomousCommunity.equals("Comunidade de Madrid")) { // Madrid
                             b.include(new LatLng(41.165731, -3.543958)); // North
                             b.include(new LatLng(40.217163, -4.579124)); // West
@@ -826,8 +831,9 @@ public class TravelActivity extends FragmentActivity {
 
             LatLngBounds bounds = b.build();
             CameraUpdate c = CameraUpdateFactory.newLatLngBounds(bounds, mapPadding);
-            mMap.animateCamera(c);
-            //mMap.moveCamera(c);
+            if (mMap != null)
+                mMap.animateCamera(c);
+                //mMap.moveCamera(c);
         }
     }
 }
@@ -983,6 +989,9 @@ class DestinationsCustomView extends LinearLayout {
         // Lisbon
         else if (railway.contains("Linha Vermelha - Metro de Lisboa"))
             return Color.RED;
+        // Madrid
+        else if (railway.contains("Linha 8 - Metro de Madrid"))
+            return Color.parseColor("#f373b7"); // Pink
 
         // Default - Likely intercity railways without assigned colors
         else
@@ -995,13 +1004,14 @@ class DestinationsCustomView extends LinearLayout {
 
         return (
                 // General auto-estradas
-                routeName.startsWith("A-") || // Autovía (also Andaluzia)
+                routeName.startsWith("A-") || // Autovía (also Andalucía)
                 routeName.startsWith("AP-") || // Autopista
                 routeName.startsWith("R-") || // Radial
                 (routeName.charAt(0) == 'A' && ((routeName.length() == 2) || (routeName.length() == 3))) || // Ex: A2, A22
                 routeName.equals("A9 CREL") ||
                 routeName.equals("A13-1") ||
                 routeName.equals("A26-1") ||
+                routeName.equals("A10 - Ponte da Lezíria") ||
                 routeName.contains("IC23 VCI") || // Ex: A20/IC23 VCI/Ponte do Freixo
 
                 // Spanish autonomous community auto-estradas
