@@ -1,30 +1,33 @@
 ## Actualizar a base de dados da aplicação
 
-Com a actualização 1.7, a base de dados deixou de ser gerada durante cada execução normal da aplicação. Em vez disso, durante o desenvolvimento a base de dados passou a ser gerada uma única vez e a ser colocada depois nos assets, para ser importada durante a execução normal da aplicação.
+A base de dados da aplicação é gerida a partir do projecto Python [Viajar](https://github.com/migueldgoncalves/Viajar). É lá que se encontram tanto os ficheiros `.csv` que contêm a informação, como o script que permite criar a partir deles uma base de dados SQLite para uso nesta aplicação.
 
-Este tutorial descreve como criar a base de dados para ser colocada nos assets, a partir dos ficheiros `.csv` do projecto Python *Viajar*.  
+Este tutorial descreve como actualizar a base de dados desta aplicação.
 
 ### Requisitos
 
 - Android Studio
-- Android Virtual Device (AVD) com Android 6+
-- DB Browser for SQLite (disponível [aqui](https://sqlitebrowser.org/))
-- Projecto Python *Viajar* (ficheiros `.csv` disponíveis [aqui](https://github.com/migueldgoncalves/Viajar/tree/master/src/viajar/base_dados))
+- Projecto Python *Viajar* (disponível [aqui](https://github.com/migueldgoncalves/Viajar))
+- Python 3.9
 
-Não é necessário ter um dispositivo rooted.
+**Nota**: É recomendável colocar o projecto Android e o projecto Python fora da drive C: (por exemplo, colocando-os na drive D:) de modo a não serem precisos privilégios de administrador.
+
+Tutorial testado em Windows.
 
 ### Passos
 
-1. No Android Studio, em `DBInterface.java`, alterar a variável `developerMode` para `true`;
-2. Copiar os ficheiros `.csv` para a pasta `app\src\main\res\raw` do projecto Android (em Windows, disponível por omissão em `C:\Users\<nome_de_utilizador>\AndroidStudioProjects\Viajar`). Os ficheiros `.csv` que já lá estiverem devem ser substituídos pelos actuais;
-3. Arrancar a aplicação no AVD;
-4. Carregar em `Iniciar`, depois em `Viagem`. Isto irá iniciar o popular da base de dados;
-5. O progresso do popular da base de dados pode ser acompanhado no separador `Run`, num total de cerca de 20 segundos. A aplicação não irá entrar na Travel Activity;
-6. Com o AVD ligado, aceder ao Device File Explorer do Android Studio e seleccionar o AVD;
-7. Ir a `data/data/com.viajar.viajar/databases` e copiar os ficheiros `Travel`, `Travel-shm` e `Travel-wal` para uma localização à escolha, como o Ambiente de Trabalho;
-8. Com o DB Browser for SQLite, abrir o ficheiro `Travel`, e fechar de seguida. Os ficheiros `Travel-shm` e `Travel-wal` irão desaparecer;
-9. Copiar ou mover o ficheiro `Travel` para a pasta `app\src\main\assets` do projecto Android. O ficheiro que já lá estiver deve ser substituído pelo actual;
-10. Em `DBInterface.java`, alterar a flag `developerMode` para `false`;
-11. (Opcional) Alterar a versão da aplicação no Translations Editor e no ficheiro `build.gradle` associado ao módulo `Viajar.app`.
+1. Dentro do projecto Python, entrar com o explorador de ficheiros na pasta `src\viajar`;
+2. Abrir o ficheiro `sqlite_interface` com um editor de texto simples como o Notepad;
+3. Se os paths das pastas dos projectos estão correctos, saltar para o passo 6.
+4. Alterar o path da pasta do projecto Android para o correcto na variável `PASTA_DESTINO`, deixando intacta a parte a partir de `\\Viajar`.
+   1. Ao se escrever este tutorial, o projecto Android estava em `D:\\AndroidStudioProjects`
+   2. Caracteres \ devem ser escritos como \\\
+5. Alterar o path da pasta do projecto Python para o correcto na variável `PASTA_CSV`, deixando intacta a parte a partir de `\\Viajar`.
+   1. Ao se escrever este tutorial, o projecto Python estava em `D:\\PycharmProjects`
+   2. Caracteres \ devem ser escritos como \\\
+6. Dentro do projecto Python, entrar na pasta `src`;
+7. Correr o script `main` usando o Python. Pode ser preciso clicar com o botão direito do rato e depois clicar em *Abrir com*;
+8. Inserir o número correspondente à opção *Criador de bases de dados SQLite* (actualmente é o 6) e carregar em ENTER;
+9. A execução do script deverá ser imediata. Caso a criação da base de dados tenha sido bem-sucedida, clicar em qualquer tecla irá sair do script.
 
-A aplicação está pronta para ser executada normalmente.
+A base de dados está agora actualizada e a aplicação pode ser instalada num telemóvel ou Android Virtual Device.

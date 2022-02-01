@@ -308,10 +308,9 @@ public class TravelActivity extends FragmentActivity {
         }
     }
 
-    public void populateCurrentAndSurroundingLocations(boolean populateDatabase) {
+    public void populateCurrentAndSurroundingLocations(boolean populateFromDatabase) {
         DBInterface dbInterface = DBInterface.getDBInterface(getApplicationContext());
-        if (populateDatabase) {
-            dbInterface.populateDatabase(getApplicationContext());
+        if (populateFromDatabase) {
             allCoordinatesNamesBatches = dbInterface.getAllCoordinatesNamesBatches(getApplicationContext());
             allConnectionsCoordinates = dbInterface.getAllConnectionCoordinates(getApplicationContext());
         }
@@ -360,8 +359,7 @@ public class TravelActivity extends FragmentActivity {
         public void onMapReady(@NonNull GoogleMap googleMap) {
             mMap = googleMap;
             mMap.getUiSettings().setScrollGesturesEnabled(false);
-            if (!DBInterface.getDeveloperMode())
-                createMapMarkers();
+            createMapMarkers();
         }
 
         @Override
@@ -567,8 +565,7 @@ public class TravelActivity extends FragmentActivity {
         public void onMapReady(@NonNull GoogleMap googleMap) {
             mMap = googleMap;
             mMap.getUiSettings().setScrollGesturesEnabled(false);
-            if (!DBInterface.getDeveloperMode())
-                desenharMapa();
+            desenharMapa();
         }
 
         @Override
@@ -845,11 +842,15 @@ class DestinationsCustomView extends LinearLayout {
     private static final int autoEstradaColor = Color.BLUE;
     private static final int itinerarioPrincipalColor = Color.parseColor("#008000"); // Dark green
     private static final int itinerarioComplementarColor = Color.parseColor("#808080"); // Grey
-    private static final int viaMaritimaColor = Color.CYAN;
-    private static final int viaFerroviariaColor = Color.parseColor("#800000"); // Dark brown
-    private static final int viaAltaVelocidadeFerroviariaColor = Color.parseColor("#660066"); // Purple
+    private static final int waterwayRiverColor = Color.CYAN;
+    private static final int waterwayCoastColor = Color.parseColor("#007fff"); // Blue
+    private static final int railwayColor = Color.parseColor("#800000"); // Dark brown
+    private static final int highSpeedRailwayColor = Color.parseColor("#660066"); // Purple
     private static final int defaultBackgroundColor = Color.parseColor("#F0F0F0"); // Light gray - Ex: itinerários complementares
+
     private static final int redRouteHighlight = Color.RED; // Ex: itinerários principais
+    private static final int greenRouteHighlight = Color.parseColor("#009900"); // Ex: Some autovías in Andaluzia
+    private static final int orangeRouteHighlight = Color.parseColor("#ff9900"); // Ex: Autovías M-45 and A-92
 
     public DestinationsCustomView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -912,14 +913,22 @@ class DestinationsCustomView extends LinearLayout {
             TextView destinationTextView = new TextView(getContext());
             destinationTextView.setText(destinationText);
             destinationsLinearLayout.addView(destinationTextView);
-            if (isAutoEstrada(routeName) || isItinerarioPrincipal(routeName) ||
-                    isViaMaritima(currentTransportMeans) ||
-                    isViaFerroviaria(currentTransportMeans) || isViaAltaVelocidadeFerroviaria(currentTransportMeans)) {
+            if (isAutoviaWithOrangeBackground(routeName)) {
+                destinationTextView.setTextColor(Color.WHITE);
+                routeTextView.setTextColor(Color.BLACK);
+            }
+            else if (isAutoviaWithGreenBackground(routeName)) {
+                destinationTextView.setTextColor(Color.WHITE);
+                routeTextView.setTextColor(Color.WHITE);
+            }
+            else if (isAutoEstrada(routeName) || isItinerarioPrincipal(routeName) ||
+                    isWaterway(currentTransportMeans) ||
+                    isRailway(currentTransportMeans) || isHighSpeedRailway(currentTransportMeans)) {
                 destinationTextView.setTextColor(Color.WHITE);
                 routeTextView.setTextColor(Color.WHITE);
             } else if (currentLocation.getCountry().equals("Spain") && isCarreteraDelEstado(routeName)) {
-                routeTextView.setTextColor(Color.WHITE);
                 destinationTextView.setTextColor(Color.BLACK);
+                routeTextView.setTextColor(Color.WHITE);
             } else {
                 destinationTextView.setTextColor(Color.BLACK);
                 routeTextView.setTextColor(Color.BLACK);
@@ -936,6 +945,10 @@ class DestinationsCustomView extends LinearLayout {
         // When route name background color does not match general background color
         if (isCarreteraDelEstado(routeName) || isItinerarioPrincipal(routeName))
             routeTextView.setBackgroundColor(redRouteHighlight);
+        else if (isAutoviaWithOrangeBackground(routeName))
+            routeTextView.setBackgroundColor(orangeRouteHighlight);
+        else if (isAutoviaWithGreenBackground(routeName))
+            routeTextView.setBackgroundColor(greenRouteHighlight);
 
         // Required - https://developer.android.com/training/custom-views/create-view#addprop
 
@@ -950,12 +963,12 @@ class DestinationsCustomView extends LinearLayout {
             return itinerarioPrincipalColor;
         } else if (isItinerarioComplementar(routeName)) {
             return itinerarioComplementarColor;
-        } else if (isViaMaritima(currentTransportMeans)) {
-            return viaMaritimaColor;
-        } else if (isViaFerroviaria(currentTransportMeans)) {
+        } else if (isWaterway(currentTransportMeans)) {
+            return getColorByWaterway(currentTransportMeans, routeName);
+        } else if (isRailway(currentTransportMeans)) {
             return getColorByRailway(routeName);
-        } else if (isViaAltaVelocidadeFerroviaria(currentTransportMeans)) {
-            return viaAltaVelocidadeFerroviariaColor;
+        } else if (isHighSpeedRailway(currentTransportMeans)) {
+            return highSpeedRailwayColor;
         } else { // Ex: Itinerários Complementares, Portuguese Estradas Nacionais
             return 0;
         }
@@ -995,7 +1008,16 @@ class DestinationsCustomView extends LinearLayout {
 
         // Default - Likely intercity railways without assigned colors
         else
-            return viaFerroviariaColor;
+            return railwayColor;
+    }
+
+    static int getColorByWaterway(String meansTransport, String routeName) {
+        if (isRiverWaterway(meansTransport, routeName))
+            return waterwayRiverColor;
+        else if (isCoastWaterway(meansTransport, routeName))
+            return waterwayCoastColor;
+        else // Default
+            return waterwayRiverColor;
     }
 
     private static boolean isAutoEstrada(String routeName) {
@@ -1042,22 +1064,41 @@ class DestinationsCustomView extends LinearLayout {
         return (routeName.startsWith("IC"));
     }
 
-    private static boolean isViaMaritima(String meansTransport) {
+    private static boolean isWaterway(String meansTransport) {
         return (meansTransport.equals(TravelActivity.BOAT));
     }
 
-    static boolean isViaFerroviaria(String meansTransport) {
+    private static boolean isRiverWaterway(String meansTransport, String routeName) {
+        return (isWaterway(meansTransport) && (!routeName.contains("Costa"))); // Costa == Coast
+    }
+
+    private static boolean isCoastWaterway(String meansTransport, String routeName) {
+        return (isWaterway(meansTransport) && (routeName.contains("Costa"))); // Costa == Coast
+    }
+
+    static boolean isRailway(String meansTransport) {
         // Excludes high speed railways
         return meansTransport.equals(TravelActivity.TRAIN) ||
                 meansTransport.equals(TravelActivity.SUBWAY);
     }
 
-    private static boolean isViaAltaVelocidadeFerroviaria(String meansTransport) {
+    private static boolean isHighSpeedRailway(String meansTransport) {
         return meansTransport.equals(TravelActivity.HIGH_SPEED_TRAIN);
     }
 
     private static boolean isCarreteraDelEstado(String routeName) {
         return (routeName.startsWith("N-"));
+    }
+
+    private static boolean isAutoviaWithOrangeBackground(String routeName) {
+        // Examples covered in map: M-45, A-92, A-92N
+        return ((routeName.startsWith("A-92")) || Arrays.asList("A-316", "A-318", "A-381", "A-382", "M-45").contains(routeName));
+    }
+
+    private static boolean isAutoviaWithGreenBackground(String routeName) {
+        // Cases covered in map - Currently some autovías in Andalucía. Ex: A-483
+        // Must be called AFTER isAutoviaWithOrangeBackground - Is more general
+        return (routeName.startsWith("A-")) && (routeName.split("A-")[1].length() >= 3);
     }
 
 }
