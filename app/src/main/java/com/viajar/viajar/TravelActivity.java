@@ -80,6 +80,7 @@ public class TravelActivity extends FragmentActivity {
     private String currentMapArea;
     private ArrayList<String[]> allCoordinatesNamesBatches;
     private ArrayList<String[]> allConnectionsCoordinates;
+    private ArrayList<Double[]> extremeMapPoints;
 
     private ViewPager2 viewPager2;
     private TabLayout tabLayout;
@@ -313,6 +314,7 @@ public class TravelActivity extends FragmentActivity {
         if (populateFromDatabase) {
             allCoordinatesNamesBatches = dbInterface.getAllCoordinatesNamesBatches(getApplicationContext());
             allConnectionsCoordinates = dbInterface.getAllConnectionCoordinates(getApplicationContext());
+            extremeMapPoints = dbInterface.getMapExtremePoints(getApplicationContext());
         }
         currentLocation = dbInterface.generateLocationObject(getApplicationContext(), currentLocationName);
         surroundingLocations = new ArrayList<>();
@@ -541,6 +543,11 @@ public class TravelActivity extends FragmentActivity {
                     requireActivity().runOnUiThread(this::enquadrarMapa);
                     return true;
                 }
+                else if (item.getItemId() == R.id.subregion) {
+                    ((TravelActivity) requireActivity()).currentMapArea = getString(R.string.subregion);
+                    requireActivity().runOnUiThread(this::enquadrarMapa);
+                    return true;
+                }
                 else if (item.getItemId() == R.id.around) {
                     ((TravelActivity) requireActivity()).currentMapArea = getString(R.string.around);
                     requireActivity().runOnUiThread(this::enquadrarMapa);
@@ -715,108 +722,21 @@ public class TravelActivity extends FragmentActivity {
                             b.include(new LatLng(latitude, longitude));
                     }
                 } else { // Include all locations
-                    //b.include(new LatLng(43.791278, -7.689167)); // North
-                    b.include(new LatLng(41.174506, -8.613425)); // North
-                    b.include(new LatLng(38.780907, -9.500550)); // West
-                    b.include(new LatLng(36.000141, -5.610575)); // South
-                    //b.include(new LatLng(42.319428, 3.322223)); // East
-                    b.include(new LatLng(37.262205, -3.085156)); // East
+                    ArrayList<Double[]> extremeMapPoints = ((TravelActivity) requireActivity()).extremeMapPoints;
+                    for (Double[] extremePoint : extremeMapPoints) {
+                        Double latitude = extremePoint[0];
+                        Double longitude = extremePoint[1];
+                        b.include(new LatLng(latitude, longitude));
+                    }
                 }
-            } else if (currentMapArea.equals(getString(R.string.region))) { // PT - Groups of districts, ES - Autonomous Communities or parts of them, GI - Gibraltar
-                switch (currentLocation.getCountry()) {
-                    case "Portugal":
-                        String district = ((LocationInfoPortugal) currentLocation).getDistrict();
-                        String intermunicipalEntity = ((LocationInfoPortugal) currentLocation).getIntermunicipalEntity();
-
-                        if (district.equals("Faro")) { // Algarve
-                            b.include(new LatLng(37.528930, -7.574430)); // North
-                            b.include(new LatLng(37.023060, -8.996989)); // West
-                            b.include(new LatLng(36.960175, -7.888063)); // South
-                            b.include(new LatLng(37.163375, -7.399764)); // East
-                        } else if (Arrays.asList("Beja", "Évora", "Portalegre").contains(district) || // Alentejo
-                                intermunicipalEntity.equals("Alentejo Litoral")) {
-                            b.include(new LatLng(39.664015, -7.539616)); // North
-                            b.include(new LatLng(38.490404, -8.912161)); // West
-                            b.include(new LatLng(37.318961, -8.065657)); // South
-                            b.include(new LatLng(38.207785, -6.932024)); // East
-                        } else if (Arrays.asList("Lisboa", "Santarém", "Leiria").contains(district) ||
-                                intermunicipalEntity.equals("Área Metropolitana de Lisboa")) { // Approx. Lisboa e Vale do Tejo
-                            b.include(new LatLng(40.089725, -8.179092)); // North
-                            b.include(new LatLng(38.780907, -9.500550)); // West
-                            b.include(new LatLng(38.409289, -9.198756)); // South
-                            b.include(new LatLng(39.565853, -7.811094)); // East
-                        } else if (Arrays.asList("Coimbra", "Aveiro", "Viseu").contains(district)) { // Approx. Beira Litoral
-                            b.include(new LatLng(41.214620, -7.446979)); // North
-                            b.include(new LatLng(40.185707, -8.909283)); // West
-                            b.include(new LatLng(39.923950, -8.385879)); // South
-                            b.include(new LatLng(41.139525, -7.304582)); // East
-                        } else if (Arrays.asList("Castelo Branco", "Guarda").contains(district)) { // Approx. Beira Interior
-                            b.include(new LatLng(41.179259, -7.117821)); // North
-                            b.include(new LatLng(39.807285, -8.293063)); // West
-                            b.include(new LatLng(39.537382, -7.825112)); // South
-                            b.include(new LatLng(40.364382, -6.781246)); // East
-                        } else if (Arrays.asList("Porto", "Braga", "Viana do Castelo").contains(district)) { // Douro Litoral + Minho
-                            b.include(new LatLng(42.154314, -8.198761)); // North
-                            b.include(new LatLng(41.752644, -8.881126)); // West
-                            b.include(new LatLng(41.001411, -8.389246)); // South
-                            b.include(new LatLng(41.573672, -7.810744)); // East
-                        } else if (Arrays.asList("Vila Real", "Bragança").contains(district)) { // Trás-os-Montes
-                            b.include(new LatLng(41.992518, -6.811355)); // North
-                            b.include(new LatLng(41.689246, -8.119490)); // West
-                            b.include(new LatLng(41.024693, -6.989702)); // South
-                            b.include(new LatLng(41.574843, -6.189228)); // East
-                        } else { // Error
-                            return;
-                        }
-                        break;
-                    case "Spain":
-                        String autonomousCommunity = ((LocationInfoSpain) currentLocation).getAutonomousCommunity();
-                        String province = ((LocationInfoSpain) currentLocation).getProvince();
-
-                        if (Arrays.asList("Huelva", "Sevilha", "Córdoba", "Cádiz").contains(province)) { // Western Andalucía
-                            b.include(new LatLng(38.729087, -5.046943)); // North
-                            b.include(new LatLng(37.555508, -7.522651)); // West
-                            b.include(new LatLng(36.000141, -5.610575)); // South
-                            b.include(new LatLng(37.401959, -4.001265)); // East
-                        } else if (Arrays.asList("Málaga", "Jaén", "Granada", "Almería").contains(province)) { // Eastern Andalucía
-                            b.include(new LatLng(38.533100, -2.767157)); // North
-                            b.include(new LatLng(36.539470, -5.609127)); // West
-                            b.include(new LatLng(36.310385, -5.249473)); // South
-                            b.include(new LatLng(37.375263, -1.630213)); // East
-                        } else if (autonomousCommunity.equals("Extremadura")) { // Extremadura
-                            b.include(new LatLng(40.486650, -6.234850)); // North
-                            b.include(new LatLng(39.663752, -7.539327)); // West
-                            b.include(new LatLng(37.941153, -6.180359)); // South
-                            b.include(new LatLng(39.168453, -4.647907)); // East
-                        } else if (Arrays.asList("Ciudad Real", "Toledo").contains(province)) { // Western Castilla-La Mancha
-                            b.include(new LatLng(40.318335, -4.380068)); // North
-                            b.include(new LatLng(39.877307, -5.406371)); // West
-                            b.include(new LatLng(38.342696, -4.287579)); // South
-                            b.include(new LatLng(38.734878, -2.638243)); // East
-                        } else if (Arrays.asList("León", "Zamora", "Salamanca").contains(province)) { // Western Castilla y León
-                            b.include(new LatLng(43.23820, -4.89551)); // North
-                            b.include(new LatLng(42.50801, -7.07708)); // West
-                            b.include(new LatLng(40.2390, -6.7557)); // South
-                            b.include(new LatLng(43.0471, -4.7323)); // East
-                        } else if (autonomousCommunity.equals("Comunidade de Madrid")) { // Madrid
-                            b.include(new LatLng(41.165731, -3.543958)); // North
-                            b.include(new LatLng(40.217163, -4.579124)); // West
-                            b.include(new LatLng(39.884752, -3.804706)); // South
-                            b.include(new LatLng(40.099441, -3.053298)); // East
-                        } else { // Error
-                            return;
-                        }
-                        break;
-                    case "Gibraltar":
-                        b.include(new LatLng(36.155101, -5.345433)); // North
-                        b.include(new LatLng(36.142543, -5.367428)); // West
-                        b.include(new LatLng(36.108838, -5.346123)); // South
-                        b.include(new LatLng(36.145086, -5.337617)); // East
-                        break;
-                    default: // Error
-                        return;
-                }
-
+            } else if (currentMapArea.equals(getString(R.string.subregion))) {
+                LatLng[] bounds = new RegionBoundsManager().getSubregionBoundsByLocation(currentLocation);
+                for (LatLng bound : bounds)
+                    b.include(bound);
+            } else if (currentMapArea.equals(getString(R.string.region))) {
+                LatLng[] bounds = new RegionBoundsManager().getRegionBoundsByLocation(currentLocation);
+                for (LatLng bound : bounds)
+                    b.include(bound);
             } else if (currentMapArea.equals(getString(R.string.around))) {
                 b.include(new LatLng(currentLocation.getLatitude() + aroundMapSize, currentLocation.getLongitude())); // North
                 b.include(new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude() - aroundMapSize)); // West
@@ -1098,7 +1018,21 @@ class DestinationsCustomView extends LinearLayout {
     private static boolean isAutoviaWithGreenBackground(String routeName) {
         // Cases covered in map - Currently some autovías in Andalucía. Ex: A-483
         // Must be called AFTER isAutoviaWithOrangeBackground - Is more general
-        return (routeName.startsWith("A-")) && (routeName.split("A-")[1].length() >= 3);
+        if (routeName.startsWith("A-")) {
+            // Ex: A-7 - Ronda Oeste de Málaga
+            if ((routeName.contains(" ")) && (routeName.split(" ")[0].split("A-")[1].length() >= 3))
+                return true;
+            // Ex: A-7/AP-7
+            else if ((routeName.contains("/")) && (routeName.split("/")[0].split("A-")[1].length() >= 3))
+                return true;
+            // Ex: A-483
+            else
+                return (routeName.split("A-")[1].length() >= 3) &&
+                        !(routeName.contains(" ")) &&
+                        !(routeName.contains("/"));
+        } else {
+            return false;
+        }
     }
 
 }

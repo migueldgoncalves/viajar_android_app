@@ -4,6 +4,9 @@
         android:id="@+id/around"
         android:title="@string/around"/>
     <item
+        android:id="@+id/subregion"
+        android:title="@string/subregion"/>
+    <item
         android:id="@+id/region"
         android:title="@string/region"/>
     <item

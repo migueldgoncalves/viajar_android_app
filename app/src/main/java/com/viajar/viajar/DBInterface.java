@@ -164,6 +164,23 @@ public class DBInterface {
         return allConnectionsCoordinates;
     }
 
+    public ArrayList<Double[]> getMapExtremePoints(Context context) {
+        ArrayList<Double[]> mapExtremePoints = new ArrayList<>();
+
+        Double northernmostLatitude = getDatabase(context).dao().getNorthernmostLatitude();
+        Double southernmostLatitude = getDatabase(context).dao().getSouthernmostLatitude();
+        Double westernmostLongitude = getDatabase(context).dao().getWesternmostLongitude();
+        Double easternmostLongitude = getDatabase(context).dao().getEasternmostLongitude();
+
+        Double[] northeastCorner = new Double[]{northernmostLatitude, easternmostLongitude};
+        Double[] southwestCorner = new Double[]{southernmostLatitude, westernmostLongitude};
+
+        mapExtremePoints.add(northeastCorner);
+        mapExtremePoints.add(southwestCorner);
+
+        return mapExtremePoints;
+    }
+
     private String getOppositeCardinalPoint(String cardinalPoint) {
         switch (cardinalPoint) {
             case TravelActivity.NORTH:

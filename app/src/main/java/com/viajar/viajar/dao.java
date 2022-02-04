@@ -128,6 +128,18 @@ public interface dao {
             "WHERE location1.name = connection.location_a AND location2.name = connection.location_b;")
     ConnectionCoordinates[] getConnectionsCoordinates();
 
+    @Query("SELECT latitude FROM location WHERE latitude = (SELECT MAX(latitude) FROM location);")
+    Double getNorthernmostLatitude();
+
+    @Query("SELECT latitude FROM location WHERE latitude = (SELECT MIN(latitude) FROM location);")
+    Double getSouthernmostLatitude();
+
+    @Query("SELECT longitude FROM location WHERE longitude = (SELECT MIN(longitude) FROM location);")
+    Double getWesternmostLongitude();
+
+    @Query("SELECT longitude FROM location WHERE longitude = (SELECT MAX(longitude) FROM location);")
+    Double getEasternmostLongitude();
+
     class ConnectionCoordinates {
         public double latitude1;
         public double longitude1;
