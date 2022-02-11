@@ -46,6 +46,7 @@ public class RegionBoundsManager {
     private final SubregionBounds leon = new SubregionBounds("León");
     private final SubregionBounds zamora = new SubregionBounds("Zamora");
     private final SubregionBounds salamanca = new SubregionBounds("Salamanca");
+    private final SubregionBounds regiaoDeMurcia = new SubregionBounds("Região de Murcia");
 
     private final SubregionBounds gibraltar = new SubregionBounds("Gibraltar");
 
@@ -65,6 +66,7 @@ public class RegionBoundsManager {
     private final RegionBounds extremadura = new RegionBounds("Extremadura");
     private final RegionBounds westernCastillaLaManchaAndMadrid = new RegionBounds("Western Castilla-La Mancha + Comunidade de Madrid");
     private final RegionBounds westernCastillaYLeon = new RegionBounds("Western Castilla y León");
+    private final RegionBounds regiaoDeMurciaRegion = new RegionBounds("Região de Murcia");
 
     public RegionBoundsManager() {
         setPortugueseSubregionBounds();
@@ -133,6 +135,8 @@ public class RegionBoundsManager {
                     return westernCastillaLaManchaAndMadrid;
                 else if (Arrays.asList("León", "Zamora", "Salamanca").contains(province))
                     return westernCastillaYLeon;
+                else if (province.equals("Região de Murcia"))
+                    return regiaoDeMurciaRegion;
                 else
                     return null;
             case "Gibraltar":
@@ -238,6 +242,8 @@ public class RegionBoundsManager {
                         return zamora;
                     case "Salamanca":
                         return salamanca;
+                    case "Região de Murcia":
+                        return regiaoDeMurcia;
                     default:
                         return null;
                 }
@@ -304,6 +310,8 @@ public class RegionBoundsManager {
         westernCastillaYLeon.addSubregion(leon);
         westernCastillaYLeon.addSubregion(zamora);
         westernCastillaYLeon.addSubregion(salamanca);
+
+        regiaoDeMurciaRegion.addSubregion(regiaoDeMurcia);
     }
 
     private void setPortugueseSubregionBounds() {
@@ -492,6 +500,11 @@ public class RegionBoundsManager {
         salamanca.setMaxSouth(40.2389,-6.7555);
         salamanca.setMaxWest(41.0174,-6.9318);
         salamanca.setMaxEast(40.9967,-5.0899);
+
+        regiaoDeMurcia.setMaxNorth(38.7551,-1.1836);
+        regiaoDeMurcia.setMaxSouth(37.3738,-1.6287);
+        regiaoDeMurcia.setMaxWest(38.0300,-2.3446);
+        regiaoDeMurcia.setMaxEast(37.65611,-0.64717);
     }
 
     private void setGibraltarSubregionBounds() {

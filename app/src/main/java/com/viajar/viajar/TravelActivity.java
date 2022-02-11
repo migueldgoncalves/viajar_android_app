@@ -325,7 +325,7 @@ public class TravelActivity extends FragmentActivity {
     }
 
     private boolean isComunidadeUniprovincial(String autonomousCommunity) {
-        String[] comunidadesUniprovinciales = new String[]{"Comunidade de Madrid"};
+        String[] comunidadesUniprovinciales = new String[]{"Comunidade de Madrid", "Região de Murcia"};
         return new ArrayList<>(Arrays.asList(comunidadesUniprovinciales)).contains(autonomousCommunity);
     }
 
