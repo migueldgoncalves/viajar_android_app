@@ -5,6 +5,7 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ProgressBar;
@@ -15,7 +16,9 @@ import androidx.fragment.app.FragmentActivity;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapsInitializer;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.OnMapsSdkInitializedCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
@@ -23,7 +26,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 
-public class CarActivity extends FragmentActivity implements OnMapReadyCallback {
+public class CarActivity extends FragmentActivity implements OnMapReadyCallback, OnMapsSdkInitializedCallback {
 
     private Car car;
     private AtomicBoolean accelerating;
@@ -40,6 +43,7 @@ public class CarActivity extends FragmentActivity implements OnMapReadyCallback 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        MapsInitializer.initialize(getApplicationContext(), MapsInitializer.Renderer.LATEST, this);
         setContentView(R.layout.activity_car);
 
         car = new Car(getIntent().getStringExtra("vehicle"), getApplicationContext());
@@ -69,6 +73,18 @@ public class CarActivity extends FragmentActivity implements OnMapReadyCallback 
         mapFragment.getMapAsync(this);
 
         carController.run();
+    }
+
+    @Override
+    public void onMapsSdkInitialized(MapsInitializer.Renderer renderer) {
+        switch (renderer) {
+            case LATEST:
+                Log.d("Travel Activity", "The latest version of the renderer is used.");
+                break;
+            case LEGACY:
+                Log.d("Travel Activity", "The legacy version of the renderer is used.");
+                break;
+        }
     }
 
     /**

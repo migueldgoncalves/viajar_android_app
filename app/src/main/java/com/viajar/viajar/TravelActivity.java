@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -32,7 +33,10 @@ import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
+import com.google.android.gms.maps.MapsInitializer;
+import com.google.android.gms.maps.MapsInitializer.Renderer;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.OnMapsSdkInitializedCallback;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
@@ -47,7 +51,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class TravelActivity extends FragmentActivity {
+public class TravelActivity extends FragmentActivity implements OnMapsSdkInitializedCallback {
 
     public static final String EAST = "E";
     public static final String NORTH = "N";
@@ -88,6 +92,7 @@ public class TravelActivity extends FragmentActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        MapsInitializer.initialize(getApplicationContext(), Renderer.LATEST, this);
         setContentView(R.layout.activity_travel);
 
         viewPager2 = findViewById(R.id.travelPager);
@@ -166,6 +171,18 @@ public class TravelActivity extends FragmentActivity {
         });
         DBInterface.deleteDatabase(getApplicationContext());
         populateDatabase(); // Sets UI with initial location info
+    }
+
+    @Override
+    public void onMapsSdkInitialized(MapsInitializer.Renderer renderer) {
+        switch (renderer) {
+            case LATEST:
+                Log.d("Travel Activity", "The latest version of the renderer is used.");
+                break;
+            case LEGACY:
+                Log.d("Travel Activity", "The legacy version of the renderer is used.");
+                break;
+        }
     }
 
     @Override
