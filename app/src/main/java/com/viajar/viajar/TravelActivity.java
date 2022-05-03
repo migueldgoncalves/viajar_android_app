@@ -633,6 +633,7 @@ public class TravelActivity extends FragmentActivity implements OnMapsSdkInitial
 
         public void desenharMapa() {
             LocationInfo currentLocation = ((TravelActivity) requireActivity()).currentLocation;
+            String currentTransportMeans = ((TravelActivity) requireActivity()).currentTransportMeans;
             ArrayList<String[]> allCoordinatesNamesBatches = ((TravelActivity) requireActivity()).allCoordinatesNamesBatches;
             ArrayList<String[]> allConnectionsCoordinates = ((TravelActivity) requireActivity()).allConnectionsCoordinates;
 
@@ -697,7 +698,7 @@ public class TravelActivity extends FragmentActivity implements OnMapsSdkInitial
                         }
                     }
                 }
-            } else { // Shows all current connections (except plane connections)
+            } else { // Shows all current connections (except plane connections if plane is not current means of transport)
                 for (String[] connectionCoordinates : allConnectionsCoordinates) {
                     Double latitude1 = Double.valueOf(connectionCoordinates[0]);
                     Double longitude1 = Double.valueOf(connectionCoordinates[1]);
@@ -706,8 +707,8 @@ public class TravelActivity extends FragmentActivity implements OnMapsSdkInitial
                     String routeName = connectionCoordinates[4];
                     String meansTransport = connectionCoordinates[5];
 
-                    // Transport means not to draw on the global map
-                    if (meansTransport.equals(PLANE))
+                    // If plane is the current means of transport, draws only plane connections
+                    if (meansTransport.equals(PLANE) != currentTransportMeans.equals(PLANE))
                         continue;
 
                     int lineColor = DestinationsCustomView.getColorByRouteName(routeName, meansTransport);
@@ -783,6 +784,7 @@ class DestinationsCustomView extends LinearLayout {
     private static final int waterwayCoastColor = Color.parseColor("#007fff"); // Blue
     private static final int railwayColor = Color.parseColor("#800000"); // Dark brown
     private static final int highSpeedRailwayColor = Color.parseColor("#660066"); // Purple
+    private static final int planeConnectionColor = Color.RED;
     private static final int defaultBackgroundColor = Color.parseColor("#F0F0F0"); // Light gray - Ex: itinerários complementares
 
     private static final int redRouteHighlight = Color.RED; // Ex: itinerários principais
@@ -906,6 +908,8 @@ class DestinationsCustomView extends LinearLayout {
             return getColorByRailway(routeName);
         } else if (isHighSpeedRailway(currentTransportMeans)) {
             return highSpeedRailwayColor;
+        } else if (isPlaneConnection(currentTransportMeans)) {
+            return planeConnectionColor;
         } else { // Ex: Itinerários Complementares, Portuguese Estradas Nacionais
             return 0;
         }
@@ -1050,6 +1054,10 @@ class DestinationsCustomView extends LinearLayout {
         } else {
             return false;
         }
+    }
+
+    private static boolean isPlaneConnection(String meansTransport) {
+        return meansTransport.equals(TravelActivity.PLANE);
     }
 
 }
