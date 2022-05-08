@@ -84,7 +84,10 @@ public class TravelActivity extends FragmentActivity implements OnMapsSdkInitial
     private String currentMapArea;
     private ArrayList<String[]> allCoordinatesNamesBatches;
     private ArrayList<String[]> allConnectionsCoordinates;
-    private ArrayList<Double[]> extremeMapPoints;
+    private Double northernmostLatitude;
+    private Double southernmostLatitude;
+    private Double westernmostLongitude;
+    private Double easternmostLongitude;
 
     private ViewPager2 viewPager2;
     private TabLayout tabLayout;
@@ -331,7 +334,10 @@ public class TravelActivity extends FragmentActivity implements OnMapsSdkInitial
         if (populateFromDatabase) {
             allCoordinatesNamesBatches = dbInterface.getAllCoordinatesNamesBatches(getApplicationContext());
             allConnectionsCoordinates = dbInterface.getAllConnectionCoordinates(getApplicationContext());
-            extremeMapPoints = dbInterface.getMapExtremePoints(getApplicationContext());
+            northernmostLatitude = dbInterface.getMapNorthernmostLatitude(getApplicationContext());
+            southernmostLatitude = dbInterface.getMapSouthernmostLatitude(getApplicationContext());
+            westernmostLongitude = dbInterface.getMapWesternmostLongitude(getApplicationContext());
+            easternmostLongitude = dbInterface.getMapEasternmostLongitude(getApplicationContext());
         }
         currentLocation = dbInterface.generateLocationObject(getApplicationContext(), currentLocationName);
         surroundingLocations = new ArrayList<>();
@@ -740,7 +746,22 @@ public class TravelActivity extends FragmentActivity implements OnMapsSdkInitial
                             b.include(new LatLng(latitude, longitude));
                     }
                 } else { // Include all locations
-                    ArrayList<Double[]> extremeMapPoints = ((TravelActivity) requireActivity()).extremeMapPoints;
+                    Double northernmostLatitude = ((TravelActivity) requireActivity()).northernmostLatitude;
+                    Double southernmostLatitude = ((TravelActivity) requireActivity()).southernmostLatitude;
+                    Double westernmostLongitude = -9.500587; // Cabo da Roca, Lisboa
+                    Double easternmostLongitude = 3.322270; // Cap de Creus, Girona
+                    Double centerLongitude = (easternmostLongitude - westernmostLongitude) / 2 + westernmostLongitude;
+
+                    if (currentLocation.getLongitude() < centerLongitude) { // Left side of Iberian Peninsula
+                        easternmostLongitude = centerLongitude;
+                    }
+                    else { // Right side of Iberian Peninsula
+                        westernmostLongitude = centerLongitude;
+                    }
+
+                    List<Double[]> extremeMapPoints = Arrays.asList(
+                            new Double[]{northernmostLatitude, westernmostLongitude},
+                            new Double[]{southernmostLatitude, easternmostLongitude});
                     for (Double[] extremePoint : extremeMapPoints) {
                         Double latitude = extremePoint[0];
                         Double longitude = extremePoint[1];

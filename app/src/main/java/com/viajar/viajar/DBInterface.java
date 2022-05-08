@@ -167,10 +167,10 @@ public class DBInterface {
     public ArrayList<Double[]> getMapExtremePoints(Context context) {
         ArrayList<Double[]> mapExtremePoints = new ArrayList<>();
 
-        Double northernmostLatitude = getDatabase(context).dao().getNorthernmostLatitude();
-        Double southernmostLatitude = getDatabase(context).dao().getSouthernmostLatitude();
-        Double westernmostLongitude = getDatabase(context).dao().getWesternmostLongitude();
-        Double easternmostLongitude = getDatabase(context).dao().getEasternmostLongitude();
+        Double northernmostLatitude = getMapNorthernmostLatitude(context);
+        Double southernmostLatitude = getMapSouthernmostLatitude(context);
+        Double westernmostLongitude = getMapWesternmostLongitude(context);
+        Double easternmostLongitude = getMapEasternmostLongitude(context);
 
         Double[] northeastCorner = new Double[]{northernmostLatitude, easternmostLongitude};
         Double[] southwestCorner = new Double[]{southernmostLatitude, westernmostLongitude};
@@ -179,6 +179,22 @@ public class DBInterface {
         mapExtremePoints.add(southwestCorner);
 
         return mapExtremePoints;
+    }
+
+    public Double getMapNorthernmostLatitude(Context context) {
+        return getDatabase(context).dao().getNorthernmostLatitude();
+    }
+
+    public Double getMapSouthernmostLatitude(Context context) {
+        return getDatabase(context).dao().getSouthernmostLatitude();
+    }
+
+    public Double getMapWesternmostLongitude(Context context) {
+        return getDatabase(context).dao().getWesternmostLongitude();
+    }
+
+    public Double getMapEasternmostLongitude(Context context) {
+        return getDatabase(context).dao().getEasternmostLongitude();
     }
 
     private String getOppositeCardinalPoint(String cardinalPoint) {
