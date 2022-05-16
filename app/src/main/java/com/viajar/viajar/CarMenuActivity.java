@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 public class CarMenuActivity extends AppCompatActivity {
 
@@ -13,6 +14,18 @@ public class CarMenuActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_car_menu);
+
+        // Code related to the toolbar
+        Toolbar mToolbar = findViewById(R.id.carMenuToolbar);
+        setSupportActionBar(mToolbar);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+        }
+        mToolbar.setNavigationOnClickListener(v -> {
+            //What to do on back clicked
+            onBackPressed();
+        });
     }
 
     public void moveCarActivity(View view) {

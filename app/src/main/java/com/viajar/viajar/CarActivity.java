@@ -12,7 +12,8 @@ import android.widget.ProgressBar;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
-import androidx.fragment.app.FragmentActivity;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -26,7 +27,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 
-public class CarActivity extends FragmentActivity implements OnMapReadyCallback, OnMapsSdkInitializedCallback {
+public class CarActivity extends AppCompatActivity implements OnMapReadyCallback, OnMapsSdkInitializedCallback {
 
     private Car car;
     private AtomicBoolean accelerating;
@@ -45,6 +46,18 @@ public class CarActivity extends FragmentActivity implements OnMapReadyCallback,
         super.onCreate(savedInstanceState);
         MapsInitializer.initialize(getApplicationContext(), MapsInitializer.Renderer.LATEST, this);
         setContentView(R.layout.activity_car);
+
+        // Code related to the toolbar
+        Toolbar mToolbar = findViewById(R.id.carToolbar);
+        setSupportActionBar(mToolbar);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+        }
+        mToolbar.setNavigationOnClickListener(v -> {
+            //What to do on back clicked
+            onBackPressed();
+        });
 
         car = new Car(getIntent().getStringExtra("vehicle"), getApplicationContext());
         accelerating = new AtomicBoolean(false);

@@ -45,4 +45,5 @@
     <string name="subway">Metro</string>
     <string name="infinite">Infinito</string>
     <string name="subregion">Subregião</string>
+    <string name="action_settings">Definições</string>
 </resources>

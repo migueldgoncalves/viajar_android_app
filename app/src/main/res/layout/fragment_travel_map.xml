@@ -12,11 +12,11 @@
     <TextView
         android:id="@+id/locationTextViewMap"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="45dp"
         android:textAlignment="center"
         android:gravity="center"
         android:paddingTop="0dp"
-        android:textSize="20sp"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintTop_toTopOf="parent"
         android:textColor="@color/black" />
@@ -25,7 +25,7 @@
         android:id="@+id/map"
         android:name="com.google.android.gms.maps.MapView"
         android:layout_width="match_parent"
-        android:paddingTop="60dp"
+        android:paddingTop="45dp"
         android:paddingBottom="?android:attr/actionBarSize"
         android:layout_height="wrap_content" />
 

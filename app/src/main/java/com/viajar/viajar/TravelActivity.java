@@ -11,6 +11,8 @@ import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -21,9 +23,10 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.view.menu.MenuBuilder;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
@@ -51,7 +54,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class TravelActivity extends FragmentActivity implements OnMapsSdkInitializedCallback {
+public class TravelActivity extends AppCompatActivity implements OnMapsSdkInitializedCallback {
 
     public static final String EAST = "E";
     public static final String NORTH = "N";
@@ -101,6 +104,18 @@ public class TravelActivity extends FragmentActivity implements OnMapsSdkInitial
         viewPager2 = findViewById(R.id.travelPager);
         FragmentStateAdapter pagerAdapter = new TravelPagerAdapter(getSupportFragmentManager(), getLifecycle());
         viewPager2.setAdapter(pagerAdapter);
+
+        // Code related to the toolbar
+        Toolbar mToolbar = findViewById(R.id.travelToolbar);
+        setSupportActionBar(mToolbar);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+        }
+        mToolbar.setNavigationOnClickListener(v -> {
+            //What to do on back clicked
+            onBackPressed();
+        });
 
         tabLayout = findViewById(R.id.travelTabLayout);
         viewPager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
@@ -174,6 +189,19 @@ public class TravelActivity extends FragmentActivity implements OnMapsSdkInitial
         });
         DBInterface.deleteDatabase(getApplicationContext());
         populateDatabase(); // Sets UI with initial location info
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) { // Add to any activity that requires options in toolbar
+        getMenuInflater().inflate(R.menu.toolbar_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.settings) {
+        }
+        return true;
     }
 
     @Override

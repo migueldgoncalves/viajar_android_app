@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -13,6 +14,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Code related to the toolbar
+        Toolbar mToolbar = findViewById(R.id.mainToolbar);
+        setSupportActionBar(mToolbar);
 
         final TextView version_text = findViewById(R.id.version_text);
         String major_version = getString(R.string.version_major);
