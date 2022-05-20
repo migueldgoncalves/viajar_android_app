@@ -981,6 +981,9 @@ class DestinationsCustomView extends LinearLayout {
             return Color.parseColor("#be2c2c"); // Reddish-brown
         else if (railway.contains("Linha de Cascais"))
             return Color.parseColor("#ffab2e"); // Yellow
+        // Coimbra
+        else if (railway.contains("Urbanos de Coimbra"))
+            return Color.parseColor("#3c3c3c"); // Dark gray
         // Madrid
         else if (railway.contains("C-1"))
             return Color.parseColor("#66aede"); // Blue
