@@ -46,4 +46,8 @@
     <string name="infinite">Infinito</string>
     <string name="subregion">Subregión</string>
     <string name="action_settings">Ajustes</string>
+    <string name="title_activity_settings">Ajustes</string>
+    <string name="setting_car_mode_title">Modo de coche</string>
+    <string name="setting_car_mode_summary_on">Simular viaje de coche al viajar entre locales</string>
+    <string name="setting_car_mode_summary_off">Viajar directamente al destino</string>
 </resources>

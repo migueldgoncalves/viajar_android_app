@@ -2,6 +2,7 @@ package com.viajar.viajar;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.Typeface;
@@ -99,6 +100,10 @@ public class TravelActivity extends AppCompatActivity implements OnMapsSdkInitia
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         MapsInitializer.initialize(getApplicationContext(), Renderer.LATEST, this);
+
+        // Sample code on how to read setting
+        //boolean setting = PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getBoolean(getString(R.string.settings_key_car_mode), false);
+
         setContentView(R.layout.activity_travel);
 
         viewPager2 = findViewById(R.id.travelPager);
@@ -200,6 +205,8 @@ public class TravelActivity extends AppCompatActivity implements OnMapsSdkInitia
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.settings) {
+            Intent intent = new Intent(this, SettingsActivity.class);
+            startActivity(intent);
         }
         return true;
     }
