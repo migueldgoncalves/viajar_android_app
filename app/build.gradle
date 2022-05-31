@@ -3,14 +3,14 @@ plugins {
 }
 
 android {
-    compileSdkVersion 31
+    compileSdkVersion 32
 
     defaultConfig {
         applicationId "com.viajar.viajar"
         minSdkVersion 23
-        targetSdkVersion 31
-        versionCode 46
-        versionName "1.14.8"
+        targetSdkVersion 32
+        versionCode 47
+        versionName "1.14.9"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 

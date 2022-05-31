@@ -50,7 +50,7 @@
 
     </androidx.viewpager2.widget.ViewPager2>
 
-    <com.viajar.viajar.LargeBottomNavigationView
+    <view class="com.viajar.viajar.LargeBottomNavigationView"
         android:id="@+id/bottomNavigationViewGPS"
         android:layout_width="match_parent"
         android:layout_height="?android:attr/actionBarSize"

@@ -1,10 +1,7 @@
 package com.viajar.viajar;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.Resources;
-import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.AttributeSet;
@@ -18,14 +15,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.view.menu.MenuBuilder;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -46,9 +40,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PolylineOptions;
-import com.google.android.material.bottomnavigation.BottomNavigationMenuView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationBarMenuView;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
@@ -569,7 +561,6 @@ public class TravelActivity extends AppCompatActivity implements OnMapsSdkInitia
 
         private static final int largeIconSize = 350;
         private static final int lineWidth = 5;
-        private static final int defaultLineColor = Color.BLACK;
         private static int mapPadding = 50;
         private static final double aroundMapSize = 0.15 / 2; // Degrees - In Iberian Peninsula 1 degree = ~100 km
         private static final int defaultMapAreaID = R.id.around;
@@ -715,9 +706,7 @@ public class TravelActivity extends AppCompatActivity implements OnMapsSdkInitia
                         if (meansTransport.equals(PLANE))
                             continue;
 
-                        int lineColor = DestinationsCustomView.getColorByRouteName(routeName, meansTransport);
-                        if (lineColor == 0)
-                            lineColor = defaultLineColor;
+                        int lineColor = RouteColorGetter.getRouteLineColor(routeName, meansTransport);
                         boolean locationOneInBatch = false;
                         boolean locationTwoInBatch = false;
                         for (String[] coordinateNameBatch : allCoordinatesNamesBatches) {
@@ -752,9 +741,7 @@ public class TravelActivity extends AppCompatActivity implements OnMapsSdkInitia
                     if (meansTransport.equals(PLANE) != currentTransportMeans.equals(PLANE))
                         continue;
 
-                    int lineColor = DestinationsCustomView.getColorByRouteName(routeName, meansTransport);
-                    if (lineColor == 0)
-                        lineColor = defaultLineColor;
+                    int lineColor = RouteColorGetter.getRouteLineColor(routeName, meansTransport);
                     mMap.addPolyline(new PolylineOptions().add(
                             new LatLng(latitude1, longitude1),
                             new LatLng(latitude2, longitude2))
@@ -833,20 +820,6 @@ class DestinationsCustomView extends LinearLayout {
     private final int textSizeUnit = TypedValue.COMPLEX_UNIT_SP;
     private final int routeNameTextSize = 20;
 
-    private static final int autoEstradaColor = Color.BLUE;
-    private static final int itinerarioPrincipalColor = Color.parseColor("#008000"); // Dark green
-    private static final int itinerarioComplementarColor = Color.parseColor("#808080"); // Grey
-    private static final int waterwayRiverColor = Color.CYAN;
-    private static final int waterwayCoastColor = Color.parseColor("#007fff"); // Blue
-    private static final int railwayColor = Color.parseColor("#800000"); // Dark brown
-    private static final int highSpeedRailwayColor = Color.parseColor("#660066"); // Purple
-    private static final int planeConnectionColor = Color.RED;
-    private static final int defaultBackgroundColor = Color.parseColor("#F0F0F0"); // Light gray - Ex: itinerários complementares
-
-    private static final int redRouteHighlight = Color.RED; // Ex: itinerários principais
-    private static final int greenRouteHighlight = Color.parseColor("#009900"); // Ex: Some autovías in Andaluzia
-    private static final int orangeRouteHighlight = Color.parseColor("#ff9900"); // Ex: Autovías M-45 and A-92
-
     public DestinationsCustomView(Context context, AttributeSet attrs) {
         super(context, attrs);
         this.setOrientation(VERTICAL);
@@ -908,42 +881,16 @@ class DestinationsCustomView extends LinearLayout {
             TextView destinationTextView = new TextView(getContext());
             destinationTextView.setText(destinationText);
             destinationsLinearLayout.addView(destinationTextView);
-            if (isAutoviaWithOrangeBackground(routeName)) {
-                destinationTextView.setTextColor(Color.WHITE);
-                routeTextView.setTextColor(Color.BLACK);
-            }
-            else if (isAutoviaWithGreenBackground(routeName)) {
-                destinationTextView.setTextColor(Color.WHITE);
-                routeTextView.setTextColor(Color.WHITE);
-            }
-            else if (isAutoEstrada(routeName) || isItinerarioPrincipal(routeName) ||
-                    isWaterway(currentTransportMeans) ||
-                    isRailway(currentTransportMeans) || isHighSpeedRailway(currentTransportMeans)) {
-                destinationTextView.setTextColor(Color.WHITE);
-                routeTextView.setTextColor(Color.WHITE);
-            } else if (currentLocation.getCountry().equals("Spain") && isCarreteraDelEstado(routeName)) {
-                destinationTextView.setTextColor(Color.BLACK);
-                routeTextView.setTextColor(Color.WHITE);
-            } else {
-                destinationTextView.setTextColor(Color.BLACK);
-                routeTextView.setTextColor(Color.BLACK);
-            }
+            destinationTextView.setTextColor(RouteColorGetter.getDestinationsTextColor(routeName, currentTransportMeans));
+            routeTextView.setTextColor(RouteColorGetter.getRouteNameTextColor(routeName, currentTransportMeans));
         }
 
         // Background color
-        int backgroundColor = getColorByRouteName(routeName, currentTransportMeans);
-        if (backgroundColor == 0)
-            backgroundColor = defaultBackgroundColor;
+        int backgroundColor = RouteColorGetter.getRouteBackgroundColor(routeName, currentTransportMeans);
         routeNameLinearLayout.setBackgroundColor(backgroundColor);
         destinationsLinearLayout.setBackgroundColor(backgroundColor);
-
-        // When route name background color does not match general background color
-        if (isCarreteraDelEstado(routeName) || isItinerarioPrincipal(routeName))
-            routeTextView.setBackgroundColor(redRouteHighlight);
-        else if (isAutoviaWithOrangeBackground(routeName))
-            routeTextView.setBackgroundColor(orangeRouteHighlight);
-        else if (isAutoviaWithGreenBackground(routeName))
-            routeTextView.setBackgroundColor(greenRouteHighlight);
+        // Route name background color may be different from general background color
+        routeTextView.setBackgroundColor(RouteColorGetter.getRouteTextBackgroundColor(routeName, currentTransportMeans, backgroundColor));
 
         // Required - https://developer.android.com/training/custom-views/create-view#addprop
 
@@ -951,336 +898,4 @@ class DestinationsCustomView extends LinearLayout {
         requestLayout();
     }
 
-    static int getColorByRouteName(String routeName, String currentTransportMeans) {
-        if (isAutoEstrada(routeName)) {
-            return autoEstradaColor;
-        } else if (isItinerarioPrincipal(routeName)) {
-            return itinerarioPrincipalColor;
-        } else if (isItinerarioComplementar(routeName)) {
-            return itinerarioComplementarColor;
-        } else if (isWaterway(currentTransportMeans)) {
-            return getColorByWaterway(currentTransportMeans, routeName);
-        } else if (isRailway(currentTransportMeans)) {
-            return getColorByRailway(routeName);
-        } else if (isHighSpeedRailway(currentTransportMeans)) {
-            return highSpeedRailwayColor;
-        } else if (isPlaneConnection(currentTransportMeans)) {
-            return planeConnectionColor;
-        } else { // Ex: Itinerários Complementares, Portuguese Estradas Nacionais
-            return 0;
-        }
-    }
-
-    static int getColorByRailway(String railway) {
-        // Given the name of a railway (ex: Linha do Sul - Intercidades, Linha do Sado - CP Lisboa), returns
-        //  the color to use to represent the line. Ex: Sado Line is blue, while Cascais Line is yellow
-
-        // TRAIN - Add new train lines HERE
-
-        // Lisbon
-        if (railway.contains("Linha do Sado"))
-            return Color.BLUE;
-        else if (railway.contains("Linha do Sul") && railway.contains("Fertagus"))
-            return Color.parseColor("#6fa8dc"); // Light blue
-        else if (railway.contains("Linha de Sintra") && railway.contains("CP Lisboa"))
-            return Color.parseColor("#008000"); // Green
-        else if (railway.contains("Linha da Azambuja"))
-            return Color.parseColor("#be2c2c"); // Reddish-brown
-        else if (railway.contains("Linha de Cascais"))
-            return Color.parseColor("#ffab2e"); // Yellow
-        // Coimbra
-        else if (railway.contains("Urbanos de Coimbra"))
-            return Color.parseColor("#3c3c3c"); // Dark gray
-        // Madrid
-        else if (railway.contains("C-1"))
-            return Color.parseColor("#66aede"); // Blue
-        else if (railway.contains("C-3"))
-            return Color.parseColor("#6a329f"); // Purple
-
-        // SUBWAY - Add new subway lines HERE
-
-        // Lisbon
-        else if (railway.contains("Linha Vermelha - Metro de Lisboa"))
-            return Color.RED;
-        // Madrid
-        else if (railway.contains("Linha 8 - Metro de Madrid"))
-            return Color.parseColor("#f373b7"); // Pink
-
-        // Default - Likely intercity railways without assigned colors
-        else
-            return railwayColor;
-    }
-
-    static int getColorByWaterway(String meansTransport, String routeName) {
-        if (isRiverWaterway(meansTransport, routeName))
-            return waterwayRiverColor;
-        else if (isCoastWaterway(meansTransport, routeName))
-            return waterwayCoastColor;
-        else // Default
-            return waterwayRiverColor;
-    }
-
-    private static boolean isAutoEstrada(String routeName) {
-        if ((routeName == null) || (routeName.length() == 0))
-            return false;
-
-        return (
-                // General auto-estradas
-                routeName.startsWith("A-") || // Autovía (also Andalucía)
-                routeName.startsWith("AP-") || // Autopista
-                routeName.startsWith("R-") || // Radial
-                (routeName.charAt(0) == 'A' && ((routeName.length() == 2) || (routeName.length() == 3))) || // Ex: A2, A22
-                routeName.equals("A9 CREL") ||
-                routeName.equals("A13-1") ||
-                routeName.equals("A26-1") ||
-                routeName.equals("A10 - Ponte da Lezíria") ||
-                routeName.contains("IC23 VCI") || // Ex: A20/IC23 VCI/Ponte do Freixo
-
-                // Spanish autonomous community auto-estradas
-                routeName.startsWith("CM-") || // Castilla-La Mancha
-                routeName.startsWith("EX-A") || // Extremadura
-                routeName.startsWith("M-") || // Comunidad de Madrid
-
-                // Spanish provincial auto-estradas
-                routeName.startsWith("CA-") || // Cádiz
-                routeName.startsWith("CO-") || // Córdoba
-                routeName.startsWith("GR-") || // Granada
-                routeName.startsWith("H-") || // Huelva
-                routeName.startsWith("MA-") || // Málaga
-                routeName.startsWith("SE-") || // Seville
-                routeName.startsWith("TO-") // Toledo
-        );
-    }
-
-    private static boolean isItinerarioPrincipal(String routeName) {
-        if ((routeName == null) || (routeName.length() == 0))
-            return false;
-        return (routeName.startsWith("IP"));
-    }
-
-    private static boolean isItinerarioComplementar(String routeName) {
-        if ((routeName == null) || (routeName.length() == 0))
-            return false;
-        return (routeName.startsWith("IC"));
-    }
-
-    private static boolean isWaterway(String meansTransport) {
-        return (meansTransport.equals(TravelActivity.BOAT));
-    }
-
-    private static boolean isRiverWaterway(String meansTransport, String routeName) {
-        return (isWaterway(meansTransport) && (!routeName.contains("Costa"))); // Costa == Coast
-    }
-
-    private static boolean isCoastWaterway(String meansTransport, String routeName) {
-        return (isWaterway(meansTransport) && (routeName.contains("Costa"))); // Costa == Coast
-    }
-
-    static boolean isRailway(String meansTransport) {
-        // Excludes high speed railways
-        return meansTransport.equals(TravelActivity.TRAIN) ||
-                meansTransport.equals(TravelActivity.SUBWAY);
-    }
-
-    private static boolean isHighSpeedRailway(String meansTransport) {
-        return meansTransport.equals(TravelActivity.HIGH_SPEED_TRAIN);
-    }
-
-    private static boolean isCarreteraDelEstado(String routeName) {
-        return (routeName.startsWith("N-"));
-    }
-
-    private static boolean isAutoviaWithOrangeBackground(String routeName) {
-        // Examples covered in map: M-45, A-92, A-92N
-        return ((routeName.startsWith("A-92")) || Arrays.asList("A-316", "A-318", "A-381", "A-382", "M-45").contains(routeName));
-    }
-
-    private static boolean isAutoviaWithGreenBackground(String routeName) {
-        // Cases covered in map - Currently some autovías in Andalucía. Ex: A-483
-        // Must be called AFTER isAutoviaWithOrangeBackground - Is more general
-        if (routeName.startsWith("A-")) {
-            // Ex: A-7 - Ronda Oeste de Málaga
-            if ((routeName.contains(" ")) && (routeName.split(" ")[0].split("A-")[1].length() >= 3))
-                return true;
-            // Ex: A-7/AP-7
-            else if ((routeName.contains("/")) && (routeName.split("/")[0].split("A-")[1].length() >= 3))
-                return true;
-            // Ex: A-483
-            else
-                return (routeName.split("A-")[1].length() >= 3) &&
-                        !(routeName.contains(" ")) &&
-                        !(routeName.contains("/"));
-        } else {
-            return false;
-        }
-    }
-
-    private static boolean isPlaneConnection(String meansTransport) {
-        return meansTransport.equals(TravelActivity.PLANE);
-    }
-
-}
-
-// This code allows to show a custom amount of icons in the Bottom Navigation View of the GPS tab (5 by default)
-// This is obtained by overriding methods and classes from Android
-// Most code was kept intact
-
-class LargeBottomNavigationView extends BottomNavigationView {
-    // Allows to override max item count (default is 5)
-    static int MAX_ITEM_COUNT = 100;
-
-    public LargeBottomNavigationView(@NonNull Context context) {
-        super(context);
-    }
-
-    public LargeBottomNavigationView(@NonNull Context context, @Nullable AttributeSet attrs) {
-        super(context, attrs);
-    }
-
-    public LargeBottomNavigationView(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
-        super(context, attrs, defStyleAttr);
-    }
-
-    public int getMaxItemCount() {
-        return MAX_ITEM_COUNT;
-    }
-
-    static int getStaticMaxItemCount() {
-        return MAX_ITEM_COUNT;
-    }
-
-    @SuppressLint("RestrictedApi")
-    public void setItemHorizontalTranslationEnabled(boolean itemHorizontalTranslationEnabled) {
-        LargeBottomNavigationMenuView menuView = (LargeBottomNavigationMenuView) getMenuView();
-        if (menuView.isItemHorizontalTranslationEnabled() != itemHorizontalTranslationEnabled) {
-            menuView.setItemHorizontalTranslationEnabled(itemHorizontalTranslationEnabled);
-            getPresenter().updateMenuView(false);
-        }
-    }
-
-    @NonNull
-    @SuppressLint("RestrictedApi")
-    protected NavigationBarMenuView createNavigationBarMenuView(@NonNull Context context) {
-        return new LargeBottomNavigationMenuView(context);
-    }
-
-    @SuppressLint("RestrictedApi")
-    public boolean isItemHorizontalTranslationEnabled() {
-        return ((LargeBottomNavigationMenuView) getMenuView()).isItemHorizontalTranslationEnabled();
-    }
-}
-
-@SuppressLint("RestrictedApi")
-class LargeBottomNavigationMenuView extends BottomNavigationMenuView {
-    private final int inactiveItemMaxWidth;
-    private final int inactiveItemMinWidth;
-    private final int activeItemMaxWidth;
-    private final int activeItemMinWidth;
-    private final int itemHeight;
-
-    private boolean itemHorizontalTranslationEnabled;
-    private int[] tempChildWidths;
-
-    public LargeBottomNavigationMenuView(@NonNull Context context) {
-        super(context);
-
-        FrameLayout.LayoutParams params =
-                new FrameLayout.LayoutParams(
-                        ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        params.gravity = Gravity.CENTER;
-        setLayoutParams(params);
-
-        final Resources res = getResources();
-        inactiveItemMaxWidth =
-                res.getDimensionPixelSize(R.dimen.design_bottom_navigation_item_max_width);
-        inactiveItemMinWidth =
-                res.getDimensionPixelSize(R.dimen.design_bottom_navigation_item_min_width);
-        activeItemMaxWidth =
-                res.getDimensionPixelSize(R.dimen.design_bottom_navigation_active_item_max_width);
-        activeItemMinWidth =
-                res.getDimensionPixelSize(R.dimen.design_bottom_navigation_active_item_min_width);
-        itemHeight = res.getDimensionPixelSize(R.dimen.design_bottom_navigation_height);
-
-        tempChildWidths = new int[LargeBottomNavigationView.getStaticMaxItemCount()];
-    }
-
-    @Override
-    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        final MenuBuilder menu = getMenu();
-        final int width = MeasureSpec.getSize(widthMeasureSpec);
-        // Use visible item count to calculate widths
-        final int visibleCount = menu.getVisibleItems().size();
-        // Use total item counts to measure children
-        final int totalCount = getChildCount();
-
-        final int heightSpec = MeasureSpec.makeMeasureSpec(itemHeight, MeasureSpec.EXACTLY);
-
-        if (isShifting(getLabelVisibilityMode(), visibleCount)
-                && isItemHorizontalTranslationEnabled()) {
-            final View activeChild = getChildAt(getSelectedItemPosition());
-            int activeItemWidth = activeItemMinWidth;
-            if (activeChild.getVisibility() != View.GONE) {
-                // Do an AT_MOST measure pass on the active child to get its desired width, and resize the
-                // active child view based on that width
-                activeChild.measure(
-                        MeasureSpec.makeMeasureSpec(activeItemMaxWidth, MeasureSpec.AT_MOST), heightSpec);
-                activeItemWidth = Math.max(activeItemWidth, activeChild.getMeasuredWidth());
-            }
-            final int inactiveCount = visibleCount - (activeChild.getVisibility() != View.GONE ? 1 : 0);
-            final int activeMaxAvailable = width - inactiveCount * inactiveItemMinWidth;
-            final int activeWidth =
-                    Math.min(activeMaxAvailable, Math.min(activeItemWidth, activeItemMaxWidth));
-            final int inactiveMaxAvailable =
-                    (width - activeWidth) / (inactiveCount == 0 ? 1 : inactiveCount);
-            final int inactiveWidth = Math.min(inactiveMaxAvailable, inactiveItemMaxWidth);
-            int extra = width - activeWidth - inactiveWidth * inactiveCount;
-
-            for (int i = 0; i < totalCount; i++) {
-                if (getChildAt(i).getVisibility() != View.GONE) {
-                    tempChildWidths[i] = (i == getSelectedItemPosition()) ? activeWidth : inactiveWidth;
-                    // Account for integer division which sometimes leaves some extra pixel spaces.
-                    // e.g. If the nav was 10px wide, and 3 children were measured to be 3px-3px-3px, there
-                    // would be a 1px gap somewhere, which this fills in.
-                    if (extra > 0) {
-                        tempChildWidths[i]++;
-                        extra--;
-                    }
-                } else {
-                    tempChildWidths[i] = 0;
-                }
-            }
-        } else {
-            final int maxAvailable = width / (visibleCount == 0 ? 1 : visibleCount);
-            final int childWidth = Math.min(maxAvailable, activeItemMaxWidth);
-            int extra = width - childWidth * visibleCount;
-            for (int i = 0; i < totalCount; i++) {
-                if (getChildAt(i).getVisibility() != View.GONE) {
-                    tempChildWidths[i] = childWidth;
-                    if (extra > 0) {
-                        tempChildWidths[i]++;
-                        extra--;
-                    }
-                } else {
-                    tempChildWidths[i] = 0;
-                }
-            }
-        }
-
-        int totalWidth = 0;
-        for (int i = 0; i < totalCount; i++) {
-            final View child = getChildAt(i);
-            if (child.getVisibility() == GONE) {
-                continue;
-            }
-            child.measure(
-                    MeasureSpec.makeMeasureSpec(tempChildWidths[i], MeasureSpec.EXACTLY), heightSpec);
-            ViewGroup.LayoutParams params = child.getLayoutParams();
-            params.width = child.getMeasuredWidth();
-            totalWidth += child.getMeasuredWidth();
-        }
-        setMeasuredDimension(
-                View.resolveSizeAndState(
-                        totalWidth, MeasureSpec.makeMeasureSpec(totalWidth, MeasureSpec.EXACTLY), 0),
-                View.resolveSizeAndState(itemHeight, heightSpec, 0));
-    }
 }
