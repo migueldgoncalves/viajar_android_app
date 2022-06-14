@@ -552,9 +552,18 @@ public class TravelActivity extends AppCompatActivity implements OnMapsSdkInitia
                     editText.append("Entidade Intermunicipal: " + ((LocationInfoPortugal) currentLocation).getIntermunicipalEntity() + "\n");
                     editText.append("Região: " + ((LocationInfoPortugal) currentLocation).getRegion() + "\n");
                 } else if (currentLocation.getCountry().equals("Spain")) {
-                    if (((LocationInfoSpain) currentLocation).getDistrict() != null && !((LocationInfoSpain) currentLocation).getDistrict().equals(""))
-                        editText.append("Distrito: " + ((LocationInfoSpain) currentLocation).getDistrict() + "\n");
-                    editText.append("Município: " + ((LocationInfoSpain) currentLocation).getMunicipality() + "\n");
+                    if (((LocationInfoSpain) currentLocation).getDistrict() != null && !((LocationInfoSpain) currentLocation).getDistrict().equals("")) {
+                        if (((LocationInfoSpain) currentLocation).getAutonomousCommunity().equals("Galiza")) {
+                            editText.append("Paróquia: " + ((LocationInfoSpain) currentLocation).getDistrict() + "\n");
+                        } else {
+                            editText.append("Distrito: " + ((LocationInfoSpain) currentLocation).getDistrict() + "\n");
+                        }
+                    }
+                    if (((LocationInfoSpain) currentLocation).getAutonomousCommunity().equals("Galiza")) {
+                        editText.append("Concelho: " + ((LocationInfoSpain) currentLocation).getMunicipality() + "\n");
+                    } else {
+                        editText.append("Município: " + ((LocationInfoSpain) currentLocation).getMunicipality() + "\n");
+                    }
                     if (((LocationInfoSpain) currentLocation).getAutonomousCommunity().equals("Extremadura")) {
                         if (((LocationInfoSpain) currentLocation).getComarcas().size() == 1)
                             editText.append("Mancomunidade integral: " + ((LocationInfoSpain) currentLocation).getComarcas().get(0) + "\n");

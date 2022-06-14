@@ -47,6 +47,8 @@ public class RegionBoundsManager {
     private final SubregionBounds zamora = new SubregionBounds("Zamora");
     private final SubregionBounds salamanca = new SubregionBounds("Salamanca");
     private final SubregionBounds regiaoDeMurcia = new SubregionBounds("Região de Murcia");
+    private final SubregionBounds pontevedra = new SubregionBounds("Pontevedra");
+    private final SubregionBounds aCoruna = new SubregionBounds("A Coruña");
 
     private final SubregionBounds gibraltar = new SubregionBounds("Gibraltar");
 
@@ -67,6 +69,7 @@ public class RegionBoundsManager {
     private final RegionBounds westernCastillaLaManchaAndMadrid = new RegionBounds("Western Castilla-La Mancha + Comunidade de Madrid");
     private final RegionBounds westernCastillaYLeon = new RegionBounds("Western Castilla y León");
     private final RegionBounds regiaoDeMurciaRegion = new RegionBounds("Região de Murcia");
+    private final RegionBounds westernGalicia = new RegionBounds("Western Galicia");
 
     public RegionBoundsManager() {
         setPortugueseSubregionBounds();
@@ -137,6 +140,8 @@ public class RegionBoundsManager {
                     return westernCastillaYLeon;
                 else if (province.equals("Região de Murcia"))
                     return regiaoDeMurciaRegion;
+                else if (Arrays.asList("Pontevedra", "A Coruña").contains(province))
+                    return westernGalicia;
                 else
                     return null;
             case "Gibraltar":
@@ -244,6 +249,10 @@ public class RegionBoundsManager {
                         return salamanca;
                     case "Região de Murcia":
                         return regiaoDeMurcia;
+                    case "Pontevedra":
+                        return pontevedra;
+                    case "A Coruña":
+                        return aCoruna;
                     default:
                         return null;
                 }
@@ -312,6 +321,9 @@ public class RegionBoundsManager {
         westernCastillaYLeon.addSubregion(salamanca);
 
         regiaoDeMurciaRegion.addSubregion(regiaoDeMurcia);
+
+        westernGalicia.addSubregion(pontevedra);
+        westernGalicia.addSubregion(aCoruna);
     }
 
     private void setPortugueseSubregionBounds() {
@@ -505,6 +517,16 @@ public class RegionBoundsManager {
         regiaoDeMurcia.setMaxSouth(37.3738,-1.6287);
         regiaoDeMurcia.setMaxWest(38.0300,-2.3446);
         regiaoDeMurcia.setMaxEast(37.65611,-0.64717);
+
+        pontevedra.setMaxNorth(42.86016,-8.18286);
+        pontevedra.setMaxSouth(41.86941,-8.87346);
+        pontevedra.setMaxWest(42.36741,-8.94964);
+        pontevedra.setMaxEast(42.7063,-7.8614);
+
+        aCoruna.setMaxNorth(43.79042,-7.68841);
+        aCoruna.setMaxSouth(42.46291,-9.01062);
+        aCoruna.setMaxWest(43.0486,-9.3015);
+        aCoruna.setMaxEast(43.7767,-7.6618);
     }
 
     private void setGibraltarSubregionBounds() {
