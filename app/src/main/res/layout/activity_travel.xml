@@ -50,6 +50,13 @@
 
     </androidx.viewpager2.widget.ViewPager2>
 
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/travelCarContainerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:name="com.viajar.viajar.CarFragment"/>
+
     <view class="com.viajar.viajar.LargeBottomNavigationView"
         android:id="@+id/bottomNavigationViewGPS"
         android:layout_width="match_parent"

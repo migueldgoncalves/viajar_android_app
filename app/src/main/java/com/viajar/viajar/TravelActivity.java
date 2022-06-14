@@ -24,6 +24,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
+import androidx.preference.PreferenceManager;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
@@ -74,6 +75,7 @@ public class TravelActivity extends AppCompatActivity implements OnMapsSdkInitia
     private static final boolean useMarkers = false; // True - Markers are placed on the map; False - Connections are drawn instead
 
     private LocationInfo currentLocation;
+    private LocationInfo formerLocation;
     private ArrayList<LocationInfo> surroundingLocations;
     private String currentLocationName;
     private String currentTransportMeans;
@@ -92,9 +94,6 @@ public class TravelActivity extends AppCompatActivity implements OnMapsSdkInitia
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         MapsInitializer.initialize(getApplicationContext(), Renderer.LATEST, this);
-
-        // Sample code on how to read setting
-        //boolean setting = PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getBoolean(getString(R.string.settings_key_car_mode), false);
 
         setContentView(R.layout.activity_travel);
 
@@ -153,7 +152,7 @@ public class TravelActivity extends AppCompatActivity implements OnMapsSdkInitia
         currentTransportMeans = TravelActivity.CAR;
 
         BottomNavigationView locationButtons = findViewById(R.id.bottomNavigationViewGPS);
-        locationButtons.setOnNavigationItemSelectedListener(item -> {
+        locationButtons.setOnItemSelectedListener(item -> {
             if (currentLocation == null)
                 return false;
             if (item.getItemId() == R.id.car) {
@@ -180,7 +179,8 @@ public class TravelActivity extends AppCompatActivity implements OnMapsSdkInitia
             else {
                 return false;
             }
-            runOnUiThread(() -> ((GPSPageFragment) getSupportFragmentManager().getFragments().get(0)).createMapMarkers());
+            // It seems fragment 0 is CarFragment and 1 is GPSFragment
+            runOnUiThread(() -> ((GPSPageFragment) getSupportFragmentManager().getFragments().get(1)).createMapMarkers());
             runOnUiThread(this::updateUI);
             return true;
         });
@@ -217,7 +217,9 @@ public class TravelActivity extends AppCompatActivity implements OnMapsSdkInitia
 
     @Override
     public void onBackPressed() {
-        if (viewPager2.getCurrentItem() == 0) {
+        if (findViewById(R.id.travelCarContainerView).getVisibility() == View.VISIBLE)
+            ((CarFragment) getSupportFragmentManager().getFragments().get(0)).finishJourney();
+        else if (viewPager2.getCurrentItem() == 0) {
             // If the user is currently looking at the first step, allow the system to handle the
             // Back button. This calls finish() on this activity and pops the back stack.
             super.onBackPressed();
@@ -350,7 +352,12 @@ public class TravelActivity extends AppCompatActivity implements OnMapsSdkInitia
         if (currentLocation != null) {
             new Thread(() -> {
                 populateCurrentAndSurroundingLocations(false);
-                runOnUiThread(() -> ((GPSPageFragment) getSupportFragmentManager().getFragments().get(0)).createMapMarkers());
+
+                boolean car_mode_setting = PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getBoolean(getString(R.string.settings_key_car_mode), false);
+                if (car_mode_setting)
+                    startCarJourney();
+
+                runOnUiThread(() -> ((GPSPageFragment) getSupportFragmentManager().getFragments().get(1)).createMapMarkers());
                 runOnUiThread(this::updateUI);
             }).start();
         }
@@ -366,12 +373,37 @@ public class TravelActivity extends AppCompatActivity implements OnMapsSdkInitia
             westernmostLongitude = dbInterface.getMapWesternmostLongitude(getApplicationContext());
             easternmostLongitude = dbInterface.getMapEasternmostLongitude(getApplicationContext());
         }
+        formerLocation = currentLocation;
         currentLocation = dbInterface.generateLocationObject(getApplicationContext(), currentLocationName);
         surroundingLocations = new ArrayList<>();
         for(List<String> connectionInfo:currentLocation.getSurroundingLocations().keySet()) {
             String surroundingLocationName = connectionInfo.get(0);
             surroundingLocations.add(DBInterface.getDBInterface(getApplicationContext()).generateLocationObject(getApplicationContext(), surroundingLocationName));
         }
+    }
+
+    public void startCarJourney() {
+        String routeName = formerLocation.getRouteName(currentLocationName, currentTransportMeans);
+        int routeColor = RouteColorGetter.getRouteLineColor(routeName, currentTransportMeans);
+
+        Bundle args = new Bundle();
+        double[] latList = new double[]{formerLocation.getLatitude(), currentLocation.getLatitude()};
+        double[] lonList = new double[]{formerLocation.getLongitude(), currentLocation.getLongitude()};
+        args.putDoubleArray("latList", latList);
+        args.putDoubleArray("lonList", lonList);
+        args.putInt("color", routeColor);
+
+        // Visually, replaces GPS fragment with Car fragment
+        View carFragment = findViewById(R.id.travelCarContainerView);
+        runOnUiThread(() -> carFragment.setVisibility(View.VISIBLE));
+        viewPager2 = findViewById(R.id.travelPager);
+        runOnUiThread(() -> viewPager2.setVisibility(View.GONE));
+        View bottomNavigationView = findViewById(R.id.bottomNavigationViewGPS);
+        runOnUiThread(() -> bottomNavigationView.setVisibility(View.GONE));
+
+        String vehicle = getString(R.string.vehicle_car);
+        ((CarFragment) getSupportFragmentManager().getFragments().get(0)).setCar(vehicle);
+        ((CarFragment) getSupportFragmentManager().getFragments().get(0)).startJourney(args);
     }
 
     private boolean isComunidadeUniprovincial(String autonomousCommunity) {
