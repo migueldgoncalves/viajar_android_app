@@ -108,6 +108,7 @@ public class RouteColorGetter {
                         routeName.equals("A13-1") ||
                         routeName.equals("A26-1") ||
                         routeName.equals("A10 - Ponte da Lezíria") ||
+                        routeName.equals("A12 - Ponte Vasco da Gama") ||
                         routeName.contains("IC23 VCI") || // Ex: A20/IC23 VCI/Ponte do Freixo
 
                         // Spanish autonomous community autovías
