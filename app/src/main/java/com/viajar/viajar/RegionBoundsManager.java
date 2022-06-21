@@ -49,6 +49,7 @@ public class RegionBoundsManager {
     private final SubregionBounds regiaoDeMurcia = new SubregionBounds("Região de Murcia");
     private final SubregionBounds pontevedra = new SubregionBounds("Pontevedra");
     private final SubregionBounds aCoruna = new SubregionBounds("A Coruña");
+    private final SubregionBounds segovia = new SubregionBounds("Segóvia");
 
     private final SubregionBounds gibraltar = new SubregionBounds("Gibraltar");
 
@@ -70,6 +71,7 @@ public class RegionBoundsManager {
     private final RegionBounds westernCastillaYLeon = new RegionBounds("Western Castilla y León");
     private final RegionBounds regiaoDeMurciaRegion = new RegionBounds("Região de Murcia");
     private final RegionBounds westernGalicia = new RegionBounds("Western Galicia");
+    private final RegionBounds segoviaRegion = new RegionBounds("Segóvia");
 
     public RegionBoundsManager() {
         setPortugueseSubregionBounds();
@@ -142,6 +144,8 @@ public class RegionBoundsManager {
                     return regiaoDeMurciaRegion;
                 else if (Arrays.asList("Pontevedra", "A Coruña").contains(province))
                     return westernGalicia;
+                else if (province.equals("Segóvia"))
+                    return segoviaRegion;
                 else
                     return null;
             case "Gibraltar":
@@ -253,6 +257,8 @@ public class RegionBoundsManager {
                         return pontevedra;
                     case "A Coruña":
                         return aCoruna;
+                    case "Segóvia":
+                        return segovia;
                     default:
                         return null;
                 }
@@ -324,6 +330,8 @@ public class RegionBoundsManager {
 
         westernGalicia.addSubregion(pontevedra);
         westernGalicia.addSubregion(aCoruna);
+
+        segoviaRegion.addSubregion(segovia);
     }
 
     private void setPortugueseSubregionBounds() {
@@ -527,6 +535,11 @@ public class RegionBoundsManager {
         aCoruna.setMaxSouth(42.46291,-9.01062);
         aCoruna.setMaxWest(43.0486,-9.3015);
         aCoruna.setMaxEast(43.7767,-7.6618);
+
+        segovia.setMaxNorth(41.58608,-3.96383);
+        segovia.setMaxSouth(40.63345,-4.41964);
+        segovia.setMaxWest(41.1234,-4.7247);
+        segovia.setMaxEast(41.3067,-3.2069);
     }
 
     private void setGibraltarSubregionBounds() {
