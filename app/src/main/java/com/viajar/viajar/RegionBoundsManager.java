@@ -9,27 +9,33 @@ public class RegionBoundsManager {
 
     // ADD SUBREGION DEFINITIONS HERE
 
+    // Algarve
     private final SubregionBounds sotaventoAlgarvio = new SubregionBounds("Sotavento Algarvio");
     private final SubregionBounds barlaventoAlgarvio = new SubregionBounds("Barlavento Algarvio");
+    // Alentejo
     private final SubregionBounds beja = new SubregionBounds("Beja");
     private final SubregionBounds alentejoLitoral = new SubregionBounds("Alentejo Litoral");
     private final SubregionBounds evora = new SubregionBounds("Évora");
     private final SubregionBounds portalegre = new SubregionBounds("Portalegre");
+    // Lisbon and Tagus Valley
     private final SubregionBounds peninsulaSetubal = new SubregionBounds("Península de Setúbal");
     private final SubregionBounds lisboa = new SubregionBounds("Lisboa");
     private final SubregionBounds leiria = new SubregionBounds("Leiria");
     private final SubregionBounds santarem = new SubregionBounds("Santarém");
+    // Beiras
     private final SubregionBounds coimbra = new SubregionBounds("Coimbra");
     private final SubregionBounds aveiro = new SubregionBounds("Aveiro");
     private final SubregionBounds viseu = new SubregionBounds("Viseu");
     private final SubregionBounds casteloBranco = new SubregionBounds("Castelo Branco");
     private final SubregionBounds guarda = new SubregionBounds("Guarda");
+    // North
     private final SubregionBounds porto = new SubregionBounds("Porto");
     private final SubregionBounds braga = new SubregionBounds("Braga");
     private final SubregionBounds vianaDoCastelo = new SubregionBounds("Viana do Castelo");
     private final SubregionBounds vilaReal = new SubregionBounds("Vila Real");
     private final SubregionBounds braganca = new SubregionBounds("Bragança");
 
+    // Andalucía
     private final SubregionBounds huelva = new SubregionBounds("Huelva");
     private final SubregionBounds sevilha = new SubregionBounds("Sevilha");
     private final SubregionBounds cadiz = new SubregionBounds("Cádiz");
@@ -38,18 +44,53 @@ public class RegionBoundsManager {
     private final SubregionBounds jaen = new SubregionBounds("Jaén");
     private final SubregionBounds granada = new SubregionBounds("Granada");
     private final SubregionBounds almeria = new SubregionBounds("Almería");
+    // Extremadura
     private final SubregionBounds badajoz = new SubregionBounds("Badajoz");
     private final SubregionBounds caceres = new SubregionBounds("Cáceres");
+    // Castilla-La Mancha, Madrid Community and Murcia Region
     private final SubregionBounds ciudadReal = new SubregionBounds("Ciudad Real");
     private final SubregionBounds toledo = new SubregionBounds("Toledo");
+    private final SubregionBounds albacete = new SubregionBounds("Albacete");
+    private final SubregionBounds cuenca = new SubregionBounds("Cuenca");
+    private final SubregionBounds guadalajara = new SubregionBounds("Guadalajara");
     private final SubregionBounds comunidadeDeMadrid = new SubregionBounds("Comunidade de Madrid");
+    private final SubregionBounds regiaoDeMurcia = new SubregionBounds("Região de Murcia");
+    // Castilla y León, Asturias and Cantabria
     private final SubregionBounds leon = new SubregionBounds("León");
     private final SubregionBounds zamora = new SubregionBounds("Zamora");
     private final SubregionBounds salamanca = new SubregionBounds("Salamanca");
-    private final SubregionBounds regiaoDeMurcia = new SubregionBounds("Região de Murcia");
+    private final SubregionBounds segovia = new SubregionBounds("Segóvia");
+    private final SubregionBounds palencia = new SubregionBounds("Palencia");
+    private final SubregionBounds valladolid = new SubregionBounds("Valladolid");
+    private final SubregionBounds avila = new SubregionBounds("Ávila");
+    private final SubregionBounds burgos = new SubregionBounds("Burgos");
+    private final SubregionBounds soria = new SubregionBounds("Soria");
+    private final SubregionBounds asturias = new SubregionBounds("Asturias");
+    private final SubregionBounds cantabria = new SubregionBounds("Cantabria");
+    // Galicia
     private final SubregionBounds pontevedra = new SubregionBounds("Pontevedra");
     private final SubregionBounds aCoruna = new SubregionBounds("A Coruña");
-    private final SubregionBounds segovia = new SubregionBounds("Segóvia");
+    private final SubregionBounds ourense = new SubregionBounds("Ourense");
+    private final SubregionBounds lugo = new SubregionBounds("Lugo");
+    // Basque Country, La Rioja and Navarra
+    private final SubregionBounds vizcaya = new SubregionBounds("Vizcaya");
+    private final SubregionBounds guipuzcoa = new SubregionBounds("Guipúzcoa");
+    private final SubregionBounds alava = new SubregionBounds("Álava");
+    private final SubregionBounds laRioja = new SubregionBounds("La Rioja");
+    private final SubregionBounds navarra = new SubregionBounds("Navarra");
+    // Aragón
+    private final SubregionBounds huesca = new SubregionBounds("Huesca");
+    private final SubregionBounds zaragoza = new SubregionBounds("Zaragoza");
+    private final SubregionBounds teruel = new SubregionBounds("Teruel");
+    // Catalonia
+    private final SubregionBounds lleida = new SubregionBounds("Lleida");
+    private final SubregionBounds tarragona = new SubregionBounds("Tarragona");
+    private final SubregionBounds girona = new SubregionBounds("Girona");
+    private final SubregionBounds barcelona = new SubregionBounds("Barcelona");
+    // Valencian Community
+    private final SubregionBounds castellonDeLaPlana = new SubregionBounds("Castellón de la Plana");
+    private final SubregionBounds valencia = new SubregionBounds("Valencia");
+    private final SubregionBounds alicante = new SubregionBounds("Alicante");
 
     private final SubregionBounds gibraltar = new SubregionBounds("Gibraltar");
 
@@ -68,10 +109,17 @@ public class RegionBoundsManager {
     private final RegionBounds easternAndalucia = new RegionBounds("Eastern Andalucía");
     private final RegionBounds extremadura = new RegionBounds("Extremadura");
     private final RegionBounds westernCastillaLaManchaAndMadrid = new RegionBounds("Western Castilla-La Mancha + Comunidade de Madrid");
-    private final RegionBounds westernCastillaYLeon = new RegionBounds("Western Castilla y León");
-    private final RegionBounds regiaoDeMurciaRegion = new RegionBounds("Região de Murcia");
+    private final RegionBounds easternCastillaLaManchaAndMurcia = new RegionBounds("Eastern Castilla-La Mancha + Região de Murcia");
+    private final RegionBounds westernCastillaYLeonAndAsturias = new RegionBounds("Western Castilla y León + Asturias");
+    private final RegionBounds centralCastillaYLeon = new RegionBounds("Central Castilla y León");
+    private final RegionBounds easternCastillaYLeonAndCantabria = new RegionBounds("Eastern Castilla y León + Cantabria");
     private final RegionBounds westernGalicia = new RegionBounds("Western Galicia");
-    private final RegionBounds segoviaRegion = new RegionBounds("Segóvia");
+    private final RegionBounds easternGalicia = new RegionBounds("Eastern Galicia");
+    private final RegionBounds northeasternIberia = new RegionBounds("Basque Country + Navarra + La Rioja + Soria");
+    private final RegionBounds aragon = new RegionBounds("Aragón");
+    private final RegionBounds westernCatalonia = new RegionBounds("Western Catalonia");
+    private final RegionBounds easternCatalonia = new RegionBounds("Eastern Catalonia");
+    private final RegionBounds valencianCommunity = new RegionBounds("Valencian Community");
 
     public RegionBoundsManager() {
         setPortugueseSubregionBounds();
@@ -138,14 +186,32 @@ public class RegionBoundsManager {
                 else if (autonomousCommunity.equals("Comunidade de Madrid") ||
                         Arrays.asList("Ciudad Real", "Toledo").contains(province))
                     return westernCastillaLaManchaAndMadrid;
-                else if (Arrays.asList("León", "Zamora", "Salamanca").contains(province))
-                    return westernCastillaYLeon;
-                else if (province.equals("Região de Murcia"))
-                    return regiaoDeMurciaRegion;
+                else if (Arrays.asList("Albacete", "Cuenca", "Guadalajara").contains(province) ||
+                        autonomousCommunity.equals("Região de Murcia"))
+                    return easternCastillaLaManchaAndMurcia;
+                else if (Arrays.asList("León", "Zamora", "Salamanca").contains(province) ||
+                        autonomousCommunity.equals("Astúrias"))
+                    return westernCastillaYLeonAndAsturias;
+                else if (Arrays.asList("Palencia", "Valladolid", "Ávila").contains(province))
+                    return centralCastillaYLeon;
+                else if (Arrays.asList("Burgos", "Segóvia").contains(province) ||
+                        autonomousCommunity.equals("Cantábria"))
+                    return easternCastillaYLeonAndCantabria;
                 else if (Arrays.asList("Pontevedra", "A Coruña").contains(province))
                     return westernGalicia;
-                else if (province.equals("Segóvia"))
-                    return segoviaRegion;
+                else if (Arrays.asList("Ourense", "Lugo").contains(province))
+                    return easternGalicia;
+                else if (province.equals("Soria") ||
+                        Arrays.asList("País Basco", "La Rioja", "Navarra").contains(autonomousCommunity))
+                    return northeasternIberia;
+                else if (autonomousCommunity.equals("Aragão"))
+                    return aragon;
+                else if (Arrays.asList("Lleida", "Tarragona").contains(province))
+                    return westernCatalonia;
+                else if (Arrays.asList("Girona", "Barcelona").contains(province))
+                    return easternCatalonia;
+                else if (autonomousCommunity.equals("Comunidade Valenciana"))
+                    return valencianCommunity;
                 else
                     return null;
             case "Gibraltar":
@@ -170,12 +236,14 @@ public class RegionBoundsManager {
                 String intermunicipalEntity = ((LocationInfoPortugal) locationInfo).getIntermunicipalEntity();
                 String concelho = ((LocationInfoPortugal) locationInfo).getMunicipality();
 
+                // Algarve
                 if (Arrays.asList("Alcoutim", "Castro Marim", "Faro", "Loulé", "Olhão",
                         "São Brás de Alportel", "Tavira", "Vila Real de Santo António").contains(concelho))
                     return sotaventoAlgarvio;
                 else if (Arrays.asList("Albufeira", "Aljezur", "Lagoa", "Lagos", "Monchique",
                         "Portimão", "Silves", "Vila do Bispo").contains(concelho))
                     return barlaventoAlgarvio;
+                // Alentejo
                 else if ((intermunicipalEntity.equals("Alentejo Litoral")) &&
                         !concelho.equals("Odemira")) // Approx. Alentejo Litoral
                     return alentejoLitoral;
@@ -185,6 +253,7 @@ public class RegionBoundsManager {
                     return evora;
                 else if (district.equals("Portalegre"))
                     return portalegre;
+                // Lisbon and Tagus Valley
                 else if ((district.equals("Setúbal")) && ( // Península de Setúbal
                         intermunicipalEntity.equals("Área Metropolitana de Lisboa")))
                     return peninsulaSetubal;
@@ -194,6 +263,7 @@ public class RegionBoundsManager {
                     return leiria;
                 else if (district.equals("Santarém"))
                     return santarem;
+                // Beiras
                 else if (district.equals("Coimbra"))
                     return coimbra;
                 else if (district.equals("Aveiro"))
@@ -204,6 +274,7 @@ public class RegionBoundsManager {
                     return casteloBranco;
                 else if (district.equals("Guarda"))
                     return guarda;
+                // North
                 else if (district.equals("Porto"))
                     return porto;
                 else if (district.equals("Braga"))
@@ -219,6 +290,7 @@ public class RegionBoundsManager {
             case "Spain":
                 String province = ((LocationInfoSpain) locationInfo).getProvince();
                 switch (province) {
+                    // Andalucía
                     case "Huelva":
                         return huelva;
                     case "Sevilha":
@@ -235,30 +307,92 @@ public class RegionBoundsManager {
                         return granada;
                     case "Almería":
                         return almeria;
+                    // Extremadura
                     case "Badajoz":
                         return badajoz;
                     case "Cáceres":
                         return caceres;
+                    // Castilla-La Mancha, Madrid Community and Murcia Region
                     case "Ciudad Real":
                         return ciudadReal;
                     case "Toledo":
                         return toledo;
+                    case "Albacete":
+                        return albacete;
+                    case "Cuenca":
+                        return cuenca;
+                    case "Guadalajara":
+                        return guadalajara;
                     case "Comunidade de Madrid":
                         return comunidadeDeMadrid;
+                    case "Região de Murcia":
+                        return regiaoDeMurcia;
+                    // Castilla y León, Asturias and Cantabria
                     case "León":
                         return leon;
                     case "Zamora":
                         return zamora;
                     case "Salamanca":
                         return salamanca;
-                    case "Região de Murcia":
-                        return regiaoDeMurcia;
+                    case "Segóvia":
+                        return segovia;
+                    case "Palencia":
+                        return palencia;
+                    case "Valladolid":
+                        return valladolid;
+                    case "Ávila":
+                        return avila;
+                    case "Burgos":
+                        return burgos;
+                    case "Soria":
+                        return soria;
+                    case "Astúrias":
+                        return asturias;
+                    case "Cantábria":
+                        return cantabria;
+                    // Galicia
                     case "Pontevedra":
                         return pontevedra;
                     case "A Coruña":
                         return aCoruna;
-                    case "Segóvia":
-                        return segovia;
+                    case "Ourense":
+                        return ourense;
+                    case "Lugo":
+                        return lugo;
+                    // Basque Country, La Rioja and Navarra
+                    case "Vizcaya":
+                        return vizcaya;
+                    case "Guipúzcoa":
+                        return guipuzcoa;
+                    case "Álava":
+                        return alava;
+                    case "La Rioja":
+                        return laRioja;
+                    case "Navarra":
+                        return navarra;
+                    // Aragón
+                    case "Huesca":
+                        return huesca;
+                    case "Zaragoza":
+                        return zaragoza;
+                    case "Teruel":
+                        return teruel;
+                    // Catalonia
+                    case "Lleida":
+                        return lleida;
+                    case "Tarragona":
+                        return tarragona;
+                    case "Girona":
+                        return girona;
+                    case "Barcelona":
+                        return barcelona;
+                    // Valencian Community
+                    case "Castellón de la Plana":
+                        return castellonDeLaPlana;
+                    case "Valência":
+                        return valencia;
+                    case "Alicante":
+                        return alicante;
                     default:
                         return null;
                 }
@@ -322,16 +456,50 @@ public class RegionBoundsManager {
         westernCastillaLaManchaAndMadrid.addSubregion(toledo);
         westernCastillaLaManchaAndMadrid.addSubregion(comunidadeDeMadrid);
 
-        westernCastillaYLeon.addSubregion(leon);
-        westernCastillaYLeon.addSubregion(zamora);
-        westernCastillaYLeon.addSubregion(salamanca);
+        easternCastillaLaManchaAndMurcia.addSubregion(guadalajara);
+        easternCastillaLaManchaAndMurcia.addSubregion(cuenca);
+        easternCastillaLaManchaAndMurcia.addSubregion(albacete);
+        easternCastillaLaManchaAndMurcia.addSubregion(regiaoDeMurcia);
 
-        regiaoDeMurciaRegion.addSubregion(regiaoDeMurcia);
+        westernCastillaYLeonAndAsturias.addSubregion(leon);
+        westernCastillaYLeonAndAsturias.addSubregion(zamora);
+        westernCastillaYLeonAndAsturias.addSubregion(salamanca);
+        westernCastillaYLeonAndAsturias.addSubregion(asturias);
+
+        centralCastillaYLeon.addSubregion(palencia);
+        centralCastillaYLeon.addSubregion(valladolid);
+        centralCastillaYLeon.addSubregion(avila);
+
+        easternCastillaYLeonAndCantabria.addSubregion(burgos);
+        easternCastillaYLeonAndCantabria.addSubregion(segovia);
+        easternCastillaYLeonAndCantabria.addSubregion(cantabria);
 
         westernGalicia.addSubregion(pontevedra);
         westernGalicia.addSubregion(aCoruna);
 
-        segoviaRegion.addSubregion(segovia);
+        easternGalicia.addSubregion(ourense);
+        easternGalicia.addSubregion(lugo);
+
+        northeasternIberia.addSubregion(soria);
+        northeasternIberia.addSubregion(vizcaya);
+        northeasternIberia.addSubregion(guipuzcoa);
+        northeasternIberia.addSubregion(alava);
+        northeasternIberia.addSubregion(laRioja);
+        northeasternIberia.addSubregion(navarra);
+
+        aragon.addSubregion(huesca);
+        aragon.addSubregion(zaragoza);
+        aragon.addSubregion(teruel);
+
+        westernCatalonia.addSubregion(tarragona);
+        westernCatalonia.addSubregion(lleida);
+
+        easternCatalonia.addSubregion(girona);
+        easternCatalonia.addSubregion(barcelona);
+
+        valencianCommunity.addSubregion(castellonDeLaPlana);
+        valencianCommunity.addSubregion(valencia);
+        valencianCommunity.addSubregion(alicante);
     }
 
     private void setPortugueseSubregionBounds() {
@@ -540,6 +708,141 @@ public class RegionBoundsManager {
         segovia.setMaxSouth(40.63345,-4.41964);
         segovia.setMaxWest(41.1234,-4.7247);
         segovia.setMaxEast(41.3067,-3.2069);
+
+        guadalajara.setMaxNorth(41.3276322, -2.9066681);
+        guadalajara.setMaxSouth(40.1524557, -3.0165175);
+        guadalajara.setMaxWest(41.1505144, -3.5405498);
+        guadalajara.setMaxEast(40.6870188, -1.5356379);
+
+        cuenca.setMaxNorth(40.6586924, -2.1569365);
+        cuenca.setMaxSouth(39.2266611, -2.2886773);
+        cuenca.setMaxWest(40.048139, -3.1702345);
+        cuenca.setMaxEast(39.9718415, -1.1423952);
+
+        albacete.setMaxNorth(39.4229815, -1.4845298);
+        albacete.setMaxSouth(38.0224402, -2.357922);
+        albacete.setMaxWest(38.9412811, -2.8819231);
+        albacete.setMaxEast(38.6959646, -0.9157933);
+
+        palencia.setMaxNorth(43.061022, -4.4619533);
+        palencia.setMaxSouth(41.7581663, -4.4456991);
+        palencia.setMaxWest(42.173629, -5.0318945);
+        palencia.setMaxEast(41.9888509, -3.8896224);
+
+        valladolid.setMaxNorth(42.311842, -5.1120022);
+        valladolid.setMaxSouth(41.0940153, -4.8636772);
+        valladolid.setMaxWest(42.0971396, -5.5208908);
+        valladolid.setMaxEast(41.5820144, -3.9804421);
+
+        avila.setMaxNorth(41.1642497, -5.0138569);
+        avila.setMaxSouth(40.0824504, -5.1997924);
+        avila.setMaxWest(40.6898436, -4.1602545);
+        avila.setMaxEast(40.2941518, -5.7375829);
+
+        burgos.setMaxNorth(43.1987474, -3.2532734);
+        burgos.setMaxSouth(41.4507842, -3.7394831);
+        burgos.setMaxWest(42.6461953, -2.5175691);
+        burgos.setMaxEast(42.430611, -4.335344);
+
+        soria.setMaxNorth(42.1467061, -2.3481906);
+        soria.setMaxSouth(41.0565078, -2.3234072);
+        soria.setMaxWest(41.5965878, -3.5504383);
+        soria.setMaxEast(41.724789, -1.7753716);
+
+        asturias.setMaxNorth(43.6665324, -5.861129);
+        asturias.setMaxSouth(42.8825428, -6.7728488);
+        asturias.setMaxWest(43.3926979, -7.1831688);
+        asturias.setMaxEast(43.3806142, -4.5105944);
+
+        cantabria.setMaxNorth(43.5136234, -3.5907207);
+        cantabria.setMaxSouth(42.7580499, -3.9772955);
+        cantabria.setMaxWest(43.1728722, -4.8517354);
+        cantabria.setMaxEast(43.3187852, -3.149652);
+
+        ourense.setMaxNorth(42.5785999, -7.9307491);
+        ourense.setMaxSouth(41.8073642, -7.4278996);
+        ourense.setMaxWest(42.4873477, -8.3663444);
+        ourense.setMaxEast(42.3591114, -6.7339533);
+
+        lugo.setMaxNorth(43.761668, -7.6301032);
+        lugo.setMaxSouth(42.3260122, -7.2032049);
+        lugo.setMaxWest(42.8487418, -7.9997779);
+        lugo.setMaxEast(42.8716833, -6.8140568);
+
+        vizcaya.setMaxNorth(43.4568595, -2.7520347);
+        vizcaya.setMaxSouth(42.9687184, -3.1225414);
+        vizcaya.setMaxWest(43.321225, -2.4127205);
+        vizcaya.setMaxEast(43.2359756, -3.4503463);
+
+        guipuzcoa.setMaxNorth(43.3959579, -1.7910926);
+        guipuzcoa.setMaxSouth(42.8950743, -2.2402124);
+        guipuzcoa.setMaxWest(42.9822474, -2.6027119);
+        guipuzcoa.setMaxEast(43.2942364, -1.7292688);
+
+        alava.setMaxNorth(43.216969, -3.0272493);
+        alava.setMaxSouth(42.4713392, -2.5893992);
+        alava.setMaxWest(42.8848185, -3.2870106);
+        alava.setMaxEast(42.8433196, -2.2328693);
+
+        laRioja.setMaxNorth(42.6442647, -3.0047559);
+        laRioja.setMaxSouth(41.919034, -1.9814424);
+        laRioja.setMaxWest(42.5420529, -3.1342714);
+        laRioja.setMaxEast(42.1889547, -1.6787015);
+
+        navarra.setMaxNorth(43.3149461, -1.6683452);
+        navarra.setMaxSouth(41.9098937, -1.5233068);
+        navarra.setMaxWest(42.616265, -2.4999443);
+        navarra.setMaxEast(42.9181957, -0.7233368);
+
+        huesca.setMaxNorth(42.9244952, -0.7534742);
+        huesca.setMaxSouth(41.3478056, -0.0079313);
+        huesca.setMaxWest(42.5750452, -0.9344305);
+        huesca.setMaxEast(42.3506427, 0.7713067);
+
+        zaragoza.setMaxNorth(42.744126, -0.9241096);
+        zaragoza.setMaxSouth(40.9362157, -1.5895609);
+        zaragoza.setMaxWest(41.288085, -2.1736713);
+        zaragoza.setMaxEast(41.2788442, 0.3856642);
+
+        teruel.setMaxNorth(41.3543894, -0.502556);
+        teruel.setMaxSouth(39.8467782, -0.8674198);
+        teruel.setMaxWest(40.3982305, -1.806359);
+        teruel.setMaxEast(40.970561, 0.2935008);
+
+        lleida.setMaxNorth(42.8615226, 0.7086465);
+        lleida.setMaxSouth(41.2741254, 0.4239894);
+        lleida.setMaxWest(41.3947297, 0.3201019);
+        lleida.setMaxEast(42.3696485, 1.8550577);
+
+        tarragona.setMaxNorth(41.5826063, 1.4196815);
+        tarragona.setMaxSouth(40.5230524, 0.5147059);
+        tarragona.setMaxWest(40.750486, 0.1594133);
+        tarragona.setMaxEast(41.2074067, 1.6530883);
+
+        girona.setMaxNorth(42.4953859, 1.7471011);
+        girona.setMaxSouth(41.6504759, 2.7780029);
+        girona.setMaxWest(42.4865831, 1.7242671);
+        girona.setMaxEast(42.3194399, 3.3222508);
+
+        barcelona.setMaxNorth(42.3233011, 1.9031201);
+        barcelona.setMaxSouth(41.1927078, 1.6472978);
+        barcelona.setMaxWest(41.6137597, 1.3603839);
+        barcelona.setMaxEast(41.6504759, 2.7780029);
+
+        castellonDeLaPlana.setMaxNorth(40.7886312, -0.164957);
+        castellonDeLaPlana.setMaxSouth(39.7146978, -0.4561763);
+        castellonDeLaPlana.setMaxWest(39.9476979, -0.8462969);
+        castellonDeLaPlana.setMaxEast(39.8961848, 0.6903174);
+
+        valencia.setMaxNorth(40.2116832, -1.298228);
+        valencia.setMaxSouth(38.6865536, -0.6286996);
+        valencia.setMaxWest(39.4548706, -1.5289448);
+        valencia.setMaxEast(38.8726112, -0.024722);
+
+        alicante.setMaxNorth(38.8873915, -0.160832);
+        alicante.setMaxSouth(37.8437887, -0.7717885);
+        alicante.setMaxWest(38.4379292, -1.0941624);
+        alicante.setMaxEast(38.7369798, 0.2341588);
     }
 
     private void setGibraltarSubregionBounds() {
