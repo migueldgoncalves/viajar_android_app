@@ -555,6 +555,8 @@ public class TravelActivity extends AppCompatActivity implements OnMapsSdkInitia
                     if (((LocationInfoSpain) currentLocation).getDistrict() != null && !((LocationInfoSpain) currentLocation).getDistrict().equals("")) {
                         if (((LocationInfoSpain) currentLocation).getAutonomousCommunity().equals("Galiza")) {
                             editText.append("Paróquia: " + ((LocationInfoSpain) currentLocation).getDistrict() + "\n");
+                        } else if (((LocationInfoSpain) currentLocation).getAutonomousCommunity().equals("Região de Murcia")) {
+                            editText.append("Pedanía: " + ((LocationInfoSpain) currentLocation).getDistrict() + "\n");
                         } else {
                             editText.append("Distrito: " + ((LocationInfoSpain) currentLocation).getDistrict() + "\n");
                         }
