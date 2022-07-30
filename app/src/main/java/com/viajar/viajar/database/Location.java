@@ -16,6 +16,6 @@ public class Location {
     public int altitude;
     public int batch;
 
-    @ColumnInfo(name = "extra_info")
-    public String extraInfo;
+    @ColumnInfo(name = "protected_area")
+    public String protectedArea;
 }

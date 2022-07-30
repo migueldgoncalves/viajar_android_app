@@ -4,9 +4,11 @@ import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
 
+import static androidx.room.ForeignKey.CASCADE;
+
 @Entity(
         primaryKeys = {"municipio", "province"},
-        foreignKeys = {@ForeignKey(entity = Province.class, parentColumns = "province", childColumns = "province")}
+        foreignKeys = {@ForeignKey(entity = Province.class, parentColumns = "province", childColumns = "province", onDelete = CASCADE)}
         )
 public class Municipio {
     @NonNull

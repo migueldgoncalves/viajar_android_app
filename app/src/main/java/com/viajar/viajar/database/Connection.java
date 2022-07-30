@@ -4,12 +4,13 @@ import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
-import androidx.room.PrimaryKey;
+
+import static androidx.room.ForeignKey.CASCADE;
 
 @Entity(
         primaryKeys = {"location_a", "location_b", "means_transport"},
-        foreignKeys = {@ForeignKey(entity = Location.class, parentColumns = "name", childColumns = "location_a"),
-                @ForeignKey(entity = Location.class, parentColumns = "name", childColumns = "location_b")}
+        foreignKeys = {@ForeignKey(entity = Location.class, parentColumns = "name", childColumns = "location_a", onDelete = CASCADE),
+                @ForeignKey(entity = Location.class, parentColumns = "name", childColumns = "location_b", onDelete = CASCADE)}
 )
 public class Connection {
     @ColumnInfo(name = "location_a")
@@ -26,8 +27,8 @@ public class Connection {
 
     public double distance = 0.0;
 
-    @ColumnInfo(name = "extra_info")
-    public String extraInfo;
+    @ColumnInfo(name = "way")
+    public String way;
 
     @ColumnInfo(name = "cardinal_point")
     @NonNull

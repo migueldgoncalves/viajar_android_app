@@ -66,8 +66,8 @@ public class DBInterface {
             String meansTransport = connection.meansTransport;
             Double distance = connection.distance;
             surroundingLocations.put(Arrays.asList(surroundingLocation, meansTransport), Arrays.asList(cardinalPoint, String.valueOf(distance), String.valueOf(order)));
-            if (!connection.extraInfo.equals(""))
-                routeNames.put(Arrays.asList(surroundingLocation, meansTransport), connection.extraInfo);
+            if (!connection.way.equals(""))
+                routeNames.put(Arrays.asList(surroundingLocation, meansTransport), connection.way);
             else
                 routeNames.put(Arrays.asList(surroundingLocation, meansTransport), null);
         }
@@ -91,7 +91,7 @@ public class DBInterface {
         double latitude = locationDBObject.latitude;
         double longitude = locationDBObject.longitude;
         int altitude = locationDBObject.altitude;
-        String protectedArea = locationDBObject.extraInfo;
+        String protectedArea = locationDBObject.protectedArea;
         int batch = locationDBObject.batch;
 
         // Determine the country-specific parameters and create the location
@@ -157,7 +157,7 @@ public class DBInterface {
             coordinatesAndExtraInfo[1] = Double.toString(connectionCoordinates.longitude1);
             coordinatesAndExtraInfo[2] = Double.toString(connectionCoordinates.latitude2);
             coordinatesAndExtraInfo[3] = Double.toString(connectionCoordinates.longitude2);
-            coordinatesAndExtraInfo[4] = connectionCoordinates.extraInfo;
+            coordinatesAndExtraInfo[4] = connectionCoordinates.way;
             coordinatesAndExtraInfo[5] = connectionCoordinates.meansTransport;
             allConnectionsCoordinates.add(coordinatesAndExtraInfo);
         }

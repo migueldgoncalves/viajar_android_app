@@ -53,19 +53,19 @@ public class TravelActivity extends AppCompatActivity implements OnMapsSdkInitia
     public static final String EAST = "E";
     public static final String NORTH = "N";
     public static final String NORTHEAST = "NE";
-    public static final String NORTHWEST = "NO"; // PT - Noroeste
+    public static final String NORTHWEST = "NW";
     public static final String SOUTH = "S";
     public static final String SOUTHEAST = "SE";
-    public static final String SOUTHWEST = "SO"; // PT - Sudoeste
-    public static final String WEST = "O"; // PT - Oeste
+    public static final String SOUTHWEST = "SW";
+    public static final String WEST = "W";
 
-    public static final String CAR = "Carro";
-    public static final String BOAT = "Barco";
-    public static final String TRAIN = "Comboio";
-    public static final String HIGH_SPEED_TRAIN = "Comboio de Alta Velocidade";
-    public static final String PLANE = "Avião";
-    public static final String TRANSFER = "Transbordo";
-    public static final String SUBWAY = "Metro";
+    public static final String CAR = "Car";
+    public static final String BOAT = "Boat";
+    public static final String TRAIN = "Train";
+    public static final String HIGH_SPEED_TRAIN = "High-Speed Train";
+    public static final String PLANE = "Plane";
+    public static final String TRANSFER = "Transfer";
+    public static final String SUBWAY = "Subway";
 
     public static final int TAB_NUMBER = 3;
 

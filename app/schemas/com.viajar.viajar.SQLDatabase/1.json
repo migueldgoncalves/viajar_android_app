@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "a3656f349237d0d7488565ec3897c007",
+    "identityHash": "aa5ac847a3d9c38316003e5cce4ffa18",
     "entities": [
       {
         "tableName": "Location",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`name` TEXT NOT NULL, `latitude` REAL NOT NULL, `longitude` REAL NOT NULL, `altitude` INTEGER NOT NULL, `batch` INTEGER NOT NULL, `extra_info` TEXT, PRIMARY KEY(`name`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`name` TEXT NOT NULL, `latitude` REAL NOT NULL, `longitude` REAL NOT NULL, `altitude` INTEGER NOT NULL, `batch` INTEGER NOT NULL, `protected_area` TEXT, PRIMARY KEY(`name`))",
         "fields": [
           {
             "fieldPath": "name",
@@ -39,8 +39,8 @@
             "notNull": true
           },
           {
-            "fieldPath": "extraInfo",
-            "columnName": "extra_info",
+            "fieldPath": "protectedArea",
+            "columnName": "protected_area",
             "affinity": "TEXT",
             "notNull": false
           }
@@ -56,7 +56,7 @@
       },
       {
         "tableName": "Connection",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`location_a` TEXT NOT NULL, `location_b` TEXT NOT NULL, `means_transport` TEXT NOT NULL, `distance` REAL NOT NULL, `extra_info` TEXT, `cardinal_point` TEXT NOT NULL, `order_a` INTEGER NOT NULL, `order_b` INTEGER NOT NULL, PRIMARY KEY(`location_a`, `location_b`, `means_transport`), FOREIGN KEY(`location_a`) REFERENCES `Location`(`name`) ON UPDATE NO ACTION ON DELETE NO ACTION , FOREIGN KEY(`location_b`) REFERENCES `Location`(`name`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`location_a` TEXT NOT NULL, `location_b` TEXT NOT NULL, `means_transport` TEXT NOT NULL, `distance` REAL NOT NULL, `way` TEXT, `cardinal_point` TEXT NOT NULL, `order_a` INTEGER NOT NULL, `order_b` INTEGER NOT NULL, PRIMARY KEY(`location_a`, `location_b`, `means_transport`), FOREIGN KEY(`location_a`) REFERENCES `Location`(`name`) ON UPDATE NO ACTION ON DELETE CASCADE , FOREIGN KEY(`location_b`) REFERENCES `Location`(`name`) ON UPDATE NO ACTION ON DELETE CASCADE )",
         "fields": [
           {
             "fieldPath": "locationA",
@@ -83,8 +83,8 @@
             "notNull": true
           },
           {
-            "fieldPath": "extraInfo",
-            "columnName": "extra_info",
+            "fieldPath": "way",
+            "columnName": "way",
             "affinity": "TEXT",
             "notNull": false
           },
@@ -119,7 +119,7 @@
         "foreignKeys": [
           {
             "table": "Location",
-            "onDelete": "NO ACTION",
+            "onDelete": "CASCADE",
             "onUpdate": "NO ACTION",
             "columns": [
               "location_a"
@@ -130,7 +130,7 @@
           },
           {
             "table": "Location",
-            "onDelete": "NO ACTION",
+            "onDelete": "CASCADE",
             "onUpdate": "NO ACTION",
             "columns": [
               "location_b"
@@ -143,7 +143,7 @@
       },
       {
         "tableName": "Destination",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`location_a` TEXT NOT NULL, `location_b` TEXT NOT NULL, `means_transport` TEXT NOT NULL, `starting_point` INTEGER NOT NULL, `destination` TEXT NOT NULL, PRIMARY KEY(`location_a`, `location_b`, `means_transport`, `starting_point`, `destination`), FOREIGN KEY(`location_a`, `location_b`, `means_transport`) REFERENCES `Connection`(`location_a`, `location_b`, `means_transport`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`location_a` TEXT NOT NULL, `location_b` TEXT NOT NULL, `means_transport` TEXT NOT NULL, `starting_point` INTEGER NOT NULL, `destination` TEXT NOT NULL, PRIMARY KEY(`location_a`, `location_b`, `means_transport`, `starting_point`, `destination`), FOREIGN KEY(`location_a`, `location_b`, `means_transport`) REFERENCES `Connection`(`location_a`, `location_b`, `means_transport`) ON UPDATE NO ACTION ON DELETE CASCADE )",
         "fields": [
           {
             "fieldPath": "locationA",
@@ -190,7 +190,7 @@
         "foreignKeys": [
           {
             "table": "Connection",
-            "onDelete": "NO ACTION",
+            "onDelete": "CASCADE",
             "onUpdate": "NO ACTION",
             "columns": [
               "location_a",
@@ -207,7 +207,7 @@
       },
       {
         "tableName": "LocationGibraltar",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`name` TEXT NOT NULL, `major_residential_area` TEXT NOT NULL, PRIMARY KEY(`name`, `major_residential_area`), FOREIGN KEY(`name`) REFERENCES `Location`(`name`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`name` TEXT NOT NULL, `major_residential_area` TEXT NOT NULL, PRIMARY KEY(`name`, `major_residential_area`), FOREIGN KEY(`name`) REFERENCES `Location`(`name`) ON UPDATE NO ACTION ON DELETE CASCADE )",
         "fields": [
           {
             "fieldPath": "name",
@@ -233,7 +233,7 @@
         "foreignKeys": [
           {
             "table": "Location",
-            "onDelete": "NO ACTION",
+            "onDelete": "CASCADE",
             "onUpdate": "NO ACTION",
             "columns": [
               "name"
@@ -246,7 +246,7 @@
       },
       {
         "tableName": "LocationPortugal",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`name` TEXT NOT NULL, `parish` TEXT NOT NULL, `concelho` TEXT NOT NULL, PRIMARY KEY(`name`), FOREIGN KEY(`name`) REFERENCES `Location`(`name`) ON UPDATE NO ACTION ON DELETE NO ACTION , FOREIGN KEY(`concelho`) REFERENCES `Concelho`(`concelho`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`name` TEXT NOT NULL, `parish` TEXT NOT NULL, `concelho` TEXT NOT NULL, PRIMARY KEY(`name`), FOREIGN KEY(`name`) REFERENCES `Location`(`name`) ON UPDATE NO ACTION ON DELETE CASCADE , FOREIGN KEY(`concelho`) REFERENCES `Concelho`(`concelho`) ON UPDATE NO ACTION ON DELETE CASCADE )",
         "fields": [
           {
             "fieldPath": "name",
@@ -277,7 +277,7 @@
         "foreignKeys": [
           {
             "table": "Location",
-            "onDelete": "NO ACTION",
+            "onDelete": "CASCADE",
             "onUpdate": "NO ACTION",
             "columns": [
               "name"
@@ -288,7 +288,7 @@
           },
           {
             "table": "Concelho",
-            "onDelete": "NO ACTION",
+            "onDelete": "CASCADE",
             "onUpdate": "NO ACTION",
             "columns": [
               "concelho"
@@ -301,7 +301,7 @@
       },
       {
         "tableName": "LocationSpain",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`name` TEXT NOT NULL, `municipio` TEXT NOT NULL, `province` TEXT NOT NULL, `district` TEXT, PRIMARY KEY(`name`), FOREIGN KEY(`name`) REFERENCES `Location`(`name`) ON UPDATE NO ACTION ON DELETE NO ACTION , FOREIGN KEY(`municipio`, `province`) REFERENCES `Municipio`(`municipio`, `province`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`name` TEXT NOT NULL, `municipio` TEXT NOT NULL, `province` TEXT NOT NULL, `district` TEXT, PRIMARY KEY(`name`), FOREIGN KEY(`name`) REFERENCES `Location`(`name`) ON UPDATE NO ACTION ON DELETE CASCADE , FOREIGN KEY(`municipio`, `province`) REFERENCES `Municipio`(`municipio`, `province`) ON UPDATE NO ACTION ON DELETE CASCADE )",
         "fields": [
           {
             "fieldPath": "name",
@@ -338,7 +338,7 @@
         "foreignKeys": [
           {
             "table": "Location",
-            "onDelete": "NO ACTION",
+            "onDelete": "CASCADE",
             "onUpdate": "NO ACTION",
             "columns": [
               "name"
@@ -349,7 +349,7 @@
           },
           {
             "table": "Municipio",
-            "onDelete": "NO ACTION",
+            "onDelete": "CASCADE",
             "onUpdate": "NO ACTION",
             "columns": [
               "municipio",
@@ -402,7 +402,7 @@
       },
       {
         "tableName": "Municipio",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`municipio` TEXT NOT NULL, `province` TEXT NOT NULL, PRIMARY KEY(`municipio`, `province`), FOREIGN KEY(`province`) REFERENCES `Province`(`province`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`municipio` TEXT NOT NULL, `province` TEXT NOT NULL, PRIMARY KEY(`municipio`, `province`), FOREIGN KEY(`province`) REFERENCES `Province`(`province`) ON UPDATE NO ACTION ON DELETE CASCADE )",
         "fields": [
           {
             "fieldPath": "municipio",
@@ -428,7 +428,7 @@
         "foreignKeys": [
           {
             "table": "Province",
-            "onDelete": "NO ACTION",
+            "onDelete": "CASCADE",
             "onUpdate": "NO ACTION",
             "columns": [
               "province"
@@ -441,7 +441,7 @@
       },
       {
         "tableName": "Comarca",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`municipio` TEXT NOT NULL, `comarca` TEXT NOT NULL, `province` TEXT NOT NULL, PRIMARY KEY(`comarca`, `municipio`, `province`), FOREIGN KEY(`municipio`, `province`) REFERENCES `Municipio`(`municipio`, `province`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`municipio` TEXT NOT NULL, `comarca` TEXT NOT NULL, `province` TEXT NOT NULL, PRIMARY KEY(`comarca`, `municipio`, `province`), FOREIGN KEY(`municipio`, `province`) REFERENCES `Municipio`(`municipio`, `province`) ON UPDATE NO ACTION ON DELETE CASCADE )",
         "fields": [
           {
             "fieldPath": "municipio",
@@ -474,7 +474,7 @@
         "foreignKeys": [
           {
             "table": "Municipio",
-            "onDelete": "NO ACTION",
+            "onDelete": "CASCADE",
             "onUpdate": "NO ACTION",
             "columns": [
               "municipio",
@@ -517,7 +517,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'a3656f349237d0d7488565ec3897c007')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'aa5ac847a3d9c38316003e5cce4ffa18')"
     ]
   }
 }

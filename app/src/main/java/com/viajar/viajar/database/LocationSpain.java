@@ -5,9 +5,11 @@ import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
+import static androidx.room.ForeignKey.CASCADE;
+
 @Entity(
-        foreignKeys = {@ForeignKey(entity = Location.class, parentColumns = "name", childColumns = "name"),
-                @ForeignKey(entity = Municipio.class, parentColumns = {"municipio", "province"}, childColumns = {"municipio", "province"})}
+        foreignKeys = {@ForeignKey(entity = Location.class, parentColumns = "name", childColumns = "name", onDelete = CASCADE),
+                @ForeignKey(entity = Municipio.class, parentColumns = {"municipio", "province"}, childColumns = {"municipio", "province"}, onDelete = CASCADE)}
 )
 public class LocationSpain {
     @PrimaryKey
