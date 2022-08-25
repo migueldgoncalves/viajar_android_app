@@ -199,6 +199,9 @@ public class RouteColorGetter {
         // Coimbra
         else if (railway.contains("Urbanos de Coimbra"))
             return Color.parseColor("#3c3c3c"); // Dark gray
+        // Porto
+        else if (railway.contains("Linha de Aveiro"))
+            return Color.parseColor("#ffab2e"); // Yellow
         // Madrid
         else if (railway.contains("C-1"))
             return Color.parseColor("#66aede"); // Blue
