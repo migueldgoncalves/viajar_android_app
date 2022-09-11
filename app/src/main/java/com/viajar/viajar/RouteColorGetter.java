@@ -123,7 +123,8 @@ public class RouteColorGetter {
                         routeName.startsWith("H-") || // Huelva
                         routeName.startsWith("MA-") || // Málaga
                         routeName.startsWith("SE-") || // Seville
-                        routeName.startsWith("TO-") // Toledo
+                        routeName.startsWith("TO-") || // Toledo
+                        routeName.startsWith("AV-") // Ávila
         );
     }
 
@@ -170,11 +171,17 @@ public class RouteColorGetter {
         return (routeName.startsWith("IC"));
     }
 
+    // Specific to Spain
     public static boolean isCarreteraDelEstado(String routeName) {
-        // Specific to Spain
         if ((routeName == null) || (routeName.length() == 0))
             return false;
-        return (routeName.startsWith("N-"));
+
+        return (
+                routeName.startsWith("N-") || // Standard Spanish Carretera del Estado
+
+                        // Other Spanish roads whose traffic signs have white background and red highlight of the route name
+                        routeName.startsWith("SA-") // Salamanca
+        );
     }
 
     // Railways
