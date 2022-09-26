@@ -604,7 +604,7 @@ public class TravelActivity extends AppCompatActivity implements OnMapsSdkInitia
 
         private static final int largeIconSize = 350;
         private static final int lineWidth = 5;
-        private static int mapPadding = 50;
+        private static int mapPadding = 20;
         private static final double aroundMapSize = 0.15 / 2; // Degrees - In Iberian Peninsula 1 degree = ~100 km
         private static final int defaultMapAreaID = R.id.around;
 
@@ -811,17 +811,21 @@ public class TravelActivity extends AppCompatActivity implements OnMapsSdkInitia
                             b.include(new LatLng(latitude, longitude));
                     }
                 } else { // Include all locations
-                    Double northernmostLatitude = ((TravelActivity) requireActivity()).northernmostLatitude;
-                    Double southernmostLatitude = ((TravelActivity) requireActivity()).southernmostLatitude;
-                    Double westernmostLongitude = -9.500587; // Cabo da Roca, Lisboa
-                    Double easternmostLongitude = 3.322270; // Cap de Creus, Girona
-                    Double centerLongitude = (easternmostLongitude - westernmostLongitude) / 2 + westernmostLongitude;
+                    double northernmostLatitude = 43.783333; // Punta de Estaca de Bares, A Coruña
+                    double southernmostLatitude = 36.0; // Punta de Tarifa, Cádiz
+                    double westernmostLongitude = -9.500587; // Cabo da Roca, Lisbon
+                    double easternmostLongitude = 3.322270; // Cap de Creus, Girona
 
-                    if (currentLocation.getLongitude() < centerLongitude) { // Left side of Iberian Peninsula
-                        easternmostLongitude = centerLongitude;
-                    }
-                    else { // Right side of Iberian Peninsula
-                        westernmostLongitude = centerLongitude;
+                    double margin = 3.5; // Degrees - In Iberian Peninsula 1 degree = ~100 km
+
+                    // Regarding longitude, map will center around current location if near center of Iberian Peninsula
+                    if (currentLocation.getLongitude() < (westernmostLongitude + margin)) // Closer to the left of the Iberian Peninsula
+                        easternmostLongitude = westernmostLongitude + (2 * margin);
+                    else if (currentLocation.getLongitude() > (easternmostLongitude - margin)) // Closer do the right of the Iberian Peninsula
+                        westernmostLongitude = easternmostLongitude - (2 * margin);
+                    else { // Closer to the center of the Iberian Peninsula
+                        westernmostLongitude = currentLocation.getLongitude() - margin;
+                        easternmostLongitude = currentLocation.getLongitude() + margin;
                     }
 
                     List<Double[]> extremeMapPoints = Arrays.asList(
