@@ -208,7 +208,13 @@ public class RouteColorGetter {
             return Color.parseColor("#3c3c3c"); // Dark gray
         // Porto
         else if (railway.contains("Linha de Aveiro"))
-            return Color.parseColor("#ffab2e"); // Yellow
+            return Color.parseColor("#ffa700"); // Yellow
+        else if (railway.contains("Linha do Marco de Canaveses"))
+            return Color.parseColor("#0083d7"); // Blue
+        else if (railway.contains("Linha de Guimarães"))
+            return Color.parseColor("#e62621"); // Red
+        else if (railway.contains("Linha de Braga"))
+            return Color.parseColor("#009c5a"); // Green
         // Madrid
         else if (railway.contains("C-1"))
             return Color.parseColor("#66aede"); // Blue
