@@ -57,7 +57,7 @@
         android:visibility="gone"
         android:name="com.viajar.viajar.CarFragment"/>
 
-    <view class="com.viajar.viajar.LargeBottomNavigationView"
+    <view class="com.viajar.viajar.views.LargeBottomNavigationView"
         android:id="@+id/bottomNavigationViewGPS"
         android:layout_width="match_parent"
         android:layout_height="?android:attr/actionBarSize"

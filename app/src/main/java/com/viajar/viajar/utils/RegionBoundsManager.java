@@ -1,6 +1,9 @@
-package com.viajar.viajar;
+package com.viajar.viajar.utils;
 
 import com.google.android.gms.maps.model.LatLng;
+import com.viajar.viajar.LocationInfo;
+import com.viajar.viajar.LocationInfoPortugal;
+import com.viajar.viajar.LocationInfoSpain;
 
 import java.util.ArrayList;
 import java.util.Arrays;

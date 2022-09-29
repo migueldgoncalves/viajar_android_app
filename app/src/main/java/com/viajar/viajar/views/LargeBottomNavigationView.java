@@ -1,4 +1,4 @@
-package com.viajar.viajar;
+package com.viajar.viajar.views;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -16,6 +16,7 @@ import androidx.appcompat.view.menu.MenuBuilder;
 import com.google.android.material.bottomnavigation.BottomNavigationMenuView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarMenuView;
+import com.viajar.viajar.R;
 
 /**
  * This code allows to show a custom amount of options in a Bottom Navigation View (max is 5 by default)

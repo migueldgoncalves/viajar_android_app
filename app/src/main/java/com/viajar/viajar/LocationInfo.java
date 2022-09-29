@@ -2,6 +2,8 @@ package com.viajar.viajar;
 
 // A data object with all information concerning a location
 
+import com.viajar.viajar.utils.Coordinate;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -161,6 +163,10 @@ public class LocationInfo {
 
     public Double[] getCoordinates() {
         return coordinates;
+    }
+
+    public Coordinate getCoordinatesAsObject() {
+        return new Coordinate(getLatitude(), getLongitude());
     }
 
     public void setCoordinates(double latitude, double longitude) {

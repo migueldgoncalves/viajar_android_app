@@ -1,13 +1,8 @@
 package com.viajar.viajar;
 
-import android.content.Context;
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.os.Bundle;
-import android.util.AttributeSet;
 import android.util.Log;
-import android.util.TypedValue;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -43,9 +38,14 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PolylineOptions;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.tabs.TabLayout;
+import com.viajar.viajar.utils.RegionBoundsManager;
+import com.viajar.viajar.utils.RouteColorGetter;
+import com.viajar.viajar.views.DestinationButtonView;
+import com.viajar.viajar.views.DestinationsCustomView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 
 public class TravelActivity extends AppCompatActivity implements OnMapsSdkInitializedCallback {
@@ -76,7 +76,7 @@ public class TravelActivity extends AppCompatActivity implements OnMapsSdkInitia
 
     private LocationInfo currentLocation;
     private LocationInfo formerLocation;
-    private ArrayList<LocationInfo> surroundingLocations;
+    private HashMap<String, LocationInfo> surroundingLocations;
     private String currentLocationName;
     private String currentTransportMeans;
     private String currentMapArea;
@@ -298,11 +298,15 @@ public class TravelActivity extends AppCompatActivity implements OnMapsSdkInitia
                 String meansTransport = connectionID.get(1);
                 if (order == currentLocation.getSurroundingLocationOrder(surroundingLocation, meansTransport)) {
                     if (currentTransportMeans.equals(meansTransport)) {
-                        Button locationButton = new Button(getApplicationContext());
-                        locationButton.setText(surroundingLocation);
                         if (buttonLayoutGPS != null) {
-                            locationButton.setOnClickListener(TravelActivity.this::onClickGPS);
-                            buttonLayoutGPS.addView(locationButton);
+                            LocationInfo surroundingLocationInfo = surroundingLocations.get(surroundingLocation);
+                            if (surroundingLocationInfo == null) // Error - Not expected
+                                continue;
+
+                            DestinationButtonView destinationButtonView = new DestinationButtonView(getApplicationContext(), null);
+                            destinationButtonView.setView(currentLocation, currentTransportMeans, surroundingLocationInfo);
+                            destinationButtonView.getButton().setOnClickListener(TravelActivity.this::onClickGPS);
+                            buttonLayoutGPS.addView(destinationButtonView);
                         }
                     }
                     order += 1;
@@ -375,10 +379,11 @@ public class TravelActivity extends AppCompatActivity implements OnMapsSdkInitia
         }
         formerLocation = currentLocation;
         currentLocation = dbInterface.generateLocationObject(getApplicationContext(), currentLocationName);
-        surroundingLocations = new ArrayList<>();
+        surroundingLocations = new HashMap<>();
         for(List<String> connectionInfo:currentLocation.getSurroundingLocations().keySet()) {
             String surroundingLocationName = connectionInfo.get(0);
-            surroundingLocations.add(DBInterface.getDBInterface(getApplicationContext()).generateLocationObject(getApplicationContext(), surroundingLocationName));
+            LocationInfo newSurroundingLocation = DBInterface.getDBInterface(getApplicationContext()).generateLocationObject(getApplicationContext(), surroundingLocationName);
+            surroundingLocations.put(surroundingLocationName, newSurroundingLocation);
         }
     }
 
@@ -481,7 +486,7 @@ public class TravelActivity extends AppCompatActivity implements OnMapsSdkInitia
 
         public void createMapMarkers() {
             LocationInfo currentLocation = ((TravelActivity) requireActivity()).currentLocation;
-            ArrayList<LocationInfo> surroundingLocations = ((TravelActivity) requireActivity()).surroundingLocations;
+            HashMap<String, LocationInfo> surroundingLocations = ((TravelActivity) requireActivity()).surroundingLocations;
             String currentLocationName = ((TravelActivity) requireActivity()).currentLocationName;
             String currentTransportMeans = ((TravelActivity) requireActivity()).currentTransportMeans;
 
@@ -494,7 +499,7 @@ public class TravelActivity extends AppCompatActivity implements OnMapsSdkInitia
             //mMap.moveCamera(CameraUpdateFactory.newLatLng(location));
             //mMap.setMinZoomPreference(ZOOM_LEVEL);
 
-            for(LocationInfo surroundingLocation: surroundingLocations) {
+            for(LocationInfo surroundingLocation: surroundingLocations.values()) {
                 LatLng surroundingLocationCoordinates = new LatLng(surroundingLocation.getLatitude(), surroundingLocation.getLongitude());
                 float markerColor;
                 if (currentLocation.getSurroundingLocationsByTransportMeans(currentTransportMeans).contains(surroundingLocation.getName())) {
@@ -861,88 +866,4 @@ public class TravelActivity extends AppCompatActivity implements OnMapsSdkInitia
                 //mMap.moveCamera(c);
         }
     }
-}
-
-class DestinationsCustomView extends LinearLayout {
-    private final int textSizeUnit = TypedValue.COMPLEX_UNIT_SP;
-    private final int routeNameTextSize = 20;
-
-    public DestinationsCustomView(Context context, AttributeSet attrs) {
-        super(context, attrs);
-        this.setOrientation(VERTICAL);
-    }
-
-    public void setView(LocationInfo currentLocation, String currentTransportMeans) {
-        int order = 1;
-        boolean first = true;
-        for (int i = 0; i < currentLocation.getSurroundingLocations().keySet().size(); i++) {
-            for (List<String> connectionID : currentLocation.getSurroundingLocations().keySet()) {
-                String surroundingLocation = connectionID.get(0);
-                String meansTransport = connectionID.get(1);
-                if ((order == currentLocation.getSurroundingLocationOrder(surroundingLocation, meansTransport)) && (
-                        currentTransportMeans.equals(meansTransport)) && (
-                        currentLocation.hasDestinationsFromSurroundingLocation(surroundingLocation, currentTransportMeans))) {
-                    addDestinationsInfo(currentLocation, currentTransportMeans, surroundingLocation, first);
-                    first = false;
-                }
-            }
-            order += 1;
-        }
-    }
-
-    private void addDestinationsInfo(LocationInfo currentLocation, String currentTransportMeans, String surroundingLocation, boolean first) {
-        String routeName = currentLocation.getRouteName(surroundingLocation, currentTransportMeans);
-
-        // Separator
-
-        if (!first) {
-            this.addView(new TextView(getContext()));
-        }
-
-        // Surrounding location
-
-        TextView surroundingLocationTextView = new TextView(getContext());
-        this.addView(surroundingLocationTextView);
-        surroundingLocationTextView.setText(surroundingLocation);
-
-        // Route name
-
-        LinearLayout routeNameLinearLayout = new LinearLayout(getContext()); // Will allow to set different color just under route name and not entire screen width
-        this.addView(routeNameLinearLayout);
-        routeNameLinearLayout.setGravity(Gravity.CENTER);
-
-        TextView routeTextView = new TextView(getContext());
-        routeNameLinearLayout.addView(routeTextView);
-        routeTextView.setText(routeName);
-        routeTextView.setTextSize(textSizeUnit, routeNameTextSize);
-        routeTextView.setTypeface(routeTextView.getTypeface(), Typeface.BOLD);
-        routeTextView.setGravity(Gravity.CENTER_HORIZONTAL);
-
-        // Destinations and text color
-
-        LinearLayout destinationsLinearLayout = new LinearLayout(getContext());
-        this.addView(destinationsLinearLayout);
-        destinationsLinearLayout.setOrientation(VERTICAL);
-
-        for (String destinationText : currentLocation.getDestinationsFromSurroundingLocation(surroundingLocation, currentTransportMeans)) {
-            TextView destinationTextView = new TextView(getContext());
-            destinationTextView.setText(destinationText);
-            destinationsLinearLayout.addView(destinationTextView);
-            destinationTextView.setTextColor(RouteColorGetter.getDestinationsTextColor(routeName, currentTransportMeans));
-            routeTextView.setTextColor(RouteColorGetter.getRouteNameTextColor(routeName, currentTransportMeans));
-        }
-
-        // Background color
-        int backgroundColor = RouteColorGetter.getRouteBackgroundColor(routeName, currentTransportMeans);
-        routeNameLinearLayout.setBackgroundColor(backgroundColor);
-        destinationsLinearLayout.setBackgroundColor(backgroundColor);
-        // Route name background color may be different from general background color
-        routeTextView.setBackgroundColor(RouteColorGetter.getRouteTextBackgroundColor(routeName, currentTransportMeans, backgroundColor));
-
-        // Required - https://developer.android.com/training/custom-views/create-view#addprop
-
-        invalidate();
-        requestLayout();
-    }
-
 }

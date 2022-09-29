@@ -1,6 +1,8 @@
-package com.viajar.viajar;
+package com.viajar.viajar.utils;
 
 import android.graphics.Color;
+
+import com.viajar.viajar.TravelActivity;
 
 import java.util.Arrays;
 
@@ -141,6 +143,9 @@ public class RouteColorGetter {
         // Specific to Spain
         // Ex: some autovías in Andalucía, such as A-483
         // Must be called after isAutoviaWithOrangeBackground - This routine is more general
+        if (routeName == null)
+            return false;
+
         if (routeName.startsWith("A-")) {
             if ((routeName.contains(" ")) && (routeName.split(" ")[0].split("A-")[1].length() >= 3)) // Ex: A-7 - Ronda Oeste de Málaga
                 return true;
