@@ -2,10 +2,14 @@ package com.viajar.viajar.views;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.util.TypedValue;
+import android.view.Gravity;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import androidx.core.widget.TextViewCompat;
 
 import com.viajar.viajar.LocationInfo;
 import com.viajar.viajar.R;
@@ -40,15 +44,20 @@ public class DestinationButtonView extends LinearLayout {
 
         // Distance text
 
+        int distanceViewWidth = 140;
         TextView distanceView = new TextView(getContext());
         double distance = currentLocation.getSurroundingLocationDistance(surroundingLocation.getName(), currentTransportMeans);
         distanceView.setText(String.valueOf(distance));
+        distanceView.setWidth(distanceViewWidth);
+        distanceView.setGravity(Gravity.CENTER);
 
         // Destination button
 
+        int maxButtonFontSize = 14; // Will be applied for smaller location names. Larger names will have smaller fonts
         this.button = new Button(getContext());
         button.setText(surroundingLocation.getName());
         button.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
+        TextViewCompat.setAutoSizeTextTypeUniformWithConfiguration(button, 1, maxButtonFontSize, 1, TypedValue.COMPLEX_UNIT_SP);
 
         // Compass and distance view
 
