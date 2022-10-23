@@ -216,7 +216,7 @@ public class RouteColorGetter {
             return Color.parseColor("#ffa700"); // Yellow
         else if (railway.contains("Linha do Marco de Canaveses"))
             return Color.parseColor("#0083d7"); // Blue
-        else if (railway.contains("Linha de Guimarães"))
+        else if (railway.contains("Linha de Guimarães") && !railway.contains("Intercidades")) // Only suburban stretches should be receive this color
             return Color.parseColor("#e62621"); // Red
         else if (railway.contains("Linha de Braga"))
             return Color.parseColor("#009c5a"); // Green
