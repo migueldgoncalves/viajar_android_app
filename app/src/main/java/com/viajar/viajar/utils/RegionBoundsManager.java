@@ -394,7 +394,7 @@ public class RegionBoundsManager {
                         return castellonDeLaPlana;
                     case "Valência":
                         return valencia;
-                    case "Alicante":
+                    case "Alacant / Alicante":
                         return alicante;
                     default:
                         return null;
