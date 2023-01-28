@@ -117,6 +117,7 @@ public class RouteColorGetter {
                         routeName.startsWith("CM-") || // Castilla-La Mancha
                         routeName.startsWith("EX-A") || // Extremadura
                         routeName.startsWith("M-") || // Comunidad de Madrid
+                        routeName.startsWith("AG-") || // Galicia
 
                         // Spanish provincial autovías
                         routeName.startsWith("CA-") || // Cádiz
