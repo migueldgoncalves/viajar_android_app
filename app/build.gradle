@@ -71,6 +71,10 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
 
+    // Introduced after this situation occurred: https://gist.github.com/danielcshn/7aa57155d766d46c043fde015f054d40
+    def kotlin_bom_version = "1.9.0"
+    implementation(platform("org.jetbrains.kotlin:kotlin-bom:$kotlin_bom_version"))
+
     // optional - RxJava support for Room
     implementation "androidx.room:room-rxjava2:$room_version"
 
