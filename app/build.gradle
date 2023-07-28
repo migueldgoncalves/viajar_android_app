@@ -9,8 +9,8 @@ android {
         applicationId "com.viajar.viajar"
         minSdkVersion 23
         targetSdkVersion 33
-        versionCode 63
-        versionName "1.17.3"
+        versionCode 64
+        versionName "1.17.4"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
