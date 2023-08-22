@@ -392,7 +392,7 @@ public class RegionBoundsManager {
                     // Valencian Community
                     case "Castellón de la Plana":
                         return castellonDeLaPlana;
-                    case "Valência":
+                    case "València / Valencia":
                         return valencia;
                     case "Alacant / Alicante":
                         return alicante;

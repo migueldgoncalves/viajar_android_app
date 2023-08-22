@@ -232,6 +232,9 @@ public class RouteColorGetter {
         // Lisbon
         else if (railway.contains("Linha Vermelha - Metro de Lisboa"))
             return Color.RED;
+        // Porto
+        else if (railway.contains("Linha D - Metro do Porto"))
+            return Color.parseColor("#f9c212"); // Yellow
         // Madrid
         else if (railway.contains("Linha 1 - Metro de Madrid"))
             return Color.parseColor("#39b5e6"); // Light blue
