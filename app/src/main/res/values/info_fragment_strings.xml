@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="info_tab_country_specific_info" translatable="false">%1$s: %2$s</string>
+    <string name="info_tab_country_specific_info_double" translatable="false">%1$s: %2$s, %3$s</string>
+    <string name="info_tab_altitude_string">%1$d meters</string>
+    <string name="info_tab_altitude_string_singular">1 meter</string>
+    <string name="info_tab_coordinates_string" translatable="false">%1$f, %2$f</string>
+</resources>

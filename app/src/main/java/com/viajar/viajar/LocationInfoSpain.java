@@ -1,5 +1,7 @@
 package com.viajar.viajar;
 
+import android.content.Context;
+
 import java.util.List;
 
 public class LocationInfoSpain extends LocationInfo {
@@ -10,8 +12,8 @@ public class LocationInfoSpain extends LocationInfo {
     private String province;
     private String autonomousCommunity;
 
-    public LocationInfoSpain() {
-        setCountry("Spain");
+    public LocationInfoSpain(Context context) {
+        setCountry(context.getString(R.string.spain));
     }
 
     public String getDistrict() {

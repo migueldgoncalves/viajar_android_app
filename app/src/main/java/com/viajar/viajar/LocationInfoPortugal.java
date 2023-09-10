@@ -2,6 +2,8 @@ package com.viajar.viajar;
 
 // A data object with all information concerning a location in Portugal
 
+import android.content.Context;
+
 public class LocationInfoPortugal extends LocationInfo {
 
     private String parish;
@@ -10,8 +12,8 @@ public class LocationInfoPortugal extends LocationInfo {
     private String intermunicipalEntity;
     private String region;
 
-    public LocationInfoPortugal() {
-        setCountry("Portugal");
+    public LocationInfoPortugal(Context context) {
+        setCountry(context.getString(R.string.portugal));
     }
 
     public String getParish() {

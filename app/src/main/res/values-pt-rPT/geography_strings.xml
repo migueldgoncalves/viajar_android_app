@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--    Countries-->
+    <string name="gibraltar_short_name">Gibraltar</string>
+    <string name="gibraltar_long_name">Reino Unido - Território Ultramarino Britânico de Gibraltar</string>
+    <string name="portugal">Portugal</string>
+    <string name="spain">Espanha</string>
+    <string name="country">País</string>
+
+    <!--    Region-->
+    <!--    Global-->
+    <string name="iberian_peninsula">Península Ibérica</string>
+    <!--    Specific to Gibraltar-->
+    <string name="major_residential_area">Major Residential Area</string>
+    <!--    Specific to Portugal-->
+    <string name="parish_pt">Freguesia</string>
+    <string name="concelho">Concelho</string>
+    <string name="intermunicipal_entity">Entidade Intermunicipal</string>
+    <string name="region">Região</string>
+    <!--    Common to Portugal and Spain-->
+    <string name="district">Distrito</string>
+    <!--    Specific to Spain-->
+    <string name="municipio">Município</string>
+    <string name="province">Província</string>
+    <string name="autonomous_community">Comunidade Autónoma</string>
+    <string name="comarca">Comarca</string>
+    <string name="comarcas">Comarcas</string>
+    <string name="no_comarca">O local não está numa comarca</string>
+    <string name="mancomunidad_integral">Mancomunidade integral/Comarca</string>
+    <string name="no_mancomunidad_integral">O local não está numa mancomunidade integral/comarca</string>
+    <string name="concello">Concello/Concelho</string>
+    <string name="parish_es">Parroquia/Paróquia</string>
+    <string name="pedania">Pedanía/Distrito suburbano</string>
+    <string name="extremadura">Extremadura</string>
+    <string name="galicia">Galiza</string>
+    <string name="region_of_murcia">Região de Murcia</string>
+</resources>

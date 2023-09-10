@@ -9,7 +9,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -40,8 +39,10 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.tabs.TabLayout;
 import com.viajar.viajar.utils.RegionBoundsManager;
 import com.viajar.viajar.utils.RouteColorGetter;
+import com.viajar.viajar.utils.Utils;
 import com.viajar.viajar.views.DestinationButtonView;
 import com.viajar.viajar.views.DestinationsCustomView;
+import com.viajar.viajar.activities.InfoPageFragment;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -272,14 +273,14 @@ public class TravelActivity extends AppCompatActivity implements OnMapsSdkInitia
         if (locationTextViewGPS != null)
             locationTextViewGPS.setText(currentLocationName);
         if ((briefInfoTextView != null) && (currentLocation != null))
-            if (currentLocation.getCountry().equals("Portugal"))
+            if (currentLocation.getCountry().equals(getString(R.string.portugal)))
                 briefInfoTextView.setText(getString(R.string.brief_info_pt, ((LocationInfoPortugal) currentLocation).getMunicipality(), ((LocationInfoPortugal) currentLocation).getDistrict()));
-            else if (currentLocation.getCountry().equals("Spain"))
-                if (isComunidadeUniprovincial(((LocationInfoSpain) currentLocation).getAutonomousCommunity()))
+            else if (currentLocation.getCountry().equals(getString(R.string.spain)))
+                if (Utils.isAutonomousCommunityWithSingleProvince(((LocationInfoSpain) currentLocation).getAutonomousCommunity(), ((LocationInfoSpain) currentLocation).getProvince()))
                     briefInfoTextView.setText(getString(R.string.brief_info_es_uniprovince, ((LocationInfoSpain) currentLocation).getMunicipality(), ((LocationInfoSpain) currentLocation).getProvince()));
                 else
                     briefInfoTextView.setText(getString(R.string.brief_info_es_multiprovince, ((LocationInfoSpain) currentLocation).getMunicipality(), ((LocationInfoSpain) currentLocation).getProvince(), ((LocationInfoSpain) currentLocation).getAutonomousCommunity()));
-            else if (currentLocation.getCountry().equals("Gibraltar"))
+            else if (currentLocation.getCountry().equals(getString(R.string.gibraltar_short_name)))
                 briefInfoTextView.setText(getString(R.string.brief_info_gi));
 
         LinearLayout buttonLayoutGPS = findViewById(R.id.locationButtonLayoutGPS);
@@ -411,9 +412,12 @@ public class TravelActivity extends AppCompatActivity implements OnMapsSdkInitia
         ((CarFragment) getSupportFragmentManager().getFragments().get(0)).startJourney(args);
     }
 
-    private boolean isComunidadeUniprovincial(String autonomousCommunity) {
-        String[] comunidadesUniprovinciales = new String[]{"Comunidade de Madrid", "Região de Murcia"};
-        return new ArrayList<>(Arrays.asList(comunidadesUniprovinciales)).contains(autonomousCommunity);
+    public LocationInfo getCurrentLocation() {
+        return currentLocation;
+    }
+
+    public String getCurrentLocationName() {
+        return currentLocationName;
     }
 
     // Fragment classes
@@ -514,94 +518,6 @@ public class TravelActivity extends AppCompatActivity implements OnMapsSdkInitia
             CameraUpdate c = CameraUpdateFactory.newLatLngBounds(bounds,150);
             mMap.animateCamera(c);
             //mMap.moveCamera(c);
-        }
-    }
-
-    public static class InfoPageFragment extends Fragment {
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-            return inflater.inflate(R.layout.fragment_travel_info, container, false);
-        }
-
-        @Override
-        public void onResume() {
-            LocationInfo currentLocation = ((TravelActivity) requireActivity()).currentLocation;
-            String currentLocationName = ((TravelActivity) requireActivity()).currentLocationName;
-
-            super.onResume();
-
-            // Hides both bottom navigation bars
-            View bottomNavigationViewGPS = requireActivity().findViewById(R.id.bottomNavigationViewGPS);
-            requireActivity().runOnUiThread(() -> bottomNavigationViewGPS.setVisibility(View.INVISIBLE));
-            View bottomNavigationViewMap = requireActivity().findViewById(R.id.bottomNavigationViewMap);
-            requireActivity().runOnUiThread(() -> bottomNavigationViewMap.setVisibility(View.INVISIBLE));
-
-            TextView textView = requireActivity().findViewById(R.id.locationTextViewInfo);
-            textView.setText(currentLocationName);
-            EditText editText = requireActivity().findViewById(R.id.travelInfoText);
-            editText.setText("");
-            if (currentLocation != null) {
-                editText.append(currentLocation.getLatitude() + ", " + currentLocation.getLongitude() + "\n");
-                if (currentLocation.getAltitude() == 1)
-                    editText.append(currentLocation.getAltitude() + " metro\n");
-                else
-                    editText.append(currentLocation.getAltitude() + " metros\n");
-                if (currentLocation.getProtectedArea() != null && !currentLocation.getProtectedArea().equals(""))
-                    editText.append(currentLocation.getProtectedArea() + "\n");
-                editText.append("\n");
-                if (currentLocation.getCountry().equals("Portugal")) {
-                    editText.append("Freguesia: " + ((LocationInfoPortugal) currentLocation).getParish() + "\n");
-                    editText.append("Concelho: " + ((LocationInfoPortugal) currentLocation).getMunicipality() + "\n");
-                    editText.append("Distrito: " + ((LocationInfoPortugal) currentLocation).getDistrict() + "\n");
-                    editText.append("Entidade Intermunicipal: " + ((LocationInfoPortugal) currentLocation).getIntermunicipalEntity() + "\n");
-                    editText.append("Região: " + ((LocationInfoPortugal) currentLocation).getRegion() + "\n");
-                } else if (currentLocation.getCountry().equals("Spain")) {
-                    if (((LocationInfoSpain) currentLocation).getDistrict() != null && !((LocationInfoSpain) currentLocation).getDistrict().equals("")) {
-                        if (((LocationInfoSpain) currentLocation).getAutonomousCommunity().equals("Galiza")) {
-                            editText.append("Paróquia: " + ((LocationInfoSpain) currentLocation).getDistrict() + "\n");
-                        } else if (((LocationInfoSpain) currentLocation).getAutonomousCommunity().equals("Região de Murcia")) {
-                            editText.append("Pedanía: " + ((LocationInfoSpain) currentLocation).getDistrict() + "\n");
-                        } else {
-                            editText.append("Distrito: " + ((LocationInfoSpain) currentLocation).getDistrict() + "\n");
-                        }
-                    }
-                    if (((LocationInfoSpain) currentLocation).getAutonomousCommunity().equals("Galiza")) {
-                        editText.append("Concelho: " + ((LocationInfoSpain) currentLocation).getMunicipality() + "\n");
-                    } else {
-                        editText.append("Município: " + ((LocationInfoSpain) currentLocation).getMunicipality() + "\n");
-                    }
-                    if (((LocationInfoSpain) currentLocation).getAutonomousCommunity().equals("Extremadura")) {
-                        if (((LocationInfoSpain) currentLocation).getComarcas().size() == 1)
-                            editText.append("Mancomunidade integral: " + ((LocationInfoSpain) currentLocation).getComarcas().get(0) + "\n");
-                        else if (((LocationInfoSpain) currentLocation).getComarcas().size() == 0)
-                            editText.append("Mancomunidade integral: Nenhuma\n");
-                    } else {
-                        if (((LocationInfoSpain) currentLocation).getComarcas().size() == 2)
-                            editText.append("Comarcas: " + ((LocationInfoSpain) currentLocation).getComarcas().get(0) +
-                                    ", " + ((LocationInfoSpain) currentLocation).getComarcas().get(1) + "\n");
-                        else if (((LocationInfoSpain) currentLocation).getComarcas().size() == 1)
-                            editText.append("Comarca: " + ((LocationInfoSpain) currentLocation).getComarcas().get(0) + "\n");
-                        else
-                            editText.append("Comarca: Nenhuma\n");
-                    }
-                    if (!((LocationInfoSpain) currentLocation).getAutonomousCommunity().equals("Comunidade de Madrid"))
-                        editText.append("Província: " + ((LocationInfoSpain) currentLocation).getProvince() + "\n");
-                    editText.append("Comunidade Autónoma: " + ((LocationInfoSpain) currentLocation).getAutonomousCommunity() + "\n");
-                } else if (currentLocation.getCountry().equals("Gibraltar")) {
-                    if (((LocationInfoGibraltar) currentLocation).getMajorResidentialAreas().size() == 2)
-                        editText.append("Major Residential Areas: " + ((LocationInfoGibraltar) currentLocation).getMajorResidentialAreas().get(0) +
-                                ", " + ((LocationInfoGibraltar) currentLocation).getMajorResidentialAreas().get(1) + "\n");
-                    else if (((LocationInfoGibraltar) currentLocation).getMajorResidentialAreas().size() == 1)
-                        editText.append("Major Residential Area: " + ((LocationInfoGibraltar) currentLocation).getMajorResidentialAreas().get(0) + "\n");
-                }
-                if (currentLocation.getCountry().equals("Spain"))
-                    editText.append("País: Espanha");
-                else if (currentLocation.getCountry().equals("Gibraltar"))
-                    editText.append("País: Reino Unido - Gibraltar");
-                else if (currentLocation.getCountry().equals("Portugal"))
-                    editText.append("País: Portugal");
-            }
         }
     }
 
@@ -843,11 +759,11 @@ public class TravelActivity extends AppCompatActivity implements OnMapsSdkInitia
                     }
                 }
             } else if (currentMapArea.equals(getString(R.string.subregion))) {
-                LatLng[] bounds = new RegionBoundsManager().getSubregionBoundsByLocation(currentLocation);
+                LatLng[] bounds = new RegionBoundsManager(getContext()).getSubregionBoundsByLocation(currentLocation);
                 for (LatLng bound : bounds)
                     b.include(bound);
             } else if (currentMapArea.equals(getString(R.string.region))) {
-                LatLng[] bounds = new RegionBoundsManager().getRegionBoundsByLocation(currentLocation);
+                LatLng[] bounds = new RegionBoundsManager(getContext()).getRegionBoundsByLocation(currentLocation);
                 for (LatLng bound : bounds)
                     b.include(bound);
             } else if (currentMapArea.equals(getString(R.string.around))) {

@@ -5,15 +5,6 @@
     <string name="cover_image_label">Imagem da capa</string>
     <string name="version_text">Versão %1$s.%2$s.%3$s</string>
     <string name="title_activity_travel">Viagem</string>
-    <string name="concelho">Concelho</string>
-    <string name="municipio">Município</string>
-    <string name="province">Província</string>
-    <string name="intermunicipal_entity">Entidade Intermunicipal</string>
-    <string name="district">Distrito</string>
-    <string name="region">Região</string>
-    <string name="autonomous_community">Comunidade Autónoma</string>
-    <string name="parish">Freguesia</string>
-    <string name="comarca">Comarca</string>
     <string name="means_transport">Meio de transporte</string>
     <string name="cardinal_point">Ponto cardeal</string>
     <string name="title_activity_main_menu">Menu Principal</string>
@@ -38,8 +29,6 @@
     <string name="brief_info_es_multiprovince">%1$s, Província de %2$s, %3$s, Espanha</string>
     <string name="brief_info_es_uniprovince">%1$s, %2$s, Espanha</string>
     <string name="brief_info_gi">Gibraltar</string>
-    <string name="iberian_peninsula">Península Ibérica</string>
-    <string name="gibraltar">Gibraltar</string>
     <string name="around">À Volta</string>
     <string name="transfer">Transbordo</string>
     <string name="subway">Metro</string>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="info_tab_altitude_string">%1$d metros</string>
+    <string name="info_tab_altitude_string_singular">1 metro</string>
+</resources>

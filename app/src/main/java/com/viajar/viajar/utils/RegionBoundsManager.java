@@ -1,14 +1,19 @@
 package com.viajar.viajar.utils;
 
+import android.content.Context;
+
 import com.google.android.gms.maps.model.LatLng;
 import com.viajar.viajar.LocationInfo;
 import com.viajar.viajar.LocationInfoPortugal;
 import com.viajar.viajar.LocationInfoSpain;
+import com.viajar.viajar.R;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
 public class RegionBoundsManager {
+
+    Context context;
 
     // ADD SUBREGION DEFINITIONS HERE
 
@@ -124,7 +129,9 @@ public class RegionBoundsManager {
     private final RegionBounds easternCatalonia = new RegionBounds("Eastern Catalonia");
     private final RegionBounds valencianCommunity = new RegionBounds("Valencian Community");
 
-    public RegionBoundsManager() {
+    public RegionBoundsManager(Context context) {
+        this.context = context;
+
         setPortugueseSubregionBounds();
         setSpanishSubregionBounds();
         setGibraltarSubregionBounds();
@@ -151,76 +158,75 @@ public class RegionBoundsManager {
     }
 
     private RegionBounds getRegionBoundsObjectByLocation(LocationInfo locationInfo) {
-        switch (locationInfo.getCountry()) {
-            case "Portugal":
-                String district = ((LocationInfoPortugal) locationInfo).getDistrict();
-                String intermunicipalEntity = ((LocationInfoPortugal) locationInfo).getIntermunicipalEntity();
+        if (locationInfo.getCountry().equals(context.getString(R.string.portugal))) {
+            String district = ((LocationInfoPortugal) locationInfo).getDistrict();
+            String intermunicipalEntity = ((LocationInfoPortugal) locationInfo).getIntermunicipalEntity();
 
-                if (district.equals("Faro"))
-                    return algarve;
-                else if (Arrays.asList("Beja", "Évora", "Portalegre").contains(district) ||
-                        intermunicipalEntity.equals("Alentejo Litoral"))
-                    return alentejo;
-                else if (Arrays.asList("Lisboa", "Santarém", "Leiria").contains(district) ||
-                        intermunicipalEntity.equals("Área Metropolitana de Lisboa")) // Approx. Lisboa e Vale do Tejo
-                    return lisboaValeTejo;
-                else if (Arrays.asList("Coimbra", "Aveiro", "Viseu").contains(district)) // Approx. Beira Litoral
-                    return beiraLitoral;
-                else if (Arrays.asList("Castelo Branco", "Guarda").contains(district)) // Approx. Beira Interior
-                    return beiraInterior;
-                else if (Arrays.asList("Porto", "Braga", "Viana do Castelo").contains(district)) // Approx. Entre-Douro-e-Minho
-                    return entreDouroMinho;
-                else if (Arrays.asList("Vila Real", "Bragança").contains(district))
-                    return trasOsMontes;
-                else
-                    return null;
-            case "Spain":
-                String autonomousCommunity = ((LocationInfoSpain) locationInfo).getAutonomousCommunity();
-                String province = ((LocationInfoSpain) locationInfo).getProvince();
-
-                if (Arrays.asList("Huelva", "Sevilha", "Cádiz").contains(province))
-                    return westernAndaluciaAndGibraltar;
-                else if (Arrays.asList("Córdoba", "Málaga").contains(province))
-                    return centralAndalucia;
-                else if (Arrays.asList("Jaén", "Granada", "Almería").contains(province))
-                    return easternAndalucia;
-                else if (Arrays.asList("Badajoz", "Cáceres").contains(province))
-                    return extremadura;
-                else if (autonomousCommunity.equals("Comunidade de Madrid") ||
-                        Arrays.asList("Ciudad Real", "Toledo").contains(province))
-                    return westernCastillaLaManchaAndMadrid;
-                else if (Arrays.asList("Albacete", "Cuenca", "Guadalajara").contains(province) ||
-                        autonomousCommunity.equals("Região de Murcia"))
-                    return easternCastillaLaManchaAndMurcia;
-                else if (Arrays.asList("León", "Zamora", "Salamanca").contains(province) ||
-                        autonomousCommunity.equals("Astúrias"))
-                    return westernCastillaYLeonAndAsturias;
-                else if (Arrays.asList("Palencia", "Valladolid", "Ávila").contains(province))
-                    return centralCastillaYLeon;
-                else if (Arrays.asList("Burgos", "Segóvia").contains(province) ||
-                        autonomousCommunity.equals("Cantábria"))
-                    return easternCastillaYLeonAndCantabria;
-                else if (Arrays.asList("Pontevedra", "A Coruña").contains(province))
-                    return westernGalicia;
-                else if (Arrays.asList("Ourense", "Lugo").contains(province))
-                    return easternGalicia;
-                else if (province.equals("Soria") ||
-                        Arrays.asList("País Basco", "La Rioja", "Navarra").contains(autonomousCommunity))
-                    return northeasternIberia;
-                else if (autonomousCommunity.equals("Aragão"))
-                    return aragon;
-                else if (Arrays.asList("Lleida", "Tarragona").contains(province))
-                    return westernCatalonia;
-                else if (Arrays.asList("Girona", "Barcelona").contains(province))
-                    return easternCatalonia;
-                else if (autonomousCommunity.equals("Comunidade Valenciana"))
-                    return valencianCommunity;
-                else
-                    return null;
-            case "Gibraltar":
-                return westernAndaluciaAndGibraltar;
-            default: // Error
+            if (district.equals("Faro"))
+                return algarve;
+            else if (Arrays.asList("Beja", "Évora", "Portalegre").contains(district) ||
+                    intermunicipalEntity.equals("Alentejo Litoral"))
+                return alentejo;
+            else if (Arrays.asList("Lisboa", "Santarém", "Leiria").contains(district) ||
+                    intermunicipalEntity.equals("Área Metropolitana de Lisboa")) // Approx. Lisboa e Vale do Tejo
+                return lisboaValeTejo;
+            else if (Arrays.asList("Coimbra", "Aveiro", "Viseu").contains(district)) // Approx. Beira Litoral
+                return beiraLitoral;
+            else if (Arrays.asList("Castelo Branco", "Guarda").contains(district)) // Approx. Beira Interior
+                return beiraInterior;
+            else if (Arrays.asList("Porto", "Braga", "Viana do Castelo").contains(district)) // Approx. Entre-Douro-e-Minho
+                return entreDouroMinho;
+            else if (Arrays.asList("Vila Real", "Bragança").contains(district))
+                return trasOsMontes;
+            else
                 return null;
+        } else if (locationInfo.getCountry().equals(context.getString(R.string.spain))) {
+            String autonomousCommunity = ((LocationInfoSpain) locationInfo).getAutonomousCommunity();
+            String province = ((LocationInfoSpain) locationInfo).getProvince();
+
+            if (Arrays.asList("Huelva", "Sevilha", "Cádiz").contains(province))
+                return westernAndaluciaAndGibraltar;
+            else if (Arrays.asList("Córdoba", "Málaga").contains(province))
+                return centralAndalucia;
+            else if (Arrays.asList("Jaén", "Granada", "Almería").contains(province))
+                return easternAndalucia;
+            else if (Arrays.asList("Badajoz", "Cáceres").contains(province))
+                return extremadura;
+            else if (autonomousCommunity.equals("Comunidade de Madrid") ||
+                    Arrays.asList("Ciudad Real", "Toledo").contains(province))
+                return westernCastillaLaManchaAndMadrid;
+            else if (Arrays.asList("Albacete", "Cuenca", "Guadalajara").contains(province) ||
+                    autonomousCommunity.equals("Região de Murcia"))
+                return easternCastillaLaManchaAndMurcia;
+            else if (Arrays.asList("León", "Zamora", "Salamanca").contains(province) ||
+                    autonomousCommunity.equals("Astúrias"))
+                return westernCastillaYLeonAndAsturias;
+            else if (Arrays.asList("Palencia", "Valladolid", "Ávila").contains(province))
+                return centralCastillaYLeon;
+            else if (Arrays.asList("Burgos", "Segóvia").contains(province) ||
+                    autonomousCommunity.equals("Cantábria"))
+                return easternCastillaYLeonAndCantabria;
+            else if (Arrays.asList("Pontevedra", "A Coruña").contains(province))
+                return westernGalicia;
+            else if (Arrays.asList("Ourense", "Lugo").contains(province))
+                return easternGalicia;
+            else if (province.equals("Soria") ||
+                    Arrays.asList("País Basco", "La Rioja", "Navarra").contains(autonomousCommunity))
+                return northeasternIberia;
+            else if (autonomousCommunity.equals("Aragão"))
+                return aragon;
+            else if (Arrays.asList("Lleida", "Tarragona").contains(province))
+                return westernCatalonia;
+            else if (Arrays.asList("Girona", "Barcelona").contains(province))
+                return easternCatalonia;
+            else if (autonomousCommunity.equals("Comunidade Valenciana"))
+                return valencianCommunity;
+            else
+                return null;
+        } else if (locationInfo.getCountry().equals(context.getString(R.string.gibraltar_short_name))) {
+            return westernAndaluciaAndGibraltar;
+        } else { // Error
+            return null;
         }
     }
 
@@ -233,176 +239,127 @@ public class RegionBoundsManager {
     }
 
     private SubregionBounds getSubregionBoundsObjectByLocation(LocationInfo locationInfo) {
-        switch (locationInfo.getCountry()) {
-            case "Portugal":
-                String district = ((LocationInfoPortugal) locationInfo).getDistrict();
-                String intermunicipalEntity = ((LocationInfoPortugal) locationInfo).getIntermunicipalEntity();
-                String concelho = ((LocationInfoPortugal) locationInfo).getMunicipality();
+        if (locationInfo.getCountry().equals(context.getString(R.string.portugal))) {
+            String district = ((LocationInfoPortugal) locationInfo).getDistrict();
+            String intermunicipalEntity = ((LocationInfoPortugal) locationInfo).getIntermunicipalEntity();
+            String concelho = ((LocationInfoPortugal) locationInfo).getMunicipality();
 
-                // Algarve
-                if (Arrays.asList("Alcoutim", "Castro Marim", "Faro", "Loulé", "Olhão",
-                        "São Brás de Alportel", "Tavira", "Vila Real de Santo António").contains(concelho))
-                    return sotaventoAlgarvio;
-                else if (Arrays.asList("Albufeira", "Aljezur", "Lagoa", "Lagos", "Monchique",
-                        "Portimão", "Silves", "Vila do Bispo").contains(concelho))
-                    return barlaventoAlgarvio;
+            // Algarve
+            if (Arrays.asList("Alcoutim", "Castro Marim", "Faro", "Loulé", "Olhão",
+                    "São Brás de Alportel", "Tavira", "Vila Real de Santo António").contains(concelho))
+                return sotaventoAlgarvio;
+            else if (Arrays.asList("Albufeira", "Aljezur", "Lagoa", "Lagos", "Monchique",
+                    "Portimão", "Silves", "Vila do Bispo").contains(concelho))
+                return barlaventoAlgarvio;
                 // Alentejo
-                else if ((intermunicipalEntity.equals("Alentejo Litoral")) &&
-                        !concelho.equals("Odemira")) // Approx. Alentejo Litoral
-                    return alentejoLitoral;
-                else if (district.equals("Beja"))
-                    return beja;
-                else if (district.equals("Évora"))
-                    return evora;
-                else if (district.equals("Portalegre"))
-                    return portalegre;
+            else if ((intermunicipalEntity.equals("Alentejo Litoral")) &&
+                    !concelho.equals("Odemira")) // Approx. Alentejo Litoral
+                return alentejoLitoral;
+            else if (district.equals("Beja"))
+                return beja;
+            else if (district.equals("Évora"))
+                return evora;
+            else if (district.equals("Portalegre"))
+                return portalegre;
                 // Lisbon and Tagus Valley
-                else if ((district.equals("Setúbal")) && ( // Península de Setúbal
-                        intermunicipalEntity.equals("Área Metropolitana de Lisboa")))
-                    return peninsulaSetubal;
-                else if (district.equals("Lisboa"))
-                    return lisboa;
-                else if (district.equals("Leiria"))
-                    return leiria;
-                else if (district.equals("Santarém"))
-                    return santarem;
+            else if ((district.equals("Setúbal")) && ( // Península de Setúbal
+                    intermunicipalEntity.equals("Área Metropolitana de Lisboa")))
+                return peninsulaSetubal;
+            else if (district.equals("Lisboa"))
+                return lisboa;
+            else if (district.equals("Leiria"))
+                return leiria;
+            else if (district.equals("Santarém"))
+                return santarem;
                 // Beiras
-                else if (district.equals("Coimbra"))
-                    return coimbra;
-                else if (district.equals("Aveiro"))
-                    return aveiro;
-                else if (district.equals("Viseu"))
-                    return viseu;
-                else if (district.equals("Castelo Branco"))
-                    return casteloBranco;
-                else if (district.equals("Guarda"))
-                    return guarda;
+            else if (district.equals("Coimbra"))
+                return coimbra;
+            else if (district.equals("Aveiro"))
+                return aveiro;
+            else if (district.equals("Viseu"))
+                return viseu;
+            else if (district.equals("Castelo Branco"))
+                return casteloBranco;
+            else if (district.equals("Guarda"))
+                return guarda;
                 // North
-                else if (district.equals("Porto"))
-                    return porto;
-                else if (district.equals("Braga"))
-                    return braga;
-                else if (district.equals("Viana do Castelo"))
-                    return vianaDoCastelo;
-                else if (district.equals("Vila Real"))
-                    return vilaReal;
-                else if (district.equals("Bragança"))
-                    return braganca;
-                else
-                    return null;
-            case "Spain":
-                String province = ((LocationInfoSpain) locationInfo).getProvince();
-                switch (province) {
-                    // Andalucía
-                    case "Huelva":
-                        return huelva;
-                    case "Sevilha":
-                        return sevilha;
-                    case "Cádiz":
-                        return cadiz;
-                    case "Córdoba":
-                        return cordoba;
-                    case "Málaga":
-                        return malaga;
-                    case "Jaén":
-                        return jaen;
-                    case "Granada":
-                        return granada;
-                    case "Almería":
-                        return almeria;
-                    // Extremadura
-                    case "Badajoz":
-                        return badajoz;
-                    case "Cáceres":
-                        return caceres;
-                    // Castilla-La Mancha, Madrid Community and Murcia Region
-                    case "Ciudad Real":
-                        return ciudadReal;
-                    case "Toledo":
-                        return toledo;
-                    case "Albacete":
-                        return albacete;
-                    case "Cuenca":
-                        return cuenca;
-                    case "Guadalajara":
-                        return guadalajara;
-                    case "Comunidade de Madrid":
-                        return comunidadeDeMadrid;
-                    case "Região de Murcia":
-                        return regiaoDeMurcia;
-                    // Castilla y León, Asturias and Cantabria
-                    case "León":
-                        return leon;
-                    case "Zamora":
-                        return zamora;
-                    case "Salamanca":
-                        return salamanca;
-                    case "Segóvia":
-                        return segovia;
-                    case "Palencia":
-                        return palencia;
-                    case "Valladolid":
-                        return valladolid;
-                    case "Ávila":
-                        return avila;
-                    case "Burgos":
-                        return burgos;
-                    case "Soria":
-                        return soria;
-                    case "Astúrias":
-                        return asturias;
-                    case "Cantábria":
-                        return cantabria;
-                    // Galicia
-                    case "Pontevedra":
-                        return pontevedra;
-                    case "A Coruña":
-                        return aCoruna;
-                    case "Ourense":
-                        return ourense;
-                    case "Lugo":
-                        return lugo;
-                    // Basque Country, La Rioja and Navarra
-                    case "Vizcaya":
-                        return vizcaya;
-                    case "Guipúzcoa":
-                        return guipuzcoa;
-                    case "Álava":
-                        return alava;
-                    case "La Rioja":
-                        return laRioja;
-                    case "Navarra":
-                        return navarra;
-                    // Aragón
-                    case "Huesca":
-                        return huesca;
-                    case "Zaragoza":
-                        return zaragoza;
-                    case "Teruel":
-                        return teruel;
-                    // Catalonia
-                    case "Lleida":
-                        return lleida;
-                    case "Tarragona":
-                        return tarragona;
-                    case "Girona":
-                        return girona;
-                    case "Barcelona":
-                        return barcelona;
-                    // Valencian Community
-                    case "Castellón de la Plana":
-                        return castellonDeLaPlana;
-                    case "València / Valencia":
-                        return valencia;
-                    case "Alacant / Alicante":
-                        return alicante;
-                    default:
-                        return null;
-                }
-            case "Gibraltar":
-                return gibraltar;
-            default: // Error
+            else if (district.equals("Porto"))
+                return porto;
+            else if (district.equals("Braga"))
+                return braga;
+            else if (district.equals("Viana do Castelo"))
+                return vianaDoCastelo;
+            else if (district.equals("Vila Real"))
+                return vilaReal;
+            else if (district.equals("Bragança"))
+                return braganca;
+            else
                 return null;
+        } else if (locationInfo.getCountry().equals(context.getString(R.string.spain))) {
+            String province = ((LocationInfoSpain) locationInfo).getProvince();
+            return switch (province) {
+                // Andalucía
+                case "Huelva" -> huelva;
+                case "Sevilha" -> sevilha;
+                case "Cádiz" -> cadiz;
+                case "Córdoba" -> cordoba;
+                case "Málaga" -> malaga;
+                case "Jaén" -> jaen;
+                case "Granada" -> granada;
+                case "Almería" -> almeria;
+                // Extremadura
+                case "Badajoz" -> badajoz;
+                case "Cáceres" -> caceres;
+                // Castilla-La Mancha, Madrid Community and Murcia Region
+                case "Ciudad Real" -> ciudadReal;
+                case "Toledo" -> toledo;
+                case "Albacete" -> albacete;
+                case "Cuenca" -> cuenca;
+                case "Guadalajara" -> guadalajara;
+                case "Comunidade de Madrid" -> comunidadeDeMadrid;
+                case "Região de Murcia" -> regiaoDeMurcia;
+                // Castilla y León, Asturias and Cantabria
+                case "León" -> leon;
+                case "Zamora" -> zamora;
+                case "Salamanca" -> salamanca;
+                case "Segóvia" -> segovia;
+                case "Palencia" -> palencia;
+                case "Valladolid" -> valladolid;
+                case "Ávila" -> avila;
+                case "Burgos" -> burgos;
+                case "Soria" -> soria;
+                case "Astúrias" -> asturias;
+                case "Cantábria" -> cantabria;
+                // Galicia
+                case "Pontevedra" -> pontevedra;
+                case "A Coruña" -> aCoruna;
+                case "Ourense" -> ourense;
+                case "Lugo" -> lugo;
+                // Basque Country, La Rioja and Navarra
+                case "Vizcaya" -> vizcaya;
+                case "Guipúzcoa" -> guipuzcoa;
+                case "Álava" -> alava;
+                case "La Rioja" -> laRioja;
+                case "Navarra" -> navarra;
+                // Aragón
+                case "Huesca" -> huesca;
+                case "Zaragoza" -> zaragoza;
+                case "Teruel" -> teruel;
+                // Catalonia
+                case "Lleida" -> lleida;
+                case "Tarragona" -> tarragona;
+                case "Girona" -> girona;
+                case "Barcelona" -> barcelona;
+                // Valencian Community
+                case "Castellón de la Plana" -> castellonDeLaPlana;
+                case "València / Valencia" -> valencia;
+                case "Alacant / Alicante" -> alicante;
+                default -> null;
+            };
+        } else if (locationInfo.getCountry().equals(context.getString(R.string.gibraltar_short_name))) {
+            return gibraltar;
+        } else { // Error
+            return null;
         }
     }
 

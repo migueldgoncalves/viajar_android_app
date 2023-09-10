@@ -78,4 +78,15 @@ public class Utils {
 
         return angle;
     }
+
+    /**
+     * Returns true if provided Spanish autonomous community has a single province, false otherwise
+     * Trick: Will be true if autonomous community and province names are the same
+     * @param autonomousCommunity The current autonomous community
+     * @param province The current province
+     * @return true if provided Spanish autonomous community has a single province, false otherwise
+     */
+    public static boolean isAutonomousCommunityWithSingleProvince(String autonomousCommunity, String province) {
+        return autonomousCommunity.equals(province);
+    }
 }

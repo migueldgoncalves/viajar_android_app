@@ -37,11 +37,11 @@ public class DBInterface {
         // Determine the country - Update when adding more countries
         String country;
         if (getDatabase(context).dao().isLocationInPortugal(locationName) == 1) {
-            country = "Portugal";
+            country = context.getString(R.string.portugal);
         } else if (getDatabase(context).dao().isLocationInSpain(locationName) == 1) {
-            country = "Spain";
+            country = context.getString(R.string.spain);
         } else if (getDatabase(context).dao().isLocationInGibraltar(locationName) == 1) {
-            country = "Gibraltar";
+            country = context.getString(R.string.gibraltar_short_name);
         } else {
             return null; // Invalid location
         }
@@ -96,15 +96,15 @@ public class DBInterface {
 
         // Determine the country-specific parameters and create the location
         LocationInfo locationObject;
-        if (country.equals("Portugal")) {
-            locationObject = new LocationInfoPortugal();
+        if (country.equals(context.getString(R.string.portugal))) {
+            locationObject = new LocationInfoPortugal(context);
             ((LocationInfoPortugal) locationObject).setParish(getDatabase(context).dao().getParish(locationName));
             ((LocationInfoPortugal) locationObject).setMunicipality(getDatabase(context).dao().getConcelho(locationName));
             ((LocationInfoPortugal) locationObject).setDistrict(getDatabase(context).dao().getPortugueseDistrict(locationName));
             ((LocationInfoPortugal) locationObject).setIntermunicipalEntity(getDatabase(context).dao().getIntermunicipalEntity(locationName));
             ((LocationInfoPortugal) locationObject).setRegion(getDatabase(context).dao().getRegion(locationName));
-        } else if (country.equals("Spain")) {
-            locationObject = new LocationInfoSpain();
+        } else if (country.equals(context.getString(R.string.spain))) {
+            locationObject = new LocationInfoSpain(context);
             String municipio = getDatabase(context).dao().getMunicipio(locationName);
             String province = getDatabase(context).dao().getProvince(locationName);
             ((LocationInfoSpain) locationObject).setMunicipality(municipio);
@@ -112,8 +112,8 @@ public class DBInterface {
             ((LocationInfoSpain) locationObject).setProvince(province);
             ((LocationInfoSpain) locationObject).setAutonomousCommunity(getDatabase(context).dao().getAutonomousCommunity(locationName));
             ((LocationInfoSpain) locationObject).setComarcas(Arrays.asList(getDatabase(context).dao().getComarcas(municipio, province)));
-        } else if (country.equals("Gibraltar")) {
-            locationObject = new LocationInfoGibraltar();
+        } else if (country.equals(context.getString(R.string.gibraltar_short_name))) {
+            locationObject = new LocationInfoGibraltar(context);
             ((LocationInfoGibraltar) locationObject).setMajorResidentialAreas(Arrays.asList(getDatabase(context).dao().getMajorResidentialAreas(locationName)));
         } else {
             return null; // Add more countries as required
@@ -198,26 +198,17 @@ public class DBInterface {
     }
 
     private String getOppositeCardinalPoint(String cardinalPoint) {
-        switch (cardinalPoint) {
-            case TravelActivity.NORTH:
-                return TravelActivity.SOUTH;
-            case TravelActivity.NORTHEAST:
-                return TravelActivity.SOUTHWEST;
-            case TravelActivity.EAST:
-                return TravelActivity.WEST;
-            case TravelActivity.SOUTHEAST:
-                return TravelActivity.NORTHWEST;
-            case TravelActivity.SOUTH:
-                return TravelActivity.NORTH;
-            case TravelActivity.SOUTHWEST:
-                return TravelActivity.NORTHEAST;
-            case TravelActivity.WEST:
-                return TravelActivity.EAST;
-            case TravelActivity.NORTHWEST:
-                return TravelActivity.SOUTHEAST;
-            default:
-                return null;
-        }
+        return switch (cardinalPoint) {
+            case TravelActivity.NORTH -> TravelActivity.SOUTH;
+            case TravelActivity.NORTHEAST -> TravelActivity.SOUTHWEST;
+            case TravelActivity.EAST -> TravelActivity.WEST;
+            case TravelActivity.SOUTHEAST -> TravelActivity.NORTHWEST;
+            case TravelActivity.SOUTH -> TravelActivity.NORTH;
+            case TravelActivity.SOUTHWEST -> TravelActivity.NORTHEAST;
+            case TravelActivity.WEST -> TravelActivity.EAST;
+            case TravelActivity.NORTHWEST -> TravelActivity.SOUTHEAST;
+            default -> null;
+        };
     }
 
     public SQLDatabase getDatabase(Context context) {
