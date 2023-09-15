@@ -240,6 +240,9 @@ public class RouteColorGetter {
             return Color.parseColor("#39b5e6"); // Light blue
         else if (railway.contains("Linha 8 - Metro de Madrid"))
             return Color.parseColor("#f373b7"); // Pink
+        // Valencia
+        else if (railway.contains("Linha 1 - Metrovalencia"))
+            return Color.parseColor("#fdc600"); // Yellow
 
         // Default - Likely intercity railways without assigned colors
         else
