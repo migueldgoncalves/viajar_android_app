@@ -101,7 +101,7 @@ public class RouteColorGetter {
             return false;
 
         return (
-                // General highways
+                // Generic highways
                 routeName.startsWith("A-") || // State autovía (also autovía from Andalucía)
                         routeName.startsWith("AP-") || // State autopista
                         routeName.startsWith("R-") || // Radial
@@ -127,7 +127,9 @@ public class RouteColorGetter {
                         routeName.startsWith("MA-") || // Málaga
                         routeName.startsWith("SE-") || // Seville
                         routeName.startsWith("TO-") || // Toledo
-                        routeName.startsWith("AV-") // Ávila
+                        routeName.startsWith("AV-") || // Ávila
+                        routeName.startsWith("V-") || // Valencia
+                        routeName.startsWith("PT-") // Puertollano (city in the Ciudad Real province)
         );
     }
 
@@ -143,7 +145,7 @@ public class RouteColorGetter {
     public static boolean isAutoviaWithGreenBackground(String routeName) {
         // Specific to Spain
         // Ex: some autovías in Andalucía, such as A-483
-        // Must be called after isAutoviaWithOrangeBackground - This routine is more general
+        // Must be called after isAutoviaWithOrangeBackground - This routine is more generic
         if (routeName == null)
             return false;
 
@@ -233,8 +235,18 @@ public class RouteColorGetter {
         else if (railway.contains("Linha Vermelha - Metro de Lisboa"))
             return Color.RED;
         // Porto
-        else if (railway.contains("Linha D - Metro do Porto"))
+        else if (railway.contains("A") && railway.contains("Metro do Porto")) // Ex: "Linhas A/B/C/E/F - Metro do Porto"
+            return Color.parseColor("#3caeef"); // Blue
+        else if (railway.contains("B") && railway.contains("Metro do Porto")) // Ex: "Linhas A/B/C/E/F - Metro do Porto"
+            return Color.parseColor("#e62621"); // Red
+        else if (railway.contains("C") && railway.contains("Metro do Porto")) // Ex: "Linhas A/B/C/E/F - Metro do Porto"
+            return Color.parseColor("#8bc63e"); // Green
+        else if (railway.contains("D") && railway.contains("Metro do Porto")) // Ex: "Linhas A/B/C/E/F - Metro do Porto"
             return Color.parseColor("#f9c212"); // Yellow
+        else if (railway.contains("E") && railway.contains("Metro do Porto")) // Ex: "Linhas A/B/C/E/F - Metro do Porto"
+            return Color.parseColor("#937bb8"); // Purple
+        else if (railway.contains("F") && railway.contains("Metro do Porto")) // Ex: "Linhas A/B/C/E/F - Metro do Porto"
+            return Color.parseColor("#f68B1f"); // Orange
         // Madrid
         else if (railway.contains("Linha 1 - Metro de Madrid"))
             return Color.parseColor("#39b5e6"); // Light blue
