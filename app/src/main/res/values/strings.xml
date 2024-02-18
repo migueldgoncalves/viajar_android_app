@@ -5,11 +5,11 @@
     <string name="version_text">Version %1$s.%2$s.%3$s</string>
     <string name="version_major" translatable="false">1</string>
     <string name="version_minor" translatable="false">17</string>
-    <string name="version_patch" translatable="false">9</string>
+    <string name="version_patch" translatable="false">10</string>
     <string name="title_activity_travel">Travel</string>
     <string name="means_transport">Means of transport</string>
     <string name="cardinal_point">Cardinal point</string>
-    <string name="default_initial_location" translatable="false">Guerreiros do Rio</string>
+    <string name="default_initial_location" translatable="false">Aeroporto do Porto</string>
     <string name="title_activity_main_menu">Main Menu</string>
     <string name="main_menu_travel">Travel</string>
     <string name="main_menu_car">Car</string>

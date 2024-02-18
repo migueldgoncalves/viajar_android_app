@@ -111,7 +111,11 @@ public class RouteColorGetter {
                         routeName.equals("A26-1") ||
                         routeName.equals("A10 - Ponte da Lezíria") ||
                         routeName.equals("A12 - Ponte Vasco da Gama") ||
+                        routeName.equals("A41 CREP") ||
+                        routeName.equals("VRI") ||
                         routeName.contains("IC23 VCI") || // Ex: A20/IC23 VCI/Ponte do Freixo
+                        routeName.contains("A4 - ") || // Ex: A4 - Avenida da Liberdade
+                        routeName.contains("A28 - ") || // Ex: A28 - Avenida da Associação Empresarial de Portugal
 
                         // Spanish autonomous community autovías
                         routeName.startsWith("CM-") || // Castilla-La Mancha
@@ -237,7 +241,7 @@ public class RouteColorGetter {
         // Porto
         else if (railway.contains("A") && railway.contains("Metro do Porto")) // Ex: "Linhas A/B/C/E/F - Metro do Porto"
             return Color.parseColor("#3caeef"); // Blue
-        else if (railway.contains("B") && railway.contains("Metro do Porto")) // Ex: "Linhas A/B/C/E/F - Metro do Porto"
+        else if (railway.contains("B") && railway.contains("Metro do Porto")) // Ex: "Linhas A/B/Bx/C/E/F - Metro do Porto"
             return Color.parseColor("#e62621"); // Red
         else if (railway.contains("C") && railway.contains("Metro do Porto")) // Ex: "Linhas A/B/C/E/F - Metro do Porto"
             return Color.parseColor("#8bc63e"); // Green
