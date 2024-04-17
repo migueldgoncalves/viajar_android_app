@@ -133,7 +133,8 @@ public class RouteColorGetter {
                         routeName.startsWith("TO-") || // Toledo
                         routeName.startsWith("AV-") || // Ávila
                         routeName.startsWith("V-") || // Valencia
-                        routeName.startsWith("PT-") // Puertollano (city in the Ciudad Real province)
+                        routeName.startsWith("PT-") || // Puertollano (city in the Ciudad Real province)
+                        routeName.startsWith("B-") // Barcelona
         );
     }
 

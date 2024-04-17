@@ -123,7 +123,7 @@ public class RegionBoundsManager {
     private final RegionBounds easternCastillaYLeonAndCantabria = new RegionBounds("Eastern Castilla y León + Cantabria");
     private final RegionBounds westernGalicia = new RegionBounds("Western Galicia");
     private final RegionBounds easternGalicia = new RegionBounds("Eastern Galicia");
-    private final RegionBounds northeasternIberia = new RegionBounds("Basque Country + Navarra + La Rioja + Soria");
+    private final RegionBounds northernIberia = new RegionBounds("Basque Country + Navarra + La Rioja + Soria");
     private final RegionBounds aragon = new RegionBounds("Aragón");
     private final RegionBounds westernCatalonia = new RegionBounds("Western Catalonia");
     private final RegionBounds easternCatalonia = new RegionBounds("Eastern Catalonia");
@@ -212,12 +212,12 @@ public class RegionBoundsManager {
                 return easternGalicia;
             else if (province.equals("Soria") ||
                     Arrays.asList("País Basco", "La Rioja", "Navarra").contains(autonomousCommunity))
-                return northeasternIberia;
+                return northernIberia;
             else if (autonomousCommunity.equals("Aragão"))
                 return aragon;
-            else if (Arrays.asList("Lleida", "Tarragona").contains(province))
+            else if (Arrays.asList("Lleida / Lérida", "Tarragona").contains(province))
                 return westernCatalonia;
-            else if (Arrays.asList("Girona", "Barcelona").contains(province))
+            else if (Arrays.asList("Girona / Gerona", "Barcelona").contains(province))
                 return easternCatalonia;
             else if (autonomousCommunity.equals("Comunidade Valenciana"))
                 return valencianCommunity;
@@ -346,12 +346,12 @@ public class RegionBoundsManager {
                 case "Zaragoza" -> zaragoza;
                 case "Teruel" -> teruel;
                 // Catalonia
-                case "Lleida" -> lleida;
+                case "Lleida / Lérida" -> lleida;
                 case "Tarragona" -> tarragona;
-                case "Girona" -> girona;
+                case "Girona / Gerona" -> girona;
                 case "Barcelona" -> barcelona;
                 // Valencian Community
-                case "Castellón de la Plana" -> castellonDeLaPlana;
+                case "Castelló de la Plana / Castellón de la Plana" -> castellonDeLaPlana;
                 case "València / Valencia" -> valencia;
                 case "Alacant / Alicante" -> alicante;
                 default -> null;
@@ -440,12 +440,12 @@ public class RegionBoundsManager {
         easternGalicia.addSubregion(ourense);
         easternGalicia.addSubregion(lugo);
 
-        northeasternIberia.addSubregion(soria);
-        northeasternIberia.addSubregion(vizcaya);
-        northeasternIberia.addSubregion(guipuzcoa);
-        northeasternIberia.addSubregion(alava);
-        northeasternIberia.addSubregion(laRioja);
-        northeasternIberia.addSubregion(navarra);
+        northernIberia.addSubregion(soria);
+        northernIberia.addSubregion(vizcaya);
+        northernIberia.addSubregion(guipuzcoa);
+        northernIberia.addSubregion(alava);
+        northernIberia.addSubregion(laRioja);
+        northernIberia.addSubregion(navarra);
 
         aragon.addSubregion(huesca);
         aragon.addSubregion(zaragoza);
