@@ -92,6 +92,7 @@ public class DBInterface {
         double longitude = locationDBObject.longitude;
         int altitude = locationDBObject.altitude;
         String protectedArea = locationDBObject.protectedArea;
+        String island = locationDBObject.island;
         int batch = locationDBObject.batch;
 
         // Determine the country-specific parameters and create the location
@@ -125,6 +126,7 @@ public class DBInterface {
         locationObject.setCoordinates(latitude, longitude);
         locationObject.setAltitude(altitude);
         locationObject.setProtectedArea(protectedArea);
+        locationObject.setIsland(island);
         locationObject.setBatch(batch);
 
         return locationObject;

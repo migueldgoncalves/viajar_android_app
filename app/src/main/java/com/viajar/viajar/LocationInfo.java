@@ -19,6 +19,7 @@ public class LocationInfo {
     private int altitude;
     private String country;
     private String protectedArea;
+    private String island;
     private int batch;
 
     public LocationInfo() {
@@ -200,6 +201,18 @@ public class LocationInfo {
 
     public void setProtectedArea(String protectedArea) {
         this.protectedArea = protectedArea;
+    }
+
+    public String getIsland() {
+        return island;
+    }
+
+    public boolean hasIsland() {
+        return island != null;
+    }
+
+    public void setIsland(String island) {
+        this.island = island;
     }
 
     public int getBatch() {

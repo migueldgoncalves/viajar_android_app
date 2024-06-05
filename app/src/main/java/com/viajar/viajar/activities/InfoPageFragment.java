@@ -79,6 +79,7 @@ public class InfoPageFragment extends Fragment {
         double longitude = currentLocation.getLongitude();
         int altitude = currentLocation.getAltitude();
         String protectedArea = currentLocation.getProtectedArea();
+        String island = currentLocation.getIsland();
 
         // Coordinates
         String coordinatesString = getString(R.string.info_tab_coordinates_string, latitude, longitude);
@@ -97,6 +98,14 @@ public class InfoPageFragment extends Fragment {
         // Protected area
         if (protectedArea != null && !protectedArea.equals("")) {
             editText.append(protectedArea); // Nothing to add to string - Will be written as is
+            editText.append("\n");
+        }
+
+        // Island
+        String islandString;
+        if (island != null && !island.isEmpty()) {
+            islandString = getString(R.string.info_tab_island_string, island);
+            editText.append(islandString);
             editText.append("\n");
         }
 

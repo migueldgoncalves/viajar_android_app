@@ -18,4 +18,7 @@ public class Location {
 
     @ColumnInfo(name = "protected_area")
     public String protectedArea;
+
+    @ColumnInfo(name = "island")
+    public String island;
 }

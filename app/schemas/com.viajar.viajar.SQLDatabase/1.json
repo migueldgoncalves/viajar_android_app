@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "aa5ac847a3d9c38316003e5cce4ffa18",
+    "identityHash": "4da63751397702b30f95a53e2028ba73",
     "entities": [
       {
         "tableName": "Location",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`name` TEXT NOT NULL, `latitude` REAL NOT NULL, `longitude` REAL NOT NULL, `altitude` INTEGER NOT NULL, `batch` INTEGER NOT NULL, `protected_area` TEXT, PRIMARY KEY(`name`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`name` TEXT NOT NULL, `latitude` REAL NOT NULL, `longitude` REAL NOT NULL, `altitude` INTEGER NOT NULL, `batch` INTEGER NOT NULL, `protected_area` TEXT, `island` TEXT, PRIMARY KEY(`name`))",
         "fields": [
           {
             "fieldPath": "name",
@@ -43,13 +43,19 @@
             "columnName": "protected_area",
             "affinity": "TEXT",
             "notNull": false
+          },
+          {
+            "fieldPath": "island",
+            "columnName": "island",
+            "affinity": "TEXT",
+            "notNull": false
           }
         ],
         "primaryKey": {
+          "autoGenerate": false,
           "columnNames": [
             "name"
-          ],
-          "autoGenerate": false
+          ]
         },
         "indices": [],
         "foreignKeys": []
@@ -108,12 +114,12 @@
           }
         ],
         "primaryKey": {
+          "autoGenerate": false,
           "columnNames": [
             "location_a",
             "location_b",
             "means_transport"
-          ],
-          "autoGenerate": false
+          ]
         },
         "indices": [],
         "foreignKeys": [
@@ -177,14 +183,14 @@
           }
         ],
         "primaryKey": {
+          "autoGenerate": false,
           "columnNames": [
             "location_a",
             "location_b",
             "means_transport",
             "starting_point",
             "destination"
-          ],
-          "autoGenerate": false
+          ]
         },
         "indices": [],
         "foreignKeys": [
@@ -223,11 +229,11 @@
           }
         ],
         "primaryKey": {
+          "autoGenerate": false,
           "columnNames": [
             "name",
             "major_residential_area"
-          ],
-          "autoGenerate": false
+          ]
         },
         "indices": [],
         "foreignKeys": [
@@ -268,10 +274,10 @@
           }
         ],
         "primaryKey": {
+          "autoGenerate": false,
           "columnNames": [
             "name"
-          ],
-          "autoGenerate": false
+          ]
         },
         "indices": [],
         "foreignKeys": [
@@ -329,10 +335,10 @@
           }
         ],
         "primaryKey": {
+          "autoGenerate": false,
           "columnNames": [
             "name"
-          ],
-          "autoGenerate": false
+          ]
         },
         "indices": [],
         "foreignKeys": [
@@ -392,10 +398,10 @@
           }
         ],
         "primaryKey": {
+          "autoGenerate": false,
           "columnNames": [
             "concelho"
-          ],
-          "autoGenerate": false
+          ]
         },
         "indices": [],
         "foreignKeys": []
@@ -418,11 +424,11 @@
           }
         ],
         "primaryKey": {
+          "autoGenerate": false,
           "columnNames": [
             "municipio",
             "province"
-          ],
-          "autoGenerate": false
+          ]
         },
         "indices": [],
         "foreignKeys": [
@@ -463,12 +469,12 @@
           }
         ],
         "primaryKey": {
+          "autoGenerate": false,
           "columnNames": [
             "comarca",
             "municipio",
             "province"
-          ],
-          "autoGenerate": false
+          ]
         },
         "indices": [],
         "foreignKeys": [
@@ -505,10 +511,10 @@
           }
         ],
         "primaryKey": {
+          "autoGenerate": false,
           "columnNames": [
             "province"
-          ],
-          "autoGenerate": false
+          ]
         },
         "indices": [],
         "foreignKeys": []
@@ -517,7 +523,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'aa5ac847a3d9c38316003e5cce4ffa18')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '4da63751397702b30f95a53e2028ba73')"
     ]
   }
 }

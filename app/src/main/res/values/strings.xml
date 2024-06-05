@@ -9,7 +9,7 @@
     <string name="title_activity_travel">Travel</string>
     <string name="means_transport">Means of transport</string>
     <string name="cardinal_point">Cardinal point</string>
-    <string name="default_initial_location" translatable="false">B-23 - Início</string>
+    <string name="default_initial_location" translatable="false">Porto de Faro</string>
     <string name="title_activity_main_menu">Main Menu</string>
     <string name="main_menu_travel">Travel</string>
     <string name="main_menu_car">Car</string>
