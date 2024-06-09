@@ -215,7 +215,7 @@ public class RegionBoundsManager {
                 return northernIberia;
             else if (autonomousCommunity.equals("Aragão"))
                 return aragon;
-            else if (Arrays.asList("Lleida / Lérida", "Tarragona").contains(province))
+            else if (Arrays.asList("Lleida", "Tarragona").contains(province))
                 return westernCatalonia;
             else if (Arrays.asList("Girona / Gerona", "Barcelona").contains(province))
                 return easternCatalonia;
@@ -346,7 +346,7 @@ public class RegionBoundsManager {
                 case "Zaragoza" -> zaragoza;
                 case "Teruel" -> teruel;
                 // Catalonia
-                case "Lleida / Lérida" -> lleida;
+                case "Lleida" -> lleida;
                 case "Tarragona" -> tarragona;
                 case "Girona / Gerona" -> girona;
                 case "Barcelona" -> barcelona;

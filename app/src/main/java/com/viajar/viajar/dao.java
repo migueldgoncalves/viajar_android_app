@@ -53,11 +53,6 @@ public interface dao {
     @Query("SELECT COUNT(municipio) FROM municipio")
     int getMunicipioNumber();
 
-    // Comarca table
-
-    @Query("SELECT COUNT(municipio) FROM comarca")
-    int getComarcaNumber();
-
     // Província table
 
     @Query("SELECT COUNT(province) FROM province")
@@ -82,9 +77,6 @@ public interface dao {
 
     @Query("SELECT * FROM destination WHERE (location_a = :locationName AND starting_point = 1) OR (location_b = :locationName AND starting_point = 0)")
     Destination[] getLocationDestinations(String locationName);
-
-    @Query("SELECT major_residential_area FROM locationgibraltar WHERE name = :name")
-    String[] getMajorResidentialAreas(String name);
 
     @Query("SELECT parish FROM locationportugal, concelho WHERE locationportugal.concelho = concelho.concelho AND locationportugal.name = :locationName")
     String getParish(String locationName);
@@ -113,8 +105,8 @@ public interface dao {
     @Query("SELECT autonomous_community FROM locationspain, province WHERE locationspain.province = province.province AND locationspain.name = :locationName")
     String getAutonomousCommunity(String locationName);
 
-    @Query("SELECT comarca FROM comarca WHERE municipio = :municipio AND province = :province")
-    String[] getComarcas(String municipio, String province);
+    @Query("SELECT comarca FROM municipio WHERE municipio = :municipio AND province = :province")
+    String getComarca(String municipio, String province);
 
     @Query("SELECT * FROM location WHERE batch > 0 AND batch <= :batch")
     Location[] getBatchLocations(int batch);

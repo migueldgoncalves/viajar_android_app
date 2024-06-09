@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "4da63751397702b30f95a53e2028ba73",
+    "identityHash": "4042b4440869335e12d3e48dc5840134",
     "entities": [
       {
         "tableName": "Location",
@@ -213,17 +213,11 @@
       },
       {
         "tableName": "LocationGibraltar",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`name` TEXT NOT NULL, `major_residential_area` TEXT NOT NULL, PRIMARY KEY(`name`, `major_residential_area`), FOREIGN KEY(`name`) REFERENCES `Location`(`name`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`name` TEXT NOT NULL, PRIMARY KEY(`name`), FOREIGN KEY(`name`) REFERENCES `Location`(`name`) ON UPDATE NO ACTION ON DELETE CASCADE )",
         "fields": [
           {
             "fieldPath": "name",
             "columnName": "name",
-            "affinity": "TEXT",
-            "notNull": true
-          },
-          {
-            "fieldPath": "majorResidentialArea",
-            "columnName": "major_residential_area",
             "affinity": "TEXT",
             "notNull": true
           }
@@ -231,8 +225,7 @@
         "primaryKey": {
           "autoGenerate": false,
           "columnNames": [
-            "name",
-            "major_residential_area"
+            "name"
           ]
         },
         "indices": [],
@@ -408,11 +401,17 @@
       },
       {
         "tableName": "Municipio",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`municipio` TEXT NOT NULL, `province` TEXT NOT NULL, PRIMARY KEY(`municipio`, `province`), FOREIGN KEY(`province`) REFERENCES `Province`(`province`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`municipio` TEXT NOT NULL, `comarca` TEXT NOT NULL, `province` TEXT NOT NULL, PRIMARY KEY(`municipio`, `province`), FOREIGN KEY(`province`) REFERENCES `Province`(`province`) ON UPDATE NO ACTION ON DELETE CASCADE )",
         "fields": [
           {
             "fieldPath": "municipio",
             "columnName": "municipio",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "comarca",
+            "columnName": "comarca",
             "affinity": "TEXT",
             "notNull": true
           },
@@ -440,54 +439,6 @@
               "province"
             ],
             "referencedColumns": [
-              "province"
-            ]
-          }
-        ]
-      },
-      {
-        "tableName": "Comarca",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`municipio` TEXT NOT NULL, `comarca` TEXT NOT NULL, `province` TEXT NOT NULL, PRIMARY KEY(`comarca`, `municipio`, `province`), FOREIGN KEY(`municipio`, `province`) REFERENCES `Municipio`(`municipio`, `province`) ON UPDATE NO ACTION ON DELETE CASCADE )",
-        "fields": [
-          {
-            "fieldPath": "municipio",
-            "columnName": "municipio",
-            "affinity": "TEXT",
-            "notNull": true
-          },
-          {
-            "fieldPath": "comarca",
-            "columnName": "comarca",
-            "affinity": "TEXT",
-            "notNull": true
-          },
-          {
-            "fieldPath": "province",
-            "columnName": "province",
-            "affinity": "TEXT",
-            "notNull": true
-          }
-        ],
-        "primaryKey": {
-          "autoGenerate": false,
-          "columnNames": [
-            "comarca",
-            "municipio",
-            "province"
-          ]
-        },
-        "indices": [],
-        "foreignKeys": [
-          {
-            "table": "Municipio",
-            "onDelete": "CASCADE",
-            "onUpdate": "NO ACTION",
-            "columns": [
-              "municipio",
-              "province"
-            ],
-            "referencedColumns": [
-              "municipio",
               "province"
             ]
           }
@@ -523,7 +474,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '4da63751397702b30f95a53e2028ba73')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '4042b4440869335e12d3e48dc5840134')"
     ]
   }
 }

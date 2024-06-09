@@ -10,14 +10,11 @@ import android.widget.TextView;
 import androidx.fragment.app.Fragment;
 
 import com.viajar.viajar.LocationInfo;
-import com.viajar.viajar.LocationInfoGibraltar;
 import com.viajar.viajar.LocationInfoPortugal;
 import com.viajar.viajar.LocationInfoSpain;
 import com.viajar.viajar.R;
 import com.viajar.viajar.TravelActivity;
 import com.viajar.viajar.utils.Utils;
-
-import java.util.List;
 
 public class InfoPageFragment extends Fragment {
 
@@ -60,7 +57,7 @@ public class InfoPageFragment extends Fragment {
 
         // Country-specific information
         if (currentLocation.getCountry().equals(getString(R.string.gibraltar_short_name))) {
-            setGibraltarLocationInfo(editText, currentLocation);
+            setGibraltarLocationInfo(editText);
         } else if (currentLocation.getCountry().equals(getString(R.string.portugal))) {
             setPortugueseLocationInfo(editText, currentLocation);
         } else if (currentLocation.getCountry().equals(getString(R.string.spain))) {
@@ -96,7 +93,7 @@ public class InfoPageFragment extends Fragment {
         editText.append("\n");
 
         // Protected area
-        if (protectedArea != null && !protectedArea.equals("")) {
+        if (protectedArea != null && !protectedArea.isEmpty()) {
             editText.append(protectedArea); // Nothing to add to string - Will be written as is
             editText.append("\n");
         }
@@ -169,7 +166,7 @@ public class InfoPageFragment extends Fragment {
         // Administrative divisions
         String province = ((LocationInfoSpain) currentLocation).getProvince();
         String autonomousCommunity = ((LocationInfoSpain) currentLocation).getAutonomousCommunity();
-        List<String> comarcas = ((LocationInfoSpain) currentLocation).getComarcas();
+        String comarca = ((LocationInfoSpain) currentLocation).getComarca();
         String municipality = ((LocationInfoSpain) currentLocation).getMunicipality();
         String district = ((LocationInfoSpain) currentLocation).getDistrict();
 
@@ -178,7 +175,7 @@ public class InfoPageFragment extends Fragment {
         // Region of Murcia has instead Pedanías (singular: Pedanía)
 
         // District - Get field name
-        String districtFieldName = "";
+        String districtFieldName;
         if (autonomousCommunity.equals(getString(R.string.galicia))) // Galicia has parroquias instead
             districtFieldName = getString(R.string.parish_es);
         else if (autonomousCommunity.equals(getString(R.string.region_of_murcia))) // Region of Murcia has pedanías instead
@@ -187,7 +184,7 @@ public class InfoPageFragment extends Fragment {
             districtFieldName = getString(R.string.district);
 
         // District - Get field value
-        if (district != null && !(district.equals(""))) { // Only some municipalities have districts
+        if (district != null && !(district.isEmpty())) { // Only some municipalities have districts
             String districtString = getString(R.string.info_tab_country_specific_info, districtFieldName, district);
             editText.append(districtString);
             editText.append("\n");
@@ -197,7 +194,7 @@ public class InfoPageFragment extends Fragment {
         // Galicia has instead Concellos (singular: Concello)
 
         // Municipality - Get field name
-        String municipalityFieldName = "";
+        String municipalityFieldName;
         if (autonomousCommunity.equals(getString(R.string.galicia))) // Galicia has concellos instead
             municipalityFieldName = getString(R.string.concello);
         else // Default
@@ -212,27 +209,22 @@ public class InfoPageFragment extends Fragment {
         // Extremadura has instead mancomunidades integrales (singular: mancomunidad integral)
 
         // Comarca - Get field name
-        String comarcaFieldName = "";
-        if (comarcas.size() > 1) // Multiple comarcas - Does not occur in Extremadura, where mancomunidades integrales never overlap
-            comarcaFieldName = getString(R.string.comarcas);
-        else {
-            if (autonomousCommunity.equals(getString(R.string.extremadura))) // Extremadura has instead mancomunidades integrales
-                comarcaFieldName = getString(R.string.mancomunidad_integral);
-            else // Default
-                comarcaFieldName = getString(R.string.comarca);
-        }
+        String comarcaFieldName;
+        if (autonomousCommunity.equals(getString(R.string.extremadura))) // Extremadura has instead mancomunidades integrales
+            comarcaFieldName = getString(R.string.mancomunidad_integral);
+        else // Default
+            comarcaFieldName = getString(R.string.comarca);
 
         // Comarca - Get field value
-        String comarcaString = "";
-        if (comarcas.size() == 0) { // Location is not inside a comarca
+        String comarcaString;
+        String noComarca = "None"; // If comarca is set to this value, location is not associated with a comarca
+        if (comarca.equals(noComarca)) { // Location is not inside a comarca
             if (autonomousCommunity.equals(getString(R.string.extremadura)))
                 comarcaString = getString(R.string.no_mancomunidad_integral);
             else
                 comarcaString = getString(R.string.no_comarca);
-        } else if (comarcas.size() == 1) // Location is inside one comarca
-            comarcaString = getString(R.string.info_tab_country_specific_info, comarcaFieldName, comarcas.get(0));
-        else // Location is inside 2 comarcas. No more than 2 overlapping comarcas are expected
-            comarcaString = getString(R.string.info_tab_country_specific_info_double, comarcaFieldName, comarcas.get(0), comarcas.get(1));
+        } else // Location is inside a comarca
+            comarcaString = getString(R.string.info_tab_country_specific_info, comarcaFieldName, comarca);
         editText.append(comarcaString);
         editText.append("\n");
 
@@ -259,15 +251,9 @@ public class InfoPageFragment extends Fragment {
     /**
      * Adds the location info specific to Gibraltar to the Info Fragment, assuming the current location is in Gibraltar
      * @param editText The EditText widget that will contain the text to display
-     * @param currentLocation The object representing the current location
      */
-    private void setGibraltarLocationInfo(EditText editText, LocationInfo currentLocation) {
-        // Major Residential Area
-        String majorResidentialAreaFieldName = getString(R.string.major_residential_area);
-        String majorResidentialArea = ((LocationInfoGibraltar) currentLocation).getMajorResidentialAreas().get(0);
-        String majorResidentialAreaString = getString(R.string.info_tab_country_specific_info, majorResidentialAreaFieldName, majorResidentialArea);
-        editText.append(majorResidentialAreaString);
-        editText.append("\n");
+    private void setGibraltarLocationInfo(EditText editText) {
+        // Gibraltar has no subdivisions - Nothing to display
 
         // Country
         String countryLongName = getString(R.string.gibraltar_long_name);

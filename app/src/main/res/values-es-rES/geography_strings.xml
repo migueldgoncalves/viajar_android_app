@@ -10,8 +10,6 @@
     <!--    Regions-->
     <!--    Global-->
     <string name="iberian_peninsula">Península ibérica</string>
-    <!--    Specific to Gibraltar-->
-    <string name="major_residential_area">Major Residential Area</string>
     <!--    Specific to Portugal-->
     <string name="parish_pt">Parroquia</string>
     <string name="concelho">Municipio</string>
@@ -24,7 +22,6 @@
     <string name="province">Provincia</string>
     <string name="autonomous_community">Comunidad Autónoma</string>
     <string name="comarca">Comarca</string>
-    <string name="comarcas">Comarcas</string>
     <string name="no_comarca">El local no se encuentra en una comarca</string>
     <string name="mancomunidad_integral">Mancomunidad integral</string>
     <string name="no_mancomunidad_integral">El local no se encuentra en una mancomunidad integral</string>

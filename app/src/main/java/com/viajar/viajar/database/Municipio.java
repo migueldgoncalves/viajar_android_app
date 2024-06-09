@@ -14,5 +14,7 @@ public class Municipio {
     @NonNull
     public String municipio = "";
     @NonNull
+    public String comarca = "";
+    @NonNull
     public String province = "";
 }

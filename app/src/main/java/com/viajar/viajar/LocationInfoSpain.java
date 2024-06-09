@@ -8,7 +8,7 @@ public class LocationInfoSpain extends LocationInfo {
 
     private String district;
     private String municipality;
-    private List<String> comarcas;
+    private String comarca;
     private String province;
     private String autonomousCommunity;
 
@@ -36,20 +36,12 @@ public class LocationInfoSpain extends LocationInfo {
         this.municipality = municipality;
     }
 
-    public List<String> getComarcas() {
-        return comarcas;
+    public String getComarca() {
+        return comarca;
     }
 
-    public void setComarcas(List<String> comarcas) {
-        this.comarcas = comarcas;
-    }
-
-    public void addComarca(String comarca) {
-        comarcas.add(comarca);
-    }
-
-    public void removeComarca(String comarca) {
-        comarcas.remove(comarca);
+    public void setComarca(String comarca) {
+        this.comarca = comarca;
     }
 
     public String getProvince() {

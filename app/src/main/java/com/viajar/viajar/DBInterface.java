@@ -66,7 +66,7 @@ public class DBInterface {
             String meansTransport = connection.meansTransport;
             Double distance = connection.distance;
             surroundingLocations.put(Arrays.asList(surroundingLocation, meansTransport), Arrays.asList(cardinalPoint, String.valueOf(distance), String.valueOf(order)));
-            if (!connection.way.equals(""))
+            if (!connection.way.isEmpty())
                 routeNames.put(Arrays.asList(surroundingLocation, meansTransport), connection.way);
             else
                 routeNames.put(Arrays.asList(surroundingLocation, meansTransport), null);
@@ -112,10 +112,9 @@ public class DBInterface {
             ((LocationInfoSpain) locationObject).setDistrict(getDatabase(context).dao().getSpanishDistrict(locationName));
             ((LocationInfoSpain) locationObject).setProvince(province);
             ((LocationInfoSpain) locationObject).setAutonomousCommunity(getDatabase(context).dao().getAutonomousCommunity(locationName));
-            ((LocationInfoSpain) locationObject).setComarcas(Arrays.asList(getDatabase(context).dao().getComarcas(municipio, province)));
+            ((LocationInfoSpain) locationObject).setComarca(getDatabase(context).dao().getComarca(municipio, province));
         } else if (country.equals(context.getString(R.string.gibraltar_short_name))) {
             locationObject = new LocationInfoGibraltar(context);
-            ((LocationInfoGibraltar) locationObject).setMajorResidentialAreas(Arrays.asList(getDatabase(context).dao().getMajorResidentialAreas(locationName)));
         } else {
             return null; // Add more countries as required
         }
