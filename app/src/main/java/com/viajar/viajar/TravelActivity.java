@@ -67,6 +67,7 @@ public class TravelActivity extends AppCompatActivity implements OnMapsSdkInitia
     public static final String PLANE = "Plane";
     public static final String TRANSFER = "Transfer";
     public static final String SUBWAY = "Subway";
+    public static final String HIKING = "Hiking";
 
     public static final int TAB_NUMBER = 3;
 
@@ -176,6 +177,9 @@ public class TravelActivity extends AppCompatActivity implements OnMapsSdkInitia
             }
             else if (item.getItemId() == R.id.subway) {
                 currentTransportMeans = SUBWAY;
+            }
+            else if (item.getItemId() == R.id.hiking) {
+                currentTransportMeans = HIKING;
             }
             else {
                 return false;
@@ -334,6 +338,7 @@ public class TravelActivity extends AppCompatActivity implements OnMapsSdkInitia
         locationButtons.getMenu().findItem(R.id.highSpeedTrain).setVisible(false);
         locationButtons.getMenu().findItem(R.id.transfer).setVisible(false);
         locationButtons.getMenu().findItem(R.id.subway).setVisible(false);
+        locationButtons.getMenu().findItem(R.id.hiking).setVisible(false);
 
         if (currentLocation.getSurroundingLocationsByTransportMeans(CAR).size() > 0)
             locationButtons.getMenu().findItem(R.id.car).setVisible(true);
@@ -349,6 +354,8 @@ public class TravelActivity extends AppCompatActivity implements OnMapsSdkInitia
             locationButtons.getMenu().findItem(R.id.transfer).setVisible(true);
         if (currentLocation.getSurroundingLocationsByTransportMeans(SUBWAY).size() > 0)
             locationButtons.getMenu().findItem(R.id.subway).setVisible(true);
+        if (currentLocation.getSurroundingLocationsByTransportMeans(HIKING).size() > 0)
+            locationButtons.getMenu().findItem(R.id.hiking).setVisible(true);
     }
 
     public void onClickGPS(View view) {

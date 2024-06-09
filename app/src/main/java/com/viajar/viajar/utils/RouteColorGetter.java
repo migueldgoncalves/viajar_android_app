@@ -18,6 +18,7 @@ public class RouteColorGetter {
     private static final int itinerarioPrincipalColor = Color.parseColor("#008000"); // Dark green
     private static final int itinerarioComplementarColor = Color.parseColor("#808080"); // Grey
     private static final int railwayColor = Color.parseColor("#800000"); // Dark brown
+    private static final int hikingConnectionColor = Color.parseColor("#800000"); // Dark brown
     private static final int highSpeedRailwayColor = Color.parseColor("#660066"); // Purple
     private static final int waterwayRiverColor = Color.CYAN;
     private static final int waterwayCoastColor = Color.parseColor("#007fff"); // Blue
@@ -33,7 +34,8 @@ public class RouteColorGetter {
         if (isHighway(routeName) ||
                 isItinerarioPrincipal(routeName) ||
                 isWaterway(transportMeans) ||
-                isRailway(transportMeans)) {
+                isRailway(transportMeans) ||
+                isHikingConnection(transportMeans)) {
             return Color.WHITE;
         } else {
             return Color.BLACK;
@@ -47,7 +49,8 @@ public class RouteColorGetter {
                 isItinerarioPrincipal(routeName) ||
                 isWaterway(transportMeans) ||
                 isRailway(transportMeans) ||
-                isCarreteraDelEstado(routeName)) {
+                isCarreteraDelEstado(routeName) ||
+                isHikingConnection(transportMeans)) {
             return Color.WHITE;
         } else {
             return Color.BLACK;
@@ -69,6 +72,8 @@ public class RouteColorGetter {
             return highSpeedRailwayColor;
         } else if (RouteColorGetter.isPlaneConnection(transportMeans)) {
             return planeConnectionColor;
+        } else if (RouteColorGetter.isHikingConnection(transportMeans)) {
+            return hikingConnectionColor;
         } else { // Ex: Portuguese Estradas Nacionais and Spanish Carreteras del Estado
             return defaultLineColor;
         }
@@ -308,5 +313,9 @@ public class RouteColorGetter {
 
     public static boolean isPlaneConnection(String meansTransport) {
         return meansTransport.equals(TravelActivity.PLANE);
+    }
+
+    public static boolean isHikingConnection(String meansTransport) {
+        return meansTransport.equals(TravelActivity.HIKING);
     }
 }

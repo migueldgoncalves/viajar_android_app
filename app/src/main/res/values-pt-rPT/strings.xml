@@ -40,4 +40,5 @@
     <string name="setting_car_mode_summary_on">Simular viagem de carro ao viajar entre locais</string>
     <string name="setting_car_mode_summary_off">Viajar directamente para o destino</string>
     <string name="car_marker_text">Localização actual</string>
+    <string name="hiking">Caminhada</string>
 </resources>

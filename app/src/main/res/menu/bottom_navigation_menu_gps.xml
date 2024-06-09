@@ -28,4 +28,8 @@
         android:id="@+id/transfer"
         android:title="@string/transfer"
         android:icon="@drawable/transfer_icon"/>
+    <item
+        android:id="@+id/hiking"
+        android:title="@string/hiking"
+        android:icon="@drawable/hiking_icon"/>
 </menu>
