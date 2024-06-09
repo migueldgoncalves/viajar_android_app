@@ -12,9 +12,13 @@ import androidx.fragment.app.Fragment;
 import com.viajar.viajar.LocationInfo;
 import com.viajar.viajar.LocationInfoPortugal;
 import com.viajar.viajar.LocationInfoSpain;
+import com.viajar.viajar.LocationInfoAndorra;
+import com.viajar.viajar.LocationInfoBeyondIberianPeninsula;
 import com.viajar.viajar.R;
 import com.viajar.viajar.TravelActivity;
 import com.viajar.viajar.utils.Utils;
+
+import java.util.HashMap;
 
 public class InfoPageFragment extends Fragment {
 
@@ -62,6 +66,10 @@ public class InfoPageFragment extends Fragment {
             setPortugueseLocationInfo(editText, currentLocation);
         } else if (currentLocation.getCountry().equals(getString(R.string.spain))) {
             setSpanishLocationInfo(editText, currentLocation);
+        } else if (currentLocation.getCountry().equals(getString(R.string.andorra))) {
+            setAndorraLocationInfo(editText, currentLocation);
+        } else { // Location beyond Iberian Peninsula
+            setLocationBeyondIberianPeninsulaInfo(editText, currentLocation);
         }
     }
 
@@ -257,6 +265,50 @@ public class InfoPageFragment extends Fragment {
 
         // Country
         String countryLongName = getString(R.string.gibraltar_long_name);
+        setCountryInfo(editText, countryLongName);
+    }
+
+    /**
+     * Adds the location info specific to Andorra to the Info Fragment, assuming the current location is in Andorra
+     * @param editText The EditText widget that will contain the text to display
+     */
+    private void setAndorraLocationInfo(EditText editText, LocationInfo currentLocation) {
+        // Administrative divisions
+        String parish = ((LocationInfoAndorra) currentLocation).getParish();
+
+        // Parish (Parròquia in Catalan)
+        String parishFieldName = getString(R.string.parish_ad);
+        String parishString = getString(R.string.info_tab_country_specific_info, parishFieldName, parish);
+        editText.append(parishString);
+        editText.append("\n");
+
+        // Country
+        String countryLongName = getString(R.string.andorra);
+        setCountryInfo(editText, countryLongName);
+    }
+
+    /**
+     * Adds the location info specific to a location beyond the Iberian Peninsula to the Info Fragment, assuming the current location is indeed there
+     * @param editText The EditText widget that will contain the text to display
+     */
+    private void setLocationBeyondIberianPeninsulaInfo(EditText editText, LocationInfo currentLocation) {
+        // Administrative divisions
+        HashMap<Integer, String> osmAdminLevels = ((LocationInfoBeyondIberianPeninsula) currentLocation).getAllOsmAdminLevels();
+
+        // Set the string for each admin division
+        int maxAdminLevel = 9;
+        int minAdminLevel = 3;
+        for (int i=minAdminLevel; i<=maxAdminLevel; i++) {
+            String value = osmAdminLevels.get(i);
+            if (value != null && !value.isEmpty()) {
+                String parishString = getString(R.string.info_tab_country_specific_info, String.valueOf(i), value);
+                editText.append(parishString);
+                editText.append("\n");
+            }
+        }
+
+        // Country
+        String countryLongName = currentLocation.getCountry();
         setCountryInfo(editText, countryLongName);
     }
 

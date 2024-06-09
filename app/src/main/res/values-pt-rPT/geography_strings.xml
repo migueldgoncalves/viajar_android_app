@@ -5,6 +5,7 @@
     <string name="gibraltar_long_name">Reino Unido - Território Ultramarino Britânico de Gibraltar</string>
     <string name="portugal">Portugal</string>
     <string name="spain">Espanha</string>
+    <string name="andorra">Andorra</string>
     <string name="country">País</string>
 
     <!--    Region-->
@@ -31,4 +32,6 @@
     <string name="extremadura">Extremadura</string>
     <string name="galicia">Galiza</string>
     <string name="region_of_murcia">Região de Murcia</string>
+    <!-- Specific to Andorra-->
+    <string name="parish_ad">Paróquia</string>
 </resources>

@@ -5,7 +5,7 @@
     <string name="version_text">Version %1$s.%2$s.%3$s</string>
     <string name="version_major" translatable="false">1</string>
     <string name="version_minor" translatable="false">18</string>
-    <string name="version_patch" translatable="false">2</string>
+    <string name="version_patch" translatable="false">3</string>
     <string name="title_activity_travel">Travel</string>
     <string name="means_transport">Means of transport</string>
     <string name="cardinal_point">Cardinal point</string>
@@ -35,6 +35,7 @@
     <string name="brief_info_es_multiprovince">%1$s, %2$s Province, %3$s, Spain</string>
     <string name="brief_info_es_uniprovince">%1$s, %2$s, Spain</string>
     <string name="brief_info_gi">Gibraltar</string>
+    <string name="brief_info_ad">%1$s, Andorra</string>
     <string name="brief_info_separator" translatable="false">----------------------------------------</string>
     <string name="around">Around</string>
     <string name="transfer">Transfer</string>

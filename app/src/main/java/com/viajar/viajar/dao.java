@@ -66,6 +66,9 @@ public interface dao {
     @Query("SELECT * FROM location WHERE name = :name")
     Location getLocationByName(String name);
 
+    @Query("SELECT COUNT(name) FROM locationAndorra WHERE name = :locationName")
+    int isLocationInAndorra(String locationName);
+
     @Query("SELECT COUNT(name) FROM locationGibraltar WHERE name = :locationName")
     int isLocationInGibraltar(String locationName);
 
@@ -78,8 +81,35 @@ public interface dao {
     @Query("SELECT * FROM destination WHERE (location_a = :locationName AND starting_point = 1) OR (location_b = :locationName AND starting_point = 0)")
     Destination[] getLocationDestinations(String locationName);
 
+    @Query("SELECT country FROM locationbeyondiberianPeninsula WHERE name = :locationName")
+    String getCountryBeyondIberianPeninsula(String locationName);
+
+    @Query("SELECT osm_admin_level_3 FROM locationbeyondiberianPeninsula WHERE name = :locationName")
+    String getOsmAdminLevel3(String locationName);
+
+    @Query("SELECT osm_admin_level_4 FROM locationbeyondiberianPeninsula WHERE name = :locationName")
+    String getOsmAdminLevel4(String locationName);
+
+    @Query("SELECT osm_admin_level_5 FROM locationbeyondiberianPeninsula WHERE name = :locationName")
+    String getOsmAdminLevel5(String locationName);
+
+    @Query("SELECT osm_admin_level_6 FROM locationbeyondiberianPeninsula WHERE name = :locationName")
+    String getOsmAdminLevel6(String locationName);
+
+    @Query("SELECT osm_admin_level_7 FROM locationbeyondiberianPeninsula WHERE name = :locationName")
+    String getOsmAdminLevel7(String locationName);
+
+    @Query("SELECT osm_admin_level_8 FROM locationbeyondiberianPeninsula WHERE name = :locationName")
+    String getOsmAdminLevel8(String locationName);
+
+    @Query("SELECT osm_admin_level_9 FROM locationbeyondiberianPeninsula WHERE name = :locationName")
+    String getOsmAdminLevel9(String locationName);
+
+    @Query("SELECT parish FROM locationandorra WHERE name = :locationName")
+    String getAndorranParish(String locationName);
+
     @Query("SELECT parish FROM locationportugal, concelho WHERE locationportugal.concelho = concelho.concelho AND locationportugal.name = :locationName")
-    String getParish(String locationName);
+    String getPortugueseParish(String locationName);
 
     @Query("SELECT concelho.concelho FROM locationportugal, concelho WHERE locationportugal.concelho = concelho.concelho AND locationportugal.name = :locationName")
     String getConcelho(String locationName);

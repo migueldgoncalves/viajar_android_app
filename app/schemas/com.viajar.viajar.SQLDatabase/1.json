@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "4042b4440869335e12d3e48dc5840134",
+    "identityHash": "7962ba9521ed480a2477e15701d260e7",
     "entities": [
       {
         "tableName": "Location",
@@ -469,12 +469,130 @@
         },
         "indices": [],
         "foreignKeys": []
+      },
+      {
+        "tableName": "LocationAndorra",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`name` TEXT NOT NULL, `parish` TEXT NOT NULL, PRIMARY KEY(`name`), FOREIGN KEY(`name`) REFERENCES `Location`(`name`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "parish",
+            "columnName": "parish",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "name"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": [
+          {
+            "table": "Location",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "name"
+            ],
+            "referencedColumns": [
+              "name"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "LocationBeyondIberianPeninsula",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`name` TEXT NOT NULL, `country` TEXT NOT NULL, `osm_admin_level_3` TEXT, `osm_admin_level_4` TEXT, `osm_admin_level_5` TEXT, `osm_admin_level_6` TEXT, `osm_admin_level_7` TEXT, `osm_admin_level_8` TEXT, `osm_admin_level_9` TEXT, PRIMARY KEY(`name`), FOREIGN KEY(`name`) REFERENCES `Location`(`name`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "country",
+            "columnName": "country",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "osmAdminLevel3",
+            "columnName": "osm_admin_level_3",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "osmAdminLevel4",
+            "columnName": "osm_admin_level_4",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "osmAdminLevel5",
+            "columnName": "osm_admin_level_5",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "osmAdminLevel6",
+            "columnName": "osm_admin_level_6",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "osmAdminLevel7",
+            "columnName": "osm_admin_level_7",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "osmAdminLevel8",
+            "columnName": "osm_admin_level_8",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "osmAdminLevel9",
+            "columnName": "osm_admin_level_9",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "name"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": [
+          {
+            "table": "Location",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "name"
+            ],
+            "referencedColumns": [
+              "name"
+            ]
+          }
+        ]
       }
     ],
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '4042b4440869335e12d3e48dc5840134')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '7962ba9521ed480a2477e15701d260e7')"
     ]
   }
 }

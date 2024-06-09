@@ -286,6 +286,11 @@ public class TravelActivity extends AppCompatActivity implements OnMapsSdkInitia
                     briefInfoTextView.setText(getString(R.string.brief_info_es_multiprovince, ((LocationInfoSpain) currentLocation).getMunicipality(), ((LocationInfoSpain) currentLocation).getProvince(), ((LocationInfoSpain) currentLocation).getAutonomousCommunity()));
             else if (currentLocation.getCountry().equals(getString(R.string.gibraltar_short_name)))
                 briefInfoTextView.setText(getString(R.string.brief_info_gi));
+            else if (currentLocation.getCountry().equals(getString(R.string.andorra)))
+                briefInfoTextView.setText(getString(R.string.brief_info_ad, ((LocationInfoAndorra) currentLocation).getParish()));
+            else { // Location beyond Iberian Peninsula
+                briefInfoTextView.setText(((LocationInfoBeyondIberianPeninsula) currentLocation).getOsmAdminLevelString());
+            }
 
         LinearLayout buttonLayoutGPS = findViewById(R.id.locationButtonLayoutGPS);
         LinearLayout destinationLayoutGPS = findViewById(R.id.destinationLayoutGPS);

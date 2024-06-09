@@ -10,13 +10,15 @@ import com.viajar.viajar.database.Location;
 import com.viajar.viajar.database.LocationGibraltar;
 import com.viajar.viajar.database.LocationPortugal;
 import com.viajar.viajar.database.LocationSpain;
+import com.viajar.viajar.database.LocationAndorra;
+import com.viajar.viajar.database.LocationBeyondIberianPeninsula;
 import com.viajar.viajar.database.Municipio;
 import com.viajar.viajar.database.Province;
 
 @Database(entities = {
         Location.class, Connection.class, Destination.class, LocationGibraltar.class,
         LocationPortugal.class, LocationSpain.class, Concelho.class, Municipio.class,
-        Province.class},
+        Province.class, LocationAndorra.class, LocationBeyondIberianPeninsula.class},
         version = 1)
 public abstract class SQLDatabase extends RoomDatabase {
     public abstract dao dao();

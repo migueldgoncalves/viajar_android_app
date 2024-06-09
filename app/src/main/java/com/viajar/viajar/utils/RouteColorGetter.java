@@ -50,7 +50,8 @@ public class RouteColorGetter {
                 isWaterway(transportMeans) ||
                 isRailway(transportMeans) ||
                 isCarreteraDelEstado(routeName) ||
-                isHikingConnection(transportMeans)) {
+                isHikingConnection(transportMeans) ||
+                isCarreteraGeneral(routeName)) {
             return Color.WHITE;
         } else {
             return Color.BLACK;
@@ -87,7 +88,7 @@ public class RouteColorGetter {
     }
 
     public static int getRouteTextBackgroundColor(String routeName, String transportMeans, int routeBackgroundColor) {
-        if (isCarreteraDelEstado(routeName) || isItinerarioPrincipal(routeName))
+        if (isCarreteraDelEstado(routeName) || isItinerarioPrincipal(routeName) || isCarreteraGeneral(routeName))
             return redRouteHighlight;
         else if (RouteColorGetter.isAutoviaWithOrangeBackground(routeName))
             return orangeRouteHighlight;
@@ -200,6 +201,16 @@ public class RouteColorGetter {
                         // Other Spanish roads whose traffic signs have white background and red highlight of the route name
                         routeName.startsWith("SA-") // Salamanca
         );
+    }
+
+    // Specific to Andorra
+    public static boolean isCarreteraGeneral(String routeName) {
+        if ((routeName == null) || (routeName.isEmpty()))
+            return false;
+        String[] roadNames = new String[]{
+                "CG-1", "CG-2", "CG-3", "CG-4", "CG-5", "CG-6"
+        };
+        return (Arrays.asList(roadNames).contains(routeName));
     }
 
     // Railways

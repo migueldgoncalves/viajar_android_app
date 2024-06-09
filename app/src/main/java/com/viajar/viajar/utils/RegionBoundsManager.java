@@ -6,6 +6,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.viajar.viajar.LocationInfo;
 import com.viajar.viajar.LocationInfoPortugal;
 import com.viajar.viajar.LocationInfoSpain;
+import com.viajar.viajar.LocationInfoAndorra;
 import com.viajar.viajar.R;
 
 import java.util.ArrayList;
@@ -102,6 +103,16 @@ public class RegionBoundsManager {
 
     private final SubregionBounds gibraltar = new SubregionBounds("Gibraltar");
 
+    private final SubregionBounds santJuliaDeLoria = new SubregionBounds("Sant Julià de Lòria");
+    private final SubregionBounds andorraLaVella = new SubregionBounds("Andorra la Vella");
+    private final SubregionBounds canillo = new SubregionBounds("Canillo");
+    private final SubregionBounds encamp = new SubregionBounds("Encamp");
+    private final SubregionBounds ordino = new SubregionBounds("Ordino");
+    private final SubregionBounds laMassana = new SubregionBounds("La Massana");
+    private final SubregionBounds escaldesEngordany	 = new SubregionBounds("Escaldes-Engordany");
+
+    private final SubregionBounds defaultSubregion = new SubregionBounds("Default");
+
     // ADD REGION DEFINITIONS HERE
 
     private final RegionBounds algarve = new RegionBounds("Algarve");
@@ -129,15 +140,23 @@ public class RegionBoundsManager {
     private final RegionBounds easternCatalonia = new RegionBounds("Eastern Catalonia");
     private final RegionBounds valencianCommunity = new RegionBounds("Valencian Community");
 
+    private final RegionBounds andorra = new RegionBounds("Andorra");
+
+    private final RegionBounds defaultRegion = new RegionBounds("Default");
+
     public RegionBoundsManager(Context context) {
         this.context = context;
 
         setPortugueseSubregionBounds();
         setSpanishSubregionBounds();
         setGibraltarSubregionBounds();
+        setAndorranSubregionBounds();
 
         setPortugueseRegionBounds();
         setSpanishAndGibraltarRegionBounds();
+        setAndorranRegionBounds();
+
+        setDefaults();
     }
 
     public boolean hasRegionMultipleSubregions(LocationInfo locationInfo) {
@@ -225,8 +244,10 @@ public class RegionBoundsManager {
                 return null;
         } else if (locationInfo.getCountry().equals(context.getString(R.string.gibraltar_short_name))) {
             return westernAndaluciaAndGibraltar;
-        } else { // Error
-            return null;
+        } else if (locationInfo.getCountry().equals(context.getString(R.string.andorra))) {
+            return andorra;
+        } else { // Location beyond Iberian Peninsula
+            return defaultRegion;
         }
     }
 
@@ -358,8 +379,20 @@ public class RegionBoundsManager {
             };
         } else if (locationInfo.getCountry().equals(context.getString(R.string.gibraltar_short_name))) {
             return gibraltar;
-        } else { // Error
-            return null;
+        } else if (locationInfo.getCountry().equals(context.getString(R.string.andorra))) {
+            String parish = ((LocationInfoAndorra) locationInfo).getParish();
+            return switch (parish) {
+                case "Sant Julià de Lòria" -> santJuliaDeLoria;
+                case "Andorra la Vella" -> andorraLaVella;
+                case "Canillo" -> canillo;
+                case "Encamp" -> encamp;
+                case "Ordino" -> ordino;
+                case "La Massana" -> laMassana;
+                case "Escaldes-Engordany" -> escaldesEngordany;
+                default -> null;
+            };
+        } else { // Location beyond Iberian Peninsula
+            return defaultSubregion;
         }
     }
 
@@ -460,6 +493,16 @@ public class RegionBoundsManager {
         valencianCommunity.addSubregion(castellonDeLaPlana);
         valencianCommunity.addSubregion(valencia);
         valencianCommunity.addSubregion(alicante);
+    }
+
+    private void setAndorranRegionBounds() {
+        andorra.addSubregion(santJuliaDeLoria);
+        andorra.addSubregion(andorraLaVella);
+        andorra.addSubregion(canillo);
+        andorra.addSubregion(encamp);
+        andorra.addSubregion(ordino);
+        andorra.addSubregion(laMassana);
+        andorra.addSubregion(escaldesEngordany);
     }
 
     private void setPortugueseSubregionBounds() {
@@ -813,12 +856,60 @@ public class RegionBoundsManager {
         gibraltar.setMaxEast(36.145086, -5.337617);
         gibraltar.setMaxWest(36.142543, -5.367428);
     }
+
+    private void setAndorranSubregionBounds() {
+        santJuliaDeLoria.setMaxNorth(42.5044741, 1.4603314);
+        santJuliaDeLoria.setMaxSouth(42.4288238, 1.5157512);
+        santJuliaDeLoria.setMaxEast(42.4586557, 1.5611409);
+        santJuliaDeLoria.setMaxWest(42.486294, 1.4077997);
+
+        andorraLaVella.setMaxNorth(42.5228745, 1.5215643);
+        andorraLaVella.setMaxSouth(42.4687463, 1.5493625);
+        andorraLaVella.setMaxEast(42.47383, 1.5591178);
+        andorraLaVella.setMaxWest(42.5044741, 1.4603314);
+
+        canillo.setMaxNorth(42.630316, 1.637122);
+        canillo.setMaxSouth(42.543562, 1.6101369);
+        canillo.setMaxEast(42.5741828, 1.786664);
+        canillo.setMaxWest(42.546288, 1.562015);
+
+        encamp.setMaxNorth(42.5591974, 1.6829666);
+        encamp.setMaxSouth(42.4895387, 1.7038417);
+        encamp.setMaxEast(42.5551747, 1.7388868);
+        encamp.setMaxWest(42.5237965, 1.5460477);
+
+        ordino.setMaxNorth(42.6559357, 1.5492987);
+        ordino.setMaxSouth(42.545847, 1.541481);
+        ordino.setMaxEast(42.6146061, 1.6074521);
+        ordino.setMaxWest(42.6308896, 1.4680186);
+
+        laMassana.setMaxNorth(42.6069182, 1.4646436);
+        laMassana.setMaxSouth(42.509996, 1.4683999);
+        laMassana.setMaxEast(42.546288, 1.562015);
+        laMassana.setMaxWest(42.5353776, 1.4135781);
+
+        escaldesEngordany.setMaxNorth(42.5237965, 1.5460477);
+        escaldesEngordany.setMaxSouth(42.449886, 1.5788543);
+        escaldesEngordany.setMaxEast(42.4815295, 1.6632892);
+        escaldesEngordany.setMaxWest(42.5228745, 1.5215643);
+    }
+
+    private void setDefaults() {
+        // Defaults to the entire Iberian Peninsula
+        defaultSubregion.setMaxNorth(43.783333, -9.500587);
+        defaultSubregion.setMaxSouth(36.0, 3.322270);
+        defaultSubregion.setMaxWest(43.783333, -9.500587);
+        defaultSubregion.setMaxEast(36.0, 3.322270);
+
+        defaultRegion.addSubregion(defaultSubregion);
+    }
 }
 
 class RegionBounds {
     // PT - Groups of districts or of parts of them
     // ES - Autonomous Communities or parts of them
     // GI - Gibraltar
+    // AD - Andorra
 
     String name;
     ArrayList<SubregionBounds> subregions = new ArrayList<>();
@@ -901,6 +992,7 @@ class SubregionBounds {
     // PT - District, intermunicipal entity, or similar
     // ES - Province
     // GI - Gibraltar
+    // AD - Parish
 
     String name;
     LatLng maxNorth;

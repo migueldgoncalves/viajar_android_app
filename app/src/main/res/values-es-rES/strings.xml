@@ -29,6 +29,7 @@
     <string name="brief_info_es_multiprovince">%1$s, Provincia de %2$s, %3$s, España</string>
     <string name="brief_info_es_uniprovince">%1$s, %2$s, España</string>
     <string name="brief_info_gi">Gibraltar</string>
+    <string name="brief_info_ad">%1$s, Andorra</string>
     <string name="around">Alrededor</string>
     <string name="transfer">Transbordo</string>
     <string name="subway">Metro</string>

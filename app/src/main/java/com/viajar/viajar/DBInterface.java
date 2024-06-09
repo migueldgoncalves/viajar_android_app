@@ -42,8 +42,10 @@ public class DBInterface {
             country = context.getString(R.string.spain);
         } else if (getDatabase(context).dao().isLocationInGibraltar(locationName) == 1) {
             country = context.getString(R.string.gibraltar_short_name);
-        } else {
-            return null; // Invalid location
+        } else if (getDatabase(context).dao().isLocationInAndorra(locationName) == 1) {
+            country = context.getString(R.string.andorra);
+        } else { // Location beyond Iberian Peninsula
+            country = getDatabase(context).dao().getCountryBeyondIberianPeninsula(locationName);
         }
 
         // Determine the surrounding locations and respective connection info
@@ -99,7 +101,7 @@ public class DBInterface {
         LocationInfo locationObject;
         if (country.equals(context.getString(R.string.portugal))) {
             locationObject = new LocationInfoPortugal(context);
-            ((LocationInfoPortugal) locationObject).setParish(getDatabase(context).dao().getParish(locationName));
+            ((LocationInfoPortugal) locationObject).setParish(getDatabase(context).dao().getPortugueseParish(locationName));
             ((LocationInfoPortugal) locationObject).setMunicipality(getDatabase(context).dao().getConcelho(locationName));
             ((LocationInfoPortugal) locationObject).setDistrict(getDatabase(context).dao().getPortugueseDistrict(locationName));
             ((LocationInfoPortugal) locationObject).setIntermunicipalEntity(getDatabase(context).dao().getIntermunicipalEntity(locationName));
@@ -115,8 +117,21 @@ public class DBInterface {
             ((LocationInfoSpain) locationObject).setComarca(getDatabase(context).dao().getComarca(municipio, province));
         } else if (country.equals(context.getString(R.string.gibraltar_short_name))) {
             locationObject = new LocationInfoGibraltar(context);
-        } else {
-            return null; // Add more countries as required
+        } else if (country.equals(context.getString(R.string.andorra))) {
+            locationObject = new LocationInfoAndorra(context);
+            ((LocationInfoAndorra) locationObject).setParish(getDatabase(context).dao().getAndorranParish(locationName));
+        } else { // Location beyond Iberian Peninsula
+            locationObject = new LocationInfoBeyondIberianPeninsula(context);
+            locationObject.setCountry(getDatabase(context).dao().getCountryBeyondIberianPeninsula(locationName));
+            ((LocationInfoBeyondIberianPeninsula) locationObject).setOsmAdminLevels(
+                    getDatabase(context).dao().getOsmAdminLevel3(locationName),
+                    getDatabase(context).dao().getOsmAdminLevel4(locationName),
+                    getDatabase(context).dao().getOsmAdminLevel5(locationName),
+                    getDatabase(context).dao().getOsmAdminLevel6(locationName),
+                    getDatabase(context).dao().getOsmAdminLevel7(locationName),
+                    getDatabase(context).dao().getOsmAdminLevel8(locationName),
+                    getDatabase(context).dao().getOsmAdminLevel9(locationName)
+            );
         }
         locationObject.setName(locationName);
         locationObject.setSurroundingLocations(surroundingLocations);
