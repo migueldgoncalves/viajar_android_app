@@ -23,6 +23,7 @@
     <string name="car">Car</string>
     <string name="train">Train</string>
     <string name="boat">Boat</string>
+    <string name="ship">Ship</string>
     <string name="plane">Plane</string>
     <string name="vehicle_bus">Bus</string>
     <string name="vehicle_van">Van</string>

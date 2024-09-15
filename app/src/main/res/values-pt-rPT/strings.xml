@@ -17,6 +17,7 @@
     <string name="car">Carro</string>
     <string name="train">Comboio</string>
     <string name="boat">Barco</string>
+    <string name="ship">Navio</string>
     <string name="plane">Avião</string>
     <string name="vehicle_bus">Autocarro</string>
     <string name="vehicle_van">Carrinha</string>

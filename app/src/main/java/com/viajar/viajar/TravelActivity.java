@@ -62,6 +62,7 @@ public class TravelActivity extends AppCompatActivity implements OnMapsSdkInitia
 
     public static final String CAR = "Car";
     public static final String BOAT = "Boat";
+    public static final String SHIP = "Ship";
     public static final String TRAIN = "Train";
     public static final String HIGH_SPEED_TRAIN = "High-Speed Train";
     public static final String PLANE = "Plane";
@@ -162,6 +163,9 @@ public class TravelActivity extends AppCompatActivity implements OnMapsSdkInitia
             }
             else if (item.getItemId() == R.id.boat) {
                 currentTransportMeans = BOAT;
+            }
+            else if (item.getItemId() == R.id.ship) {
+                currentTransportMeans = SHIP;
             }
             else if (item.getItemId() == R.id.train) {
                 currentTransportMeans = TRAIN;
@@ -339,6 +343,7 @@ public class TravelActivity extends AppCompatActivity implements OnMapsSdkInitia
         locationButtons.getMenu().findItem(R.id.car).setVisible(false);
         locationButtons.getMenu().findItem(R.id.train).setVisible(false);
         locationButtons.getMenu().findItem(R.id.boat).setVisible(false);
+        locationButtons.getMenu().findItem(R.id.ship).setVisible(false);
         locationButtons.getMenu().findItem(R.id.plane).setVisible(false);
         locationButtons.getMenu().findItem(R.id.highSpeedTrain).setVisible(false);
         locationButtons.getMenu().findItem(R.id.transfer).setVisible(false);
@@ -351,6 +356,8 @@ public class TravelActivity extends AppCompatActivity implements OnMapsSdkInitia
             locationButtons.getMenu().findItem(R.id.train).setVisible(true);
         if (currentLocation.getSurroundingLocationsByTransportMeans(BOAT).size() > 0)
             locationButtons.getMenu().findItem(R.id.boat).setVisible(true);
+        if (currentLocation.getSurroundingLocationsByTransportMeans(SHIP).size() > 0)
+            locationButtons.getMenu().findItem(R.id.ship).setVisible(true);
         if (currentLocation.getSurroundingLocationsByTransportMeans(PLANE).size() > 0)
             locationButtons.getMenu().findItem(R.id.plane).setVisible(true);
         if (currentLocation.getSurroundingLocationsByTransportMeans(HIGH_SPEED_TRAIN).size() > 0)

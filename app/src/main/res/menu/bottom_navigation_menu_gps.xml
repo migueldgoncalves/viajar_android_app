@@ -13,6 +13,10 @@
         android:title="@string/boat"
         android:icon="@drawable/boat_icon"/>
     <item
+        android:id="@+id/ship"
+        android:title="@string/ship"
+        android:icon="@mipmap/ship_icon"/>
+    <item
         android:id="@+id/plane"
         android:title="@string/plane"
         android:icon="@mipmap/plane_icon"/>

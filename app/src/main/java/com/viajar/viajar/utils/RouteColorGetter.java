@@ -22,6 +22,7 @@ public class RouteColorGetter {
     private static final int highSpeedRailwayColor = Color.parseColor("#660066"); // Purple
     private static final int waterwayRiverColor = Color.CYAN;
     private static final int waterwayCoastColor = Color.parseColor("#007fff"); // Blue
+    private static final int waterwayOceanColor = Color.parseColor("#0000e6"); // Dark blue
     private static final int planeConnectionColor = Color.RED;
 
     private static final int redRouteHighlight = Color.RED; // Ex: Portuguese Itinerários Principais
@@ -103,7 +104,12 @@ public class RouteColorGetter {
     public static boolean isHighway(String routeName) {
         // Portugal - auto-estrada (Ex: A1)
         // Spain - Either autovía (Ex: A-1) or autopista (Ex: AP-1)
-        if ((routeName == null) || (routeName.length() == 0))
+
+        String[] spanishHighways = new String[]{
+                "RM-2", "RM-16"
+        };
+
+        if ((routeName == null) || (routeName.isEmpty()))
             return false;
 
         return (
@@ -112,6 +118,7 @@ public class RouteColorGetter {
                         routeName.startsWith("AP-") || // State autopista
                         routeName.startsWith("R-") || // Radial
                         (routeName.charAt(0) == 'A' && ((routeName.length() == 2) || (routeName.length() == 3))) || // Ex: A2, A22
+                        routeName.equals("A2 - 25 de Abril Bridge") ||
                         routeName.equals("A9 CREL") ||
                         routeName.equals("A13-1") ||
                         routeName.equals("A26-1") ||
@@ -140,7 +147,10 @@ public class RouteColorGetter {
                         routeName.startsWith("AV-") || // Ávila
                         routeName.startsWith("V-") || // Valencia
                         routeName.startsWith("PT-") || // Puertollano (city in the Ciudad Real province)
-                        routeName.startsWith("B-") // Barcelona
+                        routeName.startsWith("B-") || // Barcelona
+
+                        // Spanish autovías and autopistas (freeways)
+                        Arrays.asList(spanishHighways).contains(routeName)
         );
     }
 
@@ -222,15 +232,15 @@ public class RouteColorGetter {
         // TRAIN - Add new train lines HERE
 
         // Lisbon
-        if (railway.contains("Linha do Sado"))
+        if (railway.contains("Sado Line"))
             return Color.BLUE;
-        else if (railway.contains("Linha do Sul") && railway.contains("Fertagus"))
+        else if (railway.contains("Fertagus Line"))
             return Color.parseColor("#6fa8dc"); // Light blue
         else if (railway.contains("Linha de Sintra") && railway.contains("CP Lisboa"))
             return Color.parseColor("#008000"); // Green
-        else if (railway.contains("Linha da Azambuja"))
+        else if (railway.contains("Azambuja Line"))
             return Color.parseColor("#be2c2c"); // Reddish-brown
-        else if (railway.contains("Linha de Cascais"))
+        else if (railway.contains("Cascais Line"))
             return Color.parseColor("#ffab2e"); // Yellow
         // Coimbra
         else if (railway.contains("Urbanos de Coimbra"))
@@ -304,20 +314,26 @@ public class RouteColorGetter {
             return waterwayRiverColor;
         else if (isCoastWaterway(meansTransport, routeName))
             return waterwayCoastColor;
+        else if (isOceanWaterway(meansTransport, routeName))
+            return waterwayOceanColor;
         else // Default
             return waterwayRiverColor;
     }
 
     public static boolean isWaterway(String meansTransport) {
-        return (meansTransport.equals(TravelActivity.BOAT));
+        return (meansTransport.equals(TravelActivity.BOAT) || meansTransport.equals(TravelActivity.SHIP));
     }
 
     public static boolean isRiverWaterway(String meansTransport, String routeName) {
-        return (isWaterway(meansTransport) && (!routeName.contains("Costa"))); // Costa == Coast
+        return (isWaterway(meansTransport) && (!routeName.contains("Costa")) && (meansTransport.equals(TravelActivity.BOAT))); // Costa == Coast
     }
 
     public static boolean isCoastWaterway(String meansTransport, String routeName) {
         return (isWaterway(meansTransport) && (routeName.contains("Costa"))); // Costa == Coast
+    }
+
+    public static boolean isOceanWaterway(String meansTransport, String routeName) {
+        return (isWaterway(meansTransport) && (!routeName.contains("Costa")) && (meansTransport.equals(TravelActivity.SHIP)));
     }
 
     // Other means of transport
