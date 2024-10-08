@@ -43,6 +43,9 @@ public class RegionBoundsManager {
     private final SubregionBounds vianaDoCastelo = new SubregionBounds("Viana do Castelo");
     private final SubregionBounds vilaReal = new SubregionBounds("Vila Real");
     private final SubregionBounds braganca = new SubregionBounds("Bragança");
+    // Azores - Eastern Group
+    private final SubregionBounds islandSaoMiguel = new SubregionBounds("Ilha de São Miguel");
+    private final SubregionBounds islandSantaMariaAndFormigas = new SubregionBounds("Ilha de Santa Maria e Ilhéus das Formigas");
 
     // Andalucía
     private final SubregionBounds huelva = new SubregionBounds("Huelva");
@@ -122,6 +125,7 @@ public class RegionBoundsManager {
     private final RegionBounds beiraInterior = new RegionBounds("Beira Interior"); // Approx. Beira Interior
     private final RegionBounds entreDouroMinho = new RegionBounds("Entre-Douro-e-Minho"); // Approx Entre-Douro-e-Minho
     private final RegionBounds trasOsMontes = new RegionBounds("Trás-os-Montes");
+    private final RegionBounds azoresEasternGroup = new RegionBounds("Azores - Eastern Group");
 
     private final RegionBounds westernAndaluciaAndGibraltar = new RegionBounds("Western Andalucía + Gibraltar");
     private final RegionBounds centralAndalucia = new RegionBounds("Central Andalucía");
@@ -168,6 +172,33 @@ public class RegionBoundsManager {
         return subregionsNumber > 1;
     }
 
+    public LatLng[] getGlobalBoundsByLocation(LocationInfo locationInfo) {
+        double northernmostLatitude;
+        double southernmostLatitude;
+        double westernmostLongitude;
+        double easternmostLongitude;
+
+        if (locationInfo.getCountry().equals(context.getString(R.string.portugal)) && ((LocationInfoPortugal) locationInfo).getDistrict().equals("Açores")) {
+            northernmostLatitude = 39.727435; // Ilhéu do Torrão, north of the Ilha do Corvo
+            southernmostLatitude = 36.927742; // Ponta do Castelo, Ilha de Santa Maria
+            westernmostLongitude = -31.275617; // Ilhéu de Monchique, west of the Ilha das Flores
+            easternmostLongitude = -24.780056; // Ilhéus das Formigas, between the Ilha de São Miguel and the Ilha de Santa Maria
+        } else { // Iberian Peninsula, Balearic Islands, and locations beyond the Iberian Peninsula
+            northernmostLatitude = 43.783333; // Punta de Estaca de Bares, A Coruña
+            southernmostLatitude = 36.0; // Punta de Tarifa, Cádiz
+            westernmostLongitude = -9.500587; // Cabo da Roca, Lisbon
+            // easternmostLongitude = 3.322270; // Cap de Creus, Girona
+            easternmostLongitude = 4.327554; // Punta de S'Esperó, Menorca Island, Balearic Islands
+        }
+
+        return new LatLng[]{
+                new LatLng(northernmostLatitude, westernmostLongitude),
+                new LatLng(northernmostLatitude, easternmostLongitude),
+                new LatLng(southernmostLatitude, westernmostLongitude),
+                new LatLng(southernmostLatitude, easternmostLongitude),
+        };
+    }
+
     public LatLng[] getRegionBoundsByLocation(LocationInfo locationInfo) {
         RegionBounds regionBounds = getRegionBoundsObjectByLocation(locationInfo);
         if (regionBounds == null)
@@ -180,6 +211,7 @@ public class RegionBoundsManager {
         if (locationInfo.getCountry().equals(context.getString(R.string.portugal))) {
             String district = ((LocationInfoPortugal) locationInfo).getDistrict();
             String intermunicipalEntity = ((LocationInfoPortugal) locationInfo).getIntermunicipalEntity();
+            String municipality = ((LocationInfoPortugal) locationInfo).getMunicipality();
 
             if (district.equals("Faro"))
                 return algarve;
@@ -197,6 +229,8 @@ public class RegionBoundsManager {
                 return entreDouroMinho;
             else if (Arrays.asList("Vila Real", "Bragança").contains(district))
                 return trasOsMontes;
+            else if (Arrays.asList("Vila do Porto", "Lagoa, Açores", "Nordeste", "Ponta Delgada", "Povoação", "Ribeira Grande", "Vila Franca do Campo").contains(municipality))
+                return azoresEasternGroup;
             else
                 return null;
         } else if (locationInfo.getCountry().equals(context.getString(R.string.spain))) {
@@ -272,7 +306,7 @@ public class RegionBoundsManager {
             else if (Arrays.asList("Albufeira", "Aljezur", "Lagoa", "Lagos", "Monchique",
                     "Portimão", "Silves", "Vila do Bispo").contains(concelho))
                 return barlaventoAlgarvio;
-                // Alentejo
+            // Alentejo
             else if ((intermunicipalEntity.equals("Alentejo Litoral")) &&
                     !concelho.equals("Odemira")) // Approx. Alentejo Litoral
                 return alentejoLitoral;
@@ -282,7 +316,7 @@ public class RegionBoundsManager {
                 return evora;
             else if (district.equals("Portalegre"))
                 return portalegre;
-                // Lisbon and Tagus Valley
+            // Lisbon and Tagus Valley
             else if ((district.equals("Setúbal")) && ( // Península de Setúbal
                     intermunicipalEntity.equals("Área Metropolitana de Lisboa")))
                 return peninsulaSetubal;
@@ -292,7 +326,7 @@ public class RegionBoundsManager {
                 return leiria;
             else if (district.equals("Santarém"))
                 return santarem;
-                // Beiras
+            // Beiras
             else if (district.equals("Coimbra"))
                 return coimbra;
             else if (district.equals("Aveiro"))
@@ -303,7 +337,7 @@ public class RegionBoundsManager {
                 return casteloBranco;
             else if (district.equals("Guarda"))
                 return guarda;
-                // North
+            // North
             else if (district.equals("Porto"))
                 return porto;
             else if (district.equals("Braga"))
@@ -314,6 +348,11 @@ public class RegionBoundsManager {
                 return vilaReal;
             else if (district.equals("Bragança"))
                 return braganca;
+            // Azores - Eastern Group
+            else if (concelho.equals("Vila do Porto"))
+                return islandSantaMariaAndFormigas;
+            else if (Arrays.asList("Lagoa, Açores", "Nordeste", "Ponta Delgada", "Povoação", "Ribeira Grande", "Vila Franca do Campo").contains(concelho))
+                return islandSaoMiguel;
             else
                 return null;
         } else if (locationInfo.getCountry().equals(context.getString(R.string.spain))) {
@@ -425,6 +464,9 @@ public class RegionBoundsManager {
 
         trasOsMontes.addSubregion(vilaReal);
         trasOsMontes.addSubregion(braganca);
+
+        azoresEasternGroup.addSubregion(islandSantaMariaAndFormigas);
+        azoresEasternGroup.addSubregion(islandSaoMiguel);
     }
 
     private void setSpanishAndGibraltarRegionBounds() {
@@ -607,6 +649,16 @@ public class RegionBoundsManager {
         braganca.setMaxSouth(41.0245,-6.9891);
         braganca.setMaxWest(41.2109,-7.4320);
         braganca.setMaxEast(41.5749,-6.1892);
+
+        islandSantaMariaAndFormigas.setMaxNorth(37.275690, -24.780918);
+        islandSantaMariaAndFormigas.setMaxSouth(36.927637, -25.017685);
+        islandSantaMariaAndFormigas.setMaxWest(36.995426, -25.186179);
+        islandSantaMariaAndFormigas.setMaxEast(37.274297, -24.779848);
+
+        islandSaoMiguel.setMaxNorth(37.910624, -25.781361);
+        islandSaoMiguel.setMaxSouth(37.704009, -25.443287);
+        islandSaoMiguel.setMaxWest(37.861270, -25.856082);
+        islandSaoMiguel.setMaxEast(37.807619, -25.134165);
     }
 
     private void setSpanishSubregionBounds() {

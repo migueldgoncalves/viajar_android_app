@@ -282,7 +282,10 @@ public class TravelActivity extends AppCompatActivity implements OnMapsSdkInitia
             locationTextViewGPS.setText(currentLocationName);
         if ((briefInfoTextView != null) && (currentLocation != null))
             if (currentLocation.getCountry().equals(getString(R.string.portugal)))
-                briefInfoTextView.setText(getString(R.string.brief_info_pt, ((LocationInfoPortugal) currentLocation).getMunicipality(), ((LocationInfoPortugal) currentLocation).getDistrict()));
+                if (Arrays.asList("Açores", "Madeira").contains(((LocationInfoPortugal) currentLocation).getDistrict()))
+                    briefInfoTextView.setText(getString(R.string.brief_info_pt_acores_madeira, ((LocationInfoPortugal) currentLocation).getMunicipality(), ((LocationInfoPortugal) currentLocation).getDistrict()));
+                else
+                    briefInfoTextView.setText(getString(R.string.brief_info_pt_continental_portugal, ((LocationInfoPortugal) currentLocation).getMunicipality(), ((LocationInfoPortugal) currentLocation).getDistrict()));
             else if (currentLocation.getCountry().equals(getString(R.string.spain)))
                 if (Utils.isAutonomousCommunityWithSingleProvince(((LocationInfoSpain) currentLocation).getAutonomousCommunity(), ((LocationInfoSpain) currentLocation).getProvince()))
                     briefInfoTextView.setText(getString(R.string.brief_info_es_uniprovince, ((LocationInfoSpain) currentLocation).getMunicipality(), ((LocationInfoSpain) currentLocation).getProvince()));
@@ -565,24 +568,24 @@ public class TravelActivity extends AppCompatActivity implements OnMapsSdkInitia
             mapAreaButtons.setOnNavigationItemSelectedListener(item -> {
                 if (currentLocation == null)
                     return false;
-                if (item.getItemId() == R.id.iberianPeninsula) {
-                    ((TravelActivity) requireActivity()).currentMapArea = getString(R.string.iberian_peninsula);
-                    requireActivity().runOnUiThread(this::enquadrarMapa);
+                if (item.getItemId() == R.id.global) {
+                    ((TravelActivity) requireActivity()).currentMapArea = getString(R.string.global);
+                    requireActivity().runOnUiThread(this::frameMap);
                     return true;
                 }
                 else if (item.getItemId() == R.id.region) {
                     ((TravelActivity) requireActivity()).currentMapArea = getString(R.string.region);
-                    requireActivity().runOnUiThread(this::enquadrarMapa);
+                    requireActivity().runOnUiThread(this::frameMap);
                     return true;
                 }
                 else if (item.getItemId() == R.id.subregion) {
                     ((TravelActivity) requireActivity()).currentMapArea = getString(R.string.subregion);
-                    requireActivity().runOnUiThread(this::enquadrarMapa);
+                    requireActivity().runOnUiThread(this::frameMap);
                     return true;
                 }
                 else if (item.getItemId() == R.id.around) {
                     ((TravelActivity) requireActivity()).currentMapArea = getString(R.string.around);
-                    requireActivity().runOnUiThread(this::enquadrarMapa);
+                    requireActivity().runOnUiThread(this::frameMap);
                     return true;
                 }
                 return false;
@@ -604,7 +607,7 @@ public class TravelActivity extends AppCompatActivity implements OnMapsSdkInitia
         public void onMapReady(@NonNull GoogleMap googleMap) {
             mMap = googleMap;
             mMap.getUiSettings().setScrollGesturesEnabled(false);
-            desenharMapa();
+            drawMap();
         }
 
         @Override
@@ -624,7 +627,7 @@ public class TravelActivity extends AppCompatActivity implements OnMapsSdkInitia
             TextView textView = requireActivity().findViewById(R.id.locationTextViewMap);
             textView.setText(currentLocation.getName());
 
-            requireActivity().runOnUiThread(this::desenharMapa);
+            requireActivity().runOnUiThread(this::drawMap);
         }
 
 
@@ -646,7 +649,7 @@ public class TravelActivity extends AppCompatActivity implements OnMapsSdkInitia
             mMapView.onLowMemory();
         }
 
-        public void desenharMapa() {
+        public void drawMap() {
             LocationInfo currentLocation = ((TravelActivity) requireActivity()).currentLocation;
             String currentTransportMeans = ((TravelActivity) requireActivity()).currentTransportMeans;
             ArrayList<String[]> allCoordinatesNamesBatches = ((TravelActivity) requireActivity()).allCoordinatesNamesBatches;
@@ -662,7 +665,7 @@ public class TravelActivity extends AppCompatActivity implements OnMapsSdkInitia
             //mMap.moveCamera(CameraUpdateFactory.newLatLng(location));
             //mMap.setMinZoomPreference(ZOOM_LEVEL);
 
-            enquadrarMapa(); // Enquadra o mapa de acordo com a região escolhida
+            frameMap(); // Frames the map according to the selected region
 
             if (TravelActivity.historyMode) { // Show some connections or locations, and only if inside desired batch
                 if (TravelActivity.useMarkers) { // Draws markers
@@ -733,14 +736,14 @@ public class TravelActivity extends AppCompatActivity implements OnMapsSdkInitia
             }
         }
 
-        public void enquadrarMapa() {
+        public void frameMap() {
             String currentMapArea = ((TravelActivity) requireActivity()).currentMapArea;
             LocationInfo currentLocation = ((TravelActivity) requireActivity()).currentLocation;
 
             LatLngBounds.Builder b = new LatLngBounds.Builder();
             if (currentMapArea == null)
                 return;
-            else if (currentMapArea.equals(getString(R.string.iberian_peninsula))) {
+            else if (currentMapArea.equals(getString(R.string.global))) {
                 if (TravelActivity.historyMode) { // Include only locations inside desired batch
                     ArrayList<String[]> allCoordinatesNamesBatches = ((TravelActivity) requireActivity()).allCoordinatesNamesBatches;
                     for (String[] coordinateNameBatch : allCoordinatesNamesBatches) {
@@ -750,32 +753,10 @@ public class TravelActivity extends AppCompatActivity implements OnMapsSdkInitia
                         if ((batch > 0) && (batch <= TravelActivity.desiredBatch))
                             b.include(new LatLng(latitude, longitude));
                     }
-                } else { // Include all locations
-                    double northernmostLatitude = 43.783333; // Punta de Estaca de Bares, A Coruña
-                    double southernmostLatitude = 36.0; // Punta de Tarifa, Cádiz
-                    double westernmostLongitude = -9.500587; // Cabo da Roca, Lisbon
-                    double easternmostLongitude = 3.322270; // Cap de Creus, Girona
-
-                    double margin = 3.5; // Degrees - In Iberian Peninsula 1 degree = ~100 km
-
-                    // Regarding longitude, map will center around current location if near center of Iberian Peninsula
-                    if (currentLocation.getLongitude() < (westernmostLongitude + margin)) // Closer to the left of the Iberian Peninsula
-                        easternmostLongitude = westernmostLongitude + (2 * margin);
-                    else if (currentLocation.getLongitude() > (easternmostLongitude - margin)) // Closer do the right of the Iberian Peninsula
-                        westernmostLongitude = easternmostLongitude - (2 * margin);
-                    else { // Closer to the center of the Iberian Peninsula
-                        westernmostLongitude = currentLocation.getLongitude() - margin;
-                        easternmostLongitude = currentLocation.getLongitude() + margin;
-                    }
-
-                    List<Double[]> extremeMapPoints = Arrays.asList(
-                            new Double[]{northernmostLatitude, westernmostLongitude},
-                            new Double[]{southernmostLatitude, easternmostLongitude});
-                    for (Double[] extremePoint : extremeMapPoints) {
-                        Double latitude = extremePoint[0];
-                        Double longitude = extremePoint[1];
-                        b.include(new LatLng(latitude, longitude));
-                    }
+                } else { // Include all locations in the same macro-region (i.e. Azores Islands, Madeira Islands, Canary Islands, or Iberian Peninsula + Balearic Islands)
+                    LatLng[] bounds = new RegionBoundsManager(getContext()).getGlobalBoundsByLocation(currentLocation);
+                    for (LatLng bound : bounds)
+                        b.include(bound);
                 }
             } else if (currentMapArea.equals(getString(R.string.subregion))) {
                 LatLng[] bounds = new RegionBoundsManager(getContext()).getSubregionBoundsByLocation(currentLocation);

@@ -10,6 +10,6 @@
         android:id="@+id/region"
         android:title="@string/region"/>
     <item
-        android:id="@+id/iberianPeninsula"
-        android:title="@string/iberian_peninsula"/>
+        android:id="@+id/global"
+        android:title="@string/global"/>
 </menu>

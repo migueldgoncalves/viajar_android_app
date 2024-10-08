@@ -9,12 +9,13 @@
 
     <!--    Regions-->
     <!--    Global-->
-    <string name="iberian_peninsula">Iberian Peninsula</string>
+    <string name="global">Global</string>
     <!--    Specific to Portugal-->
     <string name="parish_pt">Parish</string>
     <string name="concelho">Municipality</string>
     <string name="intermunicipal_entity">Intermunicipal Entity</string>
     <string name="region">Region</string>
+    <string name="autonomous_region">Autonomous Region</string>
     <!--    Common to Portugal and Spain-->
     <string name="district">District</string>
     <!--    Specific to Spain-->

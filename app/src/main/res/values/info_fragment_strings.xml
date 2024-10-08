@@ -5,5 +5,5 @@
     <string name="info_tab_altitude_string">%1$d meters</string>
     <string name="info_tab_altitude_string_singular">1 meter</string>
     <string name="info_tab_coordinates_string" translatable="false">%1$f, %2$f</string>
-    <string name="info_tab_island_string">%1$s Island</string>
+    <string name="info_tab_island_string">%1$s</string>
 </resources>

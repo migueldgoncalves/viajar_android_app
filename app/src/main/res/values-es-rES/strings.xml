@@ -26,7 +26,8 @@
     <string name="title_activity_car_menu">Selección de Vehículo</string>
     <string name="no_destination">Sin Destinos Disponibles</string>
     <string name="high_speed_train">AVE</string>
-    <string name="brief_info_pt">%1$s, Distrito de %2$s, Portugal</string>
+    <string name="brief_info_pt_continental_portugal">%1$s, Distrito de %2$s, Portugal</string>
+    <string name="brief_info_pt_acores_madeira">%1$s, Región Autónoma de %2$s, Portugal</string>
     <string name="brief_info_es_multiprovince">%1$s, Provincia de %2$s, %3$s, España</string>
     <string name="brief_info_es_uniprovince">%1$s, %2$s, España</string>
     <string name="brief_info_gi">Gibraltar</string>

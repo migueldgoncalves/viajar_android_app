@@ -18,6 +18,7 @@ import com.viajar.viajar.R;
 import com.viajar.viajar.TravelActivity;
 import com.viajar.viajar.utils.Utils;
 
+import java.util.Arrays;
 import java.util.HashMap;
 
 public class InfoPageFragment extends Fragment {
@@ -143,7 +144,11 @@ public class InfoPageFragment extends Fragment {
         editText.append("\n");
 
         // District (Distrito in Portuguese)
-        String districtFieldName = getString(R.string.district);
+        String districtFieldName;
+        if (Arrays.asList("Açores", "Madeira").contains(district))
+            districtFieldName = getString(R.string.autonomous_region);
+        else
+            districtFieldName = getString(R.string.district);
         String districtString = getString(R.string.info_tab_country_specific_info, districtFieldName, district);
         editText.append(districtString);
         editText.append("\n");
