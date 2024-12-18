@@ -392,14 +392,6 @@ public class TravelActivity extends AppCompatActivity implements OnMapsSdkInitia
 
     public void populateCurrentAndSurroundingLocations(boolean populateFromDatabase) {
         DBInterface dbInterface = DBInterface.getDBInterface(getApplicationContext());
-        if (populateFromDatabase) {
-            allCoordinatesNamesBatches = dbInterface.getAllCoordinatesNamesBatches(getApplicationContext());
-            allConnectionsCoordinates = dbInterface.getAllConnectionCoordinates(getApplicationContext());
-            northernmostLatitude = dbInterface.getMapNorthernmostLatitude(getApplicationContext());
-            southernmostLatitude = dbInterface.getMapSouthernmostLatitude(getApplicationContext());
-            westernmostLongitude = dbInterface.getMapWesternmostLongitude(getApplicationContext());
-            easternmostLongitude = dbInterface.getMapEasternmostLongitude(getApplicationContext());
-        }
         formerLocation = currentLocation;
         currentLocation = dbInterface.generateLocationObject(getApplicationContext(), currentLocationName);
         surroundingLocations = new HashMap<>();
@@ -407,6 +399,14 @@ public class TravelActivity extends AppCompatActivity implements OnMapsSdkInitia
             String surroundingLocationName = connectionInfo.get(0);
             LocationInfo newSurroundingLocation = DBInterface.getDBInterface(getApplicationContext()).generateLocationObject(getApplicationContext(), surroundingLocationName);
             surroundingLocations.put(surroundingLocationName, newSurroundingLocation);
+        }
+        if (populateFromDatabase) {
+            allCoordinatesNamesBatches = dbInterface.getAllCoordinatesNamesBatches(getApplicationContext());
+            allConnectionsCoordinates = dbInterface.getAllConnectionCoordinates(getApplicationContext());
+            northernmostLatitude = dbInterface.getMapNorthernmostLatitude(getApplicationContext());
+            southernmostLatitude = dbInterface.getMapSouthernmostLatitude(getApplicationContext());
+            westernmostLongitude = dbInterface.getMapWesternmostLongitude(getApplicationContext());
+            easternmostLongitude = dbInterface.getMapEasternmostLongitude(getApplicationContext());
         }
     }
 
@@ -726,6 +726,14 @@ public class TravelActivity extends AppCompatActivity implements OnMapsSdkInitia
                     // If plane is the current means of transport, draws only plane connections
                     if (meansTransport.equals(PLANE) != currentTransportMeans.equals(PLANE))
                         continue;
+
+                    // Displays connections whose locations are up to ~100 km from the current location
+                    int maxDistanceCoordinates = 1; // ~= 100 km in a very approximate way in the Iberian Peninsula
+                    if ((Math.abs(latitude1 - currentLocation.getLatitude()) > maxDistanceCoordinates) || (Math.abs(latitude2 - currentLocation.getLatitude()) > maxDistanceCoordinates)) {
+                        continue;
+                    } else if ((Math.abs(longitude1 - currentLocation.getLongitude()) > maxDistanceCoordinates) || (Math.abs(longitude2 - currentLocation.getLongitude()) > maxDistanceCoordinates)) {
+                        continue;
+                    }
 
                     int lineColor = RouteColorGetter.getRouteLineColor(routeName, meansTransport);
                     mMap.addPolyline(new PolylineOptions().add(

@@ -102,8 +102,10 @@ public class InfoPageFragment extends Fragment {
         editText.append("\n");
 
         // Protected area
+        String protectedAreaString;
         if (protectedArea != null && !protectedArea.isEmpty()) {
-            editText.append(protectedArea); // Nothing to add to string - Will be written as is
+            protectedAreaString = getString(R.string.info_tab_protected_area_string, protectedArea);
+            editText.append(protectedAreaString);
             editText.append("\n");
         }
 
