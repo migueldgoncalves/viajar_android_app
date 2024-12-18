@@ -2,5 +2,6 @@
 <resources>
     <string name="info_tab_altitude_string">%1$d metros</string>
     <string name="info_tab_altitude_string_singular">1 metro</string>
-    <string name="info_tab_island_string">%1$s</string>
+    <string name="info_tab_island_string">Ilha: %1$s</string>
+    <string name="info_tab_protected_area_string">Área protegida: %1$s</string>
 </resources>

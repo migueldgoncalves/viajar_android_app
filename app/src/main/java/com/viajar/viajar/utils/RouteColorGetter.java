@@ -106,7 +106,8 @@ public class RouteColorGetter {
         // Spain - Either autovía (Ex: A-1) or autopista (Ex: AP-1)
 
         String[] spanishHighways = new String[]{
-                "RM-2", "RM-16"
+                "CV-80",
+                "RM-2", "RM-16", "RM-17"
         };
 
         if ((routeName == null) || (routeName.isEmpty()))
@@ -158,7 +159,10 @@ public class RouteColorGetter {
         // Specific to Spain
         // Only specific autovías have orange background - Call before isAutoviaWithGreenBackground
         String[] autovias = new String[]{
-                "A-92", "A-92G", "A-92M", "A-92N", "A-316", "A-318", "A-381", "A-382", "M-45"
+                "A-92", "A-92G", "A-92M", "A-92N", "A-316", "A-318", "A-381", "A-382",
+                "CV-80",
+                "M-45",
+                "RM-17"
         };
         return (Arrays.asList(autovias).contains(routeName));
     }
@@ -279,9 +283,11 @@ public class RouteColorGetter {
         else if (railway.contains("F") && railway.contains("Metro do Porto")) // Ex: "Linhas A/B/C/E/F - Metro do Porto"
             return Color.parseColor("#f68B1f"); // Orange
         // Madrid
-        else if (railway.contains("Linha 1 - Metro de Madrid"))
+        else if (railway.contains("Line 1 - Madrid Metro"))
             return Color.parseColor("#39b5e6"); // Light blue
-        else if (railway.contains("Linha 8 - Metro de Madrid"))
+        else if (railway.contains("Line 6 - Madrid Metro"))
+            return Color.parseColor("#999999"); // Grey
+        else if (railway.contains("Line 8 - Madrid Metro"))
             return Color.parseColor("#f373b7"); // Pink
         // Valencia
         else if (railway.contains("Linha 1 - Metrovalencia"))
@@ -325,15 +331,15 @@ public class RouteColorGetter {
     }
 
     public static boolean isRiverWaterway(String meansTransport, String routeName) {
-        return (isWaterway(meansTransport) && (!routeName.contains("Costa")) && (meansTransport.equals(TravelActivity.BOAT))); // Costa == Coast
+        return (isWaterway(meansTransport) && !routeName.contains("Coast") && meansTransport.equals(TravelActivity.BOAT));
     }
 
     public static boolean isCoastWaterway(String meansTransport, String routeName) {
-        return (isWaterway(meansTransport) && (routeName.contains("Costa"))); // Costa == Coast
+        return (isWaterway(meansTransport) && routeName.contains("Coast"));
     }
 
     public static boolean isOceanWaterway(String meansTransport, String routeName) {
-        return (isWaterway(meansTransport) && (!routeName.contains("Costa")) && (meansTransport.equals(TravelActivity.SHIP)));
+        return (isWaterway(meansTransport) && !routeName.contains("Coast") && meansTransport.equals(TravelActivity.SHIP));
     }
 
     // Other means of transport
