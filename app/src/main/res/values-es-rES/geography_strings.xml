@@ -17,6 +17,7 @@
     <string name="intermunicipal_entity">Entidad Intermunicipal</string>
     <string name="region">Región</string>
     <string name="autonomous_region">Región Autónoma</string>
+    <string name="acores">Açores</string>
     <!--    Common to Portugal and Spain-->
     <string name="district">Distrito</string>
     <!--    Specific to Spain-->

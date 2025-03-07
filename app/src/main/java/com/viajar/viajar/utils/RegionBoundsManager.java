@@ -11,6 +11,7 @@ import com.viajar.viajar.R;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class RegionBoundsManager {
 
@@ -178,17 +179,28 @@ public class RegionBoundsManager {
         double westernmostLongitude;
         double easternmostLongitude;
 
-        if (locationInfo.getCountry().equals(context.getString(R.string.portugal)) && ((LocationInfoPortugal) locationInfo).getDistrict().equals("Açores")) {
-            northernmostLatitude = 39.727435; // Ilhéu do Torrão, north of the Ilha do Corvo
-            southernmostLatitude = 36.927742; // Ponta do Castelo, Ilha de Santa Maria
-            westernmostLongitude = -31.275617; // Ilhéu de Monchique, west of the Ilha das Flores
-            easternmostLongitude = -24.780056; // Ilhéus das Formigas, between the Ilha de São Miguel and the Ilha de Santa Maria
-        } else { // Iberian Peninsula, Balearic Islands, and locations beyond the Iberian Peninsula
+        if (locationInfo.getCountry().equals(context.getString(R.string.portugal)) && ((LocationInfoPortugal) locationInfo).getDistrict().equals(context.getString(R.string.acores))) { // Açores islands
+            northernmostLatitude = 39.727435; // Ilhéu do Torrão, north of Corvo Island
+            southernmostLatitude = 36.927742; // Ponta do Castelo, Santa Maria Island
+            westernmostLongitude = -31.275617; // Ilhéu de Monchique, west of Flores Island
+            easternmostLongitude = -24.780056; // Ilhéus das Formigas, between São Miguel Island and Santa Maria Island
+
+        } else if (locationInfo.isInIberianPeninsula(context)) { // Iberian Peninsula, Balearic Islands, Ceuta, and Melilla
             northernmostLatitude = 43.783333; // Punta de Estaca de Bares, A Coruña
-            southernmostLatitude = 36.0; // Punta de Tarifa, Cádiz
+            // southernmostLatitude = 36.0; // Punta de Tarifa, Cádiz
+            southernmostLatitude = 35.265629; // Southernmost point of Melilla
             westernmostLongitude = -9.500587; // Cabo da Roca, Lisbon
             // easternmostLongitude = 3.322270; // Cap de Creus, Girona
             easternmostLongitude = 4.327554; // Punta de S'Esperó, Menorca Island, Balearic Islands
+
+        } else { // Locations beyond the Iberian Peninsula
+            int latitudeDegrees = 2; // In the Iberian Peninsula, 1 degree of longitude and latitude is very approximately 100 km
+            int longitudeDegrees = 2;
+
+            northernmostLatitude = locationInfo.getLatitude() + latitudeDegrees;
+            southernmostLatitude = locationInfo.getLatitude() - latitudeDegrees;
+            westernmostLongitude = locationInfo.getLongitude() - longitudeDegrees;
+            easternmostLongitude = locationInfo.getLongitude() + longitudeDegrees;
         }
 
         return new LatLng[]{
@@ -219,7 +231,7 @@ public class RegionBoundsManager {
                     intermunicipalEntity.equals("Alentejo Litoral"))
                 return alentejo;
             else if (Arrays.asList("Lisboa", "Santarém", "Leiria").contains(district) ||
-                    intermunicipalEntity.equals("Área Metropolitana de Lisboa")) // Approx. Lisboa e Vale do Tejo
+                    intermunicipalEntity.equals("Península de Setúbal")) // Approx. Lisboa e Vale do Tejo
                 return lisboaValeTejo;
             else if (Arrays.asList("Coimbra", "Aveiro", "Viseu").contains(district)) // Approx. Beira Litoral
                 return beiraLitoral;
@@ -317,8 +329,7 @@ public class RegionBoundsManager {
             else if (district.equals("Portalegre"))
                 return portalegre;
             // Lisbon and Tagus Valley
-            else if ((district.equals("Setúbal")) && ( // Península de Setúbal
-                    intermunicipalEntity.equals("Área Metropolitana de Lisboa")))
+            else if (intermunicipalEntity.equals("Península de Setúbal"))
                 return peninsulaSetubal;
             else if (district.equals("Lisboa"))
                 return lisboa;

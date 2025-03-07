@@ -2,10 +2,13 @@ package com.viajar.viajar;
 
 // A data object with all information concerning a location
 
+import android.content.Context;
+
 import com.viajar.viajar.utils.Coordinate;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 
@@ -126,8 +129,8 @@ public class LocationInfo {
         this.destinations.put(Arrays.asList(locationName, meansTransport), destinations);
     }
 
-    public HashMap<List<String>, String> getRouteNames() {
-        return routeNames;
+    public Collection<String> getRouteNames() {
+        return routeNames.values();
     }
 
     public void setRouteNames(HashMap<List<String>, String> routeNames) {
@@ -164,6 +167,15 @@ public class LocationInfo {
 
     public Double[] getCoordinates() {
         return coordinates;
+    }
+
+    public boolean isSameLocation(double latitude, double longitude) {
+        return (latitude == this.getLatitude()) && (longitude == this.getLongitude());
+    }
+
+    public boolean isInIberianPeninsula(Context context) {
+        List<String> allIberianPeninsulaCountries = Arrays.asList(context.getString(R.string.portugal), context.getString(R.string.spain), context.getString(R.string.gibraltar_short_name), context.getString(R.string.andorra));
+        return allIberianPeninsulaCountries.contains(this.getCountry());
     }
 
     public Coordinate getCoordinatesAsObject() {

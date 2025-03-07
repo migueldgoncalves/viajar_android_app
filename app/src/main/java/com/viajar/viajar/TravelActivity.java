@@ -714,7 +714,7 @@ public class TravelActivity extends AppCompatActivity implements OnMapsSdkInitia
                         }
                     }
                 }
-            } else { // Shows all current connections (except plane connections if plane is not current means of transport)
+            } else { // Show current map. To reduce system load, only the connections to surrounding locations + the current routes if any, will be drawn
                 for (String[] connectionCoordinates : allConnectionsCoordinates) {
                     Double latitude1 = Double.valueOf(connectionCoordinates[0]);
                     Double longitude1 = Double.valueOf(connectionCoordinates[1]);
@@ -723,16 +723,11 @@ public class TravelActivity extends AppCompatActivity implements OnMapsSdkInitia
                     String routeName = connectionCoordinates[4];
                     String meansTransport = connectionCoordinates[5];
 
-                    // If plane is the current means of transport, draws only plane connections
-                    if (meansTransport.equals(PLANE) != currentTransportMeans.equals(PLANE))
-                        continue;
-
-                    // Displays connections whose locations are up to ~100 km from the current location
-                    int maxDistanceCoordinates = 1; // ~= 100 km in a very approximate way in the Iberian Peninsula
-                    if ((Math.abs(latitude1 - currentLocation.getLatitude()) > maxDistanceCoordinates) || (Math.abs(latitude2 - currentLocation.getLatitude()) > maxDistanceCoordinates)) {
-                        continue;
-                    } else if ((Math.abs(longitude1 - currentLocation.getLongitude()) > maxDistanceCoordinates) || (Math.abs(longitude2 - currentLocation.getLongitude()) > maxDistanceCoordinates)) {
-                        continue;
+                    // Draw only the connections available at this location OR the connections belonging to the routes where the current location is
+                    if (!currentLocation.isSameLocation(latitude1, longitude1) && !currentLocation.isSameLocation(latitude2, longitude2)) {
+                        if (!currentLocation.getRouteNames().contains(routeName)) {
+                            continue;
+                        }
                     }
 
                     int lineColor = RouteColorGetter.getRouteLineColor(routeName, meansTransport);
