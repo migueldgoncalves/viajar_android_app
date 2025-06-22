@@ -146,7 +146,7 @@ public class RouteColorGetter {
             return false;
 
         // Generic use case - Valid for most scenarios in countries such as Portugal and France
-        Pattern genericPattern = Pattern.compile("A\\d+"); // A1, A9, A99, A999, A999, etc.
+        Pattern genericPattern = Pattern.compile("^A\\d+"); // A1, A9, A99, A999, A999, etc.
         Matcher genericMatcher = genericPattern.matcher(routeName);
 
         if (genericMatcher.find()) {
@@ -159,9 +159,9 @@ public class RouteColorGetter {
         }
 
         // Handles many Spanish autovías
-        Pattern autoviaPattern = Pattern.compile("A-\\d{1,2}"); // A-1, A-9, A-10, A-99
+        Pattern autoviaPattern = Pattern.compile("^A-\\d{1,2}"); // A-1, A-9, A-10, A-99
         Matcher autoviaMatcher = autoviaPattern.matcher(routeName);
-        Pattern nonAutoviaPattern = Pattern.compile("A-\\d{3,}"); // A-100, A-999, etc. By default, not an autovía
+        Pattern nonAutoviaPattern = Pattern.compile("^A-\\d{3,}"); // A-100, A-999, etc. By default, not an autovía
         Matcher nonAutoviaMatcher = nonAutoviaPattern.matcher(routeName);
 
         if (autoviaMatcher.find() && !nonAutoviaMatcher.find()) {

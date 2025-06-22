@@ -49,6 +49,7 @@ public class RouteColorGetterTest extends TestCase {
         assertFalse(RouteColorGetter.isHighway("A-999"));
         assertFalse(RouteColorGetter.isHighway("A-1000"));
         assertFalse(RouteColorGetter.isHighway("A-9999"));
+        assertFalse(RouteColorGetter.isHighway("SA-20"));
     }
 
     public void testIsHighwaySpainException() {

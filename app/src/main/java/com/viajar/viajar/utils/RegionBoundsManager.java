@@ -282,7 +282,7 @@ public class RegionBoundsManager {
                 return aragon;
             else if (Arrays.asList("Lleida", "Tarragona").contains(province))
                 return westernCatalonia;
-            else if (Arrays.asList("Girona / Gerona", "Barcelona").contains(province))
+            else if (Arrays.asList("Girona", "Barcelona").contains(province))
                 return easternCatalonia;
             else if (autonomousCommunity.equals("Comunidade Valenciana"))
                 return valencianCommunity;
@@ -419,12 +419,12 @@ public class RegionBoundsManager {
                 // Catalonia
                 case "Lleida" -> lleida;
                 case "Tarragona" -> tarragona;
-                case "Girona / Gerona" -> girona;
+                case "Girona" -> girona;
                 case "Barcelona" -> barcelona;
                 // Valencian Community
-                case "Castelló de la Plana / Castellón de la Plana" -> castellonDeLaPlana;
-                case "València / Valencia" -> valencia;
-                case "Alacant / Alicante" -> alicante;
+                case "Castellón de la Plana" -> castellonDeLaPlana;
+                case "Valencia" -> valencia;
+                case "Alicante" -> alicante;
                 default -> null;
             };
         } else if (locationInfo.getCountry().equals(context.getString(R.string.gibraltar_short_name))) {
