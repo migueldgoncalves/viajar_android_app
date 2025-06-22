@@ -9,8 +9,8 @@ android {
         applicationId "com.viajar.viajar"
         minSdkVersion 23
         targetSdkVersion 34
-        versionCode 81
-        versionName "1.18.8"
+        versionCode 82
+        versionName "1.18.9"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
@@ -47,26 +47,26 @@ android {
 
 dependencies {
 
-    implementation 'androidx.appcompat:appcompat:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.7.1'
     implementation 'com.google.android.material:material:1.12.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    implementation 'com.google.android.gms:play-services-maps:19.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.2.1'
+    implementation 'com.google.android.gms:play-services-maps:19.2.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'androidx.preference:preference:1.2.1'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.2.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
 
-    def fragment_version = "1.8.3"
+    def fragment_version = "1.8.8"
 
     implementation "androidx.fragment:fragment:$fragment_version"
 
-    def room_version = "2.6.1"
+    def room_version = "2.7.2"
 
     implementation "androidx.room:room-runtime:$room_version"
     annotationProcessor "androidx.room:room-compiler:$room_version"
 
-    def lifecycle_version = "2.8.5"
+    def lifecycle_version = "2.9.1"
     // Introduced after this situation occurred: https://stackoverflow.com/questions/69817925/problem-duplicate-class-androidx-lifecycle-viewmodel-found-in-modules
     implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
