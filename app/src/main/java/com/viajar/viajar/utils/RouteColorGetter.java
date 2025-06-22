@@ -5,6 +5,8 @@ import android.graphics.Color;
 import com.viajar.viajar.TravelActivity;
 
 import java.util.Arrays;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Returns the color associated with connection lines drawn on maps and destination views backgrounds
@@ -28,6 +30,41 @@ public class RouteColorGetter {
     private static final int redRouteHighlight = Color.RED; // Ex: Portuguese Itinerários Principais
     private static final int greenRouteHighlight = Color.parseColor("#009900"); // Ex: Some autovías in Andaluzia
     private static final int orangeRouteHighlight = Color.parseColor("#ff9900"); // Ex: Spanish autovías M-45 and A-92
+
+    private static final String[] specialHighwayNames = new String[]{
+            "A20/IC23 VCI/Ponte do Freixo", "A20/IC23 VCI/Freixo Bridge",       // Portugal
+            "A-376", "A-381", "A-483", "A-497", "A-8009", "A-8057", "A-8058",   // Andalucía
+            "AG-51",                                                            // Galícia
+            "AV-20",                                                            // Ávila
+            "B-23",                                                             // Barcelona
+            "CA-34", "CA-35",                                                   // Cádiz
+            "CM-41",                                                            // Castilla-La Mancha
+            "CO-32",                                                            // Córdoba
+            "CV-80",                                                            // Comunitat Valenciana
+            "EX-A1", "EX-A2",                                                   // Extremadura
+            "GR-30",                                                            // Granada
+            "H-30", "H-31",                                                     // Huelva
+            "M-11", "M-12", "M-13/M-14", "M-13", "M-14", "M-23", "M-30",        // Comunidad de Madrid
+            "M-30 - Avenida de la Ilustración", "M-30 - Bypass Sul", "M-31",
+            "M-40", "M-45", "M-45/M-50", "M-50", "M-607",
+            "MA-20", "MA-23",                                                   // Málaga
+            "PT-10",                                                            // Puertollano
+            "RM-2", "RM-16", "RM-17",                                           // Región de Murcia
+            "SE-20", "SE-30", "SE-40",                                          // Seville
+            "V-31", "V-31 - Avinguda d'Ausiàs March",                           // Valencia
+            "VRI",                                                              // Portugal
+    };
+
+    private static final String[] autoviasWithOrangeBackground = new String[]{ // Specific to Spain
+            "A-92", "A-92G", "A-92M", "A-92N", "A-316", "A-318", "A-381", "A-382",
+            "CV-80",
+            "M-45",
+            "RM-17"
+    };
+
+    private static final String[] autoviasWithGreenBackground = new String[] { // Specific to Spain
+            "A-376", "A-483", "A-497", "A-8009", "A-8057", "A-8058",
+    };
 
     // General
 
@@ -105,101 +142,58 @@ public class RouteColorGetter {
         // Portugal - auto-estrada (Ex: A1)
         // Spain - Either autovía (Ex: A-1) or autopista (Ex: AP-1)
 
-        String[] spanishHighways = new String[]{
-                "CM-41",
-                "CV-80",
-                "RM-2", "RM-16", "RM-17"
-        };
-
         if ((routeName == null) || (routeName.isEmpty()))
             return false;
 
-        return (
-                // Generic highways
-                routeName.startsWith("A-") || // State autovía (also autovía from Andalucía)
-                        routeName.startsWith("AP-") || // State autopista
-                        routeName.startsWith("R-") || // Radial
-                        (routeName.charAt(0) == 'A' && ((routeName.length() == 2) || (routeName.length() == 3))) || // Ex: A2, A22
-                        routeName.equals("A2 - 25 de Abril Bridge") ||
-                        routeName.equals("A9 CREL") ||
-                        routeName.equals("A13-1") ||
-                        routeName.equals("A26-1") ||
-                        routeName.equals("A10 - Ponte da Lezíria") ||
-                        routeName.equals("A12 - Ponte Vasco da Gama") ||
-                        routeName.equals("A41 CREP") ||
-                        routeName.equals("VRI") ||
-                        routeName.contains("IC23 VCI") || // Ex: A20/IC23 VCI/Ponte do Freixo
-                        routeName.contains("A4 - ") || // Ex: A4 - Avenida da Liberdade
-                        routeName.contains("A28 - ") || // Ex: A28 - Avenida da Associação Empresarial de Portugal
+        // Generic use case - Valid for most scenarios in countries such as Portugal and France
+        Pattern genericPattern = Pattern.compile("A\\d+"); // A1, A9, A99, A999, A999, etc.
+        Matcher genericMatcher = genericPattern.matcher(routeName);
 
-                        // Spanish autonomous community autovías
-                        routeName.startsWith("EX-A") || // Extremadura
-                        routeName.startsWith("M-") || // Comunidad de Madrid
-                        routeName.startsWith("AG-") || // Galicia
+        if (genericMatcher.find()) {
+            return true;
+        }
 
-                        // Spanish provincial autovías
-                        routeName.startsWith("CA-") || // Cádiz
-                        routeName.startsWith("CO-") || // Córdoba
-                        routeName.startsWith("GR-") || // Granada
-                        routeName.startsWith("H-") || // Huelva
-                        routeName.startsWith("MA-") || // Málaga
-                        routeName.startsWith("SE-") || // Seville
-                        routeName.startsWith("TO-") || // Toledo
-                        routeName.startsWith("AV-") || // Ávila
-                        routeName.startsWith("V-") || // Valencia
-                        routeName.startsWith("PT-") || // Puertollano (city in the Ciudad Real province)
-                        routeName.startsWith("B-") || // Barcelona
+        // Handles most Spanish autopistas
+        if ((routeName.startsWith("AP-")) || routeName.startsWith("R-")) {
+            return true;
+        }
 
-                        // Spanish autovías and autopistas (freeways)
-                        Arrays.asList(spanishHighways).contains(routeName)
-        );
+        // Handles many Spanish autovías
+        Pattern autoviaPattern = Pattern.compile("A-\\d{1,2}"); // A-1, A-9, A-10, A-99
+        Matcher autoviaMatcher = autoviaPattern.matcher(routeName);
+        Pattern nonAutoviaPattern = Pattern.compile("A-\\d{3,}"); // A-100, A-999, etc. By default, not an autovía
+        Matcher nonAutoviaMatcher = nonAutoviaPattern.matcher(routeName);
+
+        if (autoviaMatcher.find() && !nonAutoviaMatcher.find()) {
+            return true;
+        }
+
+        // Handles special names
+        return (Arrays.asList(specialHighwayNames).contains(routeName));
     }
 
     public static boolean isAutoviaWithOrangeBackground(String routeName) {
         // Specific to Spain
-        // Only specific autovías have orange background - Call before isAutoviaWithGreenBackground
-        String[] autovias = new String[]{
-                "A-92", "A-92G", "A-92M", "A-92N", "A-316", "A-318", "A-381", "A-382",
-                "CV-80",
-                "M-45",
-                "RM-17"
-        };
-        return (Arrays.asList(autovias).contains(routeName));
+        return (Arrays.asList(autoviasWithOrangeBackground).contains(routeName));
     }
 
     public static boolean isAutoviaWithGreenBackground(String routeName) {
         // Specific to Spain
-        // Ex: some autovías in Andalucía, such as A-483
-        // Must be called after isAutoviaWithOrangeBackground - This routine is more generic
-        if (routeName == null)
-            return false;
-
-        if (routeName.startsWith("A-")) {
-            if ((routeName.contains(" ")) && (routeName.split(" ")[0].split("A-")[1].length() >= 3)) // Ex: A-7 - Ronda Oeste de Málaga
-                return true;
-            else if ((routeName.contains("/")) && (routeName.split("/")[0].split("A-")[1].length() >= 3)) // Ex: A-7/AP-7
-                return true;
-            else
-                return (routeName.split("A-")[1].length() >= 3) &&
-                        !(routeName.contains(" ")) &&
-                        !(routeName.contains("/")); // Ex: A-483
-        } else {
-            return false;
-        }
+        return (Arrays.asList(autoviasWithGreenBackground).contains(routeName));
     }
 
     // Other roads
 
     public static boolean isItinerarioPrincipal(String routeName) {
         // Specific to Portugal
-        if ((routeName == null) || (routeName.length() == 0))
+        if ((routeName == null) || (routeName.isEmpty()))
             return false;
         return (routeName.startsWith("IP"));
     }
 
     public static boolean isItinerarioComplementar(String routeName) {
         // Specific to Portugal
-        if ((routeName == null) || (routeName.length() == 0))
+        if ((routeName == null) || (routeName.isEmpty()))
             return false;
         else if (routeName.equals("Eixo Sul"))
             return true;
@@ -208,7 +202,7 @@ public class RouteColorGetter {
 
     // Specific to Spain
     public static boolean isCarreteraDelEstado(String routeName) {
-        if ((routeName == null) || (routeName.length() == 0))
+        if ((routeName == null) || (routeName.isEmpty()))
             return false;
 
         return (
