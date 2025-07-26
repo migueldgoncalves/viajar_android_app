@@ -46,12 +46,12 @@ public class RouteColorGetter {
             "H-30", "H-31",                                                     // Huelva
             "M-11", "M-12", "M-13/M-14", "M-13", "M-14", "M-23", "M-30",        // Comunidad de Madrid
             "M-30 - Avenida de la Ilustración", "M-30 - Bypass Sul", "M-31",
-            "M-40", "M-45", "M-45/M-50", "M-50", "M-607",
+            "M-40", "M-45", "M-45/M-50", "M-50", "M-50/R-2", "M-607",
             "MA-20", "MA-23",                                                   // Málaga
             "PT-10",                                                            // Puertollano
             "RM-2", "RM-16", "RM-17",                                           // Región de Murcia
             "SE-20", "SE-30", "SE-40",                                          // Seville
-            "V-31", "V-31 - Avinguda d'Ausiàs March",                           // Valencia
+            "V-11", "V-31", "V-31 - Avinguda d'Ausiàs March",                   // Valencia
             "VRI",                                                              // Portugal
     };
 
@@ -226,72 +226,188 @@ public class RouteColorGetter {
     // Railways
 
     public static int getColorByStandardRailway(String railway) {
-        // Given the name of a railway (ex: Linha do Sul - Intercidades, Linha do Sado - CP Lisboa), returns
-        //  the color to use to represent the line. Ex: Sado Line is blue, while Cascais Line is yellow
+        // Given the name of a railway (ex: Sul Line, Sado Line), returns the color to use to represent the line.
+        //  Ex: Sado Line is blue, while Cascais Line is yellow
 
         // TRAIN - Add new train lines HERE
 
-        // Lisbon
-        if (railway.contains("Sado Line"))
-            return Color.BLUE;
-        else if (railway.contains("Fertagus Line"))
-            return Color.parseColor("#6fa8dc"); // Light blue
-        else if (railway.contains("Linha de Sintra") && railway.contains("CP Lisboa"))
-            return Color.parseColor("#008000"); // Green
-        else if (railway.contains("Azambuja Line"))
-            return Color.parseColor("#be2c2c"); // Reddish-brown
-        else if (railway.contains("Cascais Line"))
-            return Color.parseColor("#ffab2e"); // Yellow
-        // Coimbra
-        else if (railway.contains("Urbanos de Coimbra"))
-            return Color.parseColor("#3c3c3c"); // Dark gray
-        // Porto
-        else if (railway.contains("Linha de Aveiro"))
-            return Color.parseColor("#ffa700"); // Yellow
-        else if (railway.contains("Linha do Marco de Canaveses"))
-            return Color.parseColor("#0083d7"); // Blue
-        else if (railway.contains("Linha de Guimarães") && !railway.contains("Intercidades")) // Only suburban stretches should be receive this color
-            return Color.parseColor("#e62621"); // Red
-        else if (railway.contains("Linha de Braga"))
-            return Color.parseColor("#009c5a"); // Green
-        // Madrid
-        else if (railway.contains("C-1"))
-            return Color.parseColor("#66aede"); // Blue
-        else if (railway.contains("C-3"))
-            return Color.parseColor("#6a329f"); // Purple
+        // Lisbon suburban railways
+        if (railway.contains("Sado"))
+            return Color.parseColor("#0000ff");
+        else if (railway.contains("Fertagus"))
+            return Color.parseColor("#6fa8dc");
+        else if (railway.contains("Sintra"))
+            return Color.parseColor("#008000");
+        else if (railway.contains("Azambuja"))
+            return Color.parseColor("#be2c2c");
+        else if (railway.contains("Cascais"))
+            return Color.parseColor("#ffab2e");
+
+        // Coimbra suburban railways
+        else if (railway.contains("Coimbra"))
+            return Color.parseColor("#3c3c3c");
+
+        // Porto suburban railways
+        else if (railway.contains("Aveiro Line")) // To distinguish from the Aveiro Branch Line
+            return Color.parseColor("#ffa700");
+        else if (railway.contains("Marco de Canaveses"))
+            return Color.parseColor("#0083d7");
+        else if (railway.contains("Guimarães"))
+            return Color.parseColor("#e62621");
+        else if (railway.contains("Braga"))
+            return Color.parseColor("#009c5a");
+        else if (railway.contains("Leixões"))
+            return Color.parseColor("#a887a6");
+
+        // Madrid suburban railways
+        else if (railway.contains("Cercanías Madrid")) {
+            if (railway.contains("C-1") && !railway.contains("C-10"))
+                return Color.parseColor("#66aede");
+            else if (railway.contains("C-2"))
+                return Color.parseColor("#008A29");
+            else if (railway.contains("C-3"))
+                return Color.parseColor("#6a329f");
+            else if (railway.contains("C-4"))
+                return Color.parseColor("#00289C");
+            else if (railway.contains("C-5"))
+                return Color.parseColor("#FAB700");
+            // Line C-6 of Madrid suburban railways was absorbed by line C-5
+            else if (railway.contains("C-7"))
+                return Color.parseColor("#DE0118");
+            else if (railway.contains("C-8"))
+                return Color.parseColor("#a0a0a0");
+            else if (railway.contains("C-9"))
+                return Color.parseColor("#926037");
+            else if (railway.contains("C-10"))
+                return Color.parseColor("#8FBE00");
+        }
+
+        // Seville suburban railways
+        else if (railway.contains("Cercanías Sevilla")) {
+            if (railway.contains("C-1"))
+                return Color.parseColor("#69B3E7");
+            if (railway.contains("C-2"))
+                return Color.parseColor("#009739");
+            if (railway.contains("C-3"))
+                return Color.parseColor("#EF3340");
+            if (railway.contains("C-4"))
+                return Color.parseColor("#BB29BB");
+            if (railway.contains("C-5"))
+                return Color.parseColor("#0033a0");
+        }
 
         // SUBWAY - Add new subway lines HERE
 
-        // Lisbon
-        else if (railway.contains("Linha Vermelha - Metro de Lisboa"))
-            return Color.RED;
-        // Porto
-        else if (railway.contains("A") && railway.contains("Metro do Porto")) // Ex: "Linhas A/B/C/E/F - Metro do Porto"
-            return Color.parseColor("#3caeef"); // Blue
-        else if (railway.contains("B") && railway.contains("Metro do Porto")) // Ex: "Linhas A/B/Bx/C/E/F - Metro do Porto"
-            return Color.parseColor("#e62621"); // Red
-        else if (railway.contains("C") && railway.contains("Metro do Porto")) // Ex: "Linhas A/B/C/E/F - Metro do Porto"
-            return Color.parseColor("#8bc63e"); // Green
-        else if (railway.contains("D") && railway.contains("Metro do Porto")) // Ex: "Linhas A/B/C/E/F - Metro do Porto"
-            return Color.parseColor("#f9c212"); // Yellow
-        else if (railway.contains("E") && railway.contains("Metro do Porto")) // Ex: "Linhas A/B/C/E/F - Metro do Porto"
-            return Color.parseColor("#937bb8"); // Purple
-        else if (railway.contains("F") && railway.contains("Metro do Porto")) // Ex: "Linhas A/B/C/E/F - Metro do Porto"
-            return Color.parseColor("#f68B1f"); // Orange
-        // Madrid
-        else if (railway.contains("Line 1 - Madrid Metro"))
-            return Color.parseColor("#39b5e6"); // Light blue
-        else if (railway.contains("Line 6 - Madrid Metro"))
-            return Color.parseColor("#999999"); // Grey
-        else if (railway.contains("Line 8 - Madrid Metro"))
-            return Color.parseColor("#f373b7"); // Pink
-        // Valencia
-        else if (railway.contains("Linha 1 - Metrovalencia"))
-            return Color.parseColor("#fdc600"); // Yellow
+        // Lisbon Metro
+        else if (railway.contains("Lisbon Metro")) {
+            if (railway.contains("Red"))
+                return Color.parseColor("#DF096F");
+            else if (railway.contains("Green"))
+                return Color.parseColor("#00AA40");
+            else if (railway.contains("Blue"))
+                return Color.parseColor("#4E84C4");
+            else if (railway.contains("Yellow"))
+                return Color.parseColor("#F4BC18");
+        }
+
+        // Porto Metro
+        else if (railway.contains("Porto Metro")) {
+            if (railway.contains("A"))
+                return Color.parseColor("#3caeef");
+            else if (railway.contains("B"))
+                return Color.parseColor("#e62621");
+            else if (railway.contains("C"))
+                return Color.parseColor("#8bc63e");
+            else if (railway.contains("D"))
+                return Color.parseColor("#f9c212");
+            else if (railway.contains("E"))
+                return Color.parseColor("#937bb8");
+            else if (railway.contains("F"))
+                return Color.parseColor("#f68B1f");
+        }
+
+        // Metro Sul do Tejo (== South Tagus)
+        else if (railway.contains("Metro Sul do Tejo")) {
+            // Has Y-shape and 3 lines, most stations are served by 2 lines
+            if (railway.contains("1") && railway.contains("3")) // Display color of line 1
+                return Color.parseColor("#218FCE");
+            else if (railway.contains("1") && railway.contains("2")) // Display color of line 2
+                return Color.parseColor("#F7941C");
+            else // Display color of line 3
+                return Color.parseColor("#A2A730");
+        }
+
+        // Madrid Metro
+        if (railway.contains("Madrid Metro")) {
+            if (railway.contains("1") && !railway.contains("10") && !railway.contains("11") && !railway.contains("12"))
+                return Color.parseColor("#39b5e6");
+            else if (railway.contains("2"))
+                return Color.parseColor("#fb0f0c");
+            else if (railway.contains("3"))
+                return Color.parseColor("#FFDF00");
+            else if (railway.contains("4"))
+                return Color.parseColor("#824100");
+            else if (railway.contains("5"))
+                return Color.parseColor("#96bf0d");
+            else if (railway.contains("6"))
+                return Color.parseColor("#999999");
+            else if (railway.contains("7"))
+                return Color.parseColor("#ff8501");
+            else if (railway.contains("8"))
+                return Color.parseColor("#f373b7");
+            else if (railway.contains("9"))
+                return Color.parseColor("#9F1F99");
+            else if (railway.contains("10"))
+                return Color.parseColor("#003da6");
+            else if (railway.contains("11"))
+                return Color.parseColor("#00953b");
+            else if (railway.contains("12"))
+                return Color.parseColor("#a19200");
+            else if (railway.contains("R"))
+                return Color.parseColor("#ffffff");
+            else if (railway.contains("ML1"))
+                return Color.parseColor("#287ee2");
+            else if (railway.contains("ML2"))
+                return Color.parseColor("#aa148e");
+            else if (railway.contains("ML3"))
+                return Color.parseColor("#ff4336");
+            else if (railway.contains("ML4"))
+                return Color.parseColor("#77ba26");
+        }
+
+        // Valencia Metro (known as Metrovalencia)
+        else if (railway.contains("Metrovalencia")) {
+            if (railway.contains("1") && !railway.contains("10"))
+                return Color.parseColor("#E6B036");
+            else if (railway.contains("2"))
+                return Color.parseColor("#D23983");
+            else if (railway.contains("3"))
+                return Color.parseColor("#C21E2D");
+            else if (railway.contains("4"))
+                return Color.parseColor("#0F4583");
+            else if (railway.contains("5"))
+                return Color.parseColor("#008358");
+            else if (railway.contains("6"))
+                return Color.parseColor("#80629F");
+            else if (railway.contains("7"))
+                return Color.parseColor("#DB8319");
+            else if (railway.contains("8"))
+                return Color.parseColor("#41B1CB");
+            else if (railway.contains("9"))
+                return Color.parseColor("#AC7D4E");
+            else if (railway.contains("10"))
+                return Color.parseColor("#B3CB6D");
+        }
+
+        // Seville Metro
+        else if (railway.contains("Seville Metro")) {
+            if (railway.contains("1")) {
+                return Color.parseColor("#01820b");
+            }
+        }
 
         // Default - Likely intercity railways without assigned colors
-        else
-            return railwayColor;
+        return railwayColor;
     }
 
     public static boolean isRailway(String meansTransport) {
