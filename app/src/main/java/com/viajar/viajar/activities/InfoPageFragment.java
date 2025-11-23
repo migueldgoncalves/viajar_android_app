@@ -207,11 +207,14 @@ public class InfoPageFragment extends Fragment {
 
         // Municipality (Municipio in Spanish)
         // Galicia has instead Concellos (singular: Concello)
+        // Asturias has instead Concejos (singular: Concejo)
 
         // Municipality - Get field name
         String municipalityFieldName;
         if (autonomousCommunity.equals(getString(R.string.galicia))) // Galicia has concellos instead
             municipalityFieldName = getString(R.string.concello);
+        else if (autonomousCommunity.equals(getString(R.string.asturias))) // Asturias has concejos instead
+            municipalityFieldName = getString(R.string.concejo);
         else // Default
             municipalityFieldName = getString(R.string.municipio);
 

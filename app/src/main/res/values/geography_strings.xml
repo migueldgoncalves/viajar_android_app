@@ -28,10 +28,12 @@
     <string name="mancomunidad_integral">Mancomunidad integral/Comarca</string>
     <string name="no_mancomunidad_integral">Location is not in a mancomunidad integral/comarca</string>
     <string name="concello">Concello/Municipality</string>
+    <string name="concejo">Concejo/Municipality</string>
     <string name="parish_es">Parroquia/Parish</string>
     <string name="pedania">Pedanía/Suburban district</string>
     <string name="extremadura">Extremadura</string>
     <string name="galicia">Galiza</string>
+    <string name="asturias">Asturias</string>
     <string name="region_of_murcia">Região de Murcia</string>
     <!-- Specific to Andorra-->
     <string name="parish_ad">Parish</string>

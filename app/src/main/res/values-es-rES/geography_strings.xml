@@ -29,10 +29,12 @@
     <string name="mancomunidad_integral">Mancomunidad integral</string>
     <string name="no_mancomunidad_integral">El local no se encuentra en una mancomunidad integral</string>
     <string name="concello">Concello/Municipio</string>
+    <string name="concejo">Concejo/Municipio</string>
     <string name="parish_es">Parroquia</string>
     <string name="pedania">Pedanía</string>
     <string name="extremadura">Extremadura</string>
     <string name="galicia">Galiza</string>
+    <string name="asturias">Asturias</string>
     <string name="region_of_murcia">Região de Murcia</string>
     <!-- Specific to Andorra-->
     <string name="parish_ad">Parroquia</string>

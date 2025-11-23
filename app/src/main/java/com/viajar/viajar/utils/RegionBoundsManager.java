@@ -264,7 +264,7 @@ public class RegionBoundsManager {
                     autonomousCommunity.equals("Região de Murcia"))
                 return easternCastillaLaManchaAndMurcia;
             else if (Arrays.asList("León", "Zamora", "Salamanca").contains(province) ||
-                    autonomousCommunity.equals("Astúrias"))
+                    autonomousCommunity.equals("Asturias"))
                 return westernCastillaYLeonAndAsturias;
             else if (Arrays.asList("Palencia", "Valladolid", "Ávila").contains(province))
                 return centralCastillaYLeon;
@@ -399,7 +399,7 @@ public class RegionBoundsManager {
                 case "Ávila" -> avila;
                 case "Burgos" -> burgos;
                 case "Soria" -> soria;
-                case "Astúrias" -> asturias;
+                case "Asturias" -> asturias;
                 case "Cantábria" -> cantabria;
                 // Galicia
                 case "Pontevedra" -> pontevedra;
