@@ -11,7 +11,6 @@ import com.viajar.viajar.R;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 public class RegionBoundsManager {
 
@@ -19,6 +18,7 @@ public class RegionBoundsManager {
 
     // ADD SUBREGION DEFINITIONS HERE
 
+    // PORTUGAL
     // Algarve
     private final SubregionBounds sotaventoAlgarvio = new SubregionBounds("Sotavento Algarvio");
     private final SubregionBounds barlaventoAlgarvio = new SubregionBounds("Barlavento Algarvio");
@@ -47,7 +47,22 @@ public class RegionBoundsManager {
     // Azores - Eastern Group
     private final SubregionBounds islandSaoMiguel = new SubregionBounds("Ilha de São Miguel");
     private final SubregionBounds islandSantaMariaAndFormigas = new SubregionBounds("Ilha de Santa Maria e Ilhéus das Formigas");
+    // Azores - Central Group
+    private final SubregionBounds islandTerceira = new SubregionBounds("Ilha da Terceira");
+    private final SubregionBounds islandGraciosa = new SubregionBounds("Ilha da Graciosa");
+    private final SubregionBounds islandSaoJorge = new SubregionBounds("Ilha de São Jorge");
+    private final SubregionBounds islandPico = new SubregionBounds("Ilha do Pico");
+    private final SubregionBounds islandFaial = new SubregionBounds("Ilha do Faial");
+    // Azores - Western Group
+    private final SubregionBounds islandFlores = new SubregionBounds("Ilha das Flores");
+    private final SubregionBounds islandCorvo = new SubregionBounds("Ilha do Corvo");
+    // Madeira
+    private final SubregionBounds islandPortoSanto = new SubregionBounds("Ilha de Porto Santo");
+    private final SubregionBounds islandMadeira = new SubregionBounds("Ilha da Madeira");
+    private final SubregionBounds islandsDesertas = new SubregionBounds("Ilhas Desertas");
+    private final SubregionBounds islandsSelvagens = new SubregionBounds("Ilhas Selvagens");
 
+    // SPAIN
     // Andalucía
     private final SubregionBounds huelva = new SubregionBounds("Huelva");
     private final SubregionBounds sevilha = new SubregionBounds("Sevilha");
@@ -104,9 +119,27 @@ public class RegionBoundsManager {
     private final SubregionBounds castellonDeLaPlana = new SubregionBounds("Castellón de la Plana");
     private final SubregionBounds valencia = new SubregionBounds("Valencia");
     private final SubregionBounds alicante = new SubregionBounds("Alicante");
+    // Ceuta and Melilla
+    private final SubregionBounds ceuta = new SubregionBounds("Ceuta");
+    private final SubregionBounds melilla = new SubregionBounds("Melilla");
+    // Balearic Islands
+    private final SubregionBounds islandFormentera = new SubregionBounds("Isla de Formentera");
+    private final SubregionBounds islandMallorca = new SubregionBounds("Isla de Mallorca");
+    private final SubregionBounds islandIbiza = new SubregionBounds("Isla de Ibiza");
+    private final SubregionBounds islandMenorca = new SubregionBounds("Isla de Menorca");
+    // Canary Islands
+    private final SubregionBounds islandElHierro = new SubregionBounds("Isla de El Hierro");
+    private final SubregionBounds islandLaPalma = new SubregionBounds("Isla de La Palma");
+    private final SubregionBounds islandLaGomera = new SubregionBounds("Isla de La Gomera");
+    private final SubregionBounds islandTenerife = new SubregionBounds("Isla de Tenerife");
+    private final SubregionBounds islandGranCanaria = new SubregionBounds("Isla de Gran Canaria");
+    private final SubregionBounds islandFuerteventura = new SubregionBounds("Isla de Fuerteventura");
+    private final SubregionBounds islandsLanzaroteAndLaGraciosa = new SubregionBounds("Isla de Lanzarote + Isla de La Graciosa");
 
+    // GIBRALTAR
     private final SubregionBounds gibraltar = new SubregionBounds("Gibraltar");
 
+    // ANDORRA
     private final SubregionBounds santJuliaDeLoria = new SubregionBounds("Sant Julià de Lòria");
     private final SubregionBounds andorraLaVella = new SubregionBounds("Andorra la Vella");
     private final SubregionBounds canillo = new SubregionBounds("Canillo");
@@ -119,6 +152,7 @@ public class RegionBoundsManager {
 
     // ADD REGION DEFINITIONS HERE
 
+    // Portugal
     private final RegionBounds algarve = new RegionBounds("Algarve");
     private final RegionBounds alentejo = new RegionBounds("Alentejo");
     private final RegionBounds lisboaValeTejo = new RegionBounds("Lisboa e Vale do Tejo"); // Approx. Lisboa e Vale do Tejo
@@ -127,10 +161,15 @@ public class RegionBoundsManager {
     private final RegionBounds entreDouroMinho = new RegionBounds("Entre-Douro-e-Minho"); // Approx Entre-Douro-e-Minho
     private final RegionBounds trasOsMontes = new RegionBounds("Trás-os-Montes");
     private final RegionBounds azoresEasternGroup = new RegionBounds("Azores - Eastern Group");
+    private final RegionBounds azoresCentralGroup = new RegionBounds("Azores - Central Group");
+    private final RegionBounds azoresWesternGroup = new RegionBounds("Azores - Western Group");
+    private final RegionBounds madeiraMainIslands = new RegionBounds("Madeira - Main Islands");
+    private final RegionBounds madeiraSouthernIslands = new RegionBounds("Madeira - Southern Islands");
 
-    private final RegionBounds westernAndaluciaAndGibraltar = new RegionBounds("Western Andalucía + Gibraltar");
+    // Spain and Gibraltar
+    private final RegionBounds westernAndaluciaAndGibraltarAndCeuta = new RegionBounds("Western Andalucía + Gibraltar + Ceuta");
     private final RegionBounds centralAndalucia = new RegionBounds("Central Andalucía");
-    private final RegionBounds easternAndalucia = new RegionBounds("Eastern Andalucía");
+    private final RegionBounds easternAndaluciaAndMelilla = new RegionBounds("Eastern Andalucía + Melilla");
     private final RegionBounds extremadura = new RegionBounds("Extremadura");
     private final RegionBounds westernCastillaLaManchaAndMadrid = new RegionBounds("Western Castilla-La Mancha + Comunidade de Madrid");
     private final RegionBounds easternCastillaLaManchaAndMurcia = new RegionBounds("Eastern Castilla-La Mancha + Região de Murcia");
@@ -144,7 +183,11 @@ public class RegionBoundsManager {
     private final RegionBounds westernCatalonia = new RegionBounds("Western Catalonia");
     private final RegionBounds easternCatalonia = new RegionBounds("Eastern Catalonia");
     private final RegionBounds valencianCommunity = new RegionBounds("Valencian Community");
+    private final RegionBounds westernCanaryIslands = new RegionBounds("Western Canary Islands");
+    private final RegionBounds easternCanaryIslands = new RegionBounds("Eastern Canary Islands");
+    private final RegionBounds balearicIslands = new RegionBounds("Balearic Islands");
 
+    // Andorra
     private final RegionBounds andorra = new RegionBounds("Andorra");
 
     private final RegionBounds defaultRegion = new RegionBounds("Default");
@@ -185,6 +228,18 @@ public class RegionBoundsManager {
             westernmostLongitude = -31.275617; // Ilhéu de Monchique, west of Flores Island
             easternmostLongitude = -24.780056; // Ilhéus das Formigas, between São Miguel Island and Santa Maria Island
 
+        } else if (locationInfo.getCountry().equals(context.getString(R.string.portugal)) && ((LocationInfoPortugal) locationInfo).getDistrict().equals(context.getString(R.string.madeira))) { // Madeira islands
+            northernmostLatitude = 33.128163; // Ilhéu de Fora, north of Porto Santo Island
+            southernmostLatitude = 30.028780; // South of another Ilhéu de Fora in the Selvagens Islands
+            westernmostLongitude = -17.265948; // Ponta do Pargo, Madeira Island
+            easternmostLongitude = -15.853679; // Ilhéu Sinho, Selvagens Islands
+
+        } else if (locationInfo.getCountry().equals(context.getString(R.string.spain)) && ((LocationInfoSpain) locationInfo).getAutonomousCommunity().equals(context.getString(R.string.canary_islands))) { // Canary islands
+            northernmostLatitude = 29.416062; // Alegranza Island
+            southernmostLatitude = 27.637733; // Punta de Los Saltos, El Hierro Island
+            westernmostLongitude = -18.161184; // Roque del Guincho, El Hierro Island
+            easternmostLongitude = -13.419140; // Punta Prieta, Lanzarote Island
+
         } else if (locationInfo.isInIberianPeninsula(context)) { // Iberian Peninsula, Balearic Islands, Ceuta, and Melilla
             northernmostLatitude = 43.783333; // Punta de Estaca de Bares, A Coruña
             // southernmostLatitude = 36.0; // Punta de Tarifa, Cádiz
@@ -220,6 +275,7 @@ public class RegionBoundsManager {
     }
 
     private RegionBounds getRegionBoundsObjectByLocation(LocationInfo locationInfo) {
+        String protectedArea = locationInfo.getProtectedArea();
         if (locationInfo.getCountry().equals(context.getString(R.string.portugal))) {
             String district = ((LocationInfoPortugal) locationInfo).getDistrict();
             String intermunicipalEntity = ((LocationInfoPortugal) locationInfo).getIntermunicipalEntity();
@@ -243,18 +299,28 @@ public class RegionBoundsManager {
                 return trasOsMontes;
             else if (Arrays.asList("Vila do Porto", "Lagoa, Açores", "Nordeste", "Ponta Delgada", "Povoação", "Ribeira Grande", "Vila Franca do Campo").contains(municipality))
                 return azoresEasternGroup;
+            else if (Arrays.asList("Angra do Heroísmo", "Praia da Vitória", "Santa Cruz da Graciosa", "Calheta, Açores", "Velas", "Lajes do Pico", "Madalena", "São Roque do Pico", "Horta").contains(municipality))
+                return azoresCentralGroup;
+            else if (Arrays.asList("Santa Cruz das Flores", "Lajes das Flores", "Corvo").contains(municipality))
+                return azoresWesternGroup;
+            else if (district.equals(context.getString(R.string.madeira))) {
+                if (Arrays.asList("Selvagens Islands Nature Reserve", "Desertas Island Nature Reserve").contains(protectedArea)) // Selvagens Islands and Desertas Islands
+                    return madeiraSouthernIslands;
+                else // Madeira Island and Porto Santo Island
+                    return madeiraMainIslands;
+            }
             else
                 return null;
         } else if (locationInfo.getCountry().equals(context.getString(R.string.spain))) {
             String autonomousCommunity = ((LocationInfoSpain) locationInfo).getAutonomousCommunity();
             String province = ((LocationInfoSpain) locationInfo).getProvince();
 
-            if (Arrays.asList("Huelva", "Sevilha", "Cádiz").contains(province))
-                return westernAndaluciaAndGibraltar;
+            if (Arrays.asList("Huelva", "Sevilha", "Cádiz", "Ceuta").contains(province))
+                return westernAndaluciaAndGibraltarAndCeuta;
             else if (Arrays.asList("Córdoba", "Málaga").contains(province))
                 return centralAndalucia;
-            else if (Arrays.asList("Jaén", "Granada", "Almería").contains(province))
-                return easternAndalucia;
+            else if (Arrays.asList("Jaén", "Granada", "Almería", "Melilla").contains(province))
+                return easternAndaluciaAndMelilla;
             else if (Arrays.asList("Badajoz", "Cáceres").contains(province))
                 return extremadura;
             else if (autonomousCommunity.equals("Comunidade de Madrid") ||
@@ -286,10 +352,16 @@ public class RegionBoundsManager {
                 return easternCatalonia;
             else if (autonomousCommunity.equals("Comunidade Valenciana"))
                 return valencianCommunity;
+            else if (autonomousCommunity.equals("Balearic Islands"))
+                return balearicIslands;
+            else if (province.equals("Las Palmas"))
+                return easternCanaryIslands;
+            else if (province.equals("Santa Cruz de Tenerife"))
+                return westernCanaryIslands;
             else
                 return null;
         } else if (locationInfo.getCountry().equals(context.getString(R.string.gibraltar_short_name))) {
-            return westernAndaluciaAndGibraltar;
+            return westernAndaluciaAndGibraltarAndCeuta;
         } else if (locationInfo.getCountry().equals(context.getString(R.string.andorra))) {
             return andorra;
         } else { // Location beyond Iberian Peninsula
@@ -306,6 +378,7 @@ public class RegionBoundsManager {
     }
 
     private SubregionBounds getSubregionBoundsObjectByLocation(LocationInfo locationInfo) {
+        String protectedArea = locationInfo.getProtectedArea();
         if (locationInfo.getCountry().equals(context.getString(R.string.portugal))) {
             String district = ((LocationInfoPortugal) locationInfo).getDistrict();
             String intermunicipalEntity = ((LocationInfoPortugal) locationInfo).getIntermunicipalEntity();
@@ -364,10 +437,57 @@ public class RegionBoundsManager {
                 return islandSantaMariaAndFormigas;
             else if (Arrays.asList("Lagoa, Açores", "Nordeste", "Ponta Delgada", "Povoação", "Ribeira Grande", "Vila Franca do Campo").contains(concelho))
                 return islandSaoMiguel;
+            else if (Arrays.asList("Angra do Heroísmo", "Praia da Vitória").contains(concelho))
+                return islandTerceira;
+            else if (concelho.equals("Santa Cruz da Graciosa"))
+                return islandGraciosa;
+            else if (Arrays.asList("Calheta, Açores", "Velas").contains(concelho))
+                return islandSaoJorge;
+            else if (Arrays.asList("Lajes do Pico", "Madalena", "São Roque do Pico").contains(concelho))
+                return islandPico;
+            else if (concelho.equals("Horta"))
+                return islandFaial;
+            else if (Arrays.asList("Santa Cruz das Flores", "Lajes das Flores").contains(concelho))
+                return islandFlores;
+            else if (concelho.equals("Corvo"))
+                return islandCorvo;
+            else if (district.equals(context.getString(R.string.madeira))) {
+                if (protectedArea.equals("Selvagens Islands Nature Reserve"))
+                    return islandsSelvagens;
+                else if (protectedArea.equals("Desertas Island Nature Reserve"))
+                    return islandsDesertas;
+                else if (concelho.equals("Porto Santo")) // The island has a single municipality
+                    return islandPortoSanto;
+                else // Largest and most populated island in the archipelago
+                    return islandMadeira;
+            }
             else
                 return null;
         } else if (locationInfo.getCountry().equals(context.getString(R.string.spain))) {
             String province = ((LocationInfoSpain) locationInfo).getProvince();
+            String comarca = ((LocationInfoSpain) locationInfo).getComarca();
+            // Balearic Islands
+            if (province.equals("Balearic Islands")) {
+                return switch (comarca) {
+                    case "Formentera" -> islandFormentera;
+                    case "Ibiza" -> islandIbiza;
+                    case "Menorca" -> islandMenorca;
+                    default -> islandMallorca; // Largest and most populated island in the Balearic Islands
+                };
+            }
+            // Canary Islands
+            else if (province.equals("Canarias")) {
+                return switch (comarca) {
+                    case "Fuerteventura" -> islandFuerteventura;
+                    case "Gran Canaria Área Metropolitana", "Gran Canaria Sur", "Gran Canaria Norte" -> islandGranCanaria;
+                    case "Lanzarote" -> islandsLanzaroteAndLaGraciosa;
+                    case "El Hierro" -> islandElHierro;
+                    case "La Gomera" -> islandLaGomera;
+                    case "La Palma" -> islandLaPalma;
+                    default -> islandTenerife; // One of the most populated islands in the Canary Islands
+                };
+            }
+            // Peninsular Spain + Ceuta + Melilla
             return switch (province) {
                 // Andalucía
                 case "Huelva" -> huelva;
@@ -425,6 +545,9 @@ public class RegionBoundsManager {
                 case "Castellón de la Plana" -> castellonDeLaPlana;
                 case "Valencia" -> valencia;
                 case "Alicante" -> alicante;
+                // Ceuta and Melilla
+                case "Ceuta" -> ceuta;
+                case "Melilla" -> melilla;
                 default -> null;
             };
         } else if (locationInfo.getCountry().equals(context.getString(R.string.gibraltar_short_name))) {
@@ -478,22 +601,39 @@ public class RegionBoundsManager {
 
         azoresEasternGroup.addSubregion(islandSantaMariaAndFormigas);
         azoresEasternGroup.addSubregion(islandSaoMiguel);
+
+        azoresCentralGroup.addSubregion(islandTerceira);
+        azoresCentralGroup.addSubregion(islandGraciosa);
+        azoresCentralGroup.addSubregion(islandSaoJorge);
+        azoresCentralGroup.addSubregion(islandPico);
+        azoresCentralGroup.addSubregion(islandFaial);
+
+        azoresWesternGroup.addSubregion(islandFlores);
+        azoresWesternGroup.addSubregion(islandCorvo);
+
+        madeiraMainIslands.addSubregion(islandMadeira);
+        madeiraMainIslands.addSubregion(islandPortoSanto);
+
+        madeiraSouthernIslands.addSubregion(islandsDesertas);
+        madeiraSouthernIslands.addSubregion(islandsSelvagens);
     }
 
     private void setSpanishAndGibraltarRegionBounds() {
         // ADD SPANISH AND GIBRALTAR REGION BOUNDS HERE
 
-        westernAndaluciaAndGibraltar.addSubregion(huelva);
-        westernAndaluciaAndGibraltar.addSubregion(sevilha);
-        westernAndaluciaAndGibraltar.addSubregion(cadiz);
-        westernAndaluciaAndGibraltar.addSubregion(gibraltar);
+        westernAndaluciaAndGibraltarAndCeuta.addSubregion(huelva);
+        westernAndaluciaAndGibraltarAndCeuta.addSubregion(sevilha);
+        westernAndaluciaAndGibraltarAndCeuta.addSubregion(cadiz);
+        westernAndaluciaAndGibraltarAndCeuta.addSubregion(gibraltar);
+        westernAndaluciaAndGibraltarAndCeuta.addSubregion(ceuta);
 
         centralAndalucia.addSubregion(cordoba);
         centralAndalucia.addSubregion(malaga);
 
-        easternAndalucia.addSubregion(jaen);
-        easternAndalucia.addSubregion(granada);
-        easternAndalucia.addSubregion(almeria);
+        easternAndaluciaAndMelilla.addSubregion(jaen);
+        easternAndaluciaAndMelilla.addSubregion(granada);
+        easternAndaluciaAndMelilla.addSubregion(almeria);
+        easternAndaluciaAndMelilla.addSubregion(melilla);
 
         extremadura.addSubregion(badajoz);
         extremadura.addSubregion(caceres);
@@ -546,6 +686,20 @@ public class RegionBoundsManager {
         valencianCommunity.addSubregion(castellonDeLaPlana);
         valencianCommunity.addSubregion(valencia);
         valencianCommunity.addSubregion(alicante);
+
+        balearicIslands.addSubregion(islandFormentera);
+        balearicIslands.addSubregion(islandMallorca);
+        balearicIslands.addSubregion(islandIbiza);
+        balearicIslands.addSubregion(islandMenorca);
+
+        westernCanaryIslands.addSubregion(islandElHierro);
+        westernCanaryIslands.addSubregion(islandLaPalma);
+        westernCanaryIslands.addSubregion(islandLaGomera);
+        westernCanaryIslands.addSubregion(islandTenerife);
+
+        easternCanaryIslands.addSubregion(islandGranCanaria);
+        easternCanaryIslands.addSubregion(islandFuerteventura);
+        easternCanaryIslands.addSubregion(islandsLanzaroteAndLaGraciosa);
     }
 
     private void setAndorranRegionBounds() {
@@ -670,6 +824,61 @@ public class RegionBoundsManager {
         islandSaoMiguel.setMaxSouth(37.704009, -25.443287);
         islandSaoMiguel.setMaxWest(37.861270, -25.856082);
         islandSaoMiguel.setMaxEast(37.807619, -25.134165);
+
+        islandTerceira.setMaxNorth(38.803675, -27.257469);
+        islandTerceira.setMaxSouth(38.629278, -27.143494);
+        islandTerceira.setMaxWest(38.744990, -27.379451);
+        islandTerceira.setMaxEast(38.695993, -27.041208);
+
+        islandGraciosa.setMaxNorth(39.0971567, -28.0356779);
+        islandGraciosa.setMaxSouth(39.0086092, -27.9700997);
+        islandGraciosa.setMaxWest(39.0668568, -28.072299);
+        islandGraciosa.setMaxEast(39.022179, -27.9478143);
+
+        islandSaoJorge.setMaxNorth(38.757327, -28.319814);
+        islandSaoJorge.setMaxSouth(38.533384, -27.827044);
+        islandSaoJorge.setMaxWest(38.755983, -28.320383);
+        islandSaoJorge.setMaxEast(38.550558, -27.743644);
+
+        islandPico.setMaxNorth(38.561430, -28.414638);
+        islandPico.setMaxSouth(38.382075, -28.239882);
+        islandPico.setMaxWest(38.509574, -28.541880);
+        islandPico.setMaxEast(38.415397, -28.028196);
+
+        islandFaial.setMaxNorth(38.6440939, -28.7149192);
+        islandFaial.setMaxSouth(38.515164, -28.6232258);
+        islandFaial.setMaxWest(38.6024469, -28.834794);
+        islandFaial.setMaxEast(38.5930424, -28.5981092);
+
+        islandFlores.setMaxNorth(39.528912, -31.204707);
+        islandFlores.setMaxSouth(39.371087, -31.231003);
+        islandFlores.setMaxWest(39.451674, -31.268820);
+        islandFlores.setMaxEast(39.452824, -31.124273);
+
+        islandCorvo.setMaxNorth(39.726184, -31.1079761);
+        islandCorvo.setMaxSouth(39.6692284, -31.1141431);
+        islandCorvo.setMaxWest(39.7022102, -31.1285144);
+        islandCorvo.setMaxEast(39.7020544, -31.0822467);
+
+        islandMadeira.setMaxNorth(32.870621, -17.194931);
+        islandMadeira.setMaxSouth(32.632879, -16.943796);
+        islandMadeira.setMaxWest(32.814352, -17.265935);
+        islandMadeira.setMaxEast(32.731354, -16.655249);
+
+        islandPortoSanto.setMaxNorth(33.1281603, -16.2854564);
+        islandPortoSanto.setMaxSouth(32.9961183, -16.3819299);
+        islandPortoSanto.setMaxWest(33.0405614, -16.4107398);
+        islandPortoSanto.setMaxEast(33.0540263, -16.2773815);
+
+        islandsDesertas.setMaxNorth(32.592227, -16.545861);
+        islandsDesertas.setMaxSouth(32.403692, -16.463576);
+        islandsDesertas.setMaxWest(32.588446, -16.549326);
+        islandsDesertas.setMaxEast(32.404818, -16.462806);
+
+        islandsSelvagens.setMaxNorth(30.160824, -15.875829);
+        islandsSelvagens.setMaxSouth(30.028780, -16.051594);
+        islandsSelvagens.setMaxWest(30.032883, -16.053984);
+        islandsSelvagens.setMaxEast(30.140117, -15.853666);
     }
 
     private void setSpanishSubregionBounds() {
@@ -909,6 +1118,71 @@ public class RegionBoundsManager {
         alicante.setMaxSouth(37.8437887, -0.7717885);
         alicante.setMaxWest(38.4379292, -1.0941624);
         alicante.setMaxEast(38.7369798, 0.2341588);
+
+        islandElHierro.setMaxNorth(27.849845, -17.928497);
+        islandElHierro.setMaxSouth(27.637738, -17.986770);
+        islandElHierro.setMaxWest(27.718853, -18.161181);
+        islandElHierro.setMaxEast(27.807209, -17.882811);
+
+        islandLaPalma.setMaxNorth(28.857543, -17.911328);
+        islandLaPalma.setMaxSouth(28.452709, -17.841521);
+        islandLaPalma.setMaxWest(28.757889, -18.007249);
+        islandLaPalma.setMaxEast(28.738468, -17.724220);
+
+        islandLaGomera.setMaxNorth(28.218909, -17.266071);
+        islandLaGomera.setMaxSouth(28.019755, -17.243576);
+        islandLaGomera.setMaxWest(28.098943, -17.348962);
+        islandLaGomera.setMaxEast(28.095962, -17.098337);
+
+        islandTenerife.setMaxNorth(28.605395, -16.155514);
+        islandTenerife.setMaxSouth(27.998078, -16.678845);
+        islandTenerife.setMaxWest(28.341901, -16.925927);
+        islandTenerife.setMaxEast(28.553607, -16.119379);
+
+        islandGranCanaria.setMaxNorth(28.181418, -15.420044);
+        islandGranCanaria.setMaxSouth(27.734592, -15.598971);
+        islandGranCanaria.setMaxWest(27.970118, -15.834657);
+        islandGranCanaria.setMaxEast(27.931261, -15.358283);
+
+        islandFuerteventura.setMaxNorth(28.765994, -13.814417);
+        islandFuerteventura.setMaxSouth(28.043514, -14.334830);
+        islandFuerteventura.setMaxWest(28.068014, -14.509737);
+        islandFuerteventura.setMaxEast(28.755865, -13.810753);
+
+        islandsLanzaroteAndLaGraciosa.setMaxNorth(29.416050, -13.505775);
+        islandsLanzaroteAndLaGraciosa.setMaxSouth(28.838385, -13.787201);
+        islandsLanzaroteAndLaGraciosa.setMaxWest(28.885575, -13.882309);
+        islandsLanzaroteAndLaGraciosa.setMaxEast(29.197581, -13.419129);
+
+        ceuta.setMaxNorth(35.918000, -5.366912);
+        ceuta.setMaxSouth(35.870867, -5.343068);
+        ceuta.setMaxWest(35.912485, -5.382040);
+        ceuta.setMaxEast(35.897840, -5.278306);
+
+        melilla.setMaxNorth(35.320141, -2.952042);
+        melilla.setMaxSouth(35.265639, -2.950548);
+        melilla.setMaxWest(35.288737, -2.970195);
+        melilla.setMaxEast(35.288842, -2.923109);
+
+        islandFormentera.setMaxNorth(38.805067, 1.477771);
+        islandFormentera.setMaxSouth(38.640456, 1.388593);
+        islandFormentera.setMaxWest(38.718139, 1.380125);
+        islandFormentera.setMaxEast(38.662983, 1.584748);
+
+        islandIbiza.setMaxNorth(39.118416, 1.533027);
+        islandIbiza.setMaxSouth(38.813591, 1.404622);
+        islandIbiza.setMaxWest(38.978480, 1.157282);
+        islandIbiza.setMaxEast(39.032895, 1.650417);
+
+        islandMallorca.setMaxNorth(39.962507, 3.213388);
+        islandMallorca.setMaxSouth(39.120732, 2.940270);
+        islandMallorca.setMaxWest(39.572908, 2.303049);
+        islandMallorca.setMaxEast(39.715832, 3.478761);
+
+        islandMenorca.setMaxNorth(40.094586, 4.075499);
+        islandMenorca.setMaxSouth(39.799149, 4.292926);
+        islandMenorca.setMaxWest(40.016161, 3.790849);
+        islandMenorca.setMaxEast(39.877078, 4.328018);
     }
 
     private void setGibraltarSubregionBounds() {

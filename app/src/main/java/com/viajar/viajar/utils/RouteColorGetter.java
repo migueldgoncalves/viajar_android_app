@@ -43,7 +43,7 @@ public class RouteColorGetter {
             "CO-32",                                                            // Córdoba
             "CV-80",                                                            // Comunitat Valenciana
             "EX-A1", "EX-A2",                                                   // Extremadura
-            "GR-30",                                                            // Granada
+            "GR-30", "GR-43",                                                   // Granada
             "H-30", "H-31",                                                     // Huelva
             "M-11", "M-12", "M-13/M-14", "M-13", "M-14", "M-23", "M-30",        // Comunidad de Madrid
             "M-30 - Avenida de la Ilustración", "M-30 - Bypass Sul", "M-31",

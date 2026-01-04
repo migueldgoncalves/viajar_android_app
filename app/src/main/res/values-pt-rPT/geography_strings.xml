@@ -18,6 +18,7 @@
     <string name="region">Região</string>
     <string name="autonomous_region">Região Autónoma</string>
     <string name="acores">Açores</string>
+    <string name="madeira">Madeira</string>
     <!--    Common to Portugal and Spain-->
     <string name="district">Distrito</string>
     <!--    Specific to Spain-->
@@ -36,6 +37,7 @@
     <string name="galicia">Galiza</string>
     <string name="asturias">Asturias</string>
     <string name="region_of_murcia">Região de Murcia</string>
+    <string name="canary_islands">Canarias</string>
     <!-- Specific to Andorra-->
     <string name="parish_ad">Paróquia</string>
 </resources>
